@@ -1,9 +1,9 @@
 /// Example values for spacing
 /// @group Layout
-$spacing-map: (
-  'xsmall': 5px,
-  'small': 10px,
-  'medium': 20px,
-  'large': 40px,
-  'xlarge': 60px
+$dbx-spacing: (
+  '8': 8px,
+  '16': 16px,
+  '24': 24px,
+  '36': 36px,
+  'gutter': 12px
 ) !default;

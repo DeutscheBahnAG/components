@@ -1,0 +1,21 @@
+@import '../node_modules/sass-to-js/sass/sass-to-js';
+
+@import 'vendor/dsm-design-tokens';
+
+@import 'abstracts/constants/colors';
+@import 'abstracts/constants/text-styles';
+@import 'abstracts/constants/spacing';
+@import 'abstracts/constants/shadows';
+
+:export {
+  // stylelint-disable property-no-unknown
+  colors: sassToJs($dbx-colors);
+  textStyles: sassToJs($dbx-text-styles);
+  spacing: sassToJs($dbx-spacing);
+  shadows: sassToJs($dbx-shadows);
+  // stylelint-enable property-no-unknown
+}
+
+
+
+

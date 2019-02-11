@@ -1,5 +1,5 @@
 /// Function to quickly get the spacing value from a spacing Map (see in variables)
 /// @group layout
 @function dbx-spacing($value) {
-  @return map-get($spacing-map, $value);
+  @return map-get($dbx-spacing, $value);
 }

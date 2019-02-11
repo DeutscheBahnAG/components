@@ -1,14 +1,45 @@
 /// Example values for colors
 /// @group Colors
-$colors-map: (
-  'brand-primary': (
-    'hex': #ebebeb,
-    'default-text': #fff,
-    'sg-name': 'Brand Primary'
+$dbx-colors: (
+  'primary': (
+    'dbRed': $color-db-red,
+    'darkGrey': $color-dark-grey,
+    'activeBlue': $color-active-blue,
+    'white': $color-white
   ),
-  'brand-secondary': (
-    'hex': #ccc,
-    'default-text': #000,
-    'sg-name': 'Brand Secondary'
+  'secondary': (
+    'dbRed75': $color-db-red-75,
+    'dbRed50': $color-db-red-50,
+    'dbRed25': $color-db-red-25,
+    'grey': $color-grey,
+    'grey75': $color-grey-75,
+    'grey50': $color-grey-50,
+    'grey25': $color-grey-25
+  ),
+  'alert': (
+    'alertGreen': $color-alert-green,
+    'alertOrange': $color-alert-orange,
+    'alertRed': $color-alert-red
+  ),
+  'transportation': (
+    'uBahn': $color-u-bahn,
+    'bus': $color-bus,
+    'airplane': $color-airplane,
+    'ec': $color-ec,
+    'sBahn': $color-s-bahn,
+    'ic': $color-ic,
+    'parking': $color-parking,
+    'ferry': $color-ferry,
+    'tram': $color-tram,
+    'fernbus': $color-fernbus,
+    're': $color-re,
+    'taxi': $color-taxi,
+    'rb': $color-rb
   )
 ) !default;
+
+$dbx-colors--flat: ();
+
+@each $colors-category in map-values($dbx-colors) {
+  $dbx-colors--flat: map-merge($dbx-colors--flat, $colors-category);
+}

@@ -1,20 +1,61 @@
-.dbx-button {
+@mixin dbx-button(
+  $bg-color,
+  $bg-color--hover,
+  $text-color,
+  $text-color--hover,
+  $border-color: $bg-color,
+  $border-color--hover: $bg-color--hover
+) {
   @include dbx-button-reset;
-
-  background-color: #ec0016;
-  color: #fff;
+  @include dbx-text-style('h5');
   display: inline-block;
-  padding: dbx-spacing(small) dbx-spacing(medium);
-}
+  height: 55px;
+  border-radius: 8px;
+  background-color: $bg-color;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 dbx-spacing('24');
+  border: 1px solid $border-color;
+  color: $text-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
 
-.dbx-button:hover,
-.dbx-button:focus,
-.dbx-button:active {
-  background-color: lighten(#000, 30%);
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: dbx-color('grey25');
+    background-color: dbx-color('grey75');
+    border-color: dbx-color('grey75');
+    cursor: default;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $bg-color--hover;
+    color: $text-color--hover;
+    border-color: $border-color--hover;
+  }
 }
 
 .dbx-button--block {
   display: block;
-  text-align: center;
   width: 100%;
+}
+
+.dbx-button--primary {
+  @include dbx-button(
+    $bg-color: dbx-color('dbRed'),
+    $bg-color--hover: dbx-color('dbRed50'),
+    $text-color: dbx-color('white'),
+    $text-color--hover: dbx-color('white'),
+  );
+}
+
+.dbx-button--secondary {
+  @include dbx-button(
+    $bg-color: dbx-color('white'),
+    $bg-color--hover: dbx-color('darkGrey'),
+    $text-color: dbx-color('darkGrey'),
+    $text-color--hover: dbx-color('white')
+  );
 }

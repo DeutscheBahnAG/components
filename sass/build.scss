@@ -1,8 +1,8 @@
+// Vendor (Vendor specific styles: DSM design tokens, Include media mixin...)
+@import 'vendor/**/*.scss';
+
 // Absracts (constants, functions and mixins)
 @import 'abstracts/**/*.scss';
-
-// Vendor (Vendor specific styles: etc Include media, Flickity...)
-@import 'vendor/**/*.scss';
 
 // Setup (reset, base etc..)
 @import 'setup/*.scss';

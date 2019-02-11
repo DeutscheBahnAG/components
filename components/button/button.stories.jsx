@@ -5,7 +5,7 @@ import withReadme from 'storybook-readme/with-readme';
 import Button from './button';
 import buttonReadme from './README.md';
 
-storiesOf('Basic Components / Button', module)
+storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('full width version', () => (

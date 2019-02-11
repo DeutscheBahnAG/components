@@ -1,0 +1,62 @@
+$dbx-text-styles: (
+  'copy': (
+    'fontSize': $font-left-dark-grey-copy-font-size,
+    'lineHeight': $font-left-dark-grey-copy-line-height,
+    'fontWeight': $font-left-dark-grey-copy-font-weight,
+    'fontFamily': $font-left-dark-grey-copy-font-family
+  ),
+  'copySmall': (
+    'fontSize': $font-left-dark-grey-copy-small-font-size,
+    'lineHeight': $font-left-dark-grey-copy-small-line-height,
+    'fontWeight': $font-left-dark-grey-copy-small-font-weight,
+    'fontFamily': $font-left-dark-grey-copy-small-font-family
+  ),
+  'hero': (
+    'fontSize': $font-left-dark-grey-hero-font-size,
+    'lineHeight': $font-left-dark-grey-hero-line-height,
+    'fontWeight': $font-left-dark-grey-hero-font-weight,
+    'fontFamily': $font-left-dark-grey-hero-font-family
+  ),
+  'h1': (
+    'fontSize': $font-left-dark-grey-h-1-font-size,
+    'lineHeight': $font-left-dark-grey-h-1-line-height,
+    'fontWeight': $font-left-dark-grey-h-1-font-weight,
+    'fontFamily': $font-left-dark-grey-h-1-font-family
+  ),
+  'h2': (
+    'fontSize': $font-left-dark-grey-h-2-font-size,
+    'lineHeight': $font-left-dark-grey-h-2-line-height,
+    'fontWeight': $font-left-dark-grey-h-2-font-weight,
+    'fontFamily': $font-left-dark-grey-h-2-font-family
+  ),
+  'h3': (
+    'fontSize': $font-left-dark-grey-h-3-font-size,
+    'lineHeight': $font-left-dark-grey-h-3-line-height,
+    'fontWeight': $font-left-dark-grey-h-3-font-weight,
+    'fontFamily': $font-left-dark-grey-h-3-font-family
+  ),
+  'h4': (
+    'fontSize': $font-left-dark-grey-h-4-font-size,
+    'lineHeight': $font-left-dark-grey-h-4-line-height,
+    'fontWeight': $font-left-dark-grey-h-4-font-weight,
+    'fontFamily': $font-left-dark-grey-h-4-font-family
+  ),
+  'h5': (
+    'fontSize': $font-left-dark-grey-h-5-font-size,
+    'lineHeight': $font-left-dark-grey-h-5-line-height,
+    'fontWeight': $font-left-dark-grey-h-5-font-weight,
+    'fontFamily': $font-left-dark-grey-h-5-font-family
+  ),
+  'infoRegular': (
+    'fontSize': $font-left-dark-grey-info-regular-font-size,
+    'lineHeight': $font-left-dark-grey-info-regular-line-height,
+    'fontWeight': $font-left-dark-grey-info-regular-font-weight,
+    'fontFamily': $font-left-dark-grey-info-regular-font-family
+  ),
+  'infoBold': (
+    'fontSize': $font-left-dark-grey-info-bold-font-size,
+    'lineHeight': $font-left-dark-grey-info-bold-line-height,
+    'fontWeight': $font-left-dark-grey-info-bold-font-weight,
+    'fontFamily': $font-left-dark-grey-info-bold-font-family
+  )
+);

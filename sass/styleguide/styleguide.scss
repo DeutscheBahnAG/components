@@ -1,65 +1,66 @@
-.sg-color-swatch {
-  height: 350px;
-  width: 50%;
-  float: left;
+$shadow--low: 0 2px 4px rgba(155, 160, 170, 0.8);
+$shadow--high: 0 6px 16px rgba(135, 140, 150, 0.5);
+$shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
+
+.sg-page {
+  padding: 32px;
+  margin: 0 auto;
+  max-width: 64em;
+}
+
+.sg-code-preview {
+  display: inline-block;
+  margin: dbx-spacing('8') 0;
+  padding: dbx-spacing('8') dbx-spacing('16');
+  font-family: Courier, monospace;
+  font-size: 14px;
+  background-color: dbx-color('grey25');
+  border-radius: 4px;
+}
+
+.sg-section {
+  padding: 24px 0;
+}
+
+.sg-section__heading {
+  font-size: 1.5em;
+  margin-bottom: 24px;
+}
+
+.sg-card-group {
+  display: flex;
+  flex-flow: row wrap;
+  margin: -16px;
+}
+
+.sg-card-group__item {
+  flex: 0 1 20%;
+}
+
+.sg-card {
+  min-width: 120px;
+  margin: 16px;
+  box-shadow: $shadow--low;
+  background-color: #fff;
+  border-radius: 8px;
   overflow: hidden;
+}
+
+.sg-card__preview {
+  @include dbx-fixed-ratio(1);
   position: relative;
 }
 
-.sg-color-swatch--accent {
-  height: 250px;
-  width: 25%;
+.sg-card__content {
+  padding: 8px;
 }
 
-.sg-color-swatch__info {
-  height: 46%;
+.sg-text-style {
+  margin: 16px 24px 36px;
+}
 
-  &::before {
-    font-size: 1.5rem;
-    display: block;
-    margin: 1rem;
+@each $text-style in map-keys($dbx-text-styles) {
+  .sg-text-style--#{$text-style} {
+    @include dbx-text-style($text-style);
   }
-
-  &::after {
-    font-size: 1rem;
-    display: block;
-    margin: 1rem;
-  }
-}
-
-.sg-color-swatch__values {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  white-space: pre; /* or pre-wrap */
-  line-height: 1.5;
-}
-
-@mixin color-swatch($key) {
-  .sg-color-swatch--#{$key} {
-    background-color: color($key);
-    color: dbx-color($key, $prop: default-text);
-
-    .sg-color-swatch__info {
-      &::before {
-        content: '#{dbx-color($key, $prop: sg-name)}';
-      }
-
-      &::after {
-        content: 'key: #{$key}';
-      }
-    }
-
-    .sg-color-swatch__values {
-      &::after {
-        content: '#{dbx-color($key)}';
-      }
-    }
-  }
-}
-
-$color-swatches: 'brand-primary' 'brand-secondary';
-
-@each $key in $color-swatches {
-  @include color-swatch($key);
 }

@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 const Button = props => {
-  const { className, fullWidth, children, ...otherProps } = props;
+  const { type, className, fullWidth, children, ...otherProps } = props;
   return (
     <button
       {...otherProps}
       type="button"
-      className={clsx('dbx-button', { 'dbx-button--block': fullWidth }, className)}
+      className={clsx(
+        'dbx-button',
+        `dbx-button--${type}`,
+        { 'dbx-button--block': fullWidth },
+        className
+      )}
     >
       {children}
     </button>
@@ -16,6 +21,8 @@ const Button = props => {
 };
 
 Button.propTypes = {
+  /** the appearance of the button */
+  type: PropTypes.oneOf(['primary', 'secondary']),
   /** additional class names you want to add to the button */
   className: PropTypes.string,
   /** when true, button will take up all available with */
@@ -25,6 +32,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  type: 'primary',
   className: '',
   fullWidth: false,
   children: null,
