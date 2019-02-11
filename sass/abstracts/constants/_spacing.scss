@@ -1,0 +1,9 @@
+/// Example values for spacing
+/// @group Layout
+$spacing-map: (
+  'xsmall': 5px,
+  'small': 10px,
+  'medium': 20px,
+  'large': 40px,
+  'xlarge': 60px
+) !default;

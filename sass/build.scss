@@ -1,0 +1,17 @@
+// Absracts (constants, functions and mixins)
+@import 'abstracts/**/*.scss';
+
+// Vendor (Vendor specific styles: etc Include media, Flickity...)
+@import 'vendor/**/*.scss';
+
+// Setup (reset, base etc..)
+@import 'setup/*.scss';
+
+// Helpers (visually-hidden etc..)
+@import 'helpers/*.scss';
+
+// Components
+@import '../components/**/*.scss';
+
+// Styleguide (specific elements for styleguide, classes prefixed with sg-)
+@import 'styleguide/*.scss';

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basic Components/Button full width version 1`] = `
+<button
+  className="button button--block"
+  onClick={[Function]}
+  type="button"
+>
+  Full Width Button
+</button>
+`;
+
+exports[`Storyshots Basic Components/Button with text 1`] = `
+<button
+  className="button"
+  onClick={[Function]}
+  type="button"
+>
+  Hello Button
+</button>
+`;

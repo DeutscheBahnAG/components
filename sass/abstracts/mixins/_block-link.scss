@@ -1,0 +1,7 @@
+/// Adds a helper to create link blocks
+/// @group Layout
+@mixin dbx-block-link {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}

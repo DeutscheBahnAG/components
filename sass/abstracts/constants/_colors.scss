@@ -1,0 +1,14 @@
+/// Example values for colors
+/// @group Colors
+$colors-map: (
+  'brand-primary': (
+    'hex': #ebebeb,
+    'default-text': #fff,
+    'sg-name': 'Brand Primary'
+  ),
+  'brand-secondary': (
+    'hex': #ccc,
+    'default-text': #000,
+    'sg-name': 'Brand Secondary'
+  )
+) !default;

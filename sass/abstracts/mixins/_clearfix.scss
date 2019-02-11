@@ -1,0 +1,9 @@
+/// Micro clearfix hack.
+/// @group Layout
+@mixin dbx-clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}

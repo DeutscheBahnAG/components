@@ -1,0 +1,17 @@
+basePath: ./sass/abstracts
+dest: build/sassdoc
+display:
+  access:
+    - public
+    - private
+  alias: true
+  watermark: true
+
+package: ./package.json
+theme: default
+groups:
+  undefined: Miscellaneous
+  color: Colors
+  typography: Typography
+  layout: Layout
+  pattern: Common patterns

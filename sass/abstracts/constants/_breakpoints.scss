@@ -1,0 +1,8 @@
+/// Example values for breakpoints. Use these with include media: @include media('>medium') {...}
+/// @group Layout
+$breakpoints: (
+  small: 320px,
+  medium: 800px,
+  large: 1200px,
+  xlarge: 1400px
+) !default;

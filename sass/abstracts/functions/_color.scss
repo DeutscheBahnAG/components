@@ -1,0 +1,10 @@
+/// Extract a color value from a color map. You can use one of the provided brand color maps or add your own.
+/// If your custom color map is default for a whole app, we suggest overriding '$colors-map' before rendering the component styles.
+///
+/// @group Colors
+/// @parameter {string} $key - The key of the color you need.
+/// @parameter {map} color-map [$colors-map] - A map of color key/value pairs to use.
+/// @parameter {string} $prop [hex] - The property of the color you need. See current options in the color maps, e.g. colors
+@function dbx-color($key, $color-map: $colors-map, $prop: 'hex') {
+  @return map-get(map-get($color-map, $key), $prop);
+}

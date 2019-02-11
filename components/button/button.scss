@@ -1,0 +1,20 @@
+.dbx-button {
+  @include dbx-button-reset;
+
+  background-color: #ec0016;
+  color: #fff;
+  display: inline-block;
+  padding: dbx-spacing(small) dbx-spacing(medium);
+}
+
+.dbx-button:hover,
+.dbx-button:focus,
+.dbx-button:active {
+  background-color: lighten(#000, 30%);
+}
+
+.dbx-button--block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
