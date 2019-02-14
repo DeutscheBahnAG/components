@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import dbxConstants from '../dbx-constants';
-import StyleguideCard from '../styleguide-card';
+import dbxConstants from './dbx-constants';
+import StyleguideCard from './styleguide-card';
 
 const { spacing } = dbxConstants;
 
-storiesOf('Foundation', module).add('Spacing', () => (
+const Spacings = () => (
   <>
     <h2>DBX Spacings</h2>
     <p className="sg-code-preview">margin: dbx-spacing($name);</p>
@@ -35,4 +34,6 @@ storiesOf('Foundation', module).add('Spacing', () => (
       </div>
     </div>
   </>
-));
+);
+
+export default Spacings;

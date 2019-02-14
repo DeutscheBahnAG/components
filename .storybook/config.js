@@ -1,6 +1,8 @@
 import { configure, addDecorator } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
+import { configureViewport } from '@storybook/addon-viewport';
+import { checkA11y } from '@storybook/addon-a11y';
 import PageWrapper from './decorators/page-wrapper.jsx';
 
 import '../sass/build.scss';
@@ -52,10 +54,15 @@ addDecorator(PageWrapper);
 
 addDecorator(
   withBackgrounds([
-    { name: "White", value: "#ffffff", default: true },
-    { name: "Mid-Grey", value: "#888888" },
-    { name: "Black", value: "#000000" }
+    { name: "white", value: "#ffffff", default: true },
+    { name: "grey25", value: "#e1e6eb" },
+    { name: "grey", value: "#646973" },
+    { name: "darkGrey", value: "#3c414b" }
   ])
 );
+
+addDecorator(checkA11y);
+
+configureViewport({});
 
 configure(loadStories, module);

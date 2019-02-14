@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
-import dbxConstants from '../dbx-constants';
-import StyleguideCard from '../styleguide-card.jsx';
+import dbxConstants from './dbx-constants';
+import StyleguideCard from './styleguide-card.jsx';
 
 const { colors } = dbxConstants;
 
-storiesOf('Foundation', module).add('Colors', () => (
+const Colors = () => (
   <>
     <h2>DBX Colors</h2>
     <p className="sg-code-preview">background-color: dbx-color($name);</p>
@@ -38,4 +36,6 @@ storiesOf('Foundation', module).add('Colors', () => (
       </div>
     ))}
   </>
-));
+);
+
+export default Colors;
