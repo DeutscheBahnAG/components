@@ -3,6 +3,7 @@ import { withOptions } from '@storybook/addon-options';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { configureViewport } from '@storybook/addon-viewport';
 import { checkA11y } from '@storybook/addon-a11y';
+import { withPropsTable } from 'storybook-addon-react-docgen';
 import PageWrapper from './decorators/page-wrapper.jsx';
 
 import '../sass/build.scss';
@@ -62,6 +63,8 @@ addDecorator(
 );
 
 addDecorator(checkA11y);
+
+addDecorator(withPropsTable);
 
 configureViewport({});
 
