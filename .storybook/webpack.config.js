@@ -11,6 +11,11 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
 		    loader: "file-loader"
+      },
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        enforce: 'pre',
       }
     ]
   }
