@@ -1,3 +1,6 @@
+// Vendor (Vendor specific styles: DSM design tokens, Include media mixin...)
+@import 'vendor/**/*.scss';
+
 // Absracts (constants, functions and mixins)
 @import 'abstracts/**/*.scss';
 

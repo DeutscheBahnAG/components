@@ -13,13 +13,17 @@ const TextStyles = () => (
     <p className="sg-code-preview">@include dbx-text-style($name);</p>
     <div className="sg-section">
       {Object.keys(textStyles).map(textStyle => {
-        const { fontSize, fontSizeLarge } = textStyles[textStyle];
+        const { fontSize, fontSizeLarge, lineHeight } = textStyles[textStyle];
+        const lineHeightRelative = (parseInt(lineHeight, 10) / parseInt(fontSize, 10)).toFixed(2);
+
         return (
           <div key={textStyle}>
             <h3>
               {textStyle}{' '}
               <span className="sg-text-style--infoRegular">
-                ({`${fontSize} | ${fontSizeLarge}`})
+                (
+                {`default: ${fontSize} | large: ${fontSizeLarge} | line-height: ${lineHeightRelative}`}
+                )
               </span>
             </h3>
             <div className={clsx('sg-text-style', `sg-text-style--${textStyle}`)}>
