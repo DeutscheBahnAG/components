@@ -7,8 +7,14 @@
   $line-height: map-get($attributes, 'lineHeight');
   $font-weight: map-get($attributes, 'fontWeight');
   $font-family: map-get($attributes, 'fontFamily');
+  $font-size-large: map-get($attributes, 'fontSizeLarge');
 
   @include dbx-rem-font-size($font-size);
+
+  @media (min-width: 40em) {
+    @include dbx-rem-font-size($font-size-large);
+  }
+
   line-height: $line-height / $font-size; // use relative (unitless) font-size
   font-weight: $font-weight;
   font-family: $font-family;

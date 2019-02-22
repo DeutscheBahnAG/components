@@ -7,7 +7,7 @@
   $border-color--hover: $bg-color--hover
 ) {
   @include dbx-button-reset;
-  @include dbx-text-style('h5');
+  @include dbx-text-style('link');
   display: inline-block;
   height: 55px;
   border-radius: 8px;

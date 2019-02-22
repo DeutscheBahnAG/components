@@ -12,14 +12,22 @@ const TextStyles = () => (
     <h2>DBX Text Styles</h2>
     <p className="sg-code-preview">@include dbx-text-style($name);</p>
     <div className="sg-section">
-      {Object.keys(textStyles).map(textStyle => (
-        <div key={textStyle}>
-          <h3>{textStyle}</h3>
-          <div className={clsx('sg-text-style', `sg-text-style--${textStyle}`)}>
-            {textStylePreviewText}
+      {Object.keys(textStyles).map(textStyle => {
+        const { fontSize, fontSizeLarge } = textStyles[textStyle];
+        return (
+          <div key={textStyle}>
+            <h3>
+              {textStyle}{' '}
+              <span className="sg-text-style--infoRegular">
+                ({`${fontSize} | ${fontSizeLarge}`})
+              </span>
+            </h3>
+            <div className={clsx('sg-text-style', `sg-text-style--${textStyle}`)}>
+              {textStylePreviewText}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </>
 );
