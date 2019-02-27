@@ -2,39 +2,40 @@
 /// @group Colors
 $dbx-colors: (
   'primary': (
-    'dbRed': $color-db-red,
-    'darkGrey': $color-dark-grey,
-    'activeBlue': $color-active-blue,
-    'white': $color-white
+    'dbRed': #ec0016,
+    'darkGrey': #3c414b,
+    'activeBlue': #148ae9,
+    'white': #fff
   ),
   'secondary': (
-    'dbRed75': $color-db-red-75,
-    'dbRed50': $color-db-red-50,
-    'dbRed25': $color-db-red-25,
-    'grey': $color-grey,
-    'grey75': $color-grey-75,
-    'grey50': $color-grey-50,
-    'grey25': $color-grey-25
+    'dbRed75': #f4504e,
+    'dbRed50': #f78a89,
+    'dbRed25': #fcc4c4,
+    'grey': #646973,
+    'grey75': #9ba0aa,
+    'grey50': #c8cdd2,
+    'grey25': #e1e6eb,
+    'grey10': #fbfbfd
   ),
   'alert': (
-    'alertGreen': $color-alert-green,
-    'alertOrange': $color-alert-orange,
-    'alertRed': $color-alert-red
+    'alertGreen': #008000,
+    'alertOrange': #d66707,
+    'alertRed': #b20000
   ),
   'transportation': (
-    'uBahn': $color-u-bahn,
-    'bus': $color-bus,
-    'airplane': $color-airplane,
-    'ec': $color-ec,
-    'sBahn': $color-s-bahn,
-    'ic': $color-ic,
-    'parking': $color-parking,
-    'ferry': $color-ferry,
-    'tram': $color-tram,
-    'fernbus': $color-fernbus,
-    're': $color-re,
-    'taxi': $color-taxi,
-    'rb': $color-rb
+    'uBahn': #375fc3,
+    'bus': #ff8c00,
+    'airplane': #009b7c,
+    'ec': #646973,
+    'sBahn': #408335,
+    'ic': #3c414b,
+    'parking': #23419b,
+    'ferry': #227ea0,
+    'tram': #c8247f,
+    'fernbus': #32b0b9,
+    're': #878c96,
+    'taxi': #ffcd00,
+    'rb': #afb4bb
   )
 ) !default;
 
