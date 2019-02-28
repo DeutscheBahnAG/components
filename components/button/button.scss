@@ -7,7 +7,7 @@
   $border-color--hover: $bg-color--hover
 ) {
   @include dbx-button-reset;
-  @include dbx-text-style('link');
+  @include dbx-text-style('copy');
   display: inline-block;
   height: 55px;
   border-radius: 8px;
