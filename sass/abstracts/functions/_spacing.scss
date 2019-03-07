@@ -1,5 +1,9 @@
 /// Function to quickly get the spacing value from a spacing Map (see in variables)
 /// @group layout
 @function dbx-spacing($value) {
-  @return map-get($dbx-spacing, $value);
+  @if map-has-key($dbx-spacing, $value) {
+    @return map-get($dbx-spacing, $value);
+  }
+
+  @error 'The spacing value `#{$value}` is not present in the DBX spacings map. Valid values are: (#{map-keys($dbx-spacing)})';
 }

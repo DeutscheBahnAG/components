@@ -1,6 +1,10 @@
 // applies a text style from the DBX design system
 // (see variables/text-styles for available styles)
 @mixin dbx-text-style($text-style: 'copy', $text-styles-map: $dbx-text-styles) {
+  @if (map-has-key($text-styles-map, $text-style) == false) {
+    @error 'The text style `#{$text-style}` is not present in the DBX text styles map. Valid values are: (#{map-keys($text-styles-map)})';
+  }
+
   $attributes: map-get($text-styles-map, $text-style);
 
   $font-size: map-get($attributes, 'fontSize');

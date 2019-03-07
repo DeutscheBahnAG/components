@@ -4,7 +4,11 @@
 /// @parameter {string} $color-name - The key of the color you need.
 /// @parameter {map} color-map [$colors-map] - A map of color key/value pairs to use.
 @function dbx-color($color-name, $color-map: $dbx-colors--flat) {
-  @return map-get($color-map, $color-name);
+  @if map-has-key($color-map, $color-name) {
+    @return map-get($color-map, $color-name);
+  }
+
+  @error 'The color name `#{$color-name}` is not present in the DBX colors map. Valid values are: (#{map-keys($color-map)})';
 }
 
 
