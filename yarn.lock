@@ -1273,15 +1273,6 @@
     prop-types "^15.6.2"
     qs "^6.5.2"
 
-"@storybook/addon-options@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-5.0.5.tgz#359ccd9dbc215491a6aea6c09fd2ad43b602c534"
-  integrity sha512-fi99hBTkNVOAAAaJLKkK2xtjMPwwZgfJsXZzwj5b10SIlNP7ojMIBh9lVis9uuHHTTZMOm7VW3N+CHtI+TCzjA==
-  dependencies:
-    "@storybook/addons" "5.0.5"
-    core-js "^2.6.5"
-    util-deprecate "^1.0.2"
-
 "@storybook/addon-storyshots-puppeteer@^5.0.5":
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots-puppeteer/-/addon-storyshots-puppeteer-5.0.5.tgz#e8bebaaa0748d001c26ce96fde28c9ffc2e6ba20"

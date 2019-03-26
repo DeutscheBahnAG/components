@@ -71,7 +71,6 @@
     "@storybook/addon-actions": "^5.0.5",
     "@storybook/addon-backgrounds": "^5.0.5",
     "@storybook/addon-links": "^5.0.5",
-    "@storybook/addon-options": "^5.0.5",
     "@storybook/addon-storyshots": "^5.0.5",
     "@storybook/addon-storyshots-puppeteer": "^5.0.5",
     "@storybook/addon-storysource": "^5.0.5",
