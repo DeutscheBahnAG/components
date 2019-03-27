@@ -27,13 +27,13 @@ $dbx-text-styles: (
   ),
   'titleS': (
     'fontSize': 20px,
-    'fontSizeLarge': 24px,
+    'fontSizeLarge': 20px,
     'lineHeight': 28px,
     'fontWeight': bold,
     'fontFamily': $db-sans-font-stack,
     'breakpoint': 48em
   ),
-  'copyBold': (
+  'copyBigBold': (
     'fontSize': 18px,
     'fontSizeLarge': 20px,
     'lineHeight': 28px,
@@ -41,7 +41,7 @@ $dbx-text-styles: (
     'fontFamily': $db-sans-font-stack,
     'breakpoint': 48em
   ),
-  'copy': (
+  'copyBig': (
     'fontSize': 18px,
     'fontSizeLarge': 20px,
     'lineHeight': 28px,
@@ -49,9 +49,25 @@ $dbx-text-styles: (
     'fontFamily': $db-sans-font-stack,
     'breakpoint': 48em
   ),
+  'copyBold': (
+    'fontSize': 18px,
+    'fontSizeLarge': 16px,
+    'lineHeight': 28px,
+    'fontWeight': bold,
+    'fontFamily': $db-sans-font-stack,
+    'breakpoint': 48em
+  ),
+  'copy': (
+    'fontSize': 18px,
+    'fontSizeLarge': 16px,
+    'lineHeight': 28px,
+    'fontWeight': 400,
+    'fontFamily': $db-sans-font-stack,
+    'breakpoint': 48em
+  ),
   'copyS': (
     'fontSize': 12px,
-    'fontSizeLarge': 14px,
+    'fontSizeLarge': 12px,
     'lineHeight': 18px,
     'fontWeight': 400,
     'fontFamily': $db-sans-font-stack,
