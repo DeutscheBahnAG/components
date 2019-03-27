@@ -1,0 +1,106 @@
+# required environment variables in CircleCI:
+#
+# for gcloud-build image to work:
+# GCLOUD_CLUSTER_NAME = k8s-cluster name for staging & integration env (could be renamed)
+# GCLOUD_COMPUTE_ZONE = zone of the cluster
+# GCLOUD_PROJECT_ID = project id the cluster is in
+# GOOGLE_AUTH_PROD = base64 encoded serviceacc json that can push to GCR and also deploy to k8s. Add it as Decrypter to the kubesec KMS keyring for kubesec to work in kubediff (for development deployment)
+#
+# for using private build images in CircleCI
+# GCR_KEY_WEB_PRODUCTS_DEV = serviceacc json that can pull from GCR (_not_ base64 encoded)
+#
+version: 2
+
+jobs:
+  build-dbx-web-production:
+    docker:
+      - image: circleci/node:11
+
+    working_directory: ~/repo
+
+    steps:
+      - setup_remote_docker
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-
+
+      - run:
+          name: Install Dependencies
+          command: yarn
+
+      - save_cache:
+          key: yarn-packages-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Set Environment Variables
+          command: |
+            echo 'export GCLOUD_CLUSTER_NAME=web-products-prod-cluster' >> $BASH_ENV
+            echo 'export GCLOUD_PROJECT_ID=web-products-production' >> $BASH_ENV
+            echo 'export GOOGLE_AUTH=$GOOGLE_AUTH_PROD' >> $BASH_ENV
+
+      - run:
+          name: Lint Code
+          command: yarn lint && yarn lint:styles
+
+      - run:
+          name: Run Tests
+          command: yarn test
+
+      - run:
+          name: Build Static Site
+          command: yarn build:docs
+
+      - run:
+          name: Build Container
+          command: |
+            docker build -t eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1 .
+            docker login -u _json_key -p "$(echo $GOOGLE_AUTH|base64 -d)" https://eu.gcr.io
+            docker push eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1
+
+  deploy-dbx-web-production:
+    docker:
+      - image: eu.gcr.io/web-products-development/gcloud-build:SDK-209.0.0
+        auth:
+          username: _json_key
+          password: $GCR_KEY_WEB_PRODUCTS_DEV
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - run:
+          name: "Set environment variables"
+          command: |
+            echo 'export GCLOUD_CLUSTER_NAME=web-products-prod-cluster' >> $BASH_ENV
+            echo 'export GCLOUD_PROJECT_ID=web-products-production' >> $BASH_ENV
+            echo 'export GOOGLE_AUTH=$GOOGLE_AUTH_PROD' >> $BASH_ENV
+
+      - run:
+          name: "Deploy to k8s"
+          command: |
+            openrc boot # required for the turbinelabs/gcloud-build image to init gcloud
+
+            echo "[Deploying deploy-dbx-web-production]"
+
+            kubectl set image deployment/dbx-web dbx-web=eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1 -n prod
+            kubectl rollout status deployment/dbx-web -n prod
+
+workflows:
+  version: 2
+
+  dbx-web-build-workflow:
+    jobs:
+      - build-dbx-web-production:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy-dbx-web-production:
+          requires:
+            - build-dbx-web-production
+
