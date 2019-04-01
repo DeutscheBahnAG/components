@@ -67,7 +67,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "@bahn-x/eslint-config": "git+ssh://git@github.com:Bahn-X/eslint-config.git#416cddea10e528c67dd1035553c3d1ddd452d006",
+    "@bahn-x/eslint-config": "git+https://122c1536479eb7b7532b36223b0780ec5ad5d9b9:x-oauth-basic@github.com/Bahn-X/eslint-config.git#416cddea10e528c67dd1035553c3d1ddd452d006",
     "@storybook/addon-a11y": "^5.0.5",
     "@storybook/addon-actions": "^5.0.5",
     "@storybook/addon-backgrounds": "^5.0.5",
