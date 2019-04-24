@@ -81,7 +81,7 @@ jobs:
       - run:
           name: "Deploy to k8s"
           command: |
-            openrc boot # required for the turbinelabs/gcloud-build image to init gcloud
+            openrc boot # required for the gcloud-build image to init gcloud
 
             echo "[Deploying deploy-dbx-web-production]"
 
