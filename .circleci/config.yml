@@ -4,7 +4,7 @@
 # GCLOUD_CLUSTER_NAME = k8s-cluster name for staging & integration env (could be renamed)
 # GCLOUD_COMPUTE_ZONE = zone of the cluster
 # GCLOUD_PROJECT_ID = project id the cluster is in
-# GOOGLE_AUTH_PROD = base64 encoded serviceacc json that can push to GCR and also deploy to k8s. Add it as Decrypter to the kubesec KMS keyring for kubesec to work in kubediff (for development deployment)
+# GOOGLE_AUTH_PROD = base64 encoded serviceacc json that can push to GCR and also deploy to k8s.
 #
 # for using private build images in CircleCI
 # GCR_KEY_WEB_PRODUCTS_DEV = serviceacc json that can pull from GCR (_not_ base64 encoded)
@@ -40,8 +40,6 @@ jobs:
       - run:
           name: Set Environment Variables
           command: |
-            echo 'export GCLOUD_CLUSTER_NAME=web-products-prod-cluster' >> $BASH_ENV
-            echo 'export GCLOUD_PROJECT_ID=web-products-production' >> $BASH_ENV
             echo 'export GOOGLE_AUTH=$GOOGLE_AUTH_PROD' >> $BASH_ENV
 
       - run:
