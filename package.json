@@ -10,7 +10,7 @@
     "test:coverage": "jest --coverage",
     "update-snapshots": "jest --updateSnapshot",
     "lint": "yarn lint:js && yarn lint:styles",
-    "lint:js": "eslint components .cz-config.js --fix",
+    "lint:js": "eslint components .cz-config.js .commitlintrc.js --fix",
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "build:docs": "yarn build:storybook && yarn build:sassdoc",
     "build:storybook": "build-storybook -o build",
@@ -39,6 +39,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -69,6 +70,7 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@bahn-x/eslint-config": "git+https://122c1536479eb7b7532b36223b0780ec5ad5d9b9:x-oauth-basic@github.com/Bahn-X/eslint-config.git#416cddea10e528c67dd1035553c3d1ddd452d006",
+    "@commitlint/cli": "^7.6.1",
     "@storybook/addon-a11y": "^5.0.5",
     "@storybook/addon-actions": "^5.0.5",
     "@storybook/addon-backgrounds": "^5.0.5",
