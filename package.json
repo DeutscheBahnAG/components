@@ -10,14 +10,15 @@
     "test:coverage": "jest --coverage",
     "update-snapshots": "jest --updateSnapshot",
     "lint": "yarn lint:js && yarn lint:styles",
-    "lint:js": "eslint components --fix",
+    "lint:js": "eslint components .cz-config.js --fix",
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "build:docs": "yarn build:storybook && yarn build:sassdoc",
     "build:storybook": "build-storybook -o build",
     "build:sassdoc": "sassdoc sass/abstracts",
     "prebuild": "rimraf dist/components",
     "build": "babel components --out-dir dist/components --copy-files --ignore *.stories.js,*.test.js --source-maps",
-    "postinstall": "yarn build"
+    "postinstall": "yarn build",
+    "commit": "git-cz"
   },
   "files": [
     "components",
@@ -81,6 +82,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "css-loader": "^2.1.0",
+    "cz-customizable": "^6.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
@@ -100,5 +102,10 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-sass-guidelines": "^5.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
   }
 }

@@ -46,16 +46,96 @@ import { Button } from '@bahn-x/dbx';
 
 ### Available Tasks
 
-* `yarn storybook`: run local server with the Storybook component library
-* `yarn build`: transpiles component library to `./dist` to be exported via NPM
-* `yarn build:storybook`: build static production version of component library to `./build`
-* `yarn build:sassdoc`: generate SCSS documentation to `./build/sassdoc`
-* `yarn build:docs`: lints and tests components and then builds Storybook and Sassdoc pages to `./build`
-* `yarn lint`: lint JS code
-* `yarn lint:styles`: lint SCSS code
-* `yarn test`: run unit tests and show coverage
-* `yarn coverage`: run unit tests and show coverage
-* `yarn update-snapshots`: [update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
+- `yarn storybook`: run local server with the Storybook component library
+- `yarn build`: transpiles component library to `./dist` to be exported via NPM
+- `yarn build:storybook`: build static production version of component library to `./build`
+- `yarn build:sassdoc`: generate SCSS documentation to `./build/sassdoc`
+- `yarn build:docs`: lints and tests components and then builds Storybook and Sassdoc pages to `./build`
+- `yarn lint`: lint JS code
+- `yarn lint:styles`: lint SCSS code
+- `yarn test`: run unit tests and show coverage
+- `yarn coverage`: run unit tests and show coverage
+- `yarn update-snapshots`: [update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
+- `yarn commit`: See [writing commits](#writing-commits)
+
+### Writing Commits
+
+A commit message should look like:
+
+```
+type: [TICKET-NUMBER] Short imperative title
+
+[Body,
+possibly multi line]
+
+[BREAKING CHANGE:
+Description of breaking change]
+```
+
+Optional parts are set in square brackets.
+
+Valid examples of commit messages:
+
+- ```
+  feat: DBXPORTAL-123 Add focus ring to Button
+  ```
+- ```
+  fix: Make focus ring work in Firefox
+
+  In Firefox the focus ring did not appear the first time the focus was set.
+  ```
+
+- ```
+  chore: Update dependencies
+  ```
+- ```
+  feat: DBXPORTAL-124 Implement new sizes
+
+  The new sizes improve consistency between DBX and Product XYZ.
+
+  BREAKING CHANGE:
+  All buttons increased by 2 pixels in height.
+  ```
+
+Rules (you can also use [Commitizen](#commitizen) which helps generate commit messages):
+
+- Chose a _type:_
+  - `feat`: A new feature/visual update (build in JavaScript and/or CSS)
+  - `fix`: A bug fix
+  - `docs`: Documentation only changes
+  - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc, **this is NOT about styling components with CSS**)
+  - `refactor`: A code change that neither fixes a bug nor adds a feature
+  - `perf`: A code change that improves performance
+  - `test`: Adding missing tests
+  - `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
+  - `revert`: Revert to a commit
+- Separate the _type_ with `:` (colon + space)
+- Optional Jira _ticket number_ (e.g. `DBXPORTAL-123`); if set, add one space afterwards
+- Mandatory _subject_ – imperative style, 50 characters max, start titlecase, no period at the end
+- Optional _body_
+  - Separate with one empty line from the first line (_type, ticket number and subject_)
+  - Separate paragraphs with one empty line
+  - Lists starting with `- ` are OK (start titlecase)
+- Optional _breaking change_
+  - Separate with one empty line from the first line (_type, ticket number and subject_) or the _body_ (if used)
+  - Start with `BREAKING CHANGE:` (all uppercase)
+  - Provide a summary of the breaking change in the next line
+
+### Commitizen
+
+Instead of following all [commit rules](#writing-commits), you can use [Commitizen] which will ask few questions to generate the commit message automatically.
+
+```shell
+yarn commit
+```
+
+**Tip:** You can add all arguments you can add to `git commit` like `-p` to interactively select the lines to commit:
+
+```shell
+yarn commit -p
+```
+
+[commitizen]: https://github.com/commitizen/cz-cli
 
 ### Pre-commit Hooks
 
