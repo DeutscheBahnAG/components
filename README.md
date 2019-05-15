@@ -154,15 +154,3 @@ If any of the tasks fail (which means your code does not lint or unit tests are 
 ### Modern JavaScript Transpilation
 
 You can use any modern JavaScript in your components that can be automatically transpiled. The Babel configuration is set up to recognize ES2017 and beyond. Be aware that if you use non-transpilable modern JavaScript functions like `Object.entries` or similiar, you need to [manually](https://github.com/babel/babel/tree/master/packages/babel-polyfill) or [automatically](https://polyfill.io/v2/docs/) include a polyfill in your target repository so that browsers can understand your code.
-
-## Deploying the docs on Netlify
-
-Often, it is useful to host the component library documentation online, so that other people can have access to it without checking out the project and running it locally.
-
-For this case, a Netlify config is already set up, so that you only need to connect your git repository to Netlify. The docs will be built automatically on every pushed commit. Your the docs will be available here:
-
-* Storybook: https://your-project-name.netlify.com/
-* SassDoc: https://your-project-name.netlify.com/sassdoc
-
-(replace "your-project-name" with the name of your Netlify project accordingly)
-
