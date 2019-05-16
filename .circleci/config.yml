@@ -63,7 +63,7 @@ jobs:
 
   deploy-dbx-web-production:
     docker:
-      - image: eu.gcr.io/web-products-development/gcloud-build:SDK-209.0.0
+      - image: eu.gcr.io/web-products-development/gcloud-build:SDK-224.0.0
         auth:
           username: _json_key
           password: $GCR_KEY_WEB_PRODUCTS_DEV
@@ -84,7 +84,7 @@ jobs:
             openrc boot # required for the gcloud-build image to init gcloud
 
             echo "[Deploying deploy-dbx-web-production]"
-
+            kubesec decrypt k8s/secrets/production.yaml | kubectl apply -f -
             kubectl set image deployment/dbx-web dbx-web=eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1 -n prod
             kubectl rollout status deployment/dbx-web -n prod
 
