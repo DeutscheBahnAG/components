@@ -40,3 +40,7 @@ yarn-error.log
 
 # OSX Files
 .DS_Store
+
+# Precompiled files
+components/*/*.js
+!components/*/index.js

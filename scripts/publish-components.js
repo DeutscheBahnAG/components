@@ -20,6 +20,19 @@ function publishPackage(packageName, location) {
   });
 }
 
+function transpilePackage(location) {
+  return new Promise((resolve, reject) => {
+    const options = '--config-file ./.babelrc';
+    exec(`npx babel ${location} --out-dir=${location} ${options}`, error => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
 async function processPackage(name, location, prefixText) {
   return new Promise((resolve, reject) => {
     const formattedName = chalk.yellow(`${name}: `);
@@ -27,8 +40,12 @@ async function processPackage(name, location, prefixText) {
       text: `${formattedName}Checking ${location}`,
       prefixText,
     }).start();
-    spinner.text = `${formattedName}Publishing`;
-    publishPackage(location)
+    spinner.text = `${formattedName}Transpiling ${location}`;
+    transpilePackage(location)
+      .then(() => {
+        spinner.text = `${formattedName}Publishing`;
+        return publishPackage(name, location);
+      })
       .then(version => {
         spinner.text = `${formattedName}Published ${chalk.white(version)}`;
         spinner.succeed();
