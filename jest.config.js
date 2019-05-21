@@ -19,4 +19,7 @@ module.exports = {
     // we mock all external styles because our code does not rely on them (we don't use CSS modules or CSS in JS)
     '\\.(css|scss)$': '<rootDir>/.jest/mocks/styleMock.js',
   },
+  transform: {
+    '^.+\\.jsx?$': '<rootDir>/.jest/preprocess.js',
+  },
 };

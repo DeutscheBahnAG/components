@@ -1,5 +1,6 @@
 {
   "name": "@bahn-x/dbx",
+  "private": true,
   "version": "0.1.0",
   "description": "DBX, the Bahn X design system, implemented for the web",
   "main": "dist/components/index.js",
@@ -16,7 +17,7 @@
     "build:storybook": "build-storybook -o build",
     "build:sassdoc": "sassdoc sass/abstracts",
     "prebuild": "rimraf dist/components",
-    "build": "babel components --out-dir dist/components --copy-files --ignore *.stories.js,*.test.js --source-maps",
+    "build": "babel components --out-dir dist/components --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
     "postinstall": "yarn build",
     "commit": "git-cz"
   },
@@ -109,5 +110,8 @@
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
-  }
+  },
+  "workspaces": [
+    "components/*"
+  ]
 }
