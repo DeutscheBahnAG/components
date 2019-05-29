@@ -59,6 +59,7 @@ import { Button } from '@bahn-x/dbx';
 - `yarn coverage`: Run unit tests and show coverage
 - `yarn update-snapshots`: [Update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
 - `yarn commit`: See [writing commits](#writing-commits)
+- `yarn publish-components`: Calculates a new version for each component and publishes it if there are any changes.
 
 ### Writing Commits
 

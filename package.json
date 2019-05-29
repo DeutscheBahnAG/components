@@ -103,6 +103,7 @@
     "react-test-renderer": "^16.8.1",
     "sass-loader": "^7.1.0",
     "sassdoc": "^2.5.1",
+    "simple-git": "^1.113.0",
     "storybook-addon-react-docgen": "^1.2.0",
     "storybook-readme": "^5.0.1",
     "style-loader": "^0.23.1",
