@@ -27,9 +27,10 @@ All components should be placed in the folder `/components` in their own subfold
 A component typically consists of:
 
 - A `package.json` – this is a multi-package repository. Each component is a separate Node package. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces).
+- A `index.js` re-exporting the default export of `component-name.jsx`.
 - A `component-name.jsx` file containing the React component as a default export. Be sure to include [prop types and default props](https://reactjs.org/docs/typechecking-with-proptypes.html) for the component.
-- A `component-name.stories.js` file containing the [stories](https://storybook.js.org/basics/writing-stories/) for this component. A story reflects a variant of the component that is documented on an individual page in Storybook.
-- A `component-name.test.js` file containing all unit tests for the component. (**Note:** It is not necessary to write snapshots tests as they will be created automatically from your stories via the [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core) plugin.)
+- A `component-name.stories.jsx` file containing the [stories](https://storybook.js.org/basics/writing-stories/) for this component. A story reflects a variant of the component that is documented on an individual page in Storybook.
+- A `component-name.test.jsx` file containing all unit tests for the component. (**Note:** It is not necessary to write snapshots tests as they will be created automatically from your stories via the [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core) plugin.)
 - A `README.md` containing the documentation for this component in Markdown format
 - A `component-name.scss` file containg all styles for the components
 - A file containing the snapshots generated from the stories of this component. This will be taken care of automatically and placed in a separate folder so you don't need to care about it.
