@@ -1,14 +1,3 @@
-# required environment variables in CircleCI:
-#
-# for gcloud-build image to work:
-# GCLOUD_CLUSTER_NAME = k8s-cluster name for staging & integration env (could be renamed)
-# GCLOUD_COMPUTE_ZONE = zone of the cluster
-# GCLOUD_PROJECT_ID = project id the cluster is in
-# GOOGLE_AUTH_PROD = base64 encoded serviceacc json that can push to GCR and also deploy to k8s.
-#
-# for using private build images in CircleCI
-# GCR_KEY_WEB_PRODUCTS_DEV = serviceacc json that can pull from GCR (_not_ base64 encoded)
-#
 version: 2
 
 jobs:
@@ -36,12 +25,6 @@ jobs:
           key: yarn-packages-v1-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-
-      - run:
-          name: Set Environment Variables
-          command: |
-            echo 'export GOOGLE_AUTH=$GOOGLE_AUTH_PROD' >> $BASH_ENV
-
       - run:
           name: Lint Code
           command: yarn lint
@@ -70,14 +53,6 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-
-      - run:
-          name: "Set environment variables"
-          command: |
-            echo 'export GCLOUD_CLUSTER_NAME=web-products-prod-cluster' >> $BASH_ENV
-            echo 'export GCLOUD_PROJECT_ID=web-products-production' >> $BASH_ENV
-            echo 'export GOOGLE_AUTH=$GOOGLE_AUTH_PROD' >> $BASH_ENV
-
       - run:
           name: "Deploy to k8s"
           command: |
@@ -94,11 +69,13 @@ workflows:
   dbx-web-build-workflow:
     jobs:
       - build-dbx-web-production:
+          context: gcloud-webproducts-prod
           filters:
             branches:
               only:
                 - master
       - deploy-dbx-web-production:
+          context: gcloud-webproducts-prod
           requires:
             - build-dbx-web-production
 
