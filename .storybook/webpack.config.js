@@ -4,7 +4,20 @@ module.exports = async ({ config, mode }) => {
   config.module.rules.push(...[
     {
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader?sourceMap', 'postcss-loader?sourceMap', 'sass-loader?sourceMap', 'import-glob-loader'],
+      use: [
+        'style-loader',
+        'css-loader?sourceMap',
+        'postcss-loader?sourceMap',
+        {
+          loader: "sass-loader?sourceMap",
+          options: {
+            includePaths: [
+              path.resolve(__dirname, '../node_modules/'),
+            ],
+          },
+        },
+        'import-glob-loader'
+      ],
       include: path.resolve(__dirname, '../')
     },
     {

@@ -2,7 +2,7 @@
 @import 'vendor/**/*.scss';
 
 // Absracts (constants, functions and mixins)
-@import 'abstracts/**/*.scss';
+@import '@bahn-x/dbx-style/abstracts';
 
 // Setup (reset, base etc..)
 @import 'setup/*.scss';

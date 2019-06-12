@@ -42,5 +42,6 @@ yarn-error.log
 .DS_Store
 
 # Precompiled files
+components/*/*.css
 components/*/*.js
 !components/*/index.js

@@ -1,9 +1,9 @@
-@import '../node_modules/sass-to-js/sass/sass-to-js';
+@import 'sass-to-js/sass/sass-to-js';
 
-@import 'abstracts/constants/colors';
-@import 'abstracts/constants/text-styles';
-@import 'abstracts/constants/spacing';
-@import 'abstracts/constants/shadows';
+@import '@bahn-x/dbx-style/constants/colors';
+@import '@bahn-x/dbx-style/constants/text-styles';
+@import '@bahn-x/dbx-style/constants/spacing';
+@import '@bahn-x/dbx-style/constants/shadows';
 
 :export {
   // stylelint-disable property-no-unknown
