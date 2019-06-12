@@ -9,6 +9,7 @@ const simpleGit = require('simple-git/promise')(`${__dirname}/..`);
 const { exec } = require('child_process');
 const semver = require('semver');
 const fs = require('fs');
+const globby = require('globby');
 const semverIncrement = require('./lib/semver-increment');
 
 function removeChalkStyles(string) {
@@ -118,6 +119,26 @@ function transpilePackage(location) {
   });
 }
 
+async function renderSass(location) {
+  const files = await globby([`${location}/*.scss`, `!${location}/_*.scss`]);
+  return Promise.all(
+    files.map(file => {
+      return new Promise((resolve, reject) => {
+        const outputFile = file.replace('.scss', '.css');
+        exec(`npx node-sass ${file} --include-path node_modules > ${outputFile}`, error => {
+          if (error) {
+            reject(error);
+          } else if (fs.statSync(outputFile).size === 0) {
+            fs.unlink(outputFile, resolve);
+          } else {
+            resolve();
+          }
+        });
+      });
+    })
+  );
+}
+
 async function processPackage(name, location, prefixText) {
   const formattedName = chalk.yellow(`${name}: `);
   const spinner = ora({
@@ -137,6 +158,9 @@ async function processPackage(name, location, prefixText) {
 
     spinner.text = `${formattedName}Transpiling ${location}`;
     await transpilePackage(location);
+
+    spinner.text = `${formattedName}Rendering Sass ${location}`;
+    await renderSass(location);
 
     spinner.text = `${formattedName}Publishing... ${versionString}`;
     await publishPackage(name, location);
