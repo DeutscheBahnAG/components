@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 const Button = props => {
-  const { type, className, fullWidth, children, ...otherProps } = props;
+  const { type, variant, className, fullWidth, children, ...otherProps } = props;
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
       {...otherProps}
-      type="button"
+      type={type}
       className={clsx(
         'dbx-button',
-        `dbx-button--${type}`,
+        `dbx-button--${variant}`,
         { 'dbx-button--block': fullWidth },
         className
       )}
@@ -21,8 +22,9 @@ const Button = props => {
 };
 
 Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** the appearance of the button */
-  type: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(['primary', 'secondary']),
   /** additional class names you want to add to the button */
   className: PropTypes.string,
   /** when true, button will take up all available with */
@@ -32,7 +34,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'primary',
+  type: 'button',
+  variant: 'primary',
   className: '',
   fullWidth: false,
   children: null,
