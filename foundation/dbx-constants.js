@@ -1,5 +1,5 @@
 import mapValues from 'lodash.mapvalues';
-import sassConstants from '../../sass/js-export.scss';
+import sassConstants from '../sass/js-export.scss';
 
 const parseObjectFromScss = scss => {
   if (typeof scss !== 'string') {

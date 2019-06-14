@@ -3,7 +3,7 @@ import Colors from './colors';
 import Spacings from './spacings';
 import TextStyles from './text-styles';
 
-storiesOf('Basics', module)
+storiesOf('Foundation', module)
   .addParameters({ options: { showPanel: false } })
   .add('Colors', Colors)
   .add('Text Styles', TextStyles)

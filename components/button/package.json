@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@bahn-x/dbx-style": ">=0.0.0"
+    "@bahn-x/dbx-foundation": ">=0.0.0"
   }
 }

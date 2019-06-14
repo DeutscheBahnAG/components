@@ -7,10 +7,12 @@ import dbxTheme from './theme';
 import '../sass/build.scss';
 
 // load all files in /components that end with .stories.js(x)
-const req = require.context('../components', true, /\.stories\.jsx?$/)
+const foundation = require.context('../foundation', true, /\.stories\.jsx?$/)
+const components = require.context('../components', true, /\.stories\.jsx?$/)
 
 function loadStories() {
-  req.keys().forEach((filename) => req(filename))
+  foundation.keys().forEach((filename) => foundation(filename))
+  components.keys().forEach((filename) => components(filename))
 }
 
 addParameters({

@@ -11,7 +11,7 @@
     "test:coverage": "jest --coverage",
     "update-snapshots": "jest --updateSnapshot",
     "lint": "yarn lint:js && yarn lint:styles",
-    "lint:js": "eslint components .cz-config.js .commitlintrc.js --fix",
+    "lint:js": "eslint foundation components .cz-config.js .commitlintrc.js --fix",
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "build:docs": "yarn build:storybook && yarn build:sassdoc",
     "build:storybook": "build-storybook -o build",
@@ -71,7 +71,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "@bahn-x/dbx-style": ">=0.0.0",
+    "@bahn-x/dbx-foundation": ">=0.0.0",
     "@bahn-x/eslint-config": "git+https://122c1536479eb7b7532b36223b0780ec5ad5d9b9:x-oauth-basic@github.com/Bahn-X/eslint-config.git#416cddea10e528c67dd1035553c3d1ddd452d006",
     "@commitlint/cli": "^8.0.0",
     "@storybook/addon-a11y": "^5.1.3",
@@ -118,6 +118,7 @@
     }
   },
   "workspaces": [
-    "components/*"
+    "components/*",
+    "foundation"
   ]
 }
