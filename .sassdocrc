@@ -1,4 +1,4 @@
-basePath: ./sass/abstracts
+basePath: ./foundation
 dest: build/sassdoc
 display:
   access:

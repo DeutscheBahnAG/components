@@ -15,7 +15,7 @@
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "build:docs": "yarn build:storybook && yarn build:sassdoc",
     "build:storybook": "build-storybook -o build",
-    "build:sassdoc": "sassdoc sass/abstracts",
+    "build:sassdoc": "sassdoc foundation",
     "prebuild": "rimraf dist/components",
     "build": "babel components --out-dir dist/components --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
     "postinstall": "yarn build",
