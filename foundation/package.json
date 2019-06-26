@@ -5,7 +5,7 @@
   "repository": "https://github.com/Bahn-X/dbx-web.git",
   "license": "UNLICENSED",
   "publishConfig": {
-    "registry": "https://npm.wifiatdb.de/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {},
   "devDependencies": {
