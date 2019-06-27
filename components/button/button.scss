@@ -20,14 +20,14 @@
   border: 1px solid $border-color;
   color: $text-color;
   cursor: pointer;
-  transition: background-color 0.2s ease-in, border-color 0.2s ease-in, all none;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in;
 
   &[disabled],
   &[disabled]:hover,
   &[disabled]:focus {
-    color: dbx-color('grey25');
-    background-color: dbx-color('grey75');
-    border-color: dbx-color('grey75');
+    color: dbx-color('grey');
+    background-color: dbx-color('grey25');
+    border-color: dbx-color('grey25');
     cursor: default;
   }
 
@@ -47,9 +47,9 @@
 .dbx-button--primary {
   @include dbx-button(
     $bg-color: dbx-color('dbRed'),
-    $bg-color--hover: dbx-color('dbRed50'),
+    $bg-color--hover: dbx-color('darkRed'),
     $text-color: dbx-color('white'),
-    $text-color--hover: dbx-color('white'),
+    $text-color--hover: dbx-color('white')
   );
 }
 
@@ -58,6 +58,11 @@
     $bg-color: dbx-color('white'),
     $bg-color--hover: dbx-color('darkGrey'),
     $text-color: dbx-color('darkGrey'),
-    $text-color--hover: dbx-color('white')
+    $text-color--hover: dbx-color('white'),
+    $border-color: dbx-color('darkGrey')
   );
+}
+
+.dbx-button--small {
+  height: 46px;
 }
