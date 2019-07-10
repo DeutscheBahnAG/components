@@ -9,6 +9,7 @@ const simpleGit = require('simple-git/promise')(`${__dirname}/..`);
 const { exec } = require('child_process');
 const semver = require('semver');
 const fs = require('fs');
+const os = require('os');
 const globby = require('globby');
 const semverIncrement = require('./lib/semver-increment');
 
@@ -156,17 +157,24 @@ async function processPackage(name, location, prefixText) {
     let versionString = chalk.white(version);
     if (releaseInfo) versionString += ` – ${releaseInfo}`;
 
-    spinner.text = `${formattedName}Transpiling ${location}`;
-    await transpilePackage(location);
+    fs.mkdtempSync(
+      `${os.tmpdir()}/${name.replace(/\//g, '-')}-${version}-`,
+      async (error, tmpLocation) => {
+        if (error) throw error;
 
-    spinner.text = `${formattedName}Rendering Sass ${location}`;
-    await renderSass(location);
+        spinner.text = `${formattedName}Transpiling ${location}`;
+        await transpilePackage(tmpLocation);
 
-    spinner.text = `${formattedName}Publishing... ${versionString}`;
-    await publishPackage(name, location);
+        spinner.text = `${formattedName}Rendering Sass ${location}`;
+        await renderSass(tmpLocation);
 
-    spinner.text = `${formattedName}Published ${versionString}`;
-    spinner.succeed();
+        spinner.text = `${formattedName}Publishing... ${versionString}`;
+        await publishPackage(name, tmpLocation);
+
+        spinner.text = `${formattedName}Published ${versionString}`;
+        spinner.succeed();
+      }
+    );
     return [location, `${name}@${versionString}`];
   } catch (error) {
     spinner.text = `${formattedName}${error.message}`;
