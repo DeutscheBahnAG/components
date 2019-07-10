@@ -151,8 +151,8 @@ When attempting to commit files in this repository, some tasks will automaticall
   - Runs `prettier` and auto-formats your code ([see what it does here](https://github.com/prettier/prettier)).
   - Runs all unit tests concerning the committed files with `jest`.
 
-- **SASS files (.scss):**
-  - Runs `stylelint` and automatically fixes auto-fixable issues ([see related SASS guidelines here](https://sass-guidelin.es/)).
+- **Sass files (.scss):**
+  - Runs `stylelint` and automatically fixes auto-fixable issues ([see related Sass guidelines here](https://sass-guidelin.es/)).
 
 If any of the tasks fail (which means your code does not lint or unit tests are failing), your commit will be aborted.
 
