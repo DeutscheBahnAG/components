@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-select",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DBX Select for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
