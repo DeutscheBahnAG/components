@@ -198,6 +198,11 @@ async function createReleaseCommit(packages) {
   );
 }
 
+async function pushBranchAndTags() {
+  const currentBranch = await simpleGit.revparse(['--abbrev-ref', 'HEAD']);
+  simpleGit.push(currentBranch, { '--tags': null });
+}
+
 function getWorkspaces() {
   return new Promise((resolve, reject) => {
     exec('yarn workspaces info --json', async (error, result) => {
@@ -257,6 +262,14 @@ async function main() {
       try {
         await createReleaseCommit(packages);
         spinner.text = 'Created release commit';
+        spinner.succeed();
+
+        spinner = ora({
+          text: `Pushing release commit and tag${packages.length === 1 ? '' : 's'}\n`,
+          indent,
+        }).start();
+        pushBranchAndTags(packages);
+        spinner.text = `Pushed release commit and tag${packages.length === 1 ? '' : 's'}`;
         spinner.succeed();
 
         const success = chalk.green('Success:');
