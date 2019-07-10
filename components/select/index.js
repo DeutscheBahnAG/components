@@ -1,2 +1,1 @@
-// eslint-disable-next-line import/extensions
-export { default } from './select.jsx';
+export { default } from './select';
