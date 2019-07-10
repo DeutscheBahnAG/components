@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Textfield from './textfield';
 
-describe('Button Component', () => {
+describe('Textfield Component', () => {
   it('should render a text input', () => {
     const wrapper = shallow(<Textfield value="Text" />);
     expect(wrapper.find('input[type="text"]')).toHaveLength(1);
