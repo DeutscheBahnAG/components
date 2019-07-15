@@ -4,7 +4,18 @@ DBX, the Bahn X design system, implemented for the web
 
 ## How to Install
 
-If not already set up, [yarn](https://yarnpkg.com/en/docs/install).
+### Setup Access to private GitHub Repositories as Dependencies
+
+In case you have not set up Bahn X git repo access on your machine already, follow these steps:
+
+- Go to https://github.com/settings/tokens/new
+- Select `repo`, `write:packages`, and `read:packages` (without `repo` some verifications will fail)
+- Copy the token in the green field after submitting the form
+- Run `npm login --registry=https://npm.pkg.github.com --scope=@bahn-x` and enter your GitHub username, the token (not your GitHub password) and your email address
+
+### Install Dependencies
+
+If not already set up, install [yarn](https://yarnpkg.com/en/docs/install).
 
 Then navigate to the folder you cloned this project into and enter:
 
