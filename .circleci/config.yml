@@ -18,6 +18,10 @@ jobs:
             - yarn-packages-v1-
 
       - run:
+          name: Setup Private GitHub Repo Access
+          command: git config --global "url.https://${GITHUB_TOKEN}:@github.com.insteadOf" 'ssh://git@github.com'
+
+      - run:
           name: Install Dependencies
           command: yarn
 
@@ -70,12 +74,12 @@ workflows:
     jobs:
       - build-dbx-web-production:
           context: gcloud-webproducts-prod
-          filters:
-            branches:
-              only:
-                - master
       - deploy-dbx-web-production:
           context: gcloud-webproducts-prod
           requires:
             - build-dbx-web-production
+          filters:
+            branches:
+              only:
+                - master
 
