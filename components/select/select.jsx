@@ -36,8 +36,8 @@ class Select extends React.Component {
           onBlur={this.onBlur}
           onChange={onChange}
         >
-          {options.map(({ label, value }) => (
-            <option key={`option_${value}`} value={value}>
+          {options.map(({ label, value, disabled }) => (
+            <option key={`option_${value}`} value={value} disabled={disabled}>
               {label}
             </option>
           ))}
@@ -61,7 +61,9 @@ Select.propTypes = {
   /** Change event handler */
   onChange: PropTypes.func,
   /** List of options */
-  options: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string, value: PropTypes.any })),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({ label: PropTypes.string, value: PropTypes.any, disabled: PropTypes.bool })
+  ),
 };
 
 Select.defaultProps = {
