@@ -14,4 +14,13 @@ storiesOf('Components / Select', module)
   ))
   .add('Disabled Select', () => (
     <Select disabled options={[{ value: 1, label: 'Cats' }, { value: 2, label: 'Dogs' }]} />
+  ))
+  .add('Select with disabled option', () => (
+    <Select
+      options={[
+        { value: 1, label: 'Cats' },
+        { value: 2, label: 'Dogs' },
+        { value: 3, label: 'Lions', disabled: true },
+      ]}
+    />
   ));
