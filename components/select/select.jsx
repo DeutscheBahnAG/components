@@ -2,26 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
+const noopFn = () => {};
+
 class Select extends React.Component {
   state = {
     focus: false,
   };
 
-  onFocus = () => {
+  onFocus = event => {
+    const { onFocus } = this.props;
     this.setState({ focus: true });
+    onFocus(event);
   };
 
-  onBlur = () => {
+  onBlur = event => {
+    const { onBlur } = this.props;
     this.setState({ focus: false });
+    onBlur(event);
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.field = React.createRef();
   }
 
   render() {
-    const { className, options, onChange, ...otherProps } = this.props;
+    const { className, options, ...otherProps } = this.props;
     const { focus } = this.state;
 
     return (
@@ -29,13 +35,7 @@ class Select extends React.Component {
         disabled={otherProps.disabled}
         className={clsx('dbx-select', focus && 'dbx-select--focus', className)}
       >
-        <select
-          ref={this.field}
-          {...otherProps}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={onChange}
-        >
+        <select ref={this.field} {...otherProps} onFocus={this.onFocus} onBlur={this.onBlur}>
           {options.map(({ label, value, disabled }) => (
             <option key={`option_${value}`} value={value} disabled={disabled}>
               {label}
@@ -58,8 +58,10 @@ Select.propTypes = {
   className: PropTypes.string,
   /** The user input */
   value: PropTypes.string,
-  /** Change event handler */
-  onChange: PropTypes.func,
+  /** Focus event handler */
+  onFocus: PropTypes.func,
+  /** Blur event handler */
+  onBlur: PropTypes.func,
   /** List of options */
   options: PropTypes.arrayOf(
     PropTypes.shape({ label: PropTypes.string, value: PropTypes.any, disabled: PropTypes.bool })
@@ -69,7 +71,8 @@ Select.propTypes = {
 Select.defaultProps = {
   className: '',
   value: '',
-  onChange: null,
+  onFocus: noopFn,
+  onBlur: noopFn,
   options: [],
 };
 
