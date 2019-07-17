@@ -20,15 +20,8 @@ class Select extends React.Component {
     this.field = React.createRef();
   }
 
-  createOptionElements = (options, currentValue) =>
-    options.map(({ label, value }) => (
-      <option value={value} selected={value === currentValue}>
-        {label}
-      </option>
-    ));
-
   render() {
-    const { value, className, options, onChange, ...otherProps } = this.props;
+    const { className, options, onChange, ...otherProps } = this.props;
     const { focus } = this.state;
 
     return (
@@ -43,7 +36,11 @@ class Select extends React.Component {
           onBlur={this.onBlur}
           onChange={onChange}
         >
-          {this.createOptionElements(options, value)}
+          {options.map(({ label, value }) => (
+            <option key={`option_${value}`} value={value}>
+              {label}
+            </option>
+          ))}
         </select>
         <svg viewBox="0 0 16 10">
           <polygon
