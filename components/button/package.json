@@ -9,6 +9,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "@bahn-x/dbx-loadingindicator": "^0.1.1",
     "clsx": "^1.0.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

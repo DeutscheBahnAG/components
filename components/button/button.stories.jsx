@@ -5,6 +5,37 @@ import withReadme from 'storybook-readme/with-readme';
 import Button from './button';
 import buttonReadme from './README.md';
 
+class ToggleButtonLoadingStateExample extends React.Component {
+  state = { isLoading: false };
+
+  toggleLoading = () =>
+    this.setState(({ isLoading }) => ({
+      isLoading: !isLoading,
+    }));
+
+  render() {
+    const { isLoading } = this.state;
+    return (
+      <>
+        <label htmlFor="toggleLoading" style={{ marginRight: '16px' }}>
+          <input
+            style={{ marginRight: '8px' }}
+            id="toggleLoading"
+            type="checkbox"
+            onChange={this.toggleLoading}
+            checked={isLoading}
+          />
+          Button is Loading
+        </label>
+
+        <Button loading={isLoading} onClick={action('clicked')}>
+          I am not loading right now
+        </Button>
+      </>
+    );
+  }
+}
+
 storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
   .add('Primary', () => <Button onClick={action('clicked')}>Primary Button</Button>)
@@ -42,4 +73,12 @@ storiesOf('Components / Button', module)
     <Button disabled onClick={action('clicked')}>
       Disabled Button
     </Button>
-  ));
+  ))
+  .add('Primary Loading', () => <Button loading onClick={action('clicked')} />)
+  .add('Primary Loading small', () => <Button size="small" loading onClick={action('clicked')} />)
+  .add('Primary Loading full width', () => <Button fullWidth loading onClick={action('clicked')} />)
+  .add('Secondary Loading', () => (
+    <Button variant="secondary" loading onClick={action('clicked')} />
+  ))
+  .add('Disabled Loading', () => <Button disabled loading onClick={action('clicked')} />)
+  .add('Toggle Loading', () => <ToggleButtonLoadingStateExample />);

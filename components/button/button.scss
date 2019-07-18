@@ -22,13 +22,21 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in;
 
-  &[disabled],
-  &[disabled]:hover,
-  &[disabled]:focus {
+  &.dbx-button--disabled,
+  &.dbx-button--disabled:hover,
+  &.dbx-button--disabled:focus {
     color: dbx-color('grey');
     background-color: dbx-color('grey25');
     border-color: dbx-color('grey25');
     cursor: default;
+  }
+
+  &.dbx-button--loading,
+  &.dbx-button--loading:hover,
+  &.dbx-button--loading:focus {
+    color: $text-color;
+    background-color: $bg-color;
+    border-color: $border-color;
   }
 
   &:hover,
@@ -65,4 +73,10 @@
 
 .dbx-button--small {
   height: 46px;
+}
+
+.dbx-button--loading .dbx-loadingindicator {
+  display: inline-block;
+  vertical-align: sub;
+  margin: 0 dbx-spacing('24');
 }
