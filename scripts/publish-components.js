@@ -8,9 +8,10 @@ const chalk = require('chalk');
 const simpleGit = require('simple-git/promise')(`${__dirname}/..`);
 const { exec } = require('child_process');
 const semver = require('semver');
-const fs = require('fs');
+const fs = require('fs-extra');
 const os = require('os');
 const globby = require('globby');
+const rimraf = require('rimraf');
 const semverIncrement = require('./lib/semver-increment');
 
 function removeChalkStyles(string) {
@@ -157,24 +158,21 @@ async function processPackage(name, location, prefixText) {
     let versionString = chalk.white(version);
     if (releaseInfo) versionString += ` – ${releaseInfo}`;
 
-    fs.mkdtempSync(
-      `${os.tmpdir()}/${name.replace(/\//g, '-')}-${version}-`,
-      async (error, tmpLocation) => {
-        if (error) throw error;
+    const tmpLocation = fs.mkdtempSync(`${os.tmpdir()}/${name.replace(/\//g, '-')}-${version}-`);
+    await fs.copy(location, tmpLocation);
 
-        spinner.text = `${formattedName}Transpiling ${location}`;
-        await transpilePackage(tmpLocation);
+    spinner.text = `${formattedName}Transpiling ${location}`;
+    await transpilePackage(tmpLocation);
 
-        spinner.text = `${formattedName}Rendering Sass ${location}`;
-        await renderSass(tmpLocation);
+    spinner.text = `${formattedName}Rendering Sass ${location}`;
+    await renderSass(tmpLocation);
 
-        spinner.text = `${formattedName}Publishing... ${versionString}`;
-        await publishPackage(name, tmpLocation);
+    spinner.text = `${formattedName}Publishing... ${versionString}`;
+    await publishPackage(name, tmpLocation);
+    rimraf(tmpLocation, () => {});
 
-        spinner.text = `${formattedName}Published ${versionString}`;
-        spinner.succeed();
-      }
-    );
+    spinner.text = `${formattedName}Published ${versionString}`;
+    spinner.succeed();
     return [location, `${name}@${versionString}`];
   } catch (error) {
     spinner.text = `${formattedName}${error.message}`;
