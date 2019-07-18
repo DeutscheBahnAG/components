@@ -1,0 +1,38 @@
+.dbx-loadingindicator {
+  display: block;
+  height: 20px;
+}
+
+.dbx-loadingindicator--large {
+  height: 40px;
+}
+
+.dbx-loadingindicator rect {
+  fill: currentColor;
+  animation-name: loadingindicator-item-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  animation-delay: -1.25s;
+}
+
+.dbx-loadingindicator rect:nth-child(2) {
+  animation-delay: -1.5s;
+}
+
+.dbx-loadingindicator rect:nth-child(3) {
+  animation-delay: -1.75s;
+}
+
+@keyframes loadingindicator-item-animation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: translateY(8px);
+  }
+}
+
