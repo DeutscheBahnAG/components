@@ -22,6 +22,13 @@ jobs:
           command: git config --global "url.https://${GITHUB_TOKEN}:@github.com.insteadOf" 'ssh://git@github.com'
 
       - run:
+          name: Setup Private NPM Registry Access
+          command: |
+            npm config set //$NPM_REGISTRY/:_authToken $NPM_TOKEN
+            npm config set //$NPM_REGISTRY/:always-auth true
+            npm config set @bahn-x:registry https://$NPM_REGISTRY
+
+      - run:
           name: Install Dependencies
           command: yarn
 
