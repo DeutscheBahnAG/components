@@ -1,37 +1,122 @@
-version: 2
+version: 2.1
+
+commands:
+  build-push-docker:
+    description: "Builds and pushes a docker image"
+    parameters:
+      image:
+        type: string
+      dockerfile:
+        type: string
+        default: "Dockerfile"
+      extra-args:
+        type: string
+        default: ""
+      build-context:
+        type: string
+        default: "."
+    steps:
+      - run:
+          name: Build and Push Docker image
+          command: |
+            docker build << parameters.extra-args >> -t eu.gcr.io/$GCLOUD_PROJECT_ID/<< parameters.image >>:$CIRCLE_SHA1 -f << parameters.dockerfile >> << parameters.build-context >>
+            docker tag eu.gcr.io/$GCLOUD_PROJECT_ID/<< parameters.image >>:$CIRCLE_SHA1 eu.gcr.io/$GCLOUD_PROJECT_ID/<< parameters.image >>:latest-${CIRCLE_BRANCH//[^[:alnum:]]/-}
+            docker login -u _json_key -p "$(echo $GOOGLE_AUTH|base64 -d)" https://eu.gcr.io
+            docker push eu.gcr.io/$GCLOUD_PROJECT_ID/<< parameters.image >>:$CIRCLE_SHA1
+            docker push eu.gcr.io/$GCLOUD_PROJECT_ID/<< parameters.image >>:latest-${CIRCLE_BRANCH//[^[:alnum:]]/-}
+
+  deploy-to-kubernetes:
+    description: "Deployment to Kubernetes"
+    parameters:
+      apply-migrations:
+        type: boolean
+        default: false
+      k8s-yaml-path:
+        type: string
+        default: "k8s/${CIRCLE_PROJECT_REPONAME}.yaml"
+      migration-yaml-path:
+        type: string
+        default: "k8s/db-migrations.yaml"
+      gcloud-container-registry:
+        type: string
+        default: "eu.gcr.io"
+    steps:
+      - run:
+          name: "Deployment to Kubernetes"
+          command: |
+
+            # yq reads the values from the yaml file
+
+            #NAMESPACE=$(yq r << parameters.k8s-yaml-path >> metadata.namespace)
+            # NOTE: as webdev has different namespaces for per environment, despite living in two clusters, we use derive namespace from context var. alternatively we could
+            # harmonize the namespaces but you will have to touch all webdev services then. Or have deployment manifests per env with namespace attribute in them
+            NAMESPACE=$STAGE
+            SERVICE_NAME=$(yq r << parameters.k8s-yaml-path >> metadata.name)
+            IMAGE_NAME=$(yq r << parameters.k8s-yaml-path >> 'spec.template.spec.containers[0].image')
+            CONTAINER_NAME=$(yq r << parameters.k8s-yaml-path >> 'spec.template.spec.containers[0].name')
+
+            openrc boot # required for the gcloud-build image to init gcloud
+
+            # Migration
+            # Only runs if apply-migrations is set to true
+            <<# parameters.apply-migrations >>
+            echo "[Deploying Migrations]"
+
+              # yq reads the values from the migrations.yaml file
+
+              #MIGRATION_NAMESPACE=$(yq r << parameters.migration-yaml-path >> metadata.namespace)
+              # NOTE: as webdev has different namespaces for per environment, despite living in two clusters, we use derive namespace from context var. alternatively we could
+              # harmonize the namespaces but you will have to touch all webdev services then. Or have migration manifests per env with namespace attribute in them
+              MIGRATION_NAMESPACE=$STAGE
+              MIGRATION_NAME=$(yq r << parameters.migration-yaml-path >> metadata.name)
+              MIGRATION_CONTAINER=$(yq r << parameters.migration-yaml-path >> 'spec.template.spec.containers[0].image')
+              MIGRATION_CONTAINER_IMAGE_NAME=$(echo $MIGRATION_CONTAINER | cut -d/ -f3- | cut -d':' -f1)
+              MIGRATION_CONTAINER_NEW=<< parameters.gcloud-container-registry >>/$GCLOUD_PROJECT_ID/$MIGRATION_CONTAINER_IMAGE_NAME:$CIRCLE_SHA1
+
+              # run the migrations
+              kubectl delete jobs/$MIGRATION_NAME -n $MIGRATION_NAMESPACE ||true
+              # yq writes the new container name temporarily into the migrations.yaml
+              yq w << parameters.migration-yaml-path >> 'spec.template.spec.containers[0].image' $MIGRATION_CONTAINER_NEW | kubectl create -f - -n $MIGRATION_NAMESPACE
+
+              MIGRATION_STATUS=$(kubectl wait --for=condition=complete --timeout=30s -n $MIGRATION_NAMESPACE job/$MIGRATION_NAME 1>/dev/null; echo -n $?)
+
+              echo "[Migrations Job Logs]"
+              kubectl logs -l job-name=$MIGRATION_NAME -n $MIGRATION_NAMESPACE
+
+              if [ "$MIGRATION_STATUS" -gt 0 ]; then echo "[Migration Job failed]"; exit 1; fi
+
+            <</ parameters.apply-migrations >>
+
+            echo "[Deploying $SERVICE_NAME]"
+            for f in k8s/secrets/${STAGE}*.yaml;do [ -f "$f" ] || continue; kubesec decrypt $f | kubectl apply -f -; done
+            for f in k8s/configmaps/${STAGE}*.yaml;do [ -f "$f" ] || continue; kubectl apply -f $f; done
+            kubectl set image deployment/$SERVICE_NAME $CONTAINER_NAME=<< parameters.gcloud-container-registry >>/$GCLOUD_PROJECT_ID/$CONTAINER_NAME:$CIRCLE_SHA1 -n $NAMESPACE
+            kubectl rollout status deployment/$SERVICE_NAME -n $NAMESPACE
 
 jobs:
-  build-dbx-web-production:
+  build:
     docker:
       - image: circleci/node:11
-
-    working_directory: ~/repo
-
     steps:
       - setup_remote_docker
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
             - yarn-packages-v1-{{ checksum "yarn.lock" }}
             - yarn-packages-v1-
-
       - run:
           name: Setup Private GitHub Repo Access
           command: git config --global "url.https://${GITHUB_TOKEN}:@github.com.insteadOf" 'ssh://git@github.com'
-
       - run:
           name: Setup Private NPM Registry Access
           command: |
             npm config set //$NPM_REGISTRY/:_authToken $NPM_TOKEN
             npm config set //$NPM_REGISTRY/:always-auth true
             npm config set @bahn-x:registry https://$NPM_REGISTRY
-
       - run:
           name: Install Dependencies
           command: yarn
-
       - save_cache:
           key: yarn-packages-v1-{{ checksum "yarn.lock" }}
           paths:
@@ -39,54 +124,37 @@ jobs:
       - run:
           name: Lint Code
           command: yarn lint
-
       - run:
           name: Run Tests
           command: yarn test
-
       - run:
           name: Build Static Site
           command: yarn build:docs
+      - build-push-docker:
+          image: "dbx-web"
 
-      - run:
-          name: Build Container
-          command: |
-            docker build -t eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1 .
-            docker login -u _json_key -p "$(echo $GOOGLE_AUTH|base64 -d)" https://eu.gcr.io
-            docker push eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1
-
-  deploy-dbx-web-production:
+  deploy:
     docker:
-      - image: eu.gcr.io/web-products-development/gcloud-build:SDK-224.0.0
+      - image: eu.gcr.io/$GCLOUD_PROJECT_ID/gcloud-build:SDK-255.0.0
         auth:
           username: _json_key
-          password: $GCR_KEY_WEB_PRODUCTS_DEV
-    working_directory: ~/repo
+          password: $GCR_KEY
     steps:
       - checkout
-      - run:
-          name: "Deploy to k8s"
-          command: |
-            openrc boot # required for the gcloud-build image to init gcloud
-
-            echo "[Deploying deploy-dbx-web-production]"
-            kubesec decrypt k8s/secrets/production.yaml | kubectl apply -f -
-            kubectl set image deployment/dbx-web dbx-web=eu.gcr.io/web-products-production/dbx-web:$CIRCLE_SHA1 -n prod
-            kubectl rollout status deployment/dbx-web -n prod
+      - deploy-to-kubernetes
 
 workflows:
   version: 2
 
-  dbx-web-build-workflow:
+  dbx-web-production-workflow:
     jobs:
-      - build-dbx-web-production:
+      - build:
           context: gcloud-webproducts-prod
-      - deploy-dbx-web-production:
+      - deploy:
           context: gcloud-webproducts-prod
           requires:
-            - build-dbx-web-production
+            - build
           filters:
             branches:
               only:
                 - master
-
