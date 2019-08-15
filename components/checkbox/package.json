@@ -1,0 +1,21 @@
+{
+  "name": "@bahn-x/dbx-checkbox",
+  "version": "0.0.0",
+  "description": "DBX Checkbox for React",
+  "main": "index.js",
+  "repository": "https://github.com/Bahn-X/dbx-web.git",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "clsx": "^1.0.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@bahn-x/dbx-foundation": ">=0.0.0"
+  }
+}

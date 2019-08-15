@@ -1,0 +1,64 @@
+@import '@bahn-x/dbx-foundation/abstracts';
+
+/**
+ * 1. Setting the size avoids loosing the focus while clicking (which lets the focus ring flicker).
+ * 2. Safari bugfix: Avoid subpixel shifts between the border and the SVG in case the container
+ *    element is centered in a parent with uneven width. As a result the tick/dash wasn’t centered
+ *    within the square anymore. `1` must be use as `0` would crop the focus ring.
+ * 3. Explicit selectors to avoid possible problems with additional SVG icons within the
+ *    `children` as well as an `<a>` which could also receive the focus.
+ */
+
+.dbx-checkbox {
+  align-items: center;
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  input {
+    height: 24px; /* 1 */
+    opacity: 0;
+    position: absolute;
+    width: 24px; /* 1 */
+  }
+
+  > svg { /* 3 */
+    @include dbx-focusable;
+    background: dbx-color('white');
+    border: 2px solid;
+    border-radius: 2.2px;
+    box-sizing: content-box;
+    transform: translateZ(1); /* 2 */
+    width: 16px;
+  }
+
+  input:focus + svg { /* 3 */
+    @include dbx-focus-ring;
+  }
+
+  &:active > input:not(:disabled) + svg { /* 3 */
+    background: dbx-color('grey25');
+  }
+
+  :disabled ~ * {
+    color: dbx-color('grey50');
+  }
+}
+
+.dbx-checkbox-checked,
+.dbx-checkbox-indeterminate {
+  fill: transparent;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.1s cubic-bezier(0.3, 0, 0.8, 1.8);
+}
+
+:checked:not(:indeterminate) + svg .dbx-checkbox-checked,
+:indeterminate + svg .dbx-checkbox-indeterminate {
+  fill: currentColor;
+  transform: scale(1);
+}
+
+.dbx-checkbox-label {
+  margin-left: 0.4em;
+}
