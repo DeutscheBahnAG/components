@@ -1,0 +1,22 @@
+/// Prepares an element to receive a focus ring (the selector must not contain `:focus`)
+/// @param {List} $transition - Additional transitions
+@mixin dbx-focusable($transition: []) {
+  box-shadow: rgba(dbx-color('darkGrey'), 0) 0 0 0 6px;
+  outline: 0;
+  @if length($transition) > 0 {
+    transition: $transition, $focus-ring-transition;
+  }
+  @else {
+    transition: $focus-ring-transition;
+  }
+}
+
+/**
+ * 1. For IE high-contrast mode which ignores `box-shadow` but will make `outline` visible
+ */
+
+/// Shows a focus ring on an element (the selector should contain `:focus`)
+@mixin dbx-focus-ring {
+  box-shadow: rgba(dbx-color('darkGrey'), 0.3) 0 0 0 2px;
+  outline: 2px transparent; /* 1 */
+}

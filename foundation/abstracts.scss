@@ -3,6 +3,7 @@
 @import 'constants/breakpoints';
 @import 'constants/shadows';
 @import 'constants/text-styles';
+@import 'constants/focus-ring';
 
 @import 'functions/calculate-rem';
 @import 'functions/color';
@@ -17,3 +18,4 @@
 @import 'mixins/spread';
 @import 'mixins/text-style';
 @import 'mixins/visually-hidden';
+@import 'mixins/focus-ring';
