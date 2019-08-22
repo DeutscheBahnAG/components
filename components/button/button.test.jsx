@@ -32,4 +32,14 @@ describe('Button Component', () => {
     const wrapper = shallow(<Button className="my-class">Text</Button>);
     expect(wrapper.find('button.my-class.dbx-button--primary')).toHaveLength(1);
   });
+
+  it('should render a button when `href` is not set', () => {
+    const wrapper = shallow(<Button>Text</Button>);
+    expect(wrapper.find('button.dbx-button[type="button"]')).toHaveLength(1);
+  });
+
+  it('should render an anchor when `href` is set', () => {
+    const wrapper = shallow(<Button href="#">Text</Button>);
+    expect(wrapper.find('a.dbx-button[href="#"]')).toHaveLength(1);
+  });
 });

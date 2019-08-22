@@ -27,6 +27,8 @@ class Button extends React.PureComponent {
     style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
     /** content rendered inside the button, can be text or any element */
     children: PropTypes.node,
+    /** turns the Button into a regular link (anchor) */
+    href: PropTypes.string,
   };
 
   static defaultProps = {
@@ -40,6 +42,7 @@ class Button extends React.PureComponent {
     loadingLabel: 'Wird geladen …',
     style: {},
     children: null,
+    href: null,
   };
 
   state = { minWidth: null };
@@ -86,16 +89,19 @@ class Button extends React.PureComponent {
       children,
       loadingLabel,
       style,
+      href,
       ...otherProps
     } = this.props;
     const { minWidth } = this.state;
+    const Element = href ? 'a' : 'button';
     return (
       // eslint-disable-next-line react/button-has-type
-      <button
+      <Element
         {...otherProps}
         style={{ ...style, minWidth }}
         ref={this.buttonRef}
-        type={type}
+        type={href ? null : type}
+        href={href}
         disabled={disabled || loading}
         aria-label={loading ? loadingLabel : null}
         className={clsx(
@@ -109,7 +115,7 @@ class Button extends React.PureComponent {
         )}
       >
         {loading ? <Loadingindicator /> : children}
-      </button>
+      </Element>
     );
   }
 }

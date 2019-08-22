@@ -10,12 +10,13 @@
 ) {
   @include dbx-button-reset;
   @include dbx-text-style('copy');
-  display: inline-block;
+  align-items: center;
+  display: inline-flex;
   height: 60px;
   border-radius: 8px;
   background-color: $bg-color;
+  justify-content: center;
   text-decoration: none;
-  text-align: center;
   padding: 0 dbx-spacing('24');
   border: 1px solid $border-color;
   color: $text-color;

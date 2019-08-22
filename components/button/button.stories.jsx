@@ -81,4 +81,24 @@ storiesOf('Components / Button', module)
     <Button variant="secondary" loading onClick={action('clicked')} />
   ))
   .add('Disabled Loading', () => <Button disabled loading onClick={action('clicked')} />)
-  .add('Toggle Loading', () => <ToggleButtonLoadingStateExample />);
+  .add('Toggle Loading', () => <ToggleButtonLoadingStateExample />)
+  .add('Primary Link', () => (
+    <Button href="#" onClick={action('clicked')}>
+      Link
+    </Button>
+  ))
+  .add('Secondary Link', () => (
+    <Button href="#" variant="secondary" onClick={action('clicked')}>
+      Link
+    </Button>
+  ))
+  .add('Primary Link small', () => (
+    <Button href="#" size="small" onClick={action('clicked')}>
+      Link
+    </Button>
+  ))
+  .add('Secondary Link small', () => (
+    <Button href="#" size="small" variant="secondary" onClick={action('clicked')}>
+      Link
+    </Button>
+  ));
