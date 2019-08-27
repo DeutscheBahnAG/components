@@ -2,6 +2,8 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { withPropsTable } from 'storybook-addon-react-docgen';
 import PageWrapper from './decorators/page-wrapper.jsx';
+import withStaticHtml from '@bahn-x/storybook-addon-static-html';
+
 import dbxTheme from './theme';
 
 import '../sass/build.scss';
@@ -36,6 +38,8 @@ addParameters({
     }
   }
 });
+
+addDecorator(withStaticHtml);
 
 addDecorator(PageWrapper);
 
