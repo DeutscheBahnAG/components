@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Inky, { Container } from 'react-inky';
 
+import './foundation.css';
 import './email.css';
+import Wrapper from 'react-inky/lib/components/Wrapper';
 
 const Email = ({ preview, children }) => {
   return (
@@ -11,7 +13,9 @@ const Email = ({ preview, children }) => {
         <link rel="stylesheet" href="style.css" />
       </Inky.Head>
       <Inky.Body preview={preview}>
-        <Container>{children}</Container>
+        <Container>
+          <Wrapper className="dbx-email">{children}</Wrapper>
+        </Container>
       </Inky.Body>
     </Inky>
   );

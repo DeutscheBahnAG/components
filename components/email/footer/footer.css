@@ -2,19 +2,20 @@
 
 table.wrapper.dbx-email-footer {
   width: 100%;
+  border-top: 1px solid #c8cdd2;
+  padding: 36px 52px;
+}
+
+table.wrapper.dbx-email-footer p {
   color: #646973;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12px;
-  line-height: 18px;
-  border-top: 1px solid #c8cdd2;
+  line-height: 18px
 }
 
 table.wrapper.dbx-email-footer td.wrapper-inner {
   padding-top: 36px;
   padding-bottom: 36px;
-}
-
-table.wrapper.dbx-email-footer p.dbx-email-footer-imprint {
-  margin-bottom: 24px;
-  Margin-bottom: 24px;
+  padding-left: 52px;
+  padding-right: 52px;
 }
