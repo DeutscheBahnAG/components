@@ -1,0 +1,45 @@
+/* stylelint-disable */
+
+table.dbx-email-button {
+  width: auto;
+}
+
+table.dbx-email-button table td {
+  text-align: left;
+  color: #ffffff;
+  background: #f01414;
+  border-radius: 8px;
+  border: none;
+}
+
+table.dbx-email-button table td a {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 24px 16px 24px;
+  border: none;
+  border-radius: 8px;
+}
+
+table.dbx-email-button:hover table tr td a,
+table.dbx-email-button:active table tr td a,
+table.dbx-email-button table tr td a:visited {
+  color: #ffffff;
+}
+
+table.dbx-email-button:hover table td,
+table.dbx-email-button:visited table td,
+table.dbx-email-button:active table td {
+  background: #da0001;
+  color: #ffffff;
+}
+
+table.dbx-email-button:hover table a,
+table.dbx-email-button:visited table a,
+table.dbx-email-button:active table a {
+  border: none;
+}
