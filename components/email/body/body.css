@@ -1,0 +1,19 @@
+/* stylelint-disable */
+
+table.wrapper.dbx-email-body > tr > td.wrapper-inner center {
+  padding: 16px 52px 52px;
+}
+
+.dbx-email-body p {
+  line-height: 28px;
+}
+
+.dbx-email-body a {
+  color: #f01414;
+  font-weight: bold;
+}
+
+.dbx-email-body a:hover {
+  color: #da0001;
+}
+

@@ -10,10 +10,12 @@ table.dbx-email-pin-code th.callout-inner {
   background-color: #f0f2f5;
   border: 1px solid #f0f2f5;
   border-radius: 8px;
-  font-size: 80px;
-  line-height: 94px;
+  font-size: 48px;
+  line-height: 56px;
   font-weight: bold;
   letter-spacing: 4px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   padding-left: 24px;
   padding-right: 24px;
   font-family: 'Open Sans', Arial, sans-serif;
