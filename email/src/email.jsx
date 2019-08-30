@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Inky, { Container } from 'react-inky';
-
-import Wrapper from 'react-inky/lib/components/Wrapper';
+import Inky, { Container, Wrapper } from 'react-inky';
 
 const styles = require('./email.scss').toString();
 
