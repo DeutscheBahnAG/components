@@ -1,4 +1,4 @@
-import Inky from 'inky';
+import Inky from 'react-inky';
 import ReactDomServer from 'react-dom/server';
 import htmlToText from 'html-to-text';
 
