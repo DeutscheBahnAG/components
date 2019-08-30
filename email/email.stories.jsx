@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Email from './email';
-import EmailHeader from '../header/header';
-import EmailFooter from '../footer/footer';
-import EmailPinCode from '../pin-code/pin-code';
-import EmailButton from '../button/button';
-import EmailBody from '../body/body';
+import EmailHeader from './header/header';
+import EmailFooter from './footer/footer';
+import EmailPinCode from './pin-code/pin-code';
+import EmailButton from './button/button';
+import EmailBody from './body/body';
 
 const template = (
   <Email preview="Email Template Preview">

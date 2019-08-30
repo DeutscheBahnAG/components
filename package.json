@@ -121,6 +121,7 @@
   },
   "workspaces": [
     "components/*",
-    "foundation"
+    "foundation",
+    "email"
   ]
 }
