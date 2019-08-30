@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import EmailPinCode from './pin-code';
+import EmailPincode from './pincode';
+import withEmail from '../withEmail';
 // import withReadme from 'storybook-readme/with-readme';
 // import buttonReadme from './README.md';
 
-storiesOf('Email / EmailPinCode', module)
+storiesOf('Email / EmailPincode', module)
+  .addDecorator(withEmail)
   // .addDecorator(withReadme(buttonReadme))
-  .add('default', () => <EmailPinCode>1234</EmailPinCode>);
+  .add('default', () => <EmailPincode>1234</EmailPincode>);
