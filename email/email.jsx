@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Inky, { Container } from 'react-inky';
 
-import './foundation.css';
-import './email.css';
 import Wrapper from 'react-inky/lib/components/Wrapper';
+
+const styles = require('./email.scss').toString();
 
 const Email = ({ preview, children }) => {
   return (
     <Inky>
       <Inky.Head>
-        <link rel="stylesheet" href="style.css" />
+        <style type="text/css">{styles}</style>
       </Inky.Head>
       <Inky.Body preview={preview}>
         <Container>

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper, Center } from 'react-inky';
 
-import './body.css';
-
 const EmailBody = ({ children }) => {
   return (
     <Wrapper className="dbx-email-body">

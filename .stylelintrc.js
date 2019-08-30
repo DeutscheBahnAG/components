@@ -8,7 +8,10 @@ module.exports = {
     "./dist/**/*",
     "./sass/vendor/**/*",
     "./sass/styleguide/**/*",
-    "./sass/setup/_reset.scss"
+    "./sass/setup/_reset.scss",
+    // email css forces us to do cruel things
+    // where the linter would complain basically everywhere
+    "./email/**/*",
   ],
   rules: {
     // we don't enforce css properties to be sorted alphabetically
