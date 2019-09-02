@@ -7,6 +7,9 @@ const render = emailElement => {
   const text = htmlToText.fromString(html, {
     ignoreImage: true,
     preserveNewlines: true,
+    uppercaseHeadings: false,
+    hideLinkHrefIfSameAsText: true,
+    baseElement: ['table.body'],
   });
   return { html, text };
 };
