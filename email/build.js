@@ -55,8 +55,8 @@ const replaceInFile = (file, before, after) =>
 
 const build = async () => {
   await transpileJs();
-  const css = await compileScss('./src/email.scss');
-  await replaceInFile('./dist/email.js', "require('./email.scss').toString()", `\`${css}\``);
+  const css = await compileScss('./src/email/email.scss');
+  await replaceInFile('./dist/email/email.js', "require('./email.scss').toString()", `\`${css}\``);
 };
 
 build();

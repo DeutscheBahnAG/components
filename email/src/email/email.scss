@@ -3,13 +3,14 @@
 
 // set defaults for foundation-emails
 @import 'constants';
+
 // include foundation-emails
 @import 'foundation-emails/scss/foundation-emails';
 
 // include custom component styles
-@import 'body/body';
-@import 'button/button';
-@import 'footer/footer';
-@import 'header/header';
-@import 'pincode/pincode';
+@import '../body/body';
+@import '../button/button';
+@import '../footer/footer';
+@import '../header/header';
+@import '../pincode/pincode';
 
