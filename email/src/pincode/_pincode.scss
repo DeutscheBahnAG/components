@@ -1,20 +1,18 @@
 table.dbx-email-pincode {
   display: inline-block;
-  margin-bottom: 16px;
-  Margin-bottom: 16px; }
+  border: none;
+ }
 
 table.dbx-email-pincode th.callout-inner {
-  color: #3c414b;
-  background-color: #f0f2f5;
-  border: 1px solid #f0f2f5;
-  border-radius: 8px;
+  color: $black;
+  background-color: $light-gray;
+  border: none;
+  border-radius: $global-radius;
   font-size: 48px;
   line-height: 56px;
   font-weight: bold;
-  letter-spacing: 4px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
-  font-family: 'Open Sans', Arial, sans-serif;
+  padding-top: dbx-spacing('16');
+  padding-bottom: dbx-spacing('16');
+  padding-left: dbx-spacing('24');
+  padding-right: dbx-spacing('24');
 }
