@@ -1,0 +1,152 @@
+//  Foundation for Emails Settings
+//  ------------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Grid
+//   3. Block Grid
+//   4. Typography
+//   5. Button
+//   6. Callout
+//   7. Menu
+//   8. Thumbnail
+
+$text-style-copy: map-get($dbx-text-styles, 'copy');
+$text-style-title: map-get($dbx-text-styles, 'titleM');
+$text-style-subtitle: map-get($dbx-text-styles, 'copyBigBold');
+$text-style-small: map-get($dbx-text-styles, 'copyS');
+
+
+// 1. Global
+// ---------
+
+$primary-color: dbx-color('dbRed');
+$secondary-color: dbx-color('darkGrey');
+$success-color: dbx-color('alertGreen');
+$warning-color: dbx-color('alertOrange');
+$alert-color: dbx-color('alertRed');
+$light-gray: dbx-color('grey25');
+$medium-gray: dbx-color('grey50');
+$dark-gray: dbx-color('grey');
+$black: dbx-color('darkGrey');
+$white: dbx-color('white');
+$pre-color: #ff6908;
+$global-width: 660px;
+$global-width-small: 95%;
+$global-gutter: dbx-spacing('16');
+$body-background: $light-gray;
+$container-background: $white;
+$global-padding: dbx-spacing('16');
+$global-margin: dbx-spacing('16');
+$global-radius: 8px;
+$global-rounded: 500px;
+$global-breakpoint: $global-width + $global-gutter;
+
+// 2. Grid
+// -------
+
+$grid-column-count: 12;
+$column-padding-bottom: $global-padding;
+$container-radius: 0;
+
+// 3. Block Grid
+// -------------
+
+$block-grid-max: 8;
+$block-grid-gutter: $global-gutter;
+
+// 4. Typography
+// -------------
+
+$global-font-color: $black;
+$body-font-family: map-get($text-style-copy, 'fontFamily');
+$global-font-weight: normal;
+$header-color: inherit;
+$global-line-height: map-get($text-style-copy, 'lineHeight');
+$global-font-size: map-get($text-style-copy, 'fontSize');
+$body-line-height: $global-line-height;
+$header-font-family: $body-font-family;
+$header-font-weight: map-get($text-style-title, 'fontWeight');
+$h1-font-size: map-get($text-style-title, 'fontSize');
+$h2-font-size: map-get($text-style-subtitle, 'fontSize');
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+$header-margin-bottom: dbx-spacing('24');
+$paragraph-margin-bottom: dbx-spacing('16');
+$small-font-size: map-get($text-style-small, 'fontSize');
+$small-font-color: $dark-gray;
+$lead-font-size: $global-font-size * 1.25;
+$lead-line-height: 1.6;
+$text-padding: 10px;
+$subheader-lineheight: 1.4;
+$subheader-color: $black;
+$subheader-font-weight: map-get($text-style-subtitle, 'fontWeight');
+$subheader-margin-top: 4px;
+$subheader-margin-bottom: 8px;
+$hr-width: 80%;
+$hr-border: 1px solid $light-gray;
+$hr-margin: dbx-spacing('52') auto;
+$anchor-text-decoration: none;
+$anchor-color: $primary-color;
+$anchor-color-visited: $anchor-color;
+$anchor-color-hover: dbx-color('darkRed');
+$anchor-color-active: dbx-color('dbRed75');
+$stat-font-size: 40px;
+
+// 5. Button
+// ---------
+
+$button-padding: (
+  tiny: 4px 8px 4px 8px,
+  small: dbx-spacing('8') dbx-spacing('24') dbx-spacing('8') dbx-spacing('24'),
+  default: dbx-spacing('16') dbx-spacing('24') dbx-spacing('16') dbx-spacing('24'),
+  large: 10px 20px 10px 20px,
+);
+$button-font-size: (
+  tiny: 10px,
+  small: $global-font-size,
+  default: $global-font-size,
+  large: 20px,
+);
+$button-color: $white;
+$button-color-alt: $medium-gray;
+$button-font-weight: bold;
+$button-margin: 0 0 $global-margin 0;
+$button-background: $primary-color;
+$button-border: 2px solid $button-background;
+$button-radius: $global-radius;
+$button-rounded: $global-rounded;
+
+// 6. Callout
+// ----------
+
+$callout-background: $white;
+$callout-background-fade: 85%;
+$callout-padding: 10px;
+$callout-margin-bottom: $global-margin;
+$callout-border: 1px solid darken($callout-background, 20%);
+$callout-border-secondary: 1px solid darken($secondary-color, 20%);
+$callout-border-success: 1px solid darken($success-color, 20%);
+$callout-border-warning: 1px solid darken($warning-color, 20%);
+$callout-border-alert: 1px solid darken($alert-color, 20%);
+
+// 7. Menu
+// -------
+
+$menu-item-padding: 10px;
+$menu-item-gutter: 10px;
+$menu-item-color: $primary-color;
+
+// 8. Thumbnail
+// ------------
+
+$thumbnail-border: solid 4px $white;
+$thumbnail-margin-bottom: $global-margin;
+$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
+$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
+$thumbnail-transition: box-shadow 200ms ease-out;
+$thumbnail-radius: $global-radius;
+

@@ -4,7 +4,7 @@ import { Button as InkyButton } from 'react-inky';
 
 const EmailButton = ({ children, href, target }) => {
   return (
-    <InkyButton className="dbx-email-button" href={href} target={target}>
+    <InkyButton className="dbx-email-button radius" href={href} target={target}>
       {children}
     </InkyButton>
   );

@@ -1,19 +1,28 @@
 table.wrapper.dbx-email-footer {
   width: 100%;
-  border-top: 1px solid #c8cdd2;
-  padding: 36px 52px;
-}
 
-table.wrapper.dbx-email-footer p {
-  color: #646973;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 12px;
-  line-height: 18px
-}
+  table.dbx-email-separator {
+    margin-bottom: dbx-spacing('52');
+    Margin-bottom: dbx-spacing('52');
+  }
 
-table.wrapper.dbx-email-footer td.wrapper-inner {
-  padding-top: 36px;
-  padding-bottom: 36px;
-  padding-left: 52px;
-  padding-right: 52px;
+  p {
+    color: $small-font-color;
+    font-size: $small-font-size;
+    font-family: map-get($text-style-small, 'fontFamily');
+    line-height: map-get($text-style-small, 'lineHeight');
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+    Margin-bottom: 0;
+  }
+
+  td.wrapper-inner {
+    padding-top: 0;
+    padding-bottom: dbx-spacing('52');
+    padding-left: dbx-spacing('52');
+    padding-right: dbx-spacing('52');
+  }
+
 }
