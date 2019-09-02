@@ -1,3 +1,8 @@
+/**
+  * there is no foundation constant to adjust button colors
+  * for :hover, :active and :visited states, so we need to
+  * overwrite the manually
+  */
 @mixin email-button-color($color) {
   table {
     td {

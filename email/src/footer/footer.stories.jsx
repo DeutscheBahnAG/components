@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import withReadme from 'storybook-readme/with-readme';
 import EmailFooter from './footer';
 import withEmail from '../withEmail';
+import readme from './README.md';
 
 storiesOf('Email / EmailFooter', module)
-  // .addDecorator(withReadme(buttonReadme))
+  .addDecorator(withReadme(readme))
   .addDecorator(withEmail)
   .add('default', () => <EmailFooter />)
   .add('with custom imprint', () => <EmailFooter imprint="custom imprint" />)
