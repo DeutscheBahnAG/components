@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-email-kit",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "DBX components to build email templates",
   "main": "dist/index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
