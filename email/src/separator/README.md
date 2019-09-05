@@ -11,7 +11,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { EmailSeparator } from '@bahn-x/dbx-email-kit'
+import { EmailSeparator } from '@bahn-x/dbx-email-kit';
 ```
 ```jsx
 <EmailSeparator />

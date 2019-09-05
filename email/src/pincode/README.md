@@ -11,7 +11,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { EmailPincode } from '@bahn-x/dbx-email-kit'
+import { EmailPincode } from '@bahn-x/dbx-email-kit';
 ```
 ```jsx
 <EmailPincode>123456</EmailPincode>

@@ -1,3 +1,10 @@
-table.wrapper.dbx-email-body > tr > td.wrapper-inner center {
-  padding: dbx-spacing('36') dbx-spacing('52') dbx-spacing('52');
+table.wrapper.dbx-email-body td.dbx-email-body-inner {
+  padding-top: dbx-spacing('36');
+  padding-bottom: dbx-spacing('52');
+  padding-left: dbx-spacing('52');
+  padding-right: dbx-spacing('52');
+}
+
+table.wrapper.dbx-email-body a {
+  font-weight: bold;
 }

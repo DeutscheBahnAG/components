@@ -8,4 +8,5 @@ import readme from './README.md';
 storiesOf('Email / EmailPincode', module)
   .addDecorator(withEmail)
   .addDecorator(withReadme(readme))
-  .add('default', () => <EmailPincode>1234</EmailPincode>);
+  .add('default', () => <EmailPincode>1234</EmailPincode>)
+  .add('centered', () => <EmailPincode centered>1234</EmailPincode>);

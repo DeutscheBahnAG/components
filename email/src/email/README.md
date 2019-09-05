@@ -14,7 +14,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { Email, EmailHeader, EmailBody, EmailFooter } from '@bahn-x/dbx-email-kit'
+import { Email, EmailHeader, EmailBody, EmailFooter } from '@bahn-x/dbx-email-kit';
 ```
 ```jsx
 <Email preview="Your preview text here.">
