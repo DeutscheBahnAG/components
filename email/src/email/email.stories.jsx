@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import Email from './email';
-import EmailHeader from '../header/header';
-import EmailFooter from '../footer/footer';
-import EmailPinCode from '../pincode/pincode';
-import EmailButton from '../button/button';
-import EmailBody from '../body/body';
+import EmailHeader from '../email-header/email-header';
+import EmailFooter from '../email-footer/email-footer';
+import EmailPinCode from '../email-pincode/email-pincode';
+import EmailButton from '../email-button/email-button';
+import EmailBody from '../email-body/email-body';
 import readme from './README.md';
 
 const template = (
