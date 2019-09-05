@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
-import EmailFooter from './footer';
+import EmailFooter from './email-footer';
 import withEmail from '../withEmail';
 import readme from './README.md';
 
