@@ -11,7 +11,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { EmailHeader } from '@bahn-x/dbx-email-kit'
+import { EmailHeader } from '@bahn-x/dbx-email-kit';
 ```
 ```jsx
 <EmailHeader />

@@ -11,7 +11,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { EmailButton } from '@bahn-x/dbx-email-kit'
+import { EmailButton } from '@bahn-x/dbx-email-kit';
 ```
 ```jsx
 <EmailButton href="https://dbx.bahn-x.de">Go to DBX</EmailButton>

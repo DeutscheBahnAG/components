@@ -11,7 +11,7 @@ yarn add @bahn-x/dbx-email-kit
 ## How to Use
 
 ```js
-import { EmailFooter } from '@bahn-x/dbx-email-kit'
+import { EmailFooter } from '@bahn-x/dbx-email-kit';
 ```
 
 **Default**

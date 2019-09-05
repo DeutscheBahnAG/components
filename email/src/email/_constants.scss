@@ -13,8 +13,8 @@
 //   8. Thumbnail
 
 $text-style-copy: map-get($dbx-text-styles, 'copy');
-$text-style-title: map-get($dbx-text-styles, 'titleM');
-$text-style-subtitle: map-get($dbx-text-styles, 'copyBigBold');
+$text-style-title: map-get($dbx-text-styles, 'titleL');
+$text-style-subtitle: map-get($dbx-text-styles, 'titleM');
 $text-style-small: map-get($dbx-text-styles, 'copyS');
 
 
@@ -60,7 +60,7 @@ $block-grid-gutter: $global-gutter;
 // -------------
 
 $global-font-color: $black;
-$body-font-family: map-get($text-style-copy, 'fontFamily');
+$body-font-family: Calibri, Helvetica, Arial, sans-serif;
 $global-font-weight: normal;
 $header-color: inherit;
 $global-line-height: map-get($text-style-copy, 'lineHeight');
@@ -74,7 +74,7 @@ $h3-font-size: 28px;
 $h4-font-size: 24px;
 $h5-font-size: 20px;
 $h6-font-size: 18px;
-$header-margin-bottom: dbx-spacing('24');
+$header-margin-bottom: dbx-spacing('16');
 $paragraph-margin-bottom: dbx-spacing('16');
 $small-font-size: map-get($text-style-small, 'fontSize');
 $small-font-color: $dark-gray;

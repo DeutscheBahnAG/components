@@ -1,24 +1,28 @@
+/**
+ * 1. for some reason, Outlook requires the margin property
+ *    to start with a capital 'M'
+ */
 table.wrapper.dbx-email-footer {
   width: 100%;
 
   table.dbx-email-separator {
     margin-bottom: dbx-spacing('52');
-    Margin-bottom: dbx-spacing('52');
+    Margin-bottom: dbx-spacing('52'); /* 1 */
   }
 
   p {
     color: $small-font-color;
     font-size: $small-font-size;
-    font-family: map-get($text-style-small, 'fontFamily');
+    font-family: $body-font-family;
     line-height: map-get($text-style-small, 'lineHeight');
   }
 
   p:last-of-type {
     margin-bottom: 0;
-    Margin-bottom: 0;
+    Margin-bottom: 0; /* 1 */
   }
 
-  td.wrapper-inner {
+  td.dbx-email-footer-inner {
     padding-top: 0;
     padding-bottom: dbx-spacing('52');
     padding-left: dbx-spacing('52');
