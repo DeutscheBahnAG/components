@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import withEmail from '../withEmail';
 import readme from './README.md';
-import EmailBody from './body';
+import EmailBody from './email-body';
 
 storiesOf('Email / EmailBody', module)
   .addDecorator(withReadme(readme))

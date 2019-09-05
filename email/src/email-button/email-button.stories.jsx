@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
-import EmailButton from './button';
+import EmailButton from './email-button';
 import withEmail from '../withEmail';
 import readme from './README.md';
 

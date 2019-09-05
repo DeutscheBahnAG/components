@@ -8,8 +8,8 @@
 @import 'foundation-emails/scss/foundation-emails';
 
 // include custom component styles
-@import '../body/body';
-@import '../button/button';
-@import '../footer/footer';
-@import '../header/header';
-@import '../pincode/pincode';
+@import '../email-body/email-body';
+@import '../email-button/email-button';
+@import '../email-footer/email-footer';
+@import '../email-header/email-header';
+@import '../email-pincode/email-pincode';
