@@ -5,12 +5,17 @@ import htmlToText from 'html-to-text';
 
 const render = emailElement => {
   const html = Inky.doctype + ReactDomServer.renderToStaticMarkup(emailElement);
-  const htmlWithInlineStyles = juice(html, { preserveImportant: true });
+  const htmlWithInlineStyles = juice(html, {
+    // keep !important flags
+    preserveImportant: true,
+  });
   const text = htmlToText.fromString(html, {
     ignoreImage: true,
     preserveNewlines: true,
     uppercaseHeadings: false,
     hideLinkHrefIfSameAsText: true,
+    // ignore the preheader / email preview text
+    // that comes before the actual content
     baseElement: ['table.body'],
   });
   return { html: htmlWithInlineStyles, text };
