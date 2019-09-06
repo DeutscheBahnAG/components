@@ -6,7 +6,10 @@ const EmailPincode = ({ children, centered }) => {
   const Container = centered ? 'center' : React.Fragment;
   return (
     <Container>
-      <table className={clsx('callout', 'dbx-email-pincode')}>
+      <table
+        className={clsx('dbx-email-pincode', 'callout', { 'float-center': centered })}
+        align={centered ? 'center' : null}
+      >
         <tr>
           <th className={clsx('callout-inner', 'dbx-email-pincode-inner')}>{children}</th>
         </tr>

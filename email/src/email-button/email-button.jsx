@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as InkyButton } from 'react-inky';
+import clsx from 'clsx';
 
 const EmailButton = ({ children, href, target, centered }) => {
   const Container = centered ? 'center' : React.Fragment;
+
   return (
     <Container>
-      <InkyButton className="dbx-email-button radius" href={href} target={target}>
-        {children}
-      </InkyButton>
+      <table
+        className={clsx('dbx-email-button', 'button', 'radius', { 'float-center': centered })}
+        align={centered ? 'center' : null}
+      >
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <a href={href} target={target}>
+                    {children}
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </Container>
   );
 };
