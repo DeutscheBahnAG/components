@@ -44,6 +44,14 @@ storiesOf('Components / Button', module)
       Secondary Button
     </Button>
   ))
+  .add('Width', () => (
+    <>
+      <Button onClick={action('clicked')}>Short label</Button>
+      <br />
+      <br />
+      <Button onClick={action('clicked')}>A very long label that extends the width</Button>
+    </>
+  ))
   .add('Primary full width', () => (
     <Button fullWidth onClick={action('clicked')}>
       Primary Full Width Button

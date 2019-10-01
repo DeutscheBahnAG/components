@@ -15,6 +15,7 @@
   align-items: center;
   display: inline-flex;
   height: 60px;
+  min-width: 252px;
   border-radius: 8px;
   background-color: $bg-color;
   justify-content: center;
@@ -74,6 +75,7 @@
 
 .dbx-button--small {
   height: 46px;
+  min-width: 160px;
 }
 
 .dbx-button--loading .dbx-loadingindicator {
