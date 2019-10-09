@@ -11,7 +11,7 @@ const dbxTheme = create({
   textColor: '#3c414b',
   textInverseColor: '#ffffff',
   appBorderRadius: 4,
-  fontBase: '"DB Sans", sans-serif',
+  fontBase: '"DB Screen Sans", sans-serif',
   barTextColor: '#3c414b',
   barBg: '#fbfbfd',
   brandTitle: 'DBX',

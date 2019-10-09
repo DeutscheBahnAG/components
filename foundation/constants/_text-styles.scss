@@ -1,76 +1,89 @@
-$db-sans-font-stack: 'DB Sans', 'Gill Sans', 'Gill Sans MT', Calibri, Helvetica, Arial, sans-serif;
+$dbx-title-font: 'DB Screen Head' !default;
+$dbx-text-font: 'DB Screen Sans' !default;
+$dbx-fallback-font-stack: 'DB Sans', 'Gill Sans', 'Gill Sans MT', Calibri, Helvetica, Arial, sans-serif !default;
+$dbx-title-font-stack: $dbx-title-font, $dbx-fallback-font-stack !default;
+$dbx-text-font-stack: $dbx-text-font, $dbx-fallback-font-stack !default;
 
 $dbx-text-styles: (
   'titleXL': (
+    // = PVUX Large Title
     'fontSize': 36px,
     'fontSizeLarge': 48px,
-    'lineHeight': 42px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    'lineHeight': 40px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-title-font-stack,
     'breakpoint': 48em
   ),
   'titleL': (
-    'fontSize': 26px,
-    'fontSizeLarge': 34px,
-    'lineHeight': 38px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    // = PVUX H1
+    'fontSize': 28px,
+    'fontSizeLarge': 36px,
+    'lineHeight': 32px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-title-font-stack,
     'breakpoint': 48em
   ),
   'titleM': (
-    'fontSize': 22px,
+    // = PVUX H2
+    'fontSize': 20px,
     'fontSizeLarge': 24px,
-    'lineHeight': 32px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    'lineHeight': 24px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-title-font-stack,
     'breakpoint': 48em
   ),
   'titleS': (
-    'fontSize': 20px,
+    // = PVUX H4
+    'fontSize': 18px,
     'fontSizeLarge': 20px,
-    'lineHeight': 28px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    'lineHeight': 24px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-title-font-stack,
     'breakpoint': 48em
   ),
   'copyBigBold': (
+    // = PVUX H4
     'fontSize': 18px,
     'fontSizeLarge': 20px,
-    'lineHeight': 28px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    'lineHeight': 24px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-text-font-stack,
     'breakpoint': 48em
   ),
   'copyBig': (
+    // = PVUX H4
     'fontSize': 18px,
     'fontSizeLarge': 20px,
-    'lineHeight': 28px,
+    'lineHeight': 24px,
     'fontWeight': 400,
-    'fontFamily': $db-sans-font-stack,
+    'fontFamily': $dbx-text-font-stack,
     'breakpoint': 48em
   ),
   'copyBold': (
-    'fontSize': 18px,
+    // = PVUX Body 1
+    'fontSize': 16px,
     'fontSizeLarge': 16px,
-    'lineHeight': 28px,
-    'fontWeight': bold,
-    'fontFamily': $db-sans-font-stack,
+    'lineHeight': 24px,
+    'fontWeight': 700,
+    'fontFamily': $dbx-text-font-stack,
     'breakpoint': 48em
   ),
   'copy': (
-    'fontSize': 18px,
+    // = PVUX Body 1
+    'fontSize': 16px,
     'fontSizeLarge': 16px,
-    'lineHeight': 28px,
+    'lineHeight': 24px,
     'fontWeight': 400,
-    'fontFamily': $db-sans-font-stack,
+    'fontFamily': $dbx-text-font-stack,
     'breakpoint': 48em
   ),
   'copyS': (
-    'fontSize': 12px,
-    'fontSizeLarge': 12px,
-    'lineHeight': 18px,
+    // = PVUX Body 2
+    'fontSize': 14px,
+    'fontSizeLarge': 14px,
+    'lineHeight': 20px,
     'fontWeight': 400,
-    'fontFamily': $db-sans-font-stack,
+    'fontFamily': $dbx-text-font-stack,
     'breakpoint': 48em
   )
 );

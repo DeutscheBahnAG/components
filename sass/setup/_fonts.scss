@@ -1,17 +1,44 @@
 @font-face {
-  font-family: 'DB Sans';
-  src: url('fonts/dbsans-regular-webfont.woff2') format('woff2'),
-    url('fonts/dbsans-regular-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: $dbx-text-font;
+  src: url('fonts/DBScreenSans-Regular.woff2') format('woff2'),
+    url('fonts/DBScreenSans-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DB Sans';
-  src: url('fonts/dbsans-bold-webfont.woff2') format('woff2'),
-    url('fonts/dbsans-bold-webfont.woff') format('woff');
-  font-weight: bold;
+  font-family: $dbx-text-font;
+  src: url('fonts/DBScreenSans-Bold.woff2') format('woff2'),
+    url('fonts/DBScreenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $dbx-title-font;
+  src: url('fonts/DBScreenHead-Light.woff2') format('woff2'),
+    url('fonts/DBScreenHead-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $dbx-title-font;
+  src: url('fonts/DBScreenHead-Regular.woff2') format('woff2'),
+    url('fonts/DBScreenHead-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $dbx-title-font;
+  src: url('fonts/DBScreenHead-Black.woff2') format('woff2'),
+    url('fonts/DBScreenHead-Black.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

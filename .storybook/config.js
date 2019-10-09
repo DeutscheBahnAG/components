@@ -36,7 +36,7 @@ addParameters({
   ],
   readme: {
     theme: {
-      fontFamily: '"DB Sans", sans-serif',
+      fontFamily: '"DB Screen Sans", sans-serif',
     }
   }
 });
