@@ -1,0 +1,47 @@
+@import '@bahn-x/dbx-foundation/abstracts';
+
+$dbx-logo-sizes: (
+  'xs': 14px,
+  's': 21px,
+  'm': 28px,
+  'l': 35px,
+  'xl': 42px,
+  'xxl': 56px
+);
+
+.dbx-logo {
+  @include dbx-hide-text;
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: dbx-color('dbRed');
+  }
+
+  rect {
+    fill: transparent;
+  }
+}
+
+.dbx-logo--white path,
+.dbx-logo--filled rect,
+.dbx-logo--outlined rect {
+  fill: dbx-color('white');
+}
+
+a,
+button {
+  @include dbx-focus-ring($parent: true, $target: '.dbx-logo');
+}
+
+@each $size, $height in $dbx-logo-sizes {
+  .dbx-logo--#{$size} {
+    border-radius: $height / 7.1;
+    height: $height;
+    width: $height / 7 * 10;
+
+    &.dbx-logo--outlined {
+      box-shadow: dbx-color('white') 0 0 0 ($height / 28);
+    }
+  }
+}
