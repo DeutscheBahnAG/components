@@ -1,15 +1,51 @@
 # Checkbox
 
-A Checkbox component
-
-## How to Install
-
-```
-npm install --save @bahn-x/dbx-checkbox
+```js
+import Checkbox from '@bahn-x/dbx-checkbox';
 ```
 
-or
-
+```jsx +jsxpreview +highlight="Checkbox"
+<Checkbox label="Checkbox" />
 ```
-yarn add @bahn-x/dbx-checkbox
+
+## States
+
+### Checked
+
+```jsx +jsxpreview .columns
+<Checkbox label="Checkbox unchecked" />
+```
+
+```jsx +jsxpreview +highlight="checked" .columns
+<Checkbox checked label="Checkbox checked" />
+```
+
+### Indeterminate
+
+The indeterminate state does not show if the Checkbox is checked or not. When you click the Checkbox, it will change its [state](#states). The first example will change to checked, the second example will change to unchecked when clicking the Checkbox.
+
+```jsx +jsxpreview +highlight="indeterminate" .columns
+<Checkbox indeterminate label="Checkbox indeterminate unchecked" />
+```
+
+```jsx +jsxpreview +highlight="indeterminate","checked" .columns
+<Checkbox indeterminate checked label="Checkbox indeterminate checked" />
+```
+
+### Disabled
+
+```jsx +jsxpreview +highlight="disabled" .columns
+<Checkbox disabled label="Disabled Checkbox" />
+```
+
+```jsx +jsxpreview +highlight="disabled" .columns
+<Checkbox disabled checked label="Disabled Checkbox" />
+```
+
+## Links within the label
+
+Links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
+
+```jsx +jsxpreview +highlight=/<a.+a>/
+<Checkbox label={<>I accept the{` `}<a href="#terms">Terms and Conditions</a>.</>} />
 ```
