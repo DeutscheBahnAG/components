@@ -11,7 +11,7 @@
 ) {
   @include dbx-button-reset;
   @include dbx-text-style('copy');
-  @include dbx-focussable;
+  @include dbx-focus-ring($transition: 'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in');
   align-items: center;
   display: inline-flex;
   height: 60px;
@@ -23,7 +23,6 @@
   border: 1px solid $border-color;
   color: $text-color;
   cursor: pointer;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in;
 
   &.dbx-button--disabled,
   &.dbx-button--disabled:hover,
@@ -42,15 +41,10 @@
     border-color: $border-color;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $bg-color--hover;
     color: $text-color--hover;
     border-color: $border-color--hover;
-  }
-
-  &:focus {
-    @include dbx-focus-ring;
   }
 }
 

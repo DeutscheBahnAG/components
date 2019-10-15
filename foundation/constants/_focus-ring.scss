@@ -1,1 +1,5 @@
-$focus-ring-transition: box-shadow 0.3s;
+$focus-ring-transition: box-shadow 0.3s !default;
+$focus-ring-color: rgba(#0c3992, 0.25) !default;
+$focus-ring-border-color: #1455c0 !default;
+$focus-ring-size: 3px !default;
+$focus-ring-grow: 2px !default;

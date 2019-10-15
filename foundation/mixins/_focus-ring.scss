@@ -1,22 +1,63 @@
-/// Prepares an element to receive a focus ring (the selector must not contain `:focus`)
-/// @param {List} $transition - Additional transitions
-@mixin dbx-focusable($transition: []) {
-  box-shadow: rgba(dbx-color('darkGrey'), 0) 0 0 0 6px;
-  outline: 0;
-  @if length($transition) > 0 {
-    transition: $transition, $focus-ring-transition;
-  }
-  @else {
-    transition: $focus-ring-transition;
-  }
-}
-
 /**
  * 1. For IE high-contrast mode which ignores `box-shadow` but will make `outline` visible
  */
 
-/// Shows a focus ring on an element (the selector should contain `:focus`)
-@mixin dbx-focus-ring {
-  box-shadow: rgba(dbx-color('darkGrey'), 0.3) 0 0 0 2px;
-  outline: 2px transparent; /* 1 */
+/// Adds an focus ring in DBX style including transitions
+/// @param {String} $transition - Additional transitions (quoted as string)
+/// @param {String} $target - Child selector which should display the focus ring (quoted as string)
+/// @param {String} $focus-selector - Use class name instead of :focus selector (quoted as string)
+/// @param {Number} $size - Size in px (border width) of the focus ring
+/// @param {Number} $grow - Additional grow size in px used for the transition
+/// @param {Color} $color - Color of the focus ring; may use an alpha value
+@mixin dbx-focus-ring($transition: [], $target: '', $focus-selector: ':focus', $size: $focus-ring-size, $grow: $focus-ring-grow, $color: $focus-ring-color, $border: false, $parent: false) {
+  @if $parent == false {
+    outline: 0;
+  }
+  
+  #{dbx-focus-ring-target-selector($target)} {
+    @content;
+    box-shadow: change-color($color, $alpha: 0) 0 0 0 ($size + $grow);
+    @if length($transition) > 0 {
+      transition: unquote($transition), $focus-ring-transition;
+    }
+    @else {
+      transition: $focus-ring-transition;
+    }
+  }
+
+  #{dbx-focus-ring-focussed-target-selector($target, $focus-selector)} {
+    @if $border {
+      border-color: $focus-ring-border-color !important;
+    }
+    box-shadow: $color 0 0 0 $size;
+    outline: 2px transparent; /* 1 */
+  }
+}
+
+/// Adds an focus ring in DBX style including transitions for text links (including rounded corners and spacing)
+/// @param {String} $transition - Additional transitions (quoted as string)
+/// @param {String} $target - Child selector which should display the focus ring (quoted as string)
+/// @param {Number} $size - Size in px (border width) of the focus ring
+/// @param {Number} $grow - Additional grow size in px used for the transition
+/// @param {Color} $color - Color of the focus ring; may use an alpha value
+@mixin dbx-focus-ring-for-text($transition: [], $target: '', $focus-selector: ':focus', $size: $focus-ring-size, $grow: $focus-ring-grow, $color: $focus-ring-color) {
+  @include dbx-focus-ring($transition: $transition, $target: $target, $focus-selector: $focus-selector, $size: $size, $grow: $grow, $color: $color) {
+    border-radius: 0.15em;
+    margin: 0 -0.2em;
+    padding: 0 0.2em;
+  }
+}
+
+/// Builds the selector for the target element before getting the focus
+@function dbx-focus-ring-target-selector($target) {
+  @return unquote(if($target == '', '&', $target));
+}
+
+/// Builds the selector for the target element having the focus
+@function dbx-focus-ring-focussed-target-selector($target, $focus-selector) {
+  @if (str-index($target, $focus-selector)) {
+    // If the selector already includes the focus state, it was set manually on purpose.
+    @return unquote($target);
+  }
+  @return unquote('&' + $focus-selector + ' ' + $target);
 }

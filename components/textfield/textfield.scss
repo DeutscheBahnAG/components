@@ -11,6 +11,7 @@ $dbx-textfield-background-color: dbx-color('white');
 
 .dbx-textfield {
   @include dbx-text-style($dbx-textfield-text-style);
+  @include dbx-focus-ring($focus-selector: '.dbx-textfield--focus', $border: true);
   align-items: stretch;
   background-color: $dbx-textfield-background-color;
   border: $dbx-textfield-border-width solid dbx-color('grey50');
@@ -57,11 +58,6 @@ $dbx-textfield-background-color: dbx-color('white');
     color: dbx-color('grey50');
     font-style: italic;
   }
-}
-
-.dbx-textfield--focus {
-  border-color: dbx-color('darkGrey') !important; // overrule :hover
-  box-shadow: dbx-color('darkGrey') 0 0 0 1px;
 }
 
 .dbx-textfield--textarea {

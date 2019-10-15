@@ -13,6 +13,7 @@ $dbx-select-chevron-margin: 16px;
 
 .dbx-select {
   @include dbx-text-style($dbx-select-text-style);
+  @include dbx-focus-ring($focus-selector: '.dbx-select--focus', $border: true);
   align-items: stretch;
   background-color: $dbx-select-background-color;
   border: $dbx-select-border-width solid dbx-color('grey50');
@@ -57,9 +58,4 @@ $dbx-select-chevron-margin: 16px;
     transform: translateY(-50%);
     width: $dbx-select-chevron-width;
   }
-}
-
-.dbx-select--focus {
-  border-color: dbx-color('darkGrey') !important; // overrule :hover
-  box-shadow: dbx-color('darkGrey') 0 0 0 1px;
 }
