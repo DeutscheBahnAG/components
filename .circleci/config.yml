@@ -58,7 +58,7 @@ jobs:
 workflows:
   version: 2
 
-  dbx-web-production-workflow:
+  production:
     jobs:
       - build:
           context: gcloud-webproducts-prod
