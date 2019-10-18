@@ -9,18 +9,19 @@
 
   $font-size: map-get($attributes, 'fontSize');
   $line-height: map-get($attributes, 'lineHeight');
+  $line-height-large: map-get($attributes, 'lineHeightLarge');
   $font-weight: map-get($attributes, 'fontWeight');
   $font-family: map-get($attributes, 'fontFamily');
   $font-size-large: map-get($attributes, 'fontSizeLarge');
   $breakpoint: map-get($attributes, 'breakpoint');
 
   @include dbx-rem-font-size($font-size);
-
-  @media (min-width: $breakpoint) {
-    @include dbx-rem-font-size($font-size-large);
-  }
-
   line-height: $line-height / $font-size; // use relative (unitless) font-size
   font-weight: $font-weight;
   font-family: $font-family;
+
+  @media (min-width: $breakpoint) {
+    @include dbx-rem-font-size($font-size-large);
+    line-height: $line-height-large / $font-size-large; // use relative (unitless) font-size
+  }
 }
