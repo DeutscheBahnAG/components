@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-checkbox",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "DBX Checkbox for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@bahn-x/dbx-foundation": ">=0.0.0"
+    "@bahn-x/dbx-foundation": ">=0.2.0"
   }
 }
