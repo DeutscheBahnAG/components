@@ -1,12 +1,12 @@
 # webDBX
 
-DBX, the Bahn X design system, implemented for the web
+DBX, the BahnX design system, implemented for the web
 
 ## How to Install
 
-### Setup Access to private GitHub Repositories as Dependencies
+### Setup Access to Private GitHub Repositories as Dependencies
 
-In case you have not set up Bahn X git repo access on your machine already, follow these steps:
+In case you have not set up BahnX Git repo access on your machine already, follow these steps:
 
 - Go to https://github.com/settings/tokens/new
 - Select `repo`, `write:packages`, and `read:packages` (without `repo` some verifications will fail)
@@ -29,7 +29,7 @@ This will install all necessary dependencies.
 
 Clone this repository and start adding components. On the repository for the web site that will include the components, add this repository as a dependency in your `package.json`.
 
-If you don't publish your component library via `npm`, you can [link to the Git Repository directly](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies). Both ways will work, as we don't have a prepublish step but rather build the `dist` folder on the target machine after installing this package as dependency.
+If you don’t publish your component library via `npm`, you can [link to the Git Repository directly](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies). Both ways will work, as we don’t have a prepublish step but rather build the `dist` folder on the target machine after installing this package as dependency.
 
 ### Adding a New Component
 
