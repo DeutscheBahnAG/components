@@ -49,3 +49,9 @@ Links can be used within the label. Clicking the link won’t change the [state]
 ```jsx +jsxpreview +highlight=/<a.+a>/
 <Checkbox label={<>I accept the{` `}<a href="#terms">Terms and Conditions</a>.</>} />
 ```
+
+## Long labels
+
+```jsx +jsxpreview +highlight=/<a.+a>/
+<Checkbox label="The label of the Checkbox can get a very long text which is sometimes needed for accepting terms of use or privacy terms. In this case the label wraps nicely and the checkbox stays aligned with the first line of the label." />
+```

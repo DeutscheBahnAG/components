@@ -8,7 +8,7 @@
  */
 
 .dbx-checkbox {
-  align-items: center;
+  align-items: flex-start;
   display: inline-flex;
   position: relative;
   user-select: none;
@@ -26,6 +26,9 @@
     border: 2px solid;
     border-radius: 2.2px;
     box-sizing: content-box;
+    flex-shrink: 0;
+    position: relative;
+    top: 2px;
     transform: translateZ(1); /* 2 */
     width: 16px;
   }
