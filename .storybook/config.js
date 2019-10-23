@@ -9,9 +9,9 @@ import dbxTheme from './theme';
 import '../sass/build.scss';
 
 // load all files in /components that end with .stories.js(x)
-const foundation = require.context('../foundation', true, /\.stories\.jsx?$/);
-const components = require.context('../components', true, /\.stories\.jsx?$/);
-const email = require.context('../email', true, /\.stories\.jsx$/);
+const foundation = require.context('../foundation', false, /\.stories\.jsx?$/);
+const components = require.context('../components', true, /^\w+\/\w+\.stories\.jsx?$/);
+const email = require.context('../email', false, /\.stories\.jsx$/);
 
 function loadStories() {
   foundation.keys().forEach((filename) => foundation(filename));
