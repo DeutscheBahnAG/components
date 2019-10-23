@@ -11,7 +11,7 @@ import Loadingindicator from '@bahn-x/dbx-checkbox';
 
 ## Controlling the color
 
-The component will adopt the [`currentColor`][mdn:currentcolor], so its color can be changed by setting the CSS `color` on the parent element. See [Button](dbx-button#loading) as an example.
+The component will adopt the [`currentColor`][mdn:currentcolor], so its color can be changed by setting the CSS `color` on the parent element. See [Button](button#loading) as an example.
 
 ```jsx +jsxpreview +highlight=/color: '.+?'/
 <div style={{ color: '#1455c0' }}>
