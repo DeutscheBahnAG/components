@@ -947,6 +947,16 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bahn-x/dbx-foundation@^0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.1.0/97ab78a1b6d275f426b21a10d5ced4416d62cb571988c0fc0ae852e31b2f95bd#27b6214d8c6a0b9a7b1e04a2d25066c86db76a8f"
+  integrity sha1-J7YhTYxqC5p7HgSi0lBmyG23ao8=
+
+"@bahn-x/dbx-foundation@^0.2.0":
+  version "0.2.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.2.0/a3fcdc4a8c7631b7fad7b07c8ff36803c1ec3d9c81b850e9a623aac441859fd2#edebadbac84c1f6393ace53081bf81f0061a881d"
+  integrity sha512-zzoXHqp2oY9RmQDID+B6O+5zex5BR9uUc/RDzWDYzg8ec1v7eemCHesiCro80WT2K3AaCveem8S/ywBhKLNj5A==
+
 "@bahn-x/eslint-config@github:Bahn-X/eslint-config#416cddea10e528c67dd1035553c3d1ddd452d006":
   version "0.1.0"
   resolved "git+ssh://git@github.com/Bahn-X/eslint-config.git#416cddea10e528c67dd1035553c3d1ddd452d006"
