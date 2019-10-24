@@ -1,3 +1,5 @@
+@import '@bahn-x/dbx-foundation/abstracts.scss';
+
 /**
  * 1. Setting the size avoids loosing the focus while clicking (which lets the focus ring flicker).
  * 2. Safari bugfix: Avoid subpixel shifts between the border and the SVG in case the container
