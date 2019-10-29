@@ -16,13 +16,15 @@ const Checkbox = ({ className, indeterminate, label, style, ...otherProps }) => 
   return (
     <label style={style} className={clsx('dbx-checkbox', className)}>
       <input type="checkbox" ref={inputRef} {...otherProps} />
-      <svg viewBox="0 0 16 16">
-        <polygon
-          className="dbx-checkbox-checked"
-          points="7.3 11.5 5.8 12.9 4.4 11.5 1.2 8.3 2.6 6.9 5.8 10.1 13.0 2.9 14.4 4.4"
-        />
-        <rect className="dbx-checkbox-indeterminate" x="3" y="7" width="10" height="2" />
-      </svg>
+      <span className="dbx-checkbox-box">
+        <svg viewBox="0 0 16 16">
+          <polygon
+            className="dbx-checkbox-checked"
+            points="7.3 11.5 5.8 12.9 4.4 11.5 1.2 8.3 2.6 6.9 5.8 10.1 13.0 2.9 14.4 4.4"
+          />
+          <rect className="dbx-checkbox-indeterminate" x="3" y="7" width="10" height="2" />
+        </svg>
+      </span>
       <span className="dbx-checkbox-label">{label}</span>
     </label>
   );
