@@ -2,3 +2,4 @@ node_modules/
 build/
 dist/
 !.cz-config.js
+!.eslintrc.js

@@ -7,44 +7,6 @@ import Loadingindicator from '@bahn-x/dbx-loadingindicator';
 /* eslint-disable react/no-did-update-set-state */
 
 class Button extends React.PureComponent {
-  static propTypes = {
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    /** the appearance of the button */
-    variant: PropTypes.oneOf(['primary', 'secondary']),
-    /** the size of the button */
-    size: PropTypes.oneOf(['small']),
-    /** when true, button will be disabled */
-    disabled: PropTypes.bool,
-    /** whether the loading state is enabled */
-    loading: PropTypes.bool,
-    /** additional class names you want to add to the button */
-    className: PropTypes.string,
-    /** when true, button will take up all available with */
-    fullWidth: PropTypes.bool,
-    /** a11y label for the button while in loading state */
-    loadingLabel: PropTypes.string,
-    /** inline styles */
-    style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
-    /** content rendered inside the button, can be text or any element */
-    children: PropTypes.node,
-    /** turns the Button into a regular link (anchor) */
-    href: PropTypes.string,
-  };
-
-  static defaultProps = {
-    type: 'button',
-    variant: 'primary',
-    disabled: false,
-    loading: false,
-    size: null,
-    className: '',
-    fullWidth: false,
-    loadingLabel: 'Wird geladen …',
-    style: {},
-    children: null,
-    href: null,
-  };
-
   state = { minWidth: null };
 
   constructor(props) {
@@ -119,5 +81,43 @@ class Button extends React.PureComponent {
     );
   }
 }
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  /** the appearance of the button */
+  variant: PropTypes.oneOf(['primary', 'secondary']),
+  /** the size of the button */
+  size: PropTypes.oneOf(['small']),
+  /** when true, button will be disabled */
+  disabled: PropTypes.bool,
+  /** whether the loading state is enabled */
+  loading: PropTypes.bool,
+  /** additional class names you want to add to the button */
+  className: PropTypes.string,
+  /** when true, button will take up all available with */
+  fullWidth: PropTypes.bool,
+  /** a11y label for the button while in loading state */
+  loadingLabel: PropTypes.string,
+  /** inline styles */
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /** content rendered inside the button, can be text or any element */
+  children: PropTypes.node,
+  /** turns the Button into a regular link (anchor) */
+  href: PropTypes.string,
+};
+
+Button.defaultProps = {
+  type: 'button',
+  variant: 'primary',
+  disabled: false,
+  loading: false,
+  size: null,
+  className: '',
+  fullWidth: false,
+  loadingLabel: 'Wird geladen …',
+  style: {},
+  children: null,
+  href: null,
+};
 
 export default Button;
