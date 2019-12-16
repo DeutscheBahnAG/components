@@ -42,4 +42,11 @@ describe('Button Component', () => {
     const wrapper = shallow(<Button href="#">Text</Button>);
     expect(wrapper.find('a.dbx-button[href="#"]')).toHaveLength(1);
   });
+
+  it('should render a button with custom `aria-label`', () => {
+    const wrapper = shallow(<Button aria-label="This is a custom aria-label">Text</Button>);
+    expect(
+      wrapper.find('button.dbx-button[aria-label="This is a custom aria-label"]')
+    ).toHaveLength(1);
+  });
 });

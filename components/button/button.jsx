@@ -59,7 +59,6 @@ class Button extends React.PureComponent {
     return (
       // eslint-disable-next-line react/button-has-type
       <Element
-        {...otherProps}
         style={{ ...style, minWidth }}
         ref={this.buttonRef}
         type={href ? null : type}
@@ -75,6 +74,7 @@ class Button extends React.PureComponent {
           size && `dbx-button--${size}`,
           className
         )}
+        {...otherProps}
       >
         {loading ? <Loadingindicator /> : children}
       </Element>
