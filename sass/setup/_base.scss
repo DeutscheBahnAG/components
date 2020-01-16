@@ -1,6 +1,6 @@
 body {
-  color: dbx-color('darkGrey');
-  font-family: $dbx-text-font-stack;
+  color: dbx-text-color('primary');
+  font-family: dbx-font-family('copy');
   line-height: 1.5;
 }
 

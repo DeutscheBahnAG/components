@@ -1,13 +1,12 @@
-@import 'constants/spacing';
-@import 'constants/colors';
+@import '@bahn-x/dbx-tokens/dist/deutsche-bahn.scss';
+
+@import 'functions/tokens';
+
 @import 'constants/breakpoints';
 @import 'constants/shadows';
-@import 'constants/text-styles';
 @import 'constants/focus-ring';
 
 @import 'functions/calculate-rem';
-@import 'functions/color';
-@import 'functions/spacing';
 
 @import 'mixins/block-link';
 @import 'mixins/button-reset';

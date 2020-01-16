@@ -12,33 +12,27 @@
 //   7. Menu
 //   8. Thumbnail
 
-$text-style-copy: map-get($dbx-text-styles, 'copy');
-$text-style-title: map-get($dbx-text-styles, 'titleL');
-$text-style-subtitle: map-get($dbx-text-styles, 'titleM');
-$text-style-small: map-get($dbx-text-styles, 'copyS');
-
-
 // 1. Global
 // ---------
 
-$primary-color: dbx-color('dbRed');
-$secondary-color: dbx-color('darkGrey');
-$success-color: dbx-color('alertGreen');
-$warning-color: dbx-color('alertOrange');
-$alert-color: dbx-color('alertRed');
-$light-gray: dbx-color('grey25');
-$medium-gray: dbx-color('grey50');
-$dark-gray: dbx-color('grey');
-$black: dbx-color('darkGrey');
-$white: dbx-color('white');
+$primary-color: dbx-color('brand');
+$secondary-color: dbx-text-color('primary');
+$success-color: dbx-color('success');
+$warning-color: dbx-color('warning');
+$alert-color: dbx-color('error');
+$light-gray: dbx-background-color('secondary');
+$medium-gray: dbx-text-color('disabled');
+$dark-gray: dbx-text-color('secondary');
+$black: dbx-text-color('primary');
+$white: dbx-background-color('primary');
 $pre-color: #ff6908;
 $global-width: 660px;
 $global-width-small: 95%;
-$global-gutter: dbx-spacing('16');
+$global-gutter: dbx-spacing('m');
 $body-background: $light-gray;
 $container-background: $white;
-$global-padding: dbx-spacing('16');
-$global-margin: dbx-spacing('16');
+$global-padding: dbx-spacing('m');
+$global-margin: dbx-spacing('m');
 $global-radius: 8px;
 $global-rounded: 500px;
 $global-breakpoint: $global-width + $global-gutter;
@@ -63,37 +57,37 @@ $global-font-color: $black;
 $body-font-family: Calibri, Helvetica, Arial, sans-serif;
 $global-font-weight: normal;
 $header-color: inherit;
-$global-line-height: map-get($text-style-copy, 'lineHeight');
-$global-font-size: map-get($text-style-copy, 'fontSize');
+$global-line-height: dbx-line-height('copy', 'm');
+$global-font-size: dbx-font-size('copy', 'm');
 $body-line-height: $global-line-height;
 $header-font-family: $body-font-family;
-$header-font-weight: map-get($text-style-title, 'fontWeight');
-$h1-font-size: map-get($text-style-title, 'fontSize');
-$h2-font-size: map-get($text-style-subtitle, 'fontSize');
+$header-font-weight: dbx-font-weight('title');
+$h1-font-size: dbx-font-size('title', 'l');
+$h2-font-size: dbx-font-size('title', 'm');
 $h3-font-size: 28px;
 $h4-font-size: 24px;
 $h5-font-size: 20px;
 $h6-font-size: 18px;
-$header-margin-bottom: dbx-spacing('16');
-$paragraph-margin-bottom: dbx-spacing('16');
-$small-font-size: map-get($text-style-small, 'fontSize');
+$header-margin-bottom: dbx-spacing('m');
+$paragraph-margin-bottom: dbx-spacing('m');
+$small-font-size: dbx-font-size('copy', 's');
 $small-font-color: $dark-gray;
 $lead-font-size: $global-font-size * 1.25;
 $lead-line-height: 1.6;
 $text-padding: 10px;
 $subheader-lineheight: 1.4;
 $subheader-color: $black;
-$subheader-font-weight: map-get($text-style-subtitle, 'fontWeight');
+$subheader-font-weight: dbx-font-weight('title');
 $subheader-margin-top: 4px;
 $subheader-margin-bottom: 8px;
 $hr-width: 80%;
 $hr-border: 1px solid $light-gray;
-$hr-margin: dbx-spacing('52') auto;
+$hr-margin: dbx-spacing('xl') auto;
 $anchor-text-decoration: none;
 $anchor-color: $primary-color;
 $anchor-color-visited: $anchor-color;
-$anchor-color-hover: dbx-color('darkRed');
-$anchor-color-active: dbx-color('dbRed75');
+$anchor-color-hover: dbx-background-color('button.primary.hover');
+$anchor-color-active: dbx-background-color('button.primary.pressed');
 $stat-font-size: 40px;
 
 // 5. Button
@@ -101,9 +95,9 @@ $stat-font-size: 40px;
 
 $button-padding: (
   tiny: 4px 8px 4px 8px,
-  small: dbx-spacing('8') dbx-spacing('24') dbx-spacing('8') dbx-spacing('24'),
-  default: dbx-spacing('16') dbx-spacing('24') dbx-spacing('16') dbx-spacing('24'),
-  large: 10px 20px 10px 20px,
+  small: dbx-spacing('s') dbx-spacing('ml') dbx-spacing('s') dbx-spacing('ml'),
+  default: dbx-spacing('m') dbx-spacing('ml') dbx-spacing('m') dbx-spacing('ml'),
+  large: 10px 20px 10px 20px
 );
 $button-font-size: (
   tiny: 10px,

@@ -14,8 +14,8 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   padding: dbx-spacing('8') dbx-spacing('16');
   font-family: Courier, monospace;
   font-size: 14px;
-  background-color: dbx-color('grey25');
-  border-radius: 4px;
+  background-color: dbx-color('background.secondary');
+  border-radius: dbx-border-radius('s');
 }
 
 .sg-section {
@@ -41,8 +41,8 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   min-width: 120px;
   margin: 16px;
   box-shadow: $shadow--low;
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: dbx-color('background.primary');
+  border-radius: dbx-border-radius('xl');
   overflow: hidden;
 }
 
@@ -59,8 +59,14 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   margin: 16px 24px 36px;
 }
 
-@each $text-style in map-keys($dbx-text-styles) {
-  .sg-text-style--#{$text-style} {
-    @include dbx-text-style($text-style);
+@each $size in (s m l xl xxl) {
+  .sg-text-style--title-#{$size} {
+    @include dbx-text-style('title', $size);
+  }
+}
+
+@each $size in (xs s m l) {
+  .sg-text-style--copy-#{$size} {
+    @include dbx-text-style('copy', $size);
   }
 }

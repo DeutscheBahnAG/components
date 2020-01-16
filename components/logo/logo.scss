@@ -15,7 +15,7 @@ $dbx-logo-sizes: (
   vertical-align: middle;
 
   path {
-    fill: dbx-color('dbRed');
+    fill: dbx-color('brand');
   }
 
   rect {
@@ -26,7 +26,7 @@ $dbx-logo-sizes: (
 .dbx-logo--white path,
 .dbx-logo--filled rect,
 .dbx-logo--outlined rect {
-  fill: dbx-color('white');
+  fill: dbx-background-color('primary');
 }
 
 a,
@@ -41,7 +41,7 @@ button {
     width: $height / 7 * 10;
 
     &.dbx-logo--outlined {
-      box-shadow: dbx-color('white') 0 0 0 ($height / 28);
+      box-shadow: dbx-background-color('primary') 0 0 0 ($height / 28);
     }
   }
 }

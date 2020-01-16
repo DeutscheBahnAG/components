@@ -1,10 +1,11 @@
 .dbx-loadingindicator {
   display: block;
-  height: 20px;
 }
 
-.dbx-loadingindicator--large {
-  height: 40px;
+@each $size in (xl l m s xs) {
+  .dbx-loadingindicator--#{$size} {
+    height: dbx-size($size);
+  }
 }
 
 .dbx-loadingindicator rect {
@@ -35,4 +36,3 @@
     transform: translateY(8px);
   }
 }
-

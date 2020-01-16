@@ -32,6 +32,7 @@ class Textfield extends React.Component {
   render() {
     const {
       type,
+      size,
       className,
       value,
       unit,
@@ -43,6 +44,7 @@ class Textfield extends React.Component {
     } = this.props;
     const { focus } = this.state;
     const Field = type === 'textarea' ? 'textarea' : 'input';
+    const fieldSize = inlineLabel ? Textfield.sizes.XL : size;
     let contentBefore = prefix;
     let contentAfter = suffix;
 
@@ -71,6 +73,7 @@ class Textfield extends React.Component {
         className={clsx(
           'dbx-textfield',
           `dbx-textfield--${type}`,
+          `dbx-textfield--${fieldSize}`,
           value && 'dbx-textfield--filled',
           focus && 'dbx-textfield--focus',
           inlineLabel && 'dbx-textfield--inline-label',
@@ -93,6 +96,13 @@ class Textfield extends React.Component {
   }
 }
 
+Textfield.sizes = {
+  S: 's',
+  M: 'm',
+  L: 'l',
+  XL: 'xl',
+};
+
 Textfield.propTypes = {
   /** Type of the <input> or define a <textarea> */
   type: PropTypes.oneOf([
@@ -105,6 +115,8 @@ Textfield.propTypes = {
     'url',
     'search',
   ]),
+  /** The size of the Textfield */
+  size: PropTypes.oneOf(Textfield.sizes),
   /** Additional class names */
   className: PropTypes.string,
   /** The user input */
@@ -123,6 +135,7 @@ Textfield.propTypes = {
 
 Textfield.defaultProps = {
   type: 'text',
+  size: Textfield.sizes.XL,
   className: '',
   value: '',
   unit: null,

@@ -1,19 +1,13 @@
 // applies a text style from the DBX design system
 // (see variables/text-styles for available styles)
-@mixin dbx-text-style($text-style: 'copy', $text-styles-map: $dbx-text-styles) {
-  @if (map-has-key($text-styles-map, $text-style) == false) {
-    @error 'The text style `#{$text-style}` is not present in the DBX text styles map. Valid values are: (#{map-keys($text-styles-map)})';
-  }
-
-  $attributes: map-get($text-styles-map, $text-style);
-
-  $font-size: map-get($attributes, 'fontSize');
-  $line-height: map-get($attributes, 'lineHeight');
-  $line-height-large: map-get($attributes, 'lineHeightLarge');
-  $font-weight: map-get($attributes, 'fontWeight');
-  $font-family: map-get($attributes, 'fontFamily');
-  $font-size-large: map-get($attributes, 'fontSizeLarge');
-  $breakpoint: map-get($attributes, 'breakpoint');
+@mixin dbx-text-style($text-style: 'copy', $size: 'm') {
+  $font-size: dbx-font-size($text-style, $size);
+  $font-size-large: dbx-font-size($text-style, $size, 'desktop');
+  $line-height: dbx-line-height($text-style, $size);
+  $line-height-large: dbx-line-height($text-style, $size, 'desktop');
+  $font-weight: if($text-style == 'title', bold, normal);
+  $font-family: dbx-font-family($text-style);
+  $breakpoint: 48em;
 
   @include dbx-rem-font-size($font-size);
   line-height: $line-height / $font-size; // use relative (unitless) font-size

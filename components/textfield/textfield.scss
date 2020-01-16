@@ -1,49 +1,35 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-$dbx-textfield-text-style: 'copy';
-$dbx-textfield-border-width: 1px;
-$dbx-textfield-border-radius: 8px;
-$dbx-textfield-adjustment: 1px;
-$dbx-textfield-padding-horizontal: dbx-spacing('16') -
-  $dbx-textfield-border-width;
-$dbx-textfield-padding-vertical: dbx-spacing('16') - $dbx-textfield-border-width +
-  2px;
-$dbx-textfield-padding-top: $dbx-textfield-padding-vertical -
-  $dbx-textfield-adjustment;
-$dbx-textfield-padding-bottom: $dbx-textfield-padding-vertical +
-  $dbx-textfield-adjustment;
-$dbx-textfield-background-color: dbx-color('white');
-
 .dbx-textfield {
-  @include dbx-text-style($dbx-textfield-text-style);
   @include dbx-focus-ring(
     $focus-selector: '.dbx-textfield--focus',
     $border: true
   );
   align-items: stretch;
-  background-color: $dbx-textfield-background-color;
-  border: $dbx-textfield-border-width solid dbx-color('grey50');
-  border-radius: $dbx-textfield-border-radius;
-  color: dbx-color('darkGrey');
+  background-color: dbx-background-color('input');
+  border: dbx-border-width('input') solid dbx-border-color('input');
+  color: dbx-text-color('primary');
   display: inline-flex;
-  line-height: 24px;
+  font-family: dbx-font-family('copy');
+  font-size: dbx-font-size('copy', 'm');
+  line-height: dbx-line-height('copy', 'm');
 
   &:not([disabled]) {
     cursor: text;
   }
 
   &:not([disabled]):hover {
-    border-color: dbx-color('grey75');
+    border-color: dbx-border-color('input.hover');
   }
 
   &[disabled],
   &[readonly] {
-    background: dbx-color('grey10');
-    border-color: dbx-color('grey25');
+    background: dbx-background-color('input.disabled');
+    border-color: dbx-border-color('input.disabled');
   }
 
   &[disabled] {
-    color: dbx-color('grey50');
+    color: dbx-text-color('disabled');
   }
 
   /**
@@ -53,7 +39,6 @@ $dbx-textfield-background-color: dbx-color('white');
   textarea {
     border: 0;
     background: transparent;
-    border-radius: $dbx-textfield-border-radius;
     box-shadow: none; /* 1 */
     color: inherit;
     font-family: inherit;
@@ -61,13 +46,11 @@ $dbx-textfield-background-color: dbx-color('white');
     font-weight: inherit;
     line-height: inherit;
     flex: 1;
-    padding: $dbx-textfield-padding-top $dbx-textfield-padding-horizontal
-      $dbx-textfield-padding-bottom;
     outline: 0;
   }
 
   ::placeholder {
-    color: dbx-color('grey50');
+    color: rgba(dbx-text-color('secondary'), 0.5);
     font-style: italic;
   }
 }
@@ -79,15 +62,13 @@ $dbx-textfield-background-color: dbx-color('white');
   &::before,
   &::after {
     background: linear-gradient(to top,
-    $dbx-textfield-background-color,
-    rgba($dbx-textfield-background-color, 0));
+    dbx-background-color('input'),
+    rgba(dbx-background-color('input'), 0));
     bottom: 0;
     content: '';
-    height: dbx-spacing('8');
-    left: $dbx-textfield-padding-horizontal;
+    height: dbx-spacing('s');
     pointer-events: none;
     position: absolute;
-    right: $dbx-textfield-padding-horizontal;
     z-index: 1;
   }
 
@@ -99,27 +80,20 @@ $dbx-textfield-background-color: dbx-color('white');
 
 .dbx-textfield-prefix,
 .dbx-textfield-suffix {
-  color: dbx-color('grey75');
-  margin: 0 calc(0.15em - #{$dbx-textfield-padding-vertical}) 0 0; // Thin space
-  padding: $dbx-textfield-padding-top 0 $dbx-textfield-padding-bottom
-    $dbx-textfield-padding-horizontal;
-  transition: padding 0.2s;
-}
-
-.dbx-textfield-suffix {
-  margin: 0 0 0 calc(0.15em - #{$dbx-textfield-padding-vertical}); // Thin space
-  padding: $dbx-textfield-padding-top $dbx-textfield-padding-horizontal
-    $dbx-textfield-padding-bottom 0;
+  color: dbx-text-color('secondary');
+  transition: transform 0.2s;
 }
 
 .dbx-textfield__inline-label {
-  color: dbx-color('grey75');
-  margin-left: $dbx-textfield-padding-horizontal;
-  margin-top: 16px;
+  color: dbx-text-color('secondary');
   pointer-events: none;
   position: absolute;
   transition: all 0.2s;
   transform-origin: 0 0;
+
+  [disabled] & {
+    color: inherit;
+  }
 }
 
 /**
@@ -128,15 +102,12 @@ $dbx-textfield-background-color: dbx-color('white');
   */
 .dbx-textfield--focus .dbx-textfield__inline-label,
 .dbx-textfield--filled .dbx-textfield__inline-label {
-  $font-size-s: map-get(map-get($dbx-text-styles, 'copyS'), 'fontSize');
-  $font-size-m: map-get(map-get($dbx-text-styles, 'copy'), 'fontSize');
-  $scale-down: $font-size-s / $font-size-m; /* 1 */
-  margin-top: 6px;
-  transform: scale(#{$scale-down}) translateY(-2px); /* 2 */
+  $scale-down: dbx-font-size('copy', 's') / dbx-font-size('copy', 'm'); /* 1 */
+  transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
 }
 
 .dbx-textfield--focus label {
-  color: dbx-color('darkGrey');
+  color: dbx-text-color('primary');
 }
 
 .dbx-textfield[disabled] label {
@@ -150,17 +121,74 @@ $dbx-textfield-background-color: dbx-color('white');
   }
 
   &.dbx-textfield--focus ::placeholder {
-    color: dbx-color('grey50');
+    color: dbx-text-color('secondary');
   }
 
   input,
-  textarea,
   &.dbx-textfield--filled .dbx-textfield-prefix,
   &.dbx-textfield--filled .dbx-textfield-suffix,
   &.dbx-textfield--focus .dbx-textfield-prefix,
   &.dbx-textfield--focus .dbx-textfield-suffix {
-    $text-shift: 8px;
-    padding-bottom: $dbx-textfield-padding-bottom - $text-shift;
-    padding-top: $dbx-textfield-padding-top + $text-shift;
+    transform: translateY(8px);
+  }
+}
+
+@each $size in (xl l m s) {
+  .dbx-textfield--#{$size} {
+    $horizontal-padding: dbx-size($size) / 4;
+    border-radius: dbx-border-radius($size);
+    min-height: dbx-size($size);
+
+    @if $size == s {
+      font-size: dbx-font-size('copy', 's');
+    }
+
+    input,
+    textarea,
+    .dbx-textfield-prefix {
+      padding-left: $horizontal-padding;
+    }
+
+    input,
+    textarea,
+    .dbx-textfield-suffix {
+      padding-right: $horizontal-padding;
+    }
+
+    /**
+      * 1. Equals a Thin Space characte
+      */
+    .dbx-textfield-prefix {
+      margin-right: calc(0.15em - #{$horizontal-padding}); /* 1 */
+    }
+
+    .dbx-textfield-suffix {
+      margin-left: calc(0.15em - #{$horizontal-padding}); /* 1 */
+    }
+
+    .dbx-textfield--textarea {
+      &::before,
+      &::after {
+        left: $horizontal-padding;
+        right: $horizontal-padding;
+      }
+    }
+
+    .dbx-textfield__inline-label {
+      margin-left: $horizontal-padding;
+    }
+
+    input,
+    textarea,
+    .dbx-textfield-prefix,
+    .dbx-textfield-suffix,
+    .dbx-textfield__inline-label {
+      $vertical-padding: (dbx-size($size) - dbx-line-height('copy', 'm')) /
+        2 -
+        dbx-border-width('input');
+      border-radius: dbx-border-radius($size);
+      padding-bottom: $vertical-padding;
+      padding-top: $vertical-padding;
+    }
   }
 }

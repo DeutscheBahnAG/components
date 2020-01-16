@@ -1,19 +1,8 @@
 @import 'sass-to-js/sass/sass-to-js';
-
-@import '@bahn-x/dbx-foundation/constants/colors';
-@import '@bahn-x/dbx-foundation/constants/text-styles';
-@import '@bahn-x/dbx-foundation/constants/spacing';
-@import '@bahn-x/dbx-foundation/constants/shadows';
+@import '@bahn-x/dbx-tokens/dist/deutsche-bahn.scss';
 
 :export {
   // stylelint-disable property-no-unknown
-  colors: sassToJs($dbx-colors);
-  textStyles: sassToJs($dbx-text-styles);
-  spacing: sassToJs($dbx-spacing);
-  shadows: sassToJs($dbx-shadows);
+  tokens: sassToJs($dbx-tokens);
   // stylelint-enable property-no-unknown
 }
-
-
-
-

@@ -1,8 +1,8 @@
 table.wrapper.dbx-email-body td.dbx-email-body-inner {
-  padding-top: dbx-spacing('36');
-  padding-bottom: dbx-spacing('52');
-  padding-left: dbx-spacing('52');
-  padding-right: dbx-spacing('52');
+  padding-top: dbx-spacing('l');
+  padding-bottom: dbx-spacing('xl');
+  padding-left: dbx-spacing('xl');
+  padding-right: dbx-spacing('xl');
 }
 
 /**
@@ -14,12 +14,15 @@ table.wrapper.dbx-email-body {
     font-weight: bold;
   }
 
-  h2, h3, h4, h5, h6 {
-    margin-top: dbx-spacing('24');
-    Margin-top: dbx-spacing('24'); /* 1 */
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: dbx-spacing('ml');
+    Margin-top: dbx-spacing('ml'); /* 1 */
 
-    margin-bottom: dbx-spacing('8');
-    Margin-bottom: dbx-spacing('8'); /* 1 */
+    margin-bottom: dbx-spacing('s');
+    Margin-bottom: dbx-spacing('s'); /* 1 */
   }
 }
-

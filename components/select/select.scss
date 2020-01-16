@@ -1,13 +1,14 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
 $dbx-select-text-style: 'copy';
-$dbx-select-border-width: 1px;
+$dbx-select-border-width: dbx-border-width('input');
 $dbx-select-adjustment: 1px;
-$dbx-select-padding-horizontal: dbx-spacing('16') - $dbx-select-border-width;
-$dbx-select-padding-vertical: dbx-spacing('16') - $dbx-select-border-width;
+$dbx-select-padding-horizontal: dbx-spacing('m') - $dbx-select-border-width;
+$dbx-select-padding-vertical: dbx-spacing('m') - $dbx-select-border-width;
 $dbx-select-padding-top: $dbx-select-padding-vertical - $dbx-select-adjustment;
-$dbx-select-padding-bottom: $dbx-select-padding-vertical + $dbx-select-adjustment;
-$dbx-select-background-color: dbx-color('white');
+$dbx-select-padding-bottom: $dbx-select-padding-vertical +
+  $dbx-select-adjustment;
+$dbx-select-background-color: dbx-background-color('input');
 $dbx-select-chevron-width: 16px;
 $dbx-select-chevron-margin: 16px;
 
@@ -16,20 +17,16 @@ $dbx-select-chevron-margin: 16px;
   @include dbx-focus-ring($focus-selector: '.dbx-select--focus', $border: true);
   align-items: stretch;
   background-color: $dbx-select-background-color;
-  border: $dbx-select-border-width solid dbx-color('grey50');
-  border-radius: 8px;
-  color: dbx-color('darkGrey');
+  border: $dbx-select-border-width solid dbx-border-color('input');
+  border-radius: dbx-border-radius('xl');
+  color: dbx-text-color('primary');
   display: inline-flex;
   position: relative;
 
-  &:not([disabled]):hover {
-    border-color: dbx-color('grey75');
-  }
-
   &[disabled] {
-    background: dbx-color('grey10');
-    border-color: dbx-color('grey25');
-    color: dbx-color('grey50');
+    background: dbx-background-color('input.disabled');
+    border-color: dbx-border-color('input.disabled');
+    color: dbx-text-color('disabled');
   }
 
   /**
@@ -45,11 +42,12 @@ $dbx-select-chevron-margin: 16px;
     font-weight: inherit;
     line-height: inherit;
     flex: 1;
-    padding:
-      $dbx-select-padding-top
-      ($dbx-select-padding-horizontal + $dbx-select-chevron-width + $dbx-select-chevron-margin)
-      $dbx-select-padding-bottom
-      $dbx-select-padding-horizontal;
+    padding: $dbx-select-padding-top
+      (
+        $dbx-select-padding-horizontal + $dbx-select-chevron-width +
+        $dbx-select-chevron-margin
+      )
+      $dbx-select-padding-bottom $dbx-select-padding-horizontal;
     outline: 0;
     width: inherit;
   }

@@ -29,12 +29,7 @@ class ToggleCheckboxIndeterminateStateExample extends React.Component {
         />
         <br />
         <br />
-        <Button
-          type="button"
-          disabled={isIndeterminate}
-          size="small"
-          onClick={this.setIndeterminate}
-        >
+        <Button type="button" disabled={isIndeterminate} size="s" onClick={this.setIndeterminate}>
           Reset Checkbox to indeterminate
         </Button>
       </>

@@ -947,6 +947,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bahn-x/dbx-tokens@^0.1.2":
+  version "0.1.2"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.1.2/840bb806c23d910dc09e6fc6a2c3e1b2b0cb4be91ae5f650e71ad5052fbf48e3#3300b5eb60036c0d795eb5f271de1f36d1b7ea28"
+  integrity sha512-MVuJIqBspLlY+BpTr3MItuyRM8Zkejzxs+rg4WYumM+/RTicgql6ZUWE6pVSe84P5UdU/jYZIIy4gLjrDNmH6Q==
+  dependencies:
+    js-yaml "^3.13.1"
+
 "@bahn-x/storybook-addon-static-html@^0.1.2":
   version "0.1.2"
   resolved "https://npm.pkg.github.com/download/@bahn-x/storybook-addon-static-html/0.1.2/b2d7671039b971b221a4f517d2eb52c7e8a50b1af157400e81982571cb592dd7#98f946399b13e6edf76883f4cb87dc312751286e"

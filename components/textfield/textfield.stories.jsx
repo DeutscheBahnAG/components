@@ -55,4 +55,16 @@ storiesOf('Components / Textfield', module)
   .add('Email address', () => <StatefulTextfield defaultValue="info@bahn.de" type="email" />)
   .add('Phone number', () => <StatefulTextfield defaultValue="0180 6 996633" type="tel" />)
   .add('URL', () => <StatefulTextfield defaultValue="https://www.bahn.de" type="url" />)
-  .add('Password', () => <StatefulTextfield defaultValue="secret" type="password" />);
+  .add('Password', () => <StatefulTextfield defaultValue="secret" type="password" />)
+  .add('Size S', () => (
+    <Textfield size={Textfield.sizes.S} value="123" type="number" prefix="@" unit="€" />
+  ))
+  .add('Size M', () => (
+    <Textfield size={Textfield.sizes.M} value="123" type="number" prefix="@" unit="€" />
+  ))
+  .add('Size L', () => (
+    <Textfield size={Textfield.sizes.L} value="123" type="number" prefix="@" unit="€" />
+  ))
+  .add('Size XL', () => (
+    <Textfield size={Textfield.sizes.XL} value="123" type="number" prefix="@" unit="€" />
+  ));

@@ -29,11 +29,23 @@ Secondary Buttons can appear several times on the same page.
 ## Sizing
 
 ```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="small">Button</Button>
+<Button size="s">Button</Button>
+<Button size="s" variant="secondary">Button</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="small" variant="secondary">Button</Button>
+<Button size="m">Button</Button>
+<Button size="m" variant="secondary">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/size=".+?"/ .columns
+<Button size="l">Button</Button>
+<Button size="l" variant="secondary">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/size=".+?"/ .columns
+<Button size="xl">Button</Button>
+<Button size="xl" variant="secondary">Button</Button>
 ```
 
 ## Full width
@@ -100,11 +112,27 @@ const MyComponent = () => {
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="small">Button</Button>
+<Button loading size="s">Button</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="small" variant="secondary">Button</Button>
+<Button loading size="s" variant="secondary">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/loading/ .columns
+<Button loading size="m">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/loading/ .columns
+<Button loading size="m" variant="secondary">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/loading/ .columns
+<Button loading size="xl">Button</Button>
+```
+
+```jsx +jsxpreview +highlight=/loading/ .columns
+<Button loading size="xl" variant="secondary">Button</Button>
 ```
 
 A loading Button automatically gets disabled and can’t receive the focus. This avoids clicking and starting an action twice. In case it is important to avoid a second click, setting the loading state might be a good idea even for usually fast actions.

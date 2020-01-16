@@ -56,6 +56,7 @@ class Button extends React.PureComponent {
     } = this.props;
     const { minWidth } = this.state;
     const Element = href ? 'a' : 'button';
+    const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
     return (
       // eslint-disable-next-line react/button-has-type
       <Element
@@ -76,18 +77,25 @@ class Button extends React.PureComponent {
         )}
         {...otherProps}
       >
-        {loading ? <Loadingindicator /> : children}
+        {loading ? <Loadingindicator size={loadingindicatorSize} /> : children}
       </Element>
     );
   }
 }
+
+Button.sizes = {
+  S: 's',
+  M: 'm',
+  L: 'l',
+  XL: 'xl',
+};
 
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** the appearance of the button */
   variant: PropTypes.oneOf(['primary', 'secondary']),
   /** the size of the button */
-  size: PropTypes.oneOf(['small']),
+  size: PropTypes.oneOf(Button.sizes),
   /** when true, button will be disabled */
   disabled: PropTypes.bool,
   /** whether the loading state is enabled */
@@ -111,7 +119,7 @@ Button.defaultProps = {
   variant: 'primary',
   disabled: false,
   loading: false,
-  size: null,
+  size: Button.sizes.L,
   className: '',
   fullWidth: false,
   loadingLabel: 'Wird geladen …',

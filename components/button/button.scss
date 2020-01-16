@@ -4,38 +4,45 @@
 @mixin dbx-button(
   $bg-color,
   $bg-color--hover,
+  $bg-color--pressed,
+  $bg-color--disabled,
   $text-color,
   $text-color--hover,
+  $text-color--pressed,
+  $text-color--disabled,
   $border-color: $bg-color,
-  $border-color--hover: $bg-color--hover
+  $border-color--hover: $bg-color--hover,
+  $border-color--pressed: $bg-color--pressed,
+  $border-color--disabled: $bg-color--disabled
 ) {
   @include dbx-button-reset;
   @include dbx-text-style('copy');
-  @include dbx-focus-ring($transition: 'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in');
+  @include dbx-focus-ring(
+    $transition:
+    'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in'
+  );
   align-items: center;
   display: inline-flex;
-  height: 60px;
-  min-width: 252px;
-  border-radius: 8px;
   background-color: $bg-color;
   justify-content: center;
   text-decoration: none;
-  padding: 0 dbx-spacing('24');
-  border: 1px solid $border-color;
+  border: dbx-border-width('button') solid $border-color;
   color: $text-color;
   cursor: pointer;
 
   &.dbx-button--disabled,
   &.dbx-button--disabled:hover,
+  &.dbx-button--disabled:active,
   &.dbx-button--disabled:focus {
-    color: dbx-color('grey');
-    background-color: dbx-color('grey25');
-    border-color: dbx-color('grey25');
+    color: $text-color--disabled;
+    background-color: $bg-color--disabled;
+    border-color: $border-color--disabled;
     cursor: default;
   }
 
   &.dbx-button--loading,
   &.dbx-button--loading:hover,
+  &.dbx-button--loading:active,
   &.dbx-button--loading:focus {
     color: $text-color;
     background-color: $bg-color;
@@ -47,6 +54,12 @@
     color: $text-color--hover;
     border-color: $border-color--hover;
   }
+
+  &:active {
+    background-color: $bg-color--pressed;
+    color: $text-color--pressed;
+    border-color: $border-color--pressed;
+  }
 }
 
 .dbx-button--block {
@@ -56,30 +69,55 @@
 
 .dbx-button--primary {
   @include dbx-button(
-    $bg-color: dbx-color('dbRed'),
-    $bg-color--hover: dbx-color('darkRed'),
-    $text-color: dbx-color('white'),
-    $text-color--hover: dbx-color('white')
+    $bg-color: dbx-background-color('button.primary'),
+    $bg-color--hover: dbx-background-color('button.primary.hover'),
+    $bg-color--pressed: dbx-background-color('button.primary.pressed'),
+    $bg-color--disabled: dbx-background-color('button.primary.disabled'),
+    $text-color: dbx-text-color('button.primary'),
+    $text-color--hover: dbx-text-color('button.primary.hover'),
+    $text-color--pressed: dbx-text-color('button.primary.pressed'),
+    $text-color--disabled: dbx-text-color('button.primary.disabled'),
+    $border-color: dbx-border-color('button.primary'),
+    $border-color--hover: dbx-border-color('button.primary.hover'),
+    $border-color--pressed: dbx-border-color('button.primary.pressed'),
+    $border-color--disabled: dbx-border-color('button.primary.disabled')
   );
 }
 
 .dbx-button--secondary {
   @include dbx-button(
-    $bg-color: dbx-color('white'),
-    $bg-color--hover: dbx-color('darkGrey'),
-    $text-color: dbx-color('darkGrey'),
-    $text-color--hover: dbx-color('white'),
-    $border-color: dbx-color('darkGrey')
+    $bg-color: dbx-background-color('button.secondary'),
+    $bg-color--hover: dbx-background-color('button.secondary.hover'),
+    $bg-color--pressed: dbx-background-color('button.secondary.pressed'),
+    $bg-color--disabled: dbx-background-color('button.secondary.disabled'),
+    $text-color: dbx-text-color('button.secondary'),
+    $text-color--hover: dbx-text-color('button.secondary.hover'),
+    $text-color--pressed: dbx-text-color('button.secondary.pressed'),
+    $text-color--disabled: dbx-text-color('button.secondary.disabled'),
+    $border-color: dbx-border-color('button.secondary'),
+    $border-color--hover: dbx-border-color('button.secondary.hover'),
+    $border-color--pressed: dbx-border-color('button.secondary.pressed'),
+    $border-color--disabled: dbx-border-color('button.secondary.disabled')
   );
 }
 
-.dbx-button--small {
-  height: 46px;
-  min-width: 160px;
+@each $size in (xl l m s xs) {
+  .dbx-button--#{$size} {
+    border-radius: dbx-border-radius($size);
+    @if $size == s {
+      font-size: dbx-font-size('copy', 's');
+    }
+    height: dbx-size($size);
+    min-width: 4 * dbx-size($size);
+    padding: 0 #{dbx-size($size) / 2};
+    @if $size == s {
+      padding-bottom: 3px; // Fix vertical align
+    }
+  }
 }
 
 .dbx-button--loading .dbx-loadingindicator {
   display: inline-block;
   vertical-align: sub;
-  margin: 0 dbx-spacing('24');
+  margin: 0 dbx-spacing('l');
 }

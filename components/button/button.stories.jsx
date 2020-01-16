@@ -62,14 +62,44 @@ storiesOf('Components / Button', module)
       Secondary Full Width Button
     </Button>
   ))
-  .add('Primary Small', () => (
-    <Button onClick={action('clicked')} size="small">
-      Primary Small Button
+  .add('Primary Size S', () => (
+    <Button onClick={action('clicked')} size={Button.sizes.S}>
+      Primary S Button
     </Button>
   ))
-  .add('Secondary Small', () => (
-    <Button variant="secondary" onClick={action('clicked')} size="small">
-      Secondary Small Button
+  .add('Secondary Size S', () => (
+    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.S}>
+      Secondary S Button
+    </Button>
+  ))
+  .add('Primary Size M', () => (
+    <Button onClick={action('clicked')} size={Button.sizes.M}>
+      Primary M Button
+    </Button>
+  ))
+  .add('Secondary Size M', () => (
+    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.M}>
+      Secondary M Button
+    </Button>
+  ))
+  .add('Primary Size L', () => (
+    <Button onClick={action('clicked')} size={Button.sizes.L}>
+      Primary L Button
+    </Button>
+  ))
+  .add('Secondary Size L', () => (
+    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.L}>
+      Secondary L Button
+    </Button>
+  ))
+  .add('Primary Size XL', () => (
+    <Button onClick={action('clicked')} size={Button.sizes.XL}>
+      Primary XL Button
+    </Button>
+  ))
+  .add('Secondary Size XL', () => (
+    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.XL}>
+      Secondary XL Button
     </Button>
   ))
   .add('Primary submit', () => (
@@ -82,8 +112,18 @@ storiesOf('Components / Button', module)
       Disabled Button
     </Button>
   ))
-  .add('Primary Loading', () => <Button loading onClick={action('clicked')} />)
-  .add('Primary Loading small', () => <Button size="small" loading onClick={action('clicked')} />)
+  .add('Primary Loading Size S', () => (
+    <Button size={Button.sizes.S} loading onClick={action('clicked')} />
+  ))
+  .add('Primary Loading Size M', () => (
+    <Button size={Button.sizes.M} loading onClick={action('clicked')} />
+  ))
+  .add('Primary Loading Size L', () => (
+    <Button size={Button.sizes.L} loading onClick={action('clicked')} />
+  ))
+  .add('Primary Loading Size XL', () => (
+    <Button size={Button.sizes.XL} loading onClick={action('clicked')} />
+  ))
   .add('Primary Loading full width', () => <Button fullWidth loading onClick={action('clicked')} />)
   .add('Secondary Loading', () => (
     <Button variant="secondary" loading onClick={action('clicked')} />
@@ -100,13 +140,13 @@ storiesOf('Components / Button', module)
       Link
     </Button>
   ))
-  .add('Primary Link small', () => (
-    <Button href="#" size="small" onClick={action('clicked')}>
+  .add('Primary Link Size M', () => (
+    <Button href="#" size={Button.sizes.M} onClick={action('clicked')}>
       Link
     </Button>
   ))
-  .add('Secondary Link small', () => (
-    <Button href="#" size="small" variant="secondary" onClick={action('clicked')}>
+  .add('Secondary Link Size M', () => (
+    <Button href="#" size={Button.sizes.M} variant="secondary" onClick={action('clicked')}>
       Link
     </Button>
   ));

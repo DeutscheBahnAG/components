@@ -6,15 +6,15 @@ table.wrapper.dbx-email-footer {
   width: 100%;
 
   table.dbx-email-separator {
-    margin-bottom: dbx-spacing('52');
-    Margin-bottom: dbx-spacing('52'); /* 1 */
+    margin-bottom: dbx-spacing('xl');
+    Margin-bottom: dbx-spacing('xl'); /* 1 */
   }
 
   p {
     color: $small-font-color;
     font-size: $small-font-size;
     font-family: $body-font-family;
-    line-height: map-get($text-style-small, 'lineHeight');
+    line-height: dbx-line-height('copy', 's');
   }
 
   p:last-of-type {
@@ -24,9 +24,9 @@ table.wrapper.dbx-email-footer {
 
   td.dbx-email-footer-inner {
     padding-top: 0;
-    padding-bottom: dbx-spacing('52');
-    padding-left: dbx-spacing('52');
-    padding-right: dbx-spacing('52');
+    padding-bottom: dbx-spacing('xl');
+    padding-left: dbx-spacing('xl');
+    padding-right: dbx-spacing('xl');
   }
 
 }

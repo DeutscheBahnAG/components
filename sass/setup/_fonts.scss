@@ -1,5 +1,5 @@
 @font-face {
-  font-family: $dbx-text-font;
+  font-family: dbx-font-family('copy');
   src: url('fonts/DBScreenSans-Regular.woff2') format('woff2'),
     url('fonts/DBScreenSans-Regular.woff') format('woff');
   font-weight: 400;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: $dbx-text-font;
+  font-family: dbx-font-family('copy');
   src: url('fonts/DBScreenSans-Bold.woff2') format('woff2'),
     url('fonts/DBScreenSans-Bold.woff') format('woff');
   font-weight: 700;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: $dbx-title-font;
+  font-family: dbx-font-family('title');
   src: url('fonts/DBScreenHead-Light.woff2') format('woff2'),
     url('fonts/DBScreenHead-Light.woff') format('woff');
   font-weight: 300;
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-  font-family: $dbx-title-font;
+  font-family: dbx-font-family('title');
   src: url('fonts/DBScreenHead-Regular.woff2') format('woff2'),
     url('fonts/DBScreenHead-Regular.woff') format('woff');
   font-weight: 400;
@@ -35,7 +35,7 @@
 }
 
 @font-face {
-  font-family: $dbx-title-font;
+  font-family: dbx-font-family('title');
   src: url('fonts/DBScreenHead-Black.woff2') format('woff2'),
     url('fonts/DBScreenHead-Black.woff') format('woff');
   font-weight: 700;

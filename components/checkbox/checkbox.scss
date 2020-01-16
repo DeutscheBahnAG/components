@@ -23,13 +23,13 @@
   }
 
   :disabled ~ * {
-    color: dbx-color('grey50');
+    color: dbx-text-color('disabled');
   }
 }
 
 .dbx-checkbox-box {
-  background: dbx-color('white');
-  border: 2px solid;
+  background: dbx-background-color('checkbox');
+  border: dbx-border-width('checkbox') solid;
   border-radius: 2.2px;
   box-sizing: content-box;
   flex-shrink: 0;
@@ -46,7 +46,7 @@
   }
 
   .dbx-checkbox:active > input:not(:disabled) + & {
-    background: dbx-color('grey25');
+    background: dbx-background-color('checkbox.pressed');
   }
 }
 

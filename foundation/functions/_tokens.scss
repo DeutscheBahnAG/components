@@ -1,0 +1,101 @@
+@function dbx-token(
+  $token-group,
+  $token-name,
+  $viewport: 'mobile',
+  $tokens-map: $dbx-tokens
+) {
+  @if map-has-key($tokens-map, $token-group) {
+    $token-group-map: map-get($tokens-map, $token-group);
+    @if ($viewport != 'mobile') and
+      map-has-key($token-group-map, '#{$token-name}.#{$viewport}') {
+      @return map-get($token-group-map, '#{$token-name}.#{$viewport}');
+    }
+    @if map-has-key($token-group-map, $token-name) {
+      @return map-get($token-group-map, $token-name);
+    }
+  }
+
+  $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DBX tokens map. Valid values are: (#{map-keys($tokens-map)})';
+  @if (
+    str-index($token-name, 'turquois') and not
+    str-index($token-name, 'turquoise')
+  ) {
+    @error 'Did you misspell `turquoise`? #{$error-message}';
+  } @else if (str-index($token-name, 'grey')) {
+    @error 'Did you misspell `gray`? #{$error-message}';
+  } @else {
+    @error $error-message;
+  }
+}
+
+@function dbx-palette-color($color, $tokens-map: $dbx-tokens) {
+  @return dbx-token('palette', $color, $tokens-map);
+}
+
+@function dbx-color($color, $tokens-map: $dbx-tokens) {
+  @return dbx-token('color', $color, $tokens-map);
+}
+
+@function dbx-background-color($color, $tokens-map: $dbx-tokens) {
+  @return dbx-color('background.#{$color}', $tokens-map);
+}
+
+@function dbx-text-color($color, $tokens-map: $dbx-tokens) {
+  @return dbx-color('text.#{$color}', $tokens-map);
+}
+
+@function dbx-border-color($color, $tokens-map: $dbx-tokens) {
+  @return dbx-color('border.#{$color}', $tokens-map);
+}
+
+@function dbx-border-width($color, $tokens-map: $dbx-tokens) {
+  @return dbx-token('bordersize', $color, $tokens-map);
+}
+
+@function dbx-font-family($type, $tokens-map: $dbx-tokens) {
+  @return dbx-token('fontfamily', $type, $tokens-map);
+}
+
+@function dbx-font-weight($type, $tokens-map: $dbx-tokens) {
+  @return dbx-token('fontweight', $type, $tokens-map);
+}
+
+@function dbx-font-size(
+  $type,
+  $size: 'm',
+  $viewport: 'mobile',
+  $tokens-map: $dbx-tokens
+) {
+  @return dbx-token('textsize', '#{$type}.#{$size}', $viewport, $tokens-map);
+}
+
+@function dbx-line-height(
+  $type,
+  $size: 'm',
+  $viewport: 'mobile',
+  $tokens-map: $dbx-tokens
+) {
+  @return dbx-token('lineheight', '#{$type}.#{$size}', $viewport, $tokens-map);
+}
+
+@function dbx-spacing($size, $negative: false, $tokens-map: $dbx-tokens) {
+  $spacing: dbx-token('spacing', $size, $tokens-map);
+
+  @if ($negative == true) {
+    @return $spacing * -1;
+  }
+
+  @return $spacing;
+}
+
+@function dbx-size($size, $tokens-map: $dbx-tokens) {
+  @return dbx-token('size', $size, $tokens-map);
+}
+
+@function dbx-border-radius($size, $tokens-map: $dbx-tokens) {
+  @return dbx-token('radius', $size, $tokens-map);
+}
+
+@function dbx-icon-size($size, $tokens-map: $dbx-tokens) {
+  @return dbx-token('icon', $size, $tokens-map);
+}

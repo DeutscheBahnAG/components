@@ -1,48 +1,27 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
 // TODO: replace with DBX colors as soon as they are available in DBX Web
-$notification-variants: (
-  info: (
-    foreground-color: #0a1e6e,
-    background-color: #e0effb,
-    hover-color: #b4d5f6
-  ),
-  warning: (
-    foreground-color: #a24800,
-    background-color: #f7eee6,
-    hover-color: #ecd5c5
-  ),
-  error: (
-    foreground-color: #9b000e,
-    background-color: #fee6e6,
-    hover-color: #fcc8c3
-  ),
-  success: (
-    foreground-color: #165c27,
-    background-color: #e2f3e5,
-    hover-color: #bddbb9
-  )
-);
+$notification-variants: ('info' 'warning' 'error' 'success');
 
 .dbx-notification {
-  @include dbx-text-style('copyS');
+  @include dbx-text-style('copy', 's');
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding: dbx-spacing('16');
-  color: dbx-color('white');
-  background-color: dbx-color('darkGrey');
+  padding: dbx-spacing('m');
+  color: dbx-background-color('primary');
+  background-color: dbx-text-color('primary');
   border-style: solid;
   border-width: 0 0 0 4px;
   border-radius: 4px;
 }
 
 .dbx-notification + .dbx-notification {
-  margin-top: dbx-spacing('16');
+  margin-top: dbx-spacing('m');
 }
 
 .dbx-notification__icon {
-  margin-right: dbx-spacing('16');
+  margin-right: dbx-spacing('m');
 }
 
 .dbx-notification__variant {
@@ -63,7 +42,7 @@ $notification-variants: (
 
   @include dbx-focus-ring($target: '.dbx-notification__close-icon'); /* 2 */
   margin: $button-padding * -1; /* 3 */
-  margin-left: dbx-spacing('16') - $button-padding;
+  margin-left: dbx-spacing('m') - $button-padding;
   background-color: transparent;
   appearance: none;
 
@@ -99,15 +78,19 @@ $notification-variants: (
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@each $variant, $options in $notification-variants {
-  .dbx-notification--#{$variant} {
-    color: map-get($options, 'foreground-color');
-    background-color: map-get($options, 'background-color');
-    border-color: map-get($options, 'foreground-color');
-  }
+@each $variant in $notification-variants {
+  $color-name: if($variant == 'info', 'active', $variant);
 
-  .dbx-notification--#{$variant} .dbx-notification__close-btn:hover .dbx-notification__close-icon {
-    background-color: map-get($options, 'hover-color');
+  .dbx-notification--#{$variant} {
+    color: dbx-text-color('notification.#{$color-name}');
+    background-color: dbx-background-color('notification.#{$color-name}');
+    border-color: dbx-text-color('notification.#{$color-name}');
+
+    .dbx-notification__close-btn:hover .dbx-notification__close-icon {
+      background-color: mix(dbx-background-color('notification.#{$color-name}'),
+      dbx-text-color('notification.#{$color-name}'),
+      80%);
+    }
   }
 }
 
@@ -126,5 +109,5 @@ $notification-variants: (
   left: 50%;
   transform: translateX(-50%);
   max-width: 64rem; /* 1 */
-  padding: dbx-spacing('16');
+  padding: dbx-spacing('m');
 }
