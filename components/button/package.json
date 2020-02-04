@@ -11,6 +11,7 @@
   "dependencies": {
     "@bahn-x/dbx-loadingindicator": "^0.1.2",
     "clsx": "^1.0.4",
+    "core-js": "^3.6.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
