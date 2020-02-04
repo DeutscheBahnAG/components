@@ -1,0 +1,68 @@
+// TODO: replace with DBX colors as soon as they are available in DBX Web
+$notification-variants: (
+  info: (
+    foreground-color: #0a1e6e,
+    background-color: #e0effb
+  ),
+  warning: (
+    foreground-color: #a24800,
+    background-color: #f7eee6
+  ),
+  error: (
+    foreground-color: #9b000e,
+    background-color: #fee6e6
+  ),
+  success: (
+    foreground-color: #165c27,
+    background-color: #e2f3e5
+  )
+);
+
+.dbx-notification {
+  @include dbx-text-style('copyS');
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: dbx-spacing('16');
+  color: dbx-color('white');
+  background-color: dbx-color('darkGrey');
+  border-style: solid;
+  border-width: 0 0 0 4px;
+  border-radius: 4px;
+}
+
+.dbx-notification + .dbx-notification {
+  margin-top: dbx-spacing('16');
+}
+
+.dbx-notification__icon {
+  margin-right: dbx-spacing('16');
+
+  svg {
+    display: block;
+    fill: currentColor;
+  }
+}
+
+.dbx-notification__content {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.dbx-notification__title {
+  display: block;
+  font-weight: bold;
+}
+
+.dbx-notification--global {
+  border-width: 1px 1px 1px 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@each $variant, $options in $notification-variants {
+  .dbx-notification--#{$variant} {
+    color: map-get($options, 'foreground-color');
+    background-color: map-get($options, 'background-color');
+    border-color: map-get($options, 'foreground-color');
+  }
+}
