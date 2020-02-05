@@ -59,6 +59,7 @@
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "clsx": "^1.0.3",
+    "core-js": "^3.6.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
