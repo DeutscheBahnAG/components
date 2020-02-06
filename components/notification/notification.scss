@@ -41,11 +41,21 @@ $notification-variants: (
   margin-right: dbx-spacing('16');
 }
 
+.dbx-notification__variant {
+  @include dbx-visually-hidden;
+}
+
+/**
+ * 1. the icon size is 24px, but we want a nice, Apple HIG-complaint
+ *     tap target size of 44x44px, so we add 10px padding everywhere
+ * 2. we don't want the padding to increase the overall component
+ *     dimensions, so we subtract it from the margins
+ */
 .dbx-notification__close-btn {
-  $button-padding: 10px;
+  $button-padding: 10px; /* 1 */
 
   padding: $button-padding;
-  margin: $button-padding * -1;
+  margin: $button-padding * -1; /* 2 */
   margin-left: dbx-spacing('16') - $button-padding;
   background-color: transparent;
   appearance: none;
@@ -86,6 +96,12 @@ $notification-variants: (
   }
 }
 
+/**
+ * 1. Preserve a comfortably readable line length of the messages.
+ *    We don't set a (min)-width as we want the notifications
+ *    to take up only the miminmal amount of the space necessary to
+ *    not block interactions with large parts of the site.
+ */
 .dbx-notification-portal {
   position: fixed;
   display: flex;
@@ -94,6 +110,6 @@ $notification-variants: (
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 64rem;
+  max-width: 64rem; /* 1 */
   padding: dbx-spacing('16');
 }
