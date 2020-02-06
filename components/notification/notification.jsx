@@ -83,6 +83,7 @@ const Notification = ({
             type="button"
             className="dbx-notification__close-btn"
             onClick={onClose}
+            title={labels.close}
             aria-label={labels.close}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
@@ -98,15 +99,26 @@ const Notification = ({
 Notification.variants = notificationVariants;
 
 Notification.propTypes = {
+  /** the title will be displayed as bold text above the message  */
   title: PropTypes.node,
+  /** the notification message to display */
   message: PropTypes.node,
+  /** optional className to add to the notification */
   className: PropTypes.string,
+  /** displays the notification overlaid on top of the page */
   global: PropTypes.bool,
+  /** the purpose of the notification, affects visual styling */
   variant: PropTypes.oneOf(Object.values(notificationVariants)),
+  /** close button click handler, required to display the close button */
   onClose: PropTypes.func,
+  /** custom translation strings */
   labels: PropTypes.shape({
     close: PropTypes.string,
   }),
+  /** whether to automatically focus the close button when the notification
+   * is displayed. Can be useful for global notifications as they are appended
+   * to the end of the DOM, so people would need to tab around a lot to reach them.
+   */
   autofocusCloseButton: PropTypes.bool,
 };
 
