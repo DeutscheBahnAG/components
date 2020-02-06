@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import Notification from './notification';
 import readme from './README.md';
 
 const message = 'I am a Notification.';
+
+const StatefulNotification = props => {
+  const [isOpen, setOpen] = useState(true);
+  return isOpen ? <Notification {...props} onClose={() => setOpen(false)} /> : null;
+};
 
 storiesOf('Components / Notification', module)
   .addDecorator(withReadme(readme))
@@ -29,6 +34,19 @@ storiesOf('Components / Notification', module)
       message="Please purchase a copy to continue using this product."
     />
   ))
+  .add('Closable', () => {
+    return <StatefulNotification message="Please don't close me." />;
+  })
+  .add('Autofocus Close Button', () => {
+    return (
+      <Notification
+        autofocusCloseButton
+        message="My close button is focused."
+        // eslint-disable-next-line no-alert
+        onClose={() => alert('Close Button Clicked.')}
+      />
+    );
+  })
   .add('Global', () => {
     const loremIpsum =
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro repellendus adipisci eos maxime, dignissimos mollitia, minima rerum dolor ipsum ducimus facilis vel voluptate possimus fugit odio voluptas est ex suscipit.';
@@ -43,7 +61,7 @@ storiesOf('Components / Notification', module)
         <p>{loremIpsum}</p>
         <p>{loremIpsum}</p>
         <p>{loremIpsum}</p>
-        <Notification
+        <StatefulNotification
           global
           variant={Notification.variants.SUCCESS}
           message="Your account was deleted successfully."
@@ -51,21 +69,32 @@ storiesOf('Components / Notification', module)
       </>
     );
   })
-  .add('Closable', () => {
-    const StatefulNotification = props => {
-      const [isOpen, setOpen] = useState(true);
-      return isOpen ? <Notification {...props} onClose={() => setOpen(false)} /> : null;
+  .add('ARIA Live Region', () => {
+    const LiveNotifications = () => {
+      const [notifications, setNotifications] = useState([]);
+      useEffect(() => {
+        Object.values(Notification.variants).forEach((variant, index) => {
+          setTimeout(() => {
+            setNotifications(prevNotifications => [
+              ...prevNotifications,
+              <Notification
+                key={variant}
+                variant={variant}
+                global
+                message={`Ich bin Meldung Nummer ${index + 1}`}
+              />,
+            ]);
+          }, (index + 1) * 4000);
+        });
+      }, []);
+      return <div>{notifications}</div>;
     };
 
-    return <StatefulNotification message="Please don't close me." />;
-  })
-  .add('Autofocus Close Button', () => {
     return (
-      <Notification
-        autofocusCloseButton
-        message="My close button is focused."
-        // eslint-disable-next-line no-alert
-        onClose={() => alert('Close Button Clicked.')}
-      />
+      <>
+        <LiveNotifications />
+        <p>This demo shows four notifications appearing, each with a delay of four seconds.</p>
+        <p>Visit this site with a screenreader to hear how new notifications are being read out.</p>
+      </>
     );
   });

@@ -48,6 +48,7 @@ const Notification = ({
   ...otherProps
 }) => {
   const icon = notificationIcons[variant];
+  const label = labels[variant];
   const NotificationWrapper = global ? NotificationPortal : Fragment;
   const closeButtonRef = useRef();
 
@@ -69,6 +70,7 @@ const Notification = ({
         )}
       >
         {icon && <span className="dbx-notification__icon">{icon}</span>}
+        {label && <div className="dbx-notification__variant">{label}</div>}
         <span className="dbx-notification__content">
           {title && (
             <>
@@ -114,6 +116,10 @@ Notification.propTypes = {
   /** custom translation strings */
   labels: PropTypes.shape({
     close: PropTypes.string,
+    [notificationVariants.INFO]: PropTypes.string,
+    [notificationVariants.WARNING]: PropTypes.string,
+    [notificationVariants.ERROR]: PropTypes.string,
+    [notificationVariants.SUCCESS]: PropTypes.string,
   }),
   /** whether to automatically focus the close button when the notification
    * is displayed. Can be useful for global notifications as they are appended
@@ -131,6 +137,10 @@ Notification.defaultProps = {
   onClose: null,
   labels: {
     close: 'Schließen',
+    [notificationVariants.INFO]: 'Info',
+    [notificationVariants.WARNING]: 'Warnung',
+    [notificationVariants.ERROR]: 'Fehler',
+    [notificationVariants.SUCCESS]: 'Erfolg',
   },
   autofocusCloseButton: false,
 };
