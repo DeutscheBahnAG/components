@@ -5,6 +5,7 @@ import Notification from './notification';
 import readme from './README.md';
 
 const message = 'I am a Notification.';
+const closeMessage = 'Please donʼt close me.';
 
 const StatefulNotification = props => {
   const [isOpen, setOpen] = useState(true);
@@ -34,9 +35,14 @@ storiesOf('Components / Notification', module)
       message="Please purchase a copy to continue using this product."
     />
   ))
-  .add('Closable', () => {
-    return <StatefulNotification message="Please don't close me." />;
-  })
+  .add('Closable', () => (
+    <>
+      <StatefulNotification variant={Notification.variants.INFO} message={closeMessage} />
+      <StatefulNotification variant={Notification.variants.WARNING} message={closeMessage} />
+      <StatefulNotification variant={Notification.variants.ERROR} message={closeMessage} />
+      <StatefulNotification variant={Notification.variants.SUCCESS} message={closeMessage} />
+    </>
+  ))
   .add('Autofocus Close Button', () => {
     return (
       <Notification

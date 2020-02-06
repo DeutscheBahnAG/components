@@ -4,19 +4,23 @@
 $notification-variants: (
   info: (
     foreground-color: #0a1e6e,
-    background-color: #e0effb
+    background-color: #e0effb,
+    hover-color: #b4d5f6
   ),
   warning: (
     foreground-color: #a24800,
-    background-color: #f7eee6
+    background-color: #f7eee6,
+    hover-color: #ecd5c5
   ),
   error: (
     foreground-color: #9b000e,
-    background-color: #fee6e6
+    background-color: #fee6e6,
+    hover-color: #fcc8c3
   ),
   success: (
     foreground-color: #165c27,
-    background-color: #e2f3e5
+    background-color: #e2f3e5,
+    hover-color: #bddbb9
   )
 );
 
@@ -103,7 +107,7 @@ $notification-variants: (
   }
 
   .dbx-notification--#{$variant} .dbx-notification__close-btn:hover .dbx-notification__close-icon {
-    background-color: darken(map-get($options, 'background-color'), 10%);
+    background-color: map-get($options, 'hover-color');
   }
 }
 
