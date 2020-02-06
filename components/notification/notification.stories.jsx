@@ -57,7 +57,15 @@ storiesOf('Components / Notification', module)
       return isOpen ? <Notification {...props} onClose={() => setOpen(false)} /> : null;
     };
 
+    return <StatefulNotification message="Please don't close me." />;
+  })
+  .add('Autofocus Close Button', () => {
     return (
-      <StatefulNotification variant={Notification.variants.INFO} message="Please don't close me." />
+      <Notification
+        autofocusCloseButton
+        message="My close button is focused."
+        // eslint-disable-next-line no-alert
+        onClose={() => alert('Close Button Clicked.')}
+      />
     );
   });

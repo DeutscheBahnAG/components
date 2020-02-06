@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
@@ -44,10 +44,19 @@ const Notification = ({
   className,
   onClose,
   labels,
+  autofocusCloseButton,
   ...otherProps
 }) => {
   const icon = notificationIcons[variant];
   const NotificationWrapper = global ? NotificationPortal : Fragment;
+  const closeButtonRef = useRef();
+
+  useEffect(() => {
+    if (autofocusCloseButton && onClose && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [autofocusCloseButton, onClose]);
+
   return (
     <NotificationWrapper>
       <div
@@ -70,6 +79,7 @@ const Notification = ({
         </span>
         {onClose && (
           <button
+            ref={closeButtonRef}
             type="button"
             className="dbx-notification__close-btn"
             onClick={onClose}
@@ -97,6 +107,7 @@ Notification.propTypes = {
   labels: PropTypes.shape({
     close: PropTypes.string,
   }),
+  autofocusCloseButton: PropTypes.bool,
 };
 
 Notification.defaultProps = {
@@ -109,6 +120,7 @@ Notification.defaultProps = {
   labels: {
     close: 'Schließen',
   },
+  autofocusCloseButton: false,
 };
 
 export default Notification;
