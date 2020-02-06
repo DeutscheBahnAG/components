@@ -68,3 +68,15 @@ $notification-variants: (
     border-color: map-get($options, 'foreground-color');
   }
 }
+
+.dbx-notification-portal {
+  position: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 64rem;
+  padding: dbx-spacing('16');
+}

@@ -29,10 +29,25 @@ storiesOf('Components / Notification', module)
       message="Please purchase a copy to continue using this product."
     />
   ))
-  .add('Global', () => (
-    <Notification
-      global
-      variant={Notification.variants.SUCCESS}
-      message="Your account was deleted successfully."
-    />
-  ));
+  .add('Global', () => {
+    const loremIpsum =
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro repellendus adipisci eos maxime, dignissimos mollitia, minima rerum dolor ipsum ducimus facilis vel voluptate possimus fugit odio voluptas est ex suscipit.';
+
+    return (
+      <>
+        <Notification
+          global
+          variant={Notification.variants.ERROR}
+          message="Keyboard not found. Press any key to continue."
+        />
+        <p>{loremIpsum}</p>
+        <p>{loremIpsum}</p>
+        <p>{loremIpsum}</p>
+        <Notification
+          global
+          variant={Notification.variants.SUCCESS}
+          message="Your account was deleted successfully."
+        />
+      </>
+    );
+  });

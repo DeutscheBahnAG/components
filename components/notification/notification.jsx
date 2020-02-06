@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import NotificationPortal from './notification-portal';
 
 const notificationVariants = {
   INFO: 'info',
@@ -37,26 +38,29 @@ const notificationIcons = {
 
 const Notification = ({ title, message, variant, global, className, ...otherProps }) => {
   const icon = notificationIcons[variant];
+  const NotificationWrapper = global ? NotificationPortal : Fragment;
   return (
-    <div
-      {...otherProps}
-      className={clsx(
-        'dbx-notification',
-        `dbx-notification--${variant}`,
-        { 'dbx-notification--global': global },
-        className
-      )}
-    >
-      {icon && <span className="dbx-notification__icon">{icon}</span>}
-      <span className="dbx-notification__content">
-        {title && (
-          <>
-            <span className="dbx-notification__title">{title}</span>{' '}
-          </>
+    <NotificationWrapper>
+      <div
+        {...otherProps}
+        className={clsx(
+          'dbx-notification',
+          `dbx-notification--${variant}`,
+          { 'dbx-notification--global': global },
+          className
         )}
-        {message}
-      </span>
-    </div>
+      >
+        {icon && <span className="dbx-notification__icon">{icon}</span>}
+        <span className="dbx-notification__content">
+          {title && (
+            <>
+              <span className="dbx-notification__title">{title}</span>{' '}
+            </>
+          )}
+          {message}
+        </span>
+      </div>
+    </NotificationWrapper>
   );
 };
 
