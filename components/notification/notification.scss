@@ -39,7 +39,24 @@ $notification-variants: (
 
 .dbx-notification__icon {
   margin-right: dbx-spacing('16');
+}
 
+.dbx-notification__close-btn {
+  $button-padding: 10px;
+
+  padding: $button-padding;
+  margin: $button-padding * -1;
+  margin-left: dbx-spacing('16') - $button-padding;
+  background-color: transparent;
+  appearance: none;
+
+  @include dbx-focus-ring($target: 'svg') {
+    border-radius: 4px;
+  };
+}
+
+.dbx-notification__icon,
+.dbx-notification__close-btn {
   svg {
     display: block;
     fill: currentColor;

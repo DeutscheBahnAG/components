@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import Notification from './notification';
@@ -49,5 +49,15 @@ storiesOf('Components / Notification', module)
           message="Your account was deleted successfully."
         />
       </>
+    );
+  })
+  .add('Closable', () => {
+    const StatefulNotification = props => {
+      const [isOpen, setOpen] = useState(true);
+      return isOpen ? <Notification {...props} onClose={() => setOpen(false)} /> : null;
+    };
+
+    return (
+      <StatefulNotification variant={Notification.variants.INFO} message="Please don't close me." />
     );
   });

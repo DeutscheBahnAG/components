@@ -36,7 +36,16 @@ const notificationIcons = {
   ),
 };
 
-const Notification = ({ title, message, variant, global, className, ...otherProps }) => {
+const Notification = ({
+  title,
+  message,
+  variant,
+  global,
+  className,
+  onClose,
+  labels,
+  ...otherProps
+}) => {
   const icon = notificationIcons[variant];
   const NotificationWrapper = global ? NotificationPortal : Fragment;
   return (
@@ -59,6 +68,18 @@ const Notification = ({ title, message, variant, global, className, ...otherProp
           )}
           {message}
         </span>
+        {onClose && (
+          <button
+            type="button"
+            className="dbx-notification__close-btn"
+            onClick={onClose}
+            aria-label={labels.close}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+              <path d="M13.4141 12l6.293-6.293a.9989.9989 0 000-1.414.9989.9989 0 00-1.414 0l-6.293 6.293-6.293-6.293a.9989.9989 0 00-1.414 0 .9989.9989 0 000 1.414L10.5861 12l-6.293 6.293a.9989.9989 0 000 1.414c.195.195.451.293.707.293.256 0 .512-.098.707-.293l6.293-6.293 6.293 6.293c.195.195.451.293.707.293.256 0 .512-.098.707-.293a.9989.9989 0 000-1.414L13.4141 12z" />
+            </svg>
+          </button>
+        )}
       </div>
     </NotificationWrapper>
   );
@@ -72,6 +93,10 @@ Notification.propTypes = {
   className: PropTypes.string,
   global: PropTypes.bool,
   variant: PropTypes.oneOf(Object.values(notificationVariants)),
+  onClose: PropTypes.func,
+  labels: PropTypes.shape({
+    close: PropTypes.string,
+  }),
 };
 
 Notification.defaultProps = {
@@ -80,6 +105,10 @@ Notification.defaultProps = {
   className: '',
   global: false,
   variant: notificationVariants.INFO,
+  onClose: null,
+  labels: {
+    close: 'Schließen',
+  },
 };
 
 export default Notification;
