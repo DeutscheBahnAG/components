@@ -41,6 +41,7 @@ $dbx-textfield-background-color: dbx-color('white');
   textarea {
     border: 0;
     background: transparent;
+    border-radius: inherit;
     color: inherit;
     font-family: inherit;
     font-size: inherit;
