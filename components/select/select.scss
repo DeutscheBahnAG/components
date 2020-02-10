@@ -32,8 +32,11 @@ $dbx-select-chevron-margin: 16px;
     color: dbx-color('grey50');
   }
 
+  /**
+   * 1. do not apply browser-default select styles
+   */
   select {
-    appearance: none;
+    appearance: none; /* 1 */
     border: 0;
     background: transparent;
     color: inherit;
@@ -49,6 +52,13 @@ $dbx-select-chevron-margin: 16px;
       $dbx-select-padding-horizontal;
     outline: 0;
     width: inherit;
+  }
+
+  /**
+   * 1. hide browser-default dropdown arrow in IE11
+   */
+  select::-ms-expand {
+    display: none; /* 1 */
   }
 
   svg {
