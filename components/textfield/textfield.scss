@@ -2,22 +2,31 @@
 
 $dbx-textfield-text-style: 'copy';
 $dbx-textfield-border-width: 1px;
+$dbx-textfield-border-radius: 8px;
 $dbx-textfield-adjustment: 1px;
-$dbx-textfield-padding-horizontal: dbx-spacing('16') - $dbx-textfield-border-width;
-$dbx-textfield-padding-vertical: dbx-spacing('16') - $dbx-textfield-border-width;
-$dbx-textfield-padding-top: $dbx-textfield-padding-vertical - $dbx-textfield-adjustment;
-$dbx-textfield-padding-bottom: $dbx-textfield-padding-vertical + $dbx-textfield-adjustment;
+$dbx-textfield-padding-horizontal: dbx-spacing('16') -
+  $dbx-textfield-border-width;
+$dbx-textfield-padding-vertical: dbx-spacing('16') - $dbx-textfield-border-width +
+  2px;
+$dbx-textfield-padding-top: $dbx-textfield-padding-vertical -
+  $dbx-textfield-adjustment;
+$dbx-textfield-padding-bottom: $dbx-textfield-padding-vertical +
+  $dbx-textfield-adjustment;
 $dbx-textfield-background-color: dbx-color('white');
 
 .dbx-textfield {
   @include dbx-text-style($dbx-textfield-text-style);
-  @include dbx-focus-ring($focus-selector: '.dbx-textfield--focus', $border: true);
+  @include dbx-focus-ring(
+    $focus-selector: '.dbx-textfield--focus',
+    $border: true
+  );
   align-items: stretch;
   background-color: $dbx-textfield-background-color;
   border: $dbx-textfield-border-width solid dbx-color('grey50');
-  border-radius: 8px;
+  border-radius: $dbx-textfield-border-radius;
   color: dbx-color('darkGrey');
   display: inline-flex;
+  line-height: 24px;
 
   &:not([disabled]) {
     cursor: text;
@@ -44,7 +53,7 @@ $dbx-textfield-background-color: dbx-color('white');
   textarea {
     border: 0;
     background: transparent;
-    border-radius: inherit;
+    border-radius: $dbx-textfield-border-radius;
     box-shadow: none; /* 1 */
     color: inherit;
     font-family: inherit;
@@ -52,9 +61,7 @@ $dbx-textfield-background-color: dbx-color('white');
     font-weight: inherit;
     line-height: inherit;
     flex: 1;
-    padding:
-      $dbx-textfield-padding-top
-      $dbx-textfield-padding-horizontal
+    padding: $dbx-textfield-padding-top $dbx-textfield-padding-horizontal
       $dbx-textfield-padding-bottom;
     outline: 0;
   }
@@ -71,7 +78,9 @@ $dbx-textfield-background-color: dbx-color('white');
 
   &::before,
   &::after {
-    background: linear-gradient(to top, $dbx-textfield-background-color, rgba($dbx-textfield-background-color, 0));
+    background: linear-gradient(to top,
+    $dbx-textfield-background-color,
+    rgba($dbx-textfield-background-color, 0));
     bottom: 0;
     content: '';
     height: dbx-spacing('8');
@@ -92,18 +101,66 @@ $dbx-textfield-background-color: dbx-color('white');
 .dbx-textfield-suffix {
   color: dbx-color('grey75');
   margin: 0 calc(0.15em - #{$dbx-textfield-padding-vertical}) 0 0; // Thin space
-  padding:
-    $dbx-textfield-padding-top
-    0
-    $dbx-textfield-padding-bottom
+  padding: $dbx-textfield-padding-top 0 $dbx-textfield-padding-bottom
     $dbx-textfield-padding-horizontal;
+  transition: padding 0.2s;
 }
 
 .dbx-textfield-suffix {
   margin: 0 0 0 calc(0.15em - #{$dbx-textfield-padding-vertical}); // Thin space
-  padding:
-    $dbx-textfield-padding-top
-    $dbx-textfield-padding-horizontal
-    $dbx-textfield-padding-bottom
-    0;
+  padding: $dbx-textfield-padding-top $dbx-textfield-padding-horizontal
+    $dbx-textfield-padding-bottom 0;
+}
+
+.dbx-textfield__inline-label {
+  color: dbx-color('grey75');
+  margin-left: $dbx-textfield-padding-horizontal;
+  margin-top: 16px;
+  pointer-events: none;
+  position: absolute;
+  transition: all 0.2s;
+  transform-origin: 0 0;
+}
+
+/**
+  * 1. Calculating the scaling from M to S.
+  * 2. Prefer `scale` over `font-size` for smooth transitions.
+  */
+.dbx-textfield--focus .dbx-textfield__inline-label,
+.dbx-textfield--filled .dbx-textfield__inline-label {
+  $font-size-s: map-get(map-get($dbx-text-styles, 'copyS'), 'fontSize');
+  $font-size-m: map-get(map-get($dbx-text-styles, 'copy'), 'fontSize');
+  $scale-down: $font-size-s / $font-size-m; /* 1 */
+  margin-top: 6px;
+  transform: scale(#{$scale-down}) translateY(-2px); /* 2 */
+}
+
+.dbx-textfield--focus label {
+  color: dbx-color('darkGrey');
+}
+
+.dbx-textfield[disabled] label {
+  color: inherit;
+}
+
+.dbx-textfield--inline-label {
+  ::placeholder {
+    color: transparent;
+    transition: color 0.2;
+  }
+
+  &.dbx-textfield--focus ::placeholder {
+    color: dbx-color('grey50');
+  }
+
+  input,
+  textarea,
+  &.dbx-textfield--filled .dbx-textfield-prefix,
+  &.dbx-textfield--filled .dbx-textfield-suffix,
+  &.dbx-textfield--focus .dbx-textfield-prefix,
+  &.dbx-textfield--focus .dbx-textfield-suffix {
+    $text-shift: 8px;
+    padding-bottom: $dbx-textfield-padding-bottom - $text-shift;
+    padding-top: $dbx-textfield-padding-top + $text-shift;
+  }
 }

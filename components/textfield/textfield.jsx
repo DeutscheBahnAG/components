@@ -30,16 +30,38 @@ class Textfield extends React.Component {
   }
 
   render() {
-    const { type, className, value, unit, prefix, suffix, onChange, ...otherProps } = this.props;
+    const {
+      type,
+      className,
+      value,
+      unit,
+      prefix,
+      suffix,
+      onChange,
+      inlineLabel,
+      ...otherProps
+    } = this.props;
     const { focus } = this.state;
     const Field = type === 'textarea' ? 'textarea' : 'input';
     let contentBefore = prefix;
     let contentAfter = suffix;
 
     if (unit) {
-      if (unitsBeforeField.indexOf(unit) !== -1) contentBefore = unit;
+      if (unitsBeforeField.includes(unit)) contentBefore = unit;
       else contentAfter = unit;
     }
+
+    const field = (
+      <Field
+        ref={this.field}
+        {...otherProps}
+        value={value}
+        type={type === 'textarea' ? null : type}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        onChange={onChange}
+      />
+    );
 
     return (
       <div
@@ -49,20 +71,22 @@ class Textfield extends React.Component {
         className={clsx(
           'dbx-textfield',
           `dbx-textfield--${type}`,
+          value && 'dbx-textfield--filled',
           focus && 'dbx-textfield--focus',
+          inlineLabel && 'dbx-textfield--inline-label',
           className
         )}
       >
         {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
-        <Field
-          ref={this.field}
-          {...otherProps}
-          value={value}
-          type={type === 'textarea' ? null : type}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={onChange}
-        />
+        {(inlineLabel && (
+          // eslint-disable-next-line jsx-a11y/label-has-associated-control
+          <label>
+            <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
+            {field}
+          </label>
+        )) ||
+          field}
+
         {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
       </div>
     );
@@ -93,6 +117,8 @@ Textfield.propTypes = {
   suffix: PropTypes.string,
   /** Change event handler */
   onChange: PropTypes.func,
+  /** Inline label */
+  inlineLabel: PropTypes.string,
 };
 
 Textfield.defaultProps = {
@@ -103,6 +129,7 @@ Textfield.defaultProps = {
   prefix: null,
   suffix: null,
   onChange: null,
+  inlineLabel: null,
 };
 
 export default Textfield;

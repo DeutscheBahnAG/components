@@ -81,3 +81,42 @@ Your internal email address:
 ```jsx +jsxpreview +highlight="readOnly" .columns
 <Textfield readOnly value="Read only" />
 ```
+
+## Inline label
+
+For rare cases (e.g. a login form), it might make sense to use inline labels.
+The DBX Textfield offers full support.
+
+Inline labels will cover the Textfield until it got filled out. Then they’ll
+move on top of the input.
+
+```jsx +jsxpreview +highlight="inlineLabel" .columns
+<Textfield inlineLabel="Username" value="lea151" />
+```
+
+```jsx +jsxpreview +highlight="inlineLabel" .columns
+<Textfield inlineLabel="Password" type="password" />
+```
+
+You can use inline Textfields in combination with other attributes:
+
+```jsx +jsxpreview +highlight=/prefix=".+?"/ .columns
+<Textfield prefix="@" inlineLabel="Twitter account" />
+```
+
+```jsx +jsxpreview +highlight=/suffix=".+?"/ .columns
+<Textfield suffix="@bahn-x.de" inlineLabel="Email address" />
+```
+
+```jsx +jsxpreview +highlight=/prefix=".+?"/ .columns
+<Textfield disabled value="Disabled" inlineLabel="Twitter account" />
+```
+
+```jsx +jsxpreview +highlight=/suffix=".+?"/ .columns
+<Textfield
+  readOnly
+  value="my.name"
+  suffix="@bahn-x.de"
+  inlineLabel="Email address"
+/>
+```
