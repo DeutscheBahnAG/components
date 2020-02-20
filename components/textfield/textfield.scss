@@ -37,11 +37,15 @@ $dbx-textfield-background-color: dbx-color('white');
     color: dbx-color('grey50');
   }
 
+  /**
+   * 1. Remove red shadow when validation fails (Firefox)
+   */
   input,
   textarea {
     border: 0;
     background: transparent;
     border-radius: inherit;
+    box-shadow: none; /* 1 */
     color: inherit;
     font-family: inherit;
     font-size: inherit;
