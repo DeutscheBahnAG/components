@@ -14,7 +14,7 @@
     "postpublish": "rimraf dist"
   },
   "dependencies": {
-    "@bahn-x/dbx-foundation": "^0.1.0",
+    "@bahn-x/dbx-foundation": "^0.3.1",
     "clsx": "^1.0.4",
     "foundation-emails": "^2.2.1",
     "html-to-text": "^5.1.1",

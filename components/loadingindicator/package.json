@@ -9,6 +9,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "@bahn-x/dbx-foundation": "^0.3.1",
     "clsx": "^1.0.4",
     "core-js": "^3.6.4",
     "prop-types": "^15.7.2",
