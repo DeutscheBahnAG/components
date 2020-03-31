@@ -116,7 +116,7 @@ Textfield.propTypes = {
     'search',
   ]),
   /** The size of the Textfield */
-  size: PropTypes.oneOf(Textfield.sizes),
+  size: PropTypes.oneOf(Object.keys(Textfield.sizes).map(k => Textfield.sizes[k])),
   /** Additional class names */
   className: PropTypes.string,
   /** The user input */

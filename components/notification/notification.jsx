@@ -112,7 +112,7 @@ Notification.propTypes = {
   /** displays the notification overlaid on top of the page */
   global: PropTypes.bool,
   /** the purpose of the notification, affects visual styling */
-  variant: PropTypes.oneOf(Object.values(notificationVariants)),
+  variant: PropTypes.oneOf(Object.keys(notificationVariants).map(k => notificationVariants[k])),
   /** close button click handler, required to display the close button */
   onClose: PropTypes.func,
   /** custom translation strings */

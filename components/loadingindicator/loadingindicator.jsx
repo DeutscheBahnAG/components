@@ -25,7 +25,7 @@ Loadingindicator.sizes = {
 
 Loadingindicator.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(Loadingindicator.sizes),
+  size: PropTypes.oneOf(Object.keys(Loadingindicator.sizes).map(k => Loadingindicator.sizes[k])),
 };
 
 Loadingindicator.defaultProps = {

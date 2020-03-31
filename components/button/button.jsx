@@ -95,7 +95,7 @@ Button.propTypes = {
   /** the appearance of the button */
   variant: PropTypes.oneOf(['primary', 'secondary']),
   /** the size of the button */
-  size: PropTypes.oneOf(Button.sizes),
+  size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
   /** when true, button will be disabled */
   disabled: PropTypes.bool,
   /** whether the loading state is enabled */
