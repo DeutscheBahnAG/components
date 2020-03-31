@@ -33,8 +33,8 @@ Logo.variants = {
 
 Logo.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(Logo.sizes)),
-  variant: PropTypes.oneOf(Object.values(Logo.variants)),
+  size: PropTypes.oneOf(Object.keys(Logo.sizes).map(k => Logo.sizes[k])),
+  variant: PropTypes.oneOf(Object.keys(Logo.variants).map(k => Logo.variants[k])),
   children: PropTypes.node,
 };
 
