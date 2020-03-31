@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-loadingindicator",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "DBX Loadingindicator for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",

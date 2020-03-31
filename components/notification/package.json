@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-notification",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DBX Notification for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
