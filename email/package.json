@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-email-kit",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "DBX components to build email templates",
   "main": "dist/index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
@@ -14,7 +14,7 @@
     "postpublish": "rimraf dist"
   },
   "dependencies": {
-    "@bahn-x/dbx-foundation": "^0.3.1",
+    "@bahn-x/dbx-foundation": "^0.4.0",
     "clsx": "^1.0.4",
     "foundation-emails": "^2.2.1",
     "html-to-text": "^5.1.1",
