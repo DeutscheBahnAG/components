@@ -82,6 +82,7 @@
     $border-color--pressed: dbx-border-color('button.primary.pressed'),
     $border-color--disabled: dbx-border-color('button.primary.disabled')
   );
+  font-weight: dbx-font-weight('copy', 'bold');
 }
 
 .dbx-button--secondary {
