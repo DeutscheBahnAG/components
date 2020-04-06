@@ -1,6 +1,5 @@
 {
   "name": "@bahn-x/dbx-modal",
-  "version": "0.0.0",
   "description": "DBX Modal for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
@@ -12,6 +11,7 @@
     "@bahn-x/dbx-foundation": "^0.4.0",
     "clsx": "^1.0.4",
     "core-js": "^3.6.4",
+    "include-media": "^1.4.9",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-modal": "^3.11.2"
