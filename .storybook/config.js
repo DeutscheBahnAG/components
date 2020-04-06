@@ -6,6 +6,8 @@ import withStaticHtml from '@bahn-x/storybook-addon-static-html';
 
 import dbxTheme from './theme';
 
+import { ExampleChildren } from '@bahn-x/dbx-modal/stories/shared.jsx'
+
 import '../sass/build.scss';
 
 // load all files in /components that end with .stories.js(x)
@@ -47,6 +49,8 @@ addDecorator(PageWrapper);
 
 addDecorator(withA11y);
 
-addDecorator(withPropsTable);
+addDecorator(withPropsTable({
+  propTablesExclude: [ExampleChildren],
+}));
 
 configure(loadStories, module);

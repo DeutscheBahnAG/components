@@ -1,0 +1,54 @@
+@import '@bahn-x/dbx-foundation/abstracts.scss';
+
+.privacy-options__paragraph {
+  @include dbx-text-style('copy');
+  margin-bottom: dbx-spacing('m');
+}
+
+.privacy-options__list {
+  list-style: none;
+}
+
+.privacy-options__item {
+  margin-bottom: dbx-spacing('m');
+}
+
+.privacy-options__label {
+  margin-bottom: dbx-spacing('xs');
+}
+
+.privacy-options__label--active {
+  color: dbx-color('text.primary');
+}
+
+.privacy-options__toggle {
+  @include dbx-text-style('copy');
+  @include dbx-focus-ring-for-text;
+  appearance: none;
+  background: transparent;
+  color: dbx-color('text.link.primary');
+  text-align: left;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: dbx-color('text.link.primary.hover');
+  }
+}
+
+.privacy-options__section--toggle {
+  border-color: dbx-border-color('input');
+  border-style: solid;
+  border-width: dbx-border-width('input') 0;
+  margin: dbx-spacing('m') 0;
+  padding: dbx-spacing('ml') 0;
+
+  @include media('>=medium') {
+    border-width: dbx-border-width('input');
+    border-radius: dbx-border-radius('l');
+    padding: dbx-spacing('ml');
+  }
+}
+
+.privacy-options__section--closed {
+  display: none;
+}

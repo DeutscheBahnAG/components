@@ -76,6 +76,7 @@
     "@bahn-x/storybook-addon-static-html": "^0.1.2",
     "@bahn-x/webdev-configs": "^1.0.0",
     "@commitlint/cli": "^8.0.0",
+    "@loadable/component": "^5.12.0",
     "@storybook/addon-a11y": "^5.1.11",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-backgrounds": "^5.1.11",

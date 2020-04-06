@@ -1,0 +1,250 @@
+$dbx-modal--z-level: (
+  modal: 5000,
+);
+
+$dbx-modal--appearance-duration: 400ms;
+$dbx-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
+$dbx-modal--dialog-margin: dbx-spacing('ml');
+$dbx-modal--dialog-padding-y: dbx-spacing('ml');
+$dbx-modal--dialog-padding-x: dbx-spacing('l');
+$dbx-modal--action-gap: dbx-spacing('s');
+$dbx-modal--save-gap: dbx-spacing('s');
+$dbx-modal--shadow-background-color: dbx-color('background.primary');
+$dbx-modal--shadow-foreground-color: dbx-color('text.primary');
+
+.dbx-modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: map-get($dbx-modal--z-level, modal);
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  opacity: 0;
+  transition: background-color $dbx-modal--appearance-duration,
+    opacity $dbx-modal--appearance-duration;
+  @include media('print') {
+    position: static;
+  }
+}
+
+.dbx-modal--open {
+  opacity: 1;
+  background-color: rgba(dbx-color('background.secondary'), 0.5);
+}
+
+.dbx-modal--close {
+  opacity: 0;
+  background-color: transparent;
+}
+
+.dbx-modal__dialog {
+  @include dbx-focus-ring();
+  position: relative;
+  display: grid;
+  overflow: auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto;
+  width: auto;
+  max-width: map-get($breakpoints, xlarge);
+  height: auto;
+  max-height: 100%;
+  padding: $dbx-modal--dialog-padding-y $dbx-modal--dialog-padding-x;
+  border-radius: dbx-border-radius('xl');
+  box-shadow: map-get($dbx-shadows, high);
+  background-color: dbx-color('background.primary');
+
+  @include media('>small') {
+    margin: $dbx-modal--dialog-margin;
+  }
+  @include media('>=medium') {
+    max-height: 90%;
+  }
+  @include media('>=large') {
+    max-height: 75%;
+  }
+  @include media('>=xlarge') {
+    max-height: 62%;
+  }
+  @include media('print') {
+    display: block;
+    overflow: visible;
+    max-height: unset;
+  }
+}
+
+.dbx-modal__dialog--width-s {
+  max-width: map-get($breakpoints, small);
+}
+
+.dbx-modal__dialog--width-m {
+  @include media('>=medium') {
+    max-width: map-get($breakpoints, medium);
+  }
+}
+
+.dbx-modal__dialog--width-l {
+  max-width: map-get($breakpoints, large);
+}
+
+.dbx-modal__header {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $dbx-modal--dialog-padding-y;
+
+  &:empty {
+    margin-bottom: 0;
+  }
+}
+
+.dbx-modal__header--collapse {
+  margin: 0;
+}
+
+.dbx-modal__closebutton {
+  @include dbx-focus-ring();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: dbx-size('m');
+  height: dbx-size('m');
+  border-radius: dbx-border-radius('l');
+  background-color: dbx-color('background.primary');
+  // Place visually right aligned.
+  transform: translateX(dbx-spacing('s'));
+  @include media('print') {
+    display: none;
+  }
+}
+
+.dbx-modal__closebutton--collapse {
+  position: absolute;
+  top: dbx-spacing('s', $negative: true);
+  right: 0;
+  z-index: 1;
+}
+
+.dbx-modal__closebutton-text {
+  @include dbx-hide-text;
+}
+
+.dbx-modal__closebutton-cross {
+  display: inline-block;
+  width: dbx-icon-size('m');
+  height: dbx-icon-size('m');
+}
+
+.dbx-modal__title {
+  @include dbx-text-style('title', 'l');
+
+  &:first-of-type {
+    // Align title to left, when close button not present.
+    flex: auto;
+  }
+}
+
+.dbx-modal__content {
+  position: relative;
+  display: block; // support <main> for IE 11
+  overflow-y: auto;
+  min-height: dbx-size('xl');
+  padding: $dbx-modal--save-gap;
+  margin: -$dbx-modal--save-gap;
+  background-image:
+    linear-gradient($dbx-modal--shadow-background-color 10%, change-color($dbx-modal--shadow-background-color, $alpha: 0)),
+    linear-gradient(change-color($dbx-modal--shadow-background-color, $alpha: 0), $dbx-modal--shadow-background-color 90%),
+    radial-gradient(farthest-side at 50% 0, change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2), change-color($dbx-modal--shadow-foreground-color, $alpha: 0)),
+    radial-gradient(farthest-side at 50% 100%, change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2), change-color($dbx-modal--shadow-foreground-color, $alpha: 0));
+  background-size:
+    100% $dbx-modal--save-gap * 3,
+    100% $dbx-modal--save-gap * 3,
+    100% $dbx-modal--save-gap,
+    100% $dbx-modal--save-gap;
+  background-position:
+    0 0,
+    0 100%,
+    0 0,
+    0 100%;
+  background-attachment:
+    local,
+    local,
+    scroll,
+    scroll;
+  background-repeat: no-repeat;
+  background-color: $dbx-modal--shadow-background-color;
+
+  @include media('print') {
+    overflow-y: visible;
+    background: none;
+    border-bottom: dbx-border-width('input') solid dbx-border-color('input');
+  }
+
+  &:empty {
+    background: none;
+    min-height: 0;
+    height: 0;
+  }
+}
+
+.dbx-modal__content--right-gap {
+  margin-right: dbx-spacing('ml');
+}
+
+.dbx-modal__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: $dbx-modal--dialog-padding-y $dbx-modal--action-gap 0;
+  margin: 0 (-2 * $dbx-modal--action-gap) (- $dbx-modal--action-gap);
+  @include media('print') {
+    display: none;
+  }
+}
+
+.dbx-modal__actions--full-s {
+  @include media('<=small') {
+    flex-direction: column;
+  }
+}
+
+.dbx-modal__actions--full-m {
+  @include media('<=medium') {
+    flex-direction: column;
+  }
+}
+
+.dbx-modal__actions--full-l {
+  flex-direction: column;
+}
+
+.dbx-modal__actions--center-s {
+  @include media('<=small') {
+    justify-content: center;
+  }
+}
+
+.dbx-modal__actions--center-m {
+  @include media('<=medium') {
+    justify-content: center;
+  }
+}
+
+.dbx-modal__actions--center-l {
+  justify-content: center;
+}
+
+.dbx-modal__actions--collapse {
+  padding-top: 0;
+}
+
+.dbx-modal__action {
+  margin: 0 $dbx-modal--action-gap (2 * $dbx-modal--action-gap);
+}
