@@ -62,44 +62,35 @@
   }
 }
 
+@mixin create-dbx-button($variant) {
+  .dbx-button--#{$variant} {
+    @include dbx-button(
+      $bg-color: dbx-background-color('button.#{$variant}'),
+      $bg-color--hover: dbx-background-color('button.#{$variant}.hover'),
+      $bg-color--pressed: dbx-background-color('button.#{$variant}.pressed'),
+      $bg-color--disabled: dbx-background-color('button.#{$variant}.disabled'),
+      $text-color: dbx-text-color('button.#{$variant}'),
+      $text-color--hover: dbx-text-color('button.#{$variant}.hover'),
+      $text-color--pressed: dbx-text-color('button.#{$variant}.pressed'),
+      $text-color--disabled: dbx-text-color('button.#{$variant}.disabled'),
+      $border-color: dbx-border-color('button.#{$variant}'),
+      $border-color--hover: dbx-border-color('button.#{$variant}.hover'),
+      $border-color--pressed: dbx-border-color('button.#{$variant}.pressed'),
+      $border-color--disabled: dbx-border-color('button.#{$variant}.disabled')
+    );
+  }
+}
+
 .dbx-button--block {
   display: block;
   width: 100%;
 }
 
-.dbx-button--primary {
-  @include dbx-button(
-    $bg-color: dbx-background-color('button.primary'),
-    $bg-color--hover: dbx-background-color('button.primary.hover'),
-    $bg-color--pressed: dbx-background-color('button.primary.pressed'),
-    $bg-color--disabled: dbx-background-color('button.primary.disabled'),
-    $text-color: dbx-text-color('button.primary'),
-    $text-color--hover: dbx-text-color('button.primary.hover'),
-    $text-color--pressed: dbx-text-color('button.primary.pressed'),
-    $text-color--disabled: dbx-text-color('button.primary.disabled'),
-    $border-color: dbx-border-color('button.primary'),
-    $border-color--hover: dbx-border-color('button.primary.hover'),
-    $border-color--pressed: dbx-border-color('button.primary.pressed'),
-    $border-color--disabled: dbx-border-color('button.primary.disabled')
-  );
-  font-weight: dbx-font-weight('copy', 'bold');
-}
+@include create-dbx-button('primary');
+@include create-dbx-button('secondary');
 
-.dbx-button--secondary {
-  @include dbx-button(
-    $bg-color: dbx-background-color('button.secondary'),
-    $bg-color--hover: dbx-background-color('button.secondary.hover'),
-    $bg-color--pressed: dbx-background-color('button.secondary.pressed'),
-    $bg-color--disabled: dbx-background-color('button.secondary.disabled'),
-    $text-color: dbx-text-color('button.secondary'),
-    $text-color--hover: dbx-text-color('button.secondary.hover'),
-    $text-color--pressed: dbx-text-color('button.secondary.pressed'),
-    $text-color--disabled: dbx-text-color('button.secondary.disabled'),
-    $border-color: dbx-border-color('button.secondary'),
-    $border-color--hover: dbx-border-color('button.secondary.hover'),
-    $border-color--pressed: dbx-border-color('button.secondary.pressed'),
-    $border-color--disabled: dbx-border-color('button.secondary.disabled')
-  );
+.dbx-button--primary {
+  font-weight: dbx-font-weight('copy', 'bold');
 }
 
 @each $size in (xl l m s xs) {
