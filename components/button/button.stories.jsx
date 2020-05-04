@@ -107,9 +107,14 @@ storiesOf('Components / Button', module)
       Primary Submit Button
     </Button>
   ))
-  .add('Disabled', () => (
+  .add('Primary disabled', () => (
     <Button disabled onClick={action('clicked')}>
-      Disabled Button
+      Disabled Primary Button
+    </Button>
+  ))
+  .add('Secondary disabled', () => (
+    <Button disabled variant="secondary" onClick={action('clicked')}>
+      Disabled Secondary Button
     </Button>
   ))
   .add('Primary Loading Size S', () => (
