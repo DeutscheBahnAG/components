@@ -93,7 +93,7 @@ Button.sizes = {
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** the appearance of the button */
-  variant: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'solid']),
   /** the size of the button */
   size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
   /** when true, button will be disabled */

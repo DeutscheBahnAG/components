@@ -44,6 +44,11 @@ storiesOf('Components / Button', module)
       Secondary Button
     </Button>
   ))
+  .add('Solid', () => (
+    <Button variant="solid" onClick={action('clicked')}>
+      Solid Button
+    </Button>
+  ))
   .add('Width', () => (
     <>
       <Button onClick={action('clicked')}>Short label</Button>
@@ -115,6 +120,11 @@ storiesOf('Components / Button', module)
   .add('Secondary disabled', () => (
     <Button disabled variant="secondary" onClick={action('clicked')}>
       Disabled Secondary Button
+    </Button>
+  ))
+  .add('Solid disabled', () => (
+    <Button disabled variant="solid" onClick={action('clicked')}>
+      Disabled Solid Button
     </Button>
   ))
   .add('Primary Loading Size S', () => (

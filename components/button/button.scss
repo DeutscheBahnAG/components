@@ -88,6 +88,7 @@
 
 @include create-dbx-button('primary');
 @include create-dbx-button('secondary');
+@include create-dbx-button('solid');
 
 .dbx-button--primary {
   font-weight: dbx-font-weight('copy', 'bold');
@@ -106,6 +107,10 @@
       padding-bottom: 3px; // Fix vertical align
     }
   }
+}
+
+.dbx-button--solid {
+  min-width: unset;
 }
 
 .dbx-button--loading .dbx-loadingindicator {

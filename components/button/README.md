@@ -20,10 +20,18 @@ Primary Buttons must appear one time only. Primary is the default button style.
 
 ### Secondary
 
-Secondary Buttons can appear several times on the same page.
+Secondary Buttons should appear next to Primary Buttons.
 
 ```jsx +jsxpreview +highlight=/variant=".+?"/ .right
 <Button variant="secondary">Button</Button>
+```
+
+### Solid
+
+Solid Buttons can appear on other places of a website like inline actions (table row action, choose file, …).
+
+```jsx +jsxpreview +highlight=/variant=".+?"/ .right
+<Button variant="solid">Button</Button>
 ```
 
 ## Sizing
