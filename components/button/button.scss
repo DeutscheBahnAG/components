@@ -97,16 +97,12 @@
 
 @each $size in (xl l m s xs) {
   .dbx-button--#{$size} {
+    @include dbx-component-text-style($size, 'button');
+    @include dbx-component-padding($size, 'button');
+
     border-radius: dbx-border-radius($size);
-    @if $size == s {
-      font-size: dbx-font-size('copy', 's');
-    }
     height: dbx-size($size);
     min-width: 4 * dbx-size($size);
-    padding: 0 #{dbx-size($size) / 2};
-    @if $size == s {
-      padding-bottom: 3px; // Fix vertical align
-    }
   }
 }
 

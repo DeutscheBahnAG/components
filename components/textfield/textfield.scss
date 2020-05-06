@@ -11,8 +11,6 @@
   color: dbx-text-color('primary');
   display: inline-flex;
   font-family: dbx-font-family('copy');
-  font-size: dbx-font-size('copy', 'm');
-  line-height: dbx-line-height('copy', 'm');
 
   &:not([disabled]) {
     cursor: text;
@@ -133,15 +131,14 @@
   }
 }
 
-@each $size in (xl l m s) {
+@each $size in (xl l m s xs) {
   .dbx-textfield--#{$size} {
-    $horizontal-padding: dbx-size($size) / 4;
+    $horizontal-padding: dbx-component-horizontal-padding($size, 'input');
+
+    @include dbx-component-text-style($size, 'input');
+
     border-radius: dbx-border-radius($size);
     min-height: dbx-size($size);
-
-    @if $size == s {
-      font-size: dbx-font-size('copy', 's');
-    }
 
     input,
     textarea,
@@ -183,9 +180,7 @@
     .dbx-textfield-prefix,
     .dbx-textfield-suffix,
     .dbx-textfield__inline-label {
-      $vertical-padding: (dbx-size($size) - dbx-line-height('copy', 'm')) /
-        2 -
-        dbx-border-width('input');
+      $vertical-padding: dbx-component-vertical-padding($size, 'input');
       border-radius: dbx-border-radius($size);
       padding-bottom: $vertical-padding;
       padding-top: $vertical-padding;

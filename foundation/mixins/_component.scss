@@ -1,0 +1,12 @@
+@mixin dbx-component-padding($size, $border-width-key) {
+  padding: dbx-component-padding-top($size, $border-width-key)
+    dbx-component-horizontal-padding($size, $border-width-key)
+    dbx-component-padding-bottom($size, $border-width-key);
+}
+
+@mixin dbx-component-text-style($size, $border-width-key) {
+  $textsize: dbx-component-textsize($size);
+  font-family: dbx-font-family('copy');
+  font-size: dbx-font-size('copy', $textsize);
+  line-height: dbx-component-line-height($size, $border-width-key);
+}
