@@ -26,7 +26,8 @@
   background-color: $bg-color;
   justify-content: center;
   text-decoration: none;
-  border: dbx-border-width('button') solid $border-color;
+  border: dbx-border-width('button') solid
+    if($border-color == none, transparent, $border-color);
   color: $text-color;
   cursor: pointer;
 
