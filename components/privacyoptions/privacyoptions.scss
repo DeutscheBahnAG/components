@@ -1,0 +1,36 @@
+@import '@bahn-x/dbx-foundation/abstracts.scss';
+
+.dbx-privacyoptions__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dbx-privacyoptions__options {
+  list-style: none;
+}
+
+.dbx-privacyoptions__option {
+  margin-top: dbx-spacing('m');
+}
+
+.dbx-privacyoptions__option-description {
+  @include dbx-text-style('copy', 's');
+  color: dbx-color('text.primary');
+  display: block;
+  margin-top: 6px;
+}
+
+.dbx-privacyoptions__message {
+  @include dbx-text-style('copy');
+  text-align: left;
+  flex-grow: 1;
+}
+
+.dbx-privacyoptions__footer {
+  margin-top: dbx-spacing('ml');
+}
