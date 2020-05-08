@@ -104,12 +104,23 @@
     height: dbx-size($size);
     min-width: 4 * dbx-size($size);
 
-    > svg {
+    &.dbx-button--default > svg {
       margin-right: dbx-component-icon-gap(dbx-component-textsize($size));
+    }
+
+    &.dbx-button--square,
+    &.dbx-button--round {
+      padding: dbx-component-vertical-padding($size, 'button');
+      padding: (dbx-size($size) - dbx-icon-size('m')) /
+        2 -
+        dbx-border-width('button');
+      width: dbx-size($size);
     }
   }
 }
 
+.dbx-button--square,
+.dbx-button--round,
 .dbx-button--solid {
   min-width: unset;
 }
@@ -118,4 +129,8 @@
   display: inline-block;
   vertical-align: sub;
   margin: 0 dbx-spacing('l');
+}
+
+.dbx-button--round {
+  border-radius: 50%;
 }

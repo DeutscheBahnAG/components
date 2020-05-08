@@ -73,6 +73,56 @@ storiesOf('Components / Button', module)
       Solid Button
     </Button>
   ))
+  .add('Primary Square', () => (
+    <Button shape={Button.shapes.SQUARE} icon={<DummyIcon />} onClick={action('clicked')}>
+      Primary Button
+    </Button>
+  ))
+  .add('Secondary Square', () => (
+    <Button
+      shape={Button.shapes.SQUARE}
+      icon={<DummyIcon />}
+      variant="secondary"
+      onClick={action('clicked')}
+    >
+      Secondary Button
+    </Button>
+  ))
+  .add('Solid Square', () => (
+    <Button
+      shape={Button.shapes.SQUARE}
+      icon={<DummyIcon />}
+      variant="solid"
+      onClick={action('clicked')}
+    >
+      Solid Button
+    </Button>
+  ))
+  .add('Primary Round', () => (
+    <Button shape={Button.shapes.ROUND} icon={<DummyIcon />} onClick={action('clicked')}>
+      Primary Button
+    </Button>
+  ))
+  .add('Secondary Round', () => (
+    <Button
+      shape={Button.shapes.ROUND}
+      icon={<DummyIcon />}
+      variant="secondary"
+      onClick={action('clicked')}
+    >
+      Secondary Button
+    </Button>
+  ))
+  .add('Solid Round', () => (
+    <Button
+      shape={Button.shapes.ROUND}
+      icon={<DummyIcon />}
+      variant="solid"
+      onClick={action('clicked')}
+    >
+      Solid Button
+    </Button>
+  ))
   .add('Width', () => (
     <>
       <Button onClick={action('clicked')}>Short label</Button>

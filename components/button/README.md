@@ -66,6 +66,22 @@ Icons can be added as SVG. They must match the [DBX Icon specifications] (24â€‰Ã
 
 [dbx icon specifications]: https://dbx.bahn-x.de/foundation/icons
 
+## Shapes
+
+Icon-only Buttons can be either squared or round.
+
+```jsx +jsxpreview +shape=/icon=".+?"/
+<Button icon={<svg></svg>} shape="square">
+  Button
+</Button>
+```
+
+```jsx +jsxpreview +shape=/icon=".+?"/
+<Button icon={<svg></svg>} shape="round">
+  Button
+</Button>
+```
+
 ## Full width
 
 Full-width buttons can be used in combination with all other attributes.

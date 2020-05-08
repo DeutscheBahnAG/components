@@ -44,6 +44,7 @@ class Button extends React.PureComponent {
       type,
       variant,
       size,
+      shape,
       className,
       fullWidth,
       loading,
@@ -58,6 +59,18 @@ class Button extends React.PureComponent {
     const { minWidth } = this.state;
     const Element = href ? 'a' : 'button';
     const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
+
+    const ariaLabel = () => {
+      if (loading) return loadingLabel;
+      if (shape !== Button.shapes.DEFAULT) return children;
+      return null;
+    };
+
+    const tooltip = () => {
+      if (shape !== Button.shapes.DEFAULT) return children;
+      return null;
+    };
+
     return (
       // eslint-disable-next-line react/button-has-type
       <Element
@@ -66,10 +79,12 @@ class Button extends React.PureComponent {
         type={href ? null : type}
         href={href}
         disabled={disabled || loading}
-        aria-label={loading ? loadingLabel : null}
+        aria-label={ariaLabel()}
+        title={tooltip()}
         className={clsx(
           'dbx-button',
           `dbx-button--${variant}`,
+          `dbx-button--${shape}`,
           { 'dbx-button--block': fullWidth },
           { 'dbx-button--disabled': disabled },
           { 'dbx-button--loading': loading },
@@ -83,7 +98,7 @@ class Button extends React.PureComponent {
         ) : (
             <>
               {icon}
-              {children}
+              {shape === Button.shapes.DEFAULT && children}
             </>
           )}
       </Element>
@@ -95,7 +110,13 @@ Button.sizes = {
   S: 's',
   M: 'm',
   L: 'l',
-  XL: 'xl',
+  XL: 'xl'
+};
+
+Button.shapes = {
+  DEFAULT: 'default',
+  SQUARE: 'square',
+  ROUND: 'round',
 };
 
 Button.propTypes = {
@@ -104,6 +125,8 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['primary', 'secondary', 'solid']),
   /** the size of the button */
   size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
+  /** the shape of the button */
+  shape: PropTypes.oneOf(Object.keys(Button.shapes).map(k => Button.shapes[k])),
   /** when true, button will be disabled */
   disabled: PropTypes.bool,
   /** whether the loading state is enabled */
@@ -130,6 +153,7 @@ Button.defaultProps = {
   disabled: false,
   loading: false,
   size: Button.sizes.L,
+  shape: Button.shapes.DEFAULT,
   className: '',
   fullWidth: false,
   loadingLabel: 'Wird geladen …',
