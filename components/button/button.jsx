@@ -52,6 +52,7 @@ class Button extends React.PureComponent {
       loadingLabel,
       style,
       href,
+      icon,
       ...otherProps
     } = this.props;
     const { minWidth } = this.state;
@@ -77,7 +78,14 @@ class Button extends React.PureComponent {
         )}
         {...otherProps}
       >
-        {loading ? <Loadingindicator size={loadingindicatorSize} /> : children}
+        {loading ? (
+          <Loadingindicator size={loadingindicatorSize} />
+        ) : (
+            <>
+              {icon}
+              {children}
+            </>
+          )}
       </Element>
     );
   }
@@ -110,6 +118,8 @@ Button.propTypes = {
   style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   /** content rendered inside the button, can be text or any element */
   children: PropTypes.node,
+  /** optional icon (as <svg>) */
+  icon: PropTypes.node,
   /** turns the Button into a regular link (anchor) */
   href: PropTypes.string,
 };
@@ -125,6 +135,7 @@ Button.defaultProps = {
   loadingLabel: 'Wird geladen …',
   style: {},
   children: null,
+  icon: null,
   href: null,
 };
 

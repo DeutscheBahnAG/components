@@ -56,6 +56,16 @@ Solid Buttons can appear on other places of a website like inline actions (table
 <Button size="xl" variant="secondary">Button</Button>
 ```
 
+## Icons
+
+Icons can be added as SVG. They must match the [DBX Icon specifications] (24 × 24 px incl. 2 px safe area).
+
+```jsx +jsxpreview +highlight=/icon=[^ ]+?/
+<Button icon={<svg></svg>}>Button</Button>
+```
+
+[dbx icon specifications]: https://dbx.bahn-x.de/foundation/icons
+
 ## Full width
 
 Full-width buttons can be used in combination with all other attributes.

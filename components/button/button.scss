@@ -103,6 +103,10 @@
     border-radius: dbx-border-radius($size);
     height: dbx-size($size);
     min-width: 4 * dbx-size($size);
+
+    > svg {
+      margin-right: dbx-component-icon-gap(dbx-component-textsize($size));
+    }
   }
 }
 

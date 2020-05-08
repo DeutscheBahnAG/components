@@ -30,3 +30,8 @@
   }
   @return 'm';
 }
+
+@function dbx-component-icon-gap($text-size) {
+  $icon-safe-area: 2px;
+  @return ceil(dbx-line-height('copy', $text-size) / 3) - $icon-safe-area;
+}

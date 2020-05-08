@@ -36,6 +36,15 @@ class ToggleButtonLoadingStateExample extends React.Component {
   }
 }
 
+const DummyIcon = () => (
+  <svg width="24" height="24" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g fill="currentColor">
+      <path d="M10 0C4.478 0 0 4.477 0 10s4.478 10 10 10 10-4.477 10-10S15.522 0 10 0m0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8" />
+      <path d="M8.5 14a.997.997 0 01-.707-.293l-2.5-2.5a.999.999 0 111.414-1.414L8.5 11.586l4.793-4.793a.999.999 0 111.414 1.414l-5.5 5.5A.997.997 0 018.5 14" />
+    </g>
+  </svg>
+);
+
 storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
   .add('Primary', () => <Button onClick={action('clicked')}>Primary Button</Button>)
@@ -46,6 +55,21 @@ storiesOf('Components / Button', module)
   ))
   .add('Solid', () => (
     <Button variant="solid" onClick={action('clicked')}>
+      Solid Button
+    </Button>
+  ))
+  .add('Primary with icon', () => (
+    <Button icon={<DummyIcon />} onClick={action('clicked')}>
+      Primary Button
+    </Button>
+  ))
+  .add('Secondary with icon', () => (
+    <Button icon={<DummyIcon />} variant="secondary" onClick={action('clicked')}>
+      Secondary Button
+    </Button>
+  ))
+  .add('Solid with icon', () => (
+    <Button icon={<DummyIcon />} variant="solid" onClick={action('clicked')}>
       Solid Button
     </Button>
   ))
