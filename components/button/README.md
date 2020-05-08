@@ -69,11 +69,11 @@ Full-width buttons can be used in combination with all other attributes.
 ```
 
 ```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="small">Button</Button>
+<Button fullWidth size="xl">Button</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="small" variant="secondary">Button</Button>
+<Button fullWidth size="xl" variant="secondary">Button</Button>
 ```
 
 ## States
