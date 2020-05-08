@@ -91,6 +91,23 @@
 @include create-dbx-button('secondary');
 @include create-dbx-button('solid');
 
+.dbx-button--hover-only {
+  @include dbx-button(
+    $bg-color: transparent,
+    $bg-color--hover: dbx-background-color('button.solid'),
+    $bg-color--pressed: dbx-background-color('button.solid.hover'),
+    $bg-color--disabled: dbx-background-color('button.solid.disabled'),
+    $text-color: dbx-text-color('button.solid'),
+    $text-color--hover: dbx-text-color('button.solid.hover'),
+    $text-color--pressed: dbx-text-color('button.solid.pressed'),
+    $text-color--disabled: dbx-text-color('button.solid.disabled'),
+    $border-color: dbx-border-color('button.solid'),
+    $border-color--hover: dbx-border-color('button.solid.hover'),
+    $border-color--pressed: dbx-border-color('button.solid.pressed'),
+    $border-color--disabled: dbx-border-color('button.solid.disabled')
+  );
+}
+
 .dbx-button--primary {
   font-weight: dbx-font-weight('copy', 'bold');
 }
@@ -133,4 +150,10 @@
 
 .dbx-button--round {
   border-radius: 50%;
+}
+
+.dbx-button--hover-only {
+  background: transparent;
+  border-color: transparent;
+  color: dbx-text-color('primary');
 }

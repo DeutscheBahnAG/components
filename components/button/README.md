@@ -34,6 +34,14 @@ Solid Buttons can appear on other places of a website like inline actions (table
 <Button variant="solid">Button</Button>
 ```
 
+### Hover only
+
+Like a Solid Button but with no background by default. This is mostly useful for icons (toggle menu, close dialogue, …).
+
+```jsx +jsxpreview +highlight=/variant=".+?"/ .right
+<Button variant="hover-only">Button</Button>
+```
+
 ## Sizing
 
 ```jsx +jsxpreview +highlight=/size=".+?"/ .columns

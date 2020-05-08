@@ -123,6 +123,16 @@ storiesOf('Components / Button', module)
       Solid Button
     </Button>
   ))
+  .add('Solid hover only', () => (
+    <Button
+      shape={Button.shapes.ROUND}
+      icon={<DummyIcon />}
+      variant="hover-only"
+      onClick={action('clicked')}
+    >
+      Solid Button (hover only)
+    </Button>
+  ))
   .add('Width', () => (
     <>
       <Button onClick={action('clicked')}>Short label</Button>

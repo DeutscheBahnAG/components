@@ -110,7 +110,7 @@ Button.sizes = {
   S: 's',
   M: 'm',
   L: 'l',
-  XL: 'xl'
+  XL: 'xl',
 };
 
 Button.shapes = {
@@ -122,7 +122,7 @@ Button.shapes = {
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** the appearance of the button */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'solid']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'solid', 'hover-only']),
   /** the size of the button */
   size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
   /** the shape of the button */
