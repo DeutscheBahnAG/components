@@ -9,12 +9,12 @@ describe('Button Component', () => {
   });
 
   it('should render a submit button', () => {
-    const wrapper = shallow(<Button type="submit">Text</Button>);
+    const wrapper = shallow(<Button type={Button.types.SUBMIT}>Text</Button>);
     expect(wrapper.find('button[type="submit"]')).toHaveLength(1);
   });
 
   it('should render a secondary button', () => {
-    const wrapper = shallow(<Button variant="secondary">Text</Button>);
+    const wrapper = shallow(<Button variant={Button.variants.SECONDARY}>Text</Button>);
     expect(wrapper.find('button.dbx-button--secondary')).toHaveLength(1);
   });
 

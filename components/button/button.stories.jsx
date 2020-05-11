@@ -50,7 +50,7 @@ storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
   .add('Primary', () => <Button onClick={action('clicked')}>Primary Button</Button>)
   .add('Secondary', () => (
-    <Button variant="secondary" onClick={action('clicked')}>
+    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')}>
       Secondary Button
     </Button>
   ))
@@ -66,7 +66,7 @@ storiesOf('Components / Button', module)
           padding: tokens.spacing.m,
         }}
       >
-        <Button variant="solid" onClick={action('clicked')}>
+        <Button variant={Button.variants.SOLID} onClick={action('clicked')}>
           Solid Button
         </Button>
         {` on ${color}`}
@@ -79,12 +79,12 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary with icon', () => (
-    <Button icon={<DummyIcon />} variant="secondary" onClick={action('clicked')}>
+    <Button icon={<DummyIcon />} variant={Button.variants.SECONDARY} onClick={action('clicked')}>
       Secondary Button
     </Button>
   ))
   .add('Solid with icon', () => (
-    <Button icon={<DummyIcon />} variant="solid" onClick={action('clicked')}>
+    <Button icon={<DummyIcon />} variant={Button.variants.SOLID} onClick={action('clicked')}>
       Solid Button
     </Button>
   ))
@@ -97,7 +97,7 @@ storiesOf('Components / Button', module)
     <Button
       shape={Button.shapes.SQUARE}
       icon={<DummyIcon />}
-      variant="secondary"
+      variant={Button.variants.SECONDARY}
       onClick={action('clicked')}
     >
       Secondary Button
@@ -107,7 +107,7 @@ storiesOf('Components / Button', module)
     <Button
       shape={Button.shapes.SQUARE}
       icon={<DummyIcon />}
-      variant="solid"
+      variant={Button.variants.SOLID}
       onClick={action('clicked')}
     >
       Solid Button
@@ -122,7 +122,7 @@ storiesOf('Components / Button', module)
     <Button
       shape={Button.shapes.ROUND}
       icon={<DummyIcon />}
-      variant="secondary"
+      variant={Button.variants.SECONDARY}
       onClick={action('clicked')}
     >
       Secondary Button
@@ -132,7 +132,7 @@ storiesOf('Components / Button', module)
     <Button
       shape={Button.shapes.ROUND}
       icon={<DummyIcon />}
-      variant="solid"
+      variant={Button.variants.SOLID}
       onClick={action('clicked')}
     >
       Solid Button
@@ -142,7 +142,7 @@ storiesOf('Components / Button', module)
     <Button
       shape={Button.shapes.ROUND}
       icon={<DummyIcon />}
-      variant="hover-only"
+      variant={Button.variants.HOVER_ONLY}
       onClick={action('clicked')}
     >
       Solid Button (hover only)
@@ -162,7 +162,7 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary full width', () => (
-    <Button variant="secondary" fullWidth onClick={action('clicked')}>
+    <Button variant={Button.variants.SECONDARY} fullWidth onClick={action('clicked')}>
       Secondary Full Width Button
     </Button>
   ))
@@ -172,7 +172,7 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Size S', () => (
-    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.S}>
+    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')} size={Button.sizes.S}>
       Secondary S Button
     </Button>
   ))
@@ -182,7 +182,7 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Size M', () => (
-    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.M}>
+    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')} size={Button.sizes.M}>
       Secondary M Button
     </Button>
   ))
@@ -192,7 +192,7 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Size L', () => (
-    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.L}>
+    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')} size={Button.sizes.L}>
       Secondary L Button
     </Button>
   ))
@@ -202,12 +202,12 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Size XL', () => (
-    <Button variant="secondary" onClick={action('clicked')} size={Button.sizes.XL}>
+    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')} size={Button.sizes.XL}>
       Secondary XL Button
     </Button>
   ))
   .add('Primary submit', () => (
-    <Button type="submit" onClick={action('clicked')}>
+    <Button type={Button.types.SUBMIT} onClick={action('clicked')}>
       Primary Submit Button
     </Button>
   ))
@@ -217,12 +217,12 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary disabled', () => (
-    <Button disabled variant="secondary" onClick={action('clicked')}>
+    <Button disabled variant={Button.variants.SECONDARY} onClick={action('clicked')}>
       Disabled Secondary Button
     </Button>
   ))
   .add('Solid disabled', () => (
-    <Button disabled variant="solid" onClick={action('clicked')}>
+    <Button disabled variant={Button.variants.SOLID} onClick={action('clicked')}>
       Disabled Solid Button
     </Button>
   ))
@@ -240,7 +240,7 @@ storiesOf('Components / Button', module)
   ))
   .add('Primary Loading full width', () => <Button fullWidth loading onClick={action('clicked')} />)
   .add('Secondary Loading', () => (
-    <Button variant="secondary" loading onClick={action('clicked')} />
+    <Button variant={Button.variants.SECONDARY} loading onClick={action('clicked')} />
   ))
   .add('Disabled Loading', () => <Button disabled loading onClick={action('clicked')} />)
   .add('Toggle Loading', () => <ToggleButtonLoadingStateExample />)
@@ -250,7 +250,7 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Link', () => (
-    <Button href="#" variant="secondary" onClick={action('clicked')}>
+    <Button href="#" variant={Button.variants.SECONDARY} onClick={action('clicked')}>
       Link
     </Button>
   ))
@@ -260,7 +260,12 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Secondary Link Size M', () => (
-    <Button href="#" size={Button.sizes.M} variant="secondary" onClick={action('clicked')}>
+    <Button
+      href="#"
+      size={Button.sizes.M}
+      variant={Button.variants.SECONDARY}
+      onClick={action('clicked')}
+    >
       Link
     </Button>
   ));

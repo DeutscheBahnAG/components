@@ -101,6 +101,19 @@ class Button extends React.PureComponent {
   }
 }
 
+Button.types = {
+  BUTTON: 'button',
+  SUBMIT: 'submit',
+  RESET: 'reset',
+};
+
+Button.variants = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SOLID: 'solid',
+  HOVER_ONLY: 'hover-only',
+};
+
 Button.sizes = {
   S: 's',
   M: 'm',
@@ -115,9 +128,9 @@ Button.shapes = {
 };
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  type: PropTypes.oneOf(Object.keys(Button.types).map(k => Button.types[k])),
   /** the appearance of the button */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'solid', 'hover-only']),
+  variant: PropTypes.oneOf(Object.keys(Button.variants).map(k => Button.variants[k])),
   /** the size of the button */
   size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
   /** the shape of the button */
@@ -143,8 +156,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'button',
-  variant: 'primary',
+  type: Button.types.BUTTON,
+  variant: Button.variants.PRIMARY,
   disabled: false,
   loading: false,
   size: Button.sizes.L,

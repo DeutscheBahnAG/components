@@ -36,12 +36,12 @@ const ComponentSizes = () => (
                 <Button size={size}>Button</Button>
               </td>
               <td>
-                <Button variant="secondary" size={size}>
+                <Button variant={Button.variants.SECONDARY} size={size}>
                   Button
                 </Button>
               </td>
               <td>
-                <Button variant="solid" size={size}>
+                <Button variant={Button.variants.SOLID} size={size}>
                   Button
                 </Button>
               </td>
