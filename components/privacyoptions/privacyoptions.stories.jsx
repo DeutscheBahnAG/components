@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import loadable from '@loadable/component';
 import readme from './README.md';
+import CustomFooter from './stories/custom-footer';
 
 const Privacyoptions = loadable(() => import('./privacyoptions'), { ssr: false });
 
@@ -30,4 +31,12 @@ storiesOf('Components / Privacyoptions', module)
   .addDecorator(withReadme(readme))
   .add('Default', () => (
     <Privacyoptions options={options} onAcceptAll={onAcceptAll} onSave={onSave} />
+  ))
+  .add('With custom footer', () => (
+    <Privacyoptions
+      options={options}
+      onAcceptAll={onAcceptAll}
+      onSave={onSave}
+      footer={<CustomFooter />}
+    />
   ));
