@@ -912,10 +912,10 @@
     prop-types "^15.7.2"
     react "^16.8.6"
 
-"@bahn-x/dbx-tokens@^0.1.2":
-  version "0.1.2"
-  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.1.2/840bb806c23d910dc09e6fc6a2c3e1b2b0cb4be91ae5f650e71ad5052fbf48e3#3300b5eb60036c0d795eb5f271de1f36d1b7ea28"
-  integrity sha512-MVuJIqBspLlY+BpTr3MItuyRM8Zkejzxs+rg4WYumM+/RTicgql6ZUWE6pVSe84P5UdU/jYZIIy4gLjrDNmH6Q==
+"@bahn-x/dbx-tokens@>=0.3.0":
+  version "0.3.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.3.0/b2e15b594a0ce66b621e8238119848094f64b74bec4826cccf58d44e736db0fe#f42ac57b421048f6be807e62f1b63d4f19a2000b"
+  integrity sha512-bLVJy2josMFlAgi/fLoU7LRgno8I+f3jitMjQut63WlP+Hoo6SzY9YpNgU8Oz+SFF8/jXrUn+h36dyTYfkLNfg==
   dependencies:
     js-yaml "^3.13.1"
 
