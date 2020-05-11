@@ -142,6 +142,15 @@
   min-width: unset;
 }
 
+.dbx-button--solid,
+.dbx-button--hover-only {
+  /**
+   * 1. Ensure contrast for Solid Buttons on secondary backgrounds
+   *    until better solution available.
+   */
+  mix-blend-mode: multiply; /* 1 */
+}
+
 .dbx-button--loading .dbx-loadingindicator {
   display: inline-block;
   vertical-align: sub;
