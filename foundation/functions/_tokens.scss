@@ -29,35 +29,50 @@
 }
 
 @function dbx-palette-color($color, $tokens-map: $dbx-tokens) {
-  @return dbx-token('palette', $color, $tokens-map);
+  @return dbx-token('palette', $token-name: $color, $tokens-map: $tokens-map);
 }
 
 @function dbx-color($color, $tokens-map: $dbx-tokens) {
-  @return dbx-token('color', $color, $tokens-map);
+  @return dbx-token('color', $token-name: $color, $tokens-map: $tokens-map);
 }
 
 @function dbx-background-color($color, $tokens-map: $dbx-tokens) {
-  @return dbx-color('background.#{$color}', $tokens-map);
+  @return dbx-color('background.#{$color}', $tokens-map: $tokens-map);
 }
 
 @function dbx-text-color($color, $tokens-map: $dbx-tokens) {
-  @return dbx-color('text.#{$color}', $tokens-map);
+  @return dbx-color('text.#{$color}', $tokens-map: $tokens-map);
 }
 
 @function dbx-border-color($color, $tokens-map: $dbx-tokens) {
-  @return dbx-color('border.#{$color}', $tokens-map);
+  @return dbx-color('border.#{$color}', $tokens-map: $tokens-map);
 }
 
-@function dbx-border-width($color, $tokens-map: $dbx-tokens) {
-  @return dbx-token('bordersize', $color, $tokens-map);
+@function dbx-border-width($component, $tokens-map: $dbx-tokens) {
+  @return dbx-token(
+    'bordersize',
+    $token-name: $component,
+    $tokens-map: $tokens-map
+  );
 }
 
-@function dbx-font-family($type, $tokens-map: $dbx-tokens) {
-  @return dbx-token('fontfamily', $type, $tokens-map);
+@function dbx-font-family($family, $tokens-map: $dbx-tokens) {
+  @return dbx-token(
+    'fontfamily',
+    $token-name: $family,
+    $tokens-map: $tokens-map
+  );
 }
 
-@function dbx-font-weight($type, $tokens-map: $dbx-tokens) {
-  @return dbx-token('fontweight', $type, $tokens-map);
+@function dbx-font-weight($family, $weight: null, $tokens-map: $dbx-tokens) {
+  @if $weight == null {
+    $weight: if($family == 'title', 'bold', 'regular');
+  }
+  @return dbx-token(
+    'fontweight',
+    $token-name: '#{$family}.#{$weight}',
+    $tokens-map: $tokens-map
+  );
 }
 
 @function dbx-font-size(
@@ -66,7 +81,12 @@
   $viewport: 'mobile',
   $tokens-map: $dbx-tokens
 ) {
-  @return dbx-token('textsize', '#{$type}.#{$size}', $viewport, $tokens-map);
+  @return dbx-token(
+    'textsize',
+    $token-name: '#{$type}.#{$size}',
+    $viewport: $viewport,
+    $tokens-map: $tokens-map
+  );
 }
 
 @function dbx-line-height(
@@ -75,11 +95,16 @@
   $viewport: 'mobile',
   $tokens-map: $dbx-tokens
 ) {
-  @return dbx-token('lineheight', '#{$type}.#{$size}', $viewport, $tokens-map);
+  @return dbx-token(
+    'lineheight',
+    $token-name: '#{$type}.#{$size}',
+    $viewport: $viewport,
+    $tokens-map: $tokens-map
+  );
 }
 
 @function dbx-spacing($size, $negative: false, $tokens-map: $dbx-tokens) {
-  $spacing: dbx-token('spacing', $size, $tokens-map);
+  $spacing: dbx-token('spacing', $token-name: $size, $tokens-map: $tokens-map);
 
   @if ($negative == true) {
     @return $spacing * -1;
@@ -89,13 +114,13 @@
 }
 
 @function dbx-size($size, $tokens-map: $dbx-tokens) {
-  @return dbx-token('size', $size, $tokens-map);
+  @return dbx-token('size', $token-name: $size, $tokens-map: $tokens-map);
 }
 
 @function dbx-border-radius($size, $tokens-map: $dbx-tokens) {
-  @return dbx-token('radius', $size, $tokens-map);
+  @return dbx-token('radius', $token-name: $size, $tokens-map: $tokens-map);
 }
 
 @function dbx-icon-size($size, $tokens-map: $dbx-tokens) {
-  @return dbx-token('icon', $size, $tokens-map);
+  @return dbx-token('icon', $token-name: $size, $tokens-map: $tokens-map);
 }
