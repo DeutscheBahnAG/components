@@ -93,14 +93,9 @@ class Button extends React.PureComponent {
         )}
         {...otherProps}
       >
-        {loading ? (
-          <Loadingindicator size={loadingindicatorSize} />
-        ) : (
-            <>
-              {icon}
-              {shape === Button.shapes.DEFAULT && children}
-            </>
-          )}
+        {icon}
+        {shape === Button.shapes.DEFAULT && children}
+        {loading && <Loadingindicator size={loadingindicatorSize} />}
       </Element>
     );
   }

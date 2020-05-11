@@ -121,7 +121,7 @@
     height: dbx-size($size);
     min-width: 4 * dbx-size($size);
 
-    &.dbx-button--default > svg {
+    &.dbx-button--default:not(.dbx-button--loading) > svg {
       margin-right: dbx-component-icon-gap(dbx-component-textsize($size));
     }
 
@@ -151,10 +151,14 @@
   mix-blend-mode: multiply; /* 1 */
 }
 
-.dbx-button--loading .dbx-loadingindicator {
-  display: inline-block;
-  vertical-align: sub;
-  margin: 0 dbx-spacing('l');
+.dbx-button--loading {
+  .dbx-loadingindicator {
+    background: inherit;
+    position: absolute;
+    min-width: inherit;
+    border-left: inherit;
+    border-right: inherit;
+  }
 }
 
 .dbx-button--round {
