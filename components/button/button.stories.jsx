@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
+import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import Button from './button';
 import buttonReadme from './README.md';
 
@@ -53,11 +54,25 @@ storiesOf('Components / Button', module)
       Secondary Button
     </Button>
   ))
-  .add('Solid', () => (
-    <Button variant="solid" onClick={action('clicked')}>
-      Solid Button
-    </Button>
-  ))
+  .add('Solid', () =>
+    ['white', 'coolgray050', 'coolgray100', 'blue100'].map(color => (
+      <div
+        key={color}
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          background: tokens.palette[color],
+          justifyContent: 'space-between',
+          padding: tokens.spacing.m,
+        }}
+      >
+        <Button variant="solid" onClick={action('clicked')}>
+          Solid Button
+        </Button>
+        {` on ${color}`}
+      </div>
+    ))
+  )
   .add('Primary with icon', () => (
     <Button icon={<DummyIcon />} onClick={action('clicked')}>
       Primary Button
