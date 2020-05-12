@@ -62,7 +62,7 @@ const onSave = selectedOptions =>
 storiesOf('Components / Privacyoptions', module)
   .addDecorator(withReadme(readme))
   .add('Default', () => (
-    <Privacyoptions options={options} onAcceptAll={onAcceptAll} onSave={onSave} />
+    <Privacyoptions options={options.de} onAcceptAll={onAcceptAll} onSave={onSave} />
   ))
   .add('With custom footer', () => (
     <Privacyoptions
