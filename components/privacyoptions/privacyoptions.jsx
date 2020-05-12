@@ -17,7 +17,7 @@ const Privacyoptions = ({
   footer,
   onAcceptAll,
   onSave,
-  labels,
+  labels: customLabels,
   className,
   ...otherProps
 }) => {
@@ -39,6 +39,8 @@ const Privacyoptions = ({
   }, []);
 
   const onSaveButtonClick = useCallback(() => onSave(formValues), [formValues, onSave]);
+
+  const labels = useMemo(() => ({ ...defaultLabels, ...customLabels }), [customLabels]);
 
   const message = useMemo(
     () => (typeof labels.message === 'string' ? <p>{labels.message}</p> : labels.message),
