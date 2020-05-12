@@ -14,7 +14,6 @@ import {
 import modalReadme from './README.md';
 
 import CustomModal from './stories/custom-modal';
-import PrivacyOptions from './stories/privacy-options';
 import ModalSizes from './stories/modal-sizes';
 /*
  * Note: As 'react-modal' always uses React portals and those are not supported by SSR,
@@ -73,7 +72,21 @@ storiesOf('Components / Modal', module)
       You will <b>not</b> be able to recover your account once deleted.
     </Modal>
   ))
-  .add('Without close (German)', () => <PrivacyOptions />)
+  .add('Without close', () => (
+    <Modal
+      {...modalActions}
+      title="Delete your account?"
+      primaryButton={<PrimaryButton {...primaryActions}>Delete</PrimaryButton>}
+      secondaryButton={<SecondaryButton {...secondaryActions}>No</SecondaryButton>}
+      enableCloseButton={false}
+      centerActions="l"
+      fullActionSize="s"
+      kind="alert"
+      open
+    >
+      You will <b>not</b> be able to recover your account once deleted.
+    </Modal>
+  ))
   .add('Much content', () => (
     <Modal
       {...modalActions}
