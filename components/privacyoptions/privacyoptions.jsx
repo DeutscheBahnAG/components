@@ -99,6 +99,7 @@ const Privacyoptions = ({
 };
 
 Privacyoptions.propTypes = {
+  /** all available options for the user to select */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -107,15 +108,21 @@ Privacyoptions.propTypes = {
       required: PropTypes.bool,
     })
   ).isRequired,
+  /** the custom labels will be merged with the default labels, so not all values need to be provided */
   labels: PropTypes.shape({
     title: PropTypes.string.isRequired,
     message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
     acceptAll: PropTypes.node.isRequired,
     save: PropTypes.node.isRequired,
   }),
+  /** add custom content in the modal below the list of options */
   footer: PropTypes.node,
+  /** callback is executed when the user clicks the "accept all" button */
   onAcceptAll: PropTypes.func.isRequired,
+  /** callback is executed when the user clicks the "save preferences" button,
+      receives an object with the selected options as argument */
   onSave: PropTypes.func.isRequired,
+  /** a custom className to add to the modal container */
   className: PropTypes.string,
 };
 
