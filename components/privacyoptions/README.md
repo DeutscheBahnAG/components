@@ -3,7 +3,25 @@
 This component can be used to display a dialogue for users to opt-in to various options concerning their data privacy on the website.
 It can be used as a compliant way to get user consent to use technologies like cookies on your site (which you are obliged to do by the GDPR).
 
-The privacy options will be presented as a modal dialogue that can only be closed by selecting on of the two options _‘accept all’_ or _‘save my selection’_, the former being focused by default, so in case the user does not care and just hits return, all options will be accepted.
+The privacy options will be presented as a modal dialogue that can only be closed by selecting one of the two options _‘accept all’_ or _‘save my selection’_, the former being focused by default, so in case the user does not care and just hits return, all options will be accepted.
+
+## Usage example
+
+```js
+import Privacyoptions from '@bahn-x/dbx-privacyoptions';
+```
+
+```jsx
+<Privacyoptions 
+  // see "Specifying the options" below
+  options={myOptionsArray}
+  // see "Saving the user selection and knowing when to show the dialogue" below
+  onAcceptAll={myAcceptAllHandler} 
+  onSave={mySaveSelectionHandler}
+  // see "Keep legal documents accessible" below
+  footer={<MyCustomFooter />}
+/>
+```
 
 ## Specifying the options
 
