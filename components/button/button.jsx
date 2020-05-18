@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
@@ -6,100 +6,83 @@ import Loadingindicator from '@bahn-x/dbx-loadingindicator';
 
 /* eslint-disable react/no-did-update-set-state */
 
-class Button extends React.PureComponent {
-  state = { minWidth: null };
+const Button = ({
+  type,
+  variant,
+  size,
+  shape,
+  className,
+  fullWidth,
+  loading,
+  disabled,
+  children,
+  loadingLabel,
+  style,
+  href,
+  icon,
+  ...otherProps
+}) => {
+  const [minWidth, setMinWidth] = useState(null);
+  const [previousMinWidth, setPreviousMinWidth] = useState(null);
+  const buttonRef = React.createRef();
 
-  constructor(props) {
-    super(props);
-    this.buttonRef = React.createRef();
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    const { loading } = this.props;
-    // grab the width of the button with its content
-    // before it changes to the loading state
-    if (!prevProps.loading && loading) {
-      const buttonEl = this.buttonRef.current;
-      return buttonEl ? buttonEl.offsetWidth : null;
-    }
-    return null;
-  }
-
-  componentDidUpdate(prevProps, _, snapshot) {
-    const { loading } = this.props;
-    const previousButtonWidth = snapshot;
+  useEffect(() => {
     // if button changed to loading state, set its previous
     // width as minWidth, so that it keeps its size
-    if (previousButtonWidth) {
-      this.setState({ minWidth: `${previousButtonWidth}px` });
+    if (previousMinWidth && loading) {
+      setMinWidth(`${previousMinWidth}px`);
+      setPreviousMinWidth(null);
     }
     // when button leaves loading state, remove minWidth again
-    if (prevProps.loading && !loading) {
-      this.setState({ minWidth: null });
+    else if (!previousMinWidth && !loading) {
+      setMinWidth(null);
+      const buttonEl = buttonRef.current;
+      setPreviousMinWidth(buttonEl ? buttonEl.offsetWidth : null);
     }
-  }
+  }, [loading, buttonRef, previousMinWidth]);
 
-  render() {
-    const {
-      type,
-      variant,
-      size,
-      shape,
-      className,
-      fullWidth,
-      loading,
-      disabled,
-      children,
-      loadingLabel,
-      style,
-      href,
-      icon,
-      ...otherProps
-    } = this.props;
-    const { minWidth } = this.state;
-    const Element = href ? 'a' : 'button';
-    const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
+  const Element = href ? 'a' : 'button';
+  const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
 
-    const ariaLabel = () => {
-      if (loading) return loadingLabel;
-      if (shape !== Button.shapes.DEFAULT) return children;
-      return null;
-    };
+  const ariaLabel = () => {
+    if (loading) return loadingLabel;
+    if (shape !== Button.shapes.DEFAULT) return children;
+    return null;
+  };
 
-    const tooltip = () => {
-      if (shape !== Button.shapes.DEFAULT) return children;
-      return null;
-    };
+  const tooltip = () => {
+    if (shape !== Button.shapes.DEFAULT) return children;
+    return null;
+  };
 
-    return (
-      // eslint-disable-next-line react/button-has-type
-      <Element
-        style={{ ...style, minWidth }}
-        ref={this.buttonRef}
-        type={href ? null : type}
-        href={href}
-        disabled={disabled || loading}
-        aria-label={ariaLabel()}
-        title={tooltip()}
-        className={clsx(
-          'dbx-button',
-          `dbx-button--${variant}`,
-          `dbx-button--${shape}`,
-          { 'dbx-button--block': fullWidth },
-          { 'dbx-button--disabled': disabled },
-          { 'dbx-button--loading': loading },
-          size && `dbx-button--${size}`,
-          className
-        )}
-        {...otherProps}
-      >
-        {icon}
-        {shape === Button.shapes.DEFAULT && children}
-        {loading && <Loadingindicator size={loadingindicatorSize} />}
-      </Element>
-    );
-  }
-}
+  return (
+    // eslint-disable-next-line react/button-has-type
+    <Element
+      style={{ ...style, minWidth }}
+      ref={buttonRef}
+      type={href ? null : type}
+      href={href}
+      disabled={disabled || loading}
+      aria-label={ariaLabel()}
+      title={tooltip()}
+      className={clsx(
+        'dbx-button',
+        `dbx-button--${variant}`,
+        `dbx-button--${shape}`,
+        { 'dbx-button--block': fullWidth },
+        { 'dbx-button--disabled': disabled },
+        { 'dbx-button--loading': loading },
+        size && `dbx-button--${size}`,
+        className
+      )}
+      {...otherProps}
+    >
+      {icon}
+      {shape === Button.shapes.DEFAULT && children}
+      {loading && <Loadingindicator size={loadingindicatorSize} />}
+    </Element>
+  );
+};
 
 Button.types = {
   BUTTON: 'button',
