@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
-    "@svgr/cli": "^5.4.0"
+    "@svgr/cli": "^5.4.0",
+    "camelcase": "^6.0.0"
   }
 }
