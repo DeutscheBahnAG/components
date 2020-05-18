@@ -4,6 +4,9 @@ import clsx from 'clsx';
 
 import Loadingindicator from '@bahn-x/dbx-loadingindicator';
 
+const Screenreader = ({ children }) => <span aria-hidden="false">{children}</span>;
+Screenreader.propTypes = { children: PropTypes.node.isRequired };
+
 /* eslint-disable react/no-did-update-set-state */
 
 const Button = ({
@@ -24,6 +27,8 @@ const Button = ({
 }) => {
   const [minWidth, setMinWidth] = useState(null);
   const [previousMinWidth, setPreviousMinWidth] = useState(null);
+  const [tooltip, setTooltip] = useState(null);
+  const [ariaLabel, setAriaLabel] = useState(null);
   const buttonRef = React.createRef();
 
   useEffect(() => {
@@ -44,16 +49,19 @@ const Button = ({
   const Element = href ? 'a' : 'button';
   const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
 
-  const ariaLabel = () => {
-    if (loading) return loadingLabel;
-    if (shape !== Button.shapes.DEFAULT) return children;
-    return null;
-  };
-
-  const tooltip = () => {
-    if (shape !== Button.shapes.DEFAULT) return children;
-    return null;
-  };
+  useEffect(() => {
+    const buttonEl = buttonRef.current;
+    if (buttonEl) {
+      if (shape !== Button.shapes.DEFAULT) {
+        setTooltip(buttonEl.textContent);
+      } else if (loading) {
+        setAriaLabel(loadingLabel);
+      } else {
+        setTooltip(null);
+        setAriaLabel(null);
+      }
+    }
+  }, [shape, buttonRef, loading, loadingLabel]);
 
   return (
     // eslint-disable-next-line react/button-has-type
@@ -63,8 +71,8 @@ const Button = ({
       type={href ? null : type}
       href={href}
       disabled={disabled || loading}
-      aria-label={ariaLabel()}
-      title={tooltip()}
+      aria-label={ariaLabel}
+      title={tooltip}
       className={clsx(
         'dbx-button',
         `dbx-button--${variant}`,
@@ -78,7 +86,7 @@ const Button = ({
       {...otherProps}
     >
       {icon}
-      {shape === Button.shapes.DEFAULT && children}
+      {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
       {loading && <Loadingindicator size={loadingindicatorSize} />}
     </Element>
   );

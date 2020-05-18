@@ -46,6 +46,8 @@ const DummyIcon = () => (
   </svg>
 );
 
+const DummyI18n = ({ i18nKey }) => (i18nKey === 'jsx' ? 'JSX' : '<Translation Missing>');
+
 storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
   .add('Primary', () => <Button onClick={action('clicked')}>Primary Button</Button>)
@@ -111,6 +113,16 @@ storiesOf('Components / Button', module)
       onClick={action('clicked')}
     >
       Solid Button
+    </Button>
+  ))
+  .add('Solid Square with JSX tooltip', () => (
+    <Button
+      shape={Button.shapes.SQUARE}
+      icon={<DummyIcon />}
+      variant={Button.variants.SOLID}
+      onClick={action('clicked')}
+    >
+      <DummyI18n i18nKey="jsx" /> is allowed
     </Button>
   ))
   .add('Primary Round', () => (

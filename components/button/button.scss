@@ -170,3 +170,7 @@
   border-color: transparent;
   color: dbx-text-color('primary');
 }
+
+.dbx-button [aria-hidden='false'] {
+  @include dbx-visually-hidden;
+}
