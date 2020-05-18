@@ -1,7 +1,7 @@
 # Loadingindicator
 
 ```js
-import Loadingindicator from '@bahn-x/dbx-checkbox';
+import Loadingindicator from '@bahn-x/dbx-loadingindicator';
 ```
 
 ```jsx +jsxpreview +highlight="Loadingindicator"
