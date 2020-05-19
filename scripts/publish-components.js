@@ -161,10 +161,12 @@ async function processPackage(name, location, prefixText) {
     const tmpLocation = fs.mkdtempSync(`${os.tmpdir()}/${name.replace(/\//g, '-')}-${version}-`);
     await fs.copy(location, tmpLocation);
 
-    if (name !== '@bahn-x/dbx-email-kit') {
+    if (!['@bahn-x/dbx-email-kit', '@bahn-x/dbx-icon'].includes(name)) {
       spinner.text = `${formattedName}Transpiling ${location}`;
       await transpilePackage(tmpLocation);
+    }
 
+    if (name !== '@bahn-x/dbx-email-kit') {
       spinner.text = `${formattedName}Rendering Sass ${location}`;
       await renderSass(tmpLocation);
     }

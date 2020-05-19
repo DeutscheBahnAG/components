@@ -1,0 +1,5 @@
+node_modules
+components
+svg
+*.jsx
+svgr.config.js
