@@ -985,6 +985,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bahn-x/dbx-foundation@^0.4.0", "@bahn-x/dbx-foundation@^0.4.1":
+  version "0.4.1"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.4.1/1cb3b06c7d4f910e0e5b827e7a34501ca532137dbbbe0a2e9facdfeb35b2d84b#84dca762b69fbdd090cbc0c37f5b2e340282eedd"
+  integrity sha512-u3yL/6CEF2NslBXmUI/hTuQ7S98CWN8pByGLvXAho8lO475uql0peHu0m++c0LyWz+3RUC8AsCnmWzSh+y/ftg==
+  dependencies:
+    "@bahn-x/dbx-tokens" ">=0.3.0"
+
 "@bahn-x/dbx-loadingindicator@^0.3.0":
   version "0.3.0"
   resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-loadingindicator/0.3.0/a5245fbf1767a11d831781ba41566b3015e6d8b5a808545329a463b21051be6d#16870ecf9219f3c3b5737e8816f23c7b0622f9e5"
@@ -996,7 +1003,7 @@
     prop-types "^15.7.2"
     react "^16.8.6"
 
-"@bahn-x/dbx-tokens@>=0.4.0":
+"@bahn-x/dbx-tokens@>=0.3.0", "@bahn-x/dbx-tokens@>=0.4.0":
   version "0.4.0"
   resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.4.0/b8043fd811614e9405c9d6731db769505aa67a71fb03c4481663a872d354dace#9607856a5468025aa1c9bfc4d4ab52fb86fc6d33"
   integrity sha512-E5VzXp5a7/9Vak68sfqUnyAHh6IVHW3nTHiSqSjf++OhoBVuQmDHCpB1eHCbAwy3o8BhHf77gEzoxfYL2VjkSQ==
@@ -4606,7 +4613,7 @@ core-js@^3.0.1, core-js@^3.0.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
   integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
 
-core-js@^3.6.4:
+core-js@^3.6.4, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==

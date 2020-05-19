@@ -8,9 +8,13 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "svgr --config-file svgr.config.js --out-dir dist svg/24"
+    "build": "rm -rf components && svgr --config-file svgr.config.js --out-dir components svg/24",
+    "transpile": "npx babel components --out-dir . --config-file ../../.babelrc",
+    "prepublish": "yarn transpile"
   },
   "dependencies": {
+    "@bahn-x/dbx-foundation": "^0.4.1",
+    "core-js": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1"
   },

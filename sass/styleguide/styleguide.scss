@@ -43,6 +43,11 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   margin: dbx-spacing('m', $negative: true);
 }
 
+.sg-card-group--icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .sg-card-group__item {
   flex: 0 1 20%;
 
@@ -75,6 +80,17 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
   .sg-card-group--horizontal & {
     width: dbx-spacing('xxxl');
+  }
+
+  .sg-card-group--icons & {
+    width: auto;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    background-color: dbx-palette-color('coolgray100');
+    &:before {
+      display: none;
+    }
   }
 }
 
