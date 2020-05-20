@@ -4,24 +4,26 @@ const camelcase = require('camelcase');
 const customTemplate = (
   { template },
   opts,
-  { imports, interfaces, componentName, props, jsx, exports }
+  { componentName: originalComponentName, props, jsx }
 ) => {
   const plugins = ['jsx'];
   if (opts.typescript) {
     plugins.push('typescript');
   }
 
-  // // SvgIconName => IconName
-  // const componentName = {
-  //   ...originalComponentName,
-  //   name: originalComponentName.name.substring(3),
-  // };
+  // SvgIconName => IconName
+  const componentName = {
+    ...originalComponentName,
+    name: originalComponentName.name.substring(3),
+  };
 
   const typeScriptTpl = template.smart({ plugins });
-  const ast = typeScriptTpl.ast`${imports}
-  import PropTypes from 'prop-types';
-${interfaces}
-const ${componentName} = (${props}) => ${jsx};
+  const ast = typeScriptTpl.ast`
+import React from 'react';
+import PropTypes from 'prop-types';
+${'\n'}
+const ${componentName} = React.memo(React.forwardRef((${props}) => ${jsx}));
+
 ${componentName}.propTypes = {
   title: PropTypes.string,
   titleId: PropTypes.string,
@@ -30,8 +32,9 @@ ${componentName}.defaultProps = {
   title: null,
   titleId: null,
 };
-${exports}
-  `;
+
+export default ${componentName};
+`;
   return ast;
 };
 
