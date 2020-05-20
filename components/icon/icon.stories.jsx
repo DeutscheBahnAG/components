@@ -19,7 +19,7 @@ storiesOf('Components / Icon', module)
                 <StyleguideCard
                   name={name}
                   preview={<Component title={`<Icon.${name} />`} titleId={`icon-title-${name}`} />}
-                  value={`<Icon.${name} />`}
+                  value=""
                 />
               </div>
             );
