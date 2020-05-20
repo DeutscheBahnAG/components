@@ -8,6 +8,7 @@ const Xing = React.memo(
       className="dbx-icon"
       width="24"
       height="24"
+      role="img"
       ref={svgRef}
       aria-labelledby={titleId}
       {...props}

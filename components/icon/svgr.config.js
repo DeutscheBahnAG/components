@@ -54,7 +54,7 @@ module.exports = {
   memo: true,
   ref: true,
   replaceAttrValues: { '#3f434c': 'currentColor', '#3F434C': 'currentColor' },
-  svgProps: { className: 'dbx-icon', width: '24', height: '24' },
+  svgProps: { className: 'dbx-icon', width: '24', height: '24', role: 'img' },
   titleProp: true,
   filenameCase: 'kebab',
   template: customTemplate,
