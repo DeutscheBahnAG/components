@@ -14,13 +14,13 @@
     "prepublishOnly": "yarn transpile"
   },
   "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@bahn-x/dbx-foundation": "^0.4.1",
     "core-js": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1"
   },
   "devDependencies": {
-    "@bahn-x/dbx-foundation": "^0.4.1",
-    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@svgr/cli": "^5.4.0",
     "camelcase": "^6.0.0"
