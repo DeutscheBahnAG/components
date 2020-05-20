@@ -54,6 +54,7 @@ const Privacyoptions = ({
       title={labels.title}
       className={clsx('dbx-privacyoptions', className)}
       enableCloseButton={false}
+      fullActionSize="s"
       primaryButton={
         <PrimaryButton
           className="dbx-privacyoptions__accept-all-btn"
