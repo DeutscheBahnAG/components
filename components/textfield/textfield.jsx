@@ -5,6 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
+const noopFn = () => {};
+
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
 class Textfield extends React.Component {
@@ -16,12 +18,16 @@ class Textfield extends React.Component {
     this.field.current.focus();
   };
 
-  onFocus = () => {
+  onFocus = event => {
+    const { onFocus } = this.props;
     this.setState({ focus: true });
+    onFocus(event);
   };
 
-  onBlur = () => {
+  onBlur = event => {
+    const { onBlur } = this.props;
     this.setState({ focus: false });
+    onBlur(event);
   };
 
   constructor() {
@@ -129,6 +135,10 @@ Textfield.propTypes = {
   suffix: PropTypes.string,
   /** Change event handler */
   onChange: PropTypes.func,
+  /** Focus event handler */
+  onFocus: PropTypes.func,
+  /** Blur event handler */
+  onBlur: PropTypes.func,
   /** Inline label */
   inlineLabel: PropTypes.string,
 };
@@ -142,6 +152,8 @@ Textfield.defaultProps = {
   prefix: null,
   suffix: null,
   onChange: null,
+  onFocus: noopFn,
+  onBlur: noopFn,
   inlineLabel: null,
 };
 
