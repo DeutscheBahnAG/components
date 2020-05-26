@@ -12,8 +12,8 @@ import Textfield from '@bahn-x/dbx-textfield';
 
 All attributes of an HTML [\<input\> field](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) or [\<textarea\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#Attributes) can be used with the `Textfield` component:
 
-```jsx +jsxpreview +highlight=/size=".+?"/,/value=".+?"/
-<Textfield size="8" value="12" />
+```jsx +jsxpreview +highlight=/value=".+?"/
+<Textfield value="12" />
 ```
 
 ```jsx +jsxpreview +highlight=/type=".+?"/,/rows=".+?"/
@@ -120,3 +120,19 @@ You can use inline Textfields in combination with other attributes:
   inlineLabel="Email address"
 />
 ```
+
+## Sizing
+
+```jsx +jsxpreview +highlight=/size=\{.+?"/\}
+<Textfield size={Textfield.sizes.M} />
+```
+
+```jsx +jsxpreview +highlight=/size=\{.+?"/\}
+<Textfield size={Textfield.sizes.L} />
+```
+
+```jsx +jsxpreview +highlight=/size=\{.+?"/\}
+<Textfield size={Textfield.sizes.XL} />
+```
+
+Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `XL`.

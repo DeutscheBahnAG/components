@@ -44,24 +44,27 @@ Like a Solid Button but with no background by default. This is mostly useful for
 
 ## Sizing
 
-```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="s">Button</Button>
-<Button size="s" variant="secondary">Button</Button>
+```jsx +jsxpreview +highlight=/size=\{.+?\}/ .columns
+<Button size={Button.sizes.S}>Button</Button>
+<Button size={Button.sizes.S} variant="secondary">Button</Button>
+<Button size={Button.sizes.S} variant="solid">Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="m">Button</Button>
-<Button size="m" variant="secondary">Button</Button>
+```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+<Button size={Button.sizes.M}>Button</Button>
+<Button size={Button.sizes.M} variant="secondary">Button</Button>
+<Button size={Button.sizes.M} variant="solid">Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="l">Button</Button>
-<Button size="l" variant="secondary">Button</Button>
+```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+<Button size={Button.sizes.L}>Button</Button>
+<Button size={Button.sizes.L} variant="secondary">Button</Button>
+<Button size={Button.sizes.L} variant="solid">Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=".+?"/ .columns
-<Button size="xl">Button</Button>
-<Button size="xl" variant="secondary">Button</Button>
+```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+<Button size={Button.sizes.XL}>Button</Button>
+<Button size={Button.sizes.XL} variant="secondary">Button</Button>
 ```
 
 ## Icons
