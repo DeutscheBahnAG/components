@@ -240,12 +240,16 @@ async function main() {
     try {
       let i = 0;
       for (const packageName in workspaces) {
-        i += 1;
-        const number = i.toString().padStart(count.toString().length);
-        const prefixText = chalk.gray(` [${number}/${count}]`);
-        packages.push(
-          await processPackage(packageName, workspaces[packageName].location, prefixText)
-        );
+        if (!packageName.includes('email')) {
+          console.log(packageName);
+
+          i += 1;
+          const number = i.toString().padStart(count.toString().length);
+          const prefixText = chalk.gray(` [${number}/${count}]`);
+          packages.push(
+            await processPackage(packageName, workspaces[packageName].location, prefixText)
+          );
+        }
       }
     } catch (packageError) {
       process.exit(1);
