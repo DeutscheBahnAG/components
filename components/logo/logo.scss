@@ -29,9 +29,8 @@ $dbx-logo-sizes: (
   fill: dbx-background-color('primary');
 }
 
-a,
-button {
-  @include dbx-focus-ring($parent: true, $target: '.dbx-logo');
+.dbx-logo[href]:focus {
+  @include dbx-focus-ring;
 }
 
 /**

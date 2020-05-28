@@ -181,8 +181,4 @@ storiesOf('Components / DB Logo & Pulse', module)
       </Pulse>
     </div>
   ))
-  .add('Linked', () => (
-    <a href="#xyz" style={{ outline: 0 }}>
-      <Logo />
-    </a>
-  ));
+  .add('Adding a link', () => <Logo href="#xyz" />);
