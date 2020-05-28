@@ -1,40 +1,57 @@
-# Logo
+# Logo and Pulse
 
 ```js
-import Logo from '@bahn-x/dbx-logo';
+import Logo, { Pulse } from '@bahn-x/dbx-logo';
 ```
 
-```jsx +jsxpreview +highlight="Logo"
+```jsx +jsxpreview +highlight="Logo","Pulse"
 <Logo />
+<Pulse />
 ```
 
 ## Size
 
-The sizes are optimized for pixel-perfect rendering of the logo (based on its 10 : 7 aspect ratio).
+The sizes are optimized for pixel-perfect rendering of the logo (based on its
+10 : 7 aspect ratio). For each size of the Logo there’s a matching Pulse.
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.XS}" .columns
 <Logo size={Logo.sizes.XS} />
+<Pulse size={Logo.sizes.XS} />
 ```
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.S}" .columns
 <Logo size={Logo.sizes.S} />
+<Pulse size={Logo.sizes.S} />
 ```
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.M}" .columns
 <Logo size={Logo.sizes.M} />
+<Pulse size={Logo.sizes.M} />
 ```
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.L}" .columns
 <Logo size={Logo.sizes.L} />
+<Pulse size={Logo.sizes.L} />
 ```
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.XL}" .columns
 <Logo size={Logo.sizes.XL} />
+<Pulse size={Logo.sizes.XL} />
 ```
 
 ```jsx +jsxpreview +highlight="size={Logo.sizes.XXL}" .columns
 <Logo size={Logo.sizes.XXL} />
+<Pulse size={Logo.sizes.XXL} />
 ```
+
+Never use different sizes for the Logo and the Pulse.
+
+```jsx +jsxpreview .columns .bad
+<Logo size={Logo.sizes.S} />
+<Pulse size={Logo.sizes.XXL} />
+```
+
+Check the [Pulse guidelines][marke:pulse] for details.
 
 ## Alt text
 
@@ -75,6 +92,7 @@ Red logo with transparent background.
 ```jsx +jsxpreview +highlight=/variant=[^ ]+/,/backgroundColor: '.+?'/ .right +showmore=1,3
 <div style={{ backgroundColor: '#f0f3f5', padding: '16px' }}>
   <Logo />
+  <Pulse />
 </div>
 ```
 
@@ -85,8 +103,11 @@ Red logo with white background.
 ```jsx +jsxpreview +highlight=/variant=[^ ]+/,/backgroundColor: '.+?'/ .right +showmore=1,3
 <div style={{ backgroundColor: '#3c414b', padding: '16px' }}>
   <Logo variant={Logo.variants.FILLED} />
+  <Pulse variant={Logo.variants.FILLED} />
 </div>
 ```
+
+The variant `FILLED` has no visual effect on the Pulse.
 
 ### Outlined
 
@@ -98,6 +119,8 @@ Red logo with white background and a white outline around the logo (which adds t
 </div>
 ```
 
+Don’t use the Pulse with the variant `OUTLINED`.
+
 ### White
 
 White logo with transparent background.
@@ -105,6 +128,7 @@ White logo with transparent background.
 ```jsx +jsxpreview +highlight=/variant=[^ ]+/,/backgroundColor: '.+?'/ .right +showmore=1,3
 <div style={{ backgroundColor: '#641e32', padding: '16px' }}>
   <Logo variant={Logo.variants.WHITE} />
+  <Pulse variant={Logo.variants.WHITE} />
 </div>
 ```
 
@@ -125,3 +149,4 @@ The Logo can be linked. It automatically will show a DB-styled focus ring. You m
 ```
 
 [marke:logo]: https://marketingportal.extranet.deutschebahn.com/en/logo-2
+[marke:pulse]: marketingportal.extranet.deutschebahn.com/en/pulse

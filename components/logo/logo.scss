@@ -34,6 +34,39 @@ button {
   @include dbx-focus-ring($parent: true, $target: '.dbx-logo');
 }
 
+/**
+  * 1. To allow the ::after to be inline-block without addional margin caused
+  *    by the line-height. Inline-blocks inherit the text-align. This way the
+  *    Logo and the Pulse can be centered by applying `text-align: center`.
+  */
+.dbx-pulse {
+  color: dbx-text-color('primary');
+  display: block;
+  line-height: 0; /* 1 */
+
+  &::after {
+    background: dbx-color('brand');
+    content: '';
+    display: inline-block; /* 1 */
+  }
+
+  /**
+   * 2. Left-align text to the left (remove side bearing).
+   *    When using two differnt font sizes, this effect becomes more visual.
+   */
+  > * {
+    margin: 0 calc(-0.07em + 1px); /* 2 */
+  }
+}
+
+.dbx-pulse--white {
+  color: dbx-background-color('primary');
+
+  &::after {
+    background: dbx-background-color('primary');
+  }
+}
+
 @each $size, $height in $dbx-logo-sizes {
   .dbx-logo--#{$size} {
     border-radius: $height / 7.1;
@@ -42,6 +75,30 @@ button {
 
     &.dbx-logo--outlined {
       box-shadow: dbx-background-color('primary') 0 0 0 ($height / 28);
+    }
+  }
+
+  .dbx-logo--#{$size} ~ .dbx-pulse,
+  .dbx-pulse--#{$size} {
+    /**
+     * 3. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
+     */
+    &::after {
+      border-radius: $height / 7 / 2; /* 3 */
+      height: $height / 7; /* 3 */
+      width: $height / 7 * 10; /* 3 */
+    }
+
+    /**
+     * 4. Result: Visually half a Logo height from cap height/baseline
+     *    marketingportal.extranet.deutschebahn.com/en/layout#5f1cb927-48c0-4f94-a321-80fd20ac8517
+     */
+    > :first-child {
+      margin-top: calc(#{$height / 2} - 0.21em); /* 4 */
+    }
+
+    > :last-child {
+      margin-bottom: calc(#{$height / 2} - 0.16em); /* 4 */
     }
   }
 }
