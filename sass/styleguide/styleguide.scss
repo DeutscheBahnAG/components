@@ -88,7 +88,8 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
     align-items: center;
     justify-content: center;
     background-color: dbx-palette-color('coolgray100');
-    &:before {
+
+    &::before {
       display: none;
     }
   }
