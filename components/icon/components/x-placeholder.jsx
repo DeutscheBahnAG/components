@@ -24,7 +24,7 @@ const XPlaceholder = React.memo(
           height={19}
           rx={2.857}
         />
-        <path strokeLinecap="round" d="M4 4l12 12M16 4L4 16" />
+        <path strokeLinecap="round" d="M4 4l12 12m0-12L4 16" />
       </g>
     </svg>
   ))

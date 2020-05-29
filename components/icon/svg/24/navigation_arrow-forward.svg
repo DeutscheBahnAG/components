@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
-    <title>ic-db_navigation_arrow-forward_24</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="24dp-Icon/Navigation/Arrow-Forward" fill="#282D37">
-            <path d="M4,12 C4,12.5625 4.4375,13 5,13 L16.5937,13 L12.3125,17.2812 C12.0937,17.5 12,17.75 12,18 C12,18.4375 12.375,19 13.0312,19 C13.2812,19 13.5312,18.9062 13.7187,18.7188 L19.7187,12.7188 C19.9225,12.515 20,12.25 20,12 C20.0312,11.75 19.9225,11.485 19.7187,11.2812 L13.7187,5.2812 C13.5312,5.0938 13.25,5 13.0312,5 C12.4687,5 12,5.4688 12,6 C12,6.2812 12.1087,6.515 12.3125,6.7188 L16.5937,11 L5,11 C4.4375,11 4,11.4375 4,12 Z" id="🎨-Color"></path>
-        </g>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12c0 .563.438 1 1 1h11.594l-4.282 4.281A.998.998 0 0012 18c0 .438.375 1 1.031 1 .25 0 .5-.094.688-.281l6-6A1 1 0 0020 12c.031-.25-.078-.515-.281-.719l-6-6A1.026 1.026 0 0013.03 5C12.47 5 12 5.469 12 6c0 .281.109.515.313.719L16.593 11H5c-.563 0-1 .438-1 1z" fill="#282D37" fill-rule="evenodd"/></svg>

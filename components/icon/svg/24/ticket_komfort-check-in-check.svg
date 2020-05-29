@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
-    <title>ic-db_ticket_komfort-check-in-check_24</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="24dp-Icon/Ticket/Komfort-Check-In-Check" fill="#282D37">
-            <path d="M13,15 C13.25,15 13.4688,14.9688 13.6875,14.7188 L20.6875,7.6875 C20.875,7.5 20.9688,7.25 20.9688,7 C20.9688,6.4375 20.5313,6 20,6 C19.7188,6 19.4688,6.0938 19.2813,6.2812 L13,12.625 L10.7188,10.3438 C10.5313,10.1562 10.25,10.0312 9.9688,10.0312 C9.4375,10.0312 9,10.5 9,11.0312 C9,11.2812 9.0938,11.5312 9.3125,11.75 L12.2813,14.7188 C12.4688,14.9062 12.7188,15 13,15 Z" id="🎨-Color"></path>
-        </g>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M13 15c.25 0 .469-.031.688-.281l7-7.031a.97.97 0 00.28-.688A.98.98 0 0020 6a.99.99 0 00-.719.281L13 12.625l-2.281-2.281a1.091 1.091 0 00-.75-.313c-.531 0-.969.469-.969 1 0 .25.094.5.313.719l2.968 2.969A.99.99 0 0013 15z" fill="#282D37" fill-rule="evenodd"/></svg>
