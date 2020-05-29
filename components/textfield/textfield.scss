@@ -134,6 +134,7 @@
 @each $size in (xl l m s xs) {
   .dbx-textfield--#{$size} {
     $horizontal-padding: dbx-component-horizontal-padding($size, 'input');
+    $vertical-padding: dbx-component-vertical-padding($size, 'input');
 
     @include dbx-component-text-style($size, 'input');
 
@@ -154,13 +155,26 @@
 
     /**
       * 1. Equals a Thin Space character
+      * 2. Icons/Buttons should have equal margin to the border on all sides
       */
     .dbx-textfield-prefix {
       margin-right: calc(0.15em - #{$horizontal-padding}); /* 1 */
+
+      > * {
+        display: block; /* 2 */
+        margin-right: 0.15em;
+        transform: translateX(#{$vertical-padding - $horizontal-padding}); /* 2 */
+      }
     }
 
     .dbx-textfield-suffix {
       margin-left: calc(0.15em - #{$horizontal-padding}); /* 1 */
+
+      > * {
+        display: block; /* 2 */
+        margin-right: 0.15em;
+        transform: translateX(#{$horizontal-padding - $vertical-padding}); /* 2 */
+      }
     }
 
     .dbx-textfield--textarea {
@@ -180,10 +194,20 @@
     .dbx-textfield-prefix,
     .dbx-textfield-suffix,
     .dbx-textfield__inline-label {
-      $vertical-padding: dbx-component-vertical-padding($size, 'input');
       border-radius: dbx-border-radius($size);
       padding-bottom: $vertical-padding;
       padding-top: $vertical-padding;
+    }
+  }
+}
+
+/**
+  * 3. Negative margins as Buttons are higher than the expected line-height
+  */
+.dbx-textfield {
+  @each $size in (xl l m s xs) {
+    .dbx-button--#{$size} {
+      margin: #{(dbx-line-height('copy', 'm') - dbx-size($size)) / 2};
     }
   }
 }

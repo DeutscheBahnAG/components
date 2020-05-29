@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
+import * as Icon from '../icon/components';
+import Button from '../button';
 import Textfield from './textfield';
 import textfieldReadme from './README.md';
 
@@ -48,9 +50,46 @@ storiesOf('Components / Textfield', module)
   .add('Text with with inline label and prefix', () => (
     <StatefulTextfield inlineLabel="Username" type="text" prefix="@" />
   ))
+  .add('Text with Icon prefix', () => (
+    <StatefulTextfield placeholder="Search" type="text" prefix={<Icon.ActionSearch />} />
+  ))
   .add('Text with suffix', () => <StatefulTextfield type="text" suffix="@bahn.de" />)
   .add('Text with with inline label and suffix', () => (
     <StatefulTextfield inlineLabel="Email address" type="email" suffix="@bahn.de" />
+  ))
+  .add('Text with Icon suffix', () => (
+    <StatefulTextfield type="text" suffix={<Icon.NavigationClose />} />
+  ))
+  .add('Text with Icon Button suffix', () => (
+    <StatefulTextfield
+      type="text"
+      size={Textfield.sizes.L}
+      suffix={
+        <Button
+          variant={Button.variants.HOVER_ONLY}
+          shape={Button.shapes.ROUND}
+          size={Button.sizes.S}
+          icon={<Icon.NavigationClose />}
+        >
+          Clear
+        </Button>
+      }
+    />
+  ))
+  .add('Text with Icon + Text Button suffix', () => (
+    <StatefulTextfield
+      type="text"
+      size={Textfield.sizes.XL}
+      suffix={
+        <Button
+          variant={Button.variants.SOLID}
+          size={Button.sizes.M}
+          icon={<Icon.NavigationClose />}
+        >
+          Clear
+        </Button>
+      }
+    />
   ))
   .add('Email address', () => <StatefulTextfield defaultValue="info@bahn.de" type="email" />)
   .add('Phone number', () => <StatefulTextfield defaultValue="0180 6 996633" type="tel" />)
