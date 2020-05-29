@@ -65,8 +65,6 @@ class Textfield extends React.Component {
         {...otherProps}
         value={value}
         type={type === 'textarea' ? null : type}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
         onChange={onChange}
       />
     );
@@ -74,6 +72,8 @@ class Textfield extends React.Component {
     return (
       <div
         onClick={this.focus} // Focus on click on the prefix/suffix
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
         disabled={otherProps.disabled}
         readOnly={otherProps.readOnly}
         className={clsx(
