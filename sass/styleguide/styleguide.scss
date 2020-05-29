@@ -95,6 +95,16 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   }
 }
 
+.sg-card-group__icon {
+  align-items: center;
+  border-radius: 50%;
+  background-color: dbx-palette-color('coolgray200');
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
 .sg-card__content {
   padding: dbx-spacing('s') dbx-spacing('m');
   text-align: center;

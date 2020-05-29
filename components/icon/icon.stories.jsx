@@ -18,7 +18,11 @@ storiesOf('Components / Icon', module)
               <div key={name} className="sg-card-group__item">
                 <StyleguideCard
                   name={name}
-                  preview={<Component title={`<Icon.${name} />`} titleId={`icon-title-${name}`} />}
+                  preview={
+                    <span className="sg-card-group__icon">
+                      <Component title={`<Icon.${name} />`} titleId={`icon-title-${name}`} />
+                    </span>
+                  }
                   value=""
                 />
               </div>
