@@ -15,22 +15,22 @@ storiesOf('Components / DB Logo', module)
   .add('X-large size', () => <Logo size={Logo.sizes.XL} />)
   .add('XX-large size', () => <Logo size={Logo.sizes.XXL} />)
   .add('Variant: Default (transparent background)', () => (
-    <div style={{ backgroundColor: '#f0f3f5', padding: '16px' }}>
+    <div style={{ backgroundColor: tokens.palette.coolgray100, padding: tokens.spacing.m }}>
       <Logo variant={Logo.variants.DEFAULT} />
     </div>
   ))
   .add('Variant: Filled (white background)', () => (
-    <div style={{ backgroundColor: '#3c414b', padding: '16px' }}>
+    <div style={{ backgroundColor: tokens.palette.coolgray600, padding: tokens.spacing.m }}>
       <Logo variant={Logo.variants.FILLED} />
     </div>
   ))
   .add('Variant: Outlined (white background and border)', () => (
-    <div style={{ backgroundColor: '#ec0016', padding: '16px' }}>
+    <div style={{ backgroundColor: tokens.palette.dbrot, padding: tokens.spacing.m }}>
       <Logo variant={Logo.variants.OUTLINED} />
     </div>
   ))
   .add('Variant: White (transparent background)', () => (
-    <div style={{ backgroundColor: '#641e32', padding: '16px' }}>
+    <div style={{ backgroundColor: tokens.palette.burgundy700, padding: tokens.spacing.m }}>
       <Logo variant={Logo.variants.WHITE} />
     </div>
   ))
