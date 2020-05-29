@@ -6,7 +6,7 @@ A collection of icons with focus on building user interfaces for travel-related 
 // you can import all icons at once:
 import * as Icon from '@bahn-x/dbx-icon';
 
-<Icon.Bahncard />
+<Icon.TicketBahncard />;
 ```
 
 ```jsx
@@ -55,7 +55,7 @@ To set the icon color, simply set the `color` attribute on the parent:
 For accessibility reasons, icons should always have a textual representation. If you do not want a visible text next to the icon (such as on a button), you can set a `title` that is read by screenreader programs and will be visible when you hover over the icon. You also need to provide an unique `titleId` for all screen readers to read the title correctly:
 
 ```jsx
-<Icon.Bahncard title="BahnCard" titleId="icon-bahncard-title" />
+<Icon.TicketBahncard title="BahnCard" titleId="icon-bahncard-title" />
 ```
 
 ## Accessing the rendered `<svg>` element
@@ -65,7 +65,7 @@ You can access the rendered `<svg>` element in two ways:
 1. the component forwards all props (except `title` and `titleId`) to the `<svg>` tag for special cases like setting custom data or aria attributes.
 
 ```jsx
-<Icon.Bahncard data-description="awesome" />
+<Icon.TicketBahncard data-description="awesome" />
 ```
 
 2. the component also forwards its ref to the `<svg>` tag to access the rendered DOM element:

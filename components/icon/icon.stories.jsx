@@ -30,7 +30,7 @@ storiesOf('Components / Icon', module)
   ))
   .add('Adopt parent color', () => (
     <div style={{ color: '#fff', backgroundColor: '#000', padding: '16px' }}>
-      <Icon.Airplane />
+      <Icon.TransportAirplane />
       <p>
         The icons use the currentColor feature of CSS, so that they adopt the text color from their
         parent.
@@ -39,7 +39,7 @@ storiesOf('Components / Icon', module)
   ))
   .add('With title', () => (
     <div>
-      <Icon.Bahncard title="BahnCard" titleId="icon-bahncard-title" />
+      <Icon.TicketBahncard title="BahnCard" titleId="icon-bahncard-title" />
       <p>
         For accessibility reasons, icons should always have a textual representation. If you do not
         want a visible text next to the icon (such as on a button), you can set a title that is read

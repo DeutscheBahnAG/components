@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_navigation_chevron-right_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Navigation/Chevron-Right" fill="#282D37">
+            <path d="M8,18 C8,18.5625 8.4375,19 9,19 C9.25,19 9.5,18.875 9.6875,18.6875 L15.7188,12.7188 C15.9062,12.5312 16,12.25 16,12 C16,11.75 15.9062,11.4688 15.7188,11.2812 L9.6875,5.3125 C9.5,5.125 9.25,5 9,5 C8.4375,5 8,5.4375 8,6 C8,6.2812 8.0938,6.5 8.2812,6.7188 L13.5625,12 L8.2812,17.2812 C8.0938,17.4688 8,17.7188 8,18 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>
