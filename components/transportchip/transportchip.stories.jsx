@@ -209,3 +209,62 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Hamburg',
     </p>
   </div>
 ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Munich', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S1', 'S2', 'S3', 'S4', 'S6', 'S7', 'S8', 'S20'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MUNICH}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MUNICH}
+          transportType={Transportchip.transportTypes.UBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {[
+        '12',
+        '16',
+        '17',
+        '18',
+        '19',
+        '20',
+        '21',
+        '23',
+        '25',
+        '27',
+        '28',
+        '29',
+        'E7',
+        'N17',
+        'N19',
+        'N20',
+        'N27',
+      ].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MUNICH}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['X30', 'X98', '50', '63', '100', '199', 'N40', 'N81'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MUNICH}
+          transportType={Transportchip.transportTypes.BUS}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));

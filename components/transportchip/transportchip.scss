@@ -134,7 +134,8 @@ button.dbx-transportchip {
 // Shared regional styles
 
 .dbx-transportchip--berlin,
-.dbx-transportchip--hamburg {
+.dbx-transportchip--hamburg,
+.dbx-transportchip--munich {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
     color: #fff;
@@ -393,5 +394,128 @@ button.dbx-transportchip {
   &.dbx-transportchip--ast {
     background: #ffdd02;
     color: #000;
+  }
+}
+
+// Munich
+
+.dbx-transportchip--munich {
+  &.dbx-transportchip--sbahn {
+    width: $dbx-transportchip--height / 3 * 7;
+  }
+
+  &.dbx-transportchip--s1 {
+    background: #19b3e3;
+  }
+
+  &.dbx-transportchip--s2 {
+    background: #71bf44;
+  }
+
+  &.dbx-transportchip--s3 {
+    background: #7b107d;
+  }
+
+  &.dbx-transportchip--s4 {
+    background: #ee1d26;
+  }
+
+  &.dbx-transportchip--s6 {
+    background: #008a50;
+  }
+
+  &.dbx-transportchip--s7 {
+    background: #953833;
+  }
+
+  &.dbx-transportchip--s8 {
+    background: #000;
+    color: #ffcb08;
+  }
+
+  &.dbx-transportchip--s20 {
+    background: #f05a72;
+  }
+
+  &.dbx-transportchip--u1 {
+    background: #3b7233;
+  }
+
+  &.dbx-transportchip--u2 {
+    background: #c4012e;
+  }
+
+  &.dbx-transportchip--u3 {
+    background: #ed6721;
+  }
+
+  &.dbx-transportchip--u4 {
+    background: #00ab84;
+  }
+
+  &.dbx-transportchip--u5 {
+    background: #be7a00;
+  }
+
+  &.dbx-transportchip--u6 {
+    background: #0164af;
+  }
+
+  &.dbx-transportchip--u7 {
+    background: linear-gradient(to bottom right, #3b7233 50%, #c4012e 0);
+  }
+
+  &.dbx-transportchip--u8 {
+    background: linear-gradient(to bottom right, #c4012e 50%, #ed6721 0);
+  }
+
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--bus {
+    background: #e2011a;
+    border-radius: 0;
+    text-align: center;
+    width: 1.5 * $dbx-transportchip--height;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--tram-temporary {
+    border: 2px #e2011a solid;
+    background: #fff;
+    color: #e2011a;
+    line-height: $dbx-transportchip--height - 4px;
+  }
+
+  &.dbx-transportchip--nachttram {
+    background: #656565;
+    color: #fff000;
+  }
+
+  .dbx-transportchip--e7 {
+    background: transparent;
+    color: dbx-text-color('primary');
+  }
+
+  &.dbx-transportchip--bus {
+    background: #005f5f;
+  }
+
+  &.dbx-transportchip--nachtbus {
+    background: #3f3f3f;
+    color: #ff0;
+  }
+
+  &.dbx-transportchip--metrobus {
+    background: #ff5f00;
+  }
+
+  &.dbx-transportchip--expressbus {
+    background: #6fcf8f;
   }
 }

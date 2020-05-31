@@ -71,6 +71,28 @@ const regionalTransportTypes = {
     }
     return null;
   },
+  munich: (transportType, lineNumber) => {
+    if (transportType === transportTypes.TRAM) {
+      if (['15', '16', '21', '22', '28', '29'].includes(lineNumber)) {
+        return 'tram-temporary';
+      }
+      if (lineNumber.startsWith('N')) {
+        return 'nachttram';
+      }
+    }
+    if (transportType === transportTypes.BUS) {
+      if (lineNumber.startsWith('X')) {
+        return 'expressbus';
+      }
+      if (lineNumber.startsWith('N')) {
+        return 'nachtbus';
+      }
+      if (lineNumber.length === 2) {
+        return 'stadtbus';
+      }
+    }
+    return null;
+  },
 };
 
 const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
@@ -121,6 +143,7 @@ Transportchip.transportTypes = transportTypes;
 Transportchip.regionalStyles = {
   BERLIN: 'berlin',
   HAMBURG: 'hamburg',
+  MUNICH: 'munich',
 };
 
 Transportchip.autoTransportTypes = {
