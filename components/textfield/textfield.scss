@@ -8,6 +8,7 @@
   align-items: stretch;
   background-color: dbx-background-color('input');
   border: dbx-border-width('input') solid dbx-border-color('input');
+  box-sizing: border-box;
   color: dbx-text-color('primary');
   display: inline-flex;
   font-family: dbx-font-family('copy');
