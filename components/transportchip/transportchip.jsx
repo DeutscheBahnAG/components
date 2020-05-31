@@ -4,52 +4,7 @@ import clsx from 'clsx';
 
 import * as Icon from '@bahn-x/dbx-icon/components';
 
-const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
-
-const regionalLineNumbers = {
-  berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
-};
-
-const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
-  let displayTransportType = transportType;
-  let displayLineNumber = lineNumber;
-  if (transportType === Transportchip.transportTypes.AUTO) {
-    Object.keys(Transportchip.autoTransportTypes).forEach(key => {
-      const regexp = Transportchip.autoTransportTypes[key];
-      if (lineNumber.match(regexp)) {
-        displayTransportType = Transportchip.transportTypes[key];
-      }
-    });
-  }
-  if (regionalLineNumbers[regionalStyle]) {
-    displayLineNumber = regionalLineNumbers[regionalStyle](displayLineNumber);
-  }
-  const IconComponent =
-    Icon[
-      `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
-    ];
-  const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
-  return (
-    <span
-      className={clsx(
-        'dbx-transportchip',
-        `dbx-transportchip--${displayTransportType}`,
-        regionalStyle && `dbx-transportchip--${regionalStyle}`,
-        regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
-        className
-      )}
-      {...otherProps}
-    >
-      {IconComponent && <IconComponent className="dbx-transportchip__icon" />}
-      {displayLineNumber && (
-        <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
-      )}
-      {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
-    </span>
-  );
-};
-
-Transportchip.transportTypes = {
+const transportTypes = {
   AUTO: '-auto-',
   ICE: 'ice',
   IC: 'ic',
@@ -69,8 +24,103 @@ Transportchip.transportTypes = {
   BIKESHARING: 'bikesharing',
 };
 
+const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
+
+const regionalLineNumbers = {
+  berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
+  hamburg: lineNumber => lineNumber.replace(/(F|Bus) ?/i, ''),
+};
+
+const regionalTransportTypes = {
+  hamburg: (transportType, lineNumber) => {
+    if (transportType === transportTypes.BUS) {
+      const number = Number.parseInt(lineNumber, 10);
+      if (lineNumber.startsWith('X')) {
+        return 'expressbus';
+      }
+      if (lineNumber >= 600 && number <= 699) {
+        return 'nachtbus';
+      }
+      if (
+        [
+          837,
+          2411,
+          2415,
+          2801,
+          2802,
+          2803,
+          2804,
+          2805,
+          2807,
+          2808,
+          2813,
+          2825,
+          2827,
+          2828,
+          2830,
+          2834,
+          2835,
+          2836,
+          2837,
+          2838,
+          8129,
+        ].includes(number)
+      ) {
+        return 'ast';
+      }
+    }
+    return null;
+  },
+};
+
+const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
+  let displayTransportType = transportType;
+  let displayLineNumber = lineNumber;
+  if (transportType === transportTypes.AUTO) {
+    Object.keys(Transportchip.autoTransportTypes).forEach(key => {
+      const regexp = Transportchip.autoTransportTypes[key];
+      if (lineNumber.match(regexp)) {
+        displayTransportType = Transportchip.transportTypes[key];
+      }
+    });
+  }
+  if (regionalLineNumbers[regionalStyle]) {
+    displayLineNumber = regionalLineNumbers[regionalStyle](displayLineNumber);
+  }
+  const regionalTransportType =
+    regionalTransportTypes[regionalStyle] &&
+    regionalTransportTypes[regionalStyle](transportType, lineNumber);
+  const IconComponent =
+    Icon[
+    `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
+    ];
+  const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
+  return (
+    <span
+      className={clsx(
+        'dbx-transportchip',
+        `dbx-transportchip--${displayTransportType}`,
+        regionalTransportType && `dbx-transportchip--${regionalTransportType}`,
+        regionalStyle && `dbx-transportchip--${regionalStyle}`,
+        regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
+        className
+      )}
+      {...otherProps}
+    >
+      {IconComponent && <IconComponent className="dbx-transportchip__icon" />}
+      {displayLineNumber && (
+        <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
+      )}
+      {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
+    </span>
+  );
+};
+
+Transportchip.transportTypes = transportTypes;
+
 Transportchip.regionalStyles = {
   BERLIN: 'berlin',
+  HAMBURG: 'hamburg',
 };
 
 Transportchip.autoTransportTypes = {

@@ -116,9 +116,10 @@ $dbx-transportchip--height: 24px;
   color: dbx-text-color('transportation.carsharing');
 }
 
-// Berlin
+// Shared regional styles
 
-.dbx-transportchip--berlin {
+.dbx-transportchip--berlin,
+.dbx-transportchip--hamburg {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
     color: #fff;
@@ -142,7 +143,11 @@ $dbx-transportchip--height: 24px;
     border-radius: 0;
     width: $dbx-transportchip--height * 1.4;
   }
+}
 
+// Berlin
+
+.dbx-transportchip--berlin {
   &.dbx-transportchip--bus,
   &.dbx-transportchip--tram,
   &.dbx-transportchip--ferry {
@@ -273,5 +278,105 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--u9 {
     background: #f3791d;
+  }
+}
+
+// Hamburg
+
+.dbx-transportchip--hamburg {
+  &.dbx-transportchip--sbahn,
+  &.dbx-transportchip--ubahn,
+  &.dbx-transportchip--bus,
+  &.dbx-transportchip--ferry {
+    width: 2.5 * $dbx-transportchip--height;
+  }
+
+  &.dbx-transportchip--s1 {
+    background: #039729;
+  }
+
+  &.dbx-transportchip--s11,
+  &.dbx-transportchip--s21 {
+    background: #fff;
+    border: 2px #039729 solid;
+    color: #039729;
+    line-height: $dbx-transportchip--height - 4px;
+  }
+
+  &.dbx-transportchip--s2 {
+    background: #b60d36;
+  }
+
+  &.dbx-transportchip--s21 {
+    border-color: #b60d36;
+    color: #b60d36;
+  }
+
+  &.dbx-transportchip--s3,
+  &.dbx-transportchip--s31 {
+    background: #531b6e;
+  }
+
+  &.dbx-transportchip--a1,
+  &.dbx-transportchip--a2,
+  &.dbx-transportchip--a3 {
+    background: #fe7f1a;
+  }
+
+  &.dbx-transportchip--u1 {
+    background: #0059a4;
+  }
+
+  &.dbx-transportchip--u2 {
+    background: #ed0220;
+  }
+
+  &.dbx-transportchip--u3 {
+    border: 1px #00000025 solid;
+    background: #ffd602;
+    line-height: $dbx-transportchip--height - 2px;
+    text-shadow: #000 0 0 1px;
+  }
+
+  &.dbx-transportchip--u4 {
+    background: #028b8f;
+  }
+
+  &.dbx-transportchip--u5 {
+    background: #2c3174;
+  }
+
+  &.dbx-transportchip--bus,
+  &.dbx-transportchip--ferry {
+    background: #e2011a;
+    clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
+    border-radius: 0;
+    text-align: center;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--ferry {
+    background: #009dd1;
+    clip-path: polygon(10% 0, 90% 0, 72% 100%, 28% 100%);
+  }
+
+  &.dbx-transportchip--expressbus {
+    background: #1a962c;
+  }
+
+  &.dbx-transportchip--nachtbus {
+    background: #000;
+  }
+
+  &.dbx-transportchip--ast {
+    background: #ffdd02;
+    color: #000;
   }
 }
