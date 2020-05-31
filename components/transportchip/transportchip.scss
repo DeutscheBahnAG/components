@@ -121,7 +121,8 @@ $dbx-transportchip--height: 24px;
 .dbx-transportchip--berlin,
 .dbx-transportchip--hamburg,
 .dbx-transportchip--munich,
-.dbx-transportchip--frankfurtmain {
+.dbx-transportchip--frankfurtmain,
+.dbx-transportchip--nuremberg {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
     color: #fff;
@@ -631,5 +632,84 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--tram-temporary {
     border-color: #000;
+  }
+}
+
+// Nuremberg
+
+.dbx-transportchip--nuremberg {
+  &.dbx-transportchip--sbahn,
+  &.dbx-transportchip--ubahn {
+    border-radius: 0;
+    width: 1.5 * $dbx-transportchip--height;
+  }
+
+  &.dbx-transportchip--s1 {
+    background: #94211a;
+  }
+
+  &.dbx-transportchip--s2 {
+    background: #53b030;
+  }
+
+  &.dbx-transportchip--s3 {
+    background: #e54e04;
+  }
+
+  &.dbx-transportchip--s4 {
+    background: #26297c;
+  }
+
+  &.dbx-transportchip--u1 {
+    background: #005d9c;
+  }
+
+  &.dbx-transportchip--u2 {
+    background: #e1011a;
+  }
+
+  &.dbx-transportchip--u3 {
+    background: #37b5b7;
+  }
+
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--bus {
+    border-radius: 0;
+    text-align: center;
+    width: $dbx-transportchip--height;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--bus {
+    background: #ff2a0e;
+    border-radius: 50%;
+  }
+
+  &.dbx-transportchip--tram.dbx-transportchip--4 {
+    background: #f4898f;
+  }
+
+  &.dbx-transportchip--tram.dbx-transportchip--5 {
+    background: #9860a9;
+  }
+
+  &.dbx-transportchip--tram.dbx-transportchip--6 {
+    background: #fef405;
+    color: #000;
+  }
+
+  &.dbx-transportchip--tram.dbx-transportchip--7 {
+    background: #667ab4;
+  }
+
+  &.dbx-transportchip--tram.dbx-transportchip--8 {
+    background: #01bcfe;
   }
 }
