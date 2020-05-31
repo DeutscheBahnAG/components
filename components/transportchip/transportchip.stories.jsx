@@ -364,3 +364,62 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Cologne',
     </p>
   </div>
 ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S11', 'S12', 'S13', 'S19', 'S23'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MANNHEIM}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['1', '3', '4', '5', '7', '9', '12', '13', '15', '16', '17', '18'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MANNHEIM}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S1', 'S2', 'S3', 'S4', 'S6'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MANNHEIM}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {[
+        'STR 1',
+        'STR 3',
+        'STR 4',
+        'STR 4A',
+        'STR 5',
+        'STR 5A',
+        'STR 15',
+        'STR 6',
+        'STR 6A',
+        'STR 7',
+        'STR 8',
+        'STR 9',
+      ].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.MANNHEIM}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));

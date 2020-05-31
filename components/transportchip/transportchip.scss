@@ -782,3 +782,86 @@ $dbx-transportchip--height: 24px;
     background: #0095da;
   }
 }
+
+// Mannheim
+
+.dbx-transportchip--mannheim {
+  &.dbx-transportchip--s1 {
+    background: #ec192e;
+  }
+
+  &.dbx-transportchip--s2 {
+    background: #2960b5;
+  }
+
+  &.dbx-transportchip--s3 {
+    background: #fcd806;
+    color: #333;
+  }
+
+  &.dbx-transportchip--s4 {
+    background: #1a9d47;
+  }
+
+  &.dbx-transportchip--s6 {
+    background: #28c9f6;
+  }
+
+  &.dbx-transportchip--tram {
+    border-radius: 0;
+    padding: 0 0.3em;
+    min-width: $dbx-transportchip--height;
+    text-align: center;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--str1 {
+    background: #ff9798;
+  }
+
+  &.dbx-transportchip--str2 {
+    background: #bc1c4a;
+  }
+
+  &.dbx-transportchip--str3 {
+    background: #d9aa34;
+  }
+
+  &.dbx-transportchip--str4,
+  &.dbx-transportchip--str4a {
+    background: #ff2d16;
+  }
+
+  &.dbx-transportchip--str5,
+  &.dbx-transportchip--str5a {
+    background: #00ac6e;
+  }
+
+  &.dbx-transportchip--str15 {
+    background: #f7aa61;
+  }
+
+  &.dbx-transportchip--str6,
+  &.dbx-transportchip--str6a {
+    background: #916d2e;
+  }
+
+  &.dbx-transportchip--str7 {
+    background: #ffc735;
+  }
+
+  &.dbx-transportchip--str8 {
+    background: #f57421;
+  }
+
+  &.dbx-transportchip--str9 {
+    background: #93c13b;
+  }
+}

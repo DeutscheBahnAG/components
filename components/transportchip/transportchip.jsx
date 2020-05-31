@@ -30,6 +30,7 @@ const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
   hamburg: lineNumber => lineNumber.replace(/(F|Bus) ?/i, ''),
   frankfurtmain: lineNumber => lineNumber.replace(/S ?/i, ''),
+  mannheim: lineNumber => lineNumber.replace(/STR ?/i, ''),
 };
 
 const regionalTransportTypes = {
@@ -156,6 +157,7 @@ Transportchip.regionalStyles = {
   FRANKFURT_MAIN: 'frankfurtmain',
   NUREMBERG: 'nuremberg',
   COLOGNE: 'cologne',
+  MANNHEIM: 'mannheim',
 };
 
 Transportchip.autoTransportTypes = {
