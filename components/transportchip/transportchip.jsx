@@ -155,6 +155,7 @@ Transportchip.regionalStyles = {
   MUNICH: 'munich',
   FRANKFURT_MAIN: 'frankfurtmain',
   NUREMBERG: 'nuremberg',
+  COLOGNE: 'cologne',
 };
 
 Transportchip.autoTransportTypes = {

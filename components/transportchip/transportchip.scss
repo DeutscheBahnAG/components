@@ -728,3 +728,72 @@ button.dbx-transportchip {
     background: #01bcfe;
   }
 }
+
+// Cologne
+
+.dbx-transportchip--cologne {
+  &.dbx-transportchip--s11 {
+    background: #ef7b00;
+  }
+
+  &.dbx-transportchip--s12 {
+    background: #60af21;
+  }
+
+  &.dbx-transportchip--s13,
+  &.dbx-transportchip--s19 {
+    background: #2e6b7e;
+  }
+
+  &.dbx-transportchip--s23 {
+    background: #8b3c59;
+  }
+
+  &.dbx-transportchip--1 {
+    background: #ed1c24;
+  }
+
+  &.dbx-transportchip--3 {
+    background: #f49ac1;
+  }
+
+  &.dbx-transportchip--4 {
+    background: #f271ac;
+  }
+
+  &.dbx-transportchip--5 {
+    background: #a59dce;
+  }
+
+  &.dbx-transportchip--7 {
+    background: #f7946a;
+  }
+
+  &.dbx-transportchip--9 {
+    background: #f69b95;
+  }
+
+  &.dbx-transportchip--12 {
+    background: #8cc73f;
+  }
+
+  &.dbx-transportchip--13 {
+    background: #8b6c42;
+  }
+
+  &.dbx-transportchip--15 {
+    background: #50b848;
+  }
+
+  &.dbx-transportchip--16 {
+    background: #00accd;
+  }
+
+  &.dbx-transportchip--17 {
+    background: #00accd;
+  }
+
+  &.dbx-transportchip--18 {
+    background: #0095da;
+  }
+}
