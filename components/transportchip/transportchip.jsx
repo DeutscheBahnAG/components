@@ -30,6 +30,7 @@ const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
   hamburg: lineNumber => lineNumber.replace(/(F|Bus) ?/i, ''),
   frankfurtmain: lineNumber => lineNumber.replace(/S ?/i, ''),
+  mannheim: lineNumber => lineNumber.replace(/STR ?/i, ''),
 };
 
 const regionalTransportTypes = {
@@ -107,6 +108,7 @@ const regionalTransportTypes = {
 const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
   let displayTransportType = transportType;
   let displayLineNumber = lineNumber;
+  displayTransportType = displayTransportType.replace(/rnv/i, 'str');
   if (transportType === transportTypes.AUTO) {
     Object.keys(Transportchip.autoTransportTypes).forEach(key => {
       const regexp = Transportchip.autoTransportTypes[key];
@@ -156,6 +158,7 @@ Transportchip.regionalStyles = {
   FRANKFURT_MAIN: 'frankfurtmain',
   NUREMBERG: 'nuremberg',
   COLOGNE: 'cologne',
+  MANNHEIM: 'mannheim',
 };
 
 Transportchip.autoTransportTypes = {
