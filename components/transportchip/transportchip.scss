@@ -1,22 +1,26 @@
-// stylelint-disable selector-no-qualifying-type
-
+// stylelint-disable selector-no-qualifying-type, max-nesting-depth
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
-.dbx-transportchip {
-  $height: 24px;
+$dbx-transportchip--height: 24px;
 
+.dbx-transportchip {
   background: dbx-palette-color('coolgray500');
   border: 0;
-  border-radius: #{dbx-spacing('xs') / dbx-size('xs') * $height};
+  border-radius: #{dbx-spacing('xs') / dbx-size('xs') *
+    $dbx-transportchip--height};
   color: dbx-palette-color('white');
   display: inline-block;
   font-size: inherit;
   font-family: inherit;
-  height: $height;
-  line-height: $height;
+  height: $dbx-transportchip--height;
+  line-height: $dbx-transportchip--height;
   padding: 0;
   white-space: nowrap;
+
+  & + & {
+    margin-left: dbx-spacing('xs');
+  }
 }
 
 a.dbx-transportchip,
@@ -125,4 +129,164 @@ button.dbx-transportchip {
 .dbx-transportchip--carsharing {
   background: dbx-background-color('transportation.carsharing');
   color: dbx-text-color('transportation.carsharing');
+}
+
+// Berlin
+
+.dbx-transportchip--berlin {
+  &.dbx-transportchip--sbahn,
+  &.dbx-transportchip--ubahn {
+    color: #fff;
+    text-align: center;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--sbahn {
+    border-radius: $dbx-transportchip--height / 2;
+    width: $dbx-transportchip--height * 2;
+  }
+
+  &.dbx-transportchip--ubahn {
+    border-radius: 0;
+    width: $dbx-transportchip--height * 1.4;
+  }
+
+  &.dbx-transportchip--bus,
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--ferry {
+    background-color: transparent;
+    color: dbx-text-color('primary');
+  }
+
+  &.dbx-transportchip--bus,
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--ferry {
+    &::before {
+      background: #be1414;
+      color: #fff;
+      content: 'Tram';
+      display: inline-block;
+      font-size: 0.5em;
+      font-weight: bold;
+      margin-right: dbx-spacing('xs');
+      text-align: center;
+      vertical-align: top;
+      width: $dbx-transportchip--height;
+    }
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+  }
+
+  &.dbx-transportchip--bus::before {
+    background: #95276e;
+    border-radius: 50%;
+    content: 'BUS';
+    font-size: 0.6em;
+  }
+
+  &.dbx-transportchip--ferry::before {
+    background: #528dba;
+    border-radius: 50%;
+    content: 'F';
+    font-size: 1.2em;
+    font-style: italic;
+    padding-right: 0.15em;
+  }
+
+  &.dbx-transportchip--s1 {
+    background: #de4da4;
+  }
+
+  &.dbx-transportchip--s2,
+  &.dbx-transportchip--s25,
+  &.dbx-transportchip--s26 {
+    background: #005e28;
+  }
+
+  &.dbx-transportchip--s3 {
+    background: #0a4c99;
+  }
+
+  &.dbx-transportchip--s41 {
+    background: #a23b1e;
+  }
+
+  &.dbx-transportchip--s42 {
+    background: #c26936;
+  }
+
+  &.dbx-transportchip--s45,
+  &.dbx-transportchip--s46,
+  &.dbx-transportchip--s47 {
+    background: #c38736;
+  }
+
+  &.dbx-transportchip--s5 {
+    background: #ff5800;
+  }
+
+  &.dbx-transportchip--s7,
+  &.dbx-transportchip--s75 {
+    background: #6f4e9c;
+  }
+
+  &.dbx-transportchip--s8,
+  &.dbx-transportchip--s85 {
+    background: #54a823;
+  }
+
+  &.dbx-transportchip--s9 {
+    background: #8a0f30;
+  }
+
+  &.dbx-transportchip--u1 {
+    background: #7dad4c;
+  }
+
+  &.dbx-transportchip--u12 {
+    background: linear-gradient(to bottom right, #7dad4c 50%, #da421e 0);
+  }
+
+  &.dbx-transportchip--u2 {
+    background: #da421e;
+  }
+
+  &.dbx-transportchip--u3 {
+    background: #007a5b;
+  }
+
+  &.dbx-transportchip--u4 {
+    background: #f0d722;
+    color: #000;
+  }
+
+  &.dbx-transportchip--u5,
+  &.dbx-transportchip--u55 {
+    background: #7e5330;
+  }
+
+  &.dbx-transportchip--u6 {
+    background: #8c6dab;
+  }
+
+  &.dbx-transportchip--u7 {
+    background: #528dba;
+  }
+
+  &.dbx-transportchip--u8 {
+    background: #224f86;
+  }
+
+  &.dbx-transportchip--u9 {
+    background: #f3791d;
+  }
 }

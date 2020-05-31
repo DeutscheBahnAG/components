@@ -176,3 +176,9 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   );
   opacity: 0.5;
 }
+
+.sg-components-transportationchip-list {
+  p + p {
+    margin-top: dbx-spacing('s');
+  }
+}
