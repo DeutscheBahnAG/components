@@ -268,3 +268,35 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Munich', 
     </p>
   </div>
 ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Frankfurt/Main', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.FRANKFURT_MAIN}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'U9'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.FRANKFURT_MAIN}
+          transportType={Transportchip.transportTypes.UBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['12', '14', '15', '16', '17', '18', '19', '20', '21'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.FRANKFURT_MAIN}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));
