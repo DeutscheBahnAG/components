@@ -78,3 +78,69 @@ storiesOf('Components / Transportchip / Manual', module)
   .add('Walking', () => (
     <Transportchip transportType={Transportchip.transportTypes.WALKING} lineNumber="Walk" />
   ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Berlin', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {[
+        'S1',
+        'S2',
+        'S25',
+        'S26',
+        'S3',
+        'S41',
+        'S42',
+        'S46',
+        'S47',
+        'S5',
+        'S7',
+        'S75',
+        'S8',
+        'S85',
+        'S9',
+      ].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.BERLIN}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['U1', 'U12', 'U2', 'U3', 'U4', 'U5', 'U55', 'U6', 'U7', 'U8', 'U9'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.BERLIN}
+          transportType={Transportchip.transportTypes.UBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['M1', 'M17', '12', '88'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.BERLIN}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['M11', 'M85', 'X7', 'X83', 'TXL', '100', '943', 'N1', 'N97'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.BERLIN}
+          transportType={Transportchip.transportTypes.BUS}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['F10', 'F12', 'F21', 'F22', 'F23'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.BERLIN}
+          transportType={Transportchip.transportTypes.FERRY}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));

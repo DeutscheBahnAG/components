@@ -4,8 +4,15 @@ import clsx from 'clsx';
 
 import * as Icon from '@bahn-x/dbx-icon/components';
 
-const Transportchip = ({ lineNumber, transportType, className, ...otherProps }) => {
+const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
+
+const regionalLineNumbers = {
+  berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
+};
+
+const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
   let displayTransportType = transportType;
+  let displayLineNumber = lineNumber;
   if (transportType === Transportchip.transportTypes.AUTO) {
     Object.keys(Transportchip.autoTransportTypes).forEach(key => {
       const regexp = Transportchip.autoTransportTypes[key];
@@ -14,19 +21,28 @@ const Transportchip = ({ lineNumber, transportType, className, ...otherProps }) 
       }
     });
   }
+  if (regionalLineNumbers[regionalStyle]) {
+    displayLineNumber = regionalLineNumbers[regionalStyle](displayLineNumber);
+  }
   const IconComponent =
     Icon[
       `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
     ];
-  const matches = lineNumber && lineNumber.match(/(.*[A-Z]) ?(\d.*)/);
+  const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
   return (
     <span
-      className={clsx('dbx-transportchip', `dbx-transportchip--${displayTransportType}`, className)}
+      className={clsx(
+        'dbx-transportchip',
+        `dbx-transportchip--${displayTransportType}`,
+        regionalStyle && `dbx-transportchip--${regionalStyle}`,
+        regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
+        className
+      )}
       {...otherProps}
     >
       {IconComponent && <IconComponent className="dbx-transportchip__icon" />}
-      {lineNumber && (
-        <span className="dbx-transportchip__text">{matches ? matches[1] : lineNumber}</span>
+      {displayLineNumber && (
+        <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
       )}
       {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
     </span>
@@ -53,6 +69,10 @@ Transportchip.transportTypes = {
   BIKESHARING: 'bikesharing',
 };
 
+Transportchip.regionalStyles = {
+  BERLIN: 'berlin',
+};
+
 Transportchip.autoTransportTypes = {
   ICE: /ICE ?\d+/,
   IC: /IC ?\d+/,
@@ -76,11 +96,16 @@ Transportchip.propTypes = {
   transportType: PropTypes.oneOf(
     Object.keys(Transportchip.transportTypes).map(k => Transportchip.transportTypes[k])
   ),
+  /** Use a local style to display line number */
+  regionalStyle: PropTypes.oneOf(
+    Object.keys(Transportchip.regionalStyles).map(k => Transportchip.regionalStyles[k])
+  ),
 };
 
 Transportchip.defaultProps = {
   transportType: Transportchip.transportTypes.AUTO,
   className: '',
+  regionalStyle: null,
 };
 
 export default Transportchip;
