@@ -341,3 +341,26 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Nürnberg
     </p>
   </div>
 ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Cologne', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S11', 'S12', 'S13', 'S19', 'S23'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.COLOGNE}
+          transportType={Transportchip.transportTypes.SBAHN}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+    <p>
+      {['1', '3', '4', '5', '7', '9', '12', '13', '15', '16', '17', '18'].map(lineNumber => (
+        <Transportchip
+          regionalStyle={Transportchip.regionalStyles.COLOGNE}
+          transportType={Transportchip.transportTypes.TRAM}
+          lineNumber={lineNumber}
+        />
+      ))}
+    </p>
+  </div>
+));
