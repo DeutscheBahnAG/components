@@ -120,7 +120,8 @@ $dbx-transportchip--height: 24px;
 
 .dbx-transportchip--berlin,
 .dbx-transportchip--hamburg,
-.dbx-transportchip--munich {
+.dbx-transportchip--munich,
+.dbx-transportchip--frankfurtmain {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
     color: #fff;
@@ -502,5 +503,133 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--expressbus {
     background: #6fcf8f;
+  }
+}
+
+// Frankfurt/Main
+
+.dbx-transportchip--frankfurtmain {
+  &.dbx-transportchip--sbahn {
+    text-align: left;
+    width: 1.75 * $dbx-transportchip--height;
+
+    .dbx-transportchip__icon {
+      display: block;
+      float: left;
+    }
+  }
+
+  &.dbx-transportchip--s1 {
+    background: #047fb8;
+  }
+
+  &.dbx-transportchip--s2 {
+    background: #ff0100;
+  }
+
+  &.dbx-transportchip--s3 {
+    background: #009377;
+  }
+
+  &.dbx-transportchip--s4 {
+    background: #fc0;
+    border: 1px #000 solid;
+    color: #000;
+    line-height: $dbx-transportchip--height - 2px;
+
+    .dbx-transportchip__icon {
+      margin: -1px 0 -1px -1px;
+    }
+  }
+
+  &.dbx-transportchip--s5 {
+    background: #7e3206;
+  }
+
+  &.dbx-transportchip--s6 {
+    background: #f47822;
+  }
+
+  &.dbx-transportchip--s7 {
+    background: #01220f;
+  }
+
+  &.dbx-transportchip--s8 {
+    background: #82c421;
+  }
+
+  &.dbx-transportchip--s9 {
+    background: #81027e;
+  }
+
+  &.dbx-transportchip--ubahn {
+    border-radius: $dbx-transportchip--height / 2;
+    text-align: center;
+    width: 1.75 * $dbx-transportchip--height;
+  }
+
+  &.dbx-transportchip--u1 {
+    background: #a30118;
+  }
+
+  &.dbx-transportchip--u2 {
+    background: #02a650;
+  }
+
+  &.dbx-transportchip--u3 {
+    background: #35418b;
+  }
+
+  &.dbx-transportchip--u4 {
+    background: #e03181;
+  }
+
+  &.dbx-transportchip--u5 {
+    background: #005e24;
+  }
+
+  &.dbx-transportchip--u6 {
+    background: #005e24;
+  }
+
+  &.dbx-transportchip--u7 {
+    background: #005e24;
+  }
+
+  &.dbx-transportchip--u8 {
+    background: #c066a0;
+  }
+
+  &.dbx-transportchip--u9 {
+    background: #ffd602;
+    border: 1px #000 solid;
+    color: #000;
+    line-height: $dbx-transportchip--height - 2px;
+
+    .dbx-transportchip__icon {
+      margin: -1px 0 -1px -1px;
+    }
+  }
+
+  &.dbx-transportchip--tram {
+    background-color: #fff;
+    border: 1px solid #f00;
+    border-radius: $dbx-transportchip--height / 3;
+    color: #000;
+    line-height: $dbx-transportchip--height - 2px;
+    text-align: center;
+    width: 1.75 * $dbx-transportchip--height;
+
+    .dbx-transportchip__icon {
+      display: none;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.dbx-transportchip--tram-temporary {
+    border-color: #000;
   }
 }

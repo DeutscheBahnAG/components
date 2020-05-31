@@ -29,6 +29,7 @@ const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g,
 const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
   hamburg: lineNumber => lineNumber.replace(/(F|Bus) ?/i, ''),
+  frankfurtmain: lineNumber => lineNumber.replace(/S ?/i, ''),
 };
 
 const regionalTransportTypes = {
@@ -93,6 +94,14 @@ const regionalTransportTypes = {
     }
     return null;
   },
+  frankfurtmain: (transportType, lineNumber) => {
+    if (transportType === transportTypes.TRAM) {
+      if (['19', '20'].includes(lineNumber)) {
+        return 'tram-temporary';
+      }
+    }
+    return null;
+  },
 };
 
 const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
@@ -144,6 +153,7 @@ Transportchip.regionalStyles = {
   BERLIN: 'berlin',
   HAMBURG: 'hamburg',
   MUNICH: 'munich',
+  FRANKFURT_MAIN: 'frankfurtmain',
 };
 
 Transportchip.autoTransportTypes = {
