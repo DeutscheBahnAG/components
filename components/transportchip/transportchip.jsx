@@ -33,6 +33,16 @@ const regionalLineNumbers = {
   mannheim: lineNumber => lineNumber.replace(/STR ?/i, ''),
 };
 
+const showIcon = {
+  berlin: () => false,
+  hamburg: () => false,
+  munich: () => false,
+  frankfurtmain: transportType => transportType === transportTypes.SBAHN,
+  cologne: () => true,
+  nuremberg: () => false,
+  mannheim: () => transportType => transportType !== transportTypes.TRAM,
+};
+
 const regionalTransportTypes = {
   hamburg: (transportType, lineNumber) => {
     if (transportType === transportTypes.BUS) {
@@ -139,7 +149,9 @@ const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ..
       )}
       {...otherProps}
     >
-      {IconComponent && <IconComponent className="dbx-transportchip__icon" />}
+      {IconComponent && (!regionalStyle || showIcon[regionalStyle](displayTransportType)) && (
+        <IconComponent className="dbx-transportchip__icon" />
+      )}
       {displayLineNumber && (
         <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
       )}
