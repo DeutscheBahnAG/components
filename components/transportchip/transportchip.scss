@@ -1,9 +1,13 @@
-// stylelint-disable max-nesting-depth
+// stylelint-disable max-nesting-depth, selector-no-qualifying-type
 
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
 $dbx-transportchip--height: 24px;
+
+@mixin dbx-transportchip-no-border-radius {
+  border-radius: 0.01em; // No visual border-radius; focus-ring will look round
+}
 
 @mixin dbx-transportchip-border($px, $color) {
   $border-in-em: $px / 1px * 0.0625em;
@@ -18,10 +22,24 @@ $dbx-transportchip--height: 24px;
   display: inline-block;
   height: 1.5em;
   line-height: 1.5em;
+  text-decoration: none;
   white-space: nowrap;
 
   & + & {
     margin-left: dbx-spacing('xs') / dbx-font-size('copy', 'm') * 1em;
+  }
+}
+
+a.dbx-transportchip,
+button.dbx-transportchip {
+  @include dbx-focus-ring;
+
+  &:hover {
+    filter: brightness(0.9) saturate(1.1);
+  }
+
+  &:active {
+    filter: brightness(0.7) saturate(1.3);
   }
 }
 
@@ -153,7 +171,7 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--ubahn {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     width: 1.5em * 1.5;
   }
 }
@@ -364,9 +382,9 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--bus,
   &.dbx-transportchip--ferry {
+    @include dbx-transportchip-no-border-radius;
     background: #e2011a;
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
-    border-radius: 0;
     text-align: center;
 
     .dbx-transportchip__icon {
@@ -473,8 +491,8 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
+    @include dbx-transportchip-no-border-radius;
     background: #e2011a;
-    border-radius: 0;
     text-align: center;
     width: 1.5em * 1.5;
 
@@ -647,7 +665,7 @@ $dbx-transportchip--height: 24px;
 .dbx-transportchip--nuremberg {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     width: 1.5em * 1.5;
   }
 
@@ -681,7 +699,7 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     text-align: center;
     width: 1.5em;
 
@@ -815,7 +833,7 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--tram {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     padding: 0 0.3em;
     min-width: $dbx-transportchip--height;
     text-align: center;
