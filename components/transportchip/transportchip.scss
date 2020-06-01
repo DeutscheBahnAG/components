@@ -367,7 +367,9 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--ferry {
     background: #009dd1;
-    clip-path: polygon(10% 0, 90% 0, 72% 100%, 28% 100%);
+    // clip-path: polygon(10% 0, 90% 0, 72% 100%, 28% 100%); // for default width
+    clip-path: polygon(0 0, 100% 0, 77.5% 100%, 22.5% 100%);
+    width: 1.5em * 2.5 * 0.8; // remove ferry’s white space
   }
 
   &.dbx-transportchip--expressbus {
