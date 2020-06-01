@@ -7,6 +7,20 @@ import transportchipReadme from './README.md';
 
 storiesOf('Components / Transportchip', module)
   .addDecorator(withReadme(transportchipReadme))
+  .add('Default', () => (
+    <>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          <Transportchip lineNumber="U5" />
+          <Transportchip lineNumber="ICE599" />
+          <Transportchip lineNumber="RE13" />
+          <Transportchip lineNumber="Str 4" />
+          <Transportchip lineNumber="Bus 296" />
+          <Transportchip lineNumber="Taxi" />
+        </p>
+      </div>
+    </>
+  ))
   .add('Sizing', () => (
     <>
       <div className="sg-components-transportationchip-list">
