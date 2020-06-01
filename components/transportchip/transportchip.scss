@@ -5,24 +5,31 @@
 
 $dbx-transportchip--height: 24px;
 
+@mixin dbx-transportchip-border($px, $color) {
+  $border-in-em: $px / 1px * 0.0625em;
+  border: $border-in-em $color solid;
+  line-height: #{1.5em - 2 * $border-in-em};
+}
+
 .dbx-transportchip {
   background: dbx-palette-color('coolgray500');
-  border-radius: #{dbx-spacing('xs') / dbx-size('xs') *
-    $dbx-transportchip--height};
+  border-radius: 0.21em;
   color: dbx-palette-color('white');
   display: inline-block;
-  height: $dbx-transportchip--height;
-  line-height: $dbx-transportchip--height;
+  height: 1.5em;
+  line-height: 1.5em;
   white-space: nowrap;
 
   & + & {
-    margin-left: dbx-spacing('xs');
+    margin-left: dbx-spacing('xs') / dbx-font-size('copy', 'm') * 1em;
   }
 }
 
 .dbx-transportchip__icon {
   display: inline-block;
+  height: 1.5em;
   vertical-align: top;
+  width: 1.5em;
 
   &:not(:only-child) {
     margin: 0 1px;
@@ -30,10 +37,13 @@ $dbx-transportchip--height: 24px;
 }
 
 .dbx-transportchip__text {
-  @include dbx-text-style('copy', 's');
+  font-family: dbx-font-family('copy');
+  font-size: 0.92em;
   font-weight: dbx-font-weight('copy', 'bold');
+  line-height: 1;
   margin-right: 0.1em; // = more space than “S1”, less space than “S 1”
   vertical-align: (dbx-font-size('copy', 'm') - dbx-font-size('copy', 's')) / 2;
+  vertical-align: 0.05em;
 
   &:last-child {
     margin-right: 0.43em; // like padding-right of the badge, but depending on the font-size
@@ -138,13 +148,13 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--sbahn {
-    border-radius: $dbx-transportchip--height / 2;
-    width: $dbx-transportchip--height * 2;
+    border-radius: 0.75em;
+    width: 1.5em * 2;
   }
 
   &.dbx-transportchip--ubahn {
     border-radius: 0;
-    width: $dbx-transportchip--height * 1.4;
+    width: 1.5em * 1.5;
   }
 }
 
@@ -168,10 +178,13 @@ $dbx-transportchip--height: 24px;
       display: inline-block;
       font-size: 0.5em;
       font-weight: bold;
-      margin-right: dbx-spacing('xs');
       text-align: center;
       vertical-align: top;
-      width: $dbx-transportchip--height;
+      width: 1.5em * 1 / 0.5;
+    }
+
+    .dbx-transportchip__text:first-child {
+      margin-left: 0.3em;
     }
 
     .dbx-transportchip__icon {
@@ -184,6 +197,7 @@ $dbx-transportchip--height: 24px;
     border-radius: 50%;
     content: 'BUS';
     font-size: 0.6em;
+    width: 1.5em * 1 / 0.6;
   }
 
   &.dbx-transportchip--ferry::before {
@@ -193,6 +207,7 @@ $dbx-transportchip--height: 24px;
     font-size: 1.2em;
     font-style: italic;
     padding-right: 0.15em;
+    width: 1.5em * 1 / 1.2;
   }
 
   &.dbx-transportchip--s1 {
@@ -291,7 +306,7 @@ $dbx-transportchip--height: 24px;
   &.dbx-transportchip--ubahn,
   &.dbx-transportchip--bus,
   &.dbx-transportchip--ferry {
-    width: 2.5 * $dbx-transportchip--height;
+    width: 1.5em * 2.5;
   }
 
   &.dbx-transportchip--s1 {
@@ -300,10 +315,9 @@ $dbx-transportchip--height: 24px;
 
   &.dbx-transportchip--s11,
   &.dbx-transportchip--s21 {
+    @include dbx-transportchip-border(2px, #039729);
     background: #fff;
-    border: 2px #039729 solid;
     color: #039729;
-    line-height: $dbx-transportchip--height - 4px;
   }
 
   &.dbx-transportchip--s2 {
@@ -335,10 +349,9 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--u3 {
-    border: 1px #00000025 solid;
+    @include dbx-transportchip-border(1px, #00000025);
     background: #ffd602;
-    line-height: $dbx-transportchip--height - 2px;
-    text-shadow: #000 0 0 1px;
+    text-shadow: #000 0 0 0.0625em;
   }
 
   &.dbx-transportchip--u4 {
@@ -390,7 +403,7 @@ $dbx-transportchip--height: 24px;
 
 .dbx-transportchip--munich {
   &.dbx-transportchip--sbahn {
-    width: $dbx-transportchip--height / 3 * 7;
+    width: 1.5em / 3 * 7;
   }
 
   &.dbx-transportchip--s1 {
@@ -463,7 +476,7 @@ $dbx-transportchip--height: 24px;
     background: #e2011a;
     border-radius: 0;
     text-align: center;
-    width: 1.5 * $dbx-transportchip--height;
+    width: 1.5em * 1.5;
 
     .dbx-transportchip__icon {
       display: none;
@@ -475,10 +488,9 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--tram-temporary {
-    border: 2px #e2011a solid;
+    @include dbx-transportchip-border(1px, #e2011a);
     background: #fff;
     color: #e2011a;
-    line-height: $dbx-transportchip--height - 4px;
   }
 
   &.dbx-transportchip--nachttram {
@@ -514,7 +526,7 @@ $dbx-transportchip--height: 24px;
 .dbx-transportchip--frankfurtmain {
   &.dbx-transportchip--sbahn {
     text-align: left;
-    width: 1.75 * $dbx-transportchip--height;
+    width: 1.5em * 1.75;
 
     .dbx-transportchip__icon {
       display: block;
@@ -535,13 +547,12 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--s4 {
+    @include dbx-transportchip-border(1px, #000);
     background: #fc0;
-    border: 1px #000 solid;
     color: #000;
-    line-height: $dbx-transportchip--height - 2px;
 
     .dbx-transportchip__icon {
-      margin: -1px 0 -1px -1px;
+      margin: -0.0625em 0 -0.0625em -0.0625em;
     }
   }
 
@@ -566,9 +577,9 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--ubahn {
-    border-radius: $dbx-transportchip--height / 2;
+    border-radius: 0.5em;
     text-align: center;
-    width: 1.75 * $dbx-transportchip--height;
+    width: 1.5em * 1.75;
   }
 
   &.dbx-transportchip--u1 {
@@ -604,24 +615,18 @@ $dbx-transportchip--height: 24px;
   }
 
   &.dbx-transportchip--u9 {
+    @include dbx-transportchip-border(1px, #000);
     background: #ffd602;
-    border: 1px #000 solid;
     color: #000;
-    line-height: $dbx-transportchip--height - 2px;
-
-    .dbx-transportchip__icon {
-      margin: -1px 0 -1px -1px;
-    }
   }
 
   &.dbx-transportchip--tram {
+    @include dbx-transportchip-border(1px, #f00);
     background-color: #fff;
-    border: 1px solid #f00;
-    border-radius: $dbx-transportchip--height / 3;
+    border-radius: 0.5em;
     color: #000;
-    line-height: $dbx-transportchip--height - 2px;
     text-align: center;
-    width: 1.75 * $dbx-transportchip--height;
+    width: 1.5em * 1.75;
 
     .dbx-transportchip__icon {
       display: none;
@@ -643,7 +648,7 @@ $dbx-transportchip--height: 24px;
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
     border-radius: 0;
-    width: 1.5 * $dbx-transportchip--height;
+    width: 1.5em * 1.5;
   }
 
   &.dbx-transportchip--s1 {
@@ -678,7 +683,7 @@ $dbx-transportchip--height: 24px;
   &.dbx-transportchip--bus {
     border-radius: 0;
     text-align: center;
-    width: $dbx-transportchip--height;
+    width: 1.5em;
 
     .dbx-transportchip__icon {
       display: none;
