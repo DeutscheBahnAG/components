@@ -4,6 +4,58 @@ import withReadme from 'storybook-readme/with-readme';
 import Transportchip from './transportchip';
 import transportchipReadme from './README.md';
 
+storiesOf('Components / Transportchip', module)
+  .addDecorator(withReadme(transportchipReadme))
+  .add('Sizing', () => (
+    <>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Take a ride on <Transportchip lineNumber="S 1" /> today!
+        </p>
+        <p className="sg-text-style--title-m">
+          Take a ride on <Transportchip lineNumber="S 1" /> today!
+        </p>
+        <p className="sg-text-style--title-xl">
+          Take a ride on <Transportchip lineNumber="S 1" /> today!
+        </p>
+      </div>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Take a boat trip with{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.HAMBURG} lineNumber="F62" /> in
+          the Port of Hamburg today!
+        </p>
+        <p className="sg-text-style--title-m">
+          Take a boat trip with{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.HAMBURG} lineNumber="F62" /> in
+          the Port of Hamburg today!
+        </p>
+        <p className="sg-text-style--title-xl">
+          Take a boat trip with{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.HAMBURG} lineNumber="F62" /> in
+          the Port of Hamburg today!
+        </p>
+      </div>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Do you remember U-Bahn{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.BERLIN} lineNumber="U12" /> in
+          Berlin?
+        </p>
+        <p className="sg-text-style--title-m">
+          Do you remember U-Bahn{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.BERLIN} lineNumber="U12" /> in
+          Berlin?
+        </p>
+        <p className="sg-text-style--title-xl">
+          Do you remember U-Bahn{' '}
+          <Transportchip regionalStyle={Transportchip.regionalStyles.BERLIN} lineNumber="U12" /> in
+          Berlin?
+        </p>
+      </div>
+    </>
+  ));
+
 storiesOf('Components / Transportchip / Auto detect', module)
   .addDecorator(withReadme(transportchipReadme))
   .add('S-Bahn', () => <Transportchip lineNumber="S 1" />)

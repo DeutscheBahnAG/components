@@ -178,6 +178,10 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-components-transportationchip-list {
+  & + & {
+    margin-top: dbx-spacing('xl');
+  }
+
   p + p {
     margin-top: dbx-spacing('s');
   }
