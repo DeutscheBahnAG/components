@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
 import Transportchip from './transportchip';
 import transportchipReadme from './README.md';
@@ -51,6 +52,59 @@ storiesOf('Components / Transportchip', module)
           Do you remember U-Bahn{' '}
           <Transportchip regionalStyle={Transportchip.regionalStyles.BERLIN} lineNumber="U12" /> in
           Berlin?
+        </p>
+      </div>
+    </>
+  ))
+  .add('Linking', () => (
+    <>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Not linked: <Transportchip lineNumber="ICE 599" />
+          <Transportchip regionalStyle={Transportchip.regionalStyles.BERLIN} lineNumber="S 1" />
+          <Transportchip regionalStyle={Transportchip.regionalStyles.MUNICH} lineNumber="U7" />
+        </p>
+      </div>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Click on the chip for more information:{' '}
+          <Transportchip
+            lineNumber="ICE 599"
+            href="https://reiseauskunft.bahn.de/bin/traininfo.exe/dn/624477/471291/228714/93802/80"
+          />
+          <Transportchip
+            regionalStyle={Transportchip.regionalStyles.BERLIN}
+            lineNumber="S 1"
+            href="https://sbahn.berlin/liniennetz/"
+          />
+          <Transportchip
+            regionalStyle={Transportchip.regionalStyles.MUNICH}
+            lineNumber="U7"
+            href="https://www.mvv-muenchen.de/"
+          />
+        </p>
+      </div>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          Click on the chip for an JavaScript action:{' '}
+          <Transportchip lineNumber="ICE 599" onClick={action('clicked')} />
+          <Transportchip
+            regionalStyle={Transportchip.regionalStyles.BERLIN}
+            lineNumber="S 1"
+            onClick={action('clicked')}
+          />
+          <Transportchip
+            regionalStyle={Transportchip.regionalStyles.MUNICH}
+            lineNumber="U7"
+            onClick={action('clicked')}
+          />
+        </p>
+      </div>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          When either <code>href</code> or <code>onClick</code> is defined, the Transportchip will
+          turn into an accessible <code>&lt;a&gt;</code>/<code>&lt;button&gt;</code> including
+          hover, pressed and focus ring styles.
         </p>
       </div>
     </>

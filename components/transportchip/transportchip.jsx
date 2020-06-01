@@ -115,7 +115,15 @@ const regionalTransportTypes = {
   },
 };
 
-const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ...otherProps }) => {
+const Transportchip = ({
+  lineNumber,
+  transportType,
+  regionalStyle,
+  className,
+  href,
+  onClick,
+  ...otherProps
+}) => {
   let displayTransportType = transportType;
   let displayLineNumber = lineNumber;
   displayTransportType = displayTransportType.replace(/rnv/i, 'str');
@@ -138,8 +146,10 @@ const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ..
     `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
     ];
   const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
+  // eslint-disable-next-line no-nested-ternary
+  const Component = href ? 'a' : onClick ? 'button' : 'span';
   return (
-    <span
+    <Component
       className={clsx(
         'dbx-transportchip',
         `dbx-transportchip--${displayTransportType}`,
@@ -148,6 +158,8 @@ const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ..
         regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
         className
       )}
+      href={href}
+      onClick={onClick}
       {...otherProps}
     >
       {IconComponent && (!regionalStyle || showIcon[regionalStyle](displayTransportType)) && (
@@ -157,7 +169,7 @@ const Transportchip = ({ lineNumber, transportType, regionalStyle, className, ..
         <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
       )}
       {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
-    </span>
+    </Component>
   );
 };
 
@@ -200,12 +212,18 @@ Transportchip.propTypes = {
   regionalStyle: PropTypes.oneOf(
     Object.keys(Transportchip.regionalStyles).map(k => Transportchip.regionalStyles[k])
   ),
+  /** Optional link target (will create an <a>) */
+  href: PropTypes.string,
+  /** Optional click handler (will create a <button>) */
+  onClick: PropTypes.func,
 };
 
 Transportchip.defaultProps = {
   transportType: Transportchip.transportTypes.AUTO,
   className: '',
   regionalStyle: null,
+  href: null,
+  onClick: null,
 };
 
 export default Transportchip;

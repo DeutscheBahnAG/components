@@ -2,6 +2,10 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
+@mixin dbx-transportchip-no-border-radius {
+  border-radius: 0.01em; // No visual border-radius; focus-ring will look round
+}
+
 @mixin dbx-transportchip-border($px, $color) {
   $border-in-em: $px / 1px * 0.0625em;
   border: $border-in-em $color solid;
@@ -19,6 +23,7 @@
   height: 1.5em;
   line-height: 1.5em;
   padding: 0;
+  text-decoration: none;
   white-space: nowrap;
 
   & + & {
@@ -166,7 +171,7 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--ubahn {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     width: 1.5em * 1.5;
   }
 }
@@ -377,9 +382,9 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--bus,
   &.dbx-transportchip--ferry {
+    @include dbx-transportchip-no-border-radius;
     background: #e2011a;
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
-    border-radius: 0;
     text-align: center;
 
     .dbx-transportchip__icon {
@@ -484,8 +489,8 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
+    @include dbx-transportchip-no-border-radius;
     background: #e2011a;
-    border-radius: 0;
     text-align: center;
     width: 1.5em * 1.5;
 
@@ -658,7 +663,7 @@ button.dbx-transportchip {
 .dbx-transportchip--nuremberg {
   &.dbx-transportchip--sbahn,
   &.dbx-transportchip--ubahn {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     width: 1.5em * 1.5;
   }
 
@@ -692,7 +697,7 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     text-align: center;
     width: 1.5em;
 
@@ -835,7 +840,7 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--tram {
-    border-radius: 0;
+    @include dbx-transportchip-no-border-radius;
     padding: 0 0.3em;
     min-width: 1.5em;
     text-align: center;
