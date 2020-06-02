@@ -43,6 +43,20 @@ const showIcon = {
   mannheim: () => transportType => transportType !== transportTypes.TRAM,
 };
 
+const alwaysShowIcon = [
+  transportTypes.AIRPLANE,
+  transportTypes.AUTO,
+  transportTypes.CARSHARING,
+  transportTypes.IC,
+  transportTypes.INTERCITYBUS,
+  transportTypes.RB,
+  transportTypes.RE,
+  transportTypes.WALKING,
+  transportTypes.EC,
+  transportTypes.ICE,
+  transportTypes.BIKESHARING,
+];
+
 const regionalTransportTypes = {
   hamburg: (transportType, lineNumber) => {
     if (transportType === transportTypes.BUS) {
@@ -143,7 +157,7 @@ const Transportchip = ({
     regionalTransportTypes[regionalStyle](transportType, lineNumber);
   const IconComponent =
     Icon[
-    `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
+      `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
     ];
   const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
   // eslint-disable-next-line no-nested-ternary
@@ -162,9 +176,12 @@ const Transportchip = ({
       onClick={onClick}
       {...otherProps}
     >
-      {IconComponent && (!regionalStyle || showIcon[regionalStyle](displayTransportType)) && (
-        <IconComponent className="dbx-transportchip__icon" />
-      )}
+      {IconComponent &&
+        (alwaysShowIcon.includes(transportType) ||
+          !regionalStyle ||
+          showIcon[regionalStyle](displayTransportType)) && (
+          <IconComponent className="dbx-transportchip__icon" />
+        )}
       {displayLineNumber && (
         <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
       )}
