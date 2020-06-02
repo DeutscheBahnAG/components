@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-transportchip",
-  "version": "0.0.0",
+  "version": "0.0.0-eperimental-aaa4b4",
   "description": "DBX Transportchip for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
