@@ -16,6 +16,7 @@ $dbx-modal--shadow-background-color: dbx-color('background.primary');
 $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal {
+  box-sizing: border-box;
   position: fixed;
   display: flex;
   top: 0;

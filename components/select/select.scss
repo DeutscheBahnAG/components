@@ -19,6 +19,7 @@ $dbx-select-chevron-margin: 16px;
   background-color: $dbx-select-background-color;
   border: $dbx-select-border-width solid dbx-border-color('input');
   border-radius: dbx-border-radius('xl');
+  box-sizing: border-box;
   color: dbx-text-color('primary');
   display: inline-flex;
   position: relative;
