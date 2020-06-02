@@ -18,6 +18,7 @@ $dbx-transportchip--height: 24px;
 .dbx-transportchip {
   background: dbx-palette-color('coolgray500');
   border-radius: 0.21em;
+  box-sizing: border-box;
   color: dbx-palette-color('white');
   display: inline-block;
   height: 1.5em;
