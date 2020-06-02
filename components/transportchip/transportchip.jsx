@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import * as Icon from '@bahn-x/dbx-icon/components';
+import * as Icon from '@bahn-x/dbx-icon';
 
 const transportTypes = {
   AUTO: '-auto-',
