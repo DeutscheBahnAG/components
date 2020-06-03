@@ -29,7 +29,7 @@ const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g,
 const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/str ?|bus ?|fäh ?/i, ''),
   hamburg: lineNumber => lineNumber.replace(/fäh ?|bus ?/i, ''),
-  frankfurtmain: lineNumber => lineNumber.replace(/s ?|tr ?|bu ?/i, ''),
+  frankfurtmain: lineNumber => lineNumber.replace(/^str ?|bus ?|s ?(?=\d)/i, ''),
   mannheim: lineNumber => lineNumber.replace(/str ?|rnv ?/i, ''),
   nuremberg: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
   munich: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
