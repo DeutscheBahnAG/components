@@ -110,10 +110,10 @@ const regionalTransportTypes = {
       }
     }
     if (transportType === transportTypes.BUS) {
-      if (lineNumber.startsWith('X')) {
+      if (lineNumber.match(/x\d/i)) {
         return 'expressbus';
       }
-      if (lineNumber.startsWith('N')) {
+      if (lineNumber.match(/n\d/i)) {
         return 'nachtbus';
       }
       if (lineNumber.length === 2) {
