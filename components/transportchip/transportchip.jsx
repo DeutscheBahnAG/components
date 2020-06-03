@@ -27,17 +27,19 @@ const transportTypes = {
 const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
 
 const regionalLineNumbers = {
-  berlin: lineNumber => lineNumber.replace(/STR |Bus /i, ''),
-  hamburg: lineNumber => lineNumber.replace(/(F|Bus) ?/i, ''),
-  frankfurtmain: lineNumber => lineNumber.replace(/S ?/i, ''),
-  mannheim: lineNumber => lineNumber.replace(/STR ?/i, ''),
+  berlin: lineNumber => lineNumber.replace(/str ?|bus ?|fäh ?/i, ''),
+  hamburg: lineNumber => lineNumber.replace(/fäh ?|bus ?/i, ''),
+  frankfurtmain: lineNumber => lineNumber.replace(/s ?/i, ''),
+  mannheim: lineNumber => lineNumber.replace(/str ?|rnv ?/i, ''),
+  nuremberg: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
 };
 
 const showIcon = {
   berlin: () => false,
   hamburg: () => false,
   munich: () => false,
-  frankfurtmain: transportType => transportType === transportTypes.SBAHN,
+  frankfurtmain: transportType =>
+    [transportTypes.SBAHN, transportTypes.BUS].includes(transportType),
   cologne: () => true,
   nuremberg: () => false,
   mannheim: () => transportType => transportType !== transportTypes.TRAM,
