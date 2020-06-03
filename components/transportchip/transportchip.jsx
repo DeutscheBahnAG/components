@@ -140,6 +140,7 @@ const Transportchip = ({
 }) => {
   let displayTransportType = transportType;
   let displayLineNumber = lineNumber;
+  displayTransportType = displayTransportType.replace(/rnv/i, 'str');
   if (transportType === transportTypes.AUTO) {
     Object.keys(Transportchip.autoTransportTypes).forEach(key => {
       const regexp = Transportchip.autoTransportTypes[key];

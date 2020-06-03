@@ -825,8 +825,17 @@ button.dbx-transportchip {
     color: #333;
   }
 
+  &.dbx-transportchip--s33 {
+    background: #744a86;
+  }
+
   &.dbx-transportchip--s4 {
     background: #1a9d47;
+  }
+
+  &.dbx-transportchip--s5,
+  &.dbx-transportchip--s51 {
+    background: #de9450;
   }
 
   &.dbx-transportchip--s6 {
