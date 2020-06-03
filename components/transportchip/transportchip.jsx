@@ -29,9 +29,10 @@ const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g,
 const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/str ?|bus ?|fäh ?/i, ''),
   hamburg: lineNumber => lineNumber.replace(/fäh ?|bus ?/i, ''),
-  frankfurtmain: lineNumber => lineNumber.replace(/s ?/i, ''),
+  frankfurtmain: lineNumber => lineNumber.replace(/s ?|tr ?|bu ?/i, ''),
   mannheim: lineNumber => lineNumber.replace(/str ?|rnv ?/i, ''),
   nuremberg: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
+  munich: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
 };
 
 const showIcon = {
@@ -181,6 +182,7 @@ const Transportchip = ({
       {IconComponent &&
         (alwaysShowIcon.includes(transportType) ||
           !regionalStyle ||
+          !showIcon[regionalStyle] ||
           showIcon[regionalStyle](displayTransportType)) && (
           <IconComponent className="dbx-transportchip__icon" />
         )}
