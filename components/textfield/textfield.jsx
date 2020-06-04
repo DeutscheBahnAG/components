@@ -130,9 +130,9 @@ Textfield.propTypes = {
   /** A unit such as a currency or `%` */
   unit: PropTypes.string,
   /** Content before the input (which is not a unit) */
-  prefix: PropTypes.string,
+  prefix: PropTypes.node,
   /** Content after the input (which is not a unit) */
-  suffix: PropTypes.string,
+  suffix: PropTypes.node,
   /** Change event handler */
   onChange: PropTypes.func,
   /** Focus event handler */
