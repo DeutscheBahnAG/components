@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "rm -rf components && svgr --config-file svgr.config.js --out-dir components svg/24",
-    "transpile": "npx babel components --out-dir . --config-file .babelrc",
+    "transpile": "npx babel components --out-dir . --config-file ../../.babelrc",
     "prepublishOnly": "yarn transpile"
   },
   "dependencies": {

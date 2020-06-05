@@ -160,7 +160,6 @@ async function processPackage(name, location, prefixText) {
 
     const tmpLocation = fs.mkdtempSync(`${os.tmpdir()}/${name.replace(/\//g, '-')}-${version}-`);
     await fs.copy(location, tmpLocation);
-    await fs.copy(`${location}/../../.babelrc`, `${tmpLocation}/.babelrc`);
 
     if (!['@bahn-x/dbx-email-kit', '@bahn-x/dbx-icon'].includes(name)) {
       spinner.text = `${formattedName}Transpiling ${location}`;
