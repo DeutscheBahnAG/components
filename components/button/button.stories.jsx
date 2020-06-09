@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-import * as Icon from '../icon/components';
+import * as Icon from '../icon';
 import Button from './button';
 import buttonReadme from './README.md';
 

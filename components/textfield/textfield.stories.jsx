@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
-import * as Icon from '../icon/components';
+import * as Icon from '../icon';
 import Button from '../button';
 import Textfield from './textfield';
 import textfieldReadme from './README.md';
