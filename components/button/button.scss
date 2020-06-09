@@ -131,6 +131,7 @@
       padding: (dbx-size($size) - dbx-icon-size('m')) /
         2 -
         dbx-border-width('button');
+      min-width: dbx-size($size);
       width: dbx-size($size);
     }
   }
