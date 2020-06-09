@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-textfield",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "DBX Textfield for React",
   "main": "index.js",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
