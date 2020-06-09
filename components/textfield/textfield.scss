@@ -49,6 +49,10 @@
     outline: 0;
   }
 
+  &::-ms-clear {
+    display: none;
+  }
+
   ::placeholder {
     color: rgba(dbx-text-color('secondary'), 0.5);
     font-style: italic;
