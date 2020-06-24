@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18c0-.563.438-1 1-1h2.969V7.687L7.5 9c-.156.063-.313.125-.5.125-.5 0-1-.406-1-1.063 0-.343.219-.656.531-.843L10.5 5.125A.881.881 0 0110.969 5C11.53 5 12 5.469 12 6v11h3c.563 0 1 .438 1 1 0 .563-.438 1-1 1H7c-.563 0-1-.438-1-1zm12 0c0-.563.438-1 1-1 .563 0 1 .438 1 1 0 .563-.438 1-1 1-.563 0-1-.438-1-1z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_journey_1st-class_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Journey/1st-Class" fill="#282D37">
+            <path d="M7,18 C7,17.4375 7.4375,17 8,17 L10.9688,17 L10.9688,7.6875 L8.5,9 C8.3438,9.0625 8.1875,9.125 8,9.125 C7.5,9.125 7,8.7188 7,8.0625 C7,7.7188 7.2188,7.4062 7.5312,7.2188 L11.5,5.125 C11.6562,5.0312 11.8125,5 11.9688,5 C12.5312,5 13,5.4688 13,6 L13,17 L16,17 C16.5625,17 17,17.4375 17,18 C17,18.5625 16.5625,19 16,19 L8,19 C7.4375,19 7,18.5625 7,18 Z M19,18 C19,17.4375 19.4375,17 20,17 C20.5625,17 21,17.4375 21,18 C21,18.5625 20.5625,19 20,19 C19.4375,19 19,18.5625 19,18 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

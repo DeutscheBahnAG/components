@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 18c0 .563-.438 1-1 1-.25 0-.5-.125-.688-.313l-6.03-5.968A1.044 1.044 0 018 12c0-.25.094-.531.281-.719l6.031-5.969C14.5 5.125 14.75 5 15 5c.563 0 1 .438 1 1 0 .281-.094.5-.281.719L10.438 12l5.28 5.281A.99.99 0 0116 18z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_navigation_chevron-left_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Navigation/Chevron-Left" fill="#282D37">
+            <path d="M15,18 C15,18.5625 14.5625,19 14,19 C13.75,19 13.5,18.875 13.3125,18.6875 L7.2812,12.7188 C7.0938,12.5312 7,12.25 7,12 C7,11.75 7.0938,11.4688 7.2812,11.2812 L13.3125,5.3125 C13.5,5.125 13.75,5 14,5 C14.5625,5 15,5.4375 15,6 C15,6.2812 14.9062,6.5 14.7188,6.7188 L9.4375,12 L14.7188,17.2812 C14.9062,17.4688 15,17.7188 15,18 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

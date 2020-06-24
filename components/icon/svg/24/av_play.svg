@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5c.438 0 .813.125 1.188.376l6.937 4.948c.531.408.875 1.034.875 1.692 0 .657-.313 1.284-.875 1.66l-6.938 4.98A2.17 2.17 0 019.031 19 2.003 2.003 0 017 16.996v-9.96C7 5.97 7.813 5 9 5zm0 2v10l7-5-7-5z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_av_play_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/AV/Play" fill="#282D37">
+            <path d="M9,5 C9.4375,5 9.8125,5.12527919 10.1875,5.37583758 L18.125,10.3243657 C18.6562,10.7315732 19,11.3579692 19,12.0156348 C19,12.6734007 18.6875,13.2997967 18.125,13.6756343 L10.1875,18.6554321 C9.8438,18.8747208 9.4375,19 9.0312,19 C7.8438,19 7,18.060406 7,16.9955329 L7,7.03583701 C7,5.97096386 7.8125,5 9,5 Z M9,7 L9,17 L17,12 L9,7 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

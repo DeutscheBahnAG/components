@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16c0-.531.469-1 1.031-1H18.97c.562 0 1.031.469 1.031 1 0 .563-.469 1-1.031 1H6.03C5.47 17 5 16.562 5 16zm0-4c0-.531.469-1 1.031-1H16c.531 0 1 .469 1 1s-.469 1-1 1H6.031C5.47 13 5 12.531 5 12zm0-4c0-.563.469-1 1.031-1H18.97C19.53 7 20 7.438 20 8c0 .531-.469 1-1.031 1H6.03C5.47 9 5 8.531 5 8z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_navigation_menu_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Navigation/Menu" fill="#282D37">
+            <path d="M5,16 C5,15.4688 5.4688,15 6.0312,15 L17.9688,15 C18.5312,15 19,15.4688 19,16 C19,16.5625 18.5312,17 17.9688,17 L6.0312,17 C5.4688,17 5,16.5625 5,16 Z M5,12 C5,11.4688 5.4688,11 6.0312,11 L15,11 C15.5312,11 16,11.4688 16,12 C16,12.5312 15.5312,13 15,13 L6.0312,13 C5.4688,13 5,12.5312 5,12 Z M5,8 C5,7.4375 5.4688,7 6.0312,7 L17.9688,7 C18.5312,7 19,7.4375 19,8 C19,8.5312 18.5312,9 17.9688,9 L6.0312,9 C5.4688,9 5,8.5312 5,8 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16c.563 0 1-.438 1-1 0-.25-.125-.5-.313-.688l-5.968-6.03A1.044 1.044 0 0012 8c-.25 0-.531.094-.719.281l-5.969 6.031C5.125 14.5 5 14.75 5 15c0 .563.438 1 1 1 .281 0 .5-.094.719-.281L12 10.438l5.281 5.28A.99.99 0 0018 16z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_navigation_expand-less_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Navigation/Expand-Less" fill="#282D37">
+            <path d="M18,15 C18.5625,15 19,14.5625 19,14 C19,13.75 18.875,13.5 18.6875,13.3125 L12.7188,7.2812 C12.5312,7.0938 12.25,7 12,7 C11.75,7 11.4688,7.0938 11.2812,7.2812 L5.3125,13.3125 C5.125,13.5 5,13.75 5,14 C5,14.5625 5.4375,15 6,15 C6.2812,15 6.5,14.9062 6.7188,14.7188 L12,9.4375 L17.2812,14.7188 C17.4688,14.9062 17.7188,15 18,15 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

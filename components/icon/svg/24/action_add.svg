@@ -1,1 +1,11 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5c.564 0 1.01.446 1.01 1.01v4.98h4.98c.564 0 1.01.446 1.01 1.01 0 .564-.446 1.01-1.01 1.01h-4.98v4.98c0 .564-.446 1.01-1.01 1.01-.564 0-1.01-.446-1.01-1.01v-4.98H6.01C5.446 13.01 5 12.564 5 12c0-.564.446-1.01 1.01-1.01h4.98V6.01c0-.564.446-1.01 1.01-1.01z" fill="#282D37" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic-db_action_add_24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols:Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24dp-Icon/Action/Add" fill="#282D37">
+            <path d="M12,5 C12.5638,5 13.0101,5.4463 13.0101,6.0101 L13.0101,10.9899 L17.9899,10.9899 C18.5537,10.9899 19,11.4362 19,12 C19,12.5638 18.5537,13.0101 17.9899,13.0101 L13.0101,13.0101 L13.0101,17.9899 C13.0101,18.5537 12.5638,19 12,19 C11.4362,19 10.9899,18.5537 10.9899,17.9899 L10.9899,13.0101 L6.0101,13.0101 C5.4463,13.0101 5,12.5638 5,12 C5,11.4362 5.4463,10.9899 6.0101,10.9899 L10.9899,10.9899 L10.9899,6.0101 C10.9899,5.4463 11.4362,5 12,5 Z" id="🎨-Color"></path>
+        </g>
+    </g>
+</svg>

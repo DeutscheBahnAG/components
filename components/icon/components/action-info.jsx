@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ActionInfoCircle = React.memo(
+const ActionInfo = React.memo(
   React.forwardRef(({ title, titleId, ...props }, svgRef) => (
     <svg
       width="24"
@@ -21,12 +21,12 @@ const ActionInfoCircle = React.memo(
     </svg>
   ))
 );
-ActionInfoCircle.propTypes = {
+ActionInfo.propTypes = {
   title: PropTypes.string,
   titleId: PropTypes.string,
 };
-ActionInfoCircle.defaultProps = {
+ActionInfo.defaultProps = {
   title: null,
   titleId: null,
 };
-export default ActionInfoCircle;
+export default ActionInfo;
