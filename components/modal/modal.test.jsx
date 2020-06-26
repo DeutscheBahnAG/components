@@ -10,7 +10,6 @@ const selectors = {
   alertdialog: '.dbx-modal__dialog[role="alertdialog"]',
   header: 'header.dbx-modal__header',
   closeButton: 'button.dbx-modal__closebutton',
-  closeText: '.dbx-modal__closebutton-text',
   title: 'h2.dbx-modal__title',
   content: 'main.dbx-modal__content',
   actions: 'div.dbx-modal__actions',
@@ -23,7 +22,6 @@ const selectors = {
 
 describe('Modal Component', () => {
   it('should render a modal', () => {
-    const closeText = 'Close the dialogue';
     const wrapper = mount(<ModalComponent open />);
     expect(wrapper.find(selectors.modal)).toHaveLength(1);
     expect(wrapper.find(selectors.dialog)).toHaveLength(1);
@@ -31,10 +29,8 @@ describe('Modal Component', () => {
     expect(wrapper.find(`${selectors.alertdialog}`)).toHaveLength(0);
     expect(wrapper.find(`${selectors.dialog}.dbx-modal__dialog--width-m`)).toHaveLength(1);
     expect(wrapper.find(selectors.header)).toHaveLength(1);
+    expect(wrapper.find(`${selectors.closeButton}[title='Close the dialogue']`)).toHaveLength(1);
     expect(wrapper.find(selectors.closeButton)).toHaveLength(1);
-    expect(wrapper.find(selectors.closeText)).toHaveLength(1);
-    expect(wrapper.find(`${selectors.closeButton}[aria-label="${closeText}"]`)).toHaveLength(1);
-    expect(wrapper.find(selectors.closeText).text()).toEqual(closeText);
     expect(wrapper.find(selectors.title)).toHaveLength(0);
     expect(wrapper.find(selectors.content)).toHaveLength(1);
     expect(wrapper.find(selectors.actions)).toHaveLength(0);
@@ -96,11 +92,9 @@ describe('Modal Component', () => {
     const wrapper = shallow(<ModalComponent enableCloseButton={false} open />);
     expect(wrapper.find(selectors.closeButton)).toHaveLength(0);
   });
-  it('should change aria-label of close button', () => {
-    const text = 'Changed close button label';
-    const wrapper = shallow(<ModalComponent closeText={text} open />);
-    expect(wrapper.find(`${selectors.closeButton}[aria-label="${text}"]`)).toHaveLength(1);
-    expect(wrapper.find(selectors.closeText).text()).toEqual(text);
+  it('should render a custom button text', () => {
+    const wrapper = mount(<ModalComponent open closeText="Custom text" />);
+    expect(wrapper.find(`${selectors.closeButton}[title='Custom text']`)).toHaveLength(1);
   });
   it('should change aria-labelledby id of content', () => {
     const htmlId = 'modal-label';

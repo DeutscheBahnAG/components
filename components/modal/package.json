@@ -9,7 +9,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "@bahn-x/dbx-button": ">=0.14.0",
     "@bahn-x/dbx-foundation": "^0.5.0",
+    "@bahn-x/dbx-icon": ">=0.1.0",
     "clsx": "^1.0.4",
     "core-js": "^3.6.4",
     "include-media": "^1.4.9",

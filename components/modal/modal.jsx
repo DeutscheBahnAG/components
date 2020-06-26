@@ -4,6 +4,7 @@ import ReactModal from 'react-modal';
 import clsx from 'clsx';
 
 import Button from '@bahn-x/dbx-button';
+import { NavigationClose } from '@bahn-x/dbx-icon';
 
 const devError = ({ componentName, message, justWarn }) => {
   if (
@@ -207,20 +208,16 @@ const Modal = ({
         )}
       >
         {enableCloseButton && (
-          <button
-            type="button"
-            aria-label={closeText}
+          <Button
+            variant={Button.variants.HOVER_ONLY}
+            shape={Button.shapes.SQUARE}
+            size={Button.sizes.M}
+            icon={<NavigationClose />}
             className={clsx('dbx-modal__closebutton', !title && 'dbx-modal__closebutton--collapse')}
             onClick={onClose}
           >
-            <svg className="dbx-modal__closebutton-cross" viewBox="0 0 24 24">
-              <path
-                className="dbx-modal__closebutton-cross-path"
-                d="M4.29 19.71c.2.19.45.29.71.29.26 0 .51-.1.71-.29l6.29-6.3 6.29 6.3c.2.19.45.29.71.29.26 0 .51-.1.71-.29.39-.39.39-1.03 0-1.42L13.41 12l6.3-6.29c.39-.39.39-1.03 0-1.42-.39-.39-1.03-.39-1.42 0L12 10.59l-6.29-6.3c-.39-.39-1.03-.39-1.42 0-.39.39-.39 1.03 0 1.42l6.3 6.29-6.3 6.29c-.39.39-.39 1.03 0 1.42z"
-              />
-            </svg>
-            <span className="dbx-modal__closebutton-text">{closeText}</span>
-          </button>
+            {closeText}
+          </Button>
         )}
         {title && (
           <h2 className="dbx-modal__title" {...otherTitleProps}>

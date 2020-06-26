@@ -112,17 +112,8 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 }
 
 .dbx-modal__closebutton {
-  @include dbx-focus-ring();
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: dbx-size('m');
-  height: dbx-size('m');
-  border-radius: dbx-border-radius('l');
-  background-color: dbx-color('background.primary');
   // Place visually right aligned.
-  transform: translateX(dbx-spacing('s'));
+  transform: translate(dbx-spacing('s'), dbx-spacing('s', $negative: true));
   @include media('print') {
     display: none;
   }
@@ -133,16 +124,6 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   top: dbx-spacing('s', $negative: true);
   right: 0;
   z-index: 1;
-}
-
-.dbx-modal__closebutton-text {
-  @include dbx-hide-text;
-}
-
-.dbx-modal__closebutton-cross {
-  display: inline-block;
-  width: dbx-icon-size('m');
-  height: dbx-icon-size('m');
 }
 
 .dbx-modal__title {

@@ -72,6 +72,19 @@ storiesOf('Components / Modal', module)
       You will <b>not</b> be able to recover your account once deleted.
     </Modal>
   ))
+  .add('Without title', () => (
+    <Modal
+      {...modalActions}
+      primaryButton={<PrimaryButton {...primaryActions}>Delete</PrimaryButton>}
+      secondaryButton={<SecondaryButton {...secondaryActions}>Keep</SecondaryButton>}
+      centerActions="l"
+      fullActionSize="s"
+      kind="alert"
+      open
+    >
+      You will <b>not</b> be able to recover your account once deleted.
+    </Modal>
+  ))
   .add('Without close', () => (
     <Modal
       {...modalActions}
