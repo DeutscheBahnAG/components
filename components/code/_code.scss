@@ -1,23 +1,5 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-/* stylelint-disable selector-no-qualifying-type */
-
-// block style ('inline' prop == false)
-pre.dbx-code {
-  white-space: pre;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: dbx-spacing('m');
-  border-radius: dbx-border-radius('l');
-}
-
-// inline style ('inline' prop == true)
-code.dbx-code {
-  padding: (dbx-line-height('copy', 's') - dbx-font-size('copy', 's')) / 2;
-  border-radius: dbx-border-radius('s');
-}
-
-// shared styles
 .dbx-code {
   // GitHub uses this stack, so it can't be bad :p
   $code-font-stack: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
@@ -27,6 +9,22 @@ code.dbx-code {
   line-height: dbx-line-height('copy', 's') !important;
   font-family: $code-font-stack !important;
   background-color: dbx-palette-color('coolgray100');
+
+  // inline style ('inline' prop == true)
+  &--inline {
+    padding: (dbx-line-height('copy', 's') - dbx-font-size('copy', 's')) / 2;
+    border-radius: dbx-border-radius('s');
+  }
+
+  // block style ('inline' prop == false)
+  &--block {
+    @include dbx-focus-ring;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: dbx-spacing('m');
+    border-radius: dbx-border-radius('l');
+  }
 
   .token.script {
     color: dbx-palette-color('blue700');
