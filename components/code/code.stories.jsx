@@ -50,4 +50,14 @@ storiesOf('Components / Code', module)
   .add('SCSS', () => {
     registerLanguage(scss);
     return <Code language="scss" value={scssCodeExample} />;
+  })
+  .add('Inline', () => {
+    registerLanguage(scss);
+    return (
+      <div>
+        In order to prevent a website from scrolling behind a modal dialogue, set{' '}
+        <Code inline language="scss" value="html, body { overflow-y: hidden; }" /> when the dialogue
+        is open.
+      </div>
+    );
   });
