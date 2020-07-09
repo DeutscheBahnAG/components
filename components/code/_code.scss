@@ -1,0 +1,109 @@
+@import '@bahn-x/dbx-foundation/abstracts.scss';
+
+.dbx-code {
+  // GitHub uses this stack, so it can't be bad :p
+  $code-font-stack: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  @include dbx-text-style('copy', 's');
+  font-family: $code-font-stack !important;
+  white-space: pre;
+  background-color: dbx-palette-color('coolgray100');
+  padding: dbx-spacing('m');
+  border-radius: dbx-border-radius('l');
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .token.script {
+    color: dbx-palette-color('blue700');
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata,
+  .token.punctuation {
+    color: dbx-palette-color('coolgray400');
+    font-weight: normal;
+  }
+
+  .token.number {
+    color: dbx-palette-color('green600');
+    font-weight: normal;
+  }
+
+  .token.property,
+  .token.deleted {
+    color: dbx-palette-color('cyan600');
+    font-weight: normal;
+  }
+
+  .token.namespace,
+  .token.constant,
+  .token.boolean {
+    color: dbx-palette-color('blue700');
+    font-weight: normal;
+  }
+
+  .token.string,
+  .token.char,
+  .token.attr-value {
+    color: dbx-palette-color('lightgreen600');
+    font-weight: normal;
+  }
+
+  .token.symbol,
+  .token.selector,
+  .token.attr-name,
+  .token.builtin,
+  .token.url,
+  .token.inserted {
+    color: dbx-palette-color('blue400');
+    font-weight: normal;
+  }
+
+  .token.entity {
+    color: dbx-palette-color('green400');
+    font-weight: normal;
+  }
+
+  .token.tag,
+  .token.atrule,
+  .token.keyword {
+    color: dbx-palette-color('blue500');
+    font-weight: bold;
+  }
+
+  .token.function {
+    color: dbx-palette-color('turquoise600');
+    font-weight: normal;
+  }
+
+  .token.regex,
+  .token.important {
+    color: dbx-palette-color('lightgreen500');
+    font-weight: normal;
+  }
+
+  .token.variable {
+    color: dbx-palette-color('violet600');
+    font-weight: normal;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.interpolation-punctuation {
+    color: dbx-palette-color('green400');
+  }
+
+  .token.operator,
+  .token.title {
+    color: dbx-palette-color('coolgray500');
+  }
+}
