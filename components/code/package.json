@@ -20,5 +20,8 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "refractor": "^3.0.0"
+  },
+  "peerDependencies": {
+    "refractor": "^3.0.0"
   }
 }
