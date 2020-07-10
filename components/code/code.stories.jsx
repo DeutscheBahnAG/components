@@ -7,6 +7,7 @@ import Code, { registerLanguage } from './code';
 import readme from './README.md';
 
 const jsxCodeExample = `import React, { useState } from 'react';
+import Button from '@bahn-x/dbx-button';
 
 const MyComponent = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,10 +52,7 @@ storiesOf('Components / Code', module)
     registerLanguage(scss);
     return <Code language="scss">{scssCodeExample}</Code>;
   })
-  .add('Basic (no syntax highlighting)', () => {
-    registerLanguage(scss);
-    return <Code>{scssCodeExample}</Code>;
-  })
+  .add('Basic (no syntax highlighting)', () => <Code>{scssCodeExample}</Code>)
   .add('Inline', () => {
     registerLanguage(scss);
     return (

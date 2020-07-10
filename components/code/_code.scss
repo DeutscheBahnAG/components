@@ -4,10 +4,6 @@
   // GitHub uses this stack, so it can't be bad :p
   $code-font-stack: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
-  // !important needed to overwrite browser default on <pre> tag
-  font-size: dbx-font-size('copy', 's') !important;
-  line-height: dbx-line-height('copy', 's') !important;
-  font-family: $code-font-stack !important;
   background-color: dbx-palette-color('coolgray100');
 
   // inline style ('inline' prop == true)
@@ -22,8 +18,15 @@
     white-space: pre;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: dbx-spacing('m');
+    padding: dbx-spacing('sm') dbx-spacing('m');
     border-radius: dbx-border-radius('l');
+  }
+
+  &--inline,
+  &--block &__inner {
+    font-family: $code-font-stack;
+    font-size: dbx-font-size('copy', 's');
+    line-height: dbx-line-height('copy', 's');
   }
 
   .token.script {

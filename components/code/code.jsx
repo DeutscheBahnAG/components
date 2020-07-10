@@ -36,7 +36,7 @@ const Code = ({ className, language, children, inline }) => {
   ) : (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
     <pre className={classNames} tabIndex="0">
-      <code>{code}</code>
+      <code className="dbx-code__inner">{code}</code>
     </pre>
   );
 };
