@@ -30,3 +30,5 @@ CodeToken.propTypes = {
 CodeToken.defaultProps = {
   depth: 0,
 };
+
+export default CodeToken;
