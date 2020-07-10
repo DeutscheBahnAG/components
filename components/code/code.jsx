@@ -34,6 +34,8 @@ const Code = ({ className, language, children, inline }) => {
   return inline ? (
     <code className={classNames}>{code}</code>
   ) : (
+    // we set a tabindex so that keyboard users can focus to scroll
+    // the view horizontally if they need to
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
     <pre className={classNames} tabIndex="0">
       <code className="dbx-code__inner">{code}</code>
