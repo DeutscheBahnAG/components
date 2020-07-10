@@ -27,6 +27,8 @@
     font-family: $code-font-stack;
     font-size: dbx-font-size('copy', 's');
     line-height: dbx-line-height('copy', 's');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .token.script {
