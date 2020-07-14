@@ -85,9 +85,9 @@ const Button = ({
       )}
       {...otherProps}
     >
+      {loading && <Loadingindicator size={loadingindicatorSize} />}
       {icon}
       {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
-      {loading && <Loadingindicator size={loadingindicatorSize} />}
     </Element>
   );
 };
