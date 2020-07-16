@@ -62,6 +62,95 @@ const MultipleBackgrounds = ({ children }) =>
 
 storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
+  .add('Overview', () => (
+    <div>
+      <p className="sg-text-style--copy-m">
+        Below all possible combinations of <code>Button.sizes</code>, <code>Button.shapes</code>,
+        and <code>Button.variants</code> as well as with and without Icon are listed with a
+        recommendation, which combinations shouldn’t be used.
+      </p>
+      {Object.values(Button.variants).map(variant => (
+        <>
+          <h2 className="sg-text-style--title-l sg-headline-with-margin">
+            <code>Button.variants.{variant.toUpperCase().replace(/-/g, '_')}</code>
+          </h2>
+          <table className="sg-table">
+            <thead>
+              <tr>
+                <th colSpan="3">&nbsp;</th>
+                <th colSpan="2">
+                  <code>Button.shapes.</code>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <code>Button.sizes.</code>
+                </th>
+                <th>Default</th>
+                <th>With Icon</th>
+                <th>
+                  <code>SQUARE</code>
+                </th>
+                <th>
+                  <code>ROUND</code>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.values(Button.sizes).map(size => (
+                <tr>
+                  <th>
+                    <code>{size.toUpperCase()}</code>
+                  </th>
+                  <td className={`sg-buttons-${variant}-default-${size}`}>
+                    <Button variant={variant} size={size}>
+                      Default
+                    </Button>
+                  </td>
+                  <td className={`sg-buttons-${variant}-icon-${size}`}>
+                    <Button variant={variant} size={size} icon={<Icon.NavigationClose />}>
+                      Icon
+                    </Button>
+                  </td>
+                  <td className={`sg-buttons-${variant}-square-${size}`}>
+                    <Button
+                      variant={variant}
+                      size={size}
+                      shape={Button.shapes.SQUARE}
+                      icon={<Icon.NavigationClose />}
+                    >
+                      Square
+                    </Button>
+                  </td>
+                  <td className={`sg-buttons-${variant}-round-${size}`}>
+                    <Button
+                      variant={variant}
+                      size={size}
+                      shape={Button.shapes.ROUND}
+                      icon={<Icon.NavigationClose />}
+                    >
+                      Round
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ))}
+      <style>
+        .sg-table th, .sg-table td {'{text-align: center}'}
+        .sg-buttons-primary-icon-s,.sg-buttons-primary-square-xl,.sg-buttons-primary-round-xl,
+        .sg-buttons-secondary-icon-s,.sg-buttons-secondary-square-s,.sg-buttons-secondary-round-s,
+        .sg-buttons-secondary-square-xl,.sg-buttons-secondary-round-xl,.sg-buttons-solid-icon-s,
+        .sg-buttons-solid-default-xl,.sg-buttons-solid-icon-xl,.sg-buttons-solid-square-xl,.sg-buttons-solid-round-xl,
+        .sg-buttons-hover-only-default-s,.sg-buttons-hover-only-default-m,.sg-buttons-hover-only-default-l,
+        .sg-buttons-hover-only-default-xl,.sg-buttons-hover-only-icon-s,
+        .sg-buttons-hover-only-icon-xl,.sg-buttons-hover-only-square-xl,.sg-buttons-hover-only-round-xl
+        {`{opacity: 0.5; background: linear-gradient(-45deg, transparent calc(50% - 1px), ${tokens.palette.pink500} 0, ${tokens.palette.pink500} calc(50% + 1px), transparent 0)}`}
+      </style>
+    </div>
+  ))
   .add('Primary', () => (
     <MultipleBackgrounds>
       <Button onClick={action('clicked')}>Primary Button</Button>

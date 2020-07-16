@@ -132,6 +132,10 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   }
 }
 
+.sg-headline-with-margin {
+  margin: dbx-spacing('l') 0 dbx-spacing('m');
+}
+
 .sg-spacing {
   position: absolute;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8px" height="8px"><style>path{stroke-antialiasing:true;fill:red;stroke:%23fcd0d0;stroke-linecap:square;stroke-width:3px}</style><path d="M4 0 0 4"/><path d="M8 4 4 8"/></svg>');
@@ -139,16 +143,24 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-table {
+  min-width: 700px;
+
   td,
   th {
     padding: dbx-spacing('s');
   }
 
-  th {
-    text-align-last: left;
+  thead th {
+    @include dbx-text-style('copy', 's');
+    font-weight: dbx-font-weight('copy', 'bold');
+    padding-top: unset;
   }
 
-  tr {
+  th {
+    text-align: left;
+  }
+
+  tbody tr {
     border-top: 1px dbx-color('background.secondary') solid;
   }
 }
