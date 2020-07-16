@@ -40,33 +40,47 @@ class ToggleButtonLoadingStateExample extends React.Component {
 
 const DummyI18n = ({ i18nKey }) => (i18nKey === 'jsx' ? 'JSX' : '<Translation Missing>');
 
+const MultipleBackgrounds = ({ children }) =>
+  ['white', 'coolgray050', 'coolgray100', 'blue100'].map(color => (
+    <div
+      key={color}
+      style={{
+        alignItems: 'center',
+        display: 'grid',
+        gridGap: '24px',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        flexDirection: 'column',
+        background: tokens.palette[color],
+        justifyContent: 'space-between',
+        padding: tokens.spacing.m,
+      }}
+    >
+      {children}
+      {` on ${color}`}
+    </div>
+  ));
+
 storiesOf('Components / Button', module)
   .addDecorator(withReadme(buttonReadme))
-  .add('Primary', () => <Button onClick={action('clicked')}>Primary Button</Button>)
-  .add('Secondary', () => (
-    <Button variant={Button.variants.SECONDARY} onClick={action('clicked')}>
-      Secondary Button
-    </Button>
+  .add('Primary', () => (
+    <MultipleBackgrounds>
+      <Button onClick={action('clicked')}>Primary Button</Button>
+    </MultipleBackgrounds>
   ))
-  .add('Solid', () =>
-    ['white', 'coolgray050', 'coolgray100', 'blue100'].map(color => (
-      <div
-        key={color}
-        style={{
-          alignItems: 'center',
-          display: 'flex',
-          background: tokens.palette[color],
-          justifyContent: 'space-between',
-          padding: tokens.spacing.m,
-        }}
-      >
-        <Button variant={Button.variants.SOLID} onClick={action('clicked')}>
-          Solid Button
-        </Button>
-        {` on ${color}`}
-      </div>
-    ))
-  )
+  .add('Secondary', () => (
+    <MultipleBackgrounds>
+      <Button variant={Button.variants.SECONDARY} onClick={action('clicked')}>
+        Secondary Button
+      </Button>
+    </MultipleBackgrounds>
+  ))
+  .add('Solid', () => (
+    <MultipleBackgrounds>
+      <Button variant={Button.variants.SOLID} onClick={action('clicked')}>
+        Solid Button
+      </Button>
+    </MultipleBackgrounds>
+  ))
   .add('Primary with icon', () => (
     <Button icon={<Icon.ActionCheckCircle />} onClick={action('clicked')}>
       Primary Button

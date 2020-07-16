@@ -996,9 +996,9 @@
     to-fast-properties "^2.0.0"
 
 "@bahn-x/dbx-tokens@>=0.4.0":
-  version "0.4.0"
-  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.4.0/b8043fd811614e9405c9d6731db769505aa67a71fb03c4481663a872d354dace#9607856a5468025aa1c9bfc4d4ab52fb86fc6d33"
-  integrity sha512-E5VzXp5a7/9Vak68sfqUnyAHh6IVHW3nTHiSqSjf++OhoBVuQmDHCpB1eHCbAwy3o8BhHf77gEzoxfYL2VjkSQ==
+  version "0.5.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.5.0/168c22afd503597177aada1f16f403503da8e5df57a52f042602e9bfd73496b9#0d63e557b8e15b34839bb103cca49c61c1550f46"
+  integrity sha512-6LDWlsZcb8y2tBT7WoqAGaKl8TCZd5dFx4BFiD5Jbgp3Wm6cts0NCmNpzrPkZS9SPYxwZWzCHZ+yEtIhMQB21A==
   dependencies:
     js-yaml "^3.13.1"
 
