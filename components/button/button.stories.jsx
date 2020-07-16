@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
+import clsx from 'clsx';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import * as Icon from '../icon';
-import Button from './button';
+import Button, { validateVariantCombinations } from './button';
 import buttonReadme from './README.md';
 
 class ToggleButtonLoadingStateExample extends React.Component {
@@ -66,11 +67,11 @@ storiesOf('Components / Button', module)
     <div>
       <p className="sg-text-style--copy-m">
         Below all possible combinations of <code>Button.sizes</code>, <code>Button.shapes</code>,
-        and <code>Button.variants</code> as well as with and without Icon are listed with a
-        recommendation, which combinations shouldn’t be used.
+        and <code>Button.variants</code> as well as with and without Icon are listed. Crossed out
+        combinations shouldn’t be used and will raise a props validation warning.
       </p>
       {Object.values(Button.variants).map(variant => (
-        <>
+        <Fragment key={variant}>
           <h2 className="sg-text-style--title-l sg-headline-with-margin">
             <code>Button.variants.{variant.toUpperCase().replace(/-/g, '_')}</code>
           </h2>
@@ -98,57 +99,53 @@ storiesOf('Components / Button', module)
             </thead>
             <tbody>
               {Object.values(Button.sizes).map(size => (
-                <tr>
+                <tr key={`${variant}-${size}`}>
                   <th>
                     <code>{size.toUpperCase()}</code>
                   </th>
-                  <td className={`sg-buttons-${variant}-default-${size}`}>
+                  <td
+                    className={clsx(`sg-buttons-${variant}-square-${size}`, {
+                      'sg-not-allowed':
+                        validateVariantCombinations({
+                          size,
+                          shape: Button.shapes.DEFAULT,
+                          variant,
+                          icon: false,
+                        }) !== null,
+                    })}
+                  >
                     <Button variant={variant} size={size}>
                       Default
                     </Button>
                   </td>
-                  <td className={`sg-buttons-${variant}-icon-${size}`}>
-                    <Button variant={variant} size={size} icon={<Icon.NavigationClose />}>
-                      Icon
-                    </Button>
-                  </td>
-                  <td className={`sg-buttons-${variant}-square-${size}`}>
-                    <Button
-                      variant={variant}
-                      size={size}
-                      shape={Button.shapes.SQUARE}
-                      icon={<Icon.NavigationClose />}
-                    >
-                      Square
-                    </Button>
-                  </td>
-                  <td className={`sg-buttons-${variant}-round-${size}`}>
-                    <Button
-                      variant={variant}
-                      size={size}
-                      shape={Button.shapes.ROUND}
-                      icon={<Icon.NavigationClose />}
-                    >
-                      Round
-                    </Button>
-                  </td>
+                  {Object.values(Button.shapes).map(shape => {
+                    const notAllowed =
+                      validateVariantCombinations({ size, shape, variant, icon: true }) !== null;
+                    return (
+                      <td
+                        key={`${variant}-${size}-${shape}`}
+                        className={clsx(`sg-buttons-${variant}-square-${size}`, {
+                          'sg-not-allowed': notAllowed,
+                        })}
+                      >
+                        <Button
+                          variant={variant}
+                          size={size}
+                          shape={shape}
+                          icon={<Icon.NavigationClose />}
+                        >
+                          {shape === Button.shapes.DEFAULT ? 'Icon' : shape.toUpperCase()}
+                        </Button>
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
           </table>
-        </>
+        </Fragment>
       ))}
-      <style>
-        .sg-table th, .sg-table td {'{text-align: center}'}
-        .sg-buttons-primary-icon-s,.sg-buttons-primary-square-xl,.sg-buttons-primary-round-xl,
-        .sg-buttons-secondary-icon-s,.sg-buttons-secondary-square-s,.sg-buttons-secondary-round-s,
-        .sg-buttons-secondary-square-xl,.sg-buttons-secondary-round-xl,.sg-buttons-solid-icon-s,
-        .sg-buttons-solid-default-xl,.sg-buttons-solid-icon-xl,.sg-buttons-solid-square-xl,.sg-buttons-solid-round-xl,
-        .sg-buttons-hover-only-default-s,.sg-buttons-hover-only-default-m,.sg-buttons-hover-only-default-l,
-        .sg-buttons-hover-only-default-xl,.sg-buttons-hover-only-icon-s,
-        .sg-buttons-hover-only-icon-xl,.sg-buttons-hover-only-square-xl,.sg-buttons-hover-only-round-xl
-        {`{opacity: 0.5; background: linear-gradient(-45deg, transparent calc(50% - 1px), ${tokens.palette.pink500} 0, ${tokens.palette.pink500} calc(50% + 1px), transparent 0)}`}
-      </style>
+      <style>.sg-table th, .sg-table td {'{text-align: center}'}</style>
     </div>
   ))
   .add('Primary', () => (

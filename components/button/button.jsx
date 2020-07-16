@@ -118,10 +118,44 @@ Button.shapes = {
   ROUND: 'round',
 };
 
+export const validateVariantCombinations = (
+  { size, variant, icon, shape },
+  propName,
+  componentName
+) => {
+  const variants = Object.keys(Button.variants).map(k => Button.variants[k]);
+  if (!variants.includes(variant)) {
+    return new Error(`The \`variant\` must be in [${variants.join(', ')}] for a ${componentName}.`);
+  }
+  if (icon) {
+    if (size === Button.sizes.S) {
+      if (shape === Button.shapes.DEFAULT || variant === Button.variants.SECONDARY) {
+        return new Error(`\`size\` \`${size}\` is not allowed in a ${componentName} with an Icon.`);
+      }
+    }
+    if (size === Button.sizes.XL && shape !== Button.shapes.DEFAULT) {
+      return new Error(
+        `The shape \`${shape}\` is not allowed in a ${componentName} with size \`${size}\`.`
+      );
+    }
+  } else if (variant === Button.variants.HOVER_ONLY) {
+    return new Error(
+      `A ${componentName} without Icon is not allowed for a \`${variant}\` variant.`
+    );
+  }
+  if (
+    (variant === Button.variants.SOLID || variant === Button.variants.HOVER_ONLY) &&
+    size === Button.sizes.XL
+  ) {
+    return new Error(`Size \`${size}\` is not allowed for a ${variant} ${componentName}.`);
+  }
+  return null;
+};
+
 Button.propTypes = {
   type: PropTypes.oneOf(Object.keys(Button.types).map(k => Button.types[k])),
   /** the appearance of the button */
-  variant: PropTypes.oneOf(Object.keys(Button.variants).map(k => Button.variants[k])),
+  variant: validateVariantCombinations,
   /** the size of the button */
   size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
   /** the shape of the button */
