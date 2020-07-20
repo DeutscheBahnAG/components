@@ -2,7 +2,7 @@
 @import 'include-media/dist/include-media';
 
 $dbx-modal--z-level: (
-  modal: 5000,
+  modal: 5000
 );
 
 $dbx-modal--appearance-duration: 400ms;
@@ -136,26 +136,20 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   min-height: dbx-size('xl');
   padding: $dbx-modal--save-gap;
   margin: -$dbx-modal--save-gap;
-  background-image:
-    linear-gradient($dbx-modal--shadow-background-color 10%, change-color($dbx-modal--shadow-background-color, $alpha: 0)),
-    linear-gradient(change-color($dbx-modal--shadow-background-color, $alpha: 0), $dbx-modal--shadow-background-color 90%),
-    radial-gradient(farthest-side at 50% 0, change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2), change-color($dbx-modal--shadow-foreground-color, $alpha: 0)),
-    radial-gradient(farthest-side at 50% 100%, change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2), change-color($dbx-modal--shadow-foreground-color, $alpha: 0));
-  background-size:
-    100% $dbx-modal--save-gap * 3,
-    100% $dbx-modal--save-gap * 3,
-    100% $dbx-modal--save-gap,
-    100% $dbx-modal--save-gap;
-  background-position:
-    0 0,
-    0 100%,
-    0 0,
-    0 100%;
-  background-attachment:
-    local,
-    local,
-    scroll,
-    scroll;
+  background-image: linear-gradient($dbx-modal--shadow-background-color 10%,
+  change-color($dbx-modal--shadow-background-color, $alpha: 0)),
+    linear-gradient(change-color($dbx-modal--shadow-background-color, $alpha: 0),
+  $dbx-modal--shadow-background-color 90%),
+    radial-gradient(farthest-side at 50% 0,
+  change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2),
+  change-color($dbx-modal--shadow-foreground-color, $alpha: 0)),
+    radial-gradient(farthest-side at 50% 100%,
+  change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2),
+  change-color($dbx-modal--shadow-foreground-color, $alpha: 0));
+  background-size: 100% $dbx-modal--save-gap * 3, 100% $dbx-modal--save-gap * 3,
+    100% $dbx-modal--save-gap, 100% $dbx-modal--save-gap;
+  background-position: 0 0, 0 100%, 0 0, 0 100%;
+  background-attachment: local, local, scroll, scroll;
   background-repeat: no-repeat;
   background-color: $dbx-modal--shadow-background-color;
 
@@ -182,7 +176,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   flex-wrap: wrap;
   align-items: stretch;
   padding: $dbx-modal--dialog-padding-y $dbx-modal--action-gap 0;
-  margin: 0 (-2 * $dbx-modal--action-gap) (- $dbx-modal--action-gap);
+  margin: 0 (-2 * $dbx-modal--action-gap) (-$dbx-modal--action-gap);
   @include media('print') {
     display: none;
   }
