@@ -213,7 +213,7 @@ const Modal = ({
             shape={Button.shapes.SQUARE}
             size={Button.sizes.M}
             icon={<NavigationClose />}
-            className={clsx('dbx-modal__closebutton', !title && 'dbx-modal__closebutton--collapse')}
+            className={clsx('dbx-modal__closebutton')}
             onClick={onClose}
           >
             {closeText}

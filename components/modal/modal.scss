@@ -98,7 +98,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: $dbx-modal--dialog-padding-y;
 
@@ -108,22 +108,16 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 }
 
 .dbx-modal__header--collapse {
+  height: dbx-spacing('s');
   margin: 0;
 }
 
 .dbx-modal__closebutton {
   // Place visually right aligned.
-  transform: translate(dbx-spacing('s'), dbx-spacing('s', $negative: true));
+  transform: translate(dbx-spacing('s'), dbx-spacing('xs', $negative: true));
   @include media('print') {
     display: none;
   }
-}
-
-.dbx-modal__closebutton--collapse {
-  position: absolute;
-  top: dbx-spacing('s', $negative: true);
-  right: 0;
-  z-index: 1;
 }
 
 .dbx-modal__title {
@@ -179,7 +173,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 }
 
 .dbx-modal__content--right-gap {
-  margin-right: dbx-spacing('ml');
+  margin-right: dbx-spacing('l');
 }
 
 .dbx-modal__actions {
