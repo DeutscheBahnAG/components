@@ -133,7 +133,11 @@ export const validateVariantCombinations = (
         return new Error(`\`size\` \`${size}\` is not allowed in a ${componentName} with an Icon.`);
       }
     }
-    if (size === Button.sizes.XL && shape !== Button.shapes.DEFAULT) {
+    if (
+      size === Button.sizes.XL &&
+      shape !== Button.shapes.DEFAULT &&
+      (variant !== Button.variants.PRIMARY || shape !== Button.shapes.ROUND)
+    ) {
       return new Error(
         `The shape \`${shape}\` is not allowed in a ${componentName} with size \`${size}\`.`
       );
