@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import * as Icon from '@bahn-x/dbx-icon';
-
 const transportTypes = {
   AUTO: '-auto-',
   ICE: 'ice',
@@ -29,36 +27,11 @@ const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g,
 const regionalLineNumbers = {
   berlin: lineNumber => lineNumber.replace(/str ?|bus ?|fäh ?/i, ''),
   hamburg: lineNumber => lineNumber.replace(/fäh ?|bus ?/i, ''),
-  frankfurtmain: lineNumber => lineNumber.replace(/^str ?|bus ?|s ?(?=\d)/i, ''),
+  frankfurtmain: lineNumber => lineNumber.replace(/^str ?|bus ?/i, ''),
   mannheim: lineNumber => lineNumber.replace(/str ?|rnv ?/i, ''),
   nuremberg: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
   munich: lineNumber => lineNumber.replace(/str ?|bus ?/i, ''),
 };
-
-const showIcon = {
-  berlin: () => false,
-  hamburg: () => false,
-  munich: () => false,
-  frankfurtmain: transportType =>
-    [transportTypes.SBAHN, transportTypes.BUS].includes(transportType),
-  cologne: () => true,
-  nuremberg: () => false,
-  mannheim: () => transportType => transportType !== transportTypes.TRAM,
-};
-
-const alwaysShowIcon = [
-  transportTypes.AIRPLANE,
-  transportTypes.AUTO,
-  transportTypes.CARSHARING,
-  transportTypes.IC,
-  transportTypes.INTERCITYBUS,
-  transportTypes.RB,
-  transportTypes.RE,
-  transportTypes.WALKING,
-  transportTypes.EC,
-  transportTypes.ICE,
-  transportTypes.BIKESHARING,
-];
 
 const regionalTransportTypes = {
   hamburg: (transportType, lineNumber) => {
@@ -158,10 +131,6 @@ const Transportchip = ({
   const regionalTransportType =
     regionalTransportTypes[regionalStyle] &&
     regionalTransportTypes[regionalStyle](transportType, lineNumber);
-  const IconComponent =
-    Icon[
-      `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
-    ];
   const matches = displayLineNumber && displayLineNumber.match(/(.*[A-Z]) ?(\d.*)/);
   // eslint-disable-next-line no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
@@ -179,13 +148,6 @@ const Transportchip = ({
       onClick={onClick}
       {...otherProps}
     >
-      {IconComponent &&
-        (alwaysShowIcon.includes(transportType) ||
-          !regionalStyle ||
-          !showIcon[regionalStyle] ||
-          showIcon[regionalStyle](displayTransportType)) && (
-          <IconComponent className="dbx-transportchip__icon" />
-        )}
       {displayLineNumber && (
         <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
       )}

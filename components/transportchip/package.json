@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@bahn-x/dbx-foundation": "^0.5.1",
-    "@bahn-x/dbx-icon": "^0.1.0",
     "clsx": "^1.0.4",
     "core-js": "^3.6.4",
     "prop-types": "^15.7.2",
