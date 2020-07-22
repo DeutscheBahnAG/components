@@ -146,20 +146,21 @@ const Transportchip = ({
   // eslint-disable-next-line no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
   return (
-    <>
+    <Component
+      href={href}
+      onClick={onClick}
+      className={clsx('dbx-transportchip', className)}
+      {...otherProps}
+    >
       {icons[displayTransportType]}
-      <Component
+      <span
         className={clsx(
-          'dbx-transportchip',
+          'dbx-transportchip__line',
           `dbx-transportchip--${displayTransportType}`,
           regionalTransportType && `dbx-transportchip--${regionalTransportType}`,
           regionalStyle && `dbx-transportchip--${regionalStyle}`,
-          regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
-          className
+          regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`
         )}
-        href={href}
-        onClick={onClick}
-        {...otherProps}
       >
         {displayLineNumber && (
           <span className="dbx-transportchip__text">
@@ -167,8 +168,8 @@ const Transportchip = ({
           </span>
         )}
         {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
-      </Component>
-    </>
+      </span>
+    </Component>
   );
 };
 

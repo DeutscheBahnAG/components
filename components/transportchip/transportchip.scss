@@ -13,14 +13,20 @@
 }
 
 .dbx-transportchip {
-  background: dbx-palette-color('coolgray500');
+  background: transparent;
   border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  transition: filter 0.2s ease-in;
+  white-space: nowrap;
+}
+
+.dbx-transportchip__line {
+  background: dbx-palette-color('coolgray500');
   border-radius: 0.21em;
   box-sizing: border-box;
   color: dbx-palette-color('white');
   display: inline-block;
-  font-size: inherit;
-  font-family: inherit;
   height: 1.5em;
   line-height: 1.5em;
   padding: 0;
@@ -34,7 +40,7 @@
 
 a.dbx-transportchip,
 button.dbx-transportchip {
-  @include dbx-focus-ring;
+  @include dbx-focus-ring($target: '.dbx-transportchip__line');
 
   &:hover {
     filter: brightness(0.9) saturate(1.1);

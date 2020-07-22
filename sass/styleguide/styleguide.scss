@@ -188,8 +188,11 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
     margin-top: dbx-spacing('s');
   }
 
-  .dbx-transportchip + .dbx-transportchip,
-  .dbx-transportchip + .dbx-transportchip__transport-logo {
-    margin-left: 1em;
+  .dbx-transportchip {
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
