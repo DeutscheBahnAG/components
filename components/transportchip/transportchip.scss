@@ -3,7 +3,7 @@
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
 @mixin dbx-transportchip-no-border-radius {
-  border-radius: 0.01em; // No visual border-radius; focus-ring will look round
+  border-radius: 0.1em; // Almost no visual border-radius; focus-ring will look round
 }
 
 @mixin dbx-transportchip-border($px, $color) {
@@ -29,7 +29,9 @@
   display: inline-block;
   height: 1.5em;
   line-height: 1.5em;
-  padding: 0;
+  min-width: 1.5em;
+  padding: 0 0.43em;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
 
@@ -72,12 +74,8 @@ button.dbx-transportchip {
   vertical-align: (dbx-font-size('copy', 'm') - dbx-font-size('copy', 's')) / 2;
   vertical-align: 0.05em;
 
-  &:first-child {
-    margin-left: 0.43em; // like padding-left of the badge, but depending on the font-size
-  }
-
   &:last-child {
-    margin-right: 0.43em; // like padding-right of the badge, but depending on the font-size
+    margin-right: 0;
   }
 }
 
@@ -126,12 +124,12 @@ button.dbx-transportchip {
   color: dbx-text-color('transportation.re');
 }
 
-.dbx-transportchip--sbahn {
+.dbx-transportchip--suburban {
   background: dbx-background-color('transportation.sbahn');
   color: dbx-text-color('transportation.sbahn');
 }
 
-.dbx-transportchip--ubahn {
+.dbx-transportchip--subway {
   background: dbx-background-color('transportation.ubahn');
   color: dbx-text-color('transportation.ubahn');
 }
@@ -158,54 +156,24 @@ button.dbx-transportchip {
 
 // Shared regional styles
 
-.dbx-transportchip--berlin,
-.dbx-transportchip--hamburg,
-.dbx-transportchip--munich,
-.dbx-transportchip--frankfurtmain,
-.dbx-transportchip--nuremberg {
-  &.dbx-transportchip--sbahn,
-  &.dbx-transportchip--ubahn {
-    color: #fff;
-    text-align: center;
+.dbx-transportchip--suburban {
+  border-radius: 0.75em;
+  color: #fff;
+  padding: 0;
+  width: 1.5em * 2;
+}
 
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &.dbx-transportchip--sbahn {
-    border-radius: 0.75em;
-    width: 1.5em * 2;
-  }
-
-  &.dbx-transportchip--ubahn {
-    @include dbx-transportchip-no-border-radius;
-    width: 1.5em * 1.5;
-  }
+.dbx-transportchip--subway,
+.dbx-transportchip--tram {
+  @include dbx-transportchip-no-border-radius;
+  color: #fff;
+  min-width: 1.5em * 1.5;
+  padding: 0;
 }
 
 // Berlin
 
-.dbx-transportchip--berlin {
-  &.dbx-transportchip--bus,
-  &.dbx-transportchip--tram,
-  &.dbx-transportchip--ferry {
-    background-color: transparent;
-    color: dbx-text-color('primary');
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
-  }
-
+.dbx-transportchip--sbahn-berlin {
   &.dbx-transportchip--s1 {
     background: #de4da4;
   }
@@ -250,6 +218,25 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--s9 {
     background: #8a0f30;
+  }
+}
+
+.dbx-transportchip--bvg {
+  &.dbx-transportchip--bus,
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--ferry {
+    background-color: transparent;
+    color: dbx-text-color('primary');
+    min-width: unset;
+    padding: 0;
+
+    .dbx-transportchip__text:first-child {
+      margin-left: 0;
+    }
+
+    .dbx-transportchip__text:last-child {
+      margin-right: 0;
+    }
   }
 
   &.dbx-transportchip--u1 {
@@ -297,13 +284,8 @@ button.dbx-transportchip {
 
 // Hamburg
 
-.dbx-transportchip--hamburg {
-  &.dbx-transportchip--sbahn,
-  &.dbx-transportchip--ubahn,
-  &.dbx-transportchip--bus,
-  &.dbx-transportchip--ferry {
-    width: 1.5em * 2.5;
-  }
+.dbx-transportchip--sbahn-hamburg {
+  width: 1.5em * 2.5;
 
   &.dbx-transportchip--s1 {
     background: #039729;
@@ -335,6 +317,10 @@ button.dbx-transportchip {
   &.dbx-transportchip--a3 {
     background: #fe7f1a;
   }
+}
+
+.dbx-transportchip--hochbahn {
+  width: 1.5em * 2.5;
 
   &.dbx-transportchip--u1 {
     background: #0059a4;
@@ -393,13 +379,9 @@ button.dbx-transportchip {
   }
 }
 
-// Munich
+// München
 
-.dbx-transportchip--munich {
-  &.dbx-transportchip--sbahn {
-    width: 1.5em / 3 * 7;
-  }
-
+.dbx-transportchip--sbahn-muenchen {
   &.dbx-transportchip--s1 {
     background: #19b3e3;
   }
@@ -432,7 +414,9 @@ button.dbx-transportchip {
   &.dbx-transportchip--s20 {
     background: #f05a72;
   }
+}
 
+.dbx-transportchip--mvg {
   &.dbx-transportchip--u1 {
     background: #3b7233;
   }
@@ -499,6 +483,7 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--bus {
     background: #005f5f;
+    padding: 0;
   }
 
   &.dbx-transportchip--nachtbus {
@@ -515,12 +500,10 @@ button.dbx-transportchip {
   }
 }
 
-// Frankfurt/Main
+// Frankfurt (Main)
 
-.dbx-transportchip--frankfurtmain {
-  &.dbx-transportchip--sbahn {
-    width: 1.5em * 1.75;
-  }
+.dbx-transportchip--sbahn-rheinmain {
+  width: 1.5em * 1.75;
 
   &.dbx-transportchip--s1 {
     background: #047fb8;
@@ -559,13 +542,9 @@ button.dbx-transportchip {
   &.dbx-transportchip--s9 {
     background: #81027e;
   }
+}
 
-  &.dbx-transportchip--ubahn {
-    border-radius: 0.5em;
-    text-align: center;
-    width: 1.5em * 1.75;
-  }
-
+.dbx-transportchip--vgf {
   &.dbx-transportchip--u1 {
     background: #a30118;
   }
@@ -611,14 +590,6 @@ button.dbx-transportchip {
     color: #000;
     text-align: center;
     width: 1.5em * 1.75;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
   }
 
   &.dbx-transportchip--tram-temporary {
@@ -626,14 +597,10 @@ button.dbx-transportchip {
   }
 }
 
-// Nuremberg
+// Nürnberg
 
-.dbx-transportchip--nuremberg {
-  &.dbx-transportchip--sbahn,
-  &.dbx-transportchip--ubahn {
-    @include dbx-transportchip-no-border-radius;
-    width: 1.5em * 1.5;
-  }
+.dbx-transportchip--sbahn-nuernberg {
+  @include dbx-transportchip-no-border-radius;
 
   &.dbx-transportchip--s1 {
     background: #94211a;
@@ -650,7 +617,9 @@ button.dbx-transportchip {
   &.dbx-transportchip--s4 {
     background: #26297c;
   }
+}
 
+.dbx-transportchip--vgn {
   &.dbx-transportchip--u1 {
     background: #005d9c;
   }
@@ -668,19 +637,12 @@ button.dbx-transportchip {
     @include dbx-transportchip-no-border-radius;
     text-align: center;
     width: 1.5em;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
   }
 
   &.dbx-transportchip--bus {
     background: #ff2a0e;
     border-radius: 50%;
+    padding: 0;
   }
 
   &.dbx-transportchip--tram.dbx-transportchip--4 {
@@ -705,9 +667,9 @@ button.dbx-transportchip {
   }
 }
 
-// Cologne
+// NRW/Köln/Rhein/Ruhr
 
-.dbx-transportchip--cologne {
+.dbx-transportchip--sbahn-rheinruhrkoeln {
   &.dbx-transportchip--s11 {
     background: #ef7b00;
   }
@@ -724,7 +686,9 @@ button.dbx-transportchip {
   &.dbx-transportchip--s23 {
     background: #8b3c59;
   }
+}
 
+.dbx-transportchip--kvb {
   &.dbx-transportchip--1 {
     background: #ed1c24;
   }
@@ -774,9 +738,9 @@ button.dbx-transportchip {
   }
 }
 
-// Mannheim
+// Mannheim/Ludwigshafen/Heidelberg
 
-.dbx-transportchip--mannheim {
+.dbx-transportchip--sbahn-rheinneckar {
   &.dbx-transportchip--s1 {
     background: #ec192e;
   }
@@ -806,20 +770,14 @@ button.dbx-transportchip {
   &.dbx-transportchip--s6 {
     background: #28c9f6;
   }
+}
 
+.dbx-transportchip--rnv {
   &.dbx-transportchip--tram {
-    @include dbx-transportchip-no-border-radius;
     padding: 0 0.3em;
     min-width: 1.5em;
     text-align: center;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
+    width: unset;
   }
 
   &.dbx-transportchip--str1 {

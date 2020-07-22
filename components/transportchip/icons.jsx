@@ -18,7 +18,7 @@ Circle.propTypes = propTypes;
 
 const Square = ({ fill, children, ...props }) => (
   <svg viewBox="0 0 26 26" role="img" {...props}>
-    <rect x="1" y="1" width="24" height="24" fill={fill} />
+    <rect x="1" y="1" width="24" height="24" rx="1.68" fill={fill} />
     {children}
   </svg>
 );
