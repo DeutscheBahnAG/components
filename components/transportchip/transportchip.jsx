@@ -31,6 +31,7 @@ const icons = {
   [transportTypes.SBAHN]: <Icon.SBahn className={iconClassName} />,
   [transportTypes.TRAM]: <Icon.Tram className={iconClassName} />,
   [transportTypes.BUS]: <Icon.Bus className={iconClassName} />,
+  akn: <Icon.AKN className={iconClassName} />,
 };
 
 const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
@@ -152,7 +153,7 @@ const Transportchip = ({
       className={clsx('dbx-transportchip', className)}
       {...otherProps}
     >
-      {icons[displayTransportType]}
+      {icons[matches && matches[1] === 'A' ? 'akn' : displayTransportType]}
       <span
         className={clsx(
           'dbx-transportchip__line',
