@@ -64,7 +64,8 @@ export const UBahn = props => (
 );
 
 export const Tram = props => (
-  <Square fill={color['background.transportation.tram']} {...props}>
+  // The Tram logo must be red (Tokens use different color):
+  <Square fill={palette.red600} {...props}>
     <text
       x="50%"
       y="16"
