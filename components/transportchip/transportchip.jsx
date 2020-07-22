@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import * as Icon from './icons';
 
 const transportTypes = {
   AUTO: '-auto-',
@@ -20,6 +21,16 @@ const transportTypes = {
   WALKING: 'walking',
   CARSHARING: 'carsharing',
   BIKESHARING: 'bikesharing',
+};
+
+const iconClassName = clsx('dbx-transportchip__transport-logo');
+
+const icons = {
+  [transportTypes.FERRY]: <Icon.Ferry className={iconClassName} />,
+  [transportTypes.UBAHN]: <Icon.UBahn className={iconClassName} />,
+  [transportTypes.SBAHN]: <Icon.SBahn className={iconClassName} />,
+  [transportTypes.TRAM]: <Icon.Tram className={iconClassName} />,
+  [transportTypes.BUS]: <Icon.Bus className={iconClassName} />,
 };
 
 const sanitizeLineNumber = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
@@ -135,24 +146,29 @@ const Transportchip = ({
   // eslint-disable-next-line no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
   return (
-    <Component
-      className={clsx(
-        'dbx-transportchip',
-        `dbx-transportchip--${displayTransportType}`,
-        regionalTransportType && `dbx-transportchip--${regionalTransportType}`,
-        regionalStyle && `dbx-transportchip--${regionalStyle}`,
-        regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
-        className
-      )}
-      href={href}
-      onClick={onClick}
-      {...otherProps}
-    >
-      {displayLineNumber && (
-        <span className="dbx-transportchip__text">{matches ? matches[1] : displayLineNumber}</span>
-      )}
-      {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
-    </Component>
+    <>
+      {icons[displayTransportType]}
+      <Component
+        className={clsx(
+          'dbx-transportchip',
+          `dbx-transportchip--${displayTransportType}`,
+          regionalTransportType && `dbx-transportchip--${regionalTransportType}`,
+          regionalStyle && `dbx-transportchip--${regionalStyle}`,
+          regionalStyle && `dbx-transportchip--${sanitizeLineNumber(lineNumber)}`,
+          className
+        )}
+        href={href}
+        onClick={onClick}
+        {...otherProps}
+      >
+        {displayLineNumber && (
+          <span className="dbx-transportchip__text">
+            {matches ? matches[1] : displayLineNumber}
+          </span>
+        )}
+        {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
+      </Component>
+    </>
   );
 };
 

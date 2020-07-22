@@ -178,11 +178,18 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-components-transportationchip-list {
+  line-height: 2em;
+
   & + & {
     margin-top: dbx-spacing('xl');
   }
 
   p + p {
     margin-top: dbx-spacing('s');
+  }
+
+  .dbx-transportchip + .dbx-transportchip,
+  .dbx-transportchip + .dbx-transportchip__transport-logo {
+    margin-left: 1em;
   }
 }
