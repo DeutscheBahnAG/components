@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
@@ -9,98 +9,88 @@ const noopFn = () => {};
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
-class Textfield extends React.Component {
-  state = {
-    focus: false,
+const Textfield = ({
+  onFocus,
+  onBlur,
+  type,
+  size,
+  className,
+  value,
+  unit,
+  prefix,
+  suffix,
+  onChange,
+  inlineLabel,
+  ...otherProps
+}) => {
+  const [isFocused, setFocused] = useState(false);
+  const field = useRef(null);
+
+  const handleClick = () => {
+    field.current.focus();
   };
 
-  focus = () => {
-    this.field.current.focus();
-  };
-
-  onFocus = event => {
-    const { onFocus } = this.props;
-    this.setState({ focus: true });
+  const handleFocus = event => {
+    setFocused(true);
     onFocus(event);
   };
 
-  onBlur = event => {
-    const { onBlur } = this.props;
-    this.setState({ focus: false });
+  const handleBlur = event => {
+    setFocused(false);
     onBlur(event);
   };
 
-  constructor() {
-    super();
-    this.field = React.createRef();
+  const Field = type === 'textarea' ? 'textarea' : 'input';
+  const fieldSize = inlineLabel ? Textfield.sizes.XL : size;
+  let contentBefore = prefix;
+  let contentAfter = suffix;
+
+  if (unit) {
+    if (unitsBeforeField.includes(unit)) contentBefore = unit;
+    else contentAfter = unit;
   }
 
-  render() {
-    const {
-      type,
-      size,
-      className,
-      value,
-      unit,
-      prefix,
-      suffix,
-      onChange,
-      inlineLabel,
-      ...otherProps
-    } = this.props;
-    const { focus } = this.state;
-    const Field = type === 'textarea' ? 'textarea' : 'input';
-    const fieldSize = inlineLabel ? Textfield.sizes.XL : size;
-    let contentBefore = prefix;
-    let contentAfter = suffix;
+  const configuredField = (
+    <Field
+      ref={field}
+      {...otherProps}
+      value={value}
+      type={type === 'textarea' ? null : type}
+      onChange={onChange}
+    />
+  );
 
-    if (unit) {
-      if (unitsBeforeField.includes(unit)) contentBefore = unit;
-      else contentAfter = unit;
-    }
+  return (
+    <div
+      onClick={handleClick} // Focus on click on the prefix/suffix
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      disabled={otherProps.disabled}
+      readOnly={otherProps.readOnly}
+      className={clsx(
+        'dbx-textfield',
+        `dbx-textfield--${type}`,
+        `dbx-textfield--${fieldSize}`,
+        value && 'dbx-textfield--filled',
+        isFocused && 'dbx-textfield--focus',
+        inlineLabel && 'dbx-textfield--inline-label',
+        className
+      )}
+    >
+      {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
+      {(inlineLabel && (
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
+        <label>
+          <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
+          {configuredField}
+        </label>
+      )) ||
+        configuredField}
 
-    const field = (
-      <Field
-        ref={this.field}
-        {...otherProps}
-        value={value}
-        type={type === 'textarea' ? null : type}
-        onChange={onChange}
-      />
-    );
-
-    return (
-      <div
-        onClick={this.focus} // Focus on click on the prefix/suffix
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        disabled={otherProps.disabled}
-        readOnly={otherProps.readOnly}
-        className={clsx(
-          'dbx-textfield',
-          `dbx-textfield--${type}`,
-          `dbx-textfield--${fieldSize}`,
-          value && 'dbx-textfield--filled',
-          focus && 'dbx-textfield--focus',
-          inlineLabel && 'dbx-textfield--inline-label',
-          className
-        )}
-      >
-        {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
-        {(inlineLabel && (
-          // eslint-disable-next-line jsx-a11y/label-has-associated-control
-          <label>
-            <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
-            {field}
-          </label>
-        )) ||
-          field}
-
-        {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
-      </div>
-    );
-  }
-}
+      {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
+    </div>
+  );
+};
 
 Textfield.sizes = {
   S: 's',

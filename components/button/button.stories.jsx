@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
@@ -8,36 +8,30 @@ import * as Icon from '../icon';
 import Button, { validateVariantCombinations } from './button';
 import buttonReadme from './README.md';
 
-class ToggleButtonLoadingStateExample extends React.Component {
-  state = { isLoading: false };
+const ToggleButtonLoadingStateExample = () => {
+  const [isLoading, setLoading] = useState(false);
 
-  toggleLoading = () =>
-    this.setState(({ isLoading }) => ({
-      isLoading: !isLoading,
-    }));
+  const toggleLoading = () => setLoading(!isLoading);
 
-  render() {
-    const { isLoading } = this.state;
-    return (
-      <>
-        <label htmlFor="toggleLoading" style={{ marginRight: '16px' }}>
-          <input
-            style={{ marginRight: '8px' }}
-            id="toggleLoading"
-            type="checkbox"
-            onChange={this.toggleLoading}
-            checked={isLoading}
-          />
-          Button is Loading
-        </label>
+  return (
+    <>
+      <label htmlFor="toggleLoading" style={{ marginRight: '16px' }}>
+        <input
+          style={{ marginRight: '8px' }}
+          id="toggleLoading"
+          type="checkbox"
+          onChange={toggleLoading}
+          checked={isLoading}
+        />
+        Button is Loading
+      </label>
 
-        <Button loading={isLoading} onClick={action('clicked')}>
-          I am not loading right now
-        </Button>
-      </>
-    );
-  }
-}
+      <Button loading={isLoading} onClick={action('clicked')}>
+        I am not loading right now
+      </Button>
+    </>
+  );
+};
 
 const DummyI18n = ({ i18nKey }) => (i18nKey === 'jsx' ? 'JSX' : '<Translation Missing>');
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
@@ -6,36 +6,29 @@ import Checkbox from './checkbox';
 import Button from '../button/button';
 import checkboxReadme from './README.md';
 
-class ToggleCheckboxIndeterminateStateExample extends React.Component {
-  state = { isIndeterminate: true };
+const ToggleCheckboxIndeterminateStateExample = () => {
+  const [isIndeterminate, setIndeterminate] = useState(true);
 
-  setIndeterminate = () => {
-    this.setState({ isIndeterminate: true });
+  const handleButtonClick = () => {
+    setIndeterminate(true);
   };
 
-  unsetIndeterminate = () => {
-    this.setState({ isIndeterminate: false });
+  const handleCheckboxClick = () => {
+    setIndeterminate(false);
     action('clicked');
   };
 
-  render() {
-    const { isIndeterminate } = this.state;
-    return (
-      <>
-        <Checkbox
-          indeterminate={isIndeterminate}
-          onClick={this.unsetIndeterminate}
-          label="Checkbox"
-        />
-        <br />
-        <br />
-        <Button type="button" disabled={isIndeterminate} size="s" onClick={this.setIndeterminate}>
-          Reset Checkbox to indeterminate
-        </Button>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Checkbox indeterminate={isIndeterminate} onClick={handleCheckboxClick} label="Checkbox" />
+      <br />
+      <br />
+      <Button type="button" disabled={isIndeterminate} size="s" onClick={handleButtonClick}>
+        Reset Checkbox to indeterminate
+      </Button>
+    </>
+  );
+};
 
 storiesOf('Components / Checkbox', module)
   .addDecorator(withReadme(checkboxReadme))
@@ -47,11 +40,10 @@ storiesOf('Components / Checkbox', module)
       onClick={action('clicked')}
       label={
         <>
-          I accept the{` `}
-          <a href="#terms">Terms and Conditions</a>.
+          I accept the <a href="#terms">Terms and Conditions</a>.
         </>
       }
-    ></Checkbox>
+    />
   ))
   .add('Default disabled', () => <Checkbox disabled onClick={action('clicked')} label="Checkbox" />)
   .add('Checked disabled', () => (
