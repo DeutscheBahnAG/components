@@ -74,7 +74,7 @@ export const Tram = props => (
 );
 
 export const Bus = props => (
-  <Circle fill={color['background.transportation.bus']} {...props}>
+  <Circle fill="#95276e" {...props}>
     <text
       x="50%"
       y="17"

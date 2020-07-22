@@ -4,6 +4,7 @@
 
 @mixin dbx-transportchip-no-border-radius {
   border-radius: 0.1em; // Almost no visual border-radius; focus-ring will look round
+  margin: 0; // Reset overlap
 }
 
 @mixin dbx-transportchip-border($px, $color) {
@@ -11,6 +12,8 @@
   border: $border-in-em $color solid;
   line-height: #{1.5em - 2 * $border-in-em};
 }
+
+$dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
 
 .dbx-transportchip {
   background: transparent;
@@ -55,12 +58,12 @@ button.dbx-transportchip {
 
 .dbx-transportchip__transport-logo {
   // Round shapes (like S-Bahn) need to visually overlap by 1px
-  $overlap: 1em / dbx-font-size('copy', 'm') * 1px;
   $size: 1em / dbx-font-size('copy', 'm') * dbx-line-height('copy', 'm') + 2 *
-    $overlap;
+    $dbx-transportchip-overlap;
   display: inline-block;
   height: $size;
-  margin: #{-$overlap} #{0.25em - $overlap} #{-$overlap} #{-$overlap};
+  margin: #{-$dbx-transportchip-overlap} #{0.25em - $dbx-transportchip-overlap} #{-$dbx-transportchip-overlap}
+    #{-$dbx-transportchip-overlap};
   vertical-align: 1em / dbx-font-size('copy', 'm') * -6px;
   width: $size;
 }
@@ -159,8 +162,9 @@ button.dbx-transportchip {
 .dbx-transportchip--suburban {
   border-radius: 0.75em;
   color: #fff;
+  margin: 0 #{-$dbx-transportchip-overlap};
   padding: 0;
-  width: 1.5em * 2;
+  width: (1.5em + $dbx-transportchip-overlap) * 2;
 }
 
 .dbx-transportchip--subway,
@@ -285,7 +289,7 @@ button.dbx-transportchip {
 // Hamburg
 
 .dbx-transportchip--sbahn-hamburg {
-  width: 1.5em * 2.5;
+  width: 1.5em * 2.5 + $dbx-transportchip-overlap * 2;
 
   &.dbx-transportchip--s1 {
     background: #039729;
@@ -358,6 +362,11 @@ button.dbx-transportchip {
     .dbx-transportchip__text:last-child {
       margin-right: 0;
     }
+  }
+
+  &.dbx-transportchip--bus {
+    margin: 0 #{-$dbx-transportchip-overlap};
+    width: 1.5em * 2.5 + $dbx-transportchip-overlap * 2;
   }
 
   &.dbx-transportchip--ferry {
