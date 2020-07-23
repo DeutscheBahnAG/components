@@ -1,0 +1,21 @@
+.dbx-triptime--slightly-delayed {
+  color: dbx-palette-color('lightgreen600');
+}
+
+.dbx-triptime--delayed {
+  color: dbx-palette-color('red500');
+}
+
+.dbx-triptime {
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: normal;
+
+  .dbx-time + .dbx-time {
+    margin-top: dbx-spacing('xs', $negative: true);
+  }
+}
+
+.dbx-triptime--bold {
+  font-weight: dbx-font-weight('copy', 'bold');
+}
