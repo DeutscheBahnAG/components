@@ -167,8 +167,7 @@ button.dbx-transportchip {
   border-radius: 0.75em;
   color: #fff;
   margin: 0 #{-$dbx-transportchip-overlap};
-  padding: 0;
-  width: (1.5em + $dbx-transportchip-overlap) * 2;
+  min-width: (1.5em + $dbx-transportchip-overlap) * 2;
 }
 
 .dbx-transportchip--subway,
@@ -176,7 +175,6 @@ button.dbx-transportchip {
   @include dbx-transportchip-no-border-radius;
   color: #fff;
   min-width: 1.5em * 1.5;
-  padding: 0;
 }
 
 // Berlin
@@ -320,9 +318,9 @@ button.dbx-transportchip {
     background: #531b6e;
   }
 
-  &.dbx-transportchip--a1,
-  &.dbx-transportchip--a2,
-  &.dbx-transportchip--a3 {
+  &.dbx-transportchip--akna11,
+  &.dbx-transportchip--akna12,
+  &.dbx-transportchip--akna13 {
     background: #fe7f1a;
   }
 }
@@ -353,6 +351,7 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--bus,
+  &.dbx-transportchip--taxi,
   &.dbx-transportchip--ferry {
     @include dbx-transportchip-no-border-radius;
     background: #e2011a;
@@ -368,9 +367,14 @@ button.dbx-transportchip {
     }
   }
 
+  &.dbx-transportchip--taxi,
   &.dbx-transportchip--bus {
     margin: 0 #{-$dbx-transportchip-overlap};
     width: 1.5em * 2.5 + $dbx-transportchip-overlap * 2;
+  }
+
+  &.dbx-transportchip--taxi {
+    background: dbx-background-color('transportation.taxi');
   }
 
   &.dbx-transportchip--ferry {
@@ -466,16 +470,9 @@ button.dbx-transportchip {
   &.dbx-transportchip--bus {
     @include dbx-transportchip-no-border-radius;
     background: #e2011a;
+    min-width: 1.5em * 1.5;
+    padding: 0 0.43em;
     text-align: center;
-    width: 1.5em * 1.5;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
   }
 
   &.dbx-transportchip--tram-temporary {
@@ -496,7 +493,6 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--bus {
     background: #005f5f;
-    padding: 0;
   }
 
   &.dbx-transportchip--nachtbus {
@@ -613,8 +609,6 @@ button.dbx-transportchip {
 // Nürnberg
 
 .dbx-transportchip--sbahn-nuernberg {
-  @include dbx-transportchip-no-border-radius;
-
   &.dbx-transportchip--s1 {
     background: #94211a;
   }
@@ -648,34 +642,34 @@ button.dbx-transportchip {
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
     @include dbx-transportchip-no-border-radius;
+    min-width: 1.5em;
     text-align: center;
-    width: 1.5em;
   }
 
   &.dbx-transportchip--bus {
     background: #ff2a0e;
-    border-radius: 50%;
-    padding: 0;
+    border-radius: 1.5em;
+    padding: 0 0.15em;
   }
 
-  &.dbx-transportchip--tram.dbx-transportchip--4 {
+  &.dbx-transportchip--str4 {
     background: #f4898f;
   }
 
-  &.dbx-transportchip--tram.dbx-transportchip--5 {
+  &.dbx-transportchip--str5 {
     background: #9860a9;
   }
 
-  &.dbx-transportchip--tram.dbx-transportchip--6 {
+  &.dbx-transportchip--str6 {
     background: #fef405;
     color: #000;
   }
 
-  &.dbx-transportchip--tram.dbx-transportchip--7 {
+  &.dbx-transportchip--str7 {
     background: #667ab4;
   }
 
-  &.dbx-transportchip--tram.dbx-transportchip--8 {
+  &.dbx-transportchip--str8 {
     background: #01bcfe;
   }
 }
@@ -702,51 +696,51 @@ button.dbx-transportchip {
 }
 
 .dbx-transportchip--kvb {
-  &.dbx-transportchip--1 {
+  &.dbx-transportchip--str1 {
     background: #ed1c24;
   }
 
-  &.dbx-transportchip--3 {
+  &.dbx-transportchip--str3 {
     background: #f49ac1;
   }
 
-  &.dbx-transportchip--4 {
+  &.dbx-transportchip--str4 {
     background: #f271ac;
   }
 
-  &.dbx-transportchip--5 {
+  &.dbx-transportchip--str5 {
     background: #a59dce;
   }
 
-  &.dbx-transportchip--7 {
+  &.dbx-transportchip--str7 {
     background: #f7946a;
   }
 
-  &.dbx-transportchip--9 {
+  &.dbx-transportchip--str9 {
     background: #f69b95;
   }
 
-  &.dbx-transportchip--12 {
+  &.dbx-transportchip--str12 {
     background: #8cc73f;
   }
 
-  &.dbx-transportchip--13 {
+  &.dbx-transportchip--str13 {
     background: #8b6c42;
   }
 
-  &.dbx-transportchip--15 {
+  &.dbx-transportchip--str15 {
     background: #50b848;
   }
 
-  &.dbx-transportchip--16 {
+  &.dbx-transportchip--str16 {
     background: #00accd;
   }
 
-  &.dbx-transportchip--17 {
+  &.dbx-transportchip--str17 {
     background: #00accd;
   }
 
-  &.dbx-transportchip--18 {
+  &.dbx-transportchip--str18 {
     background: #0095da;
   }
 }
@@ -805,34 +799,34 @@ button.dbx-transportchip {
     background: #d9aa34;
   }
 
-  &.dbx-transportchip--str4,
-  &.dbx-transportchip--str4a {
+  &.dbx-transportchip--rnv4,
+  &.dbx-transportchip--rnv4a {
     background: #ff2d16;
   }
 
-  &.dbx-transportchip--str5,
-  &.dbx-transportchip--str5a {
+  &.dbx-transportchip--rnv5,
+  &.dbx-transportchip--rnv5a {
     background: #00ac6e;
   }
 
-  &.dbx-transportchip--str15 {
+  &.dbx-transportchip--rnv15 {
     background: #f7aa61;
   }
 
-  &.dbx-transportchip--str6,
-  &.dbx-transportchip--str6a {
+  &.dbx-transportchip--rnv6,
+  &.dbx-transportchip--rnv6a {
     background: #916d2e;
   }
 
-  &.dbx-transportchip--str7 {
+  &.dbx-transportchip--rnv7 {
     background: #ffc735;
   }
 
-  &.dbx-transportchip--str8 {
+  &.dbx-transportchip--rnv8 {
     background: #f57421;
   }
 
-  &.dbx-transportchip--str9 {
+  &.dbx-transportchip--rnv9 {
     background: #93c13b;
   }
 }

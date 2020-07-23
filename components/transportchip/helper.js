@@ -20,7 +20,7 @@ export const products = {
 export const styles = {
   'sbahn-mitteldeutschland': { products: [products.SUBURBAN], zipcodes: /^(0[3467]|149)/ },
   'sbahn-berlin': { products: [products.SUBURBAN], zipcodes: /^1([012356]|4[45])/ },
-  'sbahn-hamburg': { products: [products.SUBURBAN], zipcodes: /^2[0-5]/ },
+  'sbahn-hamburg': { products: [products.SUBURBAN], zipcodes: /^2[0-2]/ },
   'sbahn-rheinmain': { products: [products.SUBURBAN], zipcodes: /^(55|6[01345])/ },
   'sbahn-rheinneckar': { products: [products.SUBURBAN], zipcodes: /^(6[6789])/ },
   'sbahn-rheinruhrkoeln': { products: [products.SUBURBAN], zipcodes: /^(4|5[0123789])/ },
@@ -31,7 +31,7 @@ export const styles = {
     zipcodes: /^1[0-3]/,
   },
   hochbahn: {
-    products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY],
+    products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY, products.TAXI],
     zipcodes: /^2[0-5]/,
   },
   mvg: { products: [products.SUBWAY, products.TRAM, products.BUS], zipcodes: /^8[0125]/ },
