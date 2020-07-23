@@ -8,24 +8,24 @@ import readme from './README.md';
 
 const pageTitleStyles = {
   fontFamily: tokens.fontfamily.title,
-  fontSize: tokens.textsize['title.xl.desktop'],
+  fontSize: `${tokens.textsize['title.xl.desktop']}px`,
   fontWeight: tokens.fontweight['title.bold'],
-  lineHeight: tokens.lineheight['title.xl.desktop'],
+  lineHeight: `${tokens.lineheight['title.xl.desktop']}px`,
 };
 
 const sublineStyles = {
   fontFamily: tokens.fontfamily.title,
-  fontSize: tokens.textsize['title.m.desktop'],
+  fontSize: `${tokens.textsize['title.m.desktop']}px`,
   fontWeight: tokens.fontweight.title,
-  lineHeight: tokens.lineheight['title.m.desktop'],
+  lineHeight: `${tokens.lineheight['title.m.desktop']}px`,
   marginTop: tokens.spacing.s,
 };
 
 const copyStyles = {
   fontFamily: tokens.fontfamily.copy,
-  fontSize: tokens.textsize['copy.m.desktop'],
+  fontSize: `${tokens.textsize['copy.m.desktop']}px`,
   fontWeight: tokens.fontweight.copy,
-  lineHeight: tokens.lineheight['copy.m.desktop'],
+  lineHeight: `${tokens.lineheight['copy.m.desktop']}px`,
 };
 
 storiesOf('Components / DB Logo & Pulse', module)
@@ -95,8 +95,8 @@ storiesOf('Components / DB Logo & Pulse', module)
         <h1
           style={{
             ...pageTitleStyles,
-            fontSize: tokens.textsize['title.m.desktop'],
-            lineHeight: tokens.lineheight['title.m.desktop'],
+            fontSize: `${tokens.textsize['title.m.desktop']}px`,
+            lineHeight: `${tokens.lineheight['title.m.desktop']}px`,
           }}
         >
           Page title with margins defined by Brand
@@ -111,8 +111,8 @@ storiesOf('Components / DB Logo & Pulse', module)
         <h1
           style={{
             ...pageTitleStyles,
-            fontSize: tokens.textsize['title.l.desktop'],
-            lineHeight: tokens.lineheight['title.l.desktop'],
+            fontSize: `${tokens.textsize['title.l.desktop']}px`,
+            lineHeight: `${tokens.lineheight['title.l.desktop']}px`,
           }}
         >
           Page title with margins defined by Brand
@@ -127,8 +127,8 @@ storiesOf('Components / DB Logo & Pulse', module)
         <h1
           style={{
             ...pageTitleStyles,
-            fontSize: tokens.textsize['title.xl.desktop'],
-            lineHeight: tokens.lineheight['title.xl.desktop'],
+            fontSize: `${tokens.textsize['title.xl.desktop']}px`,
+            lineHeight: `${tokens.lineheight['title.xl.desktop']}px`,
           }}
         >
           Page title with margins defined by Brand
@@ -143,8 +143,8 @@ storiesOf('Components / DB Logo & Pulse', module)
         <h1
           style={{
             ...pageTitleStyles,
-            fontSize: tokens.textsize['title.xxl.desktop'],
-            lineHeight: tokens.lineheight['title.xxl.desktop'],
+            fontSize: `${tokens.textsize['title.xxl.desktop']}px`,
+            lineHeight: `${tokens.lineheight['title.xxl.desktop']}px`,
           }}
         >
           Page title with margins defined by Brand
