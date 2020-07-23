@@ -70,6 +70,7 @@
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@bahn-x/dbx-foundation": ">=0.0.0",
