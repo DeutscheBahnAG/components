@@ -23,6 +23,7 @@
   },
   "files": [
     "components",
+    "dist",
     "sass"
   ],
   "repository": {
