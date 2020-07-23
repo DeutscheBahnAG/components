@@ -107,22 +107,26 @@ button.dbx-transportchip {
   color: dbx-text-color('transportation.ferry');
 }
 
-.dbx-transportchip--ic {
+.dbx-transportchip--ic,
+.dbx-transportchip--national {
   background: dbx-background-color('transportation.ic');
   color: dbx-text-color('transportation.ic');
 }
 
-.dbx-transportchip--ice {
+.dbx-transportchip--ice,
+.dbx-transportchip--nationalexpress {
   background: dbx-background-color('transportation.ice');
   color: dbx-text-color('transportation.ice');
 }
 
-.dbx-transportchip--rb {
+.dbx-transportchip--rb,
+.dbx-transportchip--regional {
   background: dbx-background-color('transportation.rb');
   color: dbx-text-color('transportation.rb');
 }
 
-.dbx-transportchip--re {
+.dbx-transportchip--re,
+.dbx-transportchip--regionalexpress {
   background: dbx-background-color('transportation.re');
   color: dbx-text-color('transportation.re');
 }
