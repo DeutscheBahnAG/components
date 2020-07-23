@@ -22,5 +22,6 @@ module.exports = {
   },
   transform: {
     '^.+\\.jsx?$': '<rootDir>/.jest/preprocess.js',
+    '^.+\\.tsx?$': '<rootDir>/.jest/preprocess.js',
   },
 };

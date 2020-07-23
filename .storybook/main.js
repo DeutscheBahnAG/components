@@ -16,5 +16,9 @@ module.exports = {
     '../components/web-extra/**/*.stories.jsx',
     '../components/icons/**/*.stories.jsx',
     '../email/src/**/*.stories.jsx'
-  ]
+  ],
+  typescript: {
+    check: false,
+    reactDocgen: 'react-docgen-typescript'
+  },
 }
