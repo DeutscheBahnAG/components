@@ -1,7 +1,7 @@
 {
   "name": "@bahn-x/dbx",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.5.5",
   "description": "DBX, the Bahn X design system, implemented for the web",
   "main": "dist/components/index.js",
   "scripts": {
