@@ -18,7 +18,6 @@
     "build:sassdoc": "sassdoc foundation",
     "prebuild": "rimraf dist/components",
     "build": "babel components --out-dir dist/components --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
-    "postinstall": "yarn build",
     "commit": "git-cz",
     "publish-components": "node scripts/publish-components.js"
   },
