@@ -9,16 +9,16 @@ const propTypes = {
 
 // Round shapes (like S-Bahn) need to visually overlap by 1px, therefore the size is 26px (instead of 24px)
 const Circle = ({ fill, children, ...props }) => (
-  <svg viewBox="0 0 26 26" role="img" {...props}>
-    <circle cx="13" cy="13" r="12.5" fill={fill} />
+  <svg viewBox="0 0 30 30" role="img" {...props}>
+    <circle cx="15" cy="15" r="14.5" fill={fill} />
     {children}
   </svg>
 );
 Circle.propTypes = propTypes;
 
 const Square = ({ fill, children, ...props }) => (
-  <svg viewBox="0 0 26 26" role="img" {...props}>
-    <rect x="1" y="1" width="24" height="24" rx="1.68" fill={fill} />
+  <svg viewBox="0 0 30 30" role="img" {...props}>
+    <rect x="1" y="1" width="28" height="28" rx="4" fill={fill} />
     {children}
   </svg>
 );
@@ -27,7 +27,7 @@ Square.propTypes = propTypes;
 export const SBahn = props => (
   <Circle fill={color['background.transportation.sbahn']} {...props}>
     <path
-      d="M6.0,19.9 L6.0,15.6 C8.7,20.0 16.1,21.2 16.2,17.6 C16.2,14.4 6.7,16.8 5.9,9.2 C5.9,3.0 14.6,1.9 19.8,5.9 L19.8,9.4 C17.9,7.5 15.2,5.9 13.2,5.9 C11.2,5.9 10.2,6.7 10.2,7.6 C10.2,11.4 20.9,9.7 20.9,16.1 C20.9,22.3 12.2,24.6 6.0,19.9 Z"
+      d="M6.19,23.54 L6.19,18.34 C9.54,23.67 18.62,25.17 18.71,20.74 C18.78,16.81 7.07,19.74 6,10.46 C6,2.78 16.80,1.45 23.11,6.30 L23.11,10.69 C20.80,8.28 17.54,6.33 15.07,6.33 C12.60,6.33 11.40,7.27 11.40,8.48 C11.36,13.13 24.47,10.98 24.47,18.86 C24.47,26.57 13.80,29.36 6.19,23.54 Z"
       fill={color['text.transportation.sbahn']}
     />
   </Circle>
@@ -36,7 +36,7 @@ export const SBahn = props => (
 export const AKN = props => (
   <Circle fill="#fe7f1a" {...props}>
     <path
-      d="M13.0,4 C14.3,4 15.4,4.8 15.8,5.9 L15.8,5.9 L20.2,18.3 C20.3,18.5 20.3,18.7 20.3,19.0 C20.3,20.1 19.5,20.9 18.4,20.9 C17.5,20.9 16.7,20.3 16.5,19.4 L16.5,19.4 L16.0,17.8 C15.9,17.5 15.6,17.2 15.3,17.2 L15.3,17.2 L13.0,17.2 L10.6,17.2 C10.3,17.2 10.0,17.5 9.9,17.8 L9.9,17.8 L9.5,19.4 C9.3,20.3 8.5,20.9 7.6,20.9 C6.5,20.9 5.6,20.1 5.6,19.0 C5.6,18.7 5.6,18.5 5.7,18.3 L5.7,18.3 L10.2,5.9 C10.6,4.8 11.7,4 13.0,4 Z M13.0,6.9 L11.0,13.9 C11.0,13.9 11.0,14.0 11.0,14.0 C11.0,14.3 11.2,14.5 11.5,14.5 L11.5,14.5 L14.4,14.6 C14.7,14.6 14.9,14.3 14.9,14.0 C14.9,14.0 14.9,13.9 14.9,13.9 L14.9,13.9 L13.0,6.9 Z"
+      d="M15.02,4.61 C16.51,4.61 17.77,5.57 18.23,6.90 L18.23,6.90 L23.38,21.19 C23.47,21.42 23.51,21.68 23.51,21.94 C23.51,23.19 22.50,24.20 21.25,24.20 C20.19,24.20 19.30,23.47 19.06,22.49 L19.06,22.49 L18.51,20.55 C18.42,20.21 18.10,19.95 17.73,19.95 L17.73,19.95 L15.02,19.95 L12.31,19.95 C11.93,19.95 11.62,20.21 11.52,20.55 L11.52,20.55 L10.98,22.49 C10.74,23.47 9.85,24.20 8.78,24.20 C7.54,24.20 6.53,23.19 6.53,21.94 C6.53,21.68 6.57,21.42 6.66,21.18 L6.66,21.18 L11.81,6.90 C12.27,5.57 13.53,4.61 15.02,4.61 Z M15.02,8.00 L12.77,16.06 C12.76,16.12 12.75,16.17 12.75,16.23 C12.75,16.57 13.02,16.84 13.36,16.84 L13.36,16.84 L16.68,16.84 C17.01,16.84 17.29,16.57 17.29,16.23 C17.29,16.17 17.28,16.12 17.26,16.06 L17.26,16.06 L15.02,8.00 Z"
       fill={color['text.transportation.sbahn']}
     />
   </Circle>
@@ -46,10 +46,10 @@ export const UBahn = props => (
   <Square fill={color['background.transportation.ubahn']} {...props}>
     <text
       x="50%"
-      y="20.5"
+      y="23.5"
       textAnchor="middle"
       fontWeight="bold"
-      fontSize="21"
+      fontSize="24"
       fill={color['text.transportation.ubahn']}
     >
       U
@@ -62,10 +62,10 @@ export const Tram = props => (
   <Square fill={palette.red600} {...props}>
     <text
       x="50%"
-      y="16"
+      y="18"
       textAnchor="middle"
       fontWeight="bold"
-      fontSize="9"
+      fontSize="10"
       fill={color['text.transportation.tram']}
     >
       Tram
@@ -77,10 +77,10 @@ export const Bus = props => (
   <Circle fill="#95276e" {...props}>
     <text
       x="50%"
-      y="17"
+      y="19.5"
       textAnchor="middle"
       fontWeight="bold"
-      fontSize="11"
+      fontSize="12"
       fill={color['text.transportation.bus']}
     >
       BUS
@@ -91,7 +91,7 @@ export const Bus = props => (
 export const Ferry = props => (
   <Circle fill={color['background.transportation.ferry']} {...props}>
     <path
-      d="M9.6,19.8 L10.7,14.6 L16.2,14.6 L16.9,11.3 L11.4,11.3 L12.2,7.5 L18.1,7.5 L18.8,4.1 L8.3,4.1 L5.0,19.8 C4.3,20.0 3.6,20.2 3.0,20.5 C3.3,20.9 3.6,21.3 3.9,21.6 C4.9,21.2 5.9,20.9 7.2,20.9 C9.2,20.9 10.6,21.5 12.1,22.2 C14.9,23.3 17.2,23.8 19.4,23.7 C20.2,23.2 20.9,22.6 21.6,21.9 C20.4,22.3 19.4,22.3 17.8,22.3 C14.9,22.2 12.4,20.5 9.6,19.8 Z"
+      d="M10.99,23.26 L12.30,17.03 L18.89,17.03 L19.75,12.96 L13.16,12.96 L14.12,8.40 L21.15,8.40 L22.01,4.32 L9.46,4.32 L5.50,23.18 C4.61,23.41 3.81,23.73 3.06,24.08 C3.40,24.53 3.77,24.96 4.16,25.37 C5.28,24.89 6.50,24.53 8.05,24.53 C10.45,24.53 12.18,25.24 14.03,26.04 C17.31,27.46 20.04,28.01 22.70,27.87 C23.68,27.28 24.59,26.58 25.41,25.79 C23.90,26.19 22.73,26.25 20.86,26.19 C17.34,26.08 14.29,24.11 10.99,23.26 Z"
       fill={color['text.transportation.ferry']}
     />
   </Circle>

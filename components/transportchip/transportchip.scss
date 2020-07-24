@@ -2,15 +2,15 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
-@mixin dbx-transportchip-no-border-radius {
-  border-radius: 0.1em; // Almost no visual border-radius; focus-ring will look round
+@mixin dbx-transportchip-default-border-radius {
+  border-radius: 1em / dbx-font-size('copy', 'm') * dbx-border-radius('s');
   margin: 0; // Reset overlap
 }
 
 @mixin dbx-transportchip-border($px, $color) {
   $border-in-em: $px / 1px * 0.0625em;
   border: $border-in-em $color solid;
-  line-height: #{1.5em - 2 * $border-in-em};
+  line-height: #{1.75em - 2 * $border-in-em};
 }
 
 $dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
@@ -25,15 +25,15 @@ $dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
 }
 
 .dbx-transportchip__line {
+  @include dbx-transportchip-default-border-radius;
   background: dbx-palette-color('coolgray500');
-  border-radius: 0.21em;
   box-sizing: border-box;
   color: dbx-palette-color('white');
   display: inline-block;
-  height: 1.5em;
-  line-height: 1.5em;
-  min-width: 1.5em;
-  padding: 0 0.43em;
+  height: 1.75em;
+  line-height: 1.75em;
+  min-width: 1.75em;
+  padding: 0 1em / dbx-font-size('copy', 'm') * dbx-spacing('s');
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -58,13 +58,16 @@ button.dbx-transportchip {
 
 .dbx-transportchip__transport-logo {
   // Round shapes (like S-Bahn) need to visually overlap by 1px
+  $size: 1.75em;
   $size: 1em / dbx-font-size('copy', 'm') * dbx-line-height('copy', 'm') + 2 *
+    $dbx-transportchip-overlap;
+  $size: 1em / dbx-font-size('copy', 'm') * dbx-size('s') + 2 *
     $dbx-transportchip-overlap;
   display: inline-block;
   height: $size;
   margin: #{-$dbx-transportchip-overlap} #{0.25em - $dbx-transportchip-overlap} #{-$dbx-transportchip-overlap}
     #{-$dbx-transportchip-overlap};
-  vertical-align: 1em / dbx-font-size('copy', 'm') * -6px;
+  vertical-align: 1em / dbx-font-size('copy', 'm') * -8px;
   width: $size;
 }
 
@@ -164,17 +167,17 @@ button.dbx-transportchip {
 // Shared regional styles
 
 .dbx-transportchip--suburban {
-  border-radius: 0.75em;
+  border-radius: 0.875em;
   color: #fff;
   margin: 0 #{-$dbx-transportchip-overlap};
-  min-width: (1.5em + $dbx-transportchip-overlap) * 2;
+  min-width: (1.75em + $dbx-transportchip-overlap) * 2;
 }
 
 .dbx-transportchip--subway,
 .dbx-transportchip--tram {
-  @include dbx-transportchip-no-border-radius;
+  @include dbx-transportchip-default-border-radius;
   color: #fff;
-  min-width: 1.5em * 1.5;
+  min-width: 1.75em * 1.5;
 }
 
 // Berlin
@@ -291,7 +294,7 @@ button.dbx-transportchip {
 // Hamburg
 
 .dbx-transportchip--sbahn-hamburg {
-  width: 1.5em * 2.5 + $dbx-transportchip-overlap * 2;
+  width: 1.75em * 2.5 + $dbx-transportchip-overlap * 2;
 
   &.dbx-transportchip--s1 {
     background: #039729;
@@ -326,7 +329,7 @@ button.dbx-transportchip {
 }
 
 .dbx-transportchip--hochbahn {
-  width: 1.5em * 2.5;
+  width: 1.75em * 2.5;
 
   &.dbx-transportchip--u1 {
     background: #0059a4;
@@ -337,7 +340,7 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--u3 {
-    @include dbx-transportchip-border(1px, #00000025);
+    @include dbx-transportchip-border(1px, #00000050);
     background: #ffd602;
     text-shadow: #000 0 0 0.0625em;
   }
@@ -353,7 +356,7 @@ button.dbx-transportchip {
   &.dbx-transportchip--bus,
   &.dbx-transportchip--taxi,
   &.dbx-transportchip--ferry {
-    @include dbx-transportchip-no-border-radius;
+    @include dbx-transportchip-default-border-radius;
     background: #e2011a;
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
     text-align: center;
@@ -370,7 +373,7 @@ button.dbx-transportchip {
   &.dbx-transportchip--taxi,
   &.dbx-transportchip--bus {
     margin: 0 #{-$dbx-transportchip-overlap};
-    width: 1.5em * 2.5 + $dbx-transportchip-overlap * 2;
+    width: 1.75em * 2.5 + $dbx-transportchip-overlap * 2;
   }
 
   &.dbx-transportchip--taxi {
@@ -468,15 +471,15 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
-    @include dbx-transportchip-no-border-radius;
+    @include dbx-transportchip-default-border-radius;
     background: #e2011a;
-    min-width: 1.5em * 1.5;
+    min-width: 1.75em * 1.5;
     padding: 0 0.43em;
     text-align: center;
   }
 
   &.dbx-transportchip--tram-temporary {
-    @include dbx-transportchip-border(1px, #e2011a);
+    @include dbx-transportchip-border(2px, #e2011a);
     background: #fff;
     color: #e2011a;
   }
@@ -512,7 +515,7 @@ button.dbx-transportchip {
 // Frankfurt (Main)
 
 .dbx-transportchip--sbahn-rheinmain {
-  width: 1.5em * 1.75;
+  width: 1.75em * 1.75;
 
   &.dbx-transportchip--s1 {
     background: #047fb8;
@@ -527,7 +530,7 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--s4 {
-    @include dbx-transportchip-border(1px, #000);
+    @include dbx-transportchip-border(2px, #000);
     background: #fc0;
     color: #000;
   }
@@ -587,18 +590,17 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--u9 {
-    @include dbx-transportchip-border(1px, #000);
+    @include dbx-transportchip-border(2px, #000);
     background: #ffd602;
     color: #000;
   }
 
   &.dbx-transportchip--tram {
-    @include dbx-transportchip-border(1px, #f00);
+    @include dbx-transportchip-border(2px, #f00);
     background-color: #fff;
-    border-radius: 0.5em;
     color: #000;
     text-align: center;
-    width: 1.5em * 1.75;
+    width: 1.75em * 1.75;
   }
 
   &.dbx-transportchip--tram-temporary {
@@ -641,14 +643,14 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--tram,
   &.dbx-transportchip--bus {
-    @include dbx-transportchip-no-border-radius;
-    min-width: 1.5em;
+    @include dbx-transportchip-default-border-radius;
+    min-width: 1.75em;
     text-align: center;
   }
 
   &.dbx-transportchip--bus {
     background: #ff2a0e;
-    border-radius: 1.5em;
+    border-radius: 1.75em;
     padding: 0 0.15em;
   }
 
@@ -782,7 +784,7 @@ button.dbx-transportchip {
 .dbx-transportchip--rnv {
   &.dbx-transportchip--tram {
     padding: 0 0.3em;
-    min-width: 1.5em;
+    min-width: 1.75em;
     text-align: center;
     width: unset;
   }
