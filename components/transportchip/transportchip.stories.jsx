@@ -194,8 +194,8 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Hamburg',
       ))}
     </p>
     <p>
-      {['A1', 'A2', 'A3'].map(name => (
-        <Transportchip zipcode="20000" product={Transportchip.products.SUBURBAN} name={name} />
+      {['AKN A1', 'AKN A2', 'AKN A3'].map(name => (
+        <Transportchip zipcode="25000" product={Transportchip.products.REGIONAL} name={name} />
       ))}
     </p>
     <p>

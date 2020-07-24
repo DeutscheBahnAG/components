@@ -11,6 +11,7 @@ export const products = {
   BUS: 'bus',
   RE: 're',
   RB: 'rb',
+  REGIONAL: 'rb',
   TAXI: 'taxi',
   WALKING: 'walking',
   CARSHARING: 'carsharing',
@@ -26,6 +27,7 @@ export const styles = {
   'sbahn-rheinruhrkoeln': { products: [products.SUBURBAN], zipcodes: /^(4|5[0123789])/ },
   'sbahn-muenchen': { products: [products.SUBURBAN], zipcodes: /^(8[0125])/ },
   'sbahn-nuernberg': { products: [products.SUBURBAN], zipcodes: /^(9[012])/ },
+  akn: { products: [products.REGIONAL], zipcodes: /^(2[0245])/ },
   bvg: {
     products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY],
     zipcodes: /^1[0-3]/,
