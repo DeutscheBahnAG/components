@@ -361,18 +361,52 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim'
         'STR 1',
         'STR 3',
         'STR 4',
-        'STR 4A',
-        'STR 5',
-        'STR 5A',
-        'STR 15',
-        'STR 6',
-        'STR 6A',
-        'STR 7',
-        'STR 8',
-        'STR 9',
+        'RNV 4A',
+        'RNV 5',
+        'RNV 5A',
+        'RNV 15',
+        'RNV 6',
+        'RNV 6A',
+        'RNV 7',
+        'RNV 8',
+        'RNV 9',
+        'RNV 15',
       ].map(name => (
         <Transportchip product={Transportchip.products.TRAM} name={name} zipcode="68000" />
       ))}
     </p>
   </div>
 ));
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Heidelberg', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S1', 'S2', 'S3', 'S4', 'S5', 'S51'].map(name => (
+        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipcode="68000" />
+      ))}
+    </p>
+    <p>
+      {['RNV 5', 'STR 21', 'STR 21A', 'STR 22', 'STR 23', 'STR 24', 'STR 26'].map(name => (
+        <Transportchip product={Transportchip.products.TRAM} name={name} zipcode="68000" />
+      ))}
+    </p>
+  </div>
+));
+
+storiesOf('Components / Transportchip / Regional styles', module).add(
+  'Ludwigshafen (Rhein)',
+  () => (
+    <div className="sg-components-transportationchip-list">
+      <p>
+        {['S1', 'S2', 'S3', 'S4', 'S6'].map(name => (
+          <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipcode="68000" />
+        ))}
+      </p>
+      <p>
+        {['RNV 4A', 'RNV 5', 'RNV 5A', 'RNV 15', 'RNV 6', 'RNV 6A', 'RNV 7', 'RNV 9'].map(name => (
+          <Transportchip product={Transportchip.products.TRAM} name={name} zipcode="68000" />
+        ))}
+      </p>
+    </div>
+  )
+);
