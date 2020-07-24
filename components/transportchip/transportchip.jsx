@@ -41,6 +41,8 @@ const Transportchip = ({
   const matches = lineNumber && lineNumber.match(/(.*[A-Z]) ?(\d.*)/);
   // eslint-disable-next-line no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
+  const prefix = matches && matches[1];
+  const number = matches && matches[2];
   return (
     <Component
       href={href}
@@ -59,9 +61,16 @@ const Transportchip = ({
         )}
       >
         {lineNumber && (
-          <span className="dbx-transportchip__text">{matches ? matches[1] : lineNumber}</span>
+          <span
+            className={clsx(
+              'dbx-transportchip__text',
+              prefix && prefix.length === 1 && 'dbx-transportchip__text--short-prefix'
+            )}
+          >
+            {prefix || lineNumber}
+          </span>
         )}
-        {matches && <span className="dbx-transportchip__text">{matches[2]}</span>}
+        {number && <span className="dbx-transportchip__text">{number}</span>}
       </span>
     </Component>
   );

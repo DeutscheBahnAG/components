@@ -37,4 +37,28 @@ describe('Transportchip Component', () => {
     const wrapper = shallow(<Transportchip product={Transportchip.products.BUS} name="U 1" />);
     expect(wrapper.find('.dbx-transportchip__line.dbx-transportchip--bus')).toHaveLength(1);
   });
+
+  it('should have normal spacing for products with three characters', () => {
+    const wrapper = shallow(<Transportchip name="ICE 1" />);
+    expect(wrapper.find('.dbx-transportchip__text')).toHaveLength(2);
+    expect(
+      wrapper.find('.dbx-transportchip__text.dbx-transportchip__text--short-prefix')
+    ).toHaveLength(0);
+  });
+
+  it('should have normal spacing for products with two character', () => {
+    const wrapper = shallow(<Transportchip name="IC 1" />);
+    expect(wrapper.find('.dbx-transportchip__text')).toHaveLength(2);
+    expect(
+      wrapper.find('.dbx-transportchip__text.dbx-transportchip__text--short-prefix')
+    ).toHaveLength(0);
+  });
+
+  it('should have normal spacing for products with one character', () => {
+    const wrapper = shallow(<Transportchip name="S 1" />);
+    expect(wrapper.find('.dbx-transportchip__text')).toHaveLength(2);
+    expect(
+      wrapper.find('.dbx-transportchip__text.dbx-transportchip__text--short-prefix')
+    ).toHaveLength(1);
+  });
 });
