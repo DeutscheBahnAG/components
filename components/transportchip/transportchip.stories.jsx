@@ -327,7 +327,20 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Köln', (
       ))}
     </p>
     <p>
-      {['1', '3', '4', '5', '7', '9', '12', '13', '15', '16', '17', '18'].map(name => (
+      {[
+        'STR 1',
+        'STR 3',
+        'STR 4',
+        'STR 5',
+        'STR 7',
+        'STR 9',
+        'STR 12',
+        'STR 13',
+        'STR 15',
+        'STR 16',
+        'STR 17',
+        'STR 18',
+      ].map(name => (
         <Transportchip zipcode="50667" product={Transportchip.products.TRAM} name={name} />
       ))}
     </p>
