@@ -33,7 +33,7 @@ const Transportchip = ({
   zipcode,
   ...otherProps
 }) => {
-  const displayProduct = product || findProduct(name);
+  const displayProduct = (product || findProduct(name) || 'unkown').toLowerCase();
   const lineNumber = sanitizeLineNumber(name);
   const detectedStyle = style || findStyle({ product, zipcode, lineNumber });
   const specialProduct =
