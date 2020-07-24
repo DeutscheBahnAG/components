@@ -34,8 +34,8 @@ $dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
   line-height: 1.75em;
   min-width: 1.75em;
   padding: 0 1em / dbx-font-size('copy', 'm') * dbx-spacing('s');
+  position: relative;
   text-align: center;
-  text-decoration: none;
   white-space: nowrap;
 
   & + & {
@@ -46,6 +46,7 @@ $dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
 a.dbx-transportchip,
 button.dbx-transportchip {
   @include dbx-focus-ring($target: '.dbx-transportchip__line');
+  text-decoration: none;
 
   &:hover {
     filter: brightness(0.9) saturate(1.1);
@@ -67,8 +68,10 @@ button.dbx-transportchip {
   height: $size;
   margin: #{-$dbx-transportchip-overlap} #{0.25em - $dbx-transportchip-overlap} #{-$dbx-transportchip-overlap}
     #{-$dbx-transportchip-overlap};
+  position: relative;
   vertical-align: 1em / dbx-font-size('copy', 'm') * -8px;
   width: $size;
+  transform: translateZ(0);
 }
 
 .dbx-transportchip__text {
