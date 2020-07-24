@@ -319,6 +319,26 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Nürnberg
   </div>
 ));
 
+storiesOf('Components / Transportchip / Regional styles', module).add('Fürth', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['S1'].map(name => (
+        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipcode="90000" />
+      ))}
+    </p>
+    <p>
+      {['U1'].map(name => (
+        <Transportchip product={Transportchip.products.SUBWAY} name={name} zipcode="90000" />
+      ))}
+    </p>
+    <p>
+      {['33', '67', '171', '179', '189'].map(name => (
+        <Transportchip product={Transportchip.products.BUS} name={name} zipcode="90000" />
+      ))}
+    </p>
+  </div>
+));
+
 storiesOf('Components / Transportchip / Regional styles', module).add('Köln', () => (
   <div className="sg-components-transportationchip-list">
     <p>
