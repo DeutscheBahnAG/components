@@ -21,6 +21,20 @@ storiesOf('Components / Transportchip', module)
       </div>
     </>
   ))
+  .add('Canceled', () => (
+    <>
+      <div className="sg-components-transportationchip-list">
+        <p>
+          <Transportchip canceled name="U5" />
+          <Transportchip canceled name="ICE599" />
+          <Transportchip canceled name="RE13" />
+          <Transportchip canceled name="Str 4" />
+          <Transportchip canceled name="Bus 296" />
+          <Transportchip canceled name="Taxi" />
+        </p>
+      </div>
+    </>
+  ))
   .add('Sizing', () => (
     <>
       <div className="sg-components-transportationchip-list">

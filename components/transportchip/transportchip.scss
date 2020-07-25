@@ -246,6 +246,10 @@ button.dbx-transportchip {
     color: dbx-text-color('primary');
     min-width: unset;
     padding: 0;
+
+    .dbx-transportchip--canceled & {
+      border-color: transparent;
+    }
   }
 
   &.dbx-transportchip--u1 {
@@ -852,5 +856,25 @@ button.dbx-transportchip {
 
   &.dbx-transportchip--str26 {
     background: #ff9798;
+  }
+}
+
+.dbx-transportchip--canceled {
+  .dbx-transportchip__line {
+    @include dbx-transportchip-border(2px, dbx-palette-color('coolgray200'));
+    background: transparent;
+    clip-path: unset; // Hochbahn bus and ferry’s shape won’t allow borders
+    color: dbx-palette-color('coolgray400');
+    text-shadow: unset;
+  }
+
+  rect,
+  circle {
+    fill: dbx-palette-color('coolgray200');
+  }
+
+  text,
+  path {
+    fill: dbx-palette-color('coolgray400');
   }
 }

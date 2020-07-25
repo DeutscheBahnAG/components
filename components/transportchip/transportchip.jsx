@@ -31,6 +31,7 @@ const Transportchip = ({
   href,
   onClick,
   zipcode,
+  canceled,
   ...otherProps
 }) => {
   const displayProduct = (product || findProduct(name) || 'unkown').toLowerCase();
@@ -47,7 +48,7 @@ const Transportchip = ({
     <Component
       href={href}
       onClick={onClick}
-      className={clsx('dbx-transportchip', className)}
+      className={clsx('dbx-transportchip', canceled && 'dbx-transportchip--canceled', className)}
       {...otherProps}
     >
       {icons[matches && matches[1] === 'A' ? 'akn' : displayProduct]}
@@ -93,6 +94,8 @@ Transportchip.propTypes = {
   onClick: PropTypes.func,
   /** Optional zip code to detect regional styles */
   zipcode: PropTypes.string,
+  /** Show trip as canceled */
+  canceled: PropTypes.bool,
 };
 
 Transportchip.defaultProps = {
@@ -102,6 +105,7 @@ Transportchip.defaultProps = {
   href: null,
   onClick: null,
   zipcode: '',
+  canceled: false,
 };
 
 export default Transportchip;
