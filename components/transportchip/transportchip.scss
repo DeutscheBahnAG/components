@@ -246,14 +246,6 @@ button.dbx-transportchip {
     color: dbx-text-color('primary');
     min-width: unset;
     padding: 0;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
   }
 
   &.dbx-transportchip--u1 {
@@ -366,14 +358,6 @@ button.dbx-transportchip {
     background: #e2011a;
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
     text-align: center;
-
-    .dbx-transportchip__text:first-child {
-      margin-left: 0;
-    }
-
-    .dbx-transportchip__text:last-child {
-      margin-right: 0;
-    }
   }
 
   &.dbx-transportchip--taxi,
