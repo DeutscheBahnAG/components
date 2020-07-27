@@ -3,6 +3,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withPropsTable } from 'storybook-addon-react-docgen';
 import PageWrapper from './decorators/page-wrapper.jsx';
 import withStaticHtml from '@bahn-x/storybook-addon-static-html';
+import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn'
 
 import dbxTheme from './theme';
 
@@ -31,10 +32,11 @@ addParameters({
     theme: dbxTheme,
   },
   backgrounds: [
-    { name: "white", value: "#ffffff", default: true },
-    { name: "grey25", value: "#e1e6eb" },
-    { name: "grey", value: "#646973" },
-    { name: "darkGrey", value: "#3c414b" }
+    { name: "primary", value: tokens.color['background.primary'], default: true },
+    { name: "secondary", value: tokens.color['background.secondary'] },
+    { name: "[coolgray050]", value: tokens.palette.coolgray050 },
+    { name: "[coolgray200]", value: tokens.palette.coolgray200 },
+    { name: "[coolgray700]", value: tokens.palette.coolgray700 }
   ],
   readme: {
     theme: {
