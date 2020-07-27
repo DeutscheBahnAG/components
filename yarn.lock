@@ -1068,9 +1068,9 @@
     react-modal "^3.11.2"
 
 "@bahn-x/dbx-tokens@>=0.4.0":
-  version "0.5.0"
-  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.5.0/168c22afd503597177aada1f16f403503da8e5df57a52f042602e9bfd73496b9#0d63e557b8e15b34839bb103cca49c61c1550f46"
-  integrity sha512-6LDWlsZcb8y2tBT7WoqAGaKl8TCZd5dFx4BFiD5Jbgp3Wm6cts0NCmNpzrPkZS9SPYxwZWzCHZ+yEtIhMQB21A==
+  version "0.7.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.7.0/ca7602903266b2d156b522bf847fcbefe00c8a3fe555a7538d457866e5f38053#d9ad4bbf72b3a820c1fe40b71a21ce6f9cc97d49"
+  integrity sha512-Ko01AuSPQluQwiW3cN0d4nUnrRTF6n0VaCVWB2swNjwNHgFGdYJ/TuFfs9ijqm7ObYCR4wV3i65BngLm7k1rwA==
   dependencies:
     js-yaml "^3.13.1"
 
