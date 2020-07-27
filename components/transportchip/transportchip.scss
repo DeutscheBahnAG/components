@@ -313,19 +313,19 @@ button.dbx-transportchip {
   }
 
   &.dbx-transportchip--s11,
-  &.dbx-transportchip--s21 {
+  &.dbx-transportchip--s2 {
     @include dbx-transportchip-border(2px, #039729);
     background: #fff;
     color: #039729;
   }
 
   &.dbx-transportchip--s2 {
-    background: #b60d36;
+    border-color: #b60d36;
+    color: #b60d36;
   }
 
   &.dbx-transportchip--s21 {
-    border-color: #b60d36;
-    color: #b60d36;
+    background: #b60d36;
   }
 
   &.dbx-transportchip--s3,
