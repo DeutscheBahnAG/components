@@ -32,7 +32,7 @@ export const styles = {
     products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY],
     zipCodes: /^1[0-3]|141/,
   },
-  hochbahn: {
+  hvv: {
     products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY, products.TAXI],
     zipCodes: /^2[02]/,
   },
@@ -75,7 +75,7 @@ export const sanitizeLineNumber = lineNumber =>
 export const lineNumberClass = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
 
 export const specialProducts = {
-  hochbahn: (transportType, lineNumber) => {
+  hvv: (transportType, lineNumber) => {
     if (transportType === products.BUS) {
       const number = Number.parseInt(lineNumber, 10);
       if (lineNumber.startsWith('X')) {
