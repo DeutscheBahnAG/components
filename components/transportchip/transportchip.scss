@@ -173,7 +173,9 @@ button.dbx-transportchip {
 
 // Shared regional styles
 
-.dbx-transportchip--akn,
+.dbx-transportchip--akna1,
+.dbx-transportchip--akna2,
+.dbx-transportchip--akna3,
 .dbx-transportchip--suburban {
   border-radius: 0.875em;
   color: #fff;
@@ -298,7 +300,9 @@ button.dbx-transportchip {
 // Hamburg
 
 .dbx-transportchip--sbahn-hamburg,
-.dbx-transportchip--akn {
+.dbx-transportchip--akna1,
+.dbx-transportchip--akna2,
+.dbx-transportchip--akna3 {
   background: #fe7f1a;
   width: 1.75em * 2.5 + $dbx-transportchip-overlap * 2;
 }
