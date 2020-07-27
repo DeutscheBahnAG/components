@@ -457,3 +457,78 @@ storiesOf('Components / Transportchip / Regional styles', module).add(
     </div>
   )
 );
+
+storiesOf('Components / Transportchip / Regional styles', module).add('Bremen', () => (
+  <div className="sg-components-transportationchip-list">
+    <p>
+      {['NWB RS1', 'NWB RS2', 'NWB RS3', 'NWB RS4'].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.SUBURBAN} name={name} />
+      ))}
+    </p>
+    <p>
+      {['STR 1', 'STR 2', 'STR 3', 'STR 4', 'STR 5', 'STR 6', 'STR 8', 'STR 10'].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.TRAM} name={name} />
+      ))}
+    </p>
+    <p>
+      {['STR N1', 'STR N4', 'STR N10'].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.TRAM} name={name} />
+      ))}
+    </p>
+    <p>
+      {[
+        'BUS 20',
+        'BUS 21',
+        'BUS 22',
+        'BUS 24',
+        'BUS 25',
+        'BUS 26',
+        'BUS 27',
+        'BUS 28',
+        'BUS 29',
+        'BUS 31',
+        'BUS 33',
+        'BUS 34',
+        'BUS 37',
+        'BUS 38',
+        'BUS 39',
+        'BUS 40',
+        'BUS 41',
+        'BUS 42',
+        'BUS 44',
+        'BUS 52',
+        'BUS 55',
+        'BUS 57',
+        'BUS 58',
+        'BUS 61',
+        'BUS 62',
+        'BUS 63',
+        'BUS 65',
+        'BUS 66',
+        'BUS 80',
+        'BUS 81',
+        'BUS 82',
+        'BUS 90',
+        'BUS 91',
+        'BUS 92',
+        'BUS 93',
+        'BUS 94',
+        'BUS 95',
+        'BUS 96',
+        'BUS 98',
+      ].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+      ))}
+    </p>
+    <p>
+      {['BUS N3', 'BUS N5', 'BUS N6', 'BUS N7', 'BUS N9', 'BUS N94'].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+      ))}
+    </p>
+    <p>
+      {['BUS 101', 'BUS 102', 'BUS 120'].map(name => (
+        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+      ))}
+    </p>
+  </div>
+));

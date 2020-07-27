@@ -863,6 +863,165 @@ button.dbx-transportchip {
   }
 }
 
+// Bremen
+.dbx-transportchip--bsag {
+  &.dbx-transportchip--tram,
+  &.dbx-transportchip--bus {
+    @include dbx-transportchip-default-border-radius;
+    min-width: 1.75em;
+    text-align: center;
+  }
+
+  &.dbx-transportchip--bus {
+    border-radius: 1.75em;
+    padding: 0 0.15em;
+    background: #9c9c9c;
+  }
+
+  &.dbx-transportchip--str1 {
+    background: #009640;
+  }
+
+  &.dbx-transportchip--str2 {
+    background: #005ca9;
+  }
+
+  &.dbx-transportchip--str3 {
+    background: #009fe3;
+  }
+
+  &.dbx-transportchip--str4 {
+    background: #e30613;
+  }
+
+  &.dbx-transportchip--str5 {
+    background: #099;
+  }
+
+  &.dbx-transportchip--str6 {
+    background: #fc0;
+    color: #32474f;
+  }
+
+  &.dbx-transportchip--str8 {
+    background: #95c11f;
+  }
+
+  &.dbx-transportchip--str10 {
+    background: #312783;
+  }
+
+  &.dbx-transportchip--strn1 {
+    background: #009640;
+  }
+
+  &.dbx-transportchip--strn4 {
+    background: #e30613;
+  }
+
+  &.dbx-transportchip--strn10 {
+    background: #0075bf;
+  }
+
+  &.dbx-transportchip--bus20,
+  &.dbx-transportchip--bus29,
+  &.dbx-transportchip--bus31,
+  &.dbx-transportchip--bus52,
+  &.dbx-transportchip--bus65,
+  &.dbx-transportchip--bus66,
+  &.dbx-transportchip--bus80,
+  &.dbx-transportchip--busn7 {
+    background: #95c11f;
+  }
+
+  &.dbx-transportchip--bus21,
+  &.dbx-transportchip--bus61,
+  &.dbx-transportchip--bus91,
+  &.dbx-transportchip--bus92,
+  &.dbx-transportchip--busn6 {
+    background: #009fe3;
+  }
+
+  &.dbx-transportchip--bus22,
+  &.dbx-transportchip--busn94 {
+    background: #a69dcd;
+  }
+
+  &.dbx-transportchip--bus24,
+  &.dbx-transportchip--bus37,
+  &.dbx-transportchip--bus96 {
+    background: #951b81;
+  }
+
+  &.dbx-transportchip--bus25,
+  &.dbx-transportchip--bus62,
+  &.dbx-transportchip--bus81,
+  &.dbx-transportchip--bus98 {
+    background: #009640;
+  }
+
+  &.dbx-transportchip--bus26,
+  &.dbx-transportchip--bus40,
+  &.dbx-transportchip--bus41,
+  &.dbx-transportchip--bus94 {
+    background: #e30613;
+  }
+
+  &.dbx-transportchip--bus27,
+  &.dbx-transportchip--bus44,
+  &.dbx-transportchip--bus57,
+  &.dbx-transportchip--bus58,
+  &.dbx-transportchip--bus82,
+  &.dbx-transportchip--bus95,
+  &.dbx-transportchip--busn5 {
+    background: #ef7d00;
+  }
+
+  &.dbx-transportchip--bus28,
+  &.dbx-transportchip--bus33,
+  &.dbx-transportchip--bus34,
+  &.dbx-transportchip--bus38,
+  &.dbx-transportchip--bus39,
+  &.dbx-transportchip--bus42,
+  &.dbx-transportchip--bus55,
+  &.dbx-transportchip--bus63,
+  &.dbx-transportchip--bus93,
+  &.dbx-transportchip--busn9 {
+    background: #fc0;
+    color: #32474f;
+  }
+
+  &.dbx-transportchip--bus90 {
+    background: #312783;
+  }
+
+  &.dbx-transportchip--busn3 {
+    background: #fb3099;
+  }
+}
+
+.dbx-transportchip--nordwestbahn {
+  &.dbx-transportchip--suburban {
+    @include dbx-transportchip-default-border-radius;
+  }
+
+  &.dbx-transportchip--nwbrs1 {
+    background: #00468e;
+  }
+
+  &.dbx-transportchip--nwbrs2 {
+    background: #ec9127;
+  }
+
+  &.dbx-transportchip--nwbrs3 {
+    background: #94c12f;
+  }
+
+  &.dbx-transportchip--nwbrs4 {
+    background: #e30513;
+  }
+}
+
 .dbx-transportchip--canceled {
   .dbx-transportchip__line {
     @include dbx-transportchip-border(2px, dbx-palette-color('coolgray200'));

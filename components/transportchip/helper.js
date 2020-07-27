@@ -41,6 +41,8 @@ export const styles = {
   rnv: { products: [products.TRAM], zipCodes: /^6[789]/ },
   vgn: { products: [products.SUBWAY, products.TRAM, products.BUS], zipCodes: /^9[012]/ },
   kvb: { products: [products.TRAM, products.BUS], zipCodes: /^5[013]/ },
+  bsag: { products: [products.TRAM, products.BUS], zipcodes: /^28/ },
+  nordwestbahn: { products: [products.SUBURBAN], zipcodes: /^2[78]/ },
 };
 
 const autoProducts = {
