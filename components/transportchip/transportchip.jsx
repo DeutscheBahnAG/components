@@ -30,13 +30,13 @@ const Transportchip = ({
   className,
   href,
   onClick,
-  zipcode,
+  zipCode,
   canceled,
   ...otherProps
 }) => {
   const displayProduct = (product || findProduct(name) || 'unkown').toLowerCase();
   const lineNumber = sanitizeLineNumber(name);
-  const detectedStyle = style || findStyle({ product, zipcode, lineNumber });
+  const detectedStyle = style || findStyle({ product, zipCode, lineNumber });
   const specialProduct =
     specialProducts[detectedStyle] && specialProducts[detectedStyle](product, lineNumber);
   const matches = lineNumber && lineNumber.match(/(.*[A-Z]) ?(\d.*)/);
@@ -93,7 +93,7 @@ Transportchip.propTypes = {
   /** Optional click handler (will create a <button>) */
   onClick: PropTypes.func,
   /** Optional zip code to detect regional styles */
-  zipcode: PropTypes.string,
+  zipCode: PropTypes.string,
   /** Show trip as canceled */
   canceled: PropTypes.bool,
 };
@@ -104,7 +104,7 @@ Transportchip.defaultProps = {
   style: null,
   href: null,
   onClick: null,
-  zipcode: '',
+  zipCode: '',
   canceled: false,
 };
 

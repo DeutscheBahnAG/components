@@ -19,28 +19,28 @@ export const products = {
 };
 
 export const styles = {
-  'sbahn-mitteldeutschland': { products: [products.SUBURBAN], zipcodes: /^(0[3467]|149)/ },
-  'sbahn-berlin': { products: [products.SUBURBAN], zipcodes: /^1([012356]|4[1345])/ },
-  'sbahn-hamburg': { products: [products.SUBURBAN], zipcodes: /^2[02]|2161/ },
-  'sbahn-rheinmain': { products: [products.SUBURBAN], zipcodes: /^(55|6[01345])/ },
-  'sbahn-rheinneckar': { products: [products.SUBURBAN], zipcodes: /^(6[6789])/ },
-  'sbahn-rheinruhrkoeln': { products: [products.SUBURBAN], zipcodes: /^(4|5[0123789])/ },
-  'sbahn-muenchen': { products: [products.SUBURBAN], zipcodes: /^(8[0125])/ },
-  'sbahn-nuernberg': { products: [products.SUBURBAN], zipcodes: /^(9[012])/ },
-  akn: { products: [products.REGIONAL], zipcodes: /^(2[0245])/ },
+  'sbahn-mitteldeutschland': { products: [products.SUBURBAN], zipCodes: /^(0[3467]|149)/ },
+  'sbahn-berlin': { products: [products.SUBURBAN], zipCodes: /^1([012356]|4[1345])/ },
+  'sbahn-hamburg': { products: [products.SUBURBAN], zipCodes: /^2[02]|2161/ },
+  'sbahn-rheinmain': { products: [products.SUBURBAN], zipCodes: /^(55|6[01345])/ },
+  'sbahn-rheinneckar': { products: [products.SUBURBAN], zipCodes: /^(6[6789])/ },
+  'sbahn-rheinruhrkoeln': { products: [products.SUBURBAN], zipCodes: /^(4|5[0123789])/ },
+  'sbahn-muenchen': { products: [products.SUBURBAN], zipCodes: /^(8[0125])/ },
+  'sbahn-nuernberg': { products: [products.SUBURBAN], zipCodes: /^(9[012])/ },
+  akn: { products: [products.REGIONAL], zipCodes: /^(2[0245])/ },
   bvg: {
     products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY],
-    zipcodes: /^1[0-3]|141/,
+    zipCodes: /^1[0-3]|141/,
   },
   hochbahn: {
     products: [products.SUBWAY, products.TRAM, products.BUS, products.FERRY, products.TAXI],
-    zipcodes: /^2[02]/,
+    zipCodes: /^2[02]/,
   },
-  mvg: { products: [products.SUBWAY, products.TRAM, products.BUS], zipcodes: /^8[0125]/ },
-  vgf: { products: [products.SUBWAY, products.TRAM, products.BUS], zipcodes: /^6[05]/ },
-  rnv: { products: [products.TRAM], zipcodes: /^6[789]/ },
-  vgn: { products: [products.SUBWAY, products.TRAM, products.BUS], zipcodes: /^9[012]/ },
-  kvb: { products: [products.TRAM, products.BUS], zipcodes: /^5[013]/ },
+  mvg: { products: [products.SUBWAY, products.TRAM, products.BUS], zipCodes: /^8[0125]/ },
+  vgf: { products: [products.SUBWAY, products.TRAM, products.BUS], zipCodes: /^6[05]/ },
+  rnv: { products: [products.TRAM], zipCodes: /^6[789]/ },
+  vgn: { products: [products.SUBWAY, products.TRAM, products.BUS], zipCodes: /^9[012]/ },
+  kvb: { products: [products.TRAM, products.BUS], zipCodes: /^5[013]/ },
 };
 
 const autoProducts = {
@@ -61,11 +61,11 @@ export const findProduct = lineNumber => {
   return Object.keys(autoProducts).find(key => lineNumber.match(autoProducts[key]));
 };
 
-export const findStyle = ({ product, zipcode, lineNumber }) => {
+export const findStyle = ({ product, zipCode, lineNumber }) => {
   const productKey = product || findProduct(lineNumber);
   return Object.keys(styles).find(key => {
-    const { products: productKeys, zipcodes } = styles[key];
-    return productKeys.includes(productKey) && zipcode.match(zipcodes);
+    const { products: productKeys, zipCodes } = styles[key];
+    return productKeys.includes(productKey) && zipCode.match(zipCodes);
   });
 };
 

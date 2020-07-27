@@ -2,13 +2,13 @@ import { findStyle, findProduct, products } from './helper';
 
 describe('Transportchip helper', () => {
   it('should find styles for S-Bahn Berlin in Berlin', () => {
-    expect(findStyle({ product: products.SUBURBAN, zipcode: '10115' })).toEqual('sbahn-berlin');
+    expect(findStyle({ product: products.SUBURBAN, zipCode: '10115' })).toEqual('sbahn-berlin');
   });
   it('should find styles for S-Bahn Berlin in Potsdam', () => {
-    expect(findStyle({ product: products.SUBURBAN, zipcode: '14473' })).toEqual('sbahn-berlin');
+    expect(findStyle({ product: products.SUBURBAN, zipCode: '14473' })).toEqual('sbahn-berlin');
   });
   it('should not conflict 14* zip codes with S-Bahn Berlin and Mitteldeutschland', () => {
-    expect(findStyle({ product: products.SUBURBAN, zipcode: '14913' })).toEqual(
+    expect(findStyle({ product: products.SUBURBAN, zipCode: '14913' })).toEqual(
       'sbahn-mitteldeutschland'
     );
   });
