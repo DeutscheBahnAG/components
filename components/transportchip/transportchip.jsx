@@ -34,7 +34,7 @@ const Transportchip = ({
   canceled,
   ...otherProps
 }) => {
-  const displayProduct = (product || findProduct(name) || 'unkown').toLowerCase();
+  const displayProduct = (product || findProduct(name) || 'unknown').toLowerCase();
   const lineNumber = sanitizeLineNumber(name);
   const detectedStyle = style || findStyle({ product, zipCode, lineNumber });
   const specialProduct =
