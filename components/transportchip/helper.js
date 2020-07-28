@@ -72,7 +72,7 @@ export const findStyle = ({ product, zipCode, lineNumber }) => {
 };
 
 export const sanitizeLineNumber = lineNumber =>
-  lineNumber.replace(/str ?|bus ?|fäh ?|rnv ?|akn ?|stb ?|ast ?/i, '');
+  lineNumber.replace(/str ?|bus ?|fäh ?|rnv ?|akn ?|stb ?|ast ? |nwb ?/i, '');
 
 export const lineNumberClass = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
 
