@@ -462,17 +462,17 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Bremen', 
   <div className="sg-components-transportationchip-list">
     <p>
       {['NWB RS1', 'NWB RS2', 'NWB RS3', 'NWB RS4'].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.SUBURBAN} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.SUBURBAN} name={name} />
       ))}
     </p>
     <p>
       {['STR 1', 'STR 2', 'STR 3', 'STR 4', 'STR 5', 'STR 6', 'STR 8', 'STR 10'].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.TRAM} name={name} />
       ))}
     </p>
     <p>
       {['STR N1', 'STR N4', 'STR N10'].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.TRAM} name={name} />
       ))}
     </p>
     <p>
@@ -517,17 +517,17 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Bremen', 
         'BUS 96',
         'BUS 98',
       ].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
       ))}
     </p>
     <p>
       {['BUS N3', 'BUS N5', 'BUS N6', 'BUS N7', 'BUS N9', 'BUS N94'].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
       ))}
     </p>
     <p>
       {['BUS 101', 'BUS 102', 'BUS 120'].map(name => (
-        <Transportchip zipcode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
       ))}
     </p>
   </div>
