@@ -11,6 +11,6 @@
     "@bahn-x/dbx-tokens": ">=0.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5"
+    "@babel/core": "^7.11.1"
   }
 }

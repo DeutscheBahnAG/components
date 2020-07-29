@@ -7,18 +7,22 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn'
 
 import dbxTheme from './theme';
 
-import { ExampleChildren } from '@bahn-x/dbx-modal/stories/shared.jsx'
+import { ExampleChildren } from '@bahn-x/dbx-web/modal/stories/shared.jsx'
 
 import '../sass/build.scss';
 
 // load all files in /components that end with .stories.js(x)
 const foundation = require.context('../foundation', false, /\.stories\.jsx?$/);
-const components = require.context('../components', true, /\/\w+\/\w+\.stories\.jsx?$/);
+const web = require.context('../components/web', true, /\/\w+\/\w+\.stories\.jsx?$/);
+const webExtra = require.context('../components/web-extra', true, /\/\w+\/\w+\.stories\.jsx?$/);
+const icons = require.context('../components/icons', true, /\/\w+\/\w+\.stories\.jsx?$/);
 const email = require.context('../email/src', true, /\.stories\.jsx$/);
 
 function loadStories() {
   foundation.keys().forEach((filename) => foundation(filename));
-  components.keys().forEach((filename) => components(filename));
+  web.keys().forEach((filename) => web(filename));
+  webExtra.keys().forEach((filename) => webExtra(filename));
+  icons.keys().forEach((filename) => icons(filename));
   email.keys().forEach((filename) => email(filename));
 }
 

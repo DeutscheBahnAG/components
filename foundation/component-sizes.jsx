@@ -1,8 +1,8 @@
 import React from 'react';
 import dbxConstants from './dbx-constants';
-import Logo from '../components/logo';
-import Button from '../components/button';
-import Textfield from '../components/textfield';
+import Logo from '../components/web/logo';
+import Button from '../components/web/button';
+import Textfield from '../components/web/textfield';
 
 const { tokens } = dbxConstants;
 

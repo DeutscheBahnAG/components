@@ -33,11 +33,16 @@ If you don’t publish your component library via `npm`, you can [link to the Gi
 
 ### Adding a New Component
 
-All components should be placed in the folder `/components` in their own subfolder.
+This is a multi-package repository. Each component library is a separate Node package with it's own `package.json`. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces).
+
+- `dbx-web`: Core components, for general use. They reside in `./components/web`.
+- `dbx-web-extra`: Additional components for edge use cases. They reside in `./components/web-extra`.
+- `dbx-icons`: Icon components. They reside in `./components/icons`.
+
+Components should be placed in the appropriate package folder, in their own subfolder.
 
 A component typically consists of:
 
-- A `package.json` – this is a multi-package repository. Each component is a separate Node package. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces).
 - A `index.js` re-exporting the default export of `component-name.jsx`.
 - A `component-name.jsx` file containing the React component as a default export. Be sure to include [prop types and default props](https://reactjs.org/docs/typechecking-with-proptypes.html) for the component.
 - A `component-name.stories.jsx` file containing the [stories](https://storybook.js.org/basics/writing-stories/) for this component. A story reflects a variant of the component that is documented on an individual page in Storybook.
@@ -55,13 +60,16 @@ In order to import your React component easily in other repositories, add it as 
 In your target application, you can then import the component like this:
 
 ```javascript
-import { Button } from '@bahn-x/dbx';
+import { Button } from '@bahn-x/dbx-web';
 ```
 
 ### Available Tasks
 
 - `yarn storybook`: Run local server with the Storybook component library
-- `yarn build`: Transpiles component library to `./dist` to be exported via NPM
+- `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
+  - `yarn build:web`: Transpiles just the `@bahn-x/dbx-web` package to `./dist/web`.
+  - `yarn build:web-extra`: Transpiles just the `@bahn-x/dbx-web-extra` package to `./dist/web-extra`.
+  - `yarn build:icons`: Transpiles just the `@bahn-x/dbx-icons` package to `./dist/icons`.
 - `yarn build:storybook`: Build static production version of component library to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
 - `yarn build:docs`: Lints and tests components and then builds Storybook and Sassdoc pages to `./build`
