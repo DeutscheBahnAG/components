@@ -9,7 +9,7 @@ const Time = ({ dateTime, className, ...props }) => {
   const date = new Date(parseTime(dateTime));
   return (
     <time className={clsx('dbx-time', className)} dateTime={dateTime} {...props}>
-      {formatNumber(date.getHours())}:{formatNumber(date.getMinutes())}
+      {`${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}`}
     </time>
   );
 };
