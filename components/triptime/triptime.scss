@@ -1,11 +1,3 @@
-.dbx-triptime--slightly-delayed {
-  color: dbx-palette-color('lightgreen600');
-}
-
-.dbx-triptime--delayed {
-  color: dbx-palette-color('red500');
-}
-
 .dbx-triptime {
   display: inline-flex;
   flex-direction: column;
@@ -18,4 +10,20 @@
 
 .dbx-triptime--bold {
   font-weight: dbx-font-weight('copy', 'bold');
+}
+
+.dbx-triptime--slightly-delayed {
+  color: #467a18;
+
+  &.dbx-triptime--bold {
+    color: #508b1b;
+  }
+}
+
+.dbx-triptime--delayed {
+  color: #db0014;
+
+  &.dbx-triptime--bold {
+    color: #ec0016;
+  }
 }
