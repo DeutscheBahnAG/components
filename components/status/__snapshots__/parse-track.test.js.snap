@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Parse track helper Fragment should parse the fragment with space 1`] = `
+Object {
+  "fragment": "b",
+  "fullName": "234 b",
+  "number": "234",
+  "prefix": undefined,
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
+
+exports[`Parse track helper Fragment should parse the fragment without space 1`] = `
+Object {
+  "fragment": "a",
+  "fullName": "1a",
+  "number": "1",
+  "prefix": undefined,
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
+
+exports[`Parse track helper Prefix should parse the case of Flughafen Frankfurt Fern 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "Fern 1",
+  "number": "1",
+  "prefix": "Fern",
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
+
+exports[`Parse track helper Prefix should parse the case of Flughafen Frankfurt Regio 1`] = `
+Object {
+  "fragment": "a",
+  "fullName": "Regio 23a",
+  "number": "23",
+  "prefix": "Regio",
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
+
+exports[`Parse track helper Prefix should parse with dash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "S-Bahn 101 A-B",
+  "number": "101",
+  "prefix": "S-Bahn",
+  "sectionEnd": "B",
+  "sectionStart": "A",
+}
+`;
+
+exports[`Parse track helper Section end should parse with spaces and dash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "23 B - E",
+  "number": "23",
+  "prefix": undefined,
+  "sectionEnd": "E",
+  "sectionStart": "B",
+}
+`;
+
+exports[`Parse track helper Section end should parse with spaces and mdash 1`] = `
+Object {
+  "fragment": "a",
+  "fullName": "7a H - I",
+  "number": "7",
+  "prefix": undefined,
+  "sectionEnd": "I",
+  "sectionStart": "H",
+}
+`;
+
+exports[`Parse track helper Section end should parse with spaces and ndash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "456 C - G",
+  "number": "456",
+  "prefix": undefined,
+  "sectionEnd": "G",
+  "sectionStart": "C",
+}
+`;
+
+exports[`Parse track helper Section end should parse without spaces and dash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "1 A-D",
+  "number": "1",
+  "prefix": undefined,
+  "sectionEnd": "D",
+  "sectionStart": "A",
+}
+`;
+
+exports[`Parse track helper Section start should parse with spaces and dash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "23 B - E",
+  "number": "23",
+  "prefix": undefined,
+  "sectionEnd": "E",
+  "sectionStart": "B",
+}
+`;
+
+exports[`Parse track helper Section start should parse with spaces and mdash 1`] = `
+Object {
+  "fragment": "a",
+  "fullName": "7a H - I",
+  "number": "7",
+  "prefix": undefined,
+  "sectionEnd": "I",
+  "sectionStart": "H",
+}
+`;
+
+exports[`Parse track helper Section start should parse with spaces and ndash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "456 C - G",
+  "number": "456",
+  "prefix": undefined,
+  "sectionEnd": "G",
+  "sectionStart": "C",
+}
+`;
+
+exports[`Parse track helper Section start should parse without spaces and dash 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "1 A-D",
+  "number": "1",
+  "prefix": undefined,
+  "sectionEnd": "D",
+  "sectionStart": "A",
+}
+`;
+
+exports[`Parse track helper Track number should parse multiple digits 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "234",
+  "number": "234",
+  "prefix": undefined,
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
+
+exports[`Parse track helper Track number should parse one digit 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "1",
+  "number": "1",
+  "prefix": undefined,
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;
