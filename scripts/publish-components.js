@@ -17,7 +17,7 @@ const semverIncrement = require('./lib/semver-increment');
 function removeChalkStyles(string) {
   return string.replace(
     // eslint-disable-next-line no-control-regex
-    /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+    /[\u001B\u009B][[()#;?]*(?:\d{1,4}(?:;\d{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
     ''
   );
 }
@@ -46,8 +46,8 @@ async function getCommits(packageName, location) {
 }
 
 function publishPackage(packageName, location) {
-  return new Promise(async (resolve, reject) => {
-    exec(`npm publish`, { cwd: location }, error => {
+  return new Promise((resolve, reject) => {
+    exec('npm publish', { cwd: location }, error => {
       if (error) {
         if (error.message.match(/EPUBLISHCONFLICT/)) {
           reject(new Error('Version already published. Please change version manually.'));
@@ -76,9 +76,9 @@ async function updateVersion(packageName, location) {
     commits.forEach(commit => {
       if (commit.body.match(/BREAKING CHANGE:/)) {
         change = 'breaking';
-      } else if (commit.message.match(/^feat/) && change !== 'breaking') {
+      } else if (commit.message.startsWith('feat') && change !== 'breaking') {
         change = 'feature';
-      } else if (commit.message.match(/^fix/) && change === null) {
+      } else if (commit.message.startsWith('fix') && change === null) {
         change = 'patch';
       }
     });
@@ -178,10 +178,10 @@ async function processPackage(name, location, prefixText) {
     spinner.text = `${formattedName}Published ${versionString}`;
     spinner.succeed();
     return [location, `${name}@${versionString}`];
-  } catch (error) {
-    spinner.text = `${formattedName}${error.message}`;
+  } catch (err) {
+    spinner.text = `${formattedName}${err.message}`;
     spinner.fail();
-    throw error;
+    throw err;
   }
 }
 
@@ -215,8 +215,8 @@ function getWorkspaces() {
           const { data } = JSON.parse(result);
           const workspaces = JSON.parse(data);
           resolve(workspaces);
-        } catch (parseError) {
-          reject(parseError);
+        } catch (err) {
+          reject(err);
         }
       }
     });
@@ -226,7 +226,7 @@ function getWorkspaces() {
 async function main() {
   console.log(chalk.bold(chalk.white('Publishing DBX Components\n')));
   let spinner = ora({
-    text: `Looking up packages (workspaces)\n`,
+    text: 'Looking up packages (workspaces)\n',
     indent: 7,
   }).start();
   try {
@@ -253,14 +253,14 @@ async function main() {
           );
         }
       }
-    } catch (packageError) {
+    } catch (err) {
       process.exit(1);
     }
 
     console.log(''); // Visually separate individual steps (per component) from global steps
 
     spinner = ora({
-      text: `Creating release commit\n`,
+      text: 'Creating release commit\n',
       indent,
     }).start();
     packages = packages.filter(p => p !== null);
@@ -282,17 +282,17 @@ async function main() {
         console.log(
           `\n${success} Published ${packages.length} package${packages.length === 1 ? '' : 's'}.`
         );
-      } catch (error) {
-        spinner.text = `Error creating release commit: ${error.message}`;
+      } catch (err) {
+        spinner.text = `Error creating release commit: ${err.message}`;
         spinner.fail();
       }
     } else {
       spinner.text = 'No release commit created as no packages was published.';
       spinner.info();
     }
-  } catch (error) {
+  } catch (err) {
     spinner.fail();
-    console.error(error.message);
+    console.error(err.message);
     process.exit(1);
   }
 }
