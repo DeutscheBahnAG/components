@@ -28,7 +28,7 @@ module.exports = [
       },
       {
         name: 'User input',
-        components: web(['textfield', 'checkbox', 'select']),
+        components: web(['textfield', 'passwordfield', 'checkbox', 'select']),
       },
       {
         name: 'Travel',

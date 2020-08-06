@@ -6,7 +6,7 @@ import Button from '../button';
 import Textfield from './textfield-doc';
 import textfieldReadme from './README.md';
 
-storiesOf('Components / Textfield', module)
+storiesOf('Components / Textfield, Passwordfield', module)
   .addDecorator(withReadme(textfieldReadme))
   .add('Simple Textfield', () => <Textfield value="Simple Textfield" />)
   .add('Textfield with placeholder', () => <Textfield placeholder="Placeholder text" />)
@@ -72,7 +72,6 @@ storiesOf('Components / Textfield', module)
   .add('Email address', () => <Textfield value="info@bahn.de" type="email" />)
   .add('Phone number', () => <Textfield value="0180 6 996633" type="tel" />)
   .add('URL', () => <Textfield value="https://www.bahn.de" type="url" />)
-  .add('Password', () => <Textfield value="secret" type="password" />)
   .add('Size S', () => (
     <Textfield size={Textfield.sizes.S} value="123" type="number" prefix="@" unit="€" />
   ))

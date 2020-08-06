@@ -148,11 +148,7 @@ move on top of the input in a beautiful transition.
 <Textfield inlineLabel="Username" value="lea151" />
 ```
 
-```jsx
-<Textfield inlineLabel="Password" type="password" />
-```
-
-You can use inline Textfields in combination with other attributes. The DBX Textfield takes care of the positioning and smooth transitions on focus:
+You can use inline Textfields in combination with other attributes:
 
 ```jsx
 <Textfield prefix="@" inlineLabel="Twitter account" />
