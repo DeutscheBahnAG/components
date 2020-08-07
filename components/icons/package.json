@@ -24,5 +24,6 @@
     "@babel/core": "^7.11.1",
     "@svgr/cli": "^5.4.0",
     "camelcase": "^6.0.0"
-  }
+  },
+  "sideEffects": false
 }

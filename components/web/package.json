@@ -23,5 +23,13 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  }
+  },
+  "sideEffects": [
+    "./button/*",
+    "./modal/*",
+    "./privacyoptions/*",
+    "./pulse/*",
+    "./triptime/*",
+    "./triptimespan/*"
+  ]
 }
