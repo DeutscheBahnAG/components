@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-icons",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "DBX Icon component for React",
   "main": "index.js",
   "license": "MIT",
