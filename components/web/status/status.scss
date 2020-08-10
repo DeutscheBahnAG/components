@@ -1,0 +1,47 @@
+.dbx-status {
+  @include dbx-text-style('copy', 's');
+  display: inline-flex;
+  color: dbx-text-color('primary');
+
+  svg {
+    $icon-safe-area: 2px;
+    flex-shrink: 0;
+    height: dbx-icon-size('s');
+    margin: 0 dbx-spacing('xs') 0 #{-$icon-safe-area};
+    vertical-align: -5px;
+    width: dbx-icon-size('s');
+  }
+
+  path {
+    fill: transparent;
+    stroke: dbx-palette-color('white');
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  circle {
+    fill: dbx-palette-color('coolgray600');
+  }
+
+  circle + circle {
+    fill: dbx-palette-color('white');
+  }
+}
+
+.dbx-status--success circle {
+  fill: dbx-color('success');
+}
+
+.dbx-status--error,
+.dbx-status--fatal {
+  color: #db0014;
+
+  circle {
+    fill: dbx-palette-color('red500');
+  }
+}
+
+.dbx-status__message {
+  display: inline-block;
+}
