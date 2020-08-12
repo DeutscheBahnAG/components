@@ -32,7 +32,7 @@ const kindValues = {
   },
 };
 
-const makeModalActionButton = variant => {
+const makeModalActionButton = (variant) => {
   const ModalButton = ({ className, ...otherProps }) => (
     <Button
       {...otherProps}
@@ -42,6 +42,7 @@ const makeModalActionButton = variant => {
   );
   // eslint-disable-next-line react/forbid-foreign-prop-types
   const { variant: variantPropType, ...modalButtonPropTypes } = Button.propTypes;
+  // @TODO Use the enums here after migrating this to TS as well
   const { variant: variantDefaultProp, ...modalButtonDefaultProps } = Button.defaultProps;
   ModalButton.propTypes = modalButtonPropTypes;
   ModalButton.defaultProps = modalButtonDefaultProps;
@@ -109,7 +110,7 @@ const Modal = ({
   const getPortalParentNode = () => document.getElementById(portalId) || document.body;
 
   const setElementFocus = useCallback(
-    node => {
+    (node) => {
       if (node && autoFocus) {
         const focusElement = node.querySelector('[data-autofocus]');
         if (focusElement) {

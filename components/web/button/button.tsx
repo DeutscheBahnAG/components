@@ -1,74 +1,125 @@
+/* eslint-disable react/no-did-update-set-state, no-unused-vars, react/require-default-props */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import Loadingindicator from '../loadingindicator';
+import Loadingindicator, { LoadingIndicatorSizes } from '../loadingindicator';
 
-const Screenreader = ({ children }) => <span aria-hidden="false">{children}</span>;
+const Screenreader: React.FunctionComponent = ({ children }) => (
+  <span aria-hidden="false">{children}</span>
+);
 Screenreader.propTypes = { children: PropTypes.node.isRequired };
 
-/* eslint-disable react/no-did-update-set-state */
+enum ButtonShapes {
+  DEFAULT = 'default',
+  SQUARE = 'square',
+  ROUND = 'round',
+}
 
-const Button = ({
-  type,
-  variant,
-  size,
-  shape,
-  className,
-  fullWidth,
-  loading,
-  disabled,
+enum ButtonSizes {
+  S = 's',
+  M = 'm',
+  L = 'l',
+  XL = 'xl',
+}
+
+enum ButtonTypes {
+  BUTTON = 'button',
+  SUBMIT = 'submit',
+  RESET = 'reset',
+}
+
+enum ButtonVariants {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  SOLID = 'solid',
+  HOVER_ONLY = 'hover-only',
+}
+
+interface ButtonProps {
+  children?: React.ReactNode;
+  className?: string;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  href?: string;
+  icon?: React.ReactNode;
+  loading?: boolean;
+  loadingLabel?: string;
+  shape?: ButtonShapes;
+  size?: ButtonSizes;
+  style?: React.CSSProperties;
+  type?: ButtonTypes;
+  variant?: ButtonVariants;
+}
+
+type ButtonType<P> = React.FunctionComponent<P> & {
+  shapes: typeof ButtonShapes;
+  sizes: typeof ButtonSizes;
+  types: typeof ButtonTypes;
+  variants: typeof ButtonVariants;
+};
+
+const Button: ButtonType<ButtonProps> = ({
   children,
-  loadingLabel,
-  style,
+  className = '',
+  disabled = false,
+  fullWidth = false,
+  // @NOTE The `href` property switches between a `<button>` and `<a>` element. Should be explicit.
   href,
   icon,
+  loading = false,
+  loadingLabel = 'Wird geladen …',
+  shape = ButtonShapes.DEFAULT,
+  size = ButtonSizes.L,
+  style = {},
+  type = ButtonTypes.BUTTON,
+  variant = ButtonVariants.PRIMARY,
   ...otherProps
 }) => {
-  const [minWidth, setMinWidth] = useState(null);
-  const [previousMinWidth, setPreviousMinWidth] = useState(null);
-  const [tooltip, setTooltip] = useState(null);
-  const [ariaLabel, setAriaLabel] = useState(null);
-  const buttonRef = React.createRef();
+  const [minWidth, setMinWidth] = useState<string>();
+  const [previousMinWidth, setPreviousMinWidth] = useState<string>();
+  const [tooltip, setTooltip] = useState<string>();
+  const [ariaLabel, setAriaLabel] = useState<string>();
+  const buttonRef = React.createRef<HTMLAnchorElement | HTMLButtonElement>();
 
   useEffect(() => {
     // if button changed to loading state, set its previous
     // width as minWidth, so that it keeps its size
     if (previousMinWidth && loading) {
       setMinWidth(`${previousMinWidth}px`);
-      setPreviousMinWidth(null);
+      setPreviousMinWidth(undefined);
     }
     // when button leaves loading state, remove minWidth again
     else if (!previousMinWidth && !loading) {
-      setMinWidth(null);
+      setMinWidth(undefined);
       const buttonEl = buttonRef.current;
-      setPreviousMinWidth(buttonEl ? buttonEl.offsetWidth : null);
+      setPreviousMinWidth(buttonEl ? `${buttonEl.offsetWidth}` : undefined);
     }
   }, [loading, buttonRef, previousMinWidth]);
 
   const Element = href ? 'a' : 'button';
-  const loadingindicatorSize = { xl: 'm', l: 's' }[size] || 'xs';
+  const loadingindicatorSize = { xl: 'm', l: 's', m: 'xs', s: 'xs' }[size] as LoadingIndicatorSizes;
 
   useEffect(() => {
     const buttonEl = buttonRef.current;
-    if (buttonEl) {
-      if (shape !== Button.shapes.DEFAULT) {
-        setTooltip(buttonEl.textContent);
-      } else if (loading) {
-        setAriaLabel(loadingLabel);
-      } else {
-        setTooltip(null);
-        setAriaLabel(null);
-      }
+    if (!buttonEl) {
+      return;
+    }
+    if (shape !== Button.shapes.DEFAULT) {
+      setTooltip(buttonEl.textContent || undefined);
+    } else if (loading) {
+      setAriaLabel(loadingLabel);
+    } else {
+      setTooltip(undefined);
+      setAriaLabel(undefined);
     }
   }, [shape, buttonRef, loading, loadingLabel]);
 
   return (
-    // eslint-disable-next-line react/button-has-type
     <Element
       style={{ ...style, minWidth }}
       ref={buttonRef}
-      type={href ? null : type}
+      type={href ? undefined : type}
       href={href}
       disabled={disabled || loading}
       aria-label={ariaLabel}
@@ -92,38 +143,24 @@ const Button = ({
   );
 };
 
-Button.types = {
-  BUTTON: 'button',
-  SUBMIT: 'submit',
-  RESET: 'reset',
-};
+Button.shapes = ButtonShapes;
+Button.sizes = ButtonSizes;
+Button.types = ButtonTypes;
+Button.variants = ButtonVariants;
 
-Button.variants = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  SOLID: 'solid',
-  HOVER_ONLY: 'hover-only',
-};
-
-Button.sizes = {
-  S: 's',
-  M: 'm',
-  L: 'l',
-  XL: 'xl',
-};
-
-Button.shapes = {
-  DEFAULT: 'default',
-  SQUARE: 'square',
-  ROUND: 'round',
-};
+interface ValidateVariantCombinationsArguments {
+  icon: React.ReactNode;
+  shape: ButtonShapes;
+  size: ButtonSizes;
+  variant: ButtonVariants;
+}
 
 export const validateVariantCombinations = (
-  { size, variant, icon, shape },
-  propName,
-  componentName
+  { icon, shape, size, variant }: ValidateVariantCombinationsArguments,
+  propName: string,
+  componentName: string
 ) => {
-  const variants = Object.keys(Button.variants).map(k => Button.variants[k]);
+  const variants = Object.values(ButtonVariants);
   if (!variants.includes(variant)) {
     return new Error(`The \`variant\` must be in [${variants.join(', ')}] for a ${componentName}.`);
   }
@@ -157,13 +194,13 @@ export const validateVariantCombinations = (
 };
 
 Button.propTypes = {
-  type: PropTypes.oneOf(Object.keys(Button.types).map(k => Button.types[k])),
+  type: PropTypes.oneOf(Object.values(Button.types)),
   /** the appearance of the button */
   variant: validateVariantCombinations,
   /** the size of the button */
-  size: PropTypes.oneOf(Object.keys(Button.sizes).map(k => Button.sizes[k])),
+  size: PropTypes.oneOf(Object.values(Button.sizes)),
   /** the shape of the button */
-  shape: PropTypes.oneOf(Object.keys(Button.shapes).map(k => Button.shapes[k])),
+  shape: PropTypes.oneOf(Object.values(Button.shapes)),
   /** when true, button will be disabled */
   disabled: PropTypes.bool,
   /** whether the loading state is enabled */
@@ -184,6 +221,7 @@ Button.propTypes = {
   href: PropTypes.string,
 };
 
+// @TODO Remove no other component requires this
 Button.defaultProps = {
   type: Button.types.BUTTON,
   variant: Button.variants.PRIMARY,
@@ -195,9 +233,9 @@ Button.defaultProps = {
   fullWidth: false,
   loadingLabel: 'Wird geladen …',
   style: {},
-  children: null,
-  icon: null,
-  href: null,
+  children: undefined,
+  icon: undefined,
+  href: undefined,
 };
 
 export default Button;

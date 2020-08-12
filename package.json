@@ -7,7 +7,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "dev": "yarn storybook",
-    "test": "jest",
+    "test": "CI=true jest --ci",
     "test:coverage": "jest --coverage",
     "update-snapshots": "jest --updateSnapshot",
     "lint": "yarn lint:js && yarn lint:styles",
