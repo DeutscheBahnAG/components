@@ -333,20 +333,34 @@ storiesOf('Components / Button', module)
     </Button>
   ))
   .add('Primary Loading Size S', () => (
-    <Button size={Button.sizes.S} loading onClick={action('clicked')} />
+    <Button size={Button.sizes.S} loading onClick={action('clicked')}>
+      Loading
+    </Button>
   ))
   .add('Primary Loading Size M', () => (
-    <Button size={Button.sizes.M} loading onClick={action('clicked')} />
+    <Button size={Button.sizes.M} loading onClick={action('clicked')}>
+      Loading
+    </Button>
   ))
   .add('Primary Loading Size L', () => (
-    <Button size={Button.sizes.L} loading onClick={action('clicked')} />
+    <Button size={Button.sizes.L} loading onClick={action('clicked')}>
+      Loading
+    </Button>
   ))
   .add('Primary Loading Size XL', () => (
-    <Button size={Button.sizes.XL} loading onClick={action('clicked')} />
+    <Button size={Button.sizes.XL} loading onClick={action('clicked')}>
+      Loading
+    </Button>
   ))
-  .add('Primary Loading full width', () => <Button fullWidth loading onClick={action('clicked')} />)
+  .add('Primary Loading full width', () => (
+    <Button fullWidth loading onClick={action('clicked')}>
+      Loading
+    </Button>
+  ))
   .add('Secondary Loading', () => (
-    <Button variant={Button.variants.SECONDARY} loading onClick={action('clicked')} />
+    <Button variant={Button.variants.SECONDARY} loading onClick={action('clicked')}>
+      Loading
+    </Button>
   ))
   .add('Disabled Loading', () => <Button disabled loading onClick={action('clicked')} />)
   .add('Toggle Loading', () => <ToggleButtonLoadingStateExample />)

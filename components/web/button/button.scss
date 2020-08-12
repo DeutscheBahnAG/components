@@ -41,16 +41,10 @@
     cursor: default;
   }
 
+  &:hover,
   &.dbx-button--loading,
-  &.dbx-button--loading:hover,
   &.dbx-button--loading:active,
   &.dbx-button--loading:focus {
-    color: $text-color;
-    background-color: $bg-color;
-    border-color: $border-color;
-  }
-
-  &:hover {
     background-color: $bg-color--hover;
     color: $text-color--hover;
     border-color: $border-color--hover;
