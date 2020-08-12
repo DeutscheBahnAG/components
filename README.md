@@ -1,6 +1,7 @@
-# webDBX
+# BahnX React components
 
-DBX, the BahnX design system, implemented for the web
+React components for building websites and applications fast in the look
+and feel of Deutsche Bahn AG.
 
 ## How to Install
 

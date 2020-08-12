@@ -2,7 +2,7 @@
   "name": "@bahn-x/dbx",
   "private": true,
   "version": "0.5.6",
-  "description": "DBX, the Bahn X design system, implemented for the web",
+  "description": "BahnX React components for building websites and applications fast in the look and feel of Deutsche Bahn AG",
   "main": "dist/components/index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006",
