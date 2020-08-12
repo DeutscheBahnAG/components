@@ -178,7 +178,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-components-transportationchip-list {
-  line-height: 2em;
+  line-height: 32px !important;
 
   & + & {
     margin-top: dbx-spacing('xl');
