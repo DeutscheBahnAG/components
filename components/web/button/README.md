@@ -4,8 +4,8 @@
 import { Button } from '@bahn-x/dbx-web';
 ```
 
-```jsx +jsxpreview +highlight="Button"
-<Button>Button</Button>
+```jsx
+<Button onClick={alert}>Button</Button>
 ```
 
 ## Variants
@@ -14,7 +14,7 @@ import { Button } from '@bahn-x/dbx-web';
 
 Primary Buttons must appear one time only. Primary is the default button style.
 
-```jsx +jsxpreview .right
+```jsx
 <Button>Button</Button>
 ```
 
@@ -22,99 +22,121 @@ Primary Buttons must appear one time only. Primary is the default button style.
 
 Secondary Buttons should appear next to Primary Buttons.
 
-```jsx +jsxpreview +highlight=/variant=".+?"/ .right
-<Button variant="secondary">Button</Button>
+```jsx
+<Button variant={Button.variants.SECONDARY}>Button</Button>
 ```
 
 ### Solid
 
 Solid Buttons can appear on other places of a website like inline actions (table row action, choose file, …).
 
-```jsx +jsxpreview +highlight=/variant=".+?"/ .right
-<Button variant="solid">Button</Button>
+```jsx
+<Button variant={Button.variants.SOLID}>Button</Button>
 ```
 
 ### Hover only
 
-Like a Solid Button but with no background by default. This is mostly useful for icons (toggle menu, close dialogue, …).
+Like a Solid Button but with no background by default.
 
-```jsx +jsxpreview +highlight=/variant=".+?"/ .right
-<Button variant="hover-only">Button</Button>
+```jsx
+<Button variant={Button.variants.HOVER_ONLY}>Button</Button>
+```
+
+This is mostly useful for icons (toggle menu, close dialogue, …).
+
+```jsx
+import { NavigationClose } from '@bahn-x/dbx-icons';
+
+<Button
+  variant={Button.variants.HOVER_ONLY}
+  shape={Button.shapes.ROUND}
+  size={Button.sizes.M}
+  icon={<NavigationClose />}
+>
+  Button
+</Button>;
 ```
 
 ## Sizing
 
-```jsx +jsxpreview +highlight=/size=\{.+?\}/ .columns
+```jsx { "props": { "className": "space-inbetween" } }
 <Button size={Button.sizes.S}>Button</Button>
-<Button size={Button.sizes.S} variant="secondary">Button</Button>
-<Button size={Button.sizes.S} variant="solid">Button</Button>
+<Button size={Button.sizes.S} variant={Button.variants.SECONDARY}>Button</Button>
+<Button size={Button.sizes.S} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+```jsx { "props": { "className": "space-inbetween" } }
 <Button size={Button.sizes.M}>Button</Button>
-<Button size={Button.sizes.M} variant="secondary">Button</Button>
-<Button size={Button.sizes.M} variant="solid">Button</Button>
+<Button size={Button.sizes.M} variant={Button.variants.SECONDARY}>Button</Button>
+<Button size={Button.sizes.M} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+```jsx { "props": { "className": "space-inbetween" } }
 <Button size={Button.sizes.L}>Button</Button>
-<Button size={Button.sizes.L} variant="secondary">Button</Button>
-<Button size={Button.sizes.L} variant="solid">Button</Button>
+<Button size={Button.sizes.L} variant={Button.variants.SECONDARY}>Button</Button>
+<Button size={Button.sizes.L} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/size=\{.+?"/\} .columns
+```jsx { "props": { "className": "space-inbetween" } }
 <Button size={Button.sizes.XL}>Button</Button>
-<Button size={Button.sizes.XL} variant="secondary">Button</Button>
+<Button size={Button.sizes.XL} variant={Button.variants.SECONDARY}>Button</Button>
 ```
+
+- Avoid using `primary` and `secondary` Buttons in size `S` and `M`.
+- `solid` Buttons should not be used in size `XL`.
+- An overview with recommendations of sizes in combinations with other properties [can be found in our Storybook](https://dbx-web-components.bahn-x.de/?path=/story/components-button--overview).
 
 ## Icons
 
 Icons can be added as SVG. They must match the [DBX Icon specifications] (24 × 24 px incl. 2 px safe area).
 
-```jsx +jsxpreview +highlight=/icon=[^ ]+?/
-<Button icon={<svg></svg>}>Button</Button>
+```jsx
+import { ActionAdd } from '@bahn-x/dbx-icons';
+<Button icon={<ActionAdd />}>Button</Button>;
 ```
 
 [dbx icon specifications]: https://dbx.bahn-x.de/foundation/icons
 
 ## Shapes
 
-Icon-only Buttons can be either squared or round.
+Icon-only Buttons can be either squared or round. They can be combined with different sizes and variants.
 
-```jsx +jsxpreview +shape=/icon=".+?"/
-<Button icon={<svg></svg>} shape="square">
+```jsx
+import { ActionAdd } from '@bahn-x/dbx-icons';
+<Button icon={<ActionAdd />} shape={Button.shapes.SQUARE}>
   Button
-</Button>
+</Button>;
 ```
 
-```jsx +jsxpreview +shape=/icon=".+?"/
-<Button icon={<svg></svg>} shape="round">
+```jsx
+import { ActionAdd } from '@bahn-x/dbx-icons';
+<Button icon={<ActionAdd />} shape={Button.shapes.ROUND}>
   Button
-</Button>
+</Button>;
 ```
 
 ## Full width
 
 Full-width buttons can be used in combination with all other attributes.
 
-```jsx +jsxpreview +highlight=/fullWidth/
+```jsx
 <Button fullWidth>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth variant="secondary">
+```jsx
+<Button fullWidth variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="xl">
+```jsx
+<Button fullWidth size={Button.sizes.XL}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="xl" variant="secondary">
+```jsx
+<Button fullWidth size={Button.sizes.XL} variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
@@ -123,23 +145,25 @@ Full-width buttons can be used in combination with all other attributes.
 
 ### Disabled
 
-Disabled Buttons always look the same.
+Disabled Buttons always look the same, independent of the `variant`.
 
-```jsx +jsxpreview +highlight="disabled" .columns
+```jsx
 <Button disabled>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight="disabled" .columns
-<Button disabled variant="secondary">
+```jsx
+<Button disabled variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
+
+The only exception is the font-weight. It’s always matching the one of the active version of the `variant`. This way different widths or strange transition effects when toggling the state will be avoided and always look smooth and professional.
 
 ### Loading
 
 The `loading` state of a button should be set after clicking the button in case the action is expected to take some time.
 
-```jsx +highlight=/loading=[^ ]+/,/isLoading|setIsLoading/g,/true|false/g +showmore=1..2
+```jsx static
 import React, { useState } from 'react';
 
 const MyComponent = () => {
@@ -158,48 +182,48 @@ const MyComponent = () => {
 };
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
+```jsx
 <Button loading>Button</Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading variant="secondary">
+```jsx
+<Button loading variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="s">
+```jsx
+<Button loading size={Button.sizes.S}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="s" variant="secondary">
+```jsx
+<Button loading size={Button.sizes.S} variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="m">
+```jsx
+<Button loading size={Button.sizes.M}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="m" variant="secondary">
+```jsx
+<Button loading size={Button.sizes.M} variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="xl">
+```jsx
+<Button loading size={Button.sizes.XL}>
   Button
 </Button>
 ```
 
-```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="xl" variant="secondary">
+```jsx
+<Button loading size={Button.sizes.XL} variant={Button.variants.SECONDARY}>
   Button
 </Button>
 ```
@@ -208,22 +232,25 @@ A loading Button automatically gets disabled and can’t receive the focus. This
 
 ## Semantic
 
-The button can make use of different semantics while keeping the same style. All attributes mentioned above can be combined with the semantics. <?: .full ?>
+The button can make use of different semantics while keeping the same style. All attributes mentioned above can be combined with the semantics.
 
 ### Default click buttons for JavaScript interaction:
 
-```jsx +jsxpreview .right
-<Button>Button</Button>
+```jsx
+<Button onClick={alert}>Button</Button>
 ```
 
 ### Submit buttons for forms:
 
-```jsx +jsxpreview +highlight=/type=".+?"/ .right
-<Button type="submit">Button</Button>
+```jsx
+<form action="#">
+  {/* <Textfield /> */}
+  <Button type="submit">Button</Button>
+</form>
 ```
 
 ### Link buttons for call to actions:
 
-```jsx +jsxpreview +highlight=/href=".+?"/ .right
+```jsx
 <Button href="#">Button</Button>
 ```
