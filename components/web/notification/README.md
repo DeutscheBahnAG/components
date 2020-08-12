@@ -4,34 +4,34 @@
 import { Notification } from '@bahn-x/dbx-web';
 ```
 
-```jsx +jsxpreview
+```jsx
 <Notification message="Hello There!" />
 ```
 
 ## Variants
 
-```jsx +jsxpreview
+```jsx
 <Notification
   variant={Notification.variants.INFO}
   message="I am a notification."
 />
 ```
 
-```jsx +jsxpreview
+```jsx
 <Notification
   variant={Notification.variants.WARNING}
   message="I am a notification."
 />
 ```
 
-```jsx +jsxpreview
+```jsx
 <Notification
   variant={Notification.variants.ERROR}
   message="I am a notification."
 />
 ```
 
-```jsx +jsxpreview
+```jsx
 <Notification
   variant={Notification.variants.SUCCESS}
   message="I am a notification."
@@ -40,7 +40,7 @@ import { Notification } from '@bahn-x/dbx-web';
 
 ## With Title
 
-```jsx +jsxpreview
+```jsx
 <Notification
   variant={Notification.variants.WARNING}
   title="Your testing period is expired."

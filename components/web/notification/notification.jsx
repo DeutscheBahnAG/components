@@ -9,13 +9,6 @@ import {
 } from '@bahn-x/dbx-icons';
 import NotificationPortal from './notification-portal';
 
-const notificationVariants = {
-  INFO: 'info',
-  WARNING: 'warning',
-  ERROR: 'error',
-  SUCCESS: 'success',
-};
-
 const notificationIcons = {
   info: <ActionInfo />,
   warning: <NotificationErrorTriangle />,
@@ -87,7 +80,12 @@ const Notification = ({
   );
 };
 
-Notification.variants = notificationVariants;
+Notification.variants = {
+  INFO: 'info',
+  WARNING: 'warning',
+  ERROR: 'error',
+  SUCCESS: 'success',
+};
 
 Notification.propTypes = {
   /** the title will be displayed as bold text above the message  */
@@ -99,16 +97,16 @@ Notification.propTypes = {
   /** displays the notification overlaid on top of the page */
   global: PropTypes.bool,
   /** the purpose of the notification, affects visual styling */
-  variant: PropTypes.oneOf(Object.keys(notificationVariants).map(k => notificationVariants[k])),
+  variant: PropTypes.oneOf(Object.keys(Notification.variants).map(k => Notification.variants[k])),
   /** close button click handler, required to display the close button */
   onClose: PropTypes.func,
   /** custom translation strings */
   labels: PropTypes.shape({
     close: PropTypes.string,
-    [notificationVariants.INFO]: PropTypes.string,
-    [notificationVariants.WARNING]: PropTypes.string,
-    [notificationVariants.ERROR]: PropTypes.string,
-    [notificationVariants.SUCCESS]: PropTypes.string,
+    [Notification.variants.INFO]: PropTypes.string,
+    [Notification.variants.WARNING]: PropTypes.string,
+    [Notification.variants.ERROR]: PropTypes.string,
+    [Notification.variants.SUCCESS]: PropTypes.string,
   }),
   /** whether to automatically focus the close button when the notification
    * is displayed. Can be useful for global notifications as they are appended
@@ -122,14 +120,14 @@ Notification.defaultProps = {
   message: null,
   className: '',
   global: false,
-  variant: notificationVariants.INFO,
+  variant: Notification.variants.INFO,
   onClose: null,
   labels: {
     close: 'Schließen',
-    [notificationVariants.INFO]: 'Info',
-    [notificationVariants.WARNING]: 'Warnung',
-    [notificationVariants.ERROR]: 'Fehler',
-    [notificationVariants.SUCCESS]: 'Erfolg',
+    [Notification.variants.INFO]: 'Info',
+    [Notification.variants.WARNING]: 'Warnung',
+    [Notification.variants.ERROR]: 'Fehler',
+    [Notification.variants.SUCCESS]: 'Erfolg',
   },
   autofocusCloseButton: false,
 };
