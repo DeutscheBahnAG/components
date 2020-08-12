@@ -12,6 +12,7 @@ storiesOf('Components / Track (platform)', module)
   .add('Size M', () => <Track size={Track.sizes.M} track="1" />)
   .add('With fragment', () => <Track size={Track.sizes.XS} track="1a" />)
   .add('With section', () => <Track size={Track.sizes.XS} track="1 A-E" />)
+  .add('Without digit', () => <Track size={Track.sizes.XS} track="SEV" />)
   .add('Different naming', () => <Track size={Track.sizes.XS} track="Fern 1" />)
   .add('Add translation', () => (
     <Track track="1" labels={{ platform: 'Platform', platformAbbreviation: 'Pl.' }} />

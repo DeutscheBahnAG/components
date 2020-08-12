@@ -164,3 +164,14 @@ Object {
   "sectionStart": undefined,
 }
 `;
+
+exports[`Parse track helper Tracks without any digit should parse SEV departures 1`] = `
+Object {
+  "fragment": undefined,
+  "fullName": "SEV",
+  "number": undefined,
+  "prefix": undefined,
+  "sectionEnd": undefined,
+  "sectionStart": undefined,
+}
+`;

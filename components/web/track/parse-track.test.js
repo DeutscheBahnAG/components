@@ -60,4 +60,10 @@ describe('Parse track helper', () => {
       expect(parseTrack('S-Bahn 101 A-B')).toMatchSnapshot();
     });
   });
+
+  describe('Tracks without any digit', () => {
+    it('should parse SEV departures', () => {
+      expect(parseTrack('SEV')).toMatchSnapshot();
+    });
+  });
 });

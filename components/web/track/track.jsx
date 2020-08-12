@@ -10,20 +10,26 @@ const Track = ({
   className,
   ...props
 }) => {
-  const { prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
+  const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
   return (
     <span className={clsx('dbx-track', `dbx-track--${size}`, className)} {...props}>
-      {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}
-      {fragment && <span className="dbx-track__fragment">{fragment}</span>}
-      {sectionStart && (
+      {number ? (
         <>
-          {' '}
-          <span className="dbx-track__section">
-            {sectionStart}
-            <span className="dbx-track__separator">–</span>
-            {sectionEnd}
-          </span>
+          {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}
+          {fragment && <span className="dbx-track__fragment">{fragment}</span>}
+          {sectionStart && (
+            <>
+              {' '}
+              <span className="dbx-track__section">
+                {sectionStart}
+                <span className="dbx-track__separator">–</span>
+                {sectionEnd}
+              </span>
+            </>
+          )}
         </>
+      ) : (
+        <>{fullName}</>
       )}
     </span>
   );
