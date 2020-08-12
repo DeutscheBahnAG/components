@@ -17,9 +17,9 @@
     "build:storybook": "build-storybook -o build",
     "build:sassdoc": "sassdoc foundation",
     "prebuild": "rimraf dist/components",
-    "build:web": "babel components/web --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/web --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
-    "build:web-extra": "babel components/web-extra --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/web-extra --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
-    "build:icons": "babel components/icons --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/icons --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./.babelrc",
+    "build:web": "babel components/web --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/web --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./babel.config.json",
+    "build:web-extra": "babel components/web-extra --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/web-extra --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./babel.config.json",
+    "build:icons": "babel components/icons --extensions \".js,.jsx,.ts,.tsx\" --out-dir dist/icons --copy-files --ignore *.stories.js,*.test.js --source-maps --config-file ./babel.config.json",
     "build": "yarn build:web && yarn build:web-extra && yarn build:icons",
     "commit": "git-cz",
     "publish-components": "node scripts/publish-components.js"

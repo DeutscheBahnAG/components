@@ -110,7 +110,7 @@ async function updateVersion(packageName, location) {
 
 function transpilePackage(location) {
   return new Promise((resolve, reject) => {
-    const options = '--config-file ./.babelrc';
+    const options = '--config-file ./babel.config.json';
     exec(`npx babel ${location} --out-dir=${location} ${options}`, error => {
       if (error) {
         reject(error);

@@ -6,7 +6,7 @@ const sass = require('node-sass');
 const transpileJs = () =>
   new Promise((resolve, reject) => {
     exec(
-      './node_modules/.bin/babel src --out-dir dist --config-file ../.babelrc --no-comments --ignore node_modules/**/*,src/**/*.stories.jsx',
+      './node_modules/.bin/babel src --out-dir dist --config-file ../babel.config.json --no-comments --ignore node_modules/**/*,src/**/*.stories.jsx',
       err => {
         if (err) {
           reject(err);
