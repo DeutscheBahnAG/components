@@ -4,7 +4,7 @@
 import { Loadingindicator } from '@bahn-x/dbx-web';
 ```
 
-```jsx +jsxpreview +highlight="Loadingindicator"
+```jsx
 <Loadingindicator />
 ```
 
@@ -12,7 +12,7 @@ import { Loadingindicator } from '@bahn-x/dbx-web';
 
 The component will adopt the [`currentColor`][mdn:currentcolor], so its color can be changed by setting the CSS `color` on the parent element. See [Button](button#loading) as an example.
 
-```jsx +jsxpreview +highlight=/color: '.+?'/
+```jsx
 <div style={{ color: '#1455c0' }}>
   <Loadingindicator />
 </div>
