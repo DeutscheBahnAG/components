@@ -1246,7 +1246,7 @@
   dependencies:
     "@bahn-x/dbx-tokens" ">=0.4.0"
 
-"@bahn-x/dbx-tokens@>=0.4.0":
+"@bahn-x/dbx-tokens@>=0.4.0", "@bahn-x/dbx-tokens@>=0.7.0":
   version "0.7.0"
   resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.7.0/ca7602903266b2d156b522bf847fcbefe00c8a3fe555a7538d457866e5f38053#d9ad4bbf72b3a820c1fe40b71a21ce6f9cc97d49"
   integrity sha512-Ko01AuSPQluQwiW3cN0d4nUnrRTF6n0VaCVWB2swNjwNHgFGdYJ/TuFfs9ijqm7ObYCR4wV3i65BngLm7k1rwA==
