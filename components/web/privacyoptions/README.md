@@ -12,11 +12,11 @@ import { Privacyoptions } from '@bahn-x/dbx-web';
 ```
 
 ```jsx
-<Privacyoptions 
+<Privacyoptions
   // see "Specifying the options" below
   options={myOptionsArray}
   // see "Saving the user selection and knowing when to show the dialogue" below
-  onAcceptAll={myAcceptAllHandler} 
+  onAcceptAll={myAcceptAllHandler}
   onSave={mySaveSelectionHandler}
   // see "Keep legal documents accessible" below
   footer={<MyCustomFooter />}
@@ -26,11 +26,12 @@ import { Privacyoptions } from '@bahn-x/dbx-web';
 ## Specifying the options
 
 The options can be passed as an array of objects in the following form:
+
 ```js
 {
   name: 'myOptionName', // the name to identify the option in the onSave callback function
   label: 'My Option Name', // the name that is displayed to the user
-  description: 'What my option is about', // (optional) more details about the option, will be displayed below the name 
+  description: 'What my option is about', // (optional) more details about the option, will be displayed below the name
   required: true // (optional) if set to true, the option will be checked and disabled, so it cannot be deactivated
 }
 ```
@@ -38,6 +39,7 @@ The options can be passed as an array of objects in the following form:
 The exact options are of course largely dependent on your service. **They should be closely coordinated with your data privacy officer**.
 
 As a realistic example, you could have the following options:
+
 - a required option for technical cookies that are required to run the site (e.g. to detect whether a user is logged in)
 - an option for your analytics service
 - an option for convenience features on your site (e.g. saving a journey locally)
@@ -55,10 +57,10 @@ This area can hold any content, so it is up to you how to implement it:
 
 ## Saving the user selection and knowing when to show the dialogue
 
-Both possible user actions _‘accept all’_ or _‘save my selection’_ have their respective callback props `onAcceptAll` and `onSave`. The `onSave` callback receives a single argument with an object containing boolean values for all options, denoting whether they were selected or not, so you can act accordingly. When `onAcceptAll` is called, you know that all options were accepted and do not need to distinguish further. 
+Both possible user actions _‘accept all’_ or _‘save my selection’_ have their respective callback props `onAcceptAll` and `onSave`. The `onSave` callback receives a single argument with an object containing boolean values for all options, denoting whether they were selected or not, so you can act accordingly. When `onAcceptAll` is called, you know that all options were accepted and do not need to distinguish further.
 
 It is up to you to implement the logic how to save and process these user settings and determine whether to render the Privacyoptions component based on that information.
 
-Typically, you would save the information, whether the user has responded to the dialogue and what options were selected, in a cookie itself with an appropriate duration (e.g. 1 year, **please check with your data privacy officer**). An easy-to-use and MIT-licensed library to do this is [js-cookie](https://github.com/js-cookie/js-cookie). 
+Typically, you would save the information, whether the user has responded to the dialogue and what options were selected, in a cookie itself with an appropriate duration (e.g. 1 year, **please check with your data privacy officer**). An easy-to-use and MIT-licensed library to do this is [js-cookie](https://github.com/js-cookie/js-cookie).
 
 ⚠️ **Please note that according to the GDPR, you are not allowed to collect any user data until the user has explicitly opted in!** That means for instance, that you cannot activate analytics on your site by default, but must only do it after the user has positively responded to the option in the dialogue.

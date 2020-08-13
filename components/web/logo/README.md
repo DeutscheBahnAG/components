@@ -72,13 +72,31 @@ In case you need another string, just add it as a children:
 By default the logo has a transparent background.
 
 ```jsx +jsxpreview +highlight=/variant=[^ ]+/,/backgroundColor: '.+?'/ .columns +showmore=1,3
-<div style={{ background: 'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf3_3.png) 0 0/cover', padding: '16px', height: '200px', display: 'flex', alignItems: 'center' }}>
+<div
+  style={{
+    background:
+      'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf3_3.png) 0 0/cover',
+    padding: '16px',
+    height: '200px',
+    display: 'flex',
+    alignItems: 'center'
+  }}
+>
   <Logo />
 </div>
 ```
 
 ```jsx +jsxpreview +highlight=/variant=[^ ]+/,/background: '.+?'/ .columns +showmore=1,3
-<div style={{ background: 'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover', padding: '16px', height: '200px', display: 'flex', alignItems: 'center' }}>
+<div
+  style={{
+    background:
+      'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
+    padding: '16px',
+    height: '200px',
+    display: 'flex',
+    alignItems: 'center'
+  }}
+>
   <Logo variant={Logo.variants.FILLED} />
 </div>
 ```

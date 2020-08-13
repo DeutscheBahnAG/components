@@ -47,7 +47,14 @@ The indeterminate state does not show if the Checkbox is checked or not. When yo
 Links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
 
 ```jsx +jsxpreview +highlight=/<a.+a>/
-<Checkbox label={<>I accept the{` `}<a href="#terms">Terms and Conditions</a>.</>} />
+<Checkbox
+  label={
+    <>
+      I accept the{` `}
+      <a href="#terms">Terms and Conditions</a>.
+    </>
+  }
+/>
 ```
 
 ## Long labels

@@ -8,7 +8,6 @@ import { Loadingindicator } from '@bahn-x/dbx-web';
 <Loadingindicator />
 ```
 
-
 ## Controlling the color
 
 The component will adopt the [`currentColor`][mdn:currentcolor], so its color can be changed by setting the CSS `color` on the parent element. See [Button](button#loading) as an example.

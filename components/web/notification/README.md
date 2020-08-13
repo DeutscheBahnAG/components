@@ -11,19 +11,31 @@ import { Notification } from '@bahn-x/dbx-web';
 ## Variants
 
 ```jsx +jsxpreview
-<Notification variant={Notification.variants.INFO} message="I am a notification." />
+<Notification
+  variant={Notification.variants.INFO}
+  message="I am a notification."
+/>
 ```
 
 ```jsx +jsxpreview
-<Notification variant={Notification.variants.WARNING} message="I am a notification." />
+<Notification
+  variant={Notification.variants.WARNING}
+  message="I am a notification."
+/>
 ```
 
 ```jsx +jsxpreview
-<Notification variant={Notification.variants.ERROR} message="I am a notification." />
+<Notification
+  variant={Notification.variants.ERROR}
+  message="I am a notification."
+/>
 ```
 
 ```jsx +jsxpreview
-<Notification variant={Notification.variants.SUCCESS} message="I am a notification." />
+<Notification
+  variant={Notification.variants.SUCCESS}
+  message="I am a notification."
+/>
 ```
 
 ## With Title

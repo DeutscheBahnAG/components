@@ -102,15 +102,21 @@ Full-width buttons can be used in combination with all other attributes.
 ```
 
 ```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth variant="secondary">Button</Button>
+<Button fullWidth variant="secondary">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="xl">Button</Button>
+<Button fullWidth size="xl">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/fullWidth/
-<Button fullWidth size="xl" variant="secondary">Button</Button>
+<Button fullWidth size="xl" variant="secondary">
+  Button
+</Button>
 ```
 
 ## States
@@ -124,7 +130,9 @@ Disabled Buttons always look the same.
 ```
 
 ```jsx +jsxpreview +highlight="disabled" .columns
-<Button disabled variant="secondary">Button</Button>
+<Button disabled variant="secondary">
+  Button
+</Button>
 ```
 
 ### Loading
@@ -143,7 +151,9 @@ const MyComponent = () => {
   };
 
   return (
-    <Button loading={isLoading} onClick={onClick}>Start slow action</Button>
+    <Button loading={isLoading} onClick={onClick}>
+      Start slow action
+    </Button>
   );
 };
 ```
@@ -153,31 +163,45 @@ const MyComponent = () => {
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading variant="secondary">Button</Button>
+<Button loading variant="secondary">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="s">Button</Button>
+<Button loading size="s">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="s" variant="secondary">Button</Button>
+<Button loading size="s" variant="secondary">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="m">Button</Button>
+<Button loading size="m">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="m" variant="secondary">Button</Button>
+<Button loading size="m" variant="secondary">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="xl">Button</Button>
+<Button loading size="xl">
+  Button
+</Button>
 ```
 
 ```jsx +jsxpreview +highlight=/loading/ .columns
-<Button loading size="xl" variant="secondary">Button</Button>
+<Button loading size="xl" variant="secondary">
+  Button
+</Button>
 ```
 
 A loading Button automatically gets disabled and can’t receive the focus. This avoids clicking and starting an action twice. In case it is important to avoid a second click, setting the loading state might be a good idea even for usually fast actions.
