@@ -1,10 +1,8 @@
 const path = require('path');
-const glob = require('glob');
+const sections = require('./styleguide-sections.config');
 
 module.exports = {
-  // Filter for .../name/name.jsx
-  components: () =>
-    glob.sync('components/*/*/*.{jsx,tsx}').filter((c) => c.match(/\/(\w+)\/\1\.(jsx|tsx)/)),
+  sections,
   require: [path.join(__dirname, './sass/build.scss')],
   pagePerSection: true,
   exampleMode: 'expand',
