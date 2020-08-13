@@ -1,30 +1,12 @@
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
+import { addDecorator, addParameters } from '@storybook/react';
 import { withPropsTable } from 'storybook-addon-react-docgen';
 import PageWrapper from './decorators/page-wrapper.jsx';
 import withStaticHtml from '@bahn-x/storybook-addon-static-html';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn'
 
-import dbxTheme from './theme';
-
 import { ExampleChildren } from '@bahn-x/dbx-web/modal/stories/shared.jsx'
 
 import '../sass/build.scss';
-
-// load all files in /components that end with .stories.js(x)
-const foundation = require.context('../foundation', false, /\.stories\.jsx?$/);
-const web = require.context('../components/web', true, /\/\w+\/\w+\.stories\.jsx?$/);
-const webExtra = require.context('../components/web-extra', true, /\/\w+\/\w+\.stories\.jsx?$/);
-const icons = require.context('../components/icons', true, /\/\w+\/\w+\.stories\.jsx?$/);
-const email = require.context('../email/src', true, /\.stories\.jsx$/);
-
-function loadStories() {
-  foundation.keys().forEach((filename) => foundation(filename));
-  web.keys().forEach((filename) => web(filename));
-  webExtra.keys().forEach((filename) => webExtra(filename));
-  icons.keys().forEach((filename) => icons(filename));
-  email.keys().forEach((filename) => email(filename));
-}
 
 addParameters({
   viewport: {},
@@ -32,8 +14,7 @@ addParameters({
     sortStoriesByKind: false,
     hierarchySeparator: /\//,
     showPanel: true,
-    selectedAddonPanel: undefined,
-    theme: dbxTheme,
+    selectedAddonPanel: undefined
   },
   backgrounds: [
     { name: "primary", value: tokens.color['background.primary'], default: true },
@@ -53,10 +34,6 @@ addDecorator(withStaticHtml);
 
 addDecorator(PageWrapper);
 
-addDecorator(withA11y);
-
 addDecorator(withPropsTable({
   propTablesExclude: [ExampleChildren],
 }));
-
-configure(loadStories, module);
