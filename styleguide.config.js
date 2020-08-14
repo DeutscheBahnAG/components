@@ -7,6 +7,7 @@ module.exports = {
   pagePerSection: true,
   exampleMode: 'expand',
   title: 'BahnX React components',
+  styleguideDir: 'build/docs',
 
   getComponentPathLine(componentPath) {
     const name = path
