@@ -1,0 +1,41 @@
+/// Styles link including hover and pressed styles
+/// @param {String} $text-color - The default text-color
+/// @param {String} $text-color--hover - The text-color used on hover
+/// @param {String} $text-color--pressed - The text-color used on press (:active)
+@mixin dbx-link($text-color, $text-color--hover, $text-color--pressed) {
+  @include dbx-focus-ring-for-text;
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $text-color--hover;
+  }
+
+  &:active {
+    color: $text-color--pressed;
+  }
+}
+
+/// Styles a primary link including hover and pressed styles
+/// @param {String} $text-color - The default text-color
+/// @param {String} $text-color--hover - The text-color used on hover
+/// @param {String} $text-color--pressed - The text-color used on press (:active)
+@mixin dbx-primary-link(
+  $text-color: dbx-text-color('link.primary'),
+  $text-color--hover: dbx-text-color('link.primary.hover'),
+  $text-color--pressed: dbx-text-color('link.primary.pressed')
+) {
+  @include dbx-link($text-color, $text-color--hover, $text-color--pressed);
+}
+
+/// Styles a primary link including hover and pressed styles
+/// @param {String} $text-color - The default text-color
+/// @param {String} $text-color--hover - The text-color used on hover
+/// @param {String} $text-color--pressed - The text-color used on press (:active)
+@mixin dbx-secondary-link(
+  $text-color: dbx-text-color('link.secondary'),
+  $text-color--hover: dbx-text-color('link.secondary.hover'),
+  $text-color--pressed: dbx-text-color('link.secondary.pressed')
+) {
+  @include dbx-link($text-color, $text-color--hover, $text-color--pressed);
+}
