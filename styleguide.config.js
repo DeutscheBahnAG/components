@@ -5,11 +5,6 @@ module.exports = {
   // Filter for .../name/name.jsx
   components: () =>
     glob.sync('components/*/*/*.{jsx,tsx}').filter((c) => c.match(/\/(\w+)\/\1\.(jsx|tsx)/)),
-  ignore: [
-    // Ignore until overlaying is solved:
-    'components/web/modal/**',
-    'components/web/privacyoptions/**',
-  ],
   require: [path.join(__dirname, './sass/build.scss')],
   pagePerSection: true,
   exampleMode: 'expand',
@@ -31,6 +26,10 @@ module.exports = {
       props.settings = { static: true };
     }
     return props;
+  },
+
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'components/documentation/modal-wrapper/modal-wrapper'),
   },
 
   webpackConfig: {

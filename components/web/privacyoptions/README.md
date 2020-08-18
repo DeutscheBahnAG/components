@@ -12,15 +12,32 @@ import { Privacyoptions } from '@bahn-x/dbx-web';
 ```
 
 ```jsx
+const myOptionsArray = [
+  {
+    name: 'essential',
+    label: 'Essential',
+    description: 'Absolutely needed',
+    required: true,
+  },
+  {
+    name: 'analytics',
+    label: 'Analytics',
+    description: 'Help us improving the user experience',
+  },
+];
+const myAcceptAllHandler = () => window.alert('All Cookies accepted.');
+const mySaveSelectionHandler = (selectedOptions) =>
+  window.alert(
+    `Cookie settings saved:\n\n${JSON.stringify(selectedOptions, null, 2)}`
+  );
+const MyCustomFooter = () => <div>Imprint etc.</div>;
+
 <Privacyoptions
-  // see "Specifying the options" below
   options={myOptionsArray}
-  // see "Saving the user selection and knowing when to show the dialogue" below
   onAcceptAll={myAcceptAllHandler}
   onSave={mySaveSelectionHandler}
-  // see "Keep legal documents accessible" below
   footer={<MyCustomFooter />}
-/>
+/>;
 ```
 
 ## Specifying the options
@@ -30,9 +47,11 @@ The options can be passed as an array of objects in the following form:
 ```js
 {
   name: 'myOptionName', // the name to identify the option in the onSave callback function
-  label: 'My Option Name', // the name that is displayed to the user
-  description: 'What my option is about', // (optional) more details about the option, will be displayed below the name
-  required: true // (optional) if set to true, the option will be checked and disabled, so it cannot be deactivated
+  label: 'My option name', // the name that is displayed to the user
+  description: 'What my option is about', // (optional) more details about the option, will
+                                          // be displayed below the name
+  required: true // (optional) if set to true, the option will be checked and disabled, so
+                 // it cannot be deactivated
 }
 ```
 
