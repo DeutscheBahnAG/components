@@ -71,6 +71,7 @@ const Modal = ({
   autoFocus,
   appId,
   portalId,
+  portal,
   children,
   ...otherProps
 }) => {
@@ -107,7 +108,7 @@ const Modal = ({
     });
   }
 
-  const getPortalParentNode = () => document.getElementById(portalId) || document.body;
+  const getPortalParentNode = () => portal || document.getElementById(portalId) || document.body;
 
   const setElementFocus = useCallback(
     (node) => {
@@ -122,14 +123,14 @@ const Modal = ({
   );
 
   useEffect(() => {
-    if (portalId) {
-      const portalParentNode = document.getElementById(portalId);
+    if (portal || portalId) {
+      const portalParentNode = portal || document.getElementById(portalId);
       if (portalParentNode) {
         portalParentNode.setAttribute('aria-live', kindValues[kind].live);
         portalParentNode.setAttribute('aria-relevant', 'additions removals');
       }
     }
-  }, [kind, portalId]);
+  }, [kind, portal, portalId]);
 
   if (portalId) {
     const elPortal = document.getElementById(portalId);
@@ -139,7 +140,7 @@ const Modal = ({
         message: `The DOM element for id '${portalId}' passed by the property 'portalId' was not found.\nUse your actual portal container id.`,
       });
     }
-  } else {
+  } else if (!portal) {
     devError({
       componentName: 'Modal',
       message:
@@ -359,6 +360,9 @@ Modal.propTypes = {
    * */
   portalId: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 
+  /** Like `portalId` but allows to set an HTML DOM node */
+  portal: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
+
   /** Main content of the Modal dialog */
   children: PropTypes.node,
 };
@@ -382,6 +386,7 @@ Modal.defaultProps = {
   autoFocus: true,
   appId: false,
   portalId: false,
+  portal: false,
   children: null,
 };
 
