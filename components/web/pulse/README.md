@@ -78,6 +78,4 @@ Never use different sizes for the Logo and the Pulse.
 
 Even though technically possible, using the Pulse in size `XS` and `S` might not make sense. Therefore no example has been included into this documentation.
 
-Check the [Pulse guidelines][marke:pulse] for details.
-
-[marke:pulse]: marketingportal.extranet.deutschebahn.com/en/pulse
+Check the [Pulse guidelines](https://marketingportal.extranet.deutschebahn.com/en/pulse) for details.

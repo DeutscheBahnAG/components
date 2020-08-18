@@ -88,14 +88,12 @@ import { NavigationClose } from '@bahn-x/dbx-icons';
 
 ## Icons
 
-Icons can be added as SVG. They must match the [DBX Icon specifications] (24 × 24 px incl. 2 px safe area).
+Icons can be added as SVG. They must match the [DBX Icon specifications](https://dbx.bahn-x.de/foundation/icons) (24 × 24 px incl. 2 px safe area).
 
 ```jsx
 import { ActionAdd } from '@bahn-x/dbx-icons';
 <Button icon={<ActionAdd />}>Button</Button>;
 ```
-
-[dbx icon specifications]: https://dbx.bahn-x.de/foundation/icons
 
 ## Shapes
 

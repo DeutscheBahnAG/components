@@ -85,7 +85,7 @@ By default the logo has a transparent background.
 </div>
 ```
 
-The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Red backgrounds require the `OUTLINED` variant. Please read the [official logo guidelines][marke:logo] for further details when to use which colors and backgrounds.
+The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Red backgrounds require the `OUTLINED` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
 
 ### Default
 
@@ -161,5 +161,3 @@ The Logo can be linked. It automatically will show a DB-styled focus ring.
 ```jsx
 <Logo href="/" />
 ```
-
-[marke:logo]: https://marketingportal.extranet.deutschebahn.com/en/logo-2
