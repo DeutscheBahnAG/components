@@ -78,7 +78,7 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@bahn-x/dbx-foundation": ">=0.0.0",
-    "@bahn-x/storybook-addon-static-html": "^0.1.4",
+    "@bahn-x/storybook-addon-static-html": "^0.1.5",
     "@bahn-x/webdev-configs": "^1.0.0",
     "@commitlint/cli": "^8.0.0",
     "@loadable/component": "^5.13.1",
