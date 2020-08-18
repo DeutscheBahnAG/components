@@ -59,22 +59,22 @@ const autoProducts = {
   [products.TAXI]: /taxi/i,
 };
 
-export const findProduct = lineNumber => {
-  return Object.keys(autoProducts).find(key => lineNumber.match(autoProducts[key]));
+export const findProduct = (lineNumber) => {
+  return Object.keys(autoProducts).find((key) => lineNumber.match(autoProducts[key]));
 };
 
 export const findStyle = ({ product, zipCode, lineNumber }) => {
   const productKey = product || findProduct(lineNumber);
-  return Object.keys(styles).find(key => {
+  return Object.keys(styles).find((key) => {
     const { products: productKeys, zipCodes } = styles[key];
     return productKeys.includes(productKey) && zipCode.match(zipCodes);
   });
 };
 
-export const sanitizeLineNumber = lineNumber =>
+export const sanitizeLineNumber = (lineNumber) =>
   lineNumber.replace(/str ?|bus ?|fäh ?|rnv ?|akn ?|stb ?|ast ? |nwb ?/i, '');
 
-export const lineNumberClass = lineNumber => lineNumber.toLowerCase().replace(/\s/g, '');
+export const lineNumberClass = (lineNumber) => lineNumber.toLowerCase().replace(/\s/g, '');
 
 export const specialProducts = {
   hvv: (transportType, lineNumber) => {

@@ -38,8 +38,8 @@ export default ${componentName};
   return ast;
 };
 
-const customIndexTemplate = filePaths => {
-  const exportEntries = filePaths.map(filePath => {
+const customIndexTemplate = (filePaths) => {
+  const exportEntries = filePaths.map((filePath) => {
     const basename = path.basename(filePath, path.extname(filePath));
     // make export name PascalCase while filename is kebab-case
     const exportName = camelcase(basename, { pascalCase: true });
