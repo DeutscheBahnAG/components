@@ -1,4 +1,8 @@
-const web = (components) => components.map((c) => `components/web/${c}/${c}.{jsx,tsx}`);
+const glob = require('glob');
+
+// Find component file; prefer `<name>-doc.jsx` if defined:
+const web = (components) =>
+  components.map((c) => glob.sync(`components/web/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
 
 module.exports = [
   {

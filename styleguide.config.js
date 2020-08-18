@@ -27,10 +27,6 @@ module.exports = {
     return props;
   },
 
-  styleguideComponents: {
-    Wrapper: path.join(__dirname, 'components/documentation/modal-wrapper/modal-wrapper'),
-  },
-
   webpackConfig: {
     module: {
       rules: [
