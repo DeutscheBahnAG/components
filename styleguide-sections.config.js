@@ -2,6 +2,20 @@ const web = (components) => components.map((c) => `components/web/${c}/${c}.{jsx
 
 module.exports = [
   {
+    name: 'Foundation',
+    sections: [
+      {
+        name: 'Mixins',
+        sections: [
+          {
+            name: 'Link',
+            content: 'foundation/mixins/_link.md',
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: 'Components',
     sections: [
       {
