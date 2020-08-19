@@ -90,7 +90,7 @@
     $bg-color: transparent,
     $bg-color--hover: dbx-background-color('button.solid'),
     $bg-color--pressed: dbx-background-color('button.solid.hover'),
-    $bg-color--disabled: dbx-background-color('button.solid.disabled'),
+    $bg-color--disabled: transparent,
     $text-color: dbx-text-color('button.solid'),
     $text-color--hover: dbx-text-color('button.solid.hover'),
     $text-color--pressed: dbx-text-color('button.solid.pressed'),
@@ -98,7 +98,7 @@
     $border-color: dbx-border-color('button.solid'),
     $border-color--hover: dbx-border-color('button.solid.hover'),
     $border-color--pressed: dbx-border-color('button.solid.pressed'),
-    $border-color--disabled: dbx-border-color('button.solid.disabled')
+    $border-color--disabled: transparent
   );
 }
 
