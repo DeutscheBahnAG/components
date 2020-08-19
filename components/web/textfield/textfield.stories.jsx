@@ -1,32 +1,18 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import * as Icons from '@bahn-x/dbx-icons';
 import Button from '../button';
-import Textfield from './textfield';
+import Textfield from './textfield-doc';
 import textfieldReadme from './README.md';
-
-const StatefulTextfield = ({ defaultValue, ...props }) => {
-  const [value, setValue] = useState(defaultValue);
-  return <Textfield {...props} value={value} onChange={event => setValue(event.target.value)} />;
-};
-
-StatefulTextfield.propTypes = {
-  defaultValue: PropTypes.string,
-};
-
-StatefulTextfield.defaultProps = {
-  defaultValue: '',
-};
 
 storiesOf('Components / Textfield', module)
   .addDecorator(withReadme(textfieldReadme))
-  .add('Simple Textfield', () => <StatefulTextfield defaultValue="Simple Textfield" />)
-  .add('Textfield with placeholder', () => <StatefulTextfield placeholder="Placeholder text" />)
-  .add('Textfield with inline label', () => <StatefulTextfield inlineLabel="Inline label" />)
+  .add('Simple Textfield', () => <Textfield value="Simple Textfield" />)
+  .add('Textfield with placeholder', () => <Textfield placeholder="Placeholder text" />)
+  .add('Textfield with inline label', () => <Textfield inlineLabel="Inline label" />)
   .add('Textfield with inline label and placeholder', () => (
-    <StatefulTextfield inlineLabel="Inline label" placeholder="Placeholder text" />
+    <Textfield inlineLabel="Inline label" placeholder="Placeholder text" />
   ))
   .add('Disabled Textfield', () => <Textfield value="Disabled" disabled />)
   .add('Disabled Textfield with inline label', () => (
@@ -36,32 +22,24 @@ storiesOf('Components / Textfield', module)
   .add('Readonly Textfield with inline label', () => (
     <Textfield value="Readonly" inlineLabel="Inline label" readOnly />
   ))
-  .add('Textarea', () => (
-    <StatefulTextfield defaultValue={'Textarea\nwith\nmany\nlines'} type="textarea" />
-  ))
-  .add('Number', () => <StatefulTextfield defaultValue="123" type="number" />)
-  .add('Number with unit', () => <StatefulTextfield defaultValue="123" type="number" unit="€" />)
-  .add('Number with unit before', () => (
-    <StatefulTextfield defaultValue="123" type="number" unit="£" />
-  ))
-  .add('Text with prefix', () => (
-    <StatefulTextfield defaultValue="bahn_de" type="text" prefix="@" />
-  ))
+  .add('Textarea', () => <Textfield value={'Textarea\nwith\nmany\nlines'} type="textarea" />)
+  .add('Number', () => <Textfield value="123" type="number" />)
+  .add('Number with unit', () => <Textfield value="123" type="number" unit="€" />)
+  .add('Number with unit before', () => <Textfield value="123" type="number" unit="£" />)
+  .add('Text with prefix', () => <Textfield value="bahn_de" type="text" prefix="@" />)
   .add('Text with with inline label and prefix', () => (
-    <StatefulTextfield inlineLabel="Username" type="text" prefix="@" />
+    <Textfield inlineLabel="Username" type="text" prefix="@" />
   ))
   .add('Text with Icon prefix', () => (
-    <StatefulTextfield placeholder="Search" type="text" prefix={<Icons.ActionSearch />} />
+    <Textfield placeholder="Search" type="text" prefix={<Icons.ActionSearch />} />
   ))
-  .add('Text with suffix', () => <StatefulTextfield type="text" suffix="@bahn.de" />)
+  .add('Text with suffix', () => <Textfield type="text" suffix="@bahn.de" />)
   .add('Text with with inline label and suffix', () => (
-    <StatefulTextfield inlineLabel="Email address" type="email" suffix="@bahn.de" />
+    <Textfield inlineLabel="Email address" type="email" suffix="@bahn.de" />
   ))
-  .add('Text with Icon suffix', () => (
-    <StatefulTextfield type="text" suffix={<Icons.NavigationClose />} />
-  ))
+  .add('Text with Icon suffix', () => <Textfield type="text" suffix={<Icons.NavigationClose />} />)
   .add('Text with Icon Button suffix', () => (
-    <StatefulTextfield
+    <Textfield
       type="text"
       size={Textfield.sizes.L}
       suffix={
@@ -77,7 +55,7 @@ storiesOf('Components / Textfield', module)
     />
   ))
   .add('Text with Icon + Text Button suffix', () => (
-    <StatefulTextfield
+    <Textfield
       type="text"
       size={Textfield.sizes.XL}
       suffix={
@@ -91,10 +69,10 @@ storiesOf('Components / Textfield', module)
       }
     />
   ))
-  .add('Email address', () => <StatefulTextfield defaultValue="info@bahn.de" type="email" />)
-  .add('Phone number', () => <StatefulTextfield defaultValue="0180 6 996633" type="tel" />)
-  .add('URL', () => <StatefulTextfield defaultValue="https://www.bahn.de" type="url" />)
-  .add('Password', () => <StatefulTextfield defaultValue="secret" type="password" />)
+  .add('Email address', () => <Textfield value="info@bahn.de" type="email" />)
+  .add('Phone number', () => <Textfield value="0180 6 996633" type="tel" />)
+  .add('URL', () => <Textfield value="https://www.bahn.de" type="url" />)
+  .add('Password', () => <Textfield value="secret" type="password" />)
   .add('Size S', () => (
     <Textfield size={Textfield.sizes.S} value="123" type="number" prefix="@" unit="€" />
   ))

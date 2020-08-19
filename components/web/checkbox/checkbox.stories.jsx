@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
-import Checkbox from './checkbox';
+import Checkbox from './checkbox-doc';
 import Button from '../button/button';
 import checkboxReadme from './README.md';
 
@@ -33,7 +33,7 @@ const ToggleCheckboxIndeterminateStateExample = () => {
 storiesOf('Components / Checkbox', module)
   .addDecorator(withReadme(checkboxReadme))
   .add('Default', () => <Checkbox onClick={action('clicked')} label="Checkbox" />)
-  .add('Checked', () => <Checkbox defaultChecked onClick={action('clicked')} label="Checkbox" />)
+  .add('Checked', () => <Checkbox checked onClick={action('clicked')} label="Checkbox" />)
   .add('Indeterminate', () => <ToggleCheckboxIndeterminateStateExample />)
   .add('Links inside the label', () => (
     <Checkbox
@@ -47,7 +47,7 @@ storiesOf('Components / Checkbox', module)
   ))
   .add('Default disabled', () => <Checkbox disabled onClick={action('clicked')} label="Checkbox" />)
   .add('Checked disabled', () => (
-    <Checkbox defaultChecked disabled onClick={action('clicked')} label="Checkbox" />
+    <Checkbox checked disabled onClick={action('clicked')} label="Checkbox" />
   ))
   .add('Indeterminate disabled', () => (
     <Checkbox indeterminate disabled onClick={action('clicked')} label="Checkbox" />
