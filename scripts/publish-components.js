@@ -229,71 +229,62 @@ async function main() {
     text: 'Looking up packages (workspaces)\n',
     indent: 7,
   }).start();
-  try {
-    const workspaces = await getWorkspaces();
-    const packageNames = Object.keys(workspaces);
 
-    const count = packageNames.length;
-    const indent = count.toString().length * 2 + 5;
-    spinner.indent = indent;
-    spinner.succeed();
+  const workspaces = await getWorkspaces();
+  const packageNames = Object.keys(workspaces);
 
-    let packages = [];
+  const count = packageNames.length;
+  const indent = count.toString().length * 2 + 5;
+  spinner.indent = indent;
+  spinner.succeed();
+
+  let packages = [];
+  let i = 0;
+  for (const packageName in workspaces) {
+    if (!packageName.includes('email')) {
+      console.log(packageName);
+
+      i += 1;
+      const number = i.toString().padStart(count.toString().length);
+      const prefixText = chalk.gray(` [${number}/${count}]`);
+      packages.push(
+        await processPackage(packageName, workspaces[packageName].location, prefixText)
+      );
+    }
+  }
+
+  console.log(''); // Visually separate individual steps (per component) from global steps
+
+  spinner = ora({
+    text: 'Creating release commit\n',
+    indent,
+  }).start();
+  packages = packages.filter((p) => p !== null);
+  if (packages.length > 0) {
     try {
-      let i = 0;
-      for (const packageName in workspaces) {
-        if (!packageName.includes('email')) {
-          console.log(packageName);
+      await createReleaseCommit(packages);
+      spinner.text = 'Created release commit';
+      spinner.succeed();
 
-          i += 1;
-          const number = i.toString().padStart(count.toString().length);
-          const prefixText = chalk.gray(` [${number}/${count}]`);
-          packages.push(
-            await processPackage(packageName, workspaces[packageName].location, prefixText)
-          );
-        }
-      }
+      spinner = ora({
+        text: `Pushing release commit and tag${packages.length === 1 ? '' : 's'}\n`,
+        indent,
+      }).start();
+      pushBranchAndTags(packages);
+      spinner.text = `Pushed release commit and tag${packages.length === 1 ? '' : 's'}`;
+      spinner.succeed();
+
+      const success = chalk.green('Success:');
+      console.log(
+        `\n${success} Published ${packages.length} package${packages.length === 1 ? '' : 's'}.`
+      );
     } catch (err) {
-      process.exit(1);
+      spinner.text = `Error creating release commit: ${err.message}`;
+      spinner.fail();
     }
-
-    console.log(''); // Visually separate individual steps (per component) from global steps
-
-    spinner = ora({
-      text: 'Creating release commit\n',
-      indent,
-    }).start();
-    packages = packages.filter((p) => p !== null);
-    if (packages.length > 0) {
-      try {
-        await createReleaseCommit(packages);
-        spinner.text = 'Created release commit';
-        spinner.succeed();
-
-        spinner = ora({
-          text: `Pushing release commit and tag${packages.length === 1 ? '' : 's'}\n`,
-          indent,
-        }).start();
-        pushBranchAndTags(packages);
-        spinner.text = `Pushed release commit and tag${packages.length === 1 ? '' : 's'}`;
-        spinner.succeed();
-
-        const success = chalk.green('Success:');
-        console.log(
-          `\n${success} Published ${packages.length} package${packages.length === 1 ? '' : 's'}.`
-        );
-      } catch (err) {
-        spinner.text = `Error creating release commit: ${err.message}`;
-        spinner.fail();
-      }
-    } else {
-      spinner.text = 'No release commit created as no packages was published.';
-      spinner.info();
-    }
-  } catch (err) {
-    spinner.fail();
-    console.error(err.message);
-    process.exit(1);
+  } else {
+    spinner.text = 'No release commit created as no packages was published.';
+    spinner.info();
   }
 }
 
