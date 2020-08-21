@@ -23,10 +23,10 @@ function removeChalkStyles(string) {
 }
 
 async function getLastReleaseTag(packageName) {
-  const getVersion = s => s.replace(/.*@/, '');
+  const getVersion = (s) => s.replace(/.*@/, '');
   const result = await simpleGit.tags();
   const tags = result.all
-    .filter(tag => tag.match(new RegExp(`^${packageName}@`)))
+    .filter((tag) => tag.match(new RegExp(`^${packageName}@`)))
     .sort((a, b) => semver.compare(getVersion(a), getVersion(b)));
   const latestRelease = tags.pop();
   return latestRelease;
@@ -47,7 +47,7 @@ async function getCommits(packageName, location) {
 
 function publishPackage(packageName, location) {
   return new Promise((resolve, reject) => {
-    exec('npm publish', { cwd: location }, error => {
+    exec('npm publish', { cwd: location }, (error) => {
       if (error) {
         if (error.message.match(/EPUBLISHCONFLICT/)) {
           reject(new Error('Version already published. Please change version manually.'));
@@ -73,7 +73,7 @@ async function updateVersion(packageName, location) {
   const commits = await getCommits(packageName, location);
   if (commits) {
     let change = null;
-    commits.forEach(commit => {
+    commits.forEach((commit) => {
       if (commit.body.match(/BREAKING CHANGE:/)) {
         change = 'breaking';
       } else if (commit.message.startsWith('feat') && change !== 'breaking') {
@@ -111,7 +111,7 @@ async function updateVersion(packageName, location) {
 function transpilePackage(location) {
   return new Promise((resolve, reject) => {
     const options = '--config-file ./babel.config.json';
-    exec(`npx babel ${location} --out-dir=${location} ${options}`, error => {
+    exec(`npx babel ${location} --out-dir=${location} ${options}`, (error) => {
       if (error) {
         reject(error);
       } else {
@@ -124,10 +124,10 @@ function transpilePackage(location) {
 async function renderSass(location) {
   const files = await globby([`${location}/*.scss`, `!${location}/_*.scss`]);
   return Promise.all(
-    files.map(file => {
+    files.map((file) => {
       return new Promise((resolve, reject) => {
         const outputFile = file.replace('.scss', '.css');
-        exec(`npx node-sass ${file} --include-path node_modules > ${outputFile}`, error => {
+        exec(`npx node-sass ${file} --include-path node_modules > ${outputFile}`, (error) => {
           if (error) {
             reject(error);
           } else if (fs.statSync(outputFile).size === 0) {
@@ -188,12 +188,12 @@ async function processPackage(name, location, prefixText) {
 async function createReleaseCommit(packages) {
   const count = packages.length;
   let message = `chore: Released ${count} package${count === 1 ? '' : 's'}\n\n`;
-  message += packages.map(p => p[1]).join('\n');
+  message += packages.map((p) => p[1]).join('\n');
   message = removeChalkStyles(message);
-  const files = packages.map(p => `${p[0]}/package.json`);
+  const files = packages.map((p) => `${p[0]}/package.json`);
   await simpleGit.commit(message, files, { '--allow-empty': true });
   return Promise.all(
-    packages.map(p => {
+    packages.map((p) => {
       const tag = removeChalkStyles(p[1].replace(/ .*/, ''));
       return simpleGit.addTag(tag);
     })
@@ -263,7 +263,7 @@ async function main() {
       text: 'Creating release commit\n',
       indent,
     }).start();
-    packages = packages.filter(p => p !== null);
+    packages = packages.filter((p) => p !== null);
     if (packages.length > 0) {
       try {
         await createReleaseCommit(packages);

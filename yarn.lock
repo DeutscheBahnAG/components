@@ -1075,19 +1075,12 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bahn-x/dbx-foundation@^0.5.0", "@bahn-x/dbx-foundation@^0.5.1":
+"@bahn-x/dbx-foundation@^0.5.0":
   version "0.5.1"
   resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.5.1/af9d602d3e797ff89adc7b8935e4fa10b423eed9616d9c67678136331cd44e04#a24ab6e0c7fa7506799f9e741351edd340e46d04"
   integrity sha512-VhzKLe42NHzrWRqqhC5+QEDegkT4Wx4lDkXHdNWoB3iS24TIqKWzMQc0xHrHPp6su8XNksrz0lWO4GgO06GlfA==
   dependencies:
     "@bahn-x/dbx-tokens" ">=0.4.0"
-
-"@bahn-x/dbx-foundation@^0.7.0":
-  version "0.7.0"
-  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.7.0/e82beabbc368798acbb24118eceee61781b0eef3ba22c922b4e0956a1b660dcc#f9f0da59dd78859c806074ab3943f7761276a716"
-  integrity sha512-iQ9vs3WwVUlunpLLgP+tFG8Mz5ZdyxZPQ819OjxF8iXiQ5m0bjccZppLujBeMPTjP8KflS4sOmmH9zn2oDE68A==
-  dependencies:
-    "@bahn-x/dbx-tokens" ">=0.7.0"
 
 "@bahn-x/dbx-tokens@>=0.4.0", "@bahn-x/dbx-tokens@>=0.7.0":
   version "0.7.0"
