@@ -212,8 +212,7 @@ function getWorkspaces() {
         reject(error);
       } else {
         try {
-          const { data } = JSON.parse(result);
-          const workspaces = JSON.parse(data);
+          const workspaces = JSON.parse(result);
           resolve(workspaces);
         } catch (err) {
           reject(err);
