@@ -65,12 +65,9 @@
 }
 
 @function dbx-font-weight($family, $weight: null, $tokens-map: $dbx-tokens) {
-  @if $weight == null {
-    $weight: if($family == 'title', 'bold', 'regular');
-  }
   @return dbx-token(
     'fontweight',
-    $token-name: '#{$family}.#{$weight}',
+    $token-name: if($weight == null, $family, '#{$family}.#{$weight}'),
     $tokens-map: $tokens-map
   );
 }
