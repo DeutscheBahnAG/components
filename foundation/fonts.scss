@@ -2,7 +2,7 @@ $asset-url: 'https://assets.bahn-x.de/fonts/latest/';
 
 @mixin dbx-font-face($family, $name, $weight: normal, $style: normal) {
   @font-face {
-    font-family: dbx-font-family($family);
+    font-family: dbx-token('fontfamily', $token-name: $family);
     src: url('#{$asset-url}#{$name}.woff2') format('woff2'),
       url('#{$asset-url}#{$name}.woff') format('woff');
     font-weight: $weight;

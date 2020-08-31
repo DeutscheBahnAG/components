@@ -59,9 +59,10 @@
 @function dbx-font-family($family, $tokens-map: $dbx-tokens) {
   @return dbx-token(
     'fontfamily',
-    $token-name: $family,
-    $tokens-map: $tokens-map
-  );
+      $token-name: $family,
+      $tokens-map: $tokens-map
+    ),
+    $dbx-font-stack;
 }
 
 @function dbx-font-weight($family, $weight: null, $tokens-map: $dbx-tokens) {

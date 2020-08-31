@@ -2,8 +2,6 @@
 
 .dbx-code {
   // GitHub uses this stack, so it can't be bad :p
-  $code-font-stack: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-
   background-color: dbx-palette-color('coolgray100');
 
   // inline style ('inline' prop == true)
@@ -24,7 +22,7 @@
 
   &--inline,
   &--block &__inner {
-    font-family: $code-font-stack;
+    font-family: $dbx-code-font-stack;
     font-size: dbx-font-size('copy', 's');
     line-height: dbx-line-height('copy', 's');
     -webkit-font-smoothing: antialiased;
