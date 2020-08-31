@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ActionVisibility, ActionVisibilityOff } from '@bahn-x/dbx-icons';
 import Textfield from '../textfield';
@@ -13,12 +13,24 @@ const Passwordfield = ({
   ...otherProps
 }) => {
   const [isConcealed, setConcealed] = useState(concealed);
+  const fieldRef = useRef(null);
 
-  const toggleConcealed = () => setConcealed(!isConcealed);
+  const toggleConcealed = () => {
+    if (fieldRef.current) {
+      const { selectionStart, selectionEnd } = fieldRef.current;
+      setConcealed(!isConcealed);
+      requestAnimationFrame(() => {
+        fieldRef.current.setSelectionRange(selectionStart, selectionEnd);
+      });
+    } else {
+      setConcealed(!isConcealed);
+    }
+  };
 
   return (
     <Textfield
       {...otherProps}
+      ref={fieldRef}
       disabled={disabled}
       size={size}
       value={value}
