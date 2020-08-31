@@ -1,0 +1,47 @@
+$asset-url: 'https://assets.bahn-x.de/fonts/latest/';
+
+@mixin dbx-font-face($family, $name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: dbx-font-family($family);
+    src: url('#{$asset-url}#{$name}.woff2') format('woff2'),
+      url('#{$asset-url}#{$name}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@include dbx-font-face(
+  'copy',
+  'DBScreenSans-Regular',
+  $weight: dbx-font-weight('copy')
+);
+@include dbx-font-face('copy', 'DBScreenSans-Medium', $weight: 550);
+@include dbx-font-face(
+  'copy',
+  'DBScreenSans-Bold',
+  $weight: dbx-font-weight('copy', 'bold')
+);
+@include dbx-font-face(
+  'copy',
+  'DBScreenSans-Italic',
+  $weight: dbx-font-weight('copy'),
+  $style: italic
+);
+@include dbx-font-face(
+  'copy',
+  'DBScreenSans-BoldItalic',
+  $weight: dbx-font-weight('copy', 'bold'),
+  $style: italic
+);
+@include dbx-font-face(
+  'title',
+  'DBScreenHead-Light',
+  $weight: dbx-font-weight('title')
+);
+@include dbx-font-face('title', 'DBScreenHead-Regular');
+@include dbx-font-face(
+  'title',
+  'DBScreenHead-Black',
+  $weight: dbx-font-weight('title', 'bold')
+);

@@ -7,6 +7,7 @@ const web = (components) =>
 module.exports = [
   {
     name: 'Foundation',
+    content: 'foundation/README.md',
     sections: [
       {
         name: 'Mixins',
