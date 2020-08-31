@@ -13,7 +13,8 @@ module.exports = {
     const name = path
       .basename(componentPath)
       .replace(/\.(jsx|tsx)/, '')
-      .replace(/^\w/, (w) => w.toUpperCase());
+      .replace(/^\w/, (w) => w.toUpperCase())
+      .replace(/-doc$/, '');
     const dir = path.dirname(componentPath);
     return `import ${name} from '@bahn-x/${dir}';`;
   },
