@@ -34,11 +34,15 @@ const Privacyoptions = ({
   );
 
   const onCheckboxChange = useCallback(({ target: checkbox }) => {
-    setFormValues(prevFormValues => ({
+    setFormValues((prevFormValues) => ({
       ...prevFormValues,
       [checkbox.name]: checkbox.checked,
     }));
   }, []);
+
+  const allOptionsChecked = useMemo(() => Object.values(formValues).every((option) => option), [
+    formValues,
+  ]);
 
   const onSaveButtonClick = useCallback(() => onSave(formValues), [formValues, onSave]);
 
@@ -67,7 +71,11 @@ const Privacyoptions = ({
         </PrimaryButton>
       }
       secondaryButton={
-        <SecondaryButton className="dbx-privacyoptions__save-btn" onClick={onSaveButtonClick}>
+        <SecondaryButton
+          className="dbx-privacyoptions__save-btn"
+          onClick={onSaveButtonClick}
+          disabled={allOptionsChecked}
+        >
           {labels.save}
         </SecondaryButton>
       }
