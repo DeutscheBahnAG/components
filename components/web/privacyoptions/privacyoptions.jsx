@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Checkbox from '../checkbox';
 import Modal from '../modal';
 
-const { PrimaryButton, SecondaryButton } = Modal;
+const { PrimaryButton } = Modal;
 
 const defaultLabels = {
   title: 'Cookie-Einstellungen',
@@ -70,14 +70,15 @@ const Privacyoptions = ({
           {labels.acceptAll}
         </PrimaryButton>
       }
+      enforceSecondaryButtonsStyle={false}
       secondaryButton={
-        <SecondaryButton
+        <PrimaryButton
           className="dbx-privacyoptions__save-btn"
           onClick={onSaveButtonClick}
           disabled={allOptionsChecked}
         >
           {labels.save}
-        </SecondaryButton>
+        </PrimaryButton>
       }
       {...otherProps}
     >

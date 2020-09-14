@@ -6,6 +6,8 @@ import clsx from 'clsx';
 import { NavigationClose } from '@bahn-x/dbx-icons';
 import Button from '../button';
 
+const secondaryButtonsLimit = 2;
+
 const devError = ({ componentName, message, justWarn }) => {
   if (
     process &&
@@ -73,9 +75,9 @@ const Modal = ({
   portalId,
   portal,
   children,
+  enforceSecondaryButtonsStyle,
   ...otherProps
 }) => {
-  const secondaryButtonsLimit = 2;
   const secondaryButtonsArray = React.Children.toArray(secondaryButton);
 
   if (primaryButton && primaryButton.type !== PrimaryButton) {
@@ -87,6 +89,7 @@ const Modal = ({
   }
 
   const hasInvalidSecondaryButtons =
+    enforceSecondaryButtonsStyle &&
     secondaryButtonsArray &&
     secondaryButtonsArray.reduce(
       (isInvalid, button) => isInvalid || button.type !== SecondaryButton,
@@ -363,6 +366,10 @@ Modal.propTypes = {
   /** Like `portalId` but allows to set an HTML DOM node */
   portal: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
 
+  /** Whether the component should require only elements with the type `SecondaryButton`
+   * to be passed to the secondaryButtons prop */
+  enforceSecondaryButtonsStyle: PropTypes.bool,
+
   /** Main content of the Modal dialog */
   children: PropTypes.node,
 };
@@ -387,6 +394,7 @@ Modal.defaultProps = {
   appId: false,
   portalId: false,
   portal: false,
+  enforceSecondaryButtonsStyle: true,
   children: null,
 };
 
