@@ -1,13 +1,13 @@
-.privacyoptions-footer-links {
+.consentlayer-footer-links {
   margin: dbx-spacing('s', $negative: true) dbx-spacing('s', $negative: true) 0;
 }
 
-.privacyoptions-footer-link {
+.consentlayer-footer-link {
   margin: dbx-spacing('s');
   display: inline-block;
 }
 
-.privacyoptions-document {
+.consentlayer-document {
   display: block;
   border-color: dbx-color('border.input');
   border-style: solid;
@@ -22,7 +22,7 @@
   }
 }
 
-.privacyoptions-document__content {
+.consentlayer-document__content {
   display: block;
   font-size: dbx-font-size('copy', 's');
 
@@ -31,7 +31,7 @@
   }
 }
 
-.privacyoptions-document__toggle-button {
+.consentlayer-document__toggle-button {
   @include dbx-text-style('copy');
   @include dbx-focus-ring-for-text;
   appearance: none;

@@ -45,7 +45,7 @@ module.exports = [
       },
       {
         name: 'Useful compositions',
-        components: web(['privacyoptions']),
+        components: web(['consentlayer']),
       },
     ],
     sectionDepth: 2,

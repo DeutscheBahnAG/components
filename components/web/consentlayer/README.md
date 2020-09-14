@@ -1,14 +1,14 @@
-# Privacyoptions
+# Consentlayer
 
 This component can be used to display a dialogue for users to opt-in to various options concerning their data privacy on the website.
 It can be used as a compliant way to get user consent to use technologies like cookies on your site (which you are obliged to do by the GDPR).
 
-The privacy options will be presented as a modal dialogue that can only be closed by selecting one of the two options _‘accept all’_ or _‘save my selection’_, the former being focused by default, so in case the user does not care and just hits return, all options will be accepted.
+The options will be presented as a modal dialogue that can only be closed by selecting one of the two options _‘accept all’_ or _‘save my selection’_, the former being focused by default, so in case the user does not care and just hits return, all options will be accepted.
 
 ## Usage example
 
 ```js
-import { Privacyoptions } from '@bahn-x/dbx-web';
+import { Consentlayer } from '@bahn-x/dbx-web';
 ```
 
 ```jsx
@@ -32,7 +32,7 @@ const mySaveSelectionHandler = (selectedOptions) =>
   );
 const MyCustomFooter = () => <div>Imprint etc.</div>;
 
-<Privacyoptions
+<Consentlayer
   options={myOptionsArray}
   onAcceptAll={myAcceptAllHandler}
   onSave={mySaveSelectionHandler}
@@ -71,14 +71,14 @@ As a realistic example, you could have the following options:
 For that reason, you can (and must) provide a footer area in the dialogue that contains links to these pages.
 This area can hold any content, so it is up to you how to implement it:
 
-- you can either add links or an accordion that open the documents inline inside the dialogue (the dialogue content can be scrolled, see an example story here: [With custom footer](?path=/story/components-privacyoptions--with-custom-footer))
-- or you add links to the respective pages in the footer and deliberately not render the Privacyoptions component on these pages, so that people can access the content of these documents on your site
+- you can either add links or an accordion that open the documents inline inside the dialogue (the dialogue content can be scrolled, see an example story here: [With custom footer](?path=/story/components-consentlayer--with-custom-footer))
+- or you add links to the respective pages in the footer and deliberately not render the Consentlayer component on these pages, so that people can access the content of these documents on your site
 
 ## Saving the user selection and knowing when to show the dialogue
 
 Both possible user actions _‘accept all’_ or _‘save my selection’_ have their respective callback props `onAcceptAll` and `onSave`. The `onSave` callback receives a single argument with an object containing boolean values for all options, denoting whether they were selected or not, so you can act accordingly. When `onAcceptAll` is called, you know that all options were accepted and do not need to distinguish further.
 
-It is up to you to implement the logic how to save and process these user settings and determine whether to render the Privacyoptions component based on that information.
+It is up to you to implement the logic how to save and process these user settings and determine whether to render the Consentlayer component based on that information.
 
 Typically, you would save the information, whether the user has responded to the dialogue and what options were selected, in a cookie itself with an appropriate duration (e.g. 1 year, **please check with your data privacy officer**). An easy-to-use and MIT-licensed library to do this is [js-cookie](https://github.com/js-cookie/js-cookie).
 

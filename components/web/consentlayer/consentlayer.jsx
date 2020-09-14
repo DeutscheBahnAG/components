@@ -14,7 +14,7 @@ const defaultLabels = {
   save: 'Auswahl bestätigen',
 };
 
-const Privacyoptions = ({
+const Consentlayer = ({
   options,
   footer,
   onAcceptAll,
@@ -58,12 +58,12 @@ const Privacyoptions = ({
       open
       autoFocus
       title={labels.title}
-      className={clsx('dbx-privacyoptions', className)}
+      className={clsx('dbx-consentlayer', className)}
       enableCloseButton={false}
       fullActionSize="s"
       primaryButton={
         <PrimaryButton
-          className="dbx-privacyoptions__accept-all-btn"
+          className="dbx-consentlayer__accept-all-btn"
           onClick={onAcceptAll}
           data-autofocus
         >
@@ -73,7 +73,7 @@ const Privacyoptions = ({
       enforceSecondaryButtonsStyle={false}
       secondaryButton={
         <PrimaryButton
-          className="dbx-privacyoptions__save-btn"
+          className="dbx-consentlayer__save-btn"
           onClick={onSaveButtonClick}
           disabled={allOptionsChecked}
         >
@@ -82,11 +82,11 @@ const Privacyoptions = ({
       }
       {...otherProps}
     >
-      <form className="dbx-privacyoptions__form">
-        <div className="dbx-privacyoptions__message">{message}</div>
-        <ul className="dbx-privacyoptions__options">
+      <form className="dbx-consentlayer__form">
+        <div className="dbx-consentlayer__message">{message}</div>
+        <ul className="dbx-consentlayer__options">
           {options.map(({ name, label, description, required }) => (
-            <li key={name} className="dbx-privacyoptions__option">
+            <li key={name} className="dbx-consentlayer__option">
               <Checkbox
                 name={name}
                 checked={formValues[name]}
@@ -94,9 +94,9 @@ const Privacyoptions = ({
                 onChange={onCheckboxChange}
                 label={
                   <>
-                    <div className="dbx-privacyoptions__option-label">{label}</div>
+                    <div className="dbx-consentlayer__option-label">{label}</div>
                     {description && (
-                      <div className="dbx-privacyoptions__option-description">{description}</div>
+                      <div className="dbx-consentlayer__option-description">{description}</div>
                     )}
                   </>
                 }
@@ -104,13 +104,13 @@ const Privacyoptions = ({
             </li>
           ))}
         </ul>
-        {footer && <div className="dbx-privacyoptions__footer">{footer}</div>}
+        {footer && <div className="dbx-consentlayer__footer">{footer}</div>}
       </form>
     </Modal>
   );
 };
 
-Privacyoptions.propTypes = {
+Consentlayer.propTypes = {
   /** all available options for the user to select */
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -138,10 +138,10 @@ Privacyoptions.propTypes = {
   className: PropTypes.string,
 };
 
-Privacyoptions.defaultProps = {
+Consentlayer.defaultProps = {
   labels: defaultLabels,
   footer: null,
   className: '',
 };
 
-export default Privacyoptions;
+export default Consentlayer;

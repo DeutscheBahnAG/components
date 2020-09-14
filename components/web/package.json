@@ -26,7 +26,7 @@
   "sideEffects": [
     "./button/*",
     "./modal/*",
-    "./privacyoptions/*",
+    "./consentlayer/*",
     "./pulse/*",
     "./triptime/*",
     "./triptimespan/*"

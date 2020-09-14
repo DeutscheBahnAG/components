@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { overrides } from '../modal/modal-doc';
-import DefaultPrivacyoptions from './privacyoptions';
+import DefaultConsentlayer from './consentlayer';
 
-const Privacyoptions = (props) => {
+const Consentlayer = (props) => {
   const portalRef = useRef();
   const [portal, setPortal] = useState(undefined);
   useEffect(() => {
@@ -11,9 +11,9 @@ const Privacyoptions = (props) => {
 
   return (
     <div ref={portalRef}>
-      <DefaultPrivacyoptions {...props} portal={portal} {...overrides} />
+      <DefaultConsentlayer {...props} portal={portal} {...overrides} />
     </div>
   );
 };
 
-export default Privacyoptions;
+export default Consentlayer;
