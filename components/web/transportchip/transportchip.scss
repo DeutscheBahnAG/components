@@ -81,7 +81,6 @@ button.dbx-transportchip {
   line-height: 1;
   margin-right: 0.25em; // = a space character
   vertical-align: (dbx-font-size('copy', 'm') - dbx-font-size('copy', 's')) / 2;
-  vertical-align: 0.05em;
 
   &:last-child {
     margin-right: 0;
