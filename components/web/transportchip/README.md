@@ -373,7 +373,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 
 #### Tram Frankfurt (Main)
 
-⚠️ The design of trams in Frankfurt (Main) is under review.
+(Default style)
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 '12 14 15 16 17 18 19 20 21'

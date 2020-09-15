@@ -593,18 +593,6 @@ button.dbx-transportchip {
     background: #ffd602;
     color: #000;
   }
-
-  &.dbx-transportchip--tram {
-    @include dbx-transportchip-border(2px, #f00);
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    width: 1.75em * 1.75;
-  }
-
-  &.dbx-transportchip--tram-temporary {
-    border-color: #000;
-  }
 }
 
 // Nürnberg
