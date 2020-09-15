@@ -122,7 +122,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 
 ### Berlin/Brandenburg
 
-#### S-Bahn Berlin GmbH
+#### S-Bahn Berlin
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'S1 S2 S25 S26 S3 S41 S42 S46 S47 S5 S7 S75 S8 S85 S9'
@@ -136,7 +136,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
   ));
 ```
 
-#### BVG
+#### U-Bahn Berlin
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'U1 U12 U2 U3 U4 U5 U55 U6 U7 U8 U9'
@@ -149,6 +149,8 @@ The local style is determined by the post code (`zipCode`) and the product type 
     />
   ));
 ```
+
+#### Tram Berlin
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'M1 M17 12 88'
@@ -163,6 +165,8 @@ The local style is determined by the post code (`zipCode`) and the product type 
   ));
 ```
 
+#### Bus Berlin
+
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'M11 M85 X7 X83 TXL 100 943 N1 N97'
   .split(' ')
@@ -175,6 +179,8 @@ The local style is determined by the post code (`zipCode`) and the product type 
     />
   ));
 ```
+
+#### Ferry Berlin
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'F10 F12 F21 F22 F23'
@@ -193,7 +199,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 
 ### Hamburg
 
-#### S-Bahn Hamburg GmbH
+#### S-Bahn Hamburg
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'S1 S11 S2 S21 S3 S31'
@@ -207,7 +213,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
   ));
 ```
 
-#### AKN Eisenbahn GmbH
+#### AKN Eisenbahn
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'AKN A1  AKN A2  AKN A3'
@@ -236,7 +242,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
   ));
 ```
 
-#### Hamburger Hochbahn AG
+#### Hochbahn Hamburg
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'U1 U2 U3 U4 U5'
@@ -250,7 +256,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
   ));
 ```
 
-#### Bus
+#### Bus Hamburg
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 '1 29 X3 X86 31 37 111 978 600 688 837 8129 1705 8895'
@@ -264,7 +270,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
   ));
 ```
 
-#### Ferry
+#### Ferry Hamburg
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 '61 62 72 73 75'
