@@ -32,6 +32,7 @@ const Transportchip = ({
   onClick,
   zipCode,
   canceled,
+  showProductLogo,
   ...otherProps
 }) => {
   const displayProduct = (product || findProduct(name) || 'unknown').toLowerCase();
@@ -51,7 +52,7 @@ const Transportchip = ({
       className={clsx('dbx-transportchip', canceled && 'dbx-transportchip--canceled', className)}
       {...otherProps}
     >
-      {icons[matches && matches[1] === 'A' ? 'akn' : displayProduct]}
+      {showProductLogo && icons[matches && matches[1] === 'A' ? 'akn' : displayProduct]}
       <span
         className={clsx(
           'dbx-transportchip__line',
@@ -85,9 +86,11 @@ Transportchip.propTypes = {
   /** Additional class names you want to add to the Transportchip */
   className: PropTypes.string,
   /** The transport type (e.g. Transportchip.products.SBAHN) */
-  product: PropTypes.oneOf(Object.keys(Transportchip.products).map(k => Transportchip.products[k])),
+  product: PropTypes.oneOf(
+    Object.keys(Transportchip.products).map((k) => Transportchip.products[k])
+  ),
   /** Use a local style to display line number */
-  style: PropTypes.oneOf(Object.keys(styles).map(k => styles[k])),
+  style: PropTypes.oneOf(Object.keys(styles).map((k) => styles[k])),
   /** Optional link target (will create an <a>) */
   href: PropTypes.string,
   /** Optional click handler (will create a <button>) */
@@ -96,6 +99,8 @@ Transportchip.propTypes = {
   zipCode: PropTypes.string,
   /** Show trip as canceled */
   canceled: PropTypes.bool,
+  /** Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number */
+  showProductLogo: PropTypes.bool,
 };
 
 Transportchip.defaultProps = {
@@ -106,6 +111,7 @@ Transportchip.defaultProps = {
   onClick: null,
   zipCode: '',
   canceled: false,
+  showProductLogo: false,
 };
 
 export default Transportchip;

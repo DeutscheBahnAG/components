@@ -8,6 +8,14 @@ import { Transportchip } from '@bahn-x/dbx-web';
 <Transportchip name="S 1" />
 ```
 
+## With transport logo
+
+Local public transport lines can be displayed including their logo. This is helpful as the signage in the train stations/cities will often use those logos.
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip showProductLogo name="S 1" />
+```
+
 ## Local styles
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
@@ -52,39 +60,36 @@ import { Transportchip } from '@bahn-x/dbx-web';
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'M1 M17 12 88'
-  .split(' ')
-  .map((name) => (
-    <Transportchip
-      zipCode="10115"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
-  ));
+'M1 M17 12 88'.split(' ').map((name) => (
+  <Transportchip
+    zipCode="10115"
+    product={Transportchip.products.TRAM}
+    name={name}
+    showProductLogo // BVG styles must show the transport logo
+  />
+));
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'M11 M85 X7 X83 TXL 100 943 N1 N97'
-  .split(' ')
-  .map((name) => (
-    <Transportchip
-      zipCode="10115"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
-  ));
+'M11 M85 X7 X83 TXL 100 943 N1 N97'.split(' ').map((name) => (
+  <Transportchip
+    zipCode="10115"
+    product={Transportchip.products.BUS}
+    name={name}
+    showProductLogo // BVG styles must show the transport logo
+  />
+));
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'F10 F12 F21 F22 F23'
-  .split(' ')
-  .map((name) => (
-    <Transportchip
-      zipCode="10115"
-      product={Transportchip.products.FERRY}
-      name={name}
-    />
-  ));
+'F10 F12 F21 F22 F23'.split(' ').map((name) => (
+  <Transportchip
+    zipCode="10115"
+    product={Transportchip.products.FERRY}
+    name={name}
+    showProductLogo // BVG styles must show the transport logo
+  />
+));
 ```
 
 ### Hamburg
@@ -113,6 +118,21 @@ import { Transportchip } from '@bahn-x/dbx-web';
       zipCode="25000"
       product={Transportchip.products.REGIONAL}
       name={name}
+    />
+  ));
+```
+
+AKN trains do have their own logo in Hamburg’s public transportation system. It will work in combination with the `zipCode` and `product` only:
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'AKN A1  AKN A2  AKN A3'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="25000"
+      product={Transportchip.products.REGIONAL}
+      name={name}
+      showProductLogo
     />
   ));
 ```
