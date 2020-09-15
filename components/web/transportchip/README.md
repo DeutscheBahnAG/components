@@ -101,15 +101,23 @@ import Status from '@bahn-x/dbx-web/status';
 
 ## Local styles
 
+Many cities and regions do have special colours defined, which help to identify the transport line easily. In addition, some products have a specific shape. An S-Bahn usually has a rounded left and right side which reflects the circular S-Bahn logo while an U-Bahn has straight sides adhering the U in a square.
+
+We do use those local styles as they match the signage in the train stations especially in digital products which have a very local focus. Long-distance trips might prefer to use the default styles.
+
+The local style is determined by the post code (`zipCode`) and the product type (`product`). The product type might be detected automatically by the `name`.
+
 ℹ️ In this documentation we use the German names of cities (Cologne → Köln, Munich → München, Nuremberg → Nürnberg).
 
+**Example:** Different colours of the line S 1 in different cities:
+
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-<Transportchip name="S 1" /> {/* Default */}
-<Transportchip name="S 1" zipCode="10115" /> {/* Berlin */}
-<Transportchip name="S 1" zipCode="20000" /> {/* Hamburg */}
+<Transportchip name="S 1" />                 {/* Default   */}
+<Transportchip name="S 1" zipCode="10115" /> {/* Berlin    */}
+<Transportchip name="S 1" zipCode="20000" /> {/* Hamburg   */}
 <Transportchip name="S 1" zipCode="60000" /> {/* Frankfurt */}
-<Transportchip name="S 1" zipCode="68000" /> {/* Mannheim */}
-<Transportchip name="S 1" zipCode="80000" /> {/* München */}
+<Transportchip name="S 1" zipCode="68000" /> {/* Mannheim  */}
+<Transportchip name="S 1" zipCode="80000" /> {/* München   */}
 ```
 
 ### Berlin/Brandenburg
