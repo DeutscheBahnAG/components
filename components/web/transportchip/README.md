@@ -64,13 +64,15 @@ Local public transport lines can be displayed including their logo. This is help
 
 ## Local styles
 
+ℹ️ In this documentation we use the German names of cities (Cologne → Köln, Munich → München, Nuremberg → Nürnberg).
+
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 <Transportchip name="S 1" /> {/* Default */}
 <Transportchip name="S 1" zipCode="10115" /> {/* Berlin */}
 <Transportchip name="S 1" zipCode="20000" /> {/* Hamburg */}
 <Transportchip name="S 1" zipCode="60000" /> {/* Frankfurt */}
 <Transportchip name="S 1" zipCode="68000" /> {/* Mannheim */}
-<Transportchip name="S 1" zipCode="80000" /> {/* Munich */}
+<Transportchip name="S 1" zipCode="80000" /> {/* München */}
 ```
 
 ### Berlin/Brandenburg
@@ -104,37 +106,45 @@ Local public transport lines can be displayed including their logo. This is help
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'M1 M17 12 88'.split(' ').map((name) => (
-  <Transportchip
-    zipCode="10115"
-    product={Transportchip.products.TRAM}
-    name={name}
-    showProductLogo // BVG styles must show the transport logo
-  />
-));
+'M1 M17 12 88'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="10115"
+      product={Transportchip.products.TRAM}
+      name={name}
+      showProductLogo
+    />
+  ));
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'M11 M85 X7 X83 TXL 100 943 N1 N97'.split(' ').map((name) => (
-  <Transportchip
-    zipCode="10115"
-    product={Transportchip.products.BUS}
-    name={name}
-    showProductLogo // BVG styles must show the transport logo
-  />
-));
+'M11 M85 X7 X83 TXL 100 943 N1 N97'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="10115"
+      product={Transportchip.products.BUS}
+      name={name}
+      showProductLogo
+    />
+  ));
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'F10 F12 F21 F22 F23'.split(' ').map((name) => (
-  <Transportchip
-    zipCode="10115"
-    product={Transportchip.products.FERRY}
-    name={name}
-    showProductLogo // BVG styles must show the transport logo
-  />
-));
+'F10 F12 F21 F22 F23'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="10115"
+      product={Transportchip.products.FERRY}
+      name={name}
+      showProductLogo
+    />
+  ));
 ```
+
+ℹ️ BVG styles for tram, bus and ferry must show the transport logo.
 
 ### Hamburg
 
@@ -271,4 +281,342 @@ In Hamburg, all transport products use the same width to align well. The ferry d
     name="62"
   />
 </div>
+```
+
+### München
+
+#### S-Bahn München
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S1 S2 S3 S4 S6 S7 S8 S20'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="80000"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### U-Bahn München
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'U1 U2 U3 U4 U5 U6 U7 U8'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="80000"
+      product={Transportchip.products.SUBWAY}
+      name={name}
+    />
+  ));
+```
+
+#### Tram München
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'12 16 17 18 19 20 21 23 25 27 28 29 E7 N17 N19 N20 N27'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="80000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+#### Bus München
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'X30 X98 50 63 100 199 N40 N81'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="80000"
+      product={Transportchip.products.BUS}
+      name={name}
+    />
+  ));
+```
+
+### Rhein-Main
+
+#### S-Bahn Rhein-Main
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S1 S2 S3 S4 S5 S6 S7 S8 S9'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="60000"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### U-Bahn Frankfurt (Main)
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'U1 U2 U3 U4 U5 U6 U7 U8 U9'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="60000"
+      product={Transportchip.products.SUBWAY}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Frankfurt (Main)
+
+⚠️ The design of trams in Frankfurt (Main) is under review.
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'12 14 15 16 17 18 19 20 21'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="60000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+### Köln
+
+#### S-Bahn Köln
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S11 S12 S13 S19 S23'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="50667"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### Stadtbahn Köln
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'STR 1  STR 3  STR 4  STR 5  STR 7  STR 9  STR 12  STR 13  STR 15  STR 16  STR 17  STR 18'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="50667"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+### Nürnberg
+
+The styles are shared with Fürth.
+
+#### S-Bahn Nürnberg
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S1 S2 S3 S4'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="90000"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### U-Bahn Nürnberg
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'U1 U2 U3'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="90000"
+      product={Transportchip.products.SUBWAY}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Nürnberg
+
+(Default style)
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'4 5 6 7 8'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="90000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+#### Bus Nürnberg
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'20 31 43 56 99'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="90000"
+      product={Transportchip.products.BUS}
+      name={name}
+    />
+  ));
+```
+
+### Fürth
+
+The styles are shared with Nürnberg.
+
+#### S-Bahn Fürth
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip
+  zipCode="90000"
+  product={Transportchip.products.SUBURBAN}
+  name="S1"
+/>
+```
+
+#### U-Bahn Fürth
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip
+  zipCode="90000"
+  product={Transportchip.products.SUBWAY}
+  name="U1"
+/>
+```
+
+#### Bus Fürth
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'33 67 171 179 189'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="90000"
+      product={Transportchip.products.BUS}
+      name={name}
+    />
+  ));
+```
+
+### Rhein-Neckar
+
+#### S-Bahn Rhein-Neckar
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S1 S2 S3 S33 S39 S4 S5 S51 S6'
+  .split(' ')
+  .map((name) => (
+    <Transportchip
+      zipCode="68000"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Mannheim
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'STR 1  STR 3  STR 4  RNV 4A  RNV 5  RNV 5A  RNV 15  RNV 6  RNV 6A  RNV 7  RNV 8  RNV 9  RNV 15'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="68000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Ludwigshafen (Rhein)
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'RNV 4A  RNV 5  RNV 5A  RNV 15  RNV 6  RNV 6A  RNV 7  RNV 9'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="67000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Heidelberg
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'RNV 5  STR 21  STR 21A  STR 22  STR 23  STR 24  STR 26'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="69000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+### Bremen/Niedersachsen
+
+#### Regio-S-Bahn Bremen/Niedersachsen
+
+ℹ️ Despite the name this product does not use the S-Bahn logo.
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'NWB RS1  NWB RS2  NWB RS3  NWB RS4'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="28000"
+      product={Transportchip.products.SUBURBAN}
+      name={name}
+    />
+  ));
+```
+
+#### Tram Bremen
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'STR 1  STR 2  STR 3  STR 4  STR 5  STR 6  STR 8  STR 10  STR N1  STR N4  STR N10'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="28000"
+      product={Transportchip.products.TRAM}
+      name={name}
+    />
+  ));
+```
+
+#### Bus Bremen
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'BUS 20  BUS 21  BUS 22  BUS 24  BUS 25  BUS 26  BUS 27  BUS 28  BUS 29  BUS 31  BUS 33  BUS 34  BUS 37  BUS 38  BUS 39  BUS 40  BUS 41  BUS 42  BUS 44  BUS 52  BUS 55  BUS 57  BUS 58  BUS 61  BUS 62  BUS 63  BUS 65  BUS 66  BUS 80  BUS 81  BUS 82  BUS 90  BUS 91  BUS 92  BUS 93  BUS 94  BUS 95  BUS 96  BUS 98  BUS N3  BUS N5  BUS N6  BUS N7  BUS N9  BUS N94  BUS 101  BUS 102  BUS 120'
+  .split('  ')
+  .map((name) => (
+    <Transportchip
+      zipCode="28000"
+      product={Transportchip.products.BUS}
+      name={name}
+    />
+  ));
 ```
