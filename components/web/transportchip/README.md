@@ -62,6 +62,43 @@ Local public transport lines can be displayed including their logo. This is help
 <Transportchip showProductLogo name="F 1" />
 ```
 
+## Cancelled trips
+
+When a trip gets cancelled, the Transport chip gets greyed out. As in all our code, we do use American English (`canceled`) in contrast to our documentation and user interfaces in British English (‘cancelled’).
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip canceled name="U5" />
+<Transportchip canceled name="ICE599" />
+<Transportchip canceled name="RE13" />
+<Transportchip canceled name="Str 4" />
+<Transportchip canceled name="Bus 296" />
+<Transportchip canceled name="Taxi" />
+```
+
+Those styles also apply on the product logo:
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip canceled showProductLogo name="S 25" />
+<Transportchip canceled showProductLogo name="U5" />
+<Transportchip canceled showProductLogo name="Str 4" />
+<Transportchip canceled showProductLogo name="Bus 296" />
+<Transportchip canceled showProductLogo name="F 62" />
+```
+
+On purpose the styles do invert contrast (usually the logo is white on dark background) and use an outline to make them look as ‘deactivated’ as possible.
+
+Cancelled trips must be indicated with a [fatal Status](#/Components/Feedback/Status) message below:
+
+```jsx noeditor
+import Status from '@bahn-x/dbx-web/status';
+<>
+  <Transportchip canceled name="IC 123" />
+  <div style={{ marginTop: 8 }}>
+    <Status message="The train got cancelled" variant={Status.variants.FATAL} />
+  </div>
+</>;
+```
+
 ## Local styles
 
 ℹ️ In this documentation we use the German names of cities (Cologne → Köln, Munich → München, Nuremberg → Nürnberg).
