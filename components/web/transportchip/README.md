@@ -4,8 +4,50 @@
 import { Transportchip } from '@bahn-x/dbx-web';
 ```
 
-```jsx
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 <Transportchip name="S 1" />
+<Transportchip name="ICE 234" />
+```
+
+## Automatic detection
+
+The automatic detection is based on the name and works for many cases. It doesn’t matter if the name is written with (`S 1`) or without (`S1`) space.
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip name="S 1" />
+<Transportchip name="U 1" />
+<Transportchip name="STR 1" />
+<Transportchip name="STR M1" />
+<Transportchip name="Bus 1" />
+<Transportchip name="IC 1" />
+<Transportchip name="EC 1" />
+<Transportchip name="ICE 1" />
+<Transportchip name="F 1" />
+<Transportchip name="Taxi" />
+<Transportchip name="RE 1" />
+<Transportchip name="RB 1" />
+```
+
+## Manual transport type
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+<Transportchip product={Transportchip.products.SUBURBAN} name="S 1" />
+<Transportchip product={Transportchip.products.SUBWAY} name="U 1" />
+<Transportchip product={Transportchip.products.TRAM} name="STR 1" />
+<Transportchip product={Transportchip.products.TRAM} name="STR M1" />
+<Transportchip product={Transportchip.products.BUS} name="Bus 1" />
+<Transportchip product={Transportchip.products.IC} name="IC 1" />
+<Transportchip product={Transportchip.products.EC} name="EC 1" />
+<Transportchip product={Transportchip.products.ICE} name="ICE 1" />
+<Transportchip product={Transportchip.products.FERRY} name="F 1" />
+<Transportchip product={Transportchip.products.TAXI} name="Taxi" />
+<Transportchip product={Transportchip.products.RE} name="RE 1" />
+<Transportchip product={Transportchip.products.RB} name="RB 1" />
+<Transportchip product={Transportchip.products.BIKESHARING} name="Bike sharing" />
+<Transportchip product={Transportchip.products.CARSHARING} name="Car sharing" />
+<Transportchip product={Transportchip.products.AIRPLANE} name="LH123" />
+<Transportchip product={Transportchip.products.INTERCITYBUS} name="123" />
+<Transportchip product={Transportchip.products.WALKING} name="Walk" />
 ```
 
 ## With transport logo
@@ -14,6 +56,10 @@ Local public transport lines can be displayed including their logo. This is help
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 <Transportchip showProductLogo name="S 1" />
+<Transportchip showProductLogo name="U 1" />
+<Transportchip showProductLogo name="Str 1" />
+<Transportchip showProductLogo name="Bus 1" />
+<Transportchip showProductLogo name="F 1" />
 ```
 
 ## Local styles
