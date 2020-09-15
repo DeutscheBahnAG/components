@@ -65,14 +65,12 @@ Local public transport lines can be displayed including their logo. This is help
 ## Local styles
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-<>
-  <Transportchip name="S 1" /> {/* Default */}
-  <Transportchip name="S 1" zipCode="10115" /> {/* Berlin */}
-  <Transportchip name="S 1" zipCode="20000" /> {/* Hamburg */}
-  <Transportchip name="S 1" zipCode="60000" /> {/* Frankfurt */}
-  <Transportchip name="S 1" zipCode="68000" /> {/* Mannheim */}
-  <Transportchip name="S 1" zipCode="80000" /> {/* Munich */}
-</>
+<Transportchip name="S 1" /> {/* Default */}
+<Transportchip name="S 1" zipCode="10115" /> {/* Berlin */}
+<Transportchip name="S 1" zipCode="20000" /> {/* Hamburg */}
+<Transportchip name="S 1" zipCode="60000" /> {/* Frankfurt */}
+<Transportchip name="S 1" zipCode="68000" /> {/* Mannheim */}
+<Transportchip name="S 1" zipCode="80000" /> {/* Munich */}
 ```
 
 ### Berlin/Brandenburg
