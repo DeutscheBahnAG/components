@@ -224,3 +224,53 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
     />
   ));
 ```
+
+In Hamburg, all transport products use the same width to align well. The ferry does have some whitespace on the left and right to adjust with S-Bahn, U-Bahn and bus styles.
+
+```jsx noeditor
+<div className="sg-components-transportationchip-list">
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.SUBURBAN}
+    name="S 1"
+  />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.SUBURBAN}
+    name="S 2"
+  />
+  <br />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.UBAHN}
+    name="U 3"
+  />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.UBAHN}
+    name="U 4"
+  />
+  <br />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.BUS}
+    name="29"
+  />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.BUS}
+    name="X3"
+  />
+  <br />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.FERRY}
+    name="61"
+  />
+  <Transportchip
+    zipCode="20000"
+    product={Transportchip.products.FERRY}
+    name="62"
+  />
+</div>
+```
