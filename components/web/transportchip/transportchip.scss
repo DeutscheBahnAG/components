@@ -766,6 +766,12 @@ button.dbx-transportchip {
     background: #744a86;
   }
 
+  &.dbx-transportchip--s39 {
+    @include dbx-transportchip-border(2px, #000);
+    background: #fff;
+    color: #000;
+  }
+
   &.dbx-transportchip--s4 {
     background: #1a9d47;
   }
