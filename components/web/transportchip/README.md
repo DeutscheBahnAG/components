@@ -146,7 +146,7 @@ Local public transport lines can be displayed including their logo. This is help
   .map((name) => (
     <Transportchip
       zipCode="20000"
-      product={Transportchip.products.SBAHN}
+      product={Transportchip.products.SUBURBAN}
       name={name}
     />
   ));
@@ -189,7 +189,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
   .map((name) => (
     <Transportchip
       zipCode="20000"
-      product={Transportchip.products.UBAHN}
+      product={Transportchip.products.SUBWAY}
       name={name}
     />
   ));
@@ -240,12 +240,12 @@ In Hamburg, all transport products use the same width to align well. The ferry d
   <br />
   <Transportchip
     zipCode="20000"
-    product={Transportchip.products.UBAHN}
+    product={Transportchip.products.SUBWAY}
     name="U 3"
   />
   <Transportchip
     zipCode="20000"
-    product={Transportchip.products.UBAHN}
+    product={Transportchip.products.SUBWAY}
     name="U 4"
   />
   <br />
