@@ -118,6 +118,7 @@ const Button: ButtonType<ButtonProps> = ({
   return (
     <Element
       style={{ ...style, minWidth }}
+      // @ts-expect-error
       ref={buttonRef}
       type={href ? undefined : type}
       href={href}
@@ -148,20 +149,13 @@ Button.sizes = ButtonSizes;
 Button.types = ButtonTypes;
 Button.variants = ButtonVariants;
 
-interface ValidateVariantCombinationsArguments {
-  icon: React.ReactNode;
-  shape: ButtonShapes;
-  size: ButtonSizes;
-  variant: ButtonVariants;
-}
-
-export const validateVariantCombinations = (
-  { icon, shape, size, variant }: ValidateVariantCombinationsArguments,
+export const validateVariantCombinations: React.Validator<ButtonVariants> = (
+  { icon, shape, size, variant }: ButtonProps,
   propName: string,
   componentName: string
 ) => {
   const variants = Object.values(ButtonVariants);
-  if (!variants.includes(variant)) {
+  if (!variants.includes(variant!)) {
     return new Error(`The \`variant\` must be in [${variants.join(', ')}] for a ${componentName}.`);
   }
   if (icon) {
