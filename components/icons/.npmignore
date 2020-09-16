@@ -1,5 +1,9 @@
 node_modules
 components
 svg
+*.test.js
 *.jsx
+*.ts
+*.tsx
+!*.d.ts
 svgr.config.js
