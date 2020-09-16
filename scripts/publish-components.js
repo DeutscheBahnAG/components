@@ -6,6 +6,7 @@
 const ora = require('ora');
 const chalk = require('chalk');
 const simpleGit = require('simple-git/promise')(`${__dirname}/..`);
+const util = require('util');
 const { exec } = require('child_process');
 const semver = require('semver');
 const fs = require('fs-extra');
@@ -13,6 +14,8 @@ const os = require('os');
 const globby = require('globby');
 const rimraf = require('rimraf');
 const semverIncrement = require('./lib/semver-increment');
+
+const asyncExec = util.promisify(exec);
 
 function removeChalkStyles(string) {
   return string.replace(
@@ -108,20 +111,13 @@ async function updateVersion(packageName, location) {
   return [version, releaseInfo];
 }
 
-function transpilePackage(location) {
-  return new Promise((resolve, reject) => {
-    const options = '--config-file ./babel.config.json';
-    exec(
-      `npx babel ${location} --extensions ".js,.jsx,.ts,.tsx" --out-dir=${location} ${options}`,
-      (error) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve();
-        }
-      }
-    );
-  });
+async function transpilePackage(location) {
+  const options = '--config-file ./babel.config.json';
+  const babelPromise = asyncExec(
+    `npx babel ${location} --extensions ".js,.jsx,.ts,.tsx" --out-dir=${location} ${options}`
+  );
+  const tscPromise = asyncExec(`tsc --outDir ${location} --declaration --emitDeclarationOnly`);
+  await Promise.all([babelPromise, tscPromise]);
 }
 
 async function renderSass(location) {
