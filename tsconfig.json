@@ -9,6 +9,9 @@
     ],
     "module": "esnext",
     "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
     "strict": true,
     "target": "esnext"
   },
