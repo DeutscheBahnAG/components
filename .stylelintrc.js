@@ -9,6 +9,10 @@ module.exports = {
     "./sass/vendor/**/*",
     "./sass/styleguide/**/*",
     "./sass/setup/_reset.scss",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
     // email css forces us to do cruel things
     // where the linter would complain basically everywhere
     "./email/**/*",
