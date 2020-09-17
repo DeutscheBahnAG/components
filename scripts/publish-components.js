@@ -112,7 +112,7 @@ async function updateVersion(packageName, location) {
 }
 
 async function transpilePackage(location) {
-  const options = '--config-file ./babel.config.json';
+  const options = '--source-maps --config-file ./babel.config.json';
   const babelPromise = asyncExec(
     `npx babel ${location} --extensions ".js,.jsx,.ts,.tsx" --out-dir=${location} ${options}`
   );
