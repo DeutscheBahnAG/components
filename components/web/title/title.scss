@@ -1,0 +1,14 @@
+.dbx-title {
+  color: dbx-text-color('primary');
+  display: inherit;
+}
+
+@each $size in (s m l xl xxl) {
+  .dbx-title--size-#{$size} {
+    @include dbx-text-style('title', $size);
+  }
+}
+
+.dbx-title--light {
+  font-weight: dbx-token('fontweight', 'title');
+}

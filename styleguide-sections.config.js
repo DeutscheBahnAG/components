@@ -33,7 +33,7 @@ module.exports = [
       },
       {
         name: 'Typography',
-        components: web(['copy']),
+        components: web(['copy', 'title']),
       },
       {
         name: 'Travel',
