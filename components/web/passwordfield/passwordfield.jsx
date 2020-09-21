@@ -24,8 +24,8 @@ const Passwordfield = ({
       value={value}
       type={isConcealed ? 'password' : 'text'}
       autoCapitalize="none"
-      autoCompleteType="password"
-      autoCorrect={false}
+      autoComplete="off"
+      autoCorrect="false"
       spellCheck={false}
       suffix={
         <Button

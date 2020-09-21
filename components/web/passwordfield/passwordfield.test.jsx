@@ -1,13 +1,13 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Passwordfield from './passwordfield';
+import { mount } from 'enzyme';
+import Passwordfield from './passwordfield-doc';
 
 const noopFn = () => {};
 
 describe('Passwordfield component', () => {
   it('should render a text input', () => {
-    const wrapper = shallow(<Passwordfield value="test123" onChange={noopFn} />);
-    expect(wrapper.find('[type="password"]')).toHaveLength(1);
+    const wrapper = mount(<Passwordfield value="test123" onChange={noopFn} />);
+    expect(wrapper.find('input[type="password"]')).toHaveLength(1);
   });
 
   it('should disable the text input and the button', () => {
