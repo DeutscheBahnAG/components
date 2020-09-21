@@ -1,0 +1,16 @@
+.dbx-copy {
+  color: dbx-text-color('primary');
+  display: inherit;
+}
+
+@each $size in (xs s m l) {
+  .dbx-copy--size-#{$size} {
+    @include dbx-text-style('copy', $size);
+  }
+}
+
+.dbx-copy--bold,
+.dbx-copy b,
+.dbx-copy strong {
+  font-weight: dbx-font-weight('copy', 'bold');
+}

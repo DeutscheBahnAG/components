@@ -32,6 +32,10 @@ module.exports = [
         components: web(['textfield', 'passwordfield', 'checkbox', 'select']),
       },
       {
+        name: 'Typography',
+        components: web(['copy']),
+      },
+      {
         name: 'Travel',
         components: web(['time', 'triptime', 'triptimespan', 'track', 'transportchip']),
       },
