@@ -11,7 +11,11 @@ const stories = storiesOf('Components / Typography / Title', module)
   .add('Wrapper element', () => (
     <h1>
       <Title>Content</Title>
-    </h1>
+    </h1>))
+  .add('Secondary', () => (
+    <Title component="h1" variant={Title.variants.SECONDARY}>
+      Content
+    </Title>
   ));
 
 Object.values(Title.sizes).forEach((size) => {

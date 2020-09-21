@@ -10,15 +10,22 @@ enum CopySizes {
   L = 'l',
 }
 
+enum CopyVariants {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+}
+
 interface CopyProps {
   children: React.ReactNode;
   size?: CopySizes;
   bold?: boolean;
   className?: string;
+  variant?: CopyVariants;
 }
 
 type CopyType<P> = React.FunctionComponent<P> & {
   sizes: typeof CopySizes;
+  variants: typeof CopyVariants;
 };
 
 const Copy: CopyType<CopyProps> = ({
@@ -26,10 +33,17 @@ const Copy: CopyType<CopyProps> = ({
   size = CopySizes.M,
   bold = false,
   className = '',
+  variant = CopyVariants.PRIMARY,
   ...otherProps
 }: CopyProps) => (
   <span
-    className={clsx('dbx-copy', `dbx-copy--size-${size}`, bold && 'dbx-copy--bold', className)}
+    className={clsx(
+      'dbx-copy',
+      `dbx-copy--size-${size}`,
+      bold && 'dbx-copy--bold',
+      variant === CopyVariants.SECONDARY && 'dbx-copy--secondary',
+      className
+    )}
     {...otherProps}
   >
     {children}
@@ -37,6 +51,7 @@ const Copy: CopyType<CopyProps> = ({
 );
 
 Copy.sizes = CopySizes;
+Copy.variants = CopyVariants;
 
 Copy.propTypes = {
   /** Text */
@@ -47,6 +62,8 @@ Copy.propTypes = {
   bold: PropTypes.bool,
   /** Additional class names you want to add to the Copy */
   className: PropTypes.string,
+  /** Color of the text */
+  variant: PropTypes.oneOf(Object.values(CopyVariants)),
 };
 
 export default Copy;

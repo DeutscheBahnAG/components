@@ -12,7 +12,8 @@ const stories = storiesOf('Components / Typography / Copy', module)
     <p>
       <Copy>Content</Copy>
     </p>
-  ));
+  ))
+  .add('Secondary', () => <Copy variant={Copy.variants.SECONDARY}>Content</Copy>);
 
 Object.values(Copy.sizes).forEach((size) => {
   stories.add(`Size ${size.toUpperCase()}`, () => <Copy size={size}>Content</Copy>);

@@ -81,6 +81,12 @@ import { Copy } from '@bahn-x/dbx-web';
 </Copy>
 ```
 
+## Secondary
+
+```jsx
+<Copy variant={Copy.variants.SECONDARY}>Secondary Copy</Copy>
+```
+
 ## Usage
 
 The `<Copy>` component adds the text style only. It is recommended to wrap it in a `<p>` or other HTML element depending on your needs.

@@ -11,15 +11,22 @@ enum TitleSizes {
   XXL = 'xxl',
 }
 
+enum TitleVariants {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+}
+
 interface TitleProps {
   children?: React.ReactNode;
   size?: TitleSizes;
   light?: boolean;
   className?: string;
+  variant?: TitleVariants;
 }
 
 type TitleType<P> = React.FunctionComponent<P> & {
   sizes: typeof TitleSizes;
+  variants: typeof TitleVariants;
 };
 
 const Title: TitleType<TitleProps> = ({
@@ -27,10 +34,17 @@ const Title: TitleType<TitleProps> = ({
   size = TitleSizes.XXL,
   light = false,
   className = '',
+  variant = TitleVariants.PRIMARY,
   ...otherProps
 }) => (
   <span
-    className={clsx('dbx-title', `dbx-title--size-${size}`, light && 'dbx-title--light', className)}
+    className={clsx(
+      'dbx-title',
+      `dbx-title--size-${size}`,
+      light && 'dbx-title--light',
+      variant === TitleVariants.SECONDARY && 'dbx-title--secondary',
+      className
+    )}
     {...otherProps}
   >
     {children}
@@ -38,6 +52,7 @@ const Title: TitleType<TitleProps> = ({
 );
 
 Title.sizes = TitleSizes;
+Title.variants = TitleVariants;
 
 Title.propTypes = {
   /** Text */
@@ -48,6 +63,8 @@ Title.propTypes = {
   light: PropTypes.bool,
   /** Additional class names you want to add to the Title */
   className: PropTypes.string,
+  /** Color of the text */
+  variant: PropTypes.oneOf(Object.values(TitleVariants)),
 };
 
 export default Title;

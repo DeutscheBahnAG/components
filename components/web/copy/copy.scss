@@ -3,6 +3,10 @@
   display: inherit;
 }
 
+.dbx-copy--secondary {
+  color: dbx-text-color('secondary');
+}
+
 @each $size in (xs s m l) {
   .dbx-copy--size-#{$size} {
     @include dbx-text-style('copy', $size);

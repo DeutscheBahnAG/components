@@ -36,6 +36,12 @@ import { Title } from '@bahn-x/dbx-web';
 <Title light>Light Title</Title>
 ```
 
+## Secondary
+
+```jsx
+<Title variant={Title.variants.SECONDARY}>Secondary Title</Title>
+```
+
 ## Usage
 
 The `<Title>` component adds the text style only. It is recommended to wrap it in a `<h1>` or other HTML element depending on your needs.

@@ -3,6 +3,10 @@
   display: inherit;
 }
 
+.dbx-title--secondary {
+  color: dbx-text-color('secondary');
+}
+
 @each $size in (s m l xl xxl) {
   .dbx-title--size-#{$size} {
     @include dbx-text-style('title', $size);
