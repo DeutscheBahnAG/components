@@ -37,7 +37,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal--open {
   opacity: 1;
-  background-color: rgba(dbx-color('background.secondary'), 0.5);
+  background-color: rgba(dbx-palette-color('coolgray800'), 0.8);
 }
 
 .dbx-modal--close {
