@@ -47,14 +47,18 @@ describe('Modal Component', () => {
   });
   it('should append css class', () => {
     const classText = 'some-class';
-    const wrapper = mount(<ModalComponent className={classText} open />);
-    expect(wrapper.find(`${selectors.modal}.${classText}`)).toHaveLength(1);
+    const overlayClassText = 'some-overlay-class';
+    const wrapper = mount(
+      <ModalComponent className={classText} overlayClassName={overlayClassText} open />
+    );
+    expect(wrapper.find(`${selectors.modal}.${overlayClassText}`)).toHaveLength(1);
+    expect(wrapper.find(`${selectors.dialog}.${classText}`)).toHaveLength(1);
   });
   it('should set modal dialog size to automatic (auto)', () => {
     const wrapper = mount(<ModalComponent size="auto" open />);
     expect(wrapper.find(`${selectors.dialog}.dbx-modal__dialog--width-auto`)).toHaveLength(1);
   });
-  sizes.forEach(size => {
+  sizes.forEach((size) => {
     const sizeId = Object.keys(size)[0];
     const sizeName = Object.values(size)[0];
     it(`should set modal dialog size to ${sizeName} (${sizeId})`, () => {

@@ -68,6 +68,7 @@ const Modal = ({
   fullActionSize,
   centerActions,
   className,
+  overlayClassName,
   ariaLabelledBy,
   ariaDescribedBy,
   autoFocus,
@@ -183,12 +184,12 @@ const Modal = ({
       closeTimeoutMS={duration}
       portalClassName="dbx-modal-portal"
       overlayClassName={{
-        base: clsx('dbx-modal', className),
+        base: clsx('dbx-modal', overlayClassName),
         afterOpen: 'dbx-modal--open',
         beforeClose: 'dbx-modal--close',
       }}
       className={{
-        base: clsx('dbx-modal__dialog', `dbx-modal__dialog--width-${size}`),
+        base: clsx('dbx-modal__dialog', `dbx-modal__dialog--width-${size}`, className),
         afterOpen: 'dbx-modal__dialog--open',
         beforeClose: 'dbx-modal__dialog--close',
       }}
@@ -320,6 +321,9 @@ Modal.propTypes = {
   centerActions: PropTypes.oneOf(['none', 's', 'm', 'l']),
 
   /** Append custom css classes to the Modal container */
+  overlayClassName: PropTypes.string,
+
+  /** Append custom css classes to the Modal dialogue */
   className: PropTypes.string,
 
   /** Identifier of the HTML element, which contains the label of the Modal.
@@ -388,6 +392,7 @@ Modal.defaultProps = {
   fullActionSize: 'none',
   centerActions: 'none',
   className: null,
+  overlayClassName: null,
   ariaLabelledBy: 'modal-title',
   ariaDescribedBy: null,
   autoFocus: true,
