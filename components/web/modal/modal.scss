@@ -221,3 +221,8 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 .dbx-modal__action {
   margin: 0 $dbx-modal--action-gap (2 * $dbx-modal--action-gap);
 }
+
+.body--dbx-modal-open,
+.html--dbx-modal-open {
+  overflow: hidden;
+}

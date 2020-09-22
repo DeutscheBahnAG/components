@@ -77,6 +77,7 @@ const Modal = ({
   portal,
   children,
   enforceSecondaryButtonsStyle,
+  disableBodyScrollWhenOpen,
   ...otherProps
 }) => {
   const secondaryButtonsArray = React.Children.toArray(secondaryButton);
@@ -177,6 +178,13 @@ const Modal = ({
     otherTitleProps.id = ariaLabelledBy;
   }
 
+  const bodyScrollLockProps = disableBodyScrollWhenOpen
+    ? {
+        bodyOpenClassName: 'body--dbx-modal-open',
+        htmlOpenClassName: 'html--dbx-modal-open',
+      }
+    : {};
+
   return (
     <ReactModal
       isOpen={open}
@@ -205,6 +213,7 @@ const Modal = ({
         labelledby: ariaLabelledBy,
         describedby: ariaDescribedBy,
       }}
+      {...bodyScrollLockProps}
       {...otherProps}
     >
       <header
@@ -374,6 +383,10 @@ Modal.propTypes = {
    * to be passed to the secondaryButtons prop */
   enforceSecondaryButtonsStyle: PropTypes.bool,
 
+  /** This will apply styles to the `html` and `body` tags that disable
+   * scrolling on the page in the background when the modal is open */
+  disableBodyScrollWhenOpen: PropTypes.bool,
+
   /** Main content of the Modal dialog */
   children: PropTypes.node,
 };
@@ -401,6 +414,7 @@ Modal.defaultProps = {
   portal: false,
   enforceSecondaryButtonsStyle: true,
   children: null,
+  disableBodyScrollWhenOpen: true,
 };
 
 export { PrimaryButton, SecondaryButton };
