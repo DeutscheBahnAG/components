@@ -1,5 +1,15 @@
 const path = require('path');
+const fs = require('fs');
 const sections = require('./styleguide-sections.config');
+
+const findPackageJSON = (currentPath) => {
+  if (path.resolve(currentPath) === '/') throw new Error('No `package.json` found');
+  const file = `${currentPath}/package.json`;
+  if (fs.existsSync(file)) {
+    return file;
+  }
+  return findPackageJSON(path.join(currentPath, '..'));
+};
 
 module.exports = {
   sections,
@@ -15,8 +25,15 @@ module.exports = {
       .replace(/\.(jsx|tsx)/, '')
       .replace(/^\w/, (w) => w.toUpperCase())
       .replace(/-doc$/, '');
-    const dir = path.dirname(componentPath);
-    return `import ${name} from '@bahn-x/${dir}';`;
+    const componentDir = path.dirname(componentPath);
+    try {
+      const packagePath = findPackageJSON(componentDir);
+      const package = JSON.parse(fs.readFileSync(packagePath));
+      const relativePath = path.normalize(path.relative(path.dirname(packagePath), componentDir));
+      return `import ${name} from '${package.name}/${relativePath}';`;
+    } catch (err) {
+      return `import ${name} from '...';`;
+    }
   },
 
   updateExample(props) {
