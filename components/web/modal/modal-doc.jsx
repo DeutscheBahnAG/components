@@ -4,7 +4,8 @@ import DefaultModal, { PrimaryButton, SecondaryButton } from './modal';
 export const overrides = {
   appId: 'rsg-root',
   autoFocus: false,
-  className: 'dbx-modal--doc',
+  overlayClassName: 'dbx-modal--doc',
+  disableBodyScrollWhenOpen: false,
 };
 
 const Modal = (props) => {
