@@ -1,6 +1,11 @@
 .dbx-title {
   color: dbx-text-color('primary');
   display: inherit;
+  overflow-wrap: break-word;
+
+  @media (max-width: 48em) {
+    hyphens: auto;
+  }
 }
 
 .dbx-title--secondary {
