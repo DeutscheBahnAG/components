@@ -37,7 +37,7 @@ Triptime.stopTypes = {
 Triptime.propTypes = {
   dateTime: PropTypes.string.isRequired,
   predictedDateTime: PropTypes.string,
-  stopType: PropTypes.oneOf(Object.keys(Triptime.stopTypes).map(k => Triptime.stopTypes[k])),
+  stopType: PropTypes.oneOf(Object.keys(Triptime.stopTypes).map((k) => Triptime.stopTypes[k])),
   className: PropTypes.string,
 };
 

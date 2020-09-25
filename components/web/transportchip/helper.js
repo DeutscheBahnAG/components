@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/better-regex */
+
 export const products = {
   ICE: 'ice',
   IC: 'ic',

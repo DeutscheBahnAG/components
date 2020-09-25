@@ -7,7 +7,7 @@ import readme from './README.md';
 const message = 'I am a Notification.';
 const closeMessage = 'Please donʼt close me.';
 
-const StatefulNotification = props => {
+const StatefulNotification = (props) => {
   const [isOpen, setOpen] = useState(true);
   return isOpen ? <Notification {...props} onClose={() => setOpen(false)} /> : null;
 };
@@ -81,7 +81,7 @@ storiesOf('Components / Notification', module)
       useEffect(() => {
         Object.values(Notification.variants).forEach((variant, index) => {
           setTimeout(() => {
-            setNotifications(prevNotifications => [
+            setNotifications((prevNotifications) => [
               ...prevNotifications,
               <Notification
                 key={variant}

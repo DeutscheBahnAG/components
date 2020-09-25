@@ -13,8 +13,8 @@ const TextStyles = () => (
     <p className="sg-code-preview">@include dbx-text-style($type, $size);</p>
     <div className="sg-section">
       {Object.keys(tokens.textsize)
-        .filter(textStyle => !textStyle.match(/\.desktop/))
-        .map(textStyle => {
+        .filter((textStyle) => !textStyle.match(/\.desktop/))
+        .map((textStyle) => {
           const fontSize = tokens.textsize[textStyle];
           const fontSizeLarge = tokens.textsize[`${textStyle}.desktop`];
           const lineHeight = tokens.lineheight[textStyle];

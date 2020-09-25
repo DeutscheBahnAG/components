@@ -62,7 +62,7 @@ Code.defaultProps = {
   inline: false,
 };
 
-export const registerLanguage = lang => refractor.register(lang);
-export const hasLanguage = lang => refractor.registered(lang);
+export const registerLanguage = (lang) => refractor.register(lang);
+export const hasLanguage = (lang) => refractor.registered(lang);
 
 export default Code;

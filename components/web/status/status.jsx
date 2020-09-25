@@ -53,7 +53,7 @@ Status.variants = variants;
 
 Status.propTypes = {
   /** The purpose of the Status, affects visual styling */
-  variant: PropTypes.oneOf(Object.keys(Status.variants).map(k => Status.variants[k])),
+  variant: PropTypes.oneOf(Object.keys(Status.variants).map((k) => Status.variants[k])),
   /** The text to be displayed */
   message: PropTypes.node.isRequired,
   className: PropTypes.string,

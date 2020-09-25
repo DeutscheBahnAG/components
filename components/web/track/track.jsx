@@ -44,7 +44,7 @@ Track.sizes = {
 Track.propTypes = {
   track: PropTypes.string.isRequired,
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(Track.sizes).map(k => Track.sizes[k])),
+  size: PropTypes.oneOf(Object.keys(Track.sizes).map((k) => Track.sizes[k])),
   labels: PropTypes.shape({
     platform: PropTypes.string.isRequired,
     platformAbbreviation: PropTypes.string.isRequired,

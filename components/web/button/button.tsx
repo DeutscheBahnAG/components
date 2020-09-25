@@ -118,7 +118,7 @@ const Button: ButtonType<ButtonProps> = ({
   return (
     <Element
       style={{ ...style, minWidth }}
-      // @ts-expect-error
+      // @ts-expect-error HTMLAnchorElement and HTMLButtonElement do not have compatible APIs, but we aren't using them on either
       ref={buttonRef}
       type={href ? undefined : type}
       href={href}
@@ -155,7 +155,7 @@ export const validateVariantCombinations: React.Validator<ButtonVariants> = (
   componentName: string
 ) => {
   const variants = Object.values(ButtonVariants);
-  if (!variants.includes(variant!)) {
+  if (!(variant && variants.includes(variant))) {
     return new Error(`The \`variant\` must be in [${variants.join(', ')}] for a ${componentName}.`);
   }
   if (icon) {

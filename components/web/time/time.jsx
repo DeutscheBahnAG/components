@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import parseTime from './helper';
 
-const formatNumber = number => `${number}`.padStart(2, '0');
+const formatNumber = (number) => `${number}`.padStart(2, '0');
 
 const Time = ({ dateTime, className, ...props }) => {
   const date = new Date(parseTime(dateTime));

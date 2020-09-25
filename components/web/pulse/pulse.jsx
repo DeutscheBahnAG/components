@@ -11,11 +11,11 @@ const Pulse = ({ className, size, variant, children }) => (
 
 Pulse.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(Logo.sizes).map(k => Logo.sizes[k])),
+  size: PropTypes.oneOf(Object.keys(Logo.sizes).map((k) => Logo.sizes[k])),
   variant: PropTypes.oneOf(
     Object.keys(Logo.variants)
-      .map(k => Logo.variants[k])
-      .filter(v => v !== Logo.variants.OUTLINED)
+      .map((k) => Logo.variants[k])
+      .filter((v) => v !== Logo.variants.OUTLINED)
   ),
   children: PropTypes.node,
 };

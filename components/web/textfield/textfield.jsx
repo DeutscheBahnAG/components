@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-const noopFn = () => { };
+const noopFn = () => {};
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 

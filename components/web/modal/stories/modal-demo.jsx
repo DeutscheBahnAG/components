@@ -20,12 +20,12 @@ const ModalDemo = () => {
     setOpenState(true);
   }, [setOpenState]);
   const submitProgress = useCallback(
-    progress => {
+    (progress) => {
       setLoading(progress);
     },
     [setLoading]
   );
-  const onTextfieldDialog = useCallback(e => setTextDialog(e.target.value), [setTextDialog]);
+  const onTextfieldDialog = useCallback((e) => setTextDialog(e.target.value), [setTextDialog]);
   const onSubmit = useCallback(() => {
     submitProgress(true);
     setTimeout(() => {

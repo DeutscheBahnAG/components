@@ -8,12 +8,12 @@ const Select = ({ className, options, onBlur, onFocus, ...otherProps }) => {
   const [isFocused, setFocused] = useState(false);
   const field = useRef(null);
 
-  const handleFocus = event => {
+  const handleFocus = (event) => {
     setFocused(true);
     onFocus(event);
   };
 
-  const handleBlur = event => {
+  const handleBlur = (event) => {
     setFocused(false);
     onBlur(event);
   };
@@ -51,6 +51,7 @@ Select.propTypes = {
   onBlur: PropTypes.func,
   /** List of options */
   options: PropTypes.arrayOf(
+    // eslint-disable-next-line react/forbid-prop-types
     PropTypes.shape({ label: PropTypes.string, value: PropTypes.any, disabled: PropTypes.bool })
   ),
 };

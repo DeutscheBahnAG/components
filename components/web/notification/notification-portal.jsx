@@ -25,7 +25,7 @@ const getNotificationPortalElement = () => {
     }
 
     return portalElement;
-  } catch (err) {
+  } catch {
     return null;
   }
 };

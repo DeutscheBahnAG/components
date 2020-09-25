@@ -20,7 +20,7 @@ const ComponentSizes = () => (
           <th colSpan="2">Textfield</th>
         </thead>
         <tbody>
-          {Object.keys(tokens.size).map(size => (
+          {Object.keys(tokens.size).map((size) => (
             <tr key={size}>
               <th>
                 <code>

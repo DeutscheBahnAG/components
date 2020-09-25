@@ -14,7 +14,7 @@ const customTemplate = (
   // SvgIconName => IconName
   const componentName = {
     ...originalComponentName,
-    name: originalComponentName.name.substring(3),
+    name: originalComponentName.name.slice(3),
   };
 
   const typeScriptTpl = template.smart({ plugins });

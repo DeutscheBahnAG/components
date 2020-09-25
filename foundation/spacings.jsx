@@ -10,7 +10,7 @@ const Spacings = () => (
     <p className="sg-code-preview">margin: dbx-spacing($name);</p>
     <div className="sg-section">
       <div className="sg-card-group">
-        {Object.keys(tokens.spacing).map(size => (
+        {Object.keys(tokens.spacing).map((size) => (
           <div key={size} className="sg-card-group__item">
             <StyleguideCard
               name={size}
@@ -20,7 +20,7 @@ const Spacings = () => (
                   className="sg-spacing"
                   style={{
                     width: tokens.spacing[size],
-                    height: tokens.spacing[size]
+                    height: tokens.spacing[size],
                   }}
                 />
               }

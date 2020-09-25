@@ -26,19 +26,19 @@ const ModalSizes = () => {
   const [actionCenter, setActionCenter] = useState('none');
   const [actionFull, setActionFull] = useState('none');
   const onClickSize = useCallback(
-    s => {
+    (s) => {
       setSize(s);
     },
     [setSize]
   );
   const onClickActionCenter = useCallback(
-    a => {
+    (a) => {
       setActionCenter(a);
     },
     [setActionCenter]
   );
   const onClickActionFull = useCallback(
-    f => {
+    (f) => {
       setActionFull(f);
     },
     [setActionFull]
@@ -58,7 +58,7 @@ const ModalSizes = () => {
       <label>
         You can try out the different <strong>sizes</strong> of the Modal:
         <br />
-        <Select options={sizes} onChange={e => onClickSize(e.target.value)} value={size} />
+        <Select options={sizes} onChange={(e) => onClickSize(e.target.value)} value={size} />
       </label>
       <br />
       <br />
@@ -69,7 +69,7 @@ const ModalSizes = () => {
         <br />
         <Select
           options={responsiveBreakpoints}
-          onChange={e => onClickActionCenter(e.target.value)}
+          onChange={(e) => onClickActionCenter(e.target.value)}
           value={actionCenter}
         />
       </label>
@@ -82,7 +82,7 @@ const ModalSizes = () => {
         <br />
         <Select
           options={responsiveBreakpoints}
-          onChange={e => onClickActionFull(e.target.value)}
+          onChange={(e) => onClickActionFull(e.target.value)}
           value={actionFull}
         />
       </label>

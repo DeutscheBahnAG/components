@@ -10,7 +10,7 @@ const Colors = () => (
     <p className="sg-code-preview">background-color: dbx-color($name);</p>
     <div className="sg-section">
       <div className="sg-card-group sg-card-group--horizontal">
-        {Object.keys(tokens.color).map(color => (
+        {Object.keys(tokens.color).map((color) => (
           <div key={color} className="sg-card-group__item">
             <StyleguideCard
               name={color}
@@ -23,7 +23,7 @@ const Colors = () => (
                     height: '100%',
                     top: 0,
                     left: 0,
-                    backgroundColor: tokens.color[color]
+                    backgroundColor: tokens.color[color],
                   }}
                 />
               }

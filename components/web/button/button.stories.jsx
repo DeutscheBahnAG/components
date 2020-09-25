@@ -36,7 +36,7 @@ const ToggleButtonLoadingStateExample = () => {
 const DummyI18n = ({ i18nKey }) => (i18nKey === 'jsx' ? 'JSX' : '<Translation Missing>');
 
 const MultipleBackgrounds = ({ children }) =>
-  ['white', 'coolgray050', 'coolgray100', 'blue100'].map(color => (
+  ['white', 'coolgray050', 'coolgray100', 'blue100'].map((color) => (
     <div
       key={color}
       style={{
@@ -64,7 +64,7 @@ storiesOf('Components / Button', module)
         and <code>Button.variants</code> as well as with and without Icon are listed. Crossed out
         combinations shouldn’t be used and will raise a props validation warning.
       </p>
-      {Object.values(Button.variants).map(variant => (
+      {Object.values(Button.variants).map((variant) => (
         <Fragment key={variant}>
           <h2 className="sg-text-style--title-l sg-headline-with-margin">
             <code>Button.variants.{variant.toUpperCase().replace(/-/g, '_')}</code>
@@ -92,7 +92,7 @@ storiesOf('Components / Button', module)
               </tr>
             </thead>
             <tbody>
-              {Object.values(Button.sizes).map(size => (
+              {Object.values(Button.sizes).map((size) => (
                 <tr key={`${variant}-${size}`}>
                   <th>
                     <code>{size.toUpperCase()}</code>
@@ -112,7 +112,7 @@ storiesOf('Components / Button', module)
                       Default
                     </Button>
                   </td>
-                  {Object.values(Button.shapes).map(shape => {
+                  {Object.values(Button.shapes).map((shape) => {
                     const notAllowed =
                       validateVariantCombinations({ size, shape, variant, icon: true }) !== null;
                     return (
