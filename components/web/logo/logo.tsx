@@ -1,14 +1,52 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
-// Do not copy this SVG code. This is optimized for this component only.
+enum LogoSizes {
+  XS = 'xs',
+  S = 's',
+  M = 'm',
+  L = 'l',
+  XL = 'xl',
+  XXL = 'xxl',
+}
 
-const Logo = ({ className, size, variant, children, href }) => {
+enum LogoVariants {
+  DEFAULT = 'default',
+  FILLED = 'filled',
+  WHITE = 'white',
+  OUTLINED = 'outlined',
+}
+
+const logoPropTypes = {
+  className: PropTypes.string,
+  size: PropTypes.oneOf(Object.values(LogoSizes)),
+  variant: PropTypes.oneOf(Object.values(LogoVariants)),
+  children: PropTypes.node,
+  href: PropTypes.string,
+};
+
+type LogoProps = InferProps<typeof logoPropTypes>;
+
+type LogoComponent = React.FC<LogoProps> & {
+  sizes: typeof LogoSizes;
+  variants: typeof LogoVariants;
+};
+
+// Do not copy this SVG code. This is optimized for this component only.
+const Logo: LogoComponent = ({
+  className = '',
+  size = LogoSizes.M,
+  variant = LogoVariants.DEFAULT,
+  children = 'Deutsche Bahn',
+  href,
+}) => {
   const Wrapper = href ? 'a' : 'span';
   return (
     <Wrapper
-      href={href}
+      href={href ?? undefined}
       className={clsx('dbx-logo', `dbx-logo--${size}`, `dbx-logo--${variant}`, className)}
     >
       <svg viewBox="0 0 40 28" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -24,36 +62,9 @@ const Logo = ({ className, size, variant, children, href }) => {
   );
 };
 
-Logo.sizes = {
-  XS: 'xs',
-  S: 's',
-  M: 'm',
-  L: 'l',
-  XL: 'xl',
-  XXL: 'xxl',
-};
+Logo.propTypes = logoPropTypes;
 
-Logo.variants = {
-  DEFAULT: 'default',
-  FILLED: 'filled',
-  WHITE: 'white',
-  OUTLINED: 'outlined',
-};
-
-Logo.propTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(Logo.sizes).map((k) => Logo.sizes[k])),
-  variant: PropTypes.oneOf(Object.keys(Logo.variants).map((k) => Logo.variants[k])),
-  children: PropTypes.node,
-  href: PropTypes.string,
-};
-
-Logo.defaultProps = {
-  className: '',
-  size: Logo.sizes.M,
-  variant: Logo.variants.DEFAULT,
-  children: 'Deutsche Bahn',
-  href: null,
-};
+Logo.sizes = LogoSizes;
+Logo.variants = LogoVariants;
 
 export default Logo;
