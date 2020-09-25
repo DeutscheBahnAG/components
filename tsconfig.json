@@ -16,6 +16,10 @@
     "target": "esnext"
   },
   "include": [
-    "components/**/*"
+    "foundation/**/*",
+    "components/**/*",
+    ".cz-config.js",
+    ".commitlintrc.js",
+    ".eslintrc.js"
   ]
 }

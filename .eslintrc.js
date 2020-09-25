@@ -1,11 +1,6 @@
 module.exports = {
   extends: './node_modules/@bahn-x/webdev-configs/eslint.js',
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   rules: {
-    // avoids warnings when storybook plugins are imported
-    // in *.stories.jsx files
-    'import/no-extraneous-dependencies': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -16,8 +11,29 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'unicorn/no-useless-undefined': 'off',
+    'unicorn/prefer-number-properties': 'off',
+    'unicorn/prefer-set-has': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.{js,jsx}'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: [
+        '**/*.{stories,test,config}.{js,ts,jsx,tsx}',
+        'foundation/*',
+        '**/stories/*.{jsx,tsx}',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       node: {
