@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DefaultTextfield from './textfield';
+import DefaultTextfield, { TextfieldProps, TextfieldExport } from './textfield';
 
-const Textfield = ({ value, ...props }) => {
+const Textfield: React.FC<TextfieldProps> = ({ value, ...props }) => {
   const [currentValue, setValue] = useState(value);
   return (
     <DefaultTextfield
@@ -21,6 +21,6 @@ Textfield.defaultProps = {
   value: '',
 };
 
-Textfield.sizes = DefaultTextfield.sizes;
+(Textfield as TextfieldExport).sizes = (DefaultTextfield as TextfieldExport).sizes;
 
 export default Textfield;

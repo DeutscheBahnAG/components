@@ -20,19 +20,19 @@ describe('Textfield Component', () => {
 
   it('should render a disabled textarea', () => {
     const wrapper = shallow(<Textfield type="textarea" disabled value="Text" />);
-    expect(wrapper.find('.dbx-textfield[disabled]')).toHaveLength(1);
+    expect(wrapper.find('.dbx-textfield.dbx-textfield--disabled')).toHaveLength(1);
     expect(wrapper.find('textarea[disabled]')).toHaveLength(1);
   });
 
   it('should render a disabled input', () => {
     const wrapper = shallow(<Textfield disabled value="Text" />);
-    expect(wrapper.find('.dbx-textfield[disabled]')).toHaveLength(1);
+    expect(wrapper.find('.dbx-textfield.dbx-textfield--disabled')).toHaveLength(1);
     expect(wrapper.find('input[disabled]')).toHaveLength(1);
   });
 
   it('should render a read-only input', () => {
     const wrapper = shallow(<Textfield readOnly value="Text" />);
-    expect(wrapper.find('.dbx-textfield[readOnly]')).toHaveLength(1);
+    expect(wrapper.find('.dbx-textfield.dbx-textfield--readonly')).toHaveLength(1);
     expect(wrapper.find('input[readOnly]')).toHaveLength(1);
   });
 

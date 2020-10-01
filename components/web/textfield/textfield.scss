@@ -13,21 +13,21 @@
   display: inline-flex;
   font-family: dbx-font-family('copy');
 
-  &:not([disabled]) {
+  &:not(.dbx-textfield--disabled) {
     cursor: text;
   }
 
-  &:not([disabled]):hover {
+  &:not(.dbx-textfield--disabled):hover {
     border-color: dbx-border-color('input.hover');
   }
 
-  &[disabled],
-  &[readonly] {
+  &.dbx-textfield--disabled,
+  &.dbx-textfield--readonly {
     background: dbx-background-color('input.disabled');
     border-color: dbx-border-color('input.disabled');
   }
 
-  &[disabled] {
+  &.dbx-textfield--disabled {
     color: dbx-text-color('disabled');
   }
 
@@ -95,7 +95,7 @@
   transition: all 0.2s;
   transform-origin: 0 0;
 
-  [disabled] & {
+  .dbx-textfield--disabled & {
     color: inherit;
   }
 }
@@ -114,7 +114,7 @@
   color: dbx-text-color('primary');
 }
 
-.dbx-textfield[disabled] label {
+.dbx-textfield.dbx-textfield--disabled label {
   color: inherit;
 }
 
