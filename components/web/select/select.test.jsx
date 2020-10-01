@@ -10,7 +10,7 @@ describe('Select Component', () => {
 
   it('should render a disabled select', () => {
     const wrapper = shallow(<Select disabled />);
-    expect(wrapper.find('.dbx-select[disabled]')).toHaveLength(1);
+    expect(wrapper.find('.dbx-select--disabled')).toHaveLength(1);
     expect(wrapper.find('select[disabled]')).toHaveLength(1);
   });
 });

@@ -24,7 +24,7 @@ $dbx-select-chevron-margin: 16px;
   display: inline-flex;
   position: relative;
 
-  &[disabled] {
+  &--disabled {
     background: dbx-background-color('input.disabled');
     border-color: dbx-border-color('input.disabled');
     color: dbx-text-color('disabled');
