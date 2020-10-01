@@ -54,7 +54,7 @@ const textfieldPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TextfieldProps = InferProps<typeof textfieldPropTypes> & Record<string, any>;
 
-type TextfieldRef = HTMLInputElement & HTMLTextAreaElement;
+export type TextfieldRef = HTMLInputElement & HTMLTextAreaElement;
 
 type TextfieldComponent = React.ForwardRefExoticComponent<
   TextfieldProps & React.RefAttributes<TextfieldRef>
