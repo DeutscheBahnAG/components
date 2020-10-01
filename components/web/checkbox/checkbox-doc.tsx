@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DefaultCheckbox from './checkbox';
+import DefaultCheckbox, { CheckboxProps } from './checkbox';
 
-const Checkbox = ({ checked, ...props }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ checked = false, ...props }) => {
   const [currentChecked, setChecked] = useState(checked);
   return (
     <DefaultCheckbox
       {...props}
       checked={currentChecked}
-      onChange={(event) => setChecked(event.target.checked)}
+      onChange={(event: React.ChangeEvent<HTMLInputElement>) => setChecked(event.target.checked)}
     />
   );
 };
