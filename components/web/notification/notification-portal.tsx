@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FunctionComponent, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 const notificationPortalName = 'dbx-notification-portal';
@@ -30,8 +30,8 @@ const getNotificationPortalElement = () => {
   }
 };
 
-const NotificationPortal = ({ children }) => {
-  const [portalElement, setPortalElement] = useState(null);
+const NotificationPortal: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
+  const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
   useEffect(() => {
     setPortalElement(getNotificationPortalElement());
   }, []);
