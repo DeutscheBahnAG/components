@@ -1,16 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import parseTrack from './parse-track';
 
-const Track = ({
-  track,
-  size,
-  labels: { platform, platformAbbreviation },
-  className,
-  ...props
-}) => {
+const defaultLabels = { platform: 'Gleis', platformAbbreviation: 'Gl.' };
+
+export enum TrackSizes {
+  XS = 'xs',
+  S = 's',
+  M = 'm',
+}
+
+const trackPropTypes = {
+  track: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  size: PropTypes.oneOf(Object.values(TrackSizes)),
+  labels: PropTypes.shape({
+    platform: PropTypes.string.isRequired,
+    platformAbbreviation: PropTypes.string.isRequired,
+  }),
+};
+
+type TrackProps = InferProps<typeof trackPropTypes>;
+
+type TrackComponent = React.FC<TrackProps> & { sizes: typeof TrackSizes };
+
+const Track: TrackComponent = ({ track, size, labels, className, ...props }) => {
   const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
+  const { platform, platformAbbreviation } = labels ?? defaultLabels;
   return (
     <span className={clsx('dbx-track', `dbx-track--${size}`, className)} {...props}>
       {number ? (
@@ -35,26 +52,14 @@ const Track = ({
   );
 };
 
-Track.sizes = {
-  XS: 'xs',
-  S: 's',
-  M: 'm',
-};
+Track.sizes = TrackSizes;
 
-Track.propTypes = {
-  track: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(Track.sizes).map((k) => Track.sizes[k])),
-  labels: PropTypes.shape({
-    platform: PropTypes.string.isRequired,
-    platformAbbreviation: PropTypes.string.isRequired,
-  }),
-};
+Track.propTypes = trackPropTypes;
 
 Track.defaultProps = {
   className: '',
   size: Track.sizes.XS,
-  labels: { platform: 'Gleis', platformAbbreviation: 'Gl.' },
+  labels: defaultLabels,
 };
 
 export default Track;
