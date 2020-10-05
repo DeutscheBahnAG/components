@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 const iconCheck = <path d="M6.3 10.6L8.9 13.1l4.8-6" />;
@@ -17,27 +17,39 @@ const iconExclamation = (
   </>
 );
 
-const variants = {
-  SUCCESS: 'success',
-  INFO: 'info',
-  WARNING: 'warning',
-  ERROR: 'error',
-  FATAL: 'fatal',
+enum StatusVariants {
+  SUCCESS = 'success',
+  INFO = 'info',
+  WARNING = 'warning',
+  ERROR = 'error',
+  FATAL = 'fatal',
+}
+
+const statusPropTypes = {
+  /** The purpose of the Status, affects visual styling */
+  variant: PropTypes.oneOf(Object.values(StatusVariants)),
+  /** The text to be displayed */
+  message: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
-const Status = ({ variant, message, className, ...props }) => {
+type StatusProps = InferProps<typeof statusPropTypes>;
+
+type StatusComponent = React.FC<StatusProps> & { variants: typeof StatusVariants };
+
+const Status: StatusComponent = ({ variant, message, className, ...props }) => {
   return (
     <span className={clsx('dbx-status', `dbx-status--${variant}`, className)} {...props}>
       <svg>
         <circle cx="10" cy="10" r="8" />
         {(() => {
           switch (variant) {
-            case variants.SUCCESS:
+            case StatusVariants.SUCCESS:
               return iconCheck;
-            case variants.WARNING:
-            case variants.ERROR:
+            case StatusVariants.WARNING:
+            case StatusVariants.ERROR:
               return iconExclamation;
-            case variants.FATAL:
+            case StatusVariants.FATAL:
               return iconCross;
             default:
               return iconInfo;
@@ -49,18 +61,12 @@ const Status = ({ variant, message, className, ...props }) => {
   );
 };
 
-Status.variants = variants;
+Status.variants = StatusVariants;
 
-Status.propTypes = {
-  /** The purpose of the Status, affects visual styling */
-  variant: PropTypes.oneOf(Object.keys(Status.variants).map((k) => Status.variants[k])),
-  /** The text to be displayed */
-  message: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
+Status.propTypes = statusPropTypes;
 
 Status.defaultProps = {
-  variant: Status.variants.INFO,
+  variant: StatusVariants.INFO,
   className: '',
 };
 
