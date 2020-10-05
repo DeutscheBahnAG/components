@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
-enum LogoSizes {
+export enum LogoSizes {
   XS = 'xs',
   S = 's',
   M = 'm',
@@ -13,7 +13,7 @@ enum LogoSizes {
   XXL = 'xxl',
 }
 
-enum LogoVariants {
+export enum LogoVariants {
   DEFAULT = 'default',
   FILLED = 'filled',
   WHITE = 'white',
