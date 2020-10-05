@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import Triptime from '../triptime';
 
-const Triptimespan = ({
+const triptimespanPropTypes = {
+  departureDateTime: PropTypes.string.isRequired,
+  predictedDepartureDateTime: PropTypes.string,
+  arrivalDateTime: PropTypes.string.isRequired,
+  predictedArivalDateTime: PropTypes.string,
+  className: PropTypes.string,
+};
+
+type TriptimespanProps = InferProps<typeof triptimespanPropTypes>;
+
+const Triptimespan: React.FC<TriptimespanProps> = ({
   departureDateTime,
   predictedDepartureDateTime,
   arrivalDateTime,
@@ -20,13 +30,7 @@ const Triptimespan = ({
   );
 };
 
-Triptimespan.propTypes = {
-  departureDateTime: PropTypes.string.isRequired,
-  predictedDepartureDateTime: PropTypes.string,
-  arrivalDateTime: PropTypes.string.isRequired,
-  predictedArivalDateTime: PropTypes.string,
-  className: PropTypes.string,
-};
+Triptimespan.propTypes = triptimespanPropTypes;
 
 Triptimespan.defaultProps = {
   predictedDepartureDateTime: undefined,
