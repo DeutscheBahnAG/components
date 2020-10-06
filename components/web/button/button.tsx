@@ -36,7 +36,8 @@ enum ButtonVariants {
   HOVER_ONLY = 'hover-only',
 }
 
-type ButtonProps = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface ButtonProps extends Record<string, any> {
   children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
@@ -50,8 +51,7 @@ type ButtonProps = {
   style?: React.CSSProperties;
   type?: ButtonTypes;
   variant?: ButtonVariants;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-} & Record<string, any>;
+}
 
 type ButtonType<P> = React.FunctionComponent<P> & {
   shapes: typeof ButtonShapes;
