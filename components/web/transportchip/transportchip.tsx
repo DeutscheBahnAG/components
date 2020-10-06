@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import * as Icons from './icons';
 import {
   findProduct,
   findStyle,
   styles,
-  products,
+  Products,
   sanitizeLineNumber,
   lineNumberClass,
   specialProducts,
@@ -15,15 +15,40 @@ import {
 const iconClassName = clsx('dbx-transportchip__transport-logo');
 
 const icons = {
-  [products.FERRY]: <Icons.Ferry className={iconClassName} />,
-  [products.SUBWAY]: <Icons.UBahn className={iconClassName} />,
-  [products.SUBURBAN]: <Icons.SBahn className={iconClassName} />,
-  [products.TRAM]: <Icons.Tram className={iconClassName} />,
-  [products.BUS]: <Icons.Bus className={iconClassName} />,
+  [Products.FERRY]: <Icons.Ferry className={iconClassName} />,
+  [Products.SUBWAY]: <Icons.UBahn className={iconClassName} />,
+  [Products.SUBURBAN]: <Icons.SBahn className={iconClassName} />,
+  [Products.TRAM]: <Icons.Tram className={iconClassName} />,
+  [Products.BUS]: <Icons.Bus className={iconClassName} />,
   akn: <Icons.AKN className={iconClassName} />,
 };
 
-const Transportchip = ({
+const transportchipPropTypes = {
+  /** The full line number e.g. “S 1”, “STR M10”, “ICE 1234” */
+  name: PropTypes.string.isRequired,
+  /** Additional class names you want to add to the Transportchip */
+  className: PropTypes.string,
+  /** The transport type (e.g. Transportchip.Products.SBAHN) */
+  product: PropTypes.oneOf(Object.values(Products)),
+  /** Use a local style to display line number */
+  style: PropTypes.oneOf(Object.keys(styles)),
+  /** Optional link target (will create an <a>) */
+  href: PropTypes.string,
+  /** Optional click handler (will create a <button>) */
+  onClick: PropTypes.func,
+  /** Optional zip code to detect regional styles */
+  zipCode: PropTypes.string,
+  /** Show trip as canceled */
+  canceled: PropTypes.bool,
+  /** Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number */
+  showProductLogo: PropTypes.bool,
+};
+
+type TransportchipProps = InferProps<typeof transportchipPropTypes>;
+
+type TransportchipComponent = React.FC<TransportchipProps> & { products: typeof Products };
+
+const Transportchip: TransportchipComponent = ({
   name,
   product,
   style,
@@ -37,9 +62,13 @@ const Transportchip = ({
 }) => {
   const displayProduct = (product || findProduct(name) || 'unknown').toLowerCase();
   const lineNumber = sanitizeLineNumber(name);
-  const detectedStyle = style || findStyle({ product, zipCode, lineNumber });
+  const detectedStyle =
+    style || findStyle({ product: product ?? undefined, zipCode: zipCode ?? '', lineNumber });
   const specialProduct =
-    specialProducts[detectedStyle] && specialProducts[detectedStyle](product, lineNumber);
+    product &&
+    detectedStyle &&
+    specialProducts[detectedStyle] &&
+    specialProducts[detectedStyle](product, lineNumber);
   const matches = lineNumber && lineNumber.match(/(.*[A-Z]) ?(\d.*)/);
   // eslint-disable-next-line no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
@@ -47,12 +76,13 @@ const Transportchip = ({
   const number = matches && matches[2];
   return (
     <Component
-      href={href}
-      onClick={onClick}
+      href={href ?? undefined}
+      onClick={onClick ?? undefined}
       className={clsx('dbx-transportchip', canceled && 'dbx-transportchip--canceled', className)}
       {...otherProps}
     >
-      {showProductLogo && icons[matches && matches[1] === 'A' ? 'akn' : displayProduct]}
+      {showProductLogo &&
+        (icons as Record<string, unknown>)[prefix === 'A' ? 'akn' : displayProduct]}
       <span
         className={clsx(
           'dbx-transportchip__line',
@@ -78,30 +108,9 @@ const Transportchip = ({
   );
 };
 
-Transportchip.products = products;
+Transportchip.products = Products;
 
-Transportchip.propTypes = {
-  /** The full line number e.g. “S 1”, “STR M10”, “ICE 1234” */
-  name: PropTypes.string.isRequired,
-  /** Additional class names you want to add to the Transportchip */
-  className: PropTypes.string,
-  /** The transport type (e.g. Transportchip.products.SBAHN) */
-  product: PropTypes.oneOf(
-    Object.keys(Transportchip.products).map((k) => Transportchip.products[k])
-  ),
-  /** Use a local style to display line number */
-  style: PropTypes.oneOf(Object.keys(styles).map((k) => styles[k])),
-  /** Optional link target (will create an <a>) */
-  href: PropTypes.string,
-  /** Optional click handler (will create a <button>) */
-  onClick: PropTypes.func,
-  /** Optional zip code to detect regional styles */
-  zipCode: PropTypes.string,
-  /** Show trip as canceled */
-  canceled: PropTypes.bool,
-  /** Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number */
-  showProductLogo: PropTypes.bool,
-};
+Transportchip.propTypes = transportchipPropTypes;
 
 Transportchip.defaultProps = {
   product: null,

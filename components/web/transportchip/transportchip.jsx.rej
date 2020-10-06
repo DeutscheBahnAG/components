@@ -1,4 +1,0 @@
-diff a/components/transportchip/transportchip.jsx b/components/transportchip/transportchip.jsx	(rejected hunks)
-@@ -19 +19 @@ const Transportchip = ({ lineNumber, transportType, className, ...otherProps })
--    `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
-+      `Transport${displayTransportType.charAt(0).toUpperCase()}${displayTransportType.slice(1)}`
