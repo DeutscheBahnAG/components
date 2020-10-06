@@ -13,7 +13,7 @@ const triptimespanPropTypes = {
 
 type TriptimespanProps = InferProps<typeof triptimespanPropTypes>;
 
-const Triptimespan: React.FC<TriptimespanProps> = ({
+const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
   departureDateTime,
   predictedDepartureDateTime,
   arrivalDateTime,

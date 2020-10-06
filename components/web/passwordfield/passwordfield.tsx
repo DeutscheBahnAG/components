@@ -25,7 +25,9 @@ const passwordfieldPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PasswordfieldProps = InferProps<typeof passwordfieldPropTypes> & Record<string, any>;
 
-export type PasswordfieldComponent = React.FC<PasswordfieldProps> & { sizes: typeof TextfieldSize };
+export type PasswordfieldComponent = React.FunctionComponent<PasswordfieldProps> & {
+  sizes: typeof TextfieldSize;
+};
 
 const Passwordfield: PasswordfieldComponent = ({
   concealed = true,

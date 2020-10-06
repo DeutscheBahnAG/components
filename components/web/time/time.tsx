@@ -12,7 +12,7 @@ const timePropTypes = {
 
 type TimeProps = InferProps<typeof timePropTypes>;
 
-const Time: React.FC<TimeProps> = ({ dateTime, className, ...props }) => {
+const Time: React.FunctionComponent<TimeProps> = ({ dateTime, className, ...props }) => {
   const date = new Date(parseTime(dateTime));
   return (
     <time className={clsx('dbx-time', className)} dateTime={dateTime} {...props}>

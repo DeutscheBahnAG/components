@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DefaultCheckbox, { CheckboxProps } from './checkbox';
 
-const Checkbox: React.FC<CheckboxProps> = ({ checked = false, ...props }) => {
+const Checkbox: React.FunctionComponent<CheckboxProps> = ({ checked = false, ...props }) => {
   const [currentChecked, setChecked] = useState(checked);
   return (
     <DefaultCheckbox

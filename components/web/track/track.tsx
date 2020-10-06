@@ -23,7 +23,7 @@ const trackPropTypes = {
 
 type TrackProps = InferProps<typeof trackPropTypes>;
 
-type TrackComponent = React.FC<TrackProps> & { sizes: typeof TrackSizes };
+type TrackComponent = React.FunctionComponent<TrackProps> & { sizes: typeof TrackSizes };
 
 const Track: TrackComponent = ({ track, size, labels, className, ...props }) => {
   const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);

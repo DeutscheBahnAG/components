@@ -30,7 +30,7 @@ const logoPropTypes = {
 
 type LogoProps = InferProps<typeof logoPropTypes>;
 
-type LogoComponent = React.FC<LogoProps> & {
+type LogoComponent = React.FunctionComponent<LogoProps> & {
   sizes: typeof LogoSizes;
   variants: typeof LogoVariants;
 };

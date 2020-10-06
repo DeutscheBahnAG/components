@@ -63,7 +63,7 @@ const notificationPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type NotificationProps = InferProps<typeof notificationPropTypes> & Record<string, any>;
 
-type NotificationComponent = React.FC<NotificationProps> & {
+type NotificationComponent = React.FunctionComponent<NotificationProps> & {
   variants: typeof NotificationVariants;
 };
 

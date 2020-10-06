@@ -20,7 +20,9 @@ const triptimePropTypes = {
 
 type TriptimeProps = InferProps<typeof triptimePropTypes>;
 
-type TriptimeComponent = React.FC<TriptimeProps> & { stopTypes: typeof TriptimeStopTypes };
+type TriptimeComponent = React.FunctionComponent<TriptimeProps> & {
+  stopTypes: typeof TriptimeStopTypes;
+};
 
 const Triptime: TriptimeComponent = ({
   dateTime,

@@ -29,7 +29,7 @@ const selectPropTypes = {
 
 type SelectProps = InferProps<typeof selectPropTypes>;
 
-const Select: React.FC<SelectProps> = ({
+const Select: React.FunctionComponent<SelectProps> = ({
   className = '',
   disabled = false,
   onBlur = noopFn,

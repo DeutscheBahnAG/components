@@ -35,7 +35,7 @@ const statusPropTypes = {
 
 type StatusProps = InferProps<typeof statusPropTypes>;
 
-type StatusComponent = React.FC<StatusProps> & { variants: typeof StatusVariants };
+type StatusComponent = React.FunctionComponent<StatusProps> & { variants: typeof StatusVariants };
 
 const Status: StatusComponent = ({ variant, message, className, ...props }) => {
   return (

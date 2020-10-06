@@ -46,7 +46,9 @@ const transportchipPropTypes = {
 
 type TransportchipProps = InferProps<typeof transportchipPropTypes>;
 
-type TransportchipComponent = React.FC<TransportchipProps> & { products: typeof Products };
+type TransportchipComponent = React.FunctionComponent<TransportchipProps> & {
+  products: typeof Products;
+};
 
 const Transportchip: TransportchipComponent = ({
   name,

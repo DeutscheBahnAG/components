@@ -19,7 +19,7 @@ const checkboxPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type CheckboxProps = InferProps<typeof checkboxPropTypes> & Record<string, any>;
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className = '',
   indeterminate = false,
   label,
