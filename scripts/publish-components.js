@@ -116,7 +116,7 @@ async function transpilePackage(location) {
   const babelPromise = asyncExec(
     `npx babel ${location} --extensions ".js,.jsx,.ts,.tsx" --out-dir=${location} ${options}`
   );
-  const tscPromise = asyncExec(`tsc --outDir ${location} --declaration --emitDeclarationOnly`);
+  const tscPromise = asyncExec(`npx tsc --outDir ${location} --declaration --emitDeclarationOnly`);
   await Promise.all([babelPromise, tscPromise]);
 }
 
