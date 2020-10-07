@@ -1,12 +1,9 @@
 import * as TransportchipIcons from './transportchip/icons';
-import Consentlayer from './consentlayer';
 
-/** @deprecated the component is now called Consentlayer */
-const Privacyoptions = Consentlayer;
-
-export { TransportchipIcons, Consentlayer, Privacyoptions };
+export { TransportchipIcons };
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
+export { default as Consentlayer } from './consentlayer';
 export { default as Copy } from './copy';
 export { default as Loadingindicator } from './loadingindicator';
 export { default as Logo } from './logo';

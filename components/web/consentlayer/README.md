@@ -20,12 +20,17 @@ const myOptionsArray = [
     required: true,
   },
   {
+    name: 'localisation',
+    label: 'Localisation',
+    checked: true,
+    description: 'We would like to offer you personalized content by knowing your location.',
+  },
+  {
     name: 'analytics',
     label: 'Analytics',
     description: 'Help us improving the user experience',
   },
 ];
-const myAcceptAllHandler = () => window.alert('All Cookies accepted.');
 const mySaveSelectionHandler = (selectedOptions) =>
   window.alert(
     `Cookie settings saved:\n\n${JSON.stringify(selectedOptions, null, 2)}`
@@ -34,7 +39,6 @@ const MyCustomFooter = () => <div>Imprint etc.</div>;
 
 <Consentlayer
   options={myOptionsArray}
-  onAcceptAll={myAcceptAllHandler}
   onSave={mySaveSelectionHandler}
   footer={<MyCustomFooter />}
 />;

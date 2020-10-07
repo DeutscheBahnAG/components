@@ -17,6 +17,13 @@ const options = {
       required: true,
     },
     {
+      name: 'localisation',
+      label: 'Lokalisierung',
+      checked: true,
+      description:
+        'Wir möchten wissen wo Du dich befindest um Dir personalisiertes Kontent anzubieten.',
+    },
+    {
       name: 'analytics',
       label: 'Analyse',
       description:
@@ -29,6 +36,12 @@ const options = {
       label: 'Required',
       description: 'These cookies are technically required to offer you this service.',
       required: true,
+    },
+    {
+      name: 'localisation',
+      label: 'Localisation',
+      checked: true,
+      description: 'We would like to offer you personalized content by knowing your location.',
     },
     {
       name: 'analytics',
@@ -45,6 +58,7 @@ const options = {
     {
       name: 'twitter',
       label: 'Twitter',
+      checked: true,
       description: 'Eine Erklärung, wofür man den Dienst braucht.',
     },
     {
@@ -55,40 +69,25 @@ const options = {
   ],
 };
 
-const onAcceptAll = () => window.alert('All Cookies accepted.');
 const onSave = (selectedOptions) =>
   window.alert(`Cookie settings saved:\n\n${JSON.stringify(selectedOptions, null, 2)}`);
 
 storiesOf('Components / Consentlayer', module)
   .addDecorator(withReadme(readme))
-  .add('Default', () => (
-    <Consentlayer options={options.de} onAcceptAll={onAcceptAll} onSave={onSave} />
-  ))
+  .add('Default', () => <Consentlayer options={options.de} onSave={onSave} />)
   .add('With custom footer', () => (
-    <Consentlayer
-      options={options.de}
-      onAcceptAll={onAcceptAll}
-      onSave={onSave}
-      footer={<CustomFooter />}
-    />
+    <Consentlayer options={options.de} onSave={onSave} footer={<CustomFooter />} />
   ))
   .add('Many options', () => (
-    <Consentlayer
-      options={[...options.de, ...options.socialMedia]}
-      onAcceptAll={onAcceptAll}
-      onSave={onSave}
-    />
+    <Consentlayer options={[...options.de, ...options.socialMedia]} onSave={onSave} />
   ))
   .add('Custom labels', () => (
     <Consentlayer
       options={options.en}
-      onAcceptAll={onAcceptAll}
       onSave={onSave}
-      labels={{
-        title: 'Cookie settings',
-        message: 'We use cookies to improve your experience while using our website.',
-        acceptAll: 'Accept all',
-        save: 'Confirm selection',
-      }}
+      title="Cookie settings"
+      message="We use cookies to improve your experience while using our website."
+      saveAllLabel="Accept all"
+      saveLabel="Confirm selection"
     />
   ));
