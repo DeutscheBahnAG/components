@@ -1,19 +1,14 @@
 {
+  "extends": "@bahn-x/eslint-config-base/tsconfig.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "experimentalDecorators": true,
     "jsx": "react",
     "lib": [
       "dom",
       "es2015"
     ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "strict": true,
-    "target": "esnext"
+    "noImplicitAny": false,
+    "target": "ES2015",
   },
   "include": [
     "foundation/**/*",

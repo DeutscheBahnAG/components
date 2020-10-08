@@ -1,0 +1,20 @@
+{
+  "extends": "@bahn-x/eslint-config-base/tsconfig.build.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "noImplicitAny": false,
+    "outDir": "./dist",
+    "target": "ES2015"
+  },
+  "exclude": [
+    "**/*.test.*",
+    "**/*-doc.*",
+    "**/*.stories.*",
+    "**/*.snap",
+  ]
+}

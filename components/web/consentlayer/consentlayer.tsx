@@ -3,7 +3,6 @@ import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 import Checkbox from '../checkbox';
-// @ts-expect-error Remove this once Modal is converted to TS as well. Otherwise fails the build.
 import Modal from '../modal';
 
 const { PrimaryButton } = Modal;

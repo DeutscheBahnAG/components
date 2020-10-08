@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.build.json",
+  "include": [
+    "components/web",
+  ]
+}

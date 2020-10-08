@@ -31,5 +31,6 @@
     "./pulse/*",
     "./triptime/*",
     "./triptimespan/*"
-  ]
+  ],
+  "types": "index.d.ts"
 }
