@@ -3,7 +3,17 @@
 React components for building websites and applications fast in the look
 and feel of Deutsche Bahn AG.
 
-## How to Install
+## Usage
+
+```bash
+yarn add @bahn-x/dbx-email-kit;
+yarn add @bahn-x/dbx-foundation;
+yarn add @bahn-x/dbx-icons;
+yarn add @bahn-x/dbx-web-extra;
+yarn add @bahn-x/dbx-web;
+```
+
+Packages are compiled to ES2020 syntax. This is to prevent users of the packages from having core-js code bundled twice. *Make sure you compile this dependency to your target browser as well!*
 
 ### Setup Access to Private GitHub Repositories as Dependencies
 
@@ -13,18 +23,6 @@ In case you have not set up BahnX Git repo access on your machine already, follo
 - Select `repo`, `write:packages`, and `read:packages` (without `repo` some verifications will fail)
 - Copy the token in the green field after submitting the form
 - Run `npm login --registry=https://npm.pkg.github.com --scope=@bahn-x` and enter your GitHub username, the token (not your GitHub password) and your email address
-
-### Install Dependencies
-
-If not already set up, install [yarn](https://yarnpkg.com/en/docs/install).
-
-Then navigate to the folder you cloned this project into and enter:
-
-```shell
-yarn
-```
-
-This will install all necessary dependencies.
 
 ## How to Develop
 
