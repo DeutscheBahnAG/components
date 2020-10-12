@@ -15,6 +15,7 @@
     "components/**/*",
     ".cz-config.js",
     ".commitlintrc.js",
-    "**/.eslintrc.js"
+    "**/.eslintrc.js",
+    "**/.release-it.js"
   ]
 }

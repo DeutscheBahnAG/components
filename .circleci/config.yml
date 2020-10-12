@@ -4,12 +4,17 @@ orbs:
   gcp-gcr: bahnx/gcp-gcr@1.1.0
   gcp-gke: bahnx/gcp-gke@1.2.0
 
-jobs:
-  build:
+executors:
+  node:
     docker:
+      # WARNING: Don't upgrade to node:14
+      # @storybook/addon-storyshots > @storybook/core > webpack > watchpack > watchpack-chokidar2 > chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
       - image: circleci/node:12
+
+jobs:
+  install:
+    executor: node
     steps:
-      - setup_remote_docker
       - checkout
       # Download and cache dependencies
       - restore_cache:
@@ -32,20 +37,54 @@ jobs:
           key: yarn-packages-v1-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run:
-          name: Build
-          command: yarn build
-      - run:
-          name: Lint Code
-          command: yarn lint
-      - run:
-          name: Run Tests
-          command: yarn test
+      - persist_to_workspace:
+          root: ~/dbx-web
+          paths:
+            - ./*
+    working_directory: ~/dbx-web
+
+  build-docs:
+    executor: node
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: ./
       - run:
           name: Build Static Site
           command: yarn build:docs
       - gcp-gcr/build-push-docker:
           image: "dbx-web"
+    working_directory: ~/dbx-web
+
+  build-packages:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Build
+          command: yarn build
+    working_directory: ~/dbx-web
+
+  lint:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Lint Code
+          command: yarn lint
+    working_directory: ~/dbx-web
+
+  test:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Run Tests
+          command: yarn test
+    working_directory: ~/dbx-web
 
   deploy:
     docker:
@@ -57,18 +96,36 @@ jobs:
       - checkout
       - gcp-gke/deploy-to-kubernetes:
           k8s-namespace: $STAGE
+    working_directory: ~/dbx-web
 
 workflows:
   version: 2
 
   production:
     jobs:
-      - build:
+      - install:
           context: gcloud-webproducts-prod
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build-docs:
+          context: gcloud-webproducts-prod
+          requires:
+            - install
+      - build-packages:
+          requires:
+            - install
       - deploy:
           context: gcloud-webproducts-prod
           requires:
-            - build
+            - build-docs
+            - build-packages
+            - install
+            - lint
+            - test
           filters:
             branches:
               only:

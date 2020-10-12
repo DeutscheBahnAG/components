@@ -157,8 +157,8 @@ Object {
 exports[`Parse track helper Track number should parse one digit 1`] = `
 Object {
   "fragment": undefined,
-  "fullName": "1",
-  "number": "1",
+  "fullName": "2",
+  "number": "2",
   "prefix": undefined,
   "sectionEnd": undefined,
   "sectionStart": undefined,

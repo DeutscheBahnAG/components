@@ -3,7 +3,7 @@ import parseTrack from './parse-track';
 describe('Parse track helper', () => {
   describe('Track number', () => {
     it('should parse one digit', () => {
-      expect(parseTrack('1')).toMatchSnapshot();
+      expect(parseTrack('2')).toMatchSnapshot();
     });
     it('should parse multiple digits', () => {
       expect(parseTrack('234')).toMatchSnapshot();

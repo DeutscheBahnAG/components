@@ -4,7 +4,7 @@
   "description": "DBX React Components",
   "repository": "https://github.com/Bahn-X/dbx-web.git",
   "license": "UNLICENSED",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "@bahn-x/dbx-foundation": "^0.10.0",
     "@bahn-x/dbx-icons": "^0.7.0",

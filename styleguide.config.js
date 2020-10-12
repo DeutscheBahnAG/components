@@ -19,6 +19,14 @@ module.exports = {
   title: 'BahnX React components',
   styleguideDir: 'build/docs',
 
+  ignore: [
+    // @WARNING This actually doesn't affect WebPack, so if you build-packages, then docs, it will include the packages ...
+    '**/components/web/dist/**',
+    '**/*.test.{js,jsx,ts,tsx}',
+    '**/*.stories.{js,jsx,ts,tsx}',
+    '**/*.d.ts'
+  ],
+
   getComponentPathLine(componentPath) {
     const name = path
       .basename(componentPath)
