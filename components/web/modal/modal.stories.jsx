@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import loadable from '@loadable/component';
-import { PrimaryButton, SecondaryButton } from './modal';
 
 import {
   modalActions,
@@ -13,13 +12,14 @@ import {
 } from './stories/shared';
 import modalReadme from './README.md';
 
+import Button from '../button';
 import CustomModal from './stories/custom-modal';
 import ModalSizes from './stories/modal-sizes';
 /*
  * Note: As 'react-modal' always uses React portals and those are not supported by SSR,
  * we need to load the Modal component during runtime.
  */
-const Modal = loadable(() => import('./index.js'), { ssr: false });
+const Modal = loadable(() => import('./index.ts'), { ssr: false });
 const ModalDemo = loadable(() => import('./stories/modal-demo'), { ssr: false });
 const ModalLive = loadable(() => import('./stories/modal-live'), { ssr: false });
 
@@ -31,9 +31,9 @@ storiesOf('Components / Modal', module)
     <Modal
       {...modalActions}
       title="Title"
-      primaryButton={<PrimaryButton {...primaryActions}>Primary</PrimaryButton>}
-      secondaryButton={<SecondaryButton {...secondaryActions}>Secondary</SecondaryButton>}
-      open
+      primaryButton={<Button {...primaryActions}>Primary</Button>}
+      secondaryButton={<Button {...secondaryActions}>Secondary</Button>}
+      isOpen
     >
       <ExampleChildren title="Children inside the content area" />
     </Modal>
@@ -43,12 +43,12 @@ storiesOf('Components / Modal', module)
       {...modalActions}
       title="You’re closing an unsaved document"
       primaryButton={
-        <PrimaryButton {...primaryActions} data-autofocus>
+        <Button {...primaryActions} data-autofocus>
           Save as
-        </PrimaryButton>
+        </Button>
       }
-      secondaryButton={<SecondaryButton {...secondaryActions}>Discard</SecondaryButton>}
-      open
+      secondaryButton={<Button {...secondaryActions}>Discard</Button>}
+      isOpen
     >
       If you decide to discard the unsaved document, you will lose all changes and you will not be
       able to recover your data.
@@ -58,16 +58,16 @@ storiesOf('Components / Modal', module)
     <Modal
       {...modalActions}
       title="Delete your account?"
-      primaryButton={<PrimaryButton {...primaryActions}>Delete</PrimaryButton>}
+      primaryButton={<Button {...primaryActions}>Delete</Button>}
       secondaryButton={
-        <SecondaryButton {...secondaryActions} data-autofocus>
+        <Button {...secondaryActions} data-autofocus>
           No
-        </SecondaryButton>
+        </Button>
       }
       centerActions="l"
       fullActionSize="s"
       kind="alert"
-      open
+      isOpen
     >
       You will <b>not</b> be able to recover your account once deleted.
     </Modal>
@@ -75,12 +75,12 @@ storiesOf('Components / Modal', module)
   .add('Without title', () => (
     <Modal
       {...modalActions}
-      primaryButton={<PrimaryButton {...primaryActions}>Delete</PrimaryButton>}
-      secondaryButton={<SecondaryButton {...secondaryActions}>Keep</SecondaryButton>}
+      primaryButton={<Button {...primaryActions}>Delete</Button>}
+      secondaryButton={<Button {...secondaryActions}>Keep</Button>}
       centerActions="l"
       fullActionSize="s"
       kind="alert"
-      open
+      isOpen
     >
       You will <b>not</b> be able to recover your account once deleted.
     </Modal>
@@ -89,13 +89,13 @@ storiesOf('Components / Modal', module)
     <Modal
       {...modalActions}
       title="Delete your account?"
-      primaryButton={<PrimaryButton {...primaryActions}>Delete</PrimaryButton>}
-      secondaryButton={<SecondaryButton {...secondaryActions}>No</SecondaryButton>}
+      primaryButton={<Button {...primaryActions}>Delete</Button>}
+      secondaryButton={<Button {...secondaryActions}>No</Button>}
       enableCloseButton={false}
       centerActions="l"
       fullActionSize="s"
       kind="alert"
-      open
+      isOpen
     >
       You will <b>not</b> be able to recover your account once deleted.
     </Modal>
@@ -104,8 +104,8 @@ storiesOf('Components / Modal', module)
     <Modal
       {...modalActions}
       title="Terms & conditions"
-      secondaryButton={<SecondaryButton onClick={print}>Print</SecondaryButton>}
-      open
+      secondaryButton={<Button onClick={print}>Print</Button>}
+      isOpen
     >
       <ExampleChildren paragraphsCount={5} textType="much" title="§ 1 Trust in people" />
     </Modal>
@@ -135,14 +135,14 @@ storiesOf('Components / Modal', module)
     <Modal
       {...modalActions}
       title="Save changes?"
-      primaryButton={<PrimaryButton {...primaryActions}>Save</PrimaryButton>}
+      primaryButton={<Button {...primaryActions}>Save</Button>}
       secondaryButton={[
-        <SecondaryButton {...secondaryActions}>Save as</SecondaryButton>,
-        <SecondaryButton {...secondaryActions}>Dismiss</SecondaryButton>,
+        <Button {...secondaryActions}>Save as</Button>,
+        <Button {...secondaryActions}>Dismiss</Button>,
       ]}
       centerActions="m"
       fullActionSize="m"
-      open
+      isOpen
     >
       You are about to lose your document edit.
     </Modal>

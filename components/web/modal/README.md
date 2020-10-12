@@ -1,6 +1,6 @@
 # Modal
 
-Modals are used to focus the users’ attention to a certain information or decision.
+Modals are used to focus the users’ attention to a certain information or decision. This Component extends [react-modal](https://www.npmjs.com/package/react-modal), additional properties are inherited from it.
 
 ```jsx
 const { PrimaryButton } = Modal;
@@ -49,7 +49,7 @@ const openState = true;
     <SecondaryButton onClick={discardEdit}>Discard</SecondaryButton>
   }
   onClose={closeModal}
-  open={openState}
+  isOpen={openState}
   appId="root"
 >
   If you decide to discard the unsaved document, you will lose all changes and

@@ -19,7 +19,7 @@ const CustomModal = () => {
       </Button>
       <Modal
         enableCloseButton={false}
-        open={openState}
+        isOpen={openState}
         ariaLabelledBy="custom-headline"
         ariaDescribedBy="custom-desc"
         appId="app-root"

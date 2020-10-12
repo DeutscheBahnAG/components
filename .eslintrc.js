@@ -1,5 +1,7 @@
 module.exports = {
   extends: './node_modules/@bahn-x/webdev-configs/eslint.js',
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   rules: {
     'import/extensions': [
       'error',
@@ -39,6 +41,7 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
+      typescript: {},
     },
   },
 };

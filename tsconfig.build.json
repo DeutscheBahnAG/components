@@ -8,7 +8,7 @@
       "ES2020"
     ],
     "noImplicitAny": false,
-    "outDir": "./dist",
+    "outDir": "dist",
     "target": "ES2020"
   },
   "exclude": [

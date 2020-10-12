@@ -1,4 +1,4 @@
-/* eslint-disable react/no-did-update-set-state, no-unused-vars, react/require-default-props */
+/* eslint-disable react/no-did-update-set-state, no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -29,7 +29,7 @@ enum ButtonTypes {
   RESET = 'reset',
 }
 
-enum ButtonVariants {
+export enum ButtonVariants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   SOLID = 'solid',
@@ -53,7 +53,7 @@ interface ButtonProps extends Record<string, any> {
   variant?: ButtonVariants;
 }
 
-type ButtonType<P> = React.FunctionComponent<P> & {
+type ButtonType<P> = React.FC<P> & {
   shapes: typeof ButtonShapes;
   sizes: typeof ButtonSizes;
   types: typeof ButtonTypes;

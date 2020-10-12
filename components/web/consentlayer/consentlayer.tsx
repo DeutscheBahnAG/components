@@ -4,8 +4,7 @@ import clsx from 'clsx';
 
 import Checkbox from '../checkbox';
 import Modal from '../modal';
-
-const { PrimaryButton } = Modal;
+import Button from '../button';
 
 const consentLayerPropTypes = {
   /** Modal title */
@@ -33,6 +32,11 @@ const consentLayerPropTypes = {
   onSave: PropTypes.func.isRequired,
   /** a custom className to add to the modal container */
   className: PropTypes.string,
+
+  /** Set HTML identifier of your React app container for accessibility purposes.
+   * The whole React app will be hidden from screen readers except the Modal.
+   * */
+  appId: PropTypes.string.isRequired,
 };
 
 export interface OnSaveArgument {
@@ -57,6 +61,7 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
   saveAllLabel = 'Alle akzeptieren',
   saveLabel = 'Auswahl bestätigen',
   title = 'Cookie-Einstellungen',
+  appId,
   ...otherProps
 }) => {
   const [formValues, setFormValues] = useState<OnSaveArgument>(() =>
@@ -92,30 +97,32 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
 
   return (
     <Modal
-      open
+      isOpen
       autoFocus
       title={title}
       className={clsx('dbx-consentlayer', className)}
       enableCloseButton={false}
-      fullActionSize="s"
+      fullActionSize={Modal.fullActionSizes.S}
+      appId={appId}
       primaryButton={
-        <PrimaryButton
+        <Button
           className="dbx-consentlayer__accept-all-btn"
           onClick={handleSaveAll}
           data-autofocus
+          variant={Button.variants.PRIMARY}
         >
           {saveAllLabel}
-        </PrimaryButton>
+        </Button>
       }
-      enforceSecondaryButtonsStyle={false}
       secondaryButton={
-        <PrimaryButton
+        <Button
           className="dbx-consentlayer__save-btn"
           onClick={handleSave}
           disabled={allOptionsChecked}
+          variant={Button.variants.PRIMARY}
         >
           {saveLabel}
-        </PrimaryButton>
+        </Button>
       }
       {...otherProps}
     >

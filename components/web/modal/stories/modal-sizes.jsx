@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import loadable from '@loadable/component';
 import Select from '../../select';
-import { PrimaryButton, SecondaryButton } from '../modal';
+import Button from '../../button';
 
 import { ExampleChildren, modalActions } from './shared';
 
@@ -46,13 +46,13 @@ const ModalSizes = () => {
   return (
     <Modal
       title="Modal sizes"
-      primaryButton={<PrimaryButton>Primary</PrimaryButton>}
-      secondaryButton={<SecondaryButton>Secondary</SecondaryButton>}
+      primaryButton={<Button>Primary</Button>}
+      secondaryButton={<Button>Secondary</Button>}
       {...modalActions}
       size={size}
       centerActions={actionCenter}
       fullActionSize={actionFull}
-      open
+      isOpen
     >
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label>

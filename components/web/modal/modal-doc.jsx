@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import DefaultModal, { PrimaryButton, SecondaryButton } from './modal';
+import DefaultModal from './modal';
 
 export const overrides = {
   appId: 'rsg-root',
@@ -21,8 +21,5 @@ const Modal = (props) => {
     </div>
   );
 };
-
-Modal.PrimaryButton = PrimaryButton;
-Modal.SecondaryButton = SecondaryButton;
 
 export default Modal;

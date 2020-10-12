@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import Button from '../../button';
 import Textfield from '../../textfield';
-import Modal, { PrimaryButton, SecondaryButton } from '../modal';
+import Modal from '../modal';
 
 import { ExampleChildren, modalActions } from './shared';
 import imgSample from './sample.jpg';
@@ -57,16 +57,16 @@ const ModalDemo = () => {
         title="Modal Dialog"
         ariaDescribedBy="modal-desc"
         primaryButton={
-          <PrimaryButton onClick={onSubmit} loading={loading}>
+          <Button onClick={onSubmit} loading={loading} variant={Button.variants.PRIMARY}>
             Submit
-          </PrimaryButton>
+          </Button>
         }
         secondaryButton={
-          <SecondaryButton onClick={closeModal} disabled={loading}>
+          <Button onClick={closeModal} disabled={loading} variant={Button.variants.PRIMARY}>
             Cancel
-          </SecondaryButton>
+          </Button>
         }
-        open={openState}
+        isOpen={openState}
         onClose={closeModal}
         fullActionSize="s"
         centerActions="m"

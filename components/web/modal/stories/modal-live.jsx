@@ -52,7 +52,7 @@ const ModalLive = ({ delay, kind }) => {
       {seconds <= 0 && <p>The Modal should be open now.</p>}
       <Modal
         title={`${kind === 'alert' ? 'Alert ' : ''}Modal appeared automatically`}
-        open={seconds <= 0}
+        isOpen={seconds <= 0}
         onClose={resetCountdown}
         kind={kind}
         appId="app-root"
