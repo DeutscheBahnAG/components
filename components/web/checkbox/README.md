@@ -42,11 +42,30 @@ The indeterminate state does not show if the Checkbox is checked or not. When yo
 <Checkbox disabled checked label="Disabled Checkbox" />
 ```
 
-## Links within the label
+## Checkbox and links
 
-Links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
+The label of the Checkbox is an interactive element to toggle its state. If you add a link within the label,
+it’s difficult to cope with an interactive element within an already interactive element. This is an [accessibility issue
+for people who use screen readers](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label#Accessibility_concerns).
+
+Therefor we recommend to place links associated with the Checkbox right below it, outside the label.
 
 ```jsx
+import { Copy } from '@bahn-x/dbx-web';
+<>
+  <Checkbox label="I accept the Terms and Conditions"/>
+  <p style={{marginTop: '4px', marginLeft: '26px'}}>
+    <Copy>
+      <a href="#terms">Read our Terms and Conditions</a>
+    </Copy>
+  </p>
+</>
+```
+
+However, links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
+
+```jsx
+// Avoid this design pattern
 <Checkbox
   label={
     <>

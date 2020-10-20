@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
 import Checkbox from './checkbox-doc';
 import Button from '../button/button';
+import Copy from '../copy/copy';
 import checkboxReadme from './README.md';
 
 const ToggleCheckboxIndeterminateStateExample = () => {
@@ -35,15 +36,15 @@ storiesOf('Components / Checkbox', module)
   .add('Default', () => <Checkbox onClick={action('clicked')} label="Checkbox" />)
   .add('Checked', () => <Checkbox checked onClick={action('clicked')} label="Checkbox" />)
   .add('Indeterminate', () => <ToggleCheckboxIndeterminateStateExample />)
-  .add('Links inside the label', () => (
-    <Checkbox
-      onClick={action('clicked')}
-      label={
-        <>
-          I accept the <a href="#terms">Terms and Conditions</a>.
-        </>
-      }
-    />
+  .add('With Links', () => (
+    <>
+      <Checkbox onClick={action('clicked')} label="I accept the Terms and Conditions" />
+      <p style={{ marginTop: '4px', marginLeft: '26px' }}>
+        <Copy>
+          <a href="#terms">Read our Terms and Conditions</a>
+        </Copy>
+      </p>
+    </>
   ))
   .add('Default disabled', () => <Checkbox disabled onClick={action('clicked')} label="Checkbox" />)
   .add('Checked disabled', () => (
