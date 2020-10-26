@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
@@ -8,13 +8,13 @@ import Button from '../button';
 
 const consentLayerPropTypes = {
   /** Modal title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Modal help text */
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Button label to accept all options */
-  saveAllLabel: PropTypes.node.isRequired,
+  saveAllLabel: PropTypes.node,
   /** Button label to save the selection */
-  saveLabel: PropTypes.node.isRequired,
+  saveLabel: PropTypes.node,
   /** all available options for the user to select */
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -46,9 +46,59 @@ export interface OnSaveArgument {
 export interface ConsentLayerOption {
   name: string;
   label: React.ReactNode;
+  checked?: boolean;
   description?: React.ReactNode;
   required?: boolean;
 }
+
+interface StrictOption extends ConsentLayerOption {
+  checked: boolean;
+}
+
+interface SetOptionValueArguments {
+  options: StrictOption[];
+  name: string;
+  checked: boolean;
+}
+
+const setOptionValue = ({ options, name, checked }: SetOptionValueArguments): StrictOption[] => {
+  return options.map((option) => {
+    if (option.name === name) {
+      return {
+        ...option,
+        checked,
+      };
+    }
+    return option;
+  });
+};
+
+const defaultOption = {
+  checked: false,
+};
+
+const normalizeOptions = (options: ConsentLayerOption[]): StrictOption[] => {
+  return options.map((option) => {
+    const checked = option.required
+      ? true
+      : typeof option.checked === 'boolean'
+      ? option.checked
+      : defaultOption.checked;
+    return {
+      ...option,
+      checked,
+    };
+  });
+};
+
+const mapOptionToCallbackReturn = (
+  options: ConsentLayerOption[],
+  overwrite?: boolean
+): OnSaveArgument => {
+  return Object.fromEntries(
+    options.map((option) => [option.name, overwrite ? true : option.checked || false])
+  );
+};
 
 type ConsentLayerProps = InferProps<typeof consentLayerPropTypes>;
 
@@ -57,41 +107,37 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
   className,
   message = 'Um Dir die Nutzung unserer Webseite zu erleichtern, setzen wir Cookies ein.',
   onSave,
-  options,
+  options: inputOptions,
   saveAllLabel = 'Alle akzeptieren',
   saveLabel = 'Auswahl bestätigen',
   title = 'Cookie-Einstellungen',
   appId,
   ...otherProps
 }) => {
-  const [formValues, setFormValues] = useState<OnSaveArgument>(() =>
-    options.reduce(
-      (currentFormValues, option) => ({
-        ...currentFormValues,
-        [option.name]: option.required === true || option.checked,
-      }),
-      {}
-    )
+  const [options, setOptions] = useState(normalizeOptions(inputOptions as ConsentLayerOption[]));
+
+  useEffect(() => {
+    setOptions(normalizeOptions(inputOptions as ConsentLayerOption[]));
+  }, [inputOptions]);
+
+  const handleCheckboxChange = useCallback(
+    ({ target: checkbox }) => {
+      setOptions(
+        setOptionValue({ options, name: checkbox.name, checked: checkbox.checked || false })
+      );
+    },
+    [options]
   );
 
-  const handleCheckboxChange = useCallback(({ target: checkbox }) => {
-    setFormValues((prevFormValues) => ({
-      ...prevFormValues,
-      [checkbox.name]: checkbox.checked,
-    }));
-  }, []);
+  const allOptionsChecked = useMemo(() => options.every((option) => option.checked), [options]);
 
-  const allOptionsChecked = useMemo(() => Object.values(formValues).every((option) => option), [
-    formValues,
+  const handleSave = useCallback(() => onSave(mapOptionToCallbackReturn(options)), [
+    options,
+    onSave,
   ]);
 
-  const handleSave = useCallback(() => onSave(formValues), [formValues, onSave]);
-
   const handleSaveAll = () => {
-    const result = {} as Record<string, boolean>;
-    Object.keys(formValues).forEach((key) => {
-      result[key] = true;
-    });
+    const result = mapOptionToCallbackReturn(options, true);
     onSave(result);
   };
 
@@ -99,7 +145,7 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
     <Modal
       isOpen
       autoFocus
-      title={title}
+      title={title!}
       className={clsx('dbx-consentlayer', className)}
       enableCloseButton={false}
       fullActionSize={Modal.fullActionSizes.S}
@@ -127,15 +173,17 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
       {...otherProps}
     >
       <form className="dbx-consentlayer__form">
-        <div className="dbx-consentlayer__message">
-          {typeof message === 'string' && message.length > 0 ? <p>{message}</p> : message}
-        </div>
+        {message && (
+          <div className="dbx-consentlayer__message">
+            {typeof message === 'string' && message.length > 0 ? <p>{message}</p> : message}
+          </div>
+        )}
         <ul className="dbx-consentlayer__options">
-          {options.map(({ name, label, description, required }) => (
+          {options.map(({ name, label, description, required, checked }) => (
             <li key={name} className="dbx-consentlayer__option">
               <Checkbox
                 name={name}
-                checked={formValues[name]}
+                checked={checked}
                 disabled={required === true}
                 onChange={handleCheckboxChange}
                 label={

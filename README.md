@@ -9,11 +9,9 @@ and feel of Deutsche Bahn AG.
 yarn add @bahn-x/dbx-email-kit;
 yarn add @bahn-x/dbx-foundation;
 yarn add @bahn-x/dbx-icons;
-yarn add @bahn-x/dbx-web-extra;
 yarn add @bahn-x/dbx-web;
+yarn add @bahn-x/dbx-web-extra;
 ```
-
-Packages are compiled to ES2020 syntax. This is to prevent users of the packages from having core-js code bundled twice. *Make sure you compile this dependency to your target browser as well!*
 
 ### Setup Access to Private GitHub Repositories as Dependencies
 
