@@ -1,9 +1,11 @@
+# Documentation
 *-doc.js
 *-doc.scss
 *-doc.css
-*.test.js
-*.jsx
-*.ts
-*.tsx
-!*.d.ts
+*.stories.jsx
+stories/*
+# Tests
+*.snap
+*.test.*
+#
 .release-it.js
