@@ -21,7 +21,7 @@
 }
 
 @function dbx-component-padding-bottom($size, $border-width-key) {
-  @return ceil(dbx-component-vertical-padding($size, $border-width-key) + 1px);
+  @return floor(dbx-component-vertical-padding($size, $border-width-key));
 }
 
 @function dbx-component-textsize($size) {
