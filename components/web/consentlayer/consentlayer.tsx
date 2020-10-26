@@ -3,7 +3,7 @@ import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 import Checkbox from '../checkbox';
-import Modal from '../modal';
+import Modal, { ModalProps } from '../modal';
 import Button from '../button';
 
 const consentLayerPropTypes = {
@@ -100,7 +100,7 @@ const mapOptionToCallbackReturn = (
   );
 };
 
-type ConsentLayerProps = InferProps<typeof consentLayerPropTypes>;
+type ConsentLayerProps = InferProps<typeof consentLayerPropTypes & ModalProps>;
 
 const Consentlayer: React.FC<ConsentLayerProps> = ({
   children,

@@ -36,7 +36,7 @@ export enum ModalSizes {
   L = 'l',
 }
 
-interface ModalProps {
+export interface ModalProps {
   /** Sets the top title of the Modal dialog */
   title?: string;
 
