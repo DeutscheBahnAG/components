@@ -71,9 +71,6 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   @include media('>=large') {
     max-height: 75%;
   }
-  @include media('>=xlarge') {
-    max-height: 62%;
-  }
   @include media('print') {
     display: block;
     overflow: visible;
