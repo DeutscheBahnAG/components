@@ -23,24 +23,39 @@ const myOptionsArray = [
     name: 'localisation',
     label: 'Localisation',
     checked: true,
-    description: 'We would like to offer you personalized content by knowing your location.',
+    description:
+      'We would like to offer you personalized content by knowing your location.',
   },
   {
     name: 'analytics',
     label: 'Analytics',
-    description: 'Help us improving the user experience',
+    description: (
+      <>
+        <p>
+          We use analytics to detect bugs and improve the functionality of the
+          site.
+        </p>
+        <a
+          href="https://www.gemeinsamgehtdas.de/en/tracking"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Information on analysis
+        </a>
+      </>
+    ),
   },
 ];
 const mySaveSelectionHandler = (selectedOptions) =>
   window.alert(
     `Cookie settings saved:\n\n${JSON.stringify(selectedOptions, null, 2)}`
   );
-const MyCustomFooter = () => <div>Imprint etc.</div>;
 
 <Consentlayer
   options={myOptionsArray}
   onSave={mySaveSelectionHandler}
-  footer={<MyCustomFooter />}
+  privacyMessage={<a href="#privacy">Our privacy statement</a>}
+  importantLinks={[<a href="#imprint">Imprint</a>]}
 />;
 ```
 
@@ -51,11 +66,12 @@ The options can be passed as an array of objects in the following form:
 ```js
 {
   name: 'myOptionName', // the name to identify the option in the onSave callback function
-  label: 'My option name', // the name that is displayed to the user
+  label: 'My option name', // the name that is displayed to the user (must not contain a link)
   description: 'What my option is about', // (optional) more details about the option, will
                                           // be displayed below the name
-  required: true // (optional) if set to true, the option will be checked and disabled, so
-                 // it cannot be deactivated
+  required: true, // (optional) if set to true, the option will be checked and disabled, so
+                  // it cannot be deactivated
+  links: [<a href="#terms">Out Terms and Conditions</a>] // A list of links to documents mentioned in the `label`
 }
 ```
 
@@ -72,11 +88,11 @@ As a realistic example, you could have the following options:
 
 ⚠️ To comply with the GDPR and German law, it is necessary that your imprint, legal terms and data privacy page are accessible BEFORE you have accepted the privacy options and close the dialogue.
 
-For that reason, you can (and must) provide a footer area in the dialogue that contains links to these pages.
-This area can hold any content, so it is up to you how to implement it:
+The link to the privacy statement must be put on top of the buttons. Use `privacyMessage` including an `<a>` and it will be placed and formatted automatically.
 
-- you can either add links or an accordion that open the documents inline inside the dialogue (the dialogue content can be scrolled, see an example story here: [With custom footer](?path=/story/components-consentlayer--with-custom-footer))
-- or you add links to the respective pages in the footer and deliberately not render the Consentlayer component on these pages, so that people can access the content of these documents on your site
+Other (legally) important links can be put below the buttons. Use `importantLinks` including an array of `<a>` and it will be placed and formatted automatically.
+
+**Be aware the URL target of those links _must not_ open the Consentlayer and _must not_ apply any tracking until the user gives consent.**
 
 ## Saving the user selection and knowing when to show the dialogue
 

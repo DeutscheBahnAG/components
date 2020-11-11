@@ -23,6 +23,7 @@ const consentLayerPropTypes = {
       description: PropTypes.node,
       checked: PropTypes.bool,
       required: PropTypes.bool,
+      links: PropTypes.node,
     }).isRequired
   ).isRequired,
   /** add custom content in the modal below the list of options */
@@ -32,7 +33,12 @@ const consentLayerPropTypes = {
   onSave: PropTypes.func.isRequired,
   /** a custom className to add to the modal container */
   className: PropTypes.string,
-
+  /** privacy message (should include link to privacy, e.g. “See <a>our Privacy Statement</>”) */
+  privacyMessage: PropTypes.node.isRequired,
+  /** legally importan links (imprint etc.) */
+  importantLinks: PropTypes.arrayOf(PropTypes.node).isRequired,
+  /** additional content for the footer (put after the important links) */
+  footer: PropTypes.node,
   /** Set HTML identifier of your React app container for accessibility purposes.
    * The whole React app will be hidden from screen readers except the Modal.
    * */
@@ -100,6 +106,9 @@ const mapOptionToCallbackReturn = (
   );
 };
 
+const spacedLinks = (links?: React.ReactNode[]): React.ReactNode[] =>
+  links?.map((link, index) => (index ? <> {link}</> : link)) || [];
+
 type ConsentLayerProps = InferProps<typeof consentLayerPropTypes & ModalProps>;
 
 const Consentlayer: React.FC<ConsentLayerProps> = ({
@@ -112,6 +121,9 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
   saveLabel = 'Auswahl bestätigen',
   title = 'Cookie-Einstellungen',
   appId,
+  privacyMessage,
+  importantLinks = [],
+  footer,
   ...otherProps
 }) => {
   const [options, setOptions] = useState(normalizeOptions(inputOptions as ConsentLayerOption[]));
@@ -144,11 +156,11 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
   return (
     <Modal
       isOpen
-      autoFocus
+      autoFocus={false}
       title={title!}
       className={clsx('dbx-consentlayer', className)}
       enableCloseButton={false}
-      fullActionSize={Modal.fullActionSizes.S}
+      fullActionSize={Modal.fullActionSizes.M}
       appId={appId}
       primaryButton={
         <Button
@@ -170,12 +182,25 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
           {saveLabel}
         </Button>
       }
+      footer={
+        (importantLinks.length > 0 || footer) &&
+        spacedLinks([
+          ...importantLinks.map((link) => (
+            <span className="dbx-contentlayer__important-link">{link}</span>
+          )),
+          footer,
+        ])
+      }
       {...otherProps}
     >
       <form className="dbx-consentlayer__form">
         {message && (
           <div className="dbx-consentlayer__message">
-            {typeof message === 'string' && message.length > 0 ? <p>{message}</p> : message}
+            {typeof message === 'string' && message.length > 0 ? (
+              <p className="dbx-consentlayer__text">{message}</p>
+            ) : (
+              message
+            )}
           </div>
         )}
         <ul className="dbx-consentlayer__options">
@@ -186,19 +211,26 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
                 checked={checked}
                 disabled={required === true}
                 onChange={handleCheckboxChange}
-                label={
-                  <>
-                    <div className="dbx-consentlayer__option-label">{label}</div>
-                    {description && (
-                      <div className="dbx-consentlayer__option-description">{description}</div>
-                    )}
-                  </>
+                label={<div className="dbx-consentlayer__option-label">{label}</div>}
+                footer={
+                  typeof description === 'string' && description.length > 0 ? (
+                    <p>{description}</p>
+                  ) : (
+                    description
+                  )
                 }
               />
             </li>
           ))}
         </ul>
-        {children && <div className="dbx-consentlayer__footer">{children}</div>}
+        {children && <div className="dbx-consentlayer__children">{children}</div>}
+        <p className="dbx-consentlayer__privacy-message">
+          {typeof privacyMessage === 'string' && privacyMessage.length > 0 ? (
+            <p className="dbx-consentlayer__text">{privacyMessage}</p>
+          ) : (
+            privacyMessage
+          )}
+        </p>
       </form>
     </Modal>
   );

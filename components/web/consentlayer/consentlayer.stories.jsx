@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import loadable from '@loadable/component';
 import readme from './README.md';
-import CustomFooter from './stories/custom-footer';
 
 const Consentlayer = loadable(() => import('./consentlayer'), { ssr: false });
 
@@ -26,8 +25,39 @@ const options = {
     {
       name: 'analytics',
       label: 'Analyse',
-      description:
-        'Danke, dass Du an unseren umfangreichen Tests teilnimmst. Um unser Angebot und unsere Webseite weiter zu verbessern, erfassen wir Daten für Statistiken und Analysen. Mithilfe dieser Daten können wir die Nutzererfahrung verbessern und frühzeitig Fehler erkennen und beseitigen.',
+      description: (
+        <>
+          <p>
+            Danke, dass Du an unseren umfangreichen Tests teilnimmst. Um unser Angebot und unsere
+            Webseite weiter zu verbessern, erfassen wir Daten für Statistiken und Analysen. Mithilfe
+            dieser Daten können wir die Nutzererfahrung verbessern und frühzeitig Fehler erkennen
+            und beseitigen.
+          </p>
+          <a
+            href="https://www.gemeinsamgehtdas.de/de/tracking"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Informationen zur Analyse durch die Deutsche Bahn AG
+          </a>
+          <p>
+            Zweiter, beispielhafter Absatz, falls zwei unterschiedliche Einheiten (DB AG + XYZ)
+            involviert sind.
+          </p>
+          <a
+            href="https://www.example_xyz.de/de/tracking"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Informationen zur Analyse durch die XYZ
+          </a>
+        </>
+      ),
+    },
+    {
+      name: 'others',
+      label: 'Sonstiges',
+      description: <a href="#info">Weitere Informationen</a>,
     },
   ],
   en: [
@@ -46,7 +76,18 @@ const options = {
     {
       name: 'analytics',
       label: 'Analytics',
-      description: 'We use analytics to detect bugs and improve the functionality of the site.',
+      description: (
+        <>
+          <p>We use analytics to detect bugs and improve the functionality of the site.</p>
+          <a
+            href="https://www.gemeinsamgehtdas.de/en/tracking"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Information on analysis
+          </a>
+        </>
+      ),
     },
   ],
   socialMedia: [
@@ -69,17 +110,29 @@ const options = {
   ],
 };
 
+const privacyMessage = <a href="#privacy">Unsere Datenschutzhinweise</a>;
+const importantLinks = [<a href="#imprint">Impressum</a>];
+
 const onSave = (selectedOptions) =>
   window.alert(`Cookie settings saved:\n\n${JSON.stringify(selectedOptions, null, 2)}`);
 
 storiesOf('Components / Consentlayer', module)
   .addDecorator(withReadme(readme))
-  .add('Default', () => <Consentlayer options={options.de} onSave={onSave} />)
-  .add('With custom footer', () => (
-    <Consentlayer options={options.de} onSave={onSave} footer={<CustomFooter />} />
+  .add('Default', () => (
+    <Consentlayer
+      options={options.de}
+      onSave={onSave}
+      privacyMessage={privacyMessage}
+      importantLinks={importantLinks}
+    />
   ))
   .add('Many options', () => (
-    <Consentlayer options={[...options.de, ...options.socialMedia]} onSave={onSave} />
+    <Consentlayer
+      options={[...options.de, ...options.socialMedia]}
+      onSave={onSave}
+      privacyMessage={privacyMessage}
+      importantLinks={importantLinks}
+    />
   ))
   .add('Custom labels', () => (
     <Consentlayer
@@ -89,5 +142,7 @@ storiesOf('Components / Consentlayer', module)
       message="We use cookies to improve your experience while using our website."
       saveAllLabel="Accept all"
       saveLabel="Confirm selection"
+      privacyMessage={privacyMessage}
+      importantLinks={importantLinks}
     />
   ));

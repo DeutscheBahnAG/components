@@ -18,19 +18,31 @@
   margin-top: dbx-spacing('m');
 }
 
-.dbx-consentlayer__option-description {
-  @include dbx-text-style('copy', 's');
-  color: dbx-color('text.primary');
-  display: block;
-  margin-top: 6px;
-}
-
 .dbx-consentlayer__message {
-  @include dbx-text-style('copy');
-  text-align: left;
   flex-grow: 1;
 }
 
-.dbx-consentlayer__footer {
+.dbx-consentlayer__privacy-message {
   margin-top: dbx-spacing('ml');
+}
+
+.dbx-consentlayer__message,
+.dbx-consentlayer__privacy-message {
+  > a {
+    @include dbx-primary-link;
+  }
+}
+
+.dbx-consentlayer__text {
+  @include dbx-text-style('copy');
+  margin: 0;
+  text-align: left;
+}
+
+.dbx-contentlayer__important-link {
+  margin-right: dbx-spacing('sm');
+
+  a {
+    @include dbx-secondary-link;
+  }
 }
