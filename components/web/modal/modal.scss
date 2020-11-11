@@ -7,7 +7,7 @@ $dbx-modal--z-level: (
 
 $dbx-modal--appearance-duration: 400ms;
 $dbx-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
-$dbx-modal--dialog-margin: dbx-spacing('ml');
+$dbx-modal--dialog-margin: dbx-spacing('s');
 $dbx-modal--dialog-padding-y: dbx-spacing('ml');
 $dbx-modal--dialog-padding-x: dbx-spacing('l');
 $dbx-modal--action-gap: dbx-spacing('s');
@@ -47,6 +47,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal__dialog {
   @include dbx-focus-ring();
+  box-sizing: border-box;
   position: relative;
   display: grid;
   overflow: auto;
@@ -54,8 +55,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   grid-template-columns: auto;
   width: auto;
   max-width: map-get($breakpoints, xlarge);
-  height: auto;
-  max-height: 100%;
+  height: calc(100vh - #{2 * dbx-spacing('s')});
   padding: $dbx-modal--dialog-padding-y $dbx-modal--dialog-padding-x;
   border-radius: dbx-border-radius('xl');
   box-shadow: map-get($dbx-shadows, high);
@@ -65,6 +65,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
     margin: $dbx-modal--dialog-margin;
   }
   @include media('>=medium') {
+    height: auto;
     max-height: 90%;
   }
   @include media('>=large') {
