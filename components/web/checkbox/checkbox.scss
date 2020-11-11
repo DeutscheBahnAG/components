@@ -7,6 +7,10 @@
  *    within the square anymore. `1` must be use as `0` would crop the focus ring.
  */
 
+$dbx-checkbox-size: 16px;
+$dbx-checkbox-outer-size: $dbx-checkbox-size + 2 * dbx-border-width('checkbox');
+$dbx-checkbox-gap: 0.4em;
+
 .dbx-checkbox {
   align-items: flex-start;
   box-sizing: border-box;
@@ -36,10 +40,10 @@
   border-radius: 2.2px;
   box-sizing: content-box;
   flex-shrink: 0;
-  height: 16px;
+  height: $dbx-checkbox-size;
   position: relative;
   top: 2px;
-  width: 16px;
+  width: $dbx-checkbox-size;
 
   svg {
     display: block;
@@ -68,7 +72,7 @@
 }
 
 .dbx-checkbox-label {
-  margin-left: 0.4em;
+  margin-left: $dbx-checkbox-gap;
 
   a {
     position: relative;
