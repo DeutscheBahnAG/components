@@ -130,6 +130,9 @@ export interface ModalProps {
 
   /** Main content of the Modal dialog */
   children: React.ReactNode;
+
+  /** Footer content of the Modal dialog (below buttons; legal stuff etc,.) */
+  footer: React.ReactNode;
 }
 
 type ModalType<P> = React.FunctionComponent<P> & {
@@ -161,6 +164,7 @@ const Modal: ModalType<ModalProps> = ({
   portalId,
   children,
   disableBodyScrollWhenOpen = true,
+  footer,
   ...otherProps
 }) => {
   const getPortalParentNode = () => {
@@ -284,6 +288,7 @@ const Modal: ModalType<ModalProps> = ({
           )}
         </div>
       )}
+      {footer && <footer className="dbx-modal__footer">{footer}</footer>}
     </ReactModal>
   );
 };

@@ -110,6 +110,22 @@ storiesOf('Components / Modal', module)
       <ExampleChildren paragraphsCount={5} textType="much" title="§ 1 Trust in people" />
     </Modal>
   ))
+  .add('Footer', () => (
+    <Modal
+      {...modalActions}
+      title="Title"
+      primaryButton={<Button {...primaryActions}>Primary</Button>}
+      secondaryButton={<Button {...secondaryActions}>Secondary</Button>}
+      isOpen
+      footer={
+        <>
+          Footer content with <a>Link</a>
+        </>
+      }
+    >
+      <ExampleChildren title="Children inside the content area" />
+    </Modal>
+  ))
   .add('Modal on page (Demo)', () => (
     <DOMEnvironment>
       <ModalDemo />

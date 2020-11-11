@@ -222,6 +222,19 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   margin: 0 $dbx-modal--action-gap (2 * $dbx-modal--action-gap);
 }
 
+.dbx-modal__footer {
+  @include dbx-text-style('copy', 's');
+  background: dbx-background-color('secondary');
+  color: dbx-text-color('secondary');
+  margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x)
+    (-$dbx-modal--dialog-padding-y);
+  padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x;
+
+  > a {
+    @include dbx-secondary-link;
+  }
+}
+
 .body--dbx-modal-open,
 .html--dbx-modal-open {
   overflow: hidden;
