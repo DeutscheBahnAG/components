@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import withReadme from 'storybook-readme/with-readme';
 import Checkbox from './checkbox-doc';
 import Button from '../button/button';
-import Copy from '../copy/copy';
 import checkboxReadme from './README.md';
 
 const ToggleCheckboxIndeterminateStateExample = () => {
@@ -36,14 +35,36 @@ storiesOf('Components / Checkbox', module)
   .add('Default', () => <Checkbox onClick={action('clicked')} label="Checkbox" />)
   .add('Checked', () => <Checkbox checked onClick={action('clicked')} label="Checkbox" />)
   .add('Indeterminate', () => <ToggleCheckboxIndeterminateStateExample />)
-  .add('With Links', () => (
+  .add('With 1 link (outside the label)', () => (
     <>
-      <Checkbox onClick={action('clicked')} label="I accept the Terms and Conditions" />
-      <p style={{ marginTop: '4px', marginLeft: '26px' }}>
-        <Copy>
-          <a href="#terms">Read our Terms and Conditions</a>
-        </Copy>
-      </p>
+      <Checkbox
+        onClick={action('clicked')}
+        label={
+          <>
+            I accept the <b>Terms and Conditions</b>.
+          </>
+        }
+        footer={<a href="#terms">Read our Terms and Conditions</a>}
+      />
+    </>
+  ))
+  .add('With 2 links (outside the label)', () => (
+    <>
+      <Checkbox
+        onClick={action('clicked')}
+        label={
+          <>
+            I accept the <b>Terms and Conditions</b> and <b>XYZ</b>.
+          </>
+        }
+        footer={
+          <>
+            <a href="#terms">Read our Terms and Conditions</a>
+            {' ' /* add space in between */}
+            <a href="#terms">Read about XYZ</a>
+          </>
+        }
+      />
     </>
   ))
   .add('Default disabled', () => <Checkbox disabled onClick={action('clicked')} label="Checkbox" />)

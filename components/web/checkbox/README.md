@@ -52,14 +52,15 @@ Therefor we recommend to place links associated with the Checkbox right below it
 
 ```jsx
 import { Copy } from '@bahn-x/dbx-web';
-<>
-  <Checkbox label="I accept the Terms and Conditions"/>
-  <p style={{marginTop: '4px', marginLeft: '26px'}}>
-    <Copy>
-      <a href="#terms">Read our Terms and Conditions</a>
-    </Copy>
-  </p>
-</>
+
+<Checkbox
+  label={
+    <>
+      I accept the <b>Terms and Conditions</b>.
+    </>
+  }
+  footer={<a href="#terms">Read our Terms and Conditions</a>}
+/>;
 ```
 
 However, links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
