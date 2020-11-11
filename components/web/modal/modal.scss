@@ -122,6 +122,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal__title {
   @include dbx-text-style('title', 'l');
+  margin: 0;
 
   &:first-of-type {
     // Align title to left, when close button not present.
