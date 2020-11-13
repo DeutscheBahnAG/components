@@ -8,8 +8,10 @@ $dbx-modal--z-level: (
 $dbx-modal--appearance-duration: 400ms;
 $dbx-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
 $dbx-modal--dialog-margin: dbx-spacing('s');
-$dbx-modal--dialog-padding-y: dbx-spacing('ml');
-$dbx-modal--dialog-padding-x: dbx-spacing('l');
+$dbx-modal--dialog-padding-y-mobile: dbx-spacing('sm');
+$dbx-modal--dialog-padding-x-mobile: dbx-spacing('l');
+$dbx-modal--dialog-padding-y-desktop: dbx-spacing('l');
+$dbx-modal--dialog-padding-x-desktop: dbx-spacing('xxl');
 $dbx-modal--action-gap: dbx-spacing('s');
 $dbx-modal--save-gap: dbx-spacing('s');
 $dbx-modal--shadow-background-color: dbx-color('background.primary');
@@ -56,7 +58,8 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   width: auto;
   max-width: map-get($breakpoints, xlarge);
   height: calc(100vh - #{2 * dbx-spacing('s')});
-  padding: $dbx-modal--dialog-padding-y $dbx-modal--dialog-padding-x;
+  padding: $dbx-modal--dialog-padding-y-mobile
+    $dbx-modal--dialog-padding-x-mobile;
   border-radius: dbx-border-radius('xl');
   box-shadow: map-get($dbx-shadows, high);
   background-color: dbx-color('background.primary');
@@ -66,6 +69,8 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   }
   @include media('>=medium') {
     height: auto;
+    padding: $dbx-modal--dialog-padding-y-desktop
+      $dbx-modal--dialog-padding-x-desktop;
     max-height: 90%;
   }
   @include media('>=large') {
@@ -98,7 +103,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: $dbx-modal--dialog-padding-y;
+  margin-bottom: $dbx-modal--dialog-padding-y-mobile;
 
   &:empty {
     margin-bottom: 0;
@@ -174,7 +179,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: stretch;
-  padding-top: $dbx-modal--dialog-padding-y;
+  padding-top: $dbx-modal--dialog-padding-y-mobile;
 
   @include media('print') {
     display: none;
@@ -261,9 +266,15 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   @include dbx-text-style('copy', 's');
   background: dbx-background-color('secondary');
   color: dbx-text-color('secondary');
-  margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x)
-    (-$dbx-modal--dialog-padding-y);
-  padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x;
+  margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-mobile)
+    (-$dbx-modal--dialog-padding-y-mobile);
+  padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-mobile;
+
+  @include media('>=medium') {
+    margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-desktop)
+      (-$dbx-modal--dialog-padding-y-desktop);
+    padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-desktop;
+  }
 
   > a {
     @include dbx-secondary-link;
