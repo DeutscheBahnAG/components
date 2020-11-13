@@ -179,6 +179,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: stretch;
+  margin: 0 -1px;
   padding-top: $dbx-modal--dialog-padding-y-mobile;
 
   @include media('print') {
