@@ -25,7 +25,11 @@
 }
 
 .dbx-consentlayer__privacy-message {
-  margin-top: dbx-spacing('ml');
+  margin: dbx-spacing('ml') 0 dbx-spacing('s');
+
+  @include media('>=medium') {
+    text-align: right;
+  }
 }
 
 .dbx-consentlayer__message,
@@ -42,7 +46,11 @@
 }
 
 .dbx-contentlayer__important-link {
-  margin-right: dbx-spacing('sm');
+  margin: 0 dbx-spacing('sm') 0 0;
+
+  @include media('>=medium') {
+    margin: 0 0 0 dbx-spacing('sm');
+  }
 
   a {
     @include dbx-secondary-link;

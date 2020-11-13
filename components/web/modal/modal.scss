@@ -274,6 +274,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
     margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-desktop)
       (-$dbx-modal--dialog-padding-y-desktop);
     padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-desktop;
+    text-align: right;
   }
 
   > a {
