@@ -20,7 +20,9 @@ const ToggleCheckboxIndeterminateStateExample = () => {
 
   return (
     <>
-      <Checkbox indeterminate={isIndeterminate} onClick={handleCheckboxClick} label="Checkbox" />
+      <Checkbox indeterminate={isIndeterminate} onClick={handleCheckboxClick}>
+        Checkbox
+      </Checkbox>
       <br />
       <br />
       <Button type="button" disabled={isIndeterminate} size="s" onClick={handleButtonClick}>
@@ -39,38 +41,38 @@ storiesOf('Components / Checkbox', module)
     <>
       <Checkbox
         onClick={action('clicked')}
-        label={
-          <>
-            I accept the <b>Terms and Conditions</b>.
-          </>
-        }
         footer={<a href="#terms">Read our Terms and Conditions</a>}
-      />
+      >
+        I accept the <b>Terms and Conditions</b>.
+      </Checkbox>
     </>
   ))
   .add('With 2 links (outside the label)', () => (
-    <>
-      <Checkbox
-        onClick={action('clicked')}
-        label={
-          <>
-            I accept the <b>Terms and Conditions</b> and <b>XYZ</b>.
-          </>
-        }
-        footer={
-          <>
-            <a href="#terms">Read our Terms and Conditions</a>
-            {' ' /* add space in between */}
-            <a href="#terms">Read about XYZ</a>
-          </>
-        }
-      />
-    </>
+    <Checkbox
+      onClick={action('clicked')}
+      footer={
+        <>
+          <a href="#terms">Read our Terms and Conditions</a>
+          {' ' /* add space in between */}
+          <a href="#terms">Read about XYZ</a>
+        </>
+      }
+    >
+      I accept the <b>Terms and Conditions</b> and <b>XYZ</b>.
+    </Checkbox>
   ))
-  .add('Default disabled', () => <Checkbox disabled onClick={action('clicked')} label="Checkbox" />)
+  .add('Default disabled', () => (
+    <Checkbox disabled onClick={action('clicked')}>
+      Checkbox
+    </Checkbox>
+  ))
   .add('Checked disabled', () => (
-    <Checkbox checked disabled onClick={action('clicked')} label="Checkbox" />
+    <Checkbox checked disabled onClick={action('clicked')}>
+      Checkbox
+    </Checkbox>
   ))
   .add('Indeterminate disabled', () => (
-    <Checkbox indeterminate disabled onClick={action('clicked')} label="Checkbox" />
+    <Checkbox indeterminate disabled onClick={action('clicked')}>
+      Checkbox
+    </Checkbox>
   ));

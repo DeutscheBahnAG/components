@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 const checkboxPropTypes = {
   /** Content rendered as the Checkbox label, can be text or any element except links and buttons */
-  label: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   /** Additional class names you want to add to the Checkbox */
   className: PropTypes.string,
   /** Show a bar instead of the checked state */
@@ -24,7 +24,7 @@ export type CheckboxProps = InferProps<typeof checkboxPropTypes> & Record<string
 const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className = '',
   indeterminate = false,
-  label,
+  children,
   style = {},
   footer,
   ...otherProps
@@ -53,7 +53,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
             />
           </svg>
         </span>
-        <span className="dbx-checkbox-label">{label}</span>
+        <span className="dbx-checkbox-label">{children}</span>
       </label>
       {footer && <div className="dbx-checkbox__footer">{footer}</div>}
     </>

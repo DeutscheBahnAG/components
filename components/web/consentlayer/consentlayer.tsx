@@ -211,7 +211,6 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
                 checked={checked}
                 disabled={required === true}
                 onChange={handleCheckboxChange}
-                label={<div className="dbx-consentlayer__option-label">{label}</div>}
                 footer={
                   typeof description === 'string' && description.length > 0 ? (
                     <p>{description}</p>
@@ -219,7 +218,9 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
                     description
                   )
                 }
-              />
+              >
+                <div className="dbx-consentlayer__option-label">{label}</div>
+              </Checkbox>
             </li>
           ))}
         </ul>
