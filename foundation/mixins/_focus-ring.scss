@@ -43,8 +43,10 @@
 @mixin dbx-focus-ring-for-text($transition: [], $target: '', $focus-selector: ':focus', $size: $focus-ring-size, $grow: $focus-ring-grow, $color: $focus-ring-color) {
   @include dbx-focus-ring($transition: $transition, $target: $target, $focus-selector: $focus-selector, $size: $size, $grow: $grow, $color: $color) {
     border-radius: 0.15em;
-    margin: 0 -0.2em;
-    padding: 0 0.2em;
+    margin-left: -0.2em;
+    margin-right: -0.2em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
   }
 }
 
