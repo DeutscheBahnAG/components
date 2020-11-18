@@ -107,7 +107,13 @@ const mapOptionToCallbackReturn = (
 };
 
 const spacedLinks = (links?: React.ReactNode[]): React.ReactNode[] =>
-  links?.map((link, index) => (index ? <> {link}</> : link)) || [];
+  links?.map((link, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <React.Fragment key={index}>
+      {index > 0 && ' '}
+      {link}
+    </React.Fragment>
+  )) || [];
 
 type ConsentLayerProps = InferProps<typeof consentLayerPropTypes & ModalProps>;
 
