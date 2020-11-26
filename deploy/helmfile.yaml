@@ -1,0 +1,45 @@
+---
+helmDefaults:
+  tillerless: true
+
+repositories:
+  - name: bahnx
+    url: https://bahn-x.github.io/helm/
+
+releases:
+  - name: dbx-web
+    chart: bahnx/service
+    version: 1.0.1
+    values:
+      - values.yaml.gotmpl
+      - image:
+          repository: {{ requiredEnv "DOCKER_REGISTRY" }}/{{ requiredEnv "STAGE" }}/web/dbx-web
+          tag: {{ requiredEnv "CIRCLE_SHA1" | quote }}
+        service:
+          port: 8080
+        readinessProbe:
+          path: /
+        ingress:
+          enabled: true
+          annotations:
+            {{ if eq .Environment.Name "prod" }}
+            kubernetes.io/ingress.class: nginx
+            kubernetes.io/tls-acme: "true"
+            {{ else }}
+            kubernetes.io/ingress.class: nginx-private
+            {{ end }}
+          hosts:
+            - {{ .Values.host }}
+          path: /
+          {{ if eq .Environment.Name "prod" }}
+          tls:
+            - secretName: {{ .Values.host }}
+              hosts:
+                - {{ .Values.host }}
+          {{ end }}
+
+
+environments:
+  dev:
+    values:
+      - host: dppc.app.bahnx-dev.comp.db.de

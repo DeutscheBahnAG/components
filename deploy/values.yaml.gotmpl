@@ -1,0 +1,8 @@
+# render the values from "environments" in the helmfile.yaml
+# this is a Go template, see https://golang.org/pkg/text/template/ and few custom functions added https://github.com/roboll/helmfile#templates
+# the resulting YAML will then be merged with releases.values and passed to Helm chart as .Values.*
+configmap:
+{{ .Values | getOrNil "configmap" | toYaml | indent 2 }}
+
+secrets:
+{{ .Values | getOrNil "secrets" | toYaml | indent 2 }}

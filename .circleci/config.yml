@@ -1,8 +1,7 @@
 version: 2.1
 
 orbs:
-  gcp-gcr: bahnx/gcp-gcr@1.1.0
-  gcp-gke: bahnx/gcp-gke@1.2.0
+  aws-ecr: bahnx/aws-ecr@1.0.1
 
 executors:
   node:
@@ -38,32 +37,9 @@ jobs:
           paths:
             - ~/.cache/yarn
       - persist_to_workspace:
-          root: ~/dbx-web
+          root: ./
           paths:
             - ./*
-    working_directory: ~/dbx-web
-
-  build-docs:
-    executor: node
-    steps:
-      - setup_remote_docker
-      - attach_workspace:
-          at: ./
-      - run:
-          name: Build Static Site
-          command: yarn build:docs
-      - gcp-gcr/build-push-docker:
-          image: "dbx-web"
-    working_directory: ~/dbx-web
-
-  build-packages:
-    executor: node
-    steps:
-      - attach_workspace:
-          at: ./
-      - run:
-          name: Build
-          command: yarn build
     working_directory: ~/dbx-web
 
   lint:
@@ -86,47 +62,107 @@ jobs:
           command: yarn test
     working_directory: ~/dbx-web
 
+  build-packages:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Build
+          command: yarn build
+    working_directory: ~/dbx-web
+
+  build-docs:
+    executor: node
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Build Static Site
+          command: yarn build:docs
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - ./*
+    working_directory: ~/dbx-web
+
+  build:
+    docker:
+      - image: $DOCKER_REGISTRY/$STAGE/cd-base:latest
+        aws_auth:
+          aws_access_key_id: $AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+    steps:
+      - setup_remote_docker:
+          version: 19.03.13
+          docker_layer_caching: true
+      - checkout
+      - attach_workspace:
+          at: ./
+      - aws-ecr/build-push-docker:
+          image: "web/dbx-web"
+    working_directory: ~/dbx-web
+
   deploy:
     docker:
-      - image: eu.gcr.io/$GCLOUD_PROJECT_ID/gcloud-build:SDK-255.0.0
-        auth:
-          username: _json_key
-          password: $GCR_KEY
+      - image: $DOCKER_REGISTRY/$STAGE/cd-base:latest
+        aws_auth:
+          aws_access_key_id: $AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
     steps:
       - checkout
-      - gcp-gke/deploy-to-kubernetes:
-          k8s-namespace: $STAGE
+      - run:
+          name: Deploy dbx-web
+          command: |
+            source /bootstrap-deploy.sh
+
+            helmfile --file deploy/helmfile.yaml --namespace web --environment $STAGE sync
     working_directory: ~/dbx-web
 
 workflows:
   version: 2
 
-  production:
+  test-and-deploy-dev:
     jobs:
       - install:
-          context: gcloud-webproducts-prod
+          context: dev
+          filters:
+            branches:
+              ignore:
+                - prod
       - lint:
+          context: dev
           requires:
             - install
       - test:
-          requires:
-            - install
-      - build-docs:
-          context: gcloud-webproducts-prod
+          context: dev
           requires:
             - install
       - build-packages:
+          context: dev
           requires:
             - install
-      - deploy:
-          context: gcloud-webproducts-prod
+      - build-docs:
+          context: dev
           requires:
-            - build-docs
-            - build-packages
             - install
-            - lint
-            - test
+      - build:
+          context: dev
           filters:
             branches:
               only:
                 - master
+          requires:
+            - lint
+            - test
+            - build-packages
+            - build-docs
+      - deploy:
+          context: dev
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - build
