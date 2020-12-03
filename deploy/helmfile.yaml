@@ -43,3 +43,6 @@ environments:
   dev:
     values:
       - host: dppc.app.bahnx-dev.comp.db.de
+  prod:
+    values:
+      - host: dppc.bahn-x.de      
