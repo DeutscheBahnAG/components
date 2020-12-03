@@ -166,3 +166,39 @@ workflows:
                 - master
           requires:
             - build
+
+  test-and-deploy-prod:
+    jobs:
+      - install:
+          context: prod
+          filters:
+            branches:
+              only:
+                - prod
+      - lint:
+          context: prod
+          requires:
+            - install
+      - test:
+          context: prod
+          requires:
+            - install
+      - build-packages:
+          context: prod
+          requires:
+            - install
+      - build-docs:
+          context: prod
+          requires:
+            - install
+      - build:
+          context: prod
+          requires:
+            - lint
+            - test
+            - build-packages
+            - build-docs
+      - deploy:
+          context: prod
+          requires:
+            - build            
