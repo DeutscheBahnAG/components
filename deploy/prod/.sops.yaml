@@ -1,0 +1,4 @@
+---
+creation_rules:
+  # Encrypt using GCP KMS
+  - gcp_kms: projects/bahnx-staging/locations/global/keyRings/kubesec/cryptoKeys/team-platform
