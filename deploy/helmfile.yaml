@@ -33,6 +33,21 @@ releases:
             {{ else }}
             kubernetes.io/ingress.class: nginx-private
             {{ end }}
+            # https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/
+            # http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_types
+            nginx.org/server-snippets: |
+              gzip on;
+              gzip_comp_level 5;
+              gzip_min_length 256;
+              gzip_proxied any;
+              gzip_types
+                application/javascript
+                application/json
+                image/svg+xml
+                text/css
+                text/html
+                text/javascript;
+              gzip_vary on;
           hosts:
             - {{ .Values.host }}
           path: /
