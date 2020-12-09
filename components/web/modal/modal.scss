@@ -8,7 +8,7 @@ $dbx-modal--z-level: (
 $dbx-modal--appearance-duration: 400ms;
 $dbx-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
 $dbx-modal--dialog-margin: dbx-spacing('s');
-$dbx-modal--dialog-padding-y-mobile: dbx-spacing('sm');
+$dbx-modal--dialog-padding-y-mobile: dbx-spacing('m');
 $dbx-modal--dialog-padding-x-mobile: dbx-spacing('l');
 $dbx-modal--dialog-padding-y-desktop: dbx-spacing('l');
 $dbx-modal--dialog-padding-x-desktop: dbx-spacing('xxl');
@@ -103,7 +103,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: $dbx-modal--dialog-padding-y-mobile;
+  margin-bottom: #{$dbx-modal--dialog-padding-y-mobile / 2};
 
   &:empty {
     margin-bottom: 0;
@@ -156,6 +156,11 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   background-attachment: local, local, scroll, scroll;
   background-repeat: no-repeat;
   background-color: $dbx-modal--shadow-background-color;
+
+  @include media('>=medium') {
+    padding: 0 $dbx-modal--dialog-padding-x-desktop;
+    margin: 0 #{-$dbx-modal--dialog-padding-x-desktop};
+  }
 
   @include media('print') {
     overflow-y: visible;
