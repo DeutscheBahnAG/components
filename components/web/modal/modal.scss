@@ -60,7 +60,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   height: calc(var(--dbx-vh, 1vh) * 100 - #{2 * dbx-spacing('s')});
   padding: $dbx-modal--dialog-padding-y-mobile
     $dbx-modal--dialog-padding-x-mobile;
-  border-radius: dbx-border-radius('xl');
+  border-radius: dbx-border-radius('xl') * 2;
   box-shadow: map-get($dbx-shadows, high);
   background-color: dbx-color('background.primary');
 
