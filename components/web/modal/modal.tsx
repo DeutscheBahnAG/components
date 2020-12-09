@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import clsx from 'clsx';
 import { NavigationClose } from '@bahn-x/dbx-icons';
@@ -142,6 +142,20 @@ type ModalType<P> = React.FunctionComponent<P> & {
   centerActions: typeof ModalActionSizes;
 };
 
+/**
+ * Apply a fix for mobile browsers reporting wrong CSS viewport unit
+ * values when the address bar is shown
+ * (see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/)
+ */
+const setViewportUnitCssVariable = () => {
+  if (typeof document.documentElement.style.setProperty === 'function') {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    const vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--dbx-vh', `${vh}px`);
+  }
+};
+
 const Modal: ModalType<ModalProps> = ({
   title,
   primaryButton: PrimaryButton,
@@ -206,6 +220,15 @@ const Modal: ModalType<ModalProps> = ({
   if (elApp !== null) {
     ReactModal.setAppElement(elApp);
   }
+
+  useEffect(() => {
+    setViewportUnitCssVariable();
+
+    window.addEventListener('resize', setViewportUnitCssVariable);
+    return () => {
+      window.removeEventListener('resize', setViewportUnitCssVariable);
+    };
+  }, []);
 
   return (
     <ReactModal

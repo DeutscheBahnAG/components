@@ -57,7 +57,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   grid-template-columns: auto;
   width: auto;
   max-width: map-get($breakpoints, xlarge);
-  height: calc(100vh - #{2 * dbx-spacing('s')});
+  height: calc(var(--dbx-vh, 1vh) * 100 - #{2 * dbx-spacing('s')});
   padding: $dbx-modal--dialog-padding-y-mobile
     $dbx-modal--dialog-padding-x-mobile;
   border-radius: dbx-border-radius('xl');
