@@ -231,13 +231,9 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
           ))}
         </ul>
         {children && <div className="dbx-consentlayer__children">{children}</div>}
-        <p className="dbx-consentlayer__privacy-message">
-          {typeof privacyMessage === 'string' && privacyMessage.length > 0 ? (
-            <p className="dbx-consentlayer__text">{privacyMessage}</p>
-          ) : (
-            privacyMessage
-          )}
-        </p>
+        {privacyMessage && (
+          <div className="dbx-consentlayer__privacy-message">{privacyMessage}</div>
+        )}
       </form>
     </Modal>
   );

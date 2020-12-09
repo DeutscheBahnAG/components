@@ -145,4 +145,21 @@ storiesOf('Components / Consentlayer', module)
       privacyMessage={privacyMessage}
       importantLinks={importantLinks}
     />
+  ))
+  .add('Two privacy links', () => (
+    <Consentlayer
+      options={options.de}
+      onSave={onSave}
+      privacyMessage={
+        <>
+          <p>
+            <a href="#privacy-1">Unsere Datenschutzhinweise</a>
+          </p>
+          <p>
+            <a href="#privacy-2">Andere Datenschutzhinweise</a>
+          </p>
+        </>
+      }
+      importantLinks={importantLinks}
+    />
   ));

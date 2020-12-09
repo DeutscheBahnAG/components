@@ -25,20 +25,29 @@
 }
 
 .dbx-consentlayer__privacy-message {
+  display: flex;
+  flex-direction: column;
   margin: dbx-spacing('ml') 0 dbx-spacing('s');
 
   @include media('>=medium') {
+    align-items: flex-end;
     text-align: right;
+  }
+
+  > :not(:first-child) {
+    margin-top: dbx-spacing('s');
   }
 }
 
 .dbx-consentlayer__message,
 .dbx-consentlayer__privacy-message {
-  > a {
+  a {
     @include dbx-primary-link;
   }
 }
 
+.dbx-consentlayer__message p,
+.dbx-consentlayer__privacy-message p,
 .dbx-consentlayer__text {
   @include dbx-text-style('copy');
   margin: 0;
