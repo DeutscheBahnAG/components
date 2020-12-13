@@ -1,4 +1,3 @@
 ---
 creation_rules:
-  # Encrypt using GCP KMS
-  - gcp_kms: projects/bahnx-staging/locations/global/keyRings/kubesec/cryptoKeys/team-platform
+  - kms: arn:aws:kms:eu-central-1:895074837213:key/d6cea409-da0b-47ff-8ed6-1fe3d4f7b4c6
