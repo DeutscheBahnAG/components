@@ -174,27 +174,52 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Berlin', 
         'S85',
         'S9',
       ].map((name) => (
-        <Transportchip zipCode="10000" product={Transportchip.products.SUBURBAN} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="10000"
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['U1', 'U12', 'U2', 'U3', 'U4', 'U5', 'U55', 'U6', 'U7', 'U8', 'U9'].map((name) => (
-        <Transportchip zipCode="10000" product={Transportchip.products.SUBWAY} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="10000"
+          product={Transportchip.products.SUBWAY}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['M1', 'M17', '12', '88'].map((name) => (
-        <Transportchip zipCode="10000" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="10000"
+          product={Transportchip.products.TRAM}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['M11', 'M85', 'X7', 'X83', 'TXL', '100', '943', 'N1', 'N97'].map((name) => (
-        <Transportchip zipCode="10000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="10000"
+          product={Transportchip.products.BUS}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['F10', 'F12', 'F21', 'F22', 'F23'].map((name) => (
-        <Transportchip zipCode="10000" product={Transportchip.products.FERRY} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="10000"
+          product={Transportchip.products.FERRY}
+          name={name}
+        />
       ))}
     </p>
   </div>
@@ -204,17 +229,32 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Hamburg',
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S11', 'S2', 'S21', 'S3', 'S31'].map((name) => (
-        <Transportchip zipCode="20000" product={Transportchip.products.SUBURBAN} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="20000"
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['AKN A1', 'AKN A2', 'AKN A3'].map((name) => (
-        <Transportchip zipCode="25000" product={Transportchip.products.REGIONAL} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="25000"
+          product={Transportchip.products.REGIONAL}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['U1', 'U2', 'U3', 'U4', 'U5'].map((name) => (
-        <Transportchip zipCode="20000" product={Transportchip.products.SUBWAY} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="20000"
+          product={Transportchip.products.SUBWAY}
+          name={name}
+        />
       ))}
     </p>
     <p>
@@ -234,12 +274,22 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Hamburg',
         '1705',
         '8895',
       ].map((name) => (
-        <Transportchip product={Transportchip.products.BUS} name={name} zipCode="20000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.BUS}
+          name={name}
+          zipCode="20000"
+        />
       ))}
     </p>
     <p>
       {['61', '62', '72', '73', '75'].map((name) => (
-        <Transportchip product={Transportchip.products.FERRY} name={name} zipCode="20000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.FERRY}
+          name={name}
+          zipCode="20000"
+        />
       ))}
     </p>
   </div>
@@ -249,12 +299,22 @@ storiesOf('Components / Transportchip / Regional styles', module).add('München'
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S2', 'S3', 'S4', 'S6', 'S7', 'S8', 'S20'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="80000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="80000"
+        />
       ))}
     </p>
     <p>
       {['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBWAY} name={name} zipCode="80000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBWAY}
+          name={name}
+          zipCode="80000"
+        />
       ))}
     </p>
     <p>
@@ -277,12 +337,22 @@ storiesOf('Components / Transportchip / Regional styles', module).add('München'
         'N20',
         'N27',
       ].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="80000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="80000"
+        />
       ))}
     </p>
     <p>
       {['X30', 'X98', '50', '63', '100', '199', 'N40', 'N81'].map((name) => (
-        <Transportchip product={Transportchip.products.BUS} name={name} zipCode="80000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.BUS}
+          name={name}
+          zipCode="80000"
+        />
       ))}
     </p>
   </div>
@@ -292,17 +362,32 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Frankfurt
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="60000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="60000"
+        />
       ))}
     </p>
     <p>
       {['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'U9'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBWAY} name={name} zipCode="60000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBWAY}
+          name={name}
+          zipCode="60000"
+        />
       ))}
     </p>
     <p>
       {['12', '14', '15', '16', '17', '18', '19', '20', '21'].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="60000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="60000"
+        />
       ))}
     </p>
   </div>
@@ -312,22 +397,42 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Nürnberg
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S2', 'S3', 'S4'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
     <p>
       {['U1', 'U2', 'U3'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBWAY} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBWAY}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
     <p>
       {['4', '5', '6', '7', '8'].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
     <p>
       {['20', '31', '43', '56', '99'].map((name) => (
-        <Transportchip product={Transportchip.products.BUS} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.BUS}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
   </div>
@@ -337,17 +442,32 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Fürth', 
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
     <p>
       {['U1'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBWAY} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBWAY}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
     <p>
       {['33', '67', '171', '179', '189'].map((name) => (
-        <Transportchip product={Transportchip.products.BUS} name={name} zipCode="90000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.BUS}
+          name={name}
+          zipCode="90000"
+        />
       ))}
     </p>
   </div>
@@ -357,7 +477,12 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Köln', (
   <div className="sg-components-transportationchip-list">
     <p>
       {['S11', 'S12', 'S13', 'S19', 'S23'].map((name) => (
-        <Transportchip zipCode="50667" product={Transportchip.products.SUBURBAN} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="50667"
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+        />
       ))}
     </p>
     <p>
@@ -375,7 +500,12 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Köln', (
         'STR 17',
         'STR 18',
       ].map((name) => (
-        <Transportchip zipCode="50667" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="50667"
+          product={Transportchip.products.TRAM}
+          name={name}
+        />
       ))}
     </p>
   </div>
@@ -385,12 +515,22 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim'
   <div className="sg-components-transportationchip-list">
     <p>
       {['S11', 'S12', 'S13', 'S19', 'S23'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
     <p>
       {['1', '3', '4', '5', '7', '9', '12', '13', '15', '16', '17', '18'].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
   </div>
@@ -400,7 +540,12 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim'
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S2', 'S3', 'S4', 'S6'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
     <p>
@@ -419,7 +564,12 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Mannheim'
         'RNV 9',
         'RNV 15',
       ].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
   </div>
@@ -429,12 +579,22 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Heidelber
   <div className="sg-components-transportationchip-list">
     <p>
       {['S1', 'S2', 'S3', 'S4', 'S5', 'S51'].map((name) => (
-        <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
     <p>
       {['RNV 5', 'STR 21', 'STR 21A', 'STR 22', 'STR 23', 'STR 24', 'STR 26'].map((name) => (
-        <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="68000" />
+        <Transportchip
+          showProductLogo
+          product={Transportchip.products.TRAM}
+          name={name}
+          zipCode="68000"
+        />
       ))}
     </p>
   </div>
@@ -446,13 +606,23 @@ storiesOf('Components / Transportchip / Regional styles', module).add(
     <div className="sg-components-transportationchip-list">
       <p>
         {['S1', 'S2', 'S3', 'S4', 'S6'].map((name) => (
-          <Transportchip product={Transportchip.products.SUBURBAN} name={name} zipCode="68000" />
+          <Transportchip
+            showProductLogo
+            product={Transportchip.products.SUBURBAN}
+            name={name}
+            zipCode="68000"
+          />
         ))}
       </p>
       <p>
         {['RNV 4A', 'RNV 5', 'RNV 5A', 'RNV 15', 'RNV 6', 'RNV 6A', 'RNV 7', 'RNV 9'].map(
           (name) => (
-            <Transportchip product={Transportchip.products.TRAM} name={name} zipCode="68000" />
+            <Transportchip
+              showProductLogo
+              product={Transportchip.products.TRAM}
+              name={name}
+              zipCode="68000"
+            />
           )
         )}
       </p>
@@ -464,17 +634,32 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Bremen', 
   <div className="sg-components-transportationchip-list">
     <p>
       {['NWB RS1', 'NWB RS2', 'NWB RS3', 'NWB RS4'].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.SUBURBAN} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.SUBURBAN}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['STR 1', 'STR 2', 'STR 3', 'STR 4', 'STR 5', 'STR 6', 'STR 8', 'STR 10'].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.TRAM}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['STR N1', 'STR N4', 'STR N10'].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.TRAM} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.TRAM}
+          name={name}
+        />
       ))}
     </p>
     <p>
@@ -519,17 +704,32 @@ storiesOf('Components / Transportchip / Regional styles', module).add('Bremen', 
         'BUS 96',
         'BUS 98',
       ].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.BUS}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['BUS N3', 'BUS N5', 'BUS N6', 'BUS N7', 'BUS N9', 'BUS N94'].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.BUS}
+          name={name}
+        />
       ))}
     </p>
     <p>
       {['BUS 101', 'BUS 102', 'BUS 120'].map((name) => (
-        <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
+        <Transportchip
+          showProductLogo
+          zipCode="28000"
+          product={Transportchip.products.BUS}
+          name={name}
+        />
       ))}
     </p>
   </div>
