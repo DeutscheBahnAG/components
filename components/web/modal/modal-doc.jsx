@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import DefaultModal from './modal';
 
 export const overrides = {
@@ -8,16 +8,15 @@ export const overrides = {
   disableBodyScrollWhenOpen: false,
 };
 
-const Modal = (props) => {
-  const portalRef = useRef();
-  const [portal, setPortal] = useState(undefined);
-  useEffect(() => {
-    setPortal(portalRef.current);
-  }, [portalRef]);
+export const generatePortalId = () => {
+  return `portal-${Math.random().toString(16).slice(2, 8)}`;
+};
 
+const Modal = (props) => {
+  const id = generatePortalId();
   return (
-    <div ref={portalRef}>
-      <DefaultModal {...props} portal={portal} {...overrides} />
+    <div id={id}>
+      <DefaultModal {...props} portalId={id} {...overrides} />
     </div>
   );
 };
