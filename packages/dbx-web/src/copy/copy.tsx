@@ -56,7 +56,7 @@ Copy.variants = CopyVariants;
 Copy.propTypes = {
   /** Text */
   children: PropTypes.node.isRequired,
-  /** The size of the Cutton */
+  /** The size of the Copy */
   size: PropTypes.oneOf(Object.values(CopySizes)),
   /** Style copy in bold */
   bold: PropTypes.bool,
