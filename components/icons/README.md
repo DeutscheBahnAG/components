@@ -2,18 +2,29 @@
 
 A collection of icons with focus on building user interfaces for travel-related applications.
 
+You can import all icons at once:
+
 ```jsx
-// you can import all icons at once:
 import * as Icons from '@bahn-x/dbx-icons';
 
 <Icons.TicketBahncard />;
 ```
 
+In order to reduce your bundle size, you can also import the individual icon files like below:
+
 ```jsx
-// in order to reduce your bundle size,
-// you can also import the individual icon files
-import SettingsIcon from '@bahn-x/dbx-icons/components/settings';
-import SeatWindowIcon from '@bahn-x/dbx-icons/components/seat-window';
+import SettingsIcon from '@bahn-x/dbx-icons/settings';
+import SeatWindowIcon from '@bahn-x/dbx-icons/seat-window';
+
+<SettingsIcon />
+<SeatWindowIcon />
+```
+
+You can also import icons from the package directly:
+
+```tsx
+import { SettingsIcon } from '@bahn-x/dbx-icons';
+import { SeatWindowIcon } from '@bahn-x/dbx-icons';
 
 <SettingsIcon />
 <SeatWindowIcon />
@@ -64,7 +75,7 @@ You can access the rendered `<svg>` element in two ways:
 
 ```jsx
 import React { useRef, useEffect } from 'react';
-import SettingsIcon from '@bahn-x/dbx-icons/components/settings';
+import SettingsIcon from '@bahn-x/dbx-icons/settings';
 
 const MyComponent = () => {
   const settingsIconRef = useRef();

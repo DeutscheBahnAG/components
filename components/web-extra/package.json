@@ -2,7 +2,11 @@
   "name": "@bahn-x/dbx-web-extra",
   "version": "0.5.0",
   "description": "DBX React Components - Non-core",
-  "repository": "https://github.com/Bahn-X/dbx-web.git",
+  "repository": {
+    "directory": "components/web-extra",
+    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "type": "git"
+  },
   "license": "UNLICENSED",
   "main": "index.js",
   "dependencies": {

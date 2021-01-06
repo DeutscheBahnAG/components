@@ -66,7 +66,7 @@ import { Button } from '@bahn-x/dbx-web';
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
   - `yarn build:web`: Transpiles just the `@bahn-x/dbx-web` package to `./dist/web`.
   - `yarn build:web-extra`: Transpiles just the `@bahn-x/dbx-web-extra` package to `./dist/web-extra`.
-  - `yarn build:icons`: Transpiles just the `@bahn-x/dbx-icons` package to `./dist/icons`.
+  - `yarn build:icons`: Generates `@bahn-x/dbx-icons` from SVG sources. This _must_ run before any other script that requires the `@bahn-x/dbx-icons` package, as the javascript files do not exist before that.
 - `yarn build:storybook`: Build static production version of component library to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
 - `yarn build:docs`: Lints and tests components and then builds Storybook and Sassdoc pages to `./build`

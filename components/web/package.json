@@ -2,7 +2,11 @@
   "name": "@bahn-x/dbx-web",
   "version": "0.20.0",
   "description": "DBX React Components",
-  "repository": "https://github.com/Bahn-X/dbx-web.git",
+  "repository": {
+    "directory": "components/web",
+    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "type": "git"
+  },
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "dependencies": {

@@ -4,3 +4,4 @@ dist/
 !.cz-config.js
 !.eslintrc.js
 !.commitlintrc.js
+components/icons/*.js

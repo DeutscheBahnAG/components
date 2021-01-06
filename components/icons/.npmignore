@@ -1,9 +1,16 @@
-node_modules
-components
+# Sources
 svg
-*.test.js
-*.jsx
-*.ts
-*.tsx
-!*.d.ts
+# Documentation
+*-doc.js
+*-doc.scss
+*-doc.css
+*.stories.jsx
+stories/*
+# Tests
+*.snap
+*.test.*
+#
+.eslintrc.js
+.release-it.js
 svgr.config.js
+tsconfig.build.json

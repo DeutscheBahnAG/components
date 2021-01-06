@@ -1,17 +1,21 @@
 {
   "name": "@bahn-x/dbx-icons",
   "version": "0.7.0",
-  "description": "DBX Icon component for React",
+  "description": "DBX Icon components for React",
   "main": "index.js",
   "license": "MIT",
-  "repository": "https://github.com/Bahn-X/dbx-web.git",
+  "repository": {
+    "directory": "components/icons",
+    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "type": "git"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "rm -rf components && svgr --config-file svgr.config.js --out-dir components svg/24",
-    "transpile": "npx babel components --out-dir . --config-file ../../babel.config.json",
-    "prepublishOnly": "yarn transpile"
+    "build:tsx": "rm -rf src && svgr --config-file svgr.config.js --out-dir src svg/24",
+    "build:js": "rm -rf components && tsc --project tsconfig.build.json --outDir ./",
+    "build": "yarn build:tsx && yarn build:js"
   },
   "dependencies": {
     "@babel/cli": "^7.10.5",

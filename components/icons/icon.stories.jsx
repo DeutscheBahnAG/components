@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 // eslint-disable-next-line import/extensions
 import StyleguideCard from '@bahn-x/dbx-foundation/styleguide-card.jsx';
-import * as Icons from './components';
+import * as Icons from './index';
 import readme from './README.md';
 
 storiesOf('Components / Icon', module)
