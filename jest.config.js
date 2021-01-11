@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverageFrom: [
-    'components/**/*.jsx', // only consider components, not stories or setup stuff
+    'packages/**/*.jsx', // only consider components, not stories or setup stuff
   ],
   coverageDirectory: '<rootDir>/.coverage', // generate coverage report in 'hidden' folder
   snapshotSerializers: [

@@ -15,7 +15,7 @@ module.exports = {
     "**/*.tsx",
     // email css forces us to do cruel things
     // where the linter would complain basically everywhere
-    "./email/**/*",
+    "./packages/dbx-email-kit/**/*",
   ],
   rules: {
     // we don't enforce css properties to be sorted alphabetically
@@ -23,7 +23,7 @@ module.exports = {
     // stylelint-config-sass-guidelines requires
     // you to omit the '.scss' ending in @import statements.
     // However, since we are using webpack to build the css,
-    // and there are also non-scss files (like .js) in folders like /components,
+    // and there are also non-scss files (like .js) in folders like /packages,
     // webpack would try to import them into the scss and produce an error.
     // Hence, we need to be able to specify the file ending to actually
     // only import the .scss files.

@@ -30,11 +30,11 @@ If you don’t publish your component library via `npm`, you can [link to the Gi
 
 ### Adding a New Component
 
-This is a multi-package repository. Each component library is a separate Node package with it's own `package.json`. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces).
+This is a multi-package repository. Each component library is a separate Node package with it's own `package.json`. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces). They reside in `./packages`.
 
-- `dbx-web`: Core components, for general use. They reside in `./components/web`.
-- `dbx-web-extra`: Additional components for edge use cases. They reside in `./components/web-extra`.
-- `dbx-icons`: Icon components. They reside in `./components/icons`.
+- `dbx-web`: Core components, for general use.
+- `dbx-web-extra`: Additional components for edge use cases.
+- `dbx-icons`: Icon components.
 
 Components should be placed in the appropriate package folder, in their own subfolder.
 

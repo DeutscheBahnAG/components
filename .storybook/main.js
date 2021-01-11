@@ -8,17 +8,17 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
-    '@bahn-x/storybook-addon-static-html'
+    '@bahn-x/storybook-addon-static-html',
   ],
   stories: [
-    '../foundation/**/*.stories.jsx',
-    '../components/web/**/*.stories.jsx',
-    '../components/web-extra/**/*.stories.jsx',
-    '../components/icons/**/*.stories.jsx',
-    '../email/src/**/*.stories.jsx'
+    '../packages/dbx-foundation/**/*.stories.jsx',
+    '../packages/dbx-web/**/*.stories.jsx',
+    '../packages/dbx-web-extra/**/*.stories.jsx',
+    '../packages/dbx-icons/**/*.stories.jsx',
+    '../packages/dbx-email-kit/src/**/*.stories.jsx',
   ],
   typescript: {
     check: false,
-    reactDocgen: 'react-docgen-typescript'
+    reactDocgen: 'react-docgen-typescript',
   },
-}
+};

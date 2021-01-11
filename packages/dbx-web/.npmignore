@@ -1,0 +1,12 @@
+# Documentation
+*-doc.js
+*-doc.scss
+*-doc.css
+*.stories.jsx
+stories/*
+# Tests
+*.snap
+*.test.*
+#
+.release-it.js
+tsconfig.build.json

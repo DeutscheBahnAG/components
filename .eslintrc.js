@@ -13,6 +13,15 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+        bundledDependencies: false,
+      },
+    ],
     'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-number-properties': 'off',
     'unicorn/prefer-set-has': 'off',
@@ -28,7 +37,7 @@ module.exports = {
     {
       files: [
         '**/*.{stories,test,config}.{js,ts,jsx,tsx}',
-        'foundation/*',
+        'packages/dbx-foundation/*',
         '**/stories/*.{jsx,tsx}',
       ],
       rules: {
@@ -36,12 +45,4 @@ module.exports = {
       },
     },
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      typescript: {},
-    },
-  },
 };

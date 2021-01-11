@@ -3,7 +3,9 @@ const fs = require('fs');
 const sections = require('./styleguide-sections.config');
 
 const findPackageJSON = (currentPath) => {
-  if (path.resolve(currentPath) === '/') throw new Error('No `package.json` found');
+  if (path.resolve(currentPath) === '/') {
+    throw new Error('No `package.json` found');
+  }
   const file = `${currentPath}/package.json`;
   if (fs.existsSync(file)) {
     return file;
@@ -20,11 +22,12 @@ module.exports = {
   styleguideDir: 'build/docs',
 
   ignore: [
-    // @WARNING This actually doesn't affect WebPack, so if you build-packages, then docs, it will include the packages ...
-    '**/components/web/dist/**',
+    // These also need to be exlucded in the webpack config below
+    '**/packages/dbx-icons/dist/**',
+    '**/packages/dbx-web/dist/**',
     '**/*.test.{js,jsx,ts,tsx}',
     '**/*.stories.{js,jsx,ts,tsx}',
-    '**/*.d.ts'
+    '**/*.d.ts',
   ],
 
   getComponentPathLine(componentPath) {
@@ -39,7 +42,7 @@ module.exports = {
       const package = JSON.parse(fs.readFileSync(packagePath));
       const relativePath = path.normalize(path.relative(path.dirname(packagePath), componentDir));
       return `import ${name} from '${package.name}/${relativePath}';`;
-    } catch (err) {
+    } catch {
       return `import ${name} from '...';`;
     }
   },
@@ -56,15 +59,17 @@ module.exports = {
   webpackConfig: {
     module: {
       rules: [
+        // {.js,jsx}
         {
           test: /\.jsx?$/,
-          exclude: /node_modules/,
+          exclude: [/node_modules/, /dbx-icons\/dist/, /dbx-web\/dist/],
           loader: 'babel-loader',
         },
+        // {.ts,tsx}
         {
           test: /\.tsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
+          exclude: [/node_modules/],
+          loader: 'ts-loader',
         },
         {
           test: /\.scss$/,
@@ -73,9 +78,12 @@ module.exports = {
             'css-loader?sourceMap',
             'postcss-loader?sourceMap',
             {
-              loader: 'sass-loader?sourceMap',
+              loader: 'sass-loader',
               options: {
-                includePaths: [path.resolve(__dirname, './node_modules/')],
+                sassOptions: {
+                  includePaths: [path.resolve(__dirname, './node_modules/')],
+                },
+                sourceMap: true,
               },
             },
             'import-glob-loader',

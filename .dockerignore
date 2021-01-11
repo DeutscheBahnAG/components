@@ -1,5 +1,5 @@
 node_modules
 
 # Precompiled files
-components/*/*.js
-!components/*/index.js
+packages/*/*.js
+!packages/*/index.js

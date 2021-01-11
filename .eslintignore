@@ -1,7 +1,4 @@
 node_modules/
 build/
 dist/
-!.cz-config.js
-!.eslintrc.js
-!.commitlintrc.js
-components/icons/*.js
+packages/dbx-icons/src

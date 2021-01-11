@@ -13,7 +13,7 @@ function semverIncrement(currentVersion, change, options = {}) {
       (change === 'breaking' && version.minor !== 0) ||
       (change === 'feature' && version.patch !== 0)
     ) {
-      const prerelease = Array.from(version.prerelease);
+      const prerelease = [...version.prerelease];
       if (change === 'breaking') {
         if (options.error) throw new Error('Major version change for pre version.');
         version.inc('major');

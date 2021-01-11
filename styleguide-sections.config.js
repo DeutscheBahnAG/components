@@ -2,19 +2,19 @@ const glob = require('glob');
 
 // Find component file; prefer `<name>-doc.jsx` if defined:
 const web = (components) =>
-  components.map((c) => glob.sync(`components/web/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+  components.map((c) => glob.sync(`packages/dbx-web/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
 
 module.exports = [
   {
     name: 'Foundation',
-    content: 'foundation/README.md',
+    content: 'packages/dbx-foundation/README.md',
     sections: [
       {
         name: 'Mixins',
         sections: [
           {
             name: 'Link',
-            content: 'foundation/mixins/_link.md',
+            content: 'packages/dbx-foundation/mixins/_link.md',
           },
         ],
       },

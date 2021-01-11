@@ -1,4 +1,4 @@
-basePath: ./foundation
+basePath: ./packages/dbx-foundation
 dest: build/sassdoc
 display:
   access:

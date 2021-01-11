@@ -6,7 +6,7 @@
 const ora = require('ora');
 const chalk = require('chalk');
 const simpleGit = require('simple-git/promise')(`${__dirname}/..`);
-const util = require('util');
+const { promisify } = require('util');
 const { exec } = require('child_process');
 const semver = require('semver');
 const fs = require('fs-extra');
@@ -15,18 +15,19 @@ const globby = require('globby');
 const rimraf = require('rimraf');
 const semverIncrement = require('./lib/semver-increment');
 
-const asyncExec = util.promisify(exec);
+const asyncExec = promisify(exec);
 
 function removeChalkStyles(string) {
   return string.replace(
     // eslint-disable-next-line no-control-regex
-    /[\u001B\u009B][[()#;?]*(?:\d{1,4}(?:;\d{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+    /[\u001B\u009B][#();?[]*(?:\d{1,4}(?:;\d{0,4})*)?[\d<=>A-ORZcf-nqry]/g,
     ''
   );
 }
 
+const getVersion = (s) => s.replace(/.*@/, '');
+
 async function getLastReleaseTag(packageName) {
-  const getVersion = (s) => s.replace(/.*@/, '');
   const result = await simpleGit.tags();
   const tags = result.all
     .filter((tag) => tag.match(new RegExp(`^${packageName}@`)))

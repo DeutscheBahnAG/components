@@ -1,8 +1,0 @@
-@import 'sass-to-js/sass/sass-to-js';
-@import '@bahn-x/dbx-tokens/dist/deutsche-bahn.scss';
-
-:export {
-  // stylelint-disable property-no-unknown
-  tokens: sassToJs($dbx-tokens);
-  // stylelint-enable property-no-unknown
-}

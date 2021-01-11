@@ -1,0 +1,8 @@
+# Compiled files
+dist
+src
+
+# Whitelisted root files
+!.eslintrc.js
+!.release-it.js
+!svgr.config.js

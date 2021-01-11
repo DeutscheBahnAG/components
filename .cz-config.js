@@ -41,7 +41,7 @@ module.exports = {
 
   allowTicketNumber: true,
   isTicketNumberRequired: false,
-  ticketNumberPrefix: 'DBXPORTAL-',
+  ticketNumberPrefix: 'BDPP-',
   ticketNumberRegExp: '\\d{1,5}',
 
   messages: {

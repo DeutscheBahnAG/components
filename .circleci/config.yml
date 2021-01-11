@@ -6,9 +6,7 @@ orbs:
 executors:
   node:
     docker:
-      # WARNING: Don't upgrade to node:14
-      # @storybook/addon-storyshots > @storybook/core > webpack > watchpack > watchpack-chokidar2 > chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
-      - image: circleci/node:12
+      - image: circleci/node:14
 
 jobs:
   install:
@@ -201,4 +199,4 @@ workflows:
       - deploy:
           context: prod
           requires:
-            - build            
+            - build

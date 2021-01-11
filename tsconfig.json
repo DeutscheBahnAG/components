@@ -1,6 +1,7 @@
 {
   "extends": "@bahn-x/eslint-config-base/tsconfig.json",
   "compilerOptions": {
+    "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react",
     "lib": [
@@ -11,11 +12,9 @@
     "target": "ES2015",
   },
   "include": [
-    "foundation/**/*",
-    "components/**/*",
-    ".cz-config.js",
-    ".commitlintrc.js",
-    "**/.eslintrc.js",
-    "**/.release-it.js"
+    ".*",
+    ".*/**/*",
+    "*/**/.*",
+    "**/*",
   ]
 }
