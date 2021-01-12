@@ -26,4 +26,7 @@ const template = (
 
 storiesOf('Email / Email', module)
   .addDecorator(withReadme(readme))
+  .addParameters({
+    backgrounds: { disable: true },
+  })
   .add('default template', () => template);

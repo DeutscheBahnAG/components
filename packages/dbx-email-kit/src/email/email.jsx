@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Inky, { Container, Wrapper } from 'react-inky';
 
-/* This is required for webpack in Storybook to load the styles.
+/* This import format is required for webpack in Storybook to load the styles.
     It gets replaced with the compiled css in the build process. */
 const styles = require('./email.scss').toString();
 

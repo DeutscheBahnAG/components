@@ -8,4 +8,7 @@ import readme from './README.md';
 storiesOf('Email / EmailHeader', module)
   .addDecorator(withEmail)
   .addDecorator(withReadme(readme))
+  .addParameters({
+    backgrounds: { disable: true },
+  })
   .add('default', () => <EmailHeader />);

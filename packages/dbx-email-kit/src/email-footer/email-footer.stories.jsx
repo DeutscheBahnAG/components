@@ -8,6 +8,9 @@ import readme from './README.md';
 storiesOf('Email / EmailFooter', module)
   .addDecorator(withReadme(readme))
   .addDecorator(withEmail)
+  .addParameters({
+    backgrounds: { disable: true },
+  })
   .add('default', () => <EmailFooter />)
   .add('with custom imprint', () => <EmailFooter imprint="custom imprint" />)
   .add('with custom footer links', () => (

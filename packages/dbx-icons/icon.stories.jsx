@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 // eslint-disable-next-line import/extensions
-import StyleguideCard from '@bahn-x/dbx-foundation/styleguide-card.jsx';
+import StyleguideCard from '@bahn-x/dbx-foundation/stories/styleguide-card.jsx';
 import * as Icons from './dist';
 import readme from './README.md';
 

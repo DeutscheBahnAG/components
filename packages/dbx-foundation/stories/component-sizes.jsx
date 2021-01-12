@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@bahn-x/dbx-tokens/dist/deutsche-bahn.json';
-import { Button, Logo, Textfield } from '../dbx-web/src';
+import { Button, Logo, Textfield } from '@bahn-x/dbx-web/src';
 
 const ComponentSizes = () => (
   <>

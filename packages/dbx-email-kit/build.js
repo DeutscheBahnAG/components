@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const sass = require('node-sass');
+const sass = require('sass');
 
 const transpileJs = () =>
   new Promise((resolve, reject) => {
@@ -17,25 +17,14 @@ const transpileJs = () =>
     );
   });
 
-const compileScss = (fileName) =>
-  new Promise((resolve, reject) => {
-    sass.render(
-      {
-        file: fileName,
-        outputStyle: 'compressed',
-        sassOptions: {
-          includePaths: [path.resolve(__dirname, '../node_modules/')],
-        },
-      },
-      (err, result) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result.css.toString().trim());
-        }
-      }
-    );
-  });
+const compileScss = (fileName) => {
+  // `renderSync` is 2x faster than `render`
+  return sass.renderSync({
+    file: fileName,
+    outputStyle: 'compressed',
+    includePaths: [path.resolve(__dirname, '../../node_modules/')],
+  }).css;
+};
 
 const replaceInFile = (file, before, after) =>
   new Promise((resolve, reject) => {
@@ -57,7 +46,7 @@ const replaceInFile = (file, before, after) =>
 
 const build = async () => {
   await transpileJs();
-  const css = await compileScss('./src/email/email.scss');
+  const css = compileScss('./src/email/email.scss');
   await replaceInFile('./dist/email/email.js', "require('./email.scss').toString()", `\`${css}\``);
 };
 

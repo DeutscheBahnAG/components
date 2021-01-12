@@ -8,6 +8,7 @@ module.exports = async ({ config, mode }) => {
       {
         test: /email.scss$/,
         use: [
+          'style-loader',
           'css-loader?sourceMap',
           'postcss-loader?sourceMap',
           {

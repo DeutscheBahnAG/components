@@ -8,6 +8,9 @@ import EmailBody from './email-body';
 storiesOf('Email / EmailBody', module)
   .addDecorator(withReadme(readme))
   .addDecorator(withEmail)
+  .addParameters({
+    backgrounds: { disable: true },
+  })
   .add('with examplary content', () => (
     <EmailBody>
       <h1>Headline</h1>

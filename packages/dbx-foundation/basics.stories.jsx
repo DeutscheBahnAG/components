@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
-import Colors from './colors';
-import Spacings from './spacings';
-import TextStyles from './text-styles';
-import ComponentSizes from './component-sizes';
+import Colors from './stories/colors';
+import Spacings from './stories/spacings';
+import TextStyles from './stories/text-styles';
+import ComponentSizes from './stories/component-sizes';
 
 storiesOf('Foundation', module)
   .addParameters({ options: { showPanel: false } })

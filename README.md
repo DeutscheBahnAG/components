@@ -70,13 +70,21 @@ import { Button } from '@bahn-x/dbx-web';
 - `yarn build:storybook`: Build static production version of component library to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
 - `yarn build:docs`: Lints and tests components and then builds Storybook and Sassdoc pages to `./build`
-- `yarn lint`: Lint JS code
+- `yarn lint`: Lint JS & SCSS
+- `yarn lint:js`: Lint JS/TS code
+- `yarn lint:js:fix`: Auto-fix linting errors
 - `yarn lint:styles`: Lint SCSS code
+- `yarn lint:styles:fix`: Auto-fix linting errors
 - `yarn test`: Run unit tests and show coverage
 - `yarn coverage`: Run unit tests and show coverage
 - `yarn update-snapshots`: [Update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
 - `yarn commit`: See [writing commits](#writing-commits)
-- `yarn publish-components`: Calculates a new version for each component and publishes it if there are any changes.
+- release:
+  - `yarn release:email-kit` - Run release-it for `dbx-email-kit`. It compiles required files as well.
+  - `yarn release:foundation` - Run release-it for `dbx-foundation`.
+  - `yarn release:icons` - Run release-it for `dbx-icons`. It compiles required files as well.
+  - `yarn release:web` - Run release-it for `dbx-web`. It compiles required files as well.
+  - `yarn release:web-extra` - Run release-it for `dbx-web-extra`. It compiles required files as well.
 
 ### Writing Commits
 
