@@ -55,11 +55,9 @@ for people who use screen readers](https://developer.mozilla.org/en-US/docs/Web/
 Therefor we recommend to place links associated with the Checkbox right below it, outside the label.
 
 ```jsx
-import { Copy } from '@bahn-x/dbx-web';
-
 <Checkbox footer={<a href="#terms">Read our Terms and Conditions</a>}>
   I accept the <b>Terms and Conditions</b>.
-</Checkbox>;
+</Checkbox>
 ```
 
 However, links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
@@ -68,6 +66,22 @@ However, links can be used within the label. Clicking the link won’t change th
 // Avoid this design pattern
 <Checkbox>
   I accept the <a href="#terms">Terms and Conditions</a>.
+</Checkbox>
+```
+
+It’s possible to use more than one link in the footer:
+
+```jsx
+<Checkbox
+  footer={
+    <>
+      <a href="#terms-db">Read the Terms and Conditions of Deutsche Bahn AG</a>{' '}
+      <a href="#terms-xyz">Read the Terms and Conditions of XYZ AG</a>
+    </>
+  }
+>
+  I accept the <b>Terms and Conditions of Deutsche Bahn AG</b> and the{' '}
+  <b>Terms and Conditions of XYZ AG</b>.
 </Checkbox>
 ```
 

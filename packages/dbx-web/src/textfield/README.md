@@ -136,6 +136,16 @@ import { Button } from '@bahn-x/dbx-web';
 <Textfield readOnly value="Read only" />
 ```
 
+## Placeholder
+
+```jsx
+<Textfield placeholder="+49 30 12345" />
+```
+
+Use the `placeholder` property to indicate how the input should look like.
+
+Do not misuse the `placeholder` as label. Use `inlineLabel` for a similar effect instead.
+
 ## Inline label
 
 For some cases (e.g. a login form), it might make sense to use inline labels.
@@ -171,7 +181,21 @@ You can use inline Textfields in combination with other attributes:
 />
 ```
 
+It is possible to combine `inlineLabel` and `placeholder`. Click inside the Textfield to see:
+
+```jsx
+<Textfield
+  placeholder="firstname.lastname"
+  suffix="@deutschebahn.com"
+  inlineLabel="Email address"
+/>
+```
+
 ## Sizing
+
+```jsx
+<Textfield size={Textfield.sizes.S} />
+```
 
 ```jsx
 <Textfield size={Textfield.sizes.M} />
