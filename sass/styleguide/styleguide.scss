@@ -2,6 +2,16 @@ $shadow--low: 0 2px 4px rgba(155, 160, 170, 0.8);
 $shadow--high: 0 6px 16px rgba(135, 140, 150, 0.5);
 $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
+.sg-full-page {
+  @include dbx-text-style('copy');
+  color: dbx-text-color('primary');
+  padding: dbx-spacing('l') 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
 .sg-page {
   @include dbx-text-style('copy');
   color: dbx-text-color('primary');

@@ -1,10 +1,12 @@
 import * as TransportchipIcons from './transportchip/icons';
 
 export { TransportchipIcons };
+export { default as Container } from './container';
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
 export { default as Consentlayer } from './consentlayer';
 export { default as Copy } from './copy';
+export { default as Layout } from './layout';
 export { default as Loadingindicator } from './loadingindicator';
 export { default as Logo } from './logo';
 export { default as Pulse } from './pulse';

@@ -1,0 +1,61 @@
+.dbx-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dbx-container--extended {
+  border-radius: dbx-border-radius('xl');
+  margin-left: var(--dbx-extended-margin);
+  margin-right: var(--dbx-extended-margin);
+  max-width: var(--dbx-extended-max-width);
+}
+
+.dbx-container--content {
+  border-radius: dbx-border-radius('l');
+  margin-left: var(--dbx-content-margin);
+  margin-right: var(--dbx-content-margin);
+  max-width: var(--dbx-content-max-width);
+
+  .dbx-container--extended & {
+    margin-left: var(--dbx-content-in-extended-margin);
+    margin-right: var(--dbx-content-in-extended-margin);
+  }
+
+  .dbx-container--content & {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.dbx-container--text {
+  max-width: var(--dbx-text-max-width);
+}
+
+.dbx-container--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.dbx-container--center {
+  align-items: center;
+  text-align: center;
+}
+
+.dbx-container--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.dbx-container--primary {
+  background-color: dbx-background-color('primary');
+
+  &:not(.dbx-container--full) {
+    box-shadow: #0000000a 0 1px 16px;
+  }
+}
+
+.dbx-container--secondary {
+  background-color: dbx-background-color('secondary');
+}
