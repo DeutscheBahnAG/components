@@ -1,26 +1,37 @@
 import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import refractor from 'refractor/core';
+import refractor, { RefractorSyntax } from 'refractor/core';
 import clsx from 'clsx';
 import CodeToken from './code-token';
 
-const Code = ({ className, language, children, inline }) => {
+interface CodeProps {
+  children: React.ReactNode;
+  className?: string;
+  inline?: boolean;
+  language?: string;
+}
+
+type CodeType = React.FunctionComponent<CodeProps> & {
+  hasLanguage: (string) => boolean;
+  registerLanguage: (RefractorSyntax) => void;
+};
+
+const Code: CodeType = ({ children, className = '', inline = false, language }) => {
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production' && language && !refractor.registered(language)) {
-      // eslint-disable-next-line no-console
-      console.warn(
+    if (language && !refractor.registered(language)) {
+      throw new Error(
         `No language definitions for "${language}" registered, did you forget to call \`registerLanguage()\`?`
       );
     }
   }, [language]);
 
   const code = useMemo(() => {
-    if (language) {
-      const ast = refractor.highlight(children, language);
-      return ast.length === 0
-        ? children
-        : // eslint-disable-next-line react/no-array-index-key
-          ast.map((node, i) => <CodeToken key={`fract-0-${i}`} node={node} />);
+    if (language && children?.toString) {
+      const ast = refractor.highlight(children.toString(), language);
+      if (ast.length > 0) {
+        // eslint-disable-next-line react/no-array-index-key
+        return ast.map((node, i) => <CodeToken key={`fract-0-${i}`} node={node} />);
+      }
     }
     return children;
   }, [children, language]);
@@ -31,13 +42,15 @@ const Code = ({ className, language, children, inline }) => {
     'dbx-code--block': !inline,
   });
 
-  return inline ? (
-    <code className={classNames}>{code}</code>
-  ) : (
+  if (inline) {
+    return <code className={classNames}>{code}</code>;
+  }
+
+  return (
     // we set a tabindex so that keyboard users can focus to scroll
     // the view horizontally if they need to
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    <pre className={classNames} tabIndex="0">
+    <pre className={classNames} tabIndex={0}>
       <code className="dbx-code__inner">{code}</code>
     </pre>
   );
@@ -58,11 +71,11 @@ Code.propTypes = {
 
 Code.defaultProps = {
   className: '',
-  language: null,
+  language: undefined,
   inline: false,
 };
 
-export const registerLanguage = (lang) => refractor.register(lang);
-export const hasLanguage = (lang) => refractor.registered(lang);
+Code.hasLanguage = (syntaxName: string): boolean => refractor.registered(syntaxName);
+Code.registerLanguage = (syntax: RefractorSyntax): void => refractor.register(syntax);
 
 export default Code;

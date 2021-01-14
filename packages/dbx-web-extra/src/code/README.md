@@ -8,7 +8,7 @@ The code component builds on top of the [refractor](https://github.com/wooorm/re
 
 ## Basic example (no syntax highlighting)
 
-```js
+```jsx
 // import the Code component
 import { Code } from '@bahn-x/dbx-web-extra';
 
@@ -20,7 +20,7 @@ import { Code } from '@bahn-x/dbx-web-extra';
 
 ## With syntax highlighting
 
-```js
+```jsx
 // import the Code component
 import { Code } from '@bahn-x/dbx-web-extra';
 // import the syntax highlighting config for your language:

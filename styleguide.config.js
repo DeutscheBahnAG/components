@@ -25,6 +25,7 @@ module.exports = {
     // These also need to be exlucded in the webpack config below
     '**/packages/dbx-icons/dist/**',
     '**/packages/dbx-web/dist/**',
+    '**/packages/dbx-web-extra/dist/**',
     '**/*.test.{js,jsx,ts,tsx}',
     '**/*.stories.{js,jsx,ts,tsx}',
     '**/*.d.ts',
@@ -40,8 +41,7 @@ module.exports = {
     try {
       const packagePath = findPackageJSON(componentDir);
       const package = JSON.parse(fs.readFileSync(packagePath));
-      const relativePath = path.normalize(path.relative(path.dirname(packagePath), componentDir));
-      return `import ${name} from '${package.name}/${relativePath}';`;
+      return `import { ${name} } from '${package.name}';`;
     } catch {
       return `import ${name} from '...';`;
     }
@@ -62,7 +62,7 @@ module.exports = {
         // {.js,jsx}
         {
           test: /\.jsx?$/,
-          exclude: [/node_modules/, /dbx-icons\/dist/, /dbx-web\/dist/],
+          exclude: [/node_modules/, /dbx-icons\/dist/, /dbx-web\/dist/, /dbx-web-extra\/dist/],
           loader: 'babel-loader',
         },
         // {.ts,tsx}

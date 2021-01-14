@@ -4,6 +4,9 @@ const glob = require('glob');
 const web = (components) =>
   components.map((c) => glob.sync(`packages/dbx-web/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
 
+const webExtra = (components) =>
+  components.map((c) => glob.sync(`packages/dbx-web-extra/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+
 module.exports = [
   {
     name: 'Foundation',
@@ -53,5 +56,9 @@ module.exports = [
       },
     ],
     sectionDepth: 2,
+  },
+  {
+    name: 'Additional components',
+    components: webExtra(['code']),
   },
 ];

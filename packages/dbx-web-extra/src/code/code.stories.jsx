@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react';
 import withReadme from 'storybook-readme/with-readme';
 import jsx from 'refractor/lang/jsx';
 import scss from 'refractor/lang/scss';
-import Code, { registerLanguage } from './code';
+import Code from './code';
 import readme from './README.md';
+
+const { registerLanguage } = Code;
 
 const jsxCodeExample = `import React, { useState } from 'react';
 import { Button } from '@bahn-x/dbx-web';

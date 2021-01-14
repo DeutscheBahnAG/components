@@ -6,4 +6,5 @@
 *.ts
 *.tsx
 !*.d.ts
+.eslintrc.js
 .release-it.js

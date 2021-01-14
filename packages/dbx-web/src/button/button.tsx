@@ -53,14 +53,14 @@ interface ButtonProps extends Record<string, any> {
   variant?: ButtonVariants;
 }
 
-type ButtonType<P> = React.FC<P> & {
+type ButtonType = React.FunctionComponent<ButtonProps> & {
   shapes: typeof ButtonShapes;
   sizes: typeof ButtonSizes;
   types: typeof ButtonTypes;
   variants: typeof ButtonVariants;
 };
 
-const Button: ButtonType<ButtonProps> = ({
+const Button: ButtonType = ({
   children,
   className = '',
   disabled = false,
