@@ -166,15 +166,16 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-not-allowed {
-  $color: dbx-palette-color('pink500');
-  background: linear-gradient(
-    -45deg,
-    transparent calc(50% - 1px),
-    #{$color} 0,
-    #{$color} calc(50% + 1px),
-    transparent 0
-  );
-  opacity: 0.5;
+  &::before {
+    color: dbx-palette-color('pink500');
+    content: '×';
+    margin: -16px 0 0 -8px;
+    position: absolute;
+  }
+
+  > * {
+    opacity: 0.25;
+  }
 }
 
 .sg-components-transportationchip-list {

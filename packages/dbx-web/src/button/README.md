@@ -113,6 +113,100 @@ import { ActionAdd } from '@bahn-x/dbx-icons';
 </Button>;
 ```
 
+## Overview of possible combinations
+
+Below all possible combinations of `Button.sizes`, `Button.shapes`,
+and `Button.variants` as well as with and without Icon are listed. Crossed out
+combinations shouldn’t be used and will raise a props validation warning.
+
+```jsx noeditor
+import { Fragment } from 'react';
+import clsx from 'clsx';
+import { validateVariantCombinations } from './button';
+import { NavigationClose } from '@bahn-x/dbx-icons';
+import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
+
+<>
+  {Object.values(Button.variants).map((variant) => (
+    <Fragment key={variant}>
+      <h3>Button.variants.{variant.toUpperCase().replace(/-/g, '_')}</h3>
+      <table className="sg-table">
+        <thead>
+          <tr>
+            <th colSpan="3">&nbsp;</th>
+            <th colSpan="2">Button.shapes.</th>
+          </tr>
+          <tr>
+            <th>
+              Button.
+              <br />
+              sizes.
+            </th>
+            <th>Default</th>
+            <th>With Icon</th>
+            <th>SQUARE</th>
+            <th>ROUND</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(Button.sizes).map((size) => (
+            <tr key={`${variant}-${size}`}>
+              <th>{size.toUpperCase()}</th>
+              <td
+                className={clsx(`sg-buttons-${variant}-square-${size}`, {
+                  'sg-not-allowed':
+                    validateVariantCombinations({
+                      size,
+                      shape: Button.shapes.DEFAULT,
+                      variant,
+                      icon: false,
+                    }) !== null,
+                })}
+              >
+                <Button variant={variant} size={size}>
+                  Default
+                </Button>
+              </td>
+              {Object.values(Button.shapes).map((shape) => {
+                const notAllowed =
+                  validateVariantCombinations({
+                    size,
+                    shape,
+                    variant,
+                    icon: true,
+                  }) !== null;
+                return (
+                  <td
+                    key={`${variant}-${size}-${shape}`}
+                    className={clsx(`sg-buttons-${variant}-square-${size}`, {
+                      'sg-not-allowed': notAllowed,
+                    })}
+                  >
+                    <Button
+                      variant={variant}
+                      size={size}
+                      shape={shape}
+                      icon={<NavigationClose />}
+                    >
+                      {shape === Button.shapes.DEFAULT
+                        ? 'Icon'
+                        : shape.toUpperCase()}
+                    </Button>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </Fragment>
+  ))}
+  <style>
+    {`.sg-table {background: ${tokens.color['background.secondary']}; margin: ${tokens.spacing.m}px 0 ${tokens.spacing.l}px; border-radius: ${tokens.radius.l}px } .sg-table th, .sg-table td {text-align: left}`}
+  </style>
+</>;
+```
+
 ## Full width
 
 Full-width buttons can be used in combination with all other attributes.
@@ -161,23 +255,24 @@ The only exception is the font-weight. It’s always matching the one of the act
 
 The `loading` state of a button should be set after clicking the button in case the action is expected to take some time.
 
-```jsx static
+```jsx
 import React, { useState } from 'react';
 
-const MyComponent = () => {
-  const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState(false);
 
-  const onClick = () => {
-    setIsLoading(true);
-    // startSlowAction();
-  };
-
-  return (
-    <Button loading={isLoading} onClick={onClick}>
-      Start slow action
-    </Button>
-  );
+const slowAction = () => {
+  return new Promise((resolve) => setTimeout(() => resolve(), 2000));
 };
+
+const onClick = async () => {
+  setIsLoading(true);
+  await slowAction();
+  setIsLoading(false);
+};
+
+<Button loading={isLoading} onClick={onClick}>
+  Start slow action
+</Button>;
 ```
 
 ```jsx

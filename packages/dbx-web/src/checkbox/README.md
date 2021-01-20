@@ -34,6 +34,40 @@ The indeterminate state does not show if the Checkbox is checked or not. When yo
 </Checkbox>
 ```
 
+The indeterminate state can’t be restored by the user. It must be reset via JavaScript:
+
+```jsx
+import { useState } from 'react';
+import { Button } from '@bahn-x/dbx-web';
+import { spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
+const [isIndeterminate, setIndeterminate] = useState(true);
+
+const handleButtonClick = () => {
+  setIndeterminate(true);
+};
+
+const handleCheckboxClick = () => {
+  setIndeterminate(false);
+};
+<>
+  <Checkbox
+    indeterminate={isIndeterminate}
+    checked
+    onClick={handleCheckboxClick}
+  >
+    Checkbox indeterminate checked
+  </Checkbox>
+  <Button
+    onClick={handleButtonClick}
+    disabled={isIndeterminate}
+    size={Button.sizes.M}
+    style={{ marginLeft: `${spacing.m}px` }}
+  >
+    Reset
+  </Button>
+</>;
+```
+
 ### Disabled
 
 ```jsx

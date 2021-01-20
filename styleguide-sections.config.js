@@ -44,7 +44,7 @@ module.exports = [
       },
       {
         name: 'Feedback',
-        components: web(['modal', 'status', 'notification']),
+        components: web(['modal', 'status', 'notification', 'loadingindicator']),
       },
       {
         name: 'Brand',
