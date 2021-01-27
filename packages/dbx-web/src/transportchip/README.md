@@ -99,6 +99,32 @@ import { Status } from '@bahn-x/dbx-web';
 </>;
 ```
 
+## Sizing
+
+```jsx
+import { Copy, Title } from '@bahn-x/dbx-web';
+<span>
+  Take <Transportchip name="S 1" />
+  <Copy size={Copy.sizes.L}>
+    {' '}
+    Take <Transportchip name="IC 12" />
+  </Copy>
+  <Title size={Copy.sizes.L}>
+    {' '}
+    Take <Transportchip name="ICE 92" />
+  </Title>
+</span>;
+```
+
+## Linking
+
+```jsx
+<>
+  Take <Transportchip href="#s-1" name="S 1" /> or{' '}
+  <Transportchip href="#u-5" name="U 5" />
+</>
+```
+
 ## Local styles
 
 Many cities and regions do have special colours defined, which help to identify the transport line easily. In addition, some products have a specific shape. An S-Bahn usually has a rounded left and right side which reflects the circular S-Bahn logo while an U-Bahn has straight sides adhering the U in a square.

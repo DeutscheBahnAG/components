@@ -311,3 +311,14 @@ main.rsg--content-3 {
     padding: 16px 0;
   }
 }
+
+.sg-icon-overview {
+  display: grid;
+  gap: dbx-spacing('ml');
+  grid-template-columns: 1fr 1fr;
+  width: 8 * dbx-spacing('xxxl');
+
+  li {
+    display: block;
+  }
+}

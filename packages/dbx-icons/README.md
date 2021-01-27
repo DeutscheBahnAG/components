@@ -13,21 +13,12 @@ import * as Icons from '@bahn-x/dbx-icons';
 In order to reduce your bundle size, you can also import the individual icon files like below:
 
 ```jsx
-import SettingsIcon from '@bahn-x/dbx-icons/dist/settings';
-import SeatWindowIcon from '@bahn-x/dbx-icons/dist/seat-window';
+import { ActionSettings, SeatWindow } from '@bahn-x/dbx-icons';
 
-<SettingsIcon />
-<SeatWindowIcon />
-```
-
-You can also import icons from the package directly:
-
-```tsx
-import { SettingsIcon } from '@bahn-x/dbx-icons';
-import { SeatWindowIcon } from '@bahn-x/dbx-icons';
-
-<SettingsIcon />
-<SeatWindowIcon />
+<>
+  <ActionSettings />
+  <SeatWindow />
+</>;
 ```
 
 ## Sizing
@@ -42,24 +33,30 @@ This ensures that icon colors can also be animated, e.g. for hover effects.
 To set the icon color, simply set the `color` attribute on the parent:
 
 ```jsx
-<div className="success-icon-parent">
-  <Icon.AlertSuccess />
-</div>
-```
+import { ActionSettings } from '@bahn-x/dbx-icons';
+import { palette } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
-```css
-.success-icon-parent {
-  color: dbx-color('success');
-}
+<>
+  <span style={{ color: palette.pink500 }}>
+    <ActionSettings />
+  </span>
+
+  <span style={{ color: palette.cyan500 }}>
+    <ActionSettings />
+  </span>
+</>;
 ```
 
 ## Setting an icon title
 
 For accessibility reasons, icons should always have a textual representation. If you do not want a visible text next to the icon (such as on a button), you can set a `title` that is read by screenreader programs and will be visible when you hover over the icon. You also need to provide an unique `titleId` for all screen readers to read the title correctly:
 
-```jsx
-<Icon.TicketBahncard title="BahnCard" titleId="icon-bahncard-title" />
+```jsx static
+import { TicketBahncard } from '@bahn-x/dbx-icons';
+<TicketBahncard title="BahnCard" titleId="icon-bahncard-title" />;
 ```
+
+If `title` and optionally `titleId` are set, an SVG `<title>` element will be created within the `<svg>`.
 
 ## Accessing the rendered `<svg>` element
 
@@ -67,15 +64,16 @@ You can access the rendered `<svg>` element in two ways:
 
 1. the component forwards all props (except `title` and `titleId`) to the `<svg>` tag for special cases like setting custom data or aria attributes.
 
-```jsx
-<Icon.TicketBahncard data-description="awesome" />
+```jsx static
+import { TicketBahncard } from '@bahn-x/dbx-icons';
+<TicketBahncard data-description="awesome" />;
 ```
 
 2. the component also forwards its ref to the `<svg>` tag to access the rendered DOM element:
 
-```jsx
+```jsx static
 import React { useRef, useEffect } from 'react';
-import { SettingsIcon } from '@bahn-x/dbx-icons';
+import { ActionSettings } from '@bahn-x/dbx-icons';
 
 const MyComponent = () => {
   const settingsIconRef = useRef();
@@ -89,7 +87,7 @@ const MyComponent = () => {
   });
 
   return (
-    <SettingsIcon ref={settingsIconRef} />
+    <ActionSettings ref={settingsIconRef} />
   );
 }
 ```

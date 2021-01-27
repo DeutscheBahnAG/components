@@ -3,10 +3,15 @@
 Modals are used to focus the users’ attention to a certain information or decision. This Component extends [react-modal](https://www.npmjs.com/package/react-modal), additional properties are inherited from it.
 
 ```jsx
-const { PrimaryButton } = Modal;
+import { Button } from '@bahn-x/dbx-web';
+const { primaryActions } = Modal;
 
-<Modal primaryButton={<PrimaryButton>OK</PrimaryButton>} open>
-  Modal
+<Modal
+  title="Modal"
+  primaryButton={<Button {...primaryActions}>OK</Button>}
+  isOpen
+>
+  Modal content
 </Modal>;
 ```
 
@@ -32,7 +37,8 @@ The following case might not be necessary if unsaved data in your app would alwa
 If the app doesn’t offer a draft folder or it would be too confusing for the user in that particular situation, the following Modal dialogue could be a solution:
 
 ```jsx
-const { PrimaryButton, SecondaryButton } = Modal;
+import { Button } from '@bahn-x/dbx-web';
+const { primaryActions, secondaryActions } = Modal;
 const saveAs = alert;
 const discardEdit = alert;
 const closeModal = alert;
@@ -41,12 +47,18 @@ const openState = true;
 <Modal
   title="You’re closing an unsaved document."
   primaryButton={
-    <PrimaryButton onClick={saveAs} data-autofocus>
+    <Button {...primaryActions} onClick={saveAs}>
       Save as
-    </PrimaryButton>
+    </Button>
   }
   secondaryButton={
-    <SecondaryButton onClick={discardEdit}>Discard</SecondaryButton>
+    <Button
+      variant={Button.variants.SECONDARY}
+      {...secondaryActions}
+      onClick={discardEdit}
+    >
+      Discard
+    </Button>
   }
   onClose={closeModal}
   isOpen={openState}
@@ -155,6 +167,20 @@ To use this feature, you need to add the Modal portal container manually as a si
 ## Action Buttons
 
 You can customise possible user actions with the `primaryButton` and `secondaryButton` props. The former takes a single rendered `PrimaryButton` element, the latter one or two secondary Button elements.
+
+```jsx static
+import { Modal, Button } from '@bahn-x/dbx-web';
+const { primaryActions, secondaryActions } = Modal;
+
+<Modal
+  primaryButton={<Button {...primaryActions}>Oh hey!</Button>}
+  secondaryButton={
+    <Button variant={Button.variants.Secondary} {...secondaryActions}>
+      Don’t mind me
+    </Button>
+  }
+/>;
+```
 
 There are two ways to get these components:
 

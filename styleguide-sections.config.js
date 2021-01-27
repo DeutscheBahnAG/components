@@ -62,6 +62,19 @@ module.exports = [
     sectionDepth: 2,
   },
   {
+    name: 'Icons',
+    sections: [
+      {
+        name: 'Icons',
+        content: 'packages/dbx-icons/README.md',
+      },
+      {
+        name: 'Overview',
+        content: 'packages/dbx-icons/overview.md',
+      },
+    ],
+  },
+  {
     name: 'Additional components',
     components: webExtra(['code']),
   },
