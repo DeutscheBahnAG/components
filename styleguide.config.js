@@ -19,7 +19,7 @@ module.exports = {
   pagePerSection: true,
   exampleMode: 'expand',
   title: 'BahnX React components',
-  styleguideDir: 'build/docs',
+  styleguideDir: 'build',
 
   ignore: [
     // These also need to be exlucded in the webpack config below
