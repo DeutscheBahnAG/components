@@ -4,15 +4,18 @@ A component to display a PIN code that should visually stand out from the rest o
 
 ## How to Install
 
-```
+```shell
 yarn add @bahn-x/dbx-email-kit
 ```
 
 ## How to Use
 
-```js
-import { EmailPincode } from '@bahn-x/dbx-email-kit';
-```
 ```jsx
-<EmailPincode>123456</EmailPincode>
+import { EmailPincode } from '@bahn-x/dbx-email-kit';
+<EmailPincode>123456</EmailPincode>;
+```
+
+```jsx
+import { EmailPincode } from '@bahn-x/dbx-email-kit';
+<EmailPincode centered>123456</EmailPincode>;
 ```

@@ -17,7 +17,7 @@
     "lint:js:fix": "yarn lint:js --fix",
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "lint:styles:fix": "yarn lint:styles --fix",
-    "prebuild:docs": "yarn build:icons && yarn build:web && yarn build:web-extra",
+    "prebuild:docs": "yarn build:icons && yarn build:web && yarn build:web-extra && yarn build:email-kit",
     "build:docs": "yarn build:sassdoc && yarn build:styleguidist",
     "build": "yarn build:icons && yarn build:web && yarn build:web-extra",
     "build:styleguidist": "styleguidist build",

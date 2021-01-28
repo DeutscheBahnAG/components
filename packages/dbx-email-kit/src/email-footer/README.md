@@ -4,29 +4,33 @@ A visually separated footer to be used below the email content.
 
 ## How to Install
 
-```
+```shell
 yarn add @bahn-x/dbx-email-kit
 ```
 
 ## How to Use
 
-```js
-import { EmailFooter } from '@bahn-x/dbx-email-kit';
-```
-
 **Default**
+
 ```jsx
-<EmailFooter />
+import { EmailFooter } from '@bahn-x/dbx-email-kit';
+<EmailFooter />;
 ```
 
 **Custom Imprint**
+
 ```jsx
-<EmailFooter imprint="My custom imprint">
+import { EmailFooter } from '@bahn-x/dbx-email-kit';
+<EmailFooter imprint="My custom imprint" />;
 ```
 
 **Custom Footer Links**
+
 ```jsx
+import { EmailFooter } from '@bahn-x/dbx-email-kit';
 <EmailFooter>
-  <p>Unsubscribe here: <a href="/unsubscribe">Unsubscribe</a></p>
-</EmailFooter>
+  <p>
+    Unsubscribe here: <a href="/unsubscribe">Unsubscribe</a>
+  </p>
+</EmailFooter>;
 ```
