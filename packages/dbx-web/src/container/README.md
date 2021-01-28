@@ -4,13 +4,38 @@
 import { Container } from '@bahn-x/dbx-web';
 ```
 
-_Info:_ This layout documentation might require a screen wider than 1440 px to show the examples. If you use a smaller screen, zoom out the page.
+```jsx noeditor
+import { Notification, Button } from '@bahn-x/dbx-web';
+const onClick = () => {
+  const isolatedLink = document.querySelector(
+    '[data-testid="Container-isolate-button"]'
+  );
+  if (isolatedLink) {
+    isolatedLink.click();
+  }
+};
+<Notification
+  message={
+    <>
+      This layout documentation might require a screen wider than 1440 px to
+      show the examples. If you use a smaller screen, zoom out the page or{' '}
+      <Button
+        size={Button.sizes.S}
+        variant={Button.variants.SOLID}
+        onClick={onClick}
+      >
+        Toggle sidebar
+      </Button>
+    </>
+  }
+/>;
+```
 
 <style>
   main {
-    margin-left: 48px !important;
-    max-width: unset !important;
-    padding: 0 16px !important;
+    margin-right: 96px !important;
+    box-sizing: border-box;
+    max-width: calc(100% - 2 * 96px) !important;
   }
 
   main [class^='rsg--preview-'] {

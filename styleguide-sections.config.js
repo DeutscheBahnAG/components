@@ -51,7 +51,7 @@ module.exports = [
         components: web(['logo', 'pulse']),
       },
       {
-        name: 'Layout',
+        name: 'Layout and grid',
         components: web(['layout', 'container']),
       },
       {
