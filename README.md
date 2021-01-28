@@ -42,10 +42,10 @@ A component typically consists of:
 
 - A `index.js` re-exporting the default export of `component-name.jsx`.
 - A `component-name.jsx` file containing the React component as a default export. Be sure to include [prop types and default props](https://reactjs.org/docs/typechecking-with-proptypes.html) for the component.
-- A `component-name.stories.jsx` file containing the [stories](https://storybook.js.org/basics/writing-stories/) for this component. A story reflects a variant of the component that is documented on an individual page in Storybook.
-- A `component-name.test.jsx` file containing all unit tests for the component. (**Note:** It is not necessary to write snapshots tests as they will be created automatically from your stories via the [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core) plugin.)
+- A optional `component-name-doc.jsx` which can contain a modified version of the component for documentation (e.g. inline Modals)
+- A `component-name.test.jsx` file containing all unit tests for the component.
 - A `README.md` containing the documentation for this component in Markdown format
-- A `component-name.scss` file containg all styles for the components
+- A `component-name.scss` file containing all styles for the components
 - A file containing the snapshots generated from the stories of this component. This will be taken care of automatically and placed in a separate folder so you don't need to care about it.
 
 _(Replace component-name with the name of your component written in kebab case accordingly)_
@@ -62,14 +62,13 @@ import { Button } from '@bahn-x/dbx-web';
 
 ### Available Tasks
 
-- `yarn storybook`: Run local server with the Storybook component library
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
   - `yarn build:web`: Transpiles just the `@bahn-x/dbx-web` package to `./dist/web`.
   - `yarn build:web-extra`: Transpiles just the `@bahn-x/dbx-web-extra` package to `./dist/web-extra`.
   - `yarn build:icons`: Generates `@bahn-x/dbx-icons` from SVG sources. This _must_ run before any other script that requires the `@bahn-x/dbx-icons` package, as the javascript files do not exist before that.
-- `yarn build:storybook`: Build static production version of component library to `./build`
+- `yarn build:styleguidist`: Generate Styleguidist documentation to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
-- `yarn build:docs`: Lints and tests components and then builds Storybook and Sassdoc pages to `./build`
+- `yarn build:docs`: Lints and tests components and then builds Styleguidist and Sassdoc pages to `./build`
 - `yarn lint`: Lint JS & SCSS
 - `yarn lint:js`: Lint JS/TS code
 - `yarn lint:js:fix`: Auto-fix linting errors

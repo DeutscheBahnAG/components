@@ -84,7 +84,6 @@ import { NavigationClose } from '@bahn-x/dbx-icons';
 
 - Avoid using `primary` and `secondary` Buttons in size `S` and `M`.
 - `solid` Buttons should not be used in size `XL`.
-- An overview with recommendations of sizes in combinations with other properties [can be found in our Storybook](https://dbx-web-components.bahn-x.de/?path=/story/components-button--overview).
 
 ## Icons
 

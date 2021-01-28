@@ -12,11 +12,11 @@ const { PrimaryButton } = Modal;
 
 ## Highlights
 
-- ♿️ **Accessible** by using aria properies. Find out more about it in the [accessibility](#accessibility) chapter.
-- 🖨 **Printer friendly** by special print styling. Try out the [demo](/?path=/story/components-modal--much-content).
-- 💪​ **Highly customizable** by allowing to use a blank dialogue with [content only](/?path=/story/components-modal--custom-modal).
-- 🍼 **Easy to use** by using recommended defaults. Take a look into the story of the [default](/?path=/story/components-modal--default).
-- 👩‍⚖️​ **Legal** by supporting requirements of the [GDPR settings](/?path=/story/components-modal--without-close-german).
+- ♿️ **Accessible** by using aria properties. Find out more about it in the [accessibility](#accessibility) chapter.
+- 🖨 **Printer friendly** by special print styling.
+- 💪​ **Highly customizable** by allowing to use a blank dialogue with content only
+- 🍼 **Easy to use** by using recommended defaults.
+- 👩‍⚖️​ **Legal** by supporting requirements of the GDPR settings.
 - 📱 **Responsive** behaviour by default with the option to [tweak](#responsive-design).
 
 ## Recommended usage
@@ -25,9 +25,9 @@ Use Modals with care and as infrequent as possible. In many cases there are bett
 
 Keep Modals brief and easy to use.
 
-### Common example: [Unsaved document](?path=/story/components-modal--focus-primary-button)
+### Common example: Unsaved document
 
-The following case might not be necessary if unsaved data in your app would always be saved as draft. In that case the user would just see a _toast notification_ or _snack bar_ to get informed about the saved draft. If you want to follow this route, then take a look to our [Notification component](/?path=/story/components-notification--all).
+The following case might not be necessary if unsaved data in your app would always be saved as draft. In that case the user would just see a _toast notification_ or _snack bar_ to get informed about the saved draft. If you want to follow this route, then take a look to our Notification component.
 
 If the app doesn’t offer a draft folder or it would be too confusing for the user in that particular situation, the following Modal dialogue could be a solution:
 
@@ -144,21 +144,13 @@ If your app pops up the Modal automatically without a direct interaction from th
 
 To use this feature, you need to add the Modal portal container manually as a sibling of your app root container and set an identifier for it. The example source code snippet for _index.html_ [above](#common-example-unsaved-document), shows two sibling containers: One, you already use for the React app (here: `#root`) and one for the Modal portal which is identified by `#modal-portal` in the example above. In that case, just set `portalId="modal-portal"`.
 
-#### Examples
-
-You can take a look into the following examples in our storybook:
-
-- [Modal portal on page (demo)](?path=/story/components-modal--modal-on-page-demo)
-- [Modal live region](?path=/story/components-modal--modal-live-region)
-- [Modal live alert region](?path=/story/components-modal--modal-live-alert-region)
-
 ## Variants and common cases
 
-- You can set different dialogue sizes with the `size` property. See [Modal sizes](?path=/story/components-modal--modal-sizes).
+- You can set different dialogue sizes with the `size` property.
 - Another common case is a transactional Modal dialogue, like described [above](#common-example-unsaved-document).
-- It is also possible to force a users’ decision, i.e. to fulfil the GDPR (General Data Protection Regulation) of the European Union: [Without close (German)](/?path=/story/components-modal--without-close-german).
-- You might set up [informative Modals](/?path=/story/components-modal--modal-live-region), which only contains a `title`, `close button` and `children`. Consider to use our [Notification component](/?path=/story/components-notification--all) for that case instead.
-- The Modal dialogue is designed without required properties to offer many possible use cases. You might use the [`children` only](/?path=/story/components-modal--custom-modal) without any other user interface element to set up a custom dialogue layout. This should be an exceptional usage of the Modal component. Consider to use our [Notification component](/?path=/story/components-notification--all) for that case instead.
+- It is also possible to force a users’ decision, i.e. to fulfil the GDPR (General Data Protection Regulation) of the European Union.
+- You might set up informative Modals, which only contains a `title`, `close button` and `children`. Consider to use our Notification component for that case instead.
+- The Modal dialogue is designed without required properties to offer many possible use cases. You might use the `children` only without any other user interface element to set up a custom dialogue layout. This should be an exceptional usage of the Modal component. Consider to use our Notification component for that case instead.
 
 ## Action Buttons
 
@@ -195,7 +187,7 @@ There are two ways to get these components:
    ```
 
 These components internally render the DBX `Button` component with some settings pre-set.
-See the corresponding [Button stories](/?path=/story/components-button--primary) to see the available props.
+See the corresponding Button documentation to find the available props.
 
 ## Responsive design
 
@@ -211,6 +203,6 @@ Both properties can be set to `s` for small, `m` for medium and `l` for large br
 
 Consider the size of the action buttons, the size of the Modal dialogue and the appearance in common viewport dimensions: `primaryButton`, `secondaryButton`, `size` with `centerActions` and `fullArtionsSize`.
 
-Take a look into [Modal sizes](/?path=/story/components-modal--modal-sizes) to try out different property combinations.
+Take a look into Modal sizes to try out different property combinations.
 
 **Note:** The breakpoints relate to the viewport and not to the size of the Modal dialogue.

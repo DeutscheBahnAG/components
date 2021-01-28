@@ -4,8 +4,6 @@ svg
 *-doc.js
 *-doc.scss
 *-doc.css
-*.stories.jsx
-stories/*
 # Tests
 *.snap
 *.test.*
