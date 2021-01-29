@@ -10,7 +10,7 @@ const consentLayerPropTypes = {
   /** Modal title */
   title: PropTypes.string,
   /** Modal help text */
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  message: PropTypes.node,
   /** Button label to accept all options */
   saveAllLabel: PropTypes.node,
   /** Button label to save the selection */
@@ -35,7 +35,7 @@ const consentLayerPropTypes = {
   className: PropTypes.string,
   /** privacy message (should include link to privacy, e.g. “See <a>our Privacy Statement</>”) */
   privacyMessage: PropTypes.node.isRequired,
-  /** legally importan links (imprint etc.) */
+  /** legally important links (imprint etc.) */
   importantLinks: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** additional content for the footer (put after the important links) */
   footer: PropTypes.node,
@@ -120,7 +120,7 @@ type ConsentLayerProps = InferProps<typeof consentLayerPropTypes & ModalProps>;
 const Consentlayer: React.FC<ConsentLayerProps> = ({
   children,
   className,
-  message = 'Um Dir die Nutzung unserer Webseite zu erleichtern, setzen wir Cookies ein.',
+  message,
   onSave,
   options: inputOptions,
   saveAllLabel = 'Alle akzeptieren',
