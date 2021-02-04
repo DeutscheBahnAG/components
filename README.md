@@ -182,3 +182,9 @@ If any of the tasks fail (which means your code does not lint or unit tests are 
 ### Modern JavaScript Transpilation
 
 You can use any modern JavaScript in your components that can be automatically transpiled. The Babel configuration is set up to recognize ES2017 and beyond. Be aware that if you use non-transpilable modern JavaScript functions like `Object.entries` or similiar, you need to [manually](https://github.com/babel/babel/tree/master/packages/babel-polyfill) or [automatically](https://polyfill.io/v2/docs/) include a polyfill in your target repository so that browsers can understand your code.
+
+## Licenses
+
+The code is licensed under the [MIT License](blob/master/LICENSE.md).
+
+The DB logo is protected by trademark law. Further symbols/designs which can be called up under https://marketingportal.extranet.deutschebahn.com/ are partially protected by trademark law and/or copyright/design law. They may only be used in business transactions with the express prior consent of Deutsche Bahn AG. The consent is to be obtained with reasonable advance notice at <markenrecht@deutschebahn.com>.

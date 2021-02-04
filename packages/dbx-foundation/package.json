@@ -7,7 +7,7 @@
     "url": "https://github.com/Bahn-X/dbx-web.git",
     "type": "git"
   },
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

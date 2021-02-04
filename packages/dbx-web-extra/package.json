@@ -7,7 +7,7 @@
     "url": "https://github.com/Bahn-X/dbx-web.git",
     "type": "git"
   },
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc --project tsconfig.build.json"

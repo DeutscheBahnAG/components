@@ -3,7 +3,7 @@
   "version": "0.7.0",
   "description": "DBX Icon components for React",
   "main": "dist/index.js",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "directory": "packages/dbx-icons",
     "url": "https://github.com/Bahn-X/dbx-web.git",
