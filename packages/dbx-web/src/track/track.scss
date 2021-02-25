@@ -1,8 +1,8 @@
 .dbx-track {
   @include dbx-text-style('copy', 's');
-  background: #140f6f;
+  background: var(--dbx-track-background-color);
   display: inline-block;
-  color: dbx-palette-color('coolgray100');
+  color: var(--dbx-track-text-color);
   font-weight: dbx-font-weight('copy', 'bold');
 
   abbr {

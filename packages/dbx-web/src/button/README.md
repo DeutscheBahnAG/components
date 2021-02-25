@@ -201,7 +201,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     </Fragment>
   ))}
   <style>
-    {`.sg-table {background: ${tokens.color['background.secondary']}; margin: ${tokens.spacing.m}px 0 ${tokens.spacing.l}px; border-radius: ${tokens.radius.l}px } .sg-table th, .sg-table td {text-align: left}`}
+    {`.sg-table {background: var(--dbx-primary-background-color); color: var(--dbx-primary-text-color); margin: ${tokens.spacing.m}px 0 ${tokens.spacing.l}px; border-radius: ${tokens.radius.l}px } .sg-table th, .sg-table td {text-align: left}`}
   </style>
 </>;
 ```

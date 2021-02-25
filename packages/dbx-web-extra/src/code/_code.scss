@@ -2,7 +2,8 @@
 
 .dbx-code {
   // GitHub uses this stack, so it can't be bad :p
-  background-color: dbx-palette-color('coolgray100');
+  background-color: var(--dbx-secondary-background-color);
+  color: var(--dbx-primary-text-color);
 
   // inline style ('inline' prop == true)
   &--inline {
@@ -38,7 +39,7 @@
   .token.doctype,
   .token.cdata,
   .token.punctuation {
-    color: dbx-palette-color('coolgray400');
+    color: var(--dbx-secondary-text-color);
     font-weight: normal;
   }
 

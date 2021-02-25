@@ -6,10 +6,10 @@
     $border: true
   );
   align-items: stretch;
-  background-color: dbx-background-color('input');
-  border: dbx-border-width('input') solid dbx-border-color('input');
+  background-color: var(--dbx-secondary-background-color);
+  border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
   box-sizing: border-box;
-  color: dbx-text-color('primary');
+  color: var(--dbx-secondary-text-color);
   display: inline-flex;
   font-family: dbx-font-family('copy');
 
@@ -18,17 +18,7 @@
   }
 
   &:not(.dbx-textfield--disabled):hover {
-    border-color: dbx-border-color('input.hover');
-  }
-
-  &.dbx-textfield--disabled,
-  &.dbx-textfield--readonly {
-    background: dbx-background-color('input.disabled');
-    border-color: dbx-border-color('input.disabled');
-  }
-
-  &.dbx-textfield--disabled {
-    color: dbx-text-color('disabled');
+    border-color: var(--dbx-border-color);
   }
 
   /**
@@ -39,7 +29,7 @@
     border: 0;
     background: transparent;
     box-shadow: none; /* 1 */
-    color: inherit;
+    color: var(--dbx-primary-text-color);
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -54,9 +44,25 @@
   }
 
   ::placeholder {
-    color: rgba(dbx-text-color('secondary'), 0.5);
+    color: var(--dbx-secondary-text-color);
     font-style: italic;
+    opacity: 0.5;
   }
+}
+
+.dbx-textfield--disabled,
+.dbx-textfield--readonly {
+  background: transparent;
+  border-color: var(--dbx-secondary-background-color);
+
+  input,
+  textarea {
+    color: var(--dbx-disabled-text-color);
+  }
+}
+
+.dbx-textfield--disabled {
+  color: var(--dbx-disabled-text-color);
 }
 
 .dbx-textfield--textarea {
@@ -65,9 +71,7 @@
 
   &::before,
   &::after {
-    background: linear-gradient(to top,
-    dbx-background-color('input'),
-    rgba(dbx-background-color('input'), 0));
+    background: linear-gradient(to top, transparent);
     bottom: 0;
     content: '';
     height: dbx-spacing('s');
@@ -84,20 +88,14 @@
 
 .dbx-textfield-prefix,
 .dbx-textfield-suffix {
-  color: dbx-text-color('secondary');
   transition: transform 0.2s;
 }
 
 .dbx-textfield__inline-label {
-  color: dbx-text-color('secondary');
   pointer-events: none;
   position: absolute;
   transition: all 0.2s;
   transform-origin: 0 0;
-
-  .dbx-textfield--disabled & {
-    color: inherit;
-  }
 }
 
 /**
@@ -110,14 +108,6 @@
   transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
 }
 
-.dbx-textfield--focus label {
-  color: dbx-text-color('primary');
-}
-
-.dbx-textfield.dbx-textfield--disabled label {
-  color: inherit;
-}
-
 .dbx-textfield--inline-label {
   ::placeholder {
     color: transparent;
@@ -125,7 +115,7 @@
   }
 
   &.dbx-textfield--focus ::placeholder {
-    color: dbx-text-color('secondary');
+    color: var(--dbx-secondary-background-color);
   }
 
   input,

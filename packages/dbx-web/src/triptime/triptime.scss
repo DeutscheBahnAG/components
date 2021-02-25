@@ -4,7 +4,7 @@
   font-weight: normal;
 
   .dbx-time + .dbx-time {
-    margin-top: dbx-spacing('xs', $negative: true);
+    margin-top: -2px;
   }
 }
 
@@ -12,18 +12,27 @@
   font-weight: dbx-font-weight('copy', 'bold');
 }
 
+.dbx-triptime--slightly-delayed,
+.dbx-triptime--delayed {
+  border-radius: dbx-border-radius('s');
+  margin: 0 -0.3em;
+  padding: 0 0.3em;
+}
+
 .dbx-triptime--slightly-delayed {
-  color: #467a18;
+  background: var(--dbx-on-time-background-color);
+  color: var(--dbx-on-time-light-text-color);
 
   &.dbx-triptime--bold {
-    color: #508b1b;
+    color: var(--dbx-on-time-light-text-color);
   }
 }
 
 .dbx-triptime--delayed {
-  color: #db0014;
+  background: var(--dbx-delayed-background-color);
+  color: var(--dbx-delayed-light-text-color);
 
   &.dbx-triptime--bold {
-    color: #ec0016;
+    color: var(--dbx-delayed-light-text-color);
   }
 }

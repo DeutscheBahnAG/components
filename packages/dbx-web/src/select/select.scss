@@ -8,7 +8,6 @@ $dbx-select-padding-vertical: dbx-spacing('m') - $dbx-select-border-width;
 $dbx-select-padding-top: $dbx-select-padding-vertical - $dbx-select-adjustment;
 $dbx-select-padding-bottom: $dbx-select-padding-vertical +
   $dbx-select-adjustment;
-$dbx-select-background-color: dbx-background-color('input');
 $dbx-select-chevron-width: 16px;
 $dbx-select-chevron-margin: 16px;
 
@@ -16,18 +15,22 @@ $dbx-select-chevron-margin: 16px;
   @include dbx-text-style($dbx-select-text-style);
   @include dbx-focus-ring($focus-selector: '.dbx-select--focus', $border: true);
   align-items: stretch;
-  background-color: $dbx-select-background-color;
-  border: $dbx-select-border-width solid dbx-border-color('input');
+  background-color: var(--dbx-secondary-background-color);
+  border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
   border-radius: dbx-border-radius('xl');
   box-sizing: border-box;
-  color: dbx-text-color('primary');
+  color: var(--dbx-primary-text-color);
   display: inline-flex;
   position: relative;
 
+  &:not(.dbx-select--disabled):hover {
+    border-color: var(--dbx-border-color);
+  }
+
   &--disabled {
-    background: dbx-background-color('input.disabled');
-    border-color: dbx-border-color('input.disabled');
-    color: dbx-text-color('disabled');
+    background: transparent;
+    border-color: var(--dbx-secondary-background-color);
+    color: var(--dbx-disabled-text-color);
   }
 
   /**

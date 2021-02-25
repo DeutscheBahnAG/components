@@ -210,44 +210,50 @@ import { Logo, Pulse, Title, Copy } from '@bahn-x/dbx-web';
 </Container>;
 ```
 
-## Variants (background colours)
+## Background colours/themes
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/dbx-web';
+import { Theme, Logo, Pulse, Title, Copy } from '@bahn-x/dbx-web';
 <Container
-  variant={Container.variants.PRIMARY}
+  filled
   width={Container.widths.FULL}
   align={Container.alignments.CENTER}
 >
-  <Container
-    variant={Container.variants.SECONDARY}
-    width={Container.widths.CONTENT}
-    align={Container.alignments.CENTER}
-  >
-    <Logo />
-    <Pulse>
-      <Title>Headline</Title>
-    </Pulse>
-  </Container>
+  <Theme theme={Theme.themes.DB_ALTERNATE}>
+    <Container
+      filled
+      width={Container.widths.CONTENT}
+      align={Container.alignments.CENTER}
+    >
+      <Logo />
+      <Pulse>
+        <Title>Headline</Title>
+      </Pulse>
+    </Container>
+  </Theme>
 </Container>;
 ```
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/dbx-web';
-<Container
-  variant={Container.variants.SECONDARY}
-  width={Container.widths.FULL}
-  align={Container.alignments.CENTER}
->
+import { Theme, Logo, Pulse, Title, Copy } from '@bahn-x/dbx-web';
+<Theme theme={Theme.themes.DB_ALTERNATE}>
   <Container
-    variant={Container.variants.PRIMARY}
-    width={Container.widths.CONTENT}
+    filled
+    width={Container.widths.FULL}
     align={Container.alignments.CENTER}
   >
-    <Logo />
-    <Pulse>
-      <Title>Headline</Title>
-    </Pulse>
+    <Theme theme={Theme.themes.DB}>
+      <Container
+        filled
+        width={Container.widths.CONTENT}
+        align={Container.alignments.CENTER}
+      >
+        <Logo />
+        <Pulse>
+          <Title>Headline</Title>
+        </Pulse>
+      </Container>
+    </Theme>
   </Container>
-</Container>;
+</Theme>;
 ```

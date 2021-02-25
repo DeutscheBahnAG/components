@@ -15,6 +15,7 @@ export { default as Notification } from './notification';
 export { default as Select } from './select';
 export { default as Status } from './status';
 export { default as Textfield } from './textfield';
+export { default as Theme } from './theme';
 export { default as Time } from './time';
 export { default as Title } from './title';
 export { default as Track } from './track';

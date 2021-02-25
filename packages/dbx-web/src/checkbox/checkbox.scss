@@ -16,6 +16,7 @@ $dbx-checkbox-gap: 0.4em;
 .dbx-checkbox {
   align-items: flex-start;
   box-sizing: border-box;
+  color: var(--dbx-primary-text-color);
   display: inline-flex;
   position: relative;
   user-select: none;
@@ -32,12 +33,12 @@ $dbx-checkbox-gap: 0.4em;
   }
 
   :disabled ~ * {
-    color: dbx-text-color('disabled');
+    color: var(--dbx-disabled-text-color);
   }
 }
 
 .dbx-checkbox-box {
-  background: dbx-background-color('checkbox');
+  background: var(--dbx-primary-background-color);
   border: dbx-border-width('checkbox') solid;
   border-radius: 2.2px;
   box-sizing: content-box;
@@ -55,7 +56,7 @@ $dbx-checkbox-gap: 0.4em;
   }
 
   .dbx-checkbox:active > input:not(:disabled) + & {
-    background: dbx-background-color('checkbox.pressed');
+    background: var(--dbx-secondary-background-color);
   }
 }
 
@@ -85,6 +86,7 @@ $dbx-checkbox-gap: 0.4em;
 .dbx-checkbox__footer {
   @include dbx-text-style('copy', 's');
   align-items: flex-start /* 3 */;
+  color: var(--dbx-primary-text-color);
   display: flex;
   flex-direction: column;
   grid-gap: dbx-spacing('s');

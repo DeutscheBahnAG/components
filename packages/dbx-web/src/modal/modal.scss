@@ -2,7 +2,7 @@
 @import 'include-media/dist/include-media';
 
 $dbx-modal--z-level: (
-  modal: 5000
+  modal: 5000,
 );
 
 $dbx-modal--appearance-duration: 400ms;
@@ -39,7 +39,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal--open {
   opacity: 1;
-  background-color: rgba(dbx-palette-color('coolgray800'), 0.8);
+  background-color: rgba(#000, 0.8);
 }
 
 .dbx-modal--close {
@@ -62,7 +62,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
     $dbx-modal--dialog-padding-x-mobile;
   border-radius: dbx-border-radius('xl') * 2;
   box-shadow: map-get($dbx-shadows, high);
-  background-color: dbx-color('background.primary');
+  background-color: var(--dbx-primary-background-color);
 
   @include media('>small') {
     margin: $dbx-modal--dialog-margin;
@@ -124,7 +124,6 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 }
 
 .dbx-modal__title {
-  @include dbx-text-style('title', 'l');
   margin: 0;
 
   &:first-of-type {
@@ -140,6 +139,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   min-height: dbx-size('xl');
   padding: $dbx-modal--save-gap;
   margin: -$dbx-modal--save-gap;
+  // Not themed yet:
   background-image: linear-gradient($dbx-modal--shadow-background-color 10%,
   change-color($dbx-modal--shadow-background-color, $alpha: 0)),
     linear-gradient(change-color($dbx-modal--shadow-background-color, $alpha: 0),
@@ -270,8 +270,8 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 
 .dbx-modal__footer {
   @include dbx-text-style('copy', 's');
-  background: dbx-background-color('secondary');
-  color: dbx-text-color('secondary');
+  background: var(--dbx-darker-background-color);
+  color: var(--dbx-secondary-text-color);
   margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-mobile)
     (-$dbx-modal--dialog-padding-y-mobile);
   padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-mobile;

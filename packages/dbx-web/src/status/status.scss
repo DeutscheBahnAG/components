@@ -1,7 +1,7 @@
 .dbx-status {
   @include dbx-text-style('copy', 's');
   display: inline-flex;
-  color: dbx-text-color('primary');
+  color: var(--dbx-primary-text-color);
 
   svg {
     $icon-safe-area: 2px;
@@ -21,7 +21,7 @@
   }
 
   circle {
-    fill: dbx-palette-color('coolgray600');
+    fill: dbx-palette-color('coolgray500');
   }
 
   circle + circle {

@@ -171,7 +171,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   }
 
   tbody tr {
-    border-top: 1px dbx-color('background.secondary') solid;
+    border-top: 1px var(--dbx-border-color) solid;
   }
 }
 

@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 import clsx from 'clsx';
 import { NavigationClose } from '@bahn-x/dbx-icons';
 import Button from '../button';
+import Title from '../title';
 
 const PORTAL_ID = 'modal-portal';
 
@@ -282,7 +283,7 @@ const Modal: ModalType<ModalProps> = ({
         )}
         {title && (
           <h2 id="ariaLabelledBy" className="dbx-modal__title">
-            {title}
+            <Title size={Title.sizes.L}>{title}</Title>
           </h2>
         )}
       </header>

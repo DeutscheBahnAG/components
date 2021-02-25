@@ -9,25 +9,33 @@
 /// @param {Number} $size - Size in px (border width) of the focus ring
 /// @param {Number} $grow - Additional grow size in px used for the transition
 /// @param {Color} $color - Color of the focus ring; may use an alpha value
-@mixin dbx-focus-ring($transition: [], $target: '', $focus-selector: ':focus', $size: $focus-ring-size, $grow: $focus-ring-grow, $color: $focus-ring-color, $border: false, $parent: false) {
+@mixin dbx-focus-ring(
+  $transition: [],
+  $target: '',
+  $focus-selector: ':focus',
+  $size: $focus-ring-size,
+  $grow: $focus-ring-grow,
+  $color: var(--dbx-focus-ring-color),
+  $border: false,
+  $parent: false
+) {
   @if $parent == false {
     outline: 0;
   }
-  
+
   #{dbx-focus-ring-target-selector($target)} {
     @content;
-    box-shadow: change-color($color, $alpha: 0) 0 0 0 ($size + $grow);
+    box-shadow: transparent 0 0 0 ($size + $grow);
     @if length($transition) > 0 {
       transition: unquote($transition), $focus-ring-transition;
-    }
-    @else {
+    } @else {
       transition: $focus-ring-transition;
     }
   }
 
   #{dbx-focus-ring-focussed-target-selector($target, $focus-selector)} {
     @if $border {
-      border-color: $focus-ring-border-color !important;
+      border-color: var(--dbx-focus-border-color) !important;
     }
     box-shadow: $color 0 0 0 $size;
     outline: 2px transparent; /* 1 */
@@ -40,8 +48,22 @@
 /// @param {Number} $size - Size in px (border width) of the focus ring
 /// @param {Number} $grow - Additional grow size in px used for the transition
 /// @param {Color} $color - Color of the focus ring; may use an alpha value
-@mixin dbx-focus-ring-for-text($transition: [], $target: '', $focus-selector: ':focus', $size: $focus-ring-size, $grow: $focus-ring-grow, $color: $focus-ring-color) {
-  @include dbx-focus-ring($transition: $transition, $target: $target, $focus-selector: $focus-selector, $size: $size, $grow: $grow, $color: $color) {
+@mixin dbx-focus-ring-for-text(
+  $transition: [],
+  $target: '',
+  $focus-selector: ':focus',
+  $size: $focus-ring-size,
+  $grow: $focus-ring-grow,
+  $color: var(--dbx-focus-ring-color)
+) {
+  @include dbx-focus-ring(
+    $transition: $transition,
+    $target: $target,
+    $focus-selector: $focus-selector,
+    $size: $size,
+    $grow: $grow,
+    $color: $color
+  ) {
     border-radius: 0.15em;
     margin-left: -0.2em;
     margin-right: -0.2em;

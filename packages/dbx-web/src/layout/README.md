@@ -17,3 +17,13 @@ import { Layout } from '@bahn-x/dbx-web';
   {/* See <Container> documentation */}
 </Layout>
 ```
+
+```jsx static
+import { Container } from '@bahn-x/dbx-web';
+
+<Layout variant={Layout.variants.CENTERED}>
+  <Container width="full">
+    <div style={{display:}>
+  </Container>
+</Layout>
+```

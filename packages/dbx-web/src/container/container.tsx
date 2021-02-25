@@ -16,30 +16,24 @@ enum ContainerAlignments {
   RIGHT = 'right',
 }
 
-enum ContainerVariants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
-
 interface ContainerProps {
   children: React.ReactNode | React.ReactNode[];
   width?: ContainerWidths;
   align?: ContainerAlignments;
-  variant?: ContainerVariants;
   className?: string;
+  filled?: boolean;
 }
 
 type ContainerType<P> = React.FunctionComponent<P> & {
   widths: typeof ContainerWidths;
   alignments: typeof ContainerAlignments;
-  variants: typeof ContainerVariants;
 };
 
 const Container: ContainerType<ContainerProps> = ({
   children,
   width = Container.widths.FULL,
   align = undefined,
-  variant = undefined,
+  filled = false,
   className = '',
   ...otherProps
 }: ContainerProps) => (
@@ -48,7 +42,7 @@ const Container: ContainerType<ContainerProps> = ({
       'dbx-container',
       `dbx-container--${width}`,
       align && `dbx-container--${align}`,
-      variant && `dbx-container--${variant}`,
+      filled && 'dbx-container--filled',
       className
     )}
     {...otherProps}
@@ -59,7 +53,6 @@ const Container: ContainerType<ContainerProps> = ({
 
 Container.widths = ContainerWidths;
 Container.alignments = ContainerAlignments;
-Container.variants = ContainerVariants;
 
 Container.propTypes = {
   /** Content of the Container */
@@ -68,8 +61,8 @@ Container.propTypes = {
   width: PropTypes.oneOf(Object.values(ContainerWidths)),
   /** The alignment of the Container */
   align: PropTypes.oneOf(Object.values(ContainerAlignments)),
-  /** The variant (background color) of the Container */
-  variant: PropTypes.oneOf(Object.values(ContainerVariants)),
+  /** Adds a primary background color for the Container */
+  filled: PropTypes.bool,
   /** Additional class names you want to add to the Container */
   className: PropTypes.string,
 };

@@ -14,6 +14,7 @@ export enum LogoSizes {
 }
 
 export enum LogoVariants {
+  AUTO = 'auto',
   DEFAULT = 'default',
   FILLED = 'filled',
   WHITE = 'white',
@@ -44,7 +45,7 @@ const Logo: LogoComponent = React.forwardRef(
     {
       className = '',
       size = LogoSizes.M,
-      variant = LogoVariants.DEFAULT,
+      variant = LogoVariants.AUTO,
       children = 'Deutsche Bahn',
       href,
     },

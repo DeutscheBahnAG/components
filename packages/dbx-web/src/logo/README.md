@@ -66,7 +66,7 @@ By default the logo has a transparent background.
     alignItems: 'center',
   }}
 >
-  <Logo />
+  <Logo variant={Logo.variants.DEFAULT} />
 </div>
 ```
 
@@ -87,6 +87,21 @@ By default the logo has a transparent background.
 
 The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Red backgrounds require the `OUTLINED` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
 
+### Auto
+
+Red or white logo with transparent background depending on the theme.
+
+```jsx
+import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
+<div
+  style={{
+    padding: tokens.spacing['m'],
+  }}
+>
+  <Logo />
+</div>;
+```
+
 ### Default
 
 Red logo with transparent background.
@@ -98,7 +113,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     padding: tokens.spacing['m'],
   }}
 >
-  <Logo />
+  <Logo variant={Logo.variants.DEFAULT} />
 </div>;
 ```
 

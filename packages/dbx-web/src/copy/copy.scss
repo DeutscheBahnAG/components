@@ -1,10 +1,10 @@
 .dbx-copy {
-  color: dbx-text-color('primary');
+  color: var(--dbx-primary-text-color);
   display: inherit;
 }
 
 .dbx-copy--secondary {
-  color: dbx-text-color('secondary');
+  color: var(--dbx-secondary-text-color);
 }
 
 @each $size in (xs s m l) {

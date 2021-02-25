@@ -1,5 +1,5 @@
 .dbx-title {
-  color: dbx-text-color('primary');
+  color: var(--dbx-primary-text-color);
   display: inherit;
   overflow-wrap: break-word;
 
@@ -9,7 +9,7 @@
 }
 
 .dbx-title--secondary {
-  color: dbx-text-color('secondary');
+  color: var(--dbx-secondary-text-color);
 }
 
 @each $size in (s m l xl xxl) {

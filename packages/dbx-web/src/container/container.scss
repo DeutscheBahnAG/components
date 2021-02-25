@@ -48,14 +48,10 @@
   text-align: right;
 }
 
-.dbx-container--primary {
-  background-color: dbx-background-color('primary');
+.dbx-container--filled {
+  background-color: var(--dbx-primary-background-color);
 
   &:not(.dbx-container--full) {
-    box-shadow: #0000000a 0 1px 16px;
+    box-shadow: var(--dbx-shadow-color) 0 1px 16px;
   }
-}
-
-.dbx-container--secondary {
-  background-color: dbx-background-color('secondary');
 }

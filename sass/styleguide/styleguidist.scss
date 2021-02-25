@@ -133,15 +133,16 @@ $code-background-color: dbx-background-color('secondary');
   [class^='rsg--preview-'] {
     background: linear-gradient(
         to top left,
-        transparent 12%,
-        $code-background-color 0,
-        50%,
+        $code-background-color 12%,
         transparent 0,
+        50%,
+        $code-background-color 0,
         62%,
-        $code-background-color 0
+        transparent 0
       )
       repeat 0 0/4px 4px;
-    border: 0;
+    background: var(--dbx-primary-background-color);
+    border: 2px dbx-background-color('secondary') solid;
     border-radius: dbx-border-radius('l') dbx-border-radius('l') 0 0;
 
     + [class^='rsg--controls-'] {
@@ -163,7 +164,7 @@ $code-background-color: dbx-background-color('secondary');
     padding: dbx-spacing('sm') dbx-spacing('m') !important;
   }
 
-  pre {
+  textarea + pre {
     background: $code-background-color;
     border-radius: dbx-border-radius('l');
     white-space: pre;
@@ -285,23 +286,28 @@ main.rsg--content-3 {
   margin: 0 auto 0 dbx-spacing('xxxl');
   padding: 0;
 
-  .dbx-container:not(.dbx-container--primary):not(.dbx-container--secondary) {
+  .dbx-container--filled {
+    padding-bottom: dbx-spacing('m');
+    padding-top: dbx-spacing('m');
+  }
+
+  .dbx-container:not(.dbx-container--filled) {
     background: rgba(dbx-palette-color('turquoise300'), 0.1);
     border: 1px dbx-palette-color('turquoise300') dashed;
     padding: 1px; // visually separate nested borders
   }
 
-  .dbx-container--extended:not(.dbx-container--primary):not(.dbx-container--secondary) {
+  .dbx-container--extended:not(.dbx-container--filled) {
     background: rgba(dbx-palette-color('yellow400'), 0.1);
     border-color: dbx-palette-color('yellow400');
   }
 
-  .dbx-container--content:not(.dbx-container--primary):not(.dbx-container--secondary) {
+  .dbx-container--content:not(.dbx-container--filled) {
     background: rgba(dbx-palette-color('pink300'), 0.1);
     border-color: dbx-palette-color('pink300');
   }
 
-  .dbx-container--text:not(.dbx-container--primary):not(.dbx-container--secondary) {
+  .dbx-container--text:not(.dbx-container--filled) {
     background: rgba(dbx-palette-color('cyan300'), 0.1);
     border-color: dbx-palette-color('cyan300');
   }

@@ -25,7 +25,7 @@ Pulse.propTypes = pulsePropTypes;
 Pulse.defaultProps = {
   className: '',
   size: Logo.sizes.M,
-  variant: Logo.variants.DEFAULT,
+  variant: Logo.variants.AUTO,
   children: null,
 };
 

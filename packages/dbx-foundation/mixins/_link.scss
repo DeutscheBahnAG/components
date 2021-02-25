@@ -21,9 +21,9 @@
 /// @param {String} $text-color--hover - The text-color used on hover
 /// @param {String} $text-color--pressed - The text-color used on press (:active)
 @mixin dbx-primary-link(
-  $text-color: dbx-text-color('link.primary'),
-  $text-color--hover: dbx-text-color('link.primary.hover'),
-  $text-color--pressed: dbx-text-color('link.primary.pressed')
+  $text-color: var(--dbx-link-color),
+  $text-color--hover: var(--dbx-link-hover-color),
+  $text-color--pressed: var(--dbx-link-pressed-color)
 ) {
   @include dbx-link($text-color, $text-color--hover, $text-color--pressed);
 }
@@ -33,9 +33,9 @@
 /// @param {String} $text-color--hover - The text-color used on hover
 /// @param {String} $text-color--pressed - The text-color used on press (:active)
 @mixin dbx-secondary-link(
-  $text-color: dbx-text-color('link.secondary'),
-  $text-color--hover: dbx-text-color('link.secondary.hover'),
-  $text-color--pressed: dbx-text-color('link.secondary.pressed')
+  $text-color: var(--dbx-primary-text-color),
+  $text-color--hover: var(--dbx-link-hover-color),
+  $text-color--pressed: var(--dbx-link-pressed-color)
 ) {
   @include dbx-link($text-color, $text-color--hover, $text-color--pressed);
 }

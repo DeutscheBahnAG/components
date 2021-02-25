@@ -48,7 +48,7 @@ module.exports = [
       },
       {
         name: 'Brand',
-        components: web(['logo', 'pulse']),
+        components: web(['theme', 'logo', 'pulse']),
       },
       {
         name: 'Layout and grid',

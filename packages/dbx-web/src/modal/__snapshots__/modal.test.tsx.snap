@@ -455,7 +455,11 @@ exports[`Modal Component render optional properties 1`] = `
               class="dbx-modal__title"
               id="ariaLabelledBy"
             >
-              Modal TITLE
+              <span
+                class="dbx-title dbx-title--size-l"
+              >
+                Modal TITLE
+              </span>
             </h2>
           </header>
           <main

@@ -6,7 +6,7 @@ $dbx-logo-sizes: (
   'm': 28px,
   'l': 35px,
   'xl': 42px,
-  'xxl': 56px
+  'xxl': 56px,
 );
 
 .dbx-logo {
@@ -15,11 +15,19 @@ $dbx-logo-sizes: (
   vertical-align: middle;
 
   path {
-    fill: dbx-color('brand');
+    fill: var(--dbx-logo-color);
   }
 
   rect {
     fill: transparent;
+  }
+}
+
+.dbx-logo--default,
+.dbx-logo--filled,
+.dbx-logo--outlined {
+  path {
+    fill: dbx-color('brand');
   }
 }
 
@@ -39,12 +47,12 @@ $dbx-logo-sizes: (
   *    Logo and the Pulse can be centered by applying `text-align: center`.
   */
 .dbx-pulse {
-  color: dbx-text-color('primary');
+  color: var(--dbx-primary-text-color);
   display: block;
   line-height: 0; /* 1 */
 
   &::after {
-    background: dbx-color('brand');
+    background: var(--dbx-pulse-background);
     content: '';
     display: inline-block; /* 1 */
   }
@@ -58,11 +66,17 @@ $dbx-logo-sizes: (
   }
 }
 
+.dbx-pulse--default {
+  &::after {
+    background: dbx-color('brand');
+  }
+}
+
 .dbx-pulse--white {
-  color: dbx-background-color('primary');
+  color: var(--dbx-primary-text-color);
 
   &::after {
-    background: dbx-background-color('primary');
+    background: #fff;
   }
 }
 
@@ -73,7 +87,7 @@ $dbx-logo-sizes: (
     width: $height / 7 * 10;
 
     &.dbx-logo--outlined {
-      box-shadow: dbx-background-color('primary') 0 0 0 ($height / 28);
+      box-shadow: #fff 0 0 0 ($height / 28);
     }
   }
 
