@@ -1676,6 +1676,20 @@
     lz-string "^1.4.4"
     pretty-format "^26.6.2"
 
+"@testing-library/dom@^7.29.6":
+  version "7.29.6"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.29.6.tgz#eb37844fb431186db7960a7ff6749ea65a19617c"
+  integrity sha512-vzTsAXa439ptdvav/4lsKRcGpAQX7b6wBIqia7+iNzqGJ5zjswApxA6jDAsexrc6ue9krWcbh8o+LYkBXW+GCQ==
+  dependencies:
+    "@babel/code-frame" "^7.10.4"
+    "@babel/runtime" "^7.12.5"
+    "@types/aria-query" "^4.2.0"
+    aria-query "^4.2.2"
+    chalk "^4.1.0"
+    dom-accessibility-api "^0.5.4"
+    lz-string "^1.4.4"
+    pretty-format "^26.6.2"
+
 "@testing-library/jest-dom@^5.11.8":
   version "5.11.9"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.9.tgz#e6b3cd687021f89f261bd53cbe367041fbd3e975"
@@ -1697,6 +1711,13 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
+
+"@testing-library/user-event@^12.7.3":
+  version "12.7.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.7.3.tgz#ef674ccb91794e52123b3532c336485d16f453b3"
+  integrity sha512-IdSHkWfbeSSJRFlldvHDWfVX0U18TbXIvLSGII+JbqkJrsflFr4OWlQIua0TvcVVJNna3BNrNvRSvpQ0yvSXlA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 "@tippyjs/react@4.1.0":
   version "4.1.0"
@@ -10147,7 +10168,7 @@ react-inky@^0.5.0:
     classnames "^2.2.6"
     prop-types "^15.7.2"
 
-react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
+react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==

@@ -1,52 +1,55 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import Button from './button';
 
 describe('Button Component', () => {
   it('should render a button', () => {
-    const wrapper = shallow(<Button>Text</Button>);
-    expect(wrapper.find('button.dbx-button--primary[type="button"]')).toHaveLength(1);
+    const { container } = render(<Button>My button 1</Button>);
+    const button = screen.getByRole('button');
+    expect(button).toHaveTextContent('My button 1');
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a submit button', () => {
-    const wrapper = shallow(<Button type={Button.types.SUBMIT}>Text</Button>);
-    expect(wrapper.find('button[type="submit"]')).toHaveLength(1);
+    const { container } = render(<Button type={Button.types.SUBMIT}>My button 2</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a secondary button', () => {
-    const wrapper = shallow(<Button variant={Button.variants.SECONDARY}>Text</Button>);
-    expect(wrapper.find('button.dbx-button--secondary')).toHaveLength(1);
+    const { container } = render(<Button variant={Button.variants.SECONDARY}>My button 3</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a full-width button', () => {
-    const wrapper = shallow(<Button fullWidth>Text</Button>);
-    expect(wrapper.find('button.dbx-button--block')).toHaveLength(1);
+    const { container } = render(<Button fullWidth>My button 4</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a button with addional attributes', () => {
-    const wrapper = shallow(<Button title="Click me">Text</Button>);
-    expect(wrapper.find('button[title="Click me"]')).toHaveLength(1);
+    const { container } = render(<Button title="Click me">My button 5</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a button with addional classes', () => {
-    const wrapper = shallow(<Button className="my-class">Text</Button>);
-    expect(wrapper.find('button.my-class.dbx-button--primary')).toHaveLength(1);
+    const { container } = render(<Button className="my-class">My button 6</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a button when `href` is not set', () => {
-    const wrapper = shallow(<Button>Text</Button>);
-    expect(wrapper.find('button.dbx-button[type="button"]')).toHaveLength(1);
+    const { container } = render(<Button>My button 7</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render an anchor when `href` is set', () => {
-    const wrapper = shallow(<Button href="#">Text</Button>);
-    expect(wrapper.find('a.dbx-button[href="#"]')).toHaveLength(1);
+    const { container } = render(<Button href="#">My button 8</Button>);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render a button with custom `aria-label`', () => {
-    const wrapper = shallow(<Button aria-label="This is a custom aria-label">Text</Button>);
-    expect(
-      wrapper.find('button.dbx-button[aria-label="This is a custom aria-label"]')
-    ).toHaveLength(1);
+    const { container } = render(
+      <Button aria-label="This is a custom aria-label">My button 9</Button>
+    );
+    expect(container).toMatchSnapshot();
   });
 });

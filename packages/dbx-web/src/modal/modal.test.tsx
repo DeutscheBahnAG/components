@@ -1,9 +1,10 @@
 /* global document */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import Button from '../button';
 import Modal from './modal';
-import '@testing-library/jest-dom/extend-expect';
 
 const APP_ID = 'root-test-id';
 const PORTAL_ID = 'portal-test-id';
@@ -23,6 +24,10 @@ const ModalWrapper: React.FC = ({ children }) => {
     document.body.append(element);
   }
   return <div>{children}</div>;
+};
+
+ModalWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 describe('Modal Component', () => {

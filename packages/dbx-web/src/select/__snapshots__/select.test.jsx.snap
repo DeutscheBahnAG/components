@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component should render a disabled select 1`] = `
+<div>
+  <div
+    class="dbx-select dbx-select--disabled"
+  >
+    <select
+      disabled=""
+    />
+    <svg
+      viewBox="0 0 16 10"
+    >
+      <polygon
+        fill="currentColor"
+        points="8 9.56 0.29 1.85 1.71 0.44 8 6.73 14.29 0.44 15.71 1.85"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Select Component should render a select 1`] = `
+<div>
+  <div
+    class="dbx-select"
+  >
+    <select />
+    <svg
+      viewBox="0 0 16 10"
+    >
+      <polygon
+        fill="currentColor"
+        points="8 9.56 0.29 1.85 1.71 0.44 8 6.73 14.29 0.44 15.71 1.85"
+      />
+    </svg>
+  </div>
+</div>
+`;

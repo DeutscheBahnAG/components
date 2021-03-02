@@ -1,30 +1,37 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import Passwordfield from './passwordfield-doc';
 
 const noopFn = () => {};
 
 describe('Passwordfield component', () => {
   it('should render a text input', () => {
-    const wrapper = mount(<Passwordfield value="test123" onChange={noopFn} />);
-    expect(wrapper.find('input[type="password"]')).toHaveLength(1);
+    const { container } = render(<Passwordfield value="test123" onChange={noopFn} />);
+    expect(screen.getByDisplayValue('test123')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('should disable the text input and the button', () => {
-    const wrapper = mount(<Passwordfield disabled value="test123" />);
-    const field = wrapper.find('input[type="password"]');
-    expect(field).toHaveLength(1);
-    expect(field.prop('disabled')).toBe(true);
-    expect(wrapper.find('.dbx-button--disabled')).toHaveLength(1);
+    const { container } = render(<Passwordfield disabled value="test456" />);
+    const field = screen.getByDisplayValue('test456');
+    const button = screen.getByRole('button');
+    expect(field.disabled).toBe(true);
+    expect(button.disabled).toBe(true);
+    expect(container).toMatchSnapshot();
   });
 
   it('should disable the button when the value is empty', () => {
-    const wrapper = mount(<Passwordfield value="" />);
-    expect(wrapper.find('.dbx-button--disabled')).toHaveLength(1);
+    const { container } = render(<Passwordfield value="" />);
+    const button = screen.getByRole('button');
+    expect(button).toBeDisabled();
+    expect(container).toMatchSnapshot();
   });
 
   it('should enable the button when the value is set', () => {
-    const wrapper = mount(<Passwordfield value="test123" />);
-    expect(wrapper.find('.dbx-button:not(.dbx-button--disabled)')).toHaveLength(1);
+    const { container } = render(<Passwordfield value="filled" />);
+    const button = screen.getByRole('button');
+    expect(button).not.toBeDisabled();
+    expect(container).toMatchSnapshot();
   });
 });

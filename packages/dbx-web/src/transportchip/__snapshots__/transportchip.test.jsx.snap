@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transportchip Component should allow setting the transport type manually 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--bus dbx-transportchip--u1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        U
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should detect the train type S-Bahn from S 1 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--suburban dbx-transportchip--s1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should detect the train type S-Bahn from S1 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--suburban dbx-transportchip--s1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should have normal spacing for products with one character 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--suburban dbx-transportchip--s1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should have normal spacing for products with three characters 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--ice dbx-transportchip--ice1"
+    >
+      <span
+        class="dbx-transportchip__text"
+      >
+        ICE
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should have normal spacing for products with two character 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--ic dbx-transportchip--ic1"
+    >
+      <span
+        class="dbx-transportchip__text"
+      >
+        IC
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should not split Bus 1 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--bus dbx-transportchip--bus1"
+    >
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should split S 1 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--suburban dbx-transportchip--s1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Transportchip Component should split S1 1`] = `
+<div>
+  <span
+    class="dbx-transportchip"
+  >
+    <span
+      class="dbx-transportchip__line dbx-transportchip--suburban dbx-transportchip--s1"
+    >
+      <span
+        class="dbx-transportchip__text dbx-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="dbx-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;

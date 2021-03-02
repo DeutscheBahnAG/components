@@ -1,10 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import Checkbox from './checkbox';
 
 describe('Checkbox component', () => {
   it('should render a Checkbox', () => {
-    const wrapper = mount(<Checkbox>Text</Checkbox>);
-    expect(wrapper.find('.dbx-checkbox')).toHaveLength(1);
+    render(<Checkbox>My label</Checkbox>);
+    expect(screen.getByLabelText('My label')).toBeInTheDocument();
+    expect(screen.getByRole('checkbox')).toBeInTheDocument();
   });
 });

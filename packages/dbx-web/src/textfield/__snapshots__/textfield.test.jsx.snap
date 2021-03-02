@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textfield Component should render a disabled input 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled dbx-textfield--disabled"
+  >
+    <input
+      disabled=""
+      type="text"
+      value="My disabled 2"
+    />
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should render a disabled textarea 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--textarea dbx-textfield--xl dbx-textfield--filled dbx-textfield--disabled"
+  >
+    <textarea
+      disabled=""
+    >
+      My disabled 1
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should render a number input 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--number dbx-textfield--xl dbx-textfield--filled"
+  >
+    <input
+      type="number"
+      value="123"
+    />
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should render a read-only input 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled dbx-textfield--readonly"
+  >
+    <input
+      readonly=""
+      type="text"
+      value="Read Only"
+    />
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should render a text input 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled"
+  >
+    <input
+      type="text"
+      value="My value 1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should render a textarea 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--textarea dbx-textfield--xl dbx-textfield--filled"
+  >
+    <textarea>
+      Textarea
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should use a prefix 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled"
+  >
+    <span
+      class="dbx-textfield-prefix"
+    >
+      $
+    </span>
+    <input
+      type="text"
+      value="Text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should use a suffix 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled"
+  >
+    <input
+      type="text"
+      value="Text"
+    />
+    <span
+      class="dbx-textfield-suffix"
+    >
+      €
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should use an unit after the field 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled"
+  >
+    <input
+      type="text"
+      value="Text"
+    />
+    <span
+      class="dbx-textfield-suffix"
+    >
+      €
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Textfield Component should use an unit before the field 1`] = `
+<div>
+  <div
+    class="dbx-textfield dbx-textfield--text dbx-textfield--xl dbx-textfield--filled"
+  >
+    <span
+      class="dbx-textfield-prefix"
+    >
+      £
+    </span>
+    <input
+      type="text"
+      value="Text"
+    />
+  </div>
+</div>
+`;
