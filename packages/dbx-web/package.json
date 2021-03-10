@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-web",
-  "version": "0.21.0-pre.1",
+  "version": "0.21.0-pre.2",
   "description": "DBX React Components",
   "repository": {
     "directory": "packages/dbx-web",
