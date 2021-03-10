@@ -945,6 +945,13 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@bahn-x/dbx-foundation@>=0.10.0", "@bahn-x/dbx-foundation@^0.10.0":
+  version "0.10.0"
+  resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-foundation/0.10.0/c7ab7fbd0f7857ec630ec5fbfad803caedd66d021a0abebbf68c76396d3e1d84#9bce0eeeda0103fac9246804601b16b5c24dc6f7"
+  integrity sha512-ZDGCV+4B6aih5ta5X2zlUGrPxPb2JUw4Jr+qhW/Vd4RPjgthRSa9/Q90Os5GezENcwyHA3uv2+Zydi1f0LCj4Q==
+  dependencies:
+    "@bahn-x/dbx-tokens" ">=0.7.0"
+
 "@bahn-x/dbx-tokens@>=0.7.0":
   version "0.7.0"
   resolved "https://npm.pkg.github.com/download/@bahn-x/dbx-tokens/0.7.0/ca7602903266b2d156b522bf847fcbefe00c8a3fe555a7538d457866e5f38053#d9ad4bbf72b3a820c1fe40b71a21ce6f9cc97d49"
