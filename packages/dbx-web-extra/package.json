@@ -9,6 +9,8 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },

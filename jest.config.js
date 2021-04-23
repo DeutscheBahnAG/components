@@ -7,7 +7,12 @@ module.exports = {
     '<rootDir>/node_modules/enzyme-to-json/serializer', // enable creation of snapshots from enzyme wrappers
   ],
   testPathIgnorePatterns: ['<rootDir>/(build|internal|node_modules|flow-typed|public|dist)/'],
-  modulePathIgnorePatterns: ['.cache', '<rootDir>/dist/'],
+  modulePathIgnorePatterns: [
+    '.cache',
+    '<rootDir>/dist/',
+    '<rootDir>/packages/dbx-web/dist',
+    '<rootDir>/packages/dbx-icons/dist',
+  ],
   setupFiles: [
     '<rootDir>/.jest/shim.js', // makes jest work with React 16
     '<rootDir>/.jest/adapter.js', // makes enzyme work with React 16

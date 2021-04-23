@@ -3,6 +3,7 @@
   "version": "0.8.0-pre.0",
   "description": "DBX Icon components for React",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "directory": "packages/dbx-icons",
@@ -15,7 +16,8 @@
   "scripts": {
     "build:tsx": "rm -rf src && svgr --config-file svgr.config.js --out-dir src svg/24",
     "build:js": "rm -rf dist && tsc --project tsconfig.build.json --outDir dist",
-    "build": "yarn build:tsx && yarn build:js"
+    "build": "yarn build:tsx && yarn build:js",
+    "postbuild": "./postbuild.sh"
   },
   "dependencies": {
     "@babel/cli": "^7.12.10",
