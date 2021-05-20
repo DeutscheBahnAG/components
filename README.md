@@ -185,6 +185,6 @@ You can use any modern JavaScript in your components that can be automatically t
 
 ## Licenses
 
-The code is licensed under the [MIT License](blob/master/LICENSE.md).
+The code is licensed under the [MIT License](blob/main/LICENSE.md).
 
 The DB logo is protected by trademark law. Further symbols/designs which can be called up under https://marketingportal.extranet.deutschebahn.com/ are partially protected by trademark law and/or copyright/design law. They may only be used in business transactions with the express prior consent of Deutsche Bahn AG. The consent is to be obtained with reasonable advance notice at <markenrecht@deutschebahn.com>.

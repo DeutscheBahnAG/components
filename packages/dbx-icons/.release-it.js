@@ -2,7 +2,7 @@ module.exports = {
   git: {
     addUntrackedFiles: true,
     commitMessage: 'chore: Release @bahn-x/dbx-icons@${version}',
-    requireBranch: 'master',
+    requireBranch: 'main',
     tagName: '@bahn-x/dbx-icons@${version}',
   }
 };
