@@ -4,7 +4,7 @@
   "description": "DBX React Components",
   "repository": {
     "directory": "packages/dbx-web",
-    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "url": "git@ssh.git.tech.rz.db.de:bahn-x/webdev/web.git",
     "type": "git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
