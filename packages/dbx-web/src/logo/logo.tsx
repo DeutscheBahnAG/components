@@ -18,7 +18,6 @@ export enum LogoVariants {
   DEFAULT = 'default',
   FILLED = 'filled',
   WHITE = 'white',
-  OUTLINED = 'outlined',
 }
 
 const logoPropTypes = {

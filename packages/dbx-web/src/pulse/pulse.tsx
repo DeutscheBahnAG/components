@@ -6,9 +6,7 @@ import Logo from '../logo/logo';
 const pulsePropTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.values(Logo.sizes)),
-  variant: PropTypes.oneOf(
-    Object.values(Logo.variants).filter((v) => v !== Logo.variants.OUTLINED)
-  ),
+  variant: PropTypes.oneOf(Object.values(Logo.variants)),
   children: PropTypes.node,
 };
 

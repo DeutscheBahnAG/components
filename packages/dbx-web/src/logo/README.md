@@ -85,7 +85,7 @@ By default the logo has a transparent background.
 </div>
 ```
 
-The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Red backgrounds require the `OUTLINED` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
+The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
 
 ### Auto
 
@@ -125,7 +125,8 @@ Red logo with white background.
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 <div
   style={{
-    background: tokens.palette['coolgray600'],
+    background:
+      'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
     padding: tokens.spacing['m'],
   }}
 >
@@ -135,24 +136,6 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 The variant `FILLED` has no visual effect on the Pulse.
 
-### Outlined
-
-Red logo with white background and a white outline around the logo (which adds to the logo size; be aware when using `overflow: hidden`).
-
-```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div
-  style={{
-    background: tokens.color['brand'],
-    padding: tokens.spacing['m'],
-  }}
->
-  <Logo variant={Logo.variants.OUTLINED} />
-</div>;
-```
-
-Don’t use the Pulse with the variant `OUTLINED`.
-
 ### White
 
 White logo with transparent background.
@@ -161,7 +144,7 @@ White logo with transparent background.
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 <div
   style={{
-    background: tokens.palette['burgundy700'],
+    background: tokens.palette['dbrot'],
     padding: tokens.spacing['m'],
   }}
 >

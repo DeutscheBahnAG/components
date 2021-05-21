@@ -24,16 +24,14 @@ $dbx-logo-sizes: (
 }
 
 .dbx-logo--default,
-.dbx-logo--filled,
-.dbx-logo--outlined {
+.dbx-logo--filled {
   path {
     fill: dbx-color('brand');
   }
 }
 
 .dbx-logo--white path,
-.dbx-logo--filled rect,
-.dbx-logo--outlined rect {
+.dbx-logo--filled rect {
   fill: dbx-background-color('primary');
 }
 
@@ -85,10 +83,6 @@ $dbx-logo-sizes: (
     border-radius: $height / 7.1;
     height: $height;
     width: $height / 7 * 10;
-
-    &.dbx-logo--outlined {
-      box-shadow: #fff 0 0 0 ($height / 28);
-    }
   }
 
   .dbx-logo--#{$size} ~ .dbx-pulse,
