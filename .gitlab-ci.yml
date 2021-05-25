@@ -1,0 +1,169 @@
+image: node:latest
+
+# define order of stages
+stages:
+  - 'test'
+  - 'build-packages'
+  - 'build'
+  - 'deploy'
+
+# define environment-agnostic jobs
+.install:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+      - .yarn
+  before_script:
+    - npm config set //$NPM_REGISTRY/:_authToken $NPM_TOKEN
+    - npm config set //$NPM_REGISTRY/:always-auth true
+    - npm config set @bahn-x:registry https://$NPM_REGISTRY
+    - yarn install --cache-folder .yarn
+
+.hadolint:
+  image: hadolint/hadolint:latest-alpine
+  stage: test
+  script:
+    - hadolint --ignore SC2039 --ignore DL3060 Dockerfile
+
+.test:
+  extends: .install
+  stage: test
+  script:
+    - yarn test
+
+.lint:
+  extends: .install
+  stage: test
+  script:
+    - yarn lint
+
+.whitesource:
+  stage: test
+  image:
+    name: ass-docker-stage-test-local.bahnhub.tech.rz.db.de/appsec-dependency-check:npm
+    entrypoint: ['']
+  script:
+    - npm config set //$NPM_REGISTRY/:_authToken $NPM_TOKEN
+    - npm config set //$NPM_REGISTRY/:always-auth true
+    - scan wss_config.yml
+
+.build-docs:
+  stage: build-packages
+  extends: .install
+  artifacts:
+    paths:
+      - build/
+  script:
+    - yarn build:docs
+
+.build-packages:
+  stage: build-packages
+  extends: .install
+  script:
+    - yarn build
+
+.build:
+  image: bahnx/cd-base:latest
+  stage: build
+  script:
+    - /build-push-docker.sh --image=web/dbx-web
+
+.deploy:
+  image: bahnx/cd-base:latest
+  stage: deploy
+  script:
+    - source /bootstrap-deploy.sh
+    - helmfile -f deploy/helmfile.yaml --namespace web --environment $STAGE sync
+
+# workflow definitions
+
+# dev
+hadolint-dev:
+  extends: .hadolint
+  tags: [dev]
+  except: [prod]
+
+test-dev:
+  extends: .test
+  tags: [dev]
+  except: [prod]
+
+lint-dev:
+  extends: .lint
+  tags: [dev]
+  except: [prod]
+
+#whitesource-dev:
+#  extends: .whitesource
+#  tags: [dev]
+#  except: [beta, prod]
+
+packages-dev:
+  extends: .build-packages
+  tags: [dev]
+  except: [prod]
+
+docs-dev:
+  extends: .build-docs
+  tags: [dev]
+  except: [prod]
+
+build-dev:
+  extends: .build
+  variables:
+    STAGE: $STAGE_DEV
+    AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID_DEV
+  tags: [dev]
+  only:
+    - main
+
+deploy-dev:
+  extends: .deploy
+  tags: [dev]
+  variables:
+    STAGE: $STAGE_DEV
+    CLUSTER_NAME: $CLUSTER_NAME_DEV
+    DOCKER_REGISTRY: $DOCKER_REGISTRY_DEV
+  only:
+    - main
+
+# prod
+hadolint-prod:
+  extends: .hadolint
+  tags: [prod]
+  only: [prod]
+
+test-prod:
+  extends: .test
+  tags: [prod]
+  only: [prod]
+
+lint-prod:
+  extends: .lint
+  tags: [prod]
+  only: [prod]
+
+#whitesource-prod:
+#  extends: .whitesource
+#  tags: [prod]
+#  only: [prod]
+
+build-prod:
+  extends: .build
+  tags: [prod]
+  variables:
+    STAGE: $STAGE_PROD
+    AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID_PROD
+  only:
+    - prod
+
+deploy-prod:
+  extends: .deploy
+  tags: [prod]
+  variables:
+    STAGE: $STAGE_PROD
+    CLUSTER_NAME: $CLUSTER_NAME_PROD
+    DOCKER_REGISTRY: $DOCKER_REGISTRY_PROD
+  only:
+    - prod

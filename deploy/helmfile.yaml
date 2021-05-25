@@ -4,17 +4,17 @@ helmDefaults:
 
 repositories:
   - name: bahnx
-    url: https://bahn-x.github.io/helm/
+    url: https://bahnhub.tech.rz.db.de/artifactory/tdpxw-helm-release-virtual
 
 releases:
   - name: dbx-web
     chart: bahnx/service
-    version: 1.0.1
+    version: 1.3.0
     values:
       - values.yaml.gotmpl
       - image:
           repository: {{ requiredEnv "DOCKER_REGISTRY" }}/{{ requiredEnv "STAGE" }}/web/dbx-web
-          tag: {{ requiredEnv "CIRCLE_SHA1" | quote }}
+          tag: {{ requiredEnv "CI_COMMIT_SHA" | quote }}
         service:
           port: 8080
         readinessProbe:
@@ -29,7 +29,7 @@ releases:
             # name of the secret that contains the user/password definitions
             nginx.ingress.kubernetes.io/auth-secret: dbx-web-service
             # message to display with an appropriate context why the authentication is required
-            nginx.ingress.kubernetes.io/auth-realm: 'DPP'                 
+            nginx.ingress.kubernetes.io/auth-realm: 'DPP'
             {{ else }}
             kubernetes.io/ingress.class: nginx-private
             {{ end }}
@@ -67,4 +67,4 @@ environments:
     values:
       - host: dppc.bahn-x.de
     secrets:
-      - prod/secrets.yaml          
+      - prod/secrets.yaml
