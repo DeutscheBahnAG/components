@@ -24,6 +24,8 @@
   --dbx-darker-background-color: #{dbx-palette-color('coolgray100')};
   --dbx-primary-text-color: #{dbx-palette-color('black')};
   --dbx-secondary-text-color: #{dbx-palette-color('coolgray500')};
+  --dbx-field-primary-text-color: var(--dbx-primary-text-color);
+  --dbx-field-secondary-text-color: var(--dbx-secondary-text-color);
   --dbx-disabled-text-color: #{dbx-palette-color('coolgray200')};
   --dbx-shadow-color: #0000000a;
   --dbx-border-color: #{mix(dbx-palette-color('coolgray100'),
@@ -171,13 +173,16 @@
 .dbx-theme--s-bahn-loud,
 .dbx-theme--green-campaign-loud,
 .dbx-theme--display {
-  --dbx-focus-ring-color: rgba(97, 63, 0, 0.25);
-  --dbx-focus-border-color: #ffe3d7;
+  --dbx-focus-ring-color: rgba(0, 0, 0, 0.25);
+  --dbx-focus-border-color: #000;
+  --dbx-border-color: #{dbx-palette-color('red600')};
   --dbx-primary-background-color: #{dbx-palette-color('dbrot')};
-  --dbx-secondary-background-color: #{dbx-palette-color('red600')};
+  --dbx-secondary-background-color: #{dbx-palette-color('white')};
   --dbx-darker-background-color: #{dbx-palette-color('red600')};
   --dbx-primary-text-color: #{dbx-palette-color('white')};
-  --dbx-secondary-text-color: #{dbx-palette-color('red200')};
+  --dbx-secondary-text-color: #{dbx-palette-color('red700')};
+  --dbx-field-primary-text-color: #{dbx-palette-color('black')};
+  --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
   --dbx-disabled-text-color: #{dbx-palette-color('red300')};
   --dbx-link-color: #{dbx-palette-color('red800')};
   --dbx-link-hover-color: #{mix(dbx-palette-color('red800'),
@@ -243,10 +248,11 @@ $dbx-s-bahn-green: #006f35;
   --dbx-focus-ring-color: rgba(75, 247, 255, 0.25);
   --dbx-focus-border-color: #bbffe7;
   --dbx-primary-background-color: #098a40;
-  --dbx-secondary-background-color: #{darken($dbx-s-bahn-green, 2%)};
   --dbx-darker-background-color: #{darken($dbx-s-bahn-green, 2%)};
   --dbx-primary-text-color: #{dbx-palette-color('white')};
   --dbx-secondary-text-color: #99ccb1;
+  --dbx-field-primary-text-color: #{dbx-palette-color('black')};
+  --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
   --dbx-disabled-text-color: #{mix(#99ccb1, #098a40)};
   --dbx-link-color: #7af7ac;
   --dbx-link-hover-color: #{darken(#7af7ac, 10%)};
@@ -286,8 +292,9 @@ $dbx-s-bahn-green: #006f35;
   --dbx-focus-ring-color: rgba(187, 255, 144, 0.25);
   --dbx-focus-border-color: #{dbx-palette-color('lightgreen100')};
   --dbx-primary-background-color: #{dbx-palette-color('lightgreen400')};
-  --dbx-secondary-background-color: #{dbx-palette-color('lightgreen500')};
   --dbx-secondary-text-color: #{dbx-palette-color('lightgreen100')};
+  --dbx-field-primary-text-color: #{dbx-palette-color('black')};
+  --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
   --dbx-disabled-text-color: #{dbx-palette-color('lightgreen300')};
   --dbx-darker-background-color: #{dbx-palette-color('lightgreen500')};
   --dbx-primary-button-text-color: #{dbx-palette-color('lightgreen400')};

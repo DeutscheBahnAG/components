@@ -9,7 +9,7 @@
   background-color: var(--dbx-secondary-background-color);
   border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
   box-sizing: border-box;
-  color: var(--dbx-secondary-text-color);
+  color: var(--dbx-field-secondary-text-color);
   display: inline-flex;
   font-family: dbx-font-family('copy');
 
@@ -29,7 +29,7 @@
     border: 0;
     background: transparent;
     box-shadow: none; /* 1 */
-    color: var(--dbx-primary-text-color);
+    color: var(--dbx-field-primary-text-color);
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -44,7 +44,7 @@
   }
 
   ::placeholder {
-    color: var(--dbx-secondary-text-color);
+    color: var(--dbx-field-secondary-text-color);
     font-style: italic;
     opacity: 0.5;
   }
