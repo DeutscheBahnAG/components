@@ -14,7 +14,7 @@ $dbx-checkbox-outer-size: $dbx-checkbox-size + 2 * dbx-border-width('checkbox');
 $dbx-checkbox-gap: 0.4em;
 
 .dbx-checkbox {
-  align-items: flex-start;
+  align-items: baseline;
   box-sizing: border-box;
   color: var(--dbx-primary-text-color);
   display: inline-flex;
@@ -45,13 +45,16 @@ $dbx-checkbox-gap: 0.4em;
   flex-shrink: 0;
   height: $dbx-checkbox-size;
   position: relative;
-  top: 2px;
+  top: 4px;
   width: $dbx-checkbox-size;
 
   svg {
     display: block;
     height: inherit;
+    position: absolute; /* 2 */
     transform: translateZ(0); /* 2 */
+    left: 50%; /* 2 */
+    transform: translateX(-50%); /* 2 */
     width: inherit;
   }
 

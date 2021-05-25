@@ -11,6 +11,11 @@ exports[`Textfield Component should render a disabled input 1`] = `
       value="My disabled 2"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -25,6 +30,11 @@ exports[`Textfield Component should render a disabled textarea 1`] = `
       My disabled 1
     </textarea>
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -38,6 +48,11 @@ exports[`Textfield Component should render a number input 1`] = `
       value="123"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -52,6 +67,11 @@ exports[`Textfield Component should render a read-only input 1`] = `
       value="Read Only"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -65,6 +85,11 @@ exports[`Textfield Component should render a text input 1`] = `
       value="My value 1"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -77,6 +102,11 @@ exports[`Textfield Component should render a textarea 1`] = `
       Textarea
     </textarea>
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -95,6 +125,11 @@ exports[`Textfield Component should use a prefix 1`] = `
       value="Text"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -113,6 +148,11 @@ exports[`Textfield Component should use a suffix 1`] = `
       €
     </span>
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -131,6 +171,11 @@ exports[`Textfield Component should use an unit after the field 1`] = `
       €
     </span>
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -149,5 +194,10 @@ exports[`Textfield Component should use an unit before the field 1`] = `
       value="Text"
     />
   </div>
+  <span
+    class="dbx-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;

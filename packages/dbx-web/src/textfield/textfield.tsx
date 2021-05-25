@@ -125,36 +125,39 @@ const Textfield: TextfieldComponent = React.forwardRef(
     );
 
     return (
-      <div
-        onClick={handleClick} // Focus on click on the prefix/suffix
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        className={clsx(
-          'dbx-textfield',
-          `dbx-textfield--${type}`,
-          `dbx-textfield--${fieldSize}`,
-          {
-            'dbx-textfield--filled': !!value,
-            'dbx-textfield--focus': isFocused,
-            'dbx-textfield--inline-label': !!inlineLabel,
-            'dbx-textfield--disabled': otherProps.disabled,
-            'dbx-textfield--readonly': otherProps.readOnly,
-          },
-          className
-        )}
-      >
-        {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
-        {(inlineLabel && (
-          // eslint-disable-next-line jsx-a11y/label-has-associated-control
-          <label>
-            <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
-            {configuredField}
-          </label>
-        )) ||
-          configuredField}
+      <>
+        <div
+          onClick={handleClick} // Focus on click on the prefix/suffix
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={clsx(
+            'dbx-textfield',
+            `dbx-textfield--${type}`,
+            `dbx-textfield--${fieldSize}`,
+            {
+              'dbx-textfield--filled': !!value,
+              'dbx-textfield--focus': isFocused,
+              'dbx-textfield--inline-label': !!inlineLabel,
+              'dbx-textfield--disabled': otherProps.disabled,
+              'dbx-textfield--readonly': otherProps.readOnly,
+            },
+            className
+          )}
+        >
+          {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
+          {(inlineLabel && (
+            // eslint-disable-next-line jsx-a11y/label-has-associated-control
+            <label>
+              <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
+              {configuredField}
+            </label>
+          )) ||
+            configuredField}
 
-        {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
-      </div>
+          {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
+        </div>
+        <span className="dbx-inline-spacer"> </span>
+      </>
     );
   }
 );

@@ -56,6 +56,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
         <span className="dbx-checkbox-label">{children}</span>
       </label>
       {footer && <div className="dbx-checkbox__footer">{footer}</div>}
+      <span className="dbx-inline-spacer"> </span>
     </>
   );
 };

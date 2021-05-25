@@ -7,9 +7,7 @@ import { Theme } from '@bahn-x/dbx-web';
 ```jsx
 import { Button } from '@bahn-x/dbx-web';
 <>
-  <Theme theme={Theme.themes.DB}>
-    <Button>DB Button</Button>
-  </Theme>{' '}
+  <Button>DB Button</Button>
   <Theme theme={Theme.themes.S_BAHN}>
     <Button>S-Bahn Button</Button>
   </Theme>
@@ -62,7 +60,6 @@ const themeNames = Object.keys(Theme.themes);
         >
           Use previous theme
         </Button>
-        {'   '}
         <Button
           onClick={() => {
             setThemeIndex(
@@ -81,7 +78,6 @@ const themeNames = Object.keys(Theme.themes);
           value="Input"
           prefix={<Icons.JourneyStart />}
         />
-        {'   '}
         <Textfield
           disabled
           inlineLabel="Textfield"
@@ -92,15 +88,12 @@ const themeNames = Object.keys(Theme.themes);
       <br />
       <div>
         <Checkbox checked>Checkbox</Checkbox>
-        {'   '}
         <Checkbox checked disabled>
           Disabled
         </Checkbox>
-        {'   '}
         <Button variant="solid" size="m">
           Solid
         </Button>
-        {'   '}
         <a href="#">Link</a>
       </div>
       <br />

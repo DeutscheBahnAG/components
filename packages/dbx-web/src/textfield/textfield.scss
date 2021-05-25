@@ -12,6 +12,7 @@
   color: var(--dbx-field-secondary-text-color);
   display: inline-flex;
   font-family: dbx-font-family('copy');
+  vertical-align: top;
 
   &:not(.dbx-textfield--disabled) {
     cursor: text;

@@ -117,31 +117,34 @@ const Button: ButtonType = ({
   }, [shape, buttonRef, loading, loadingLabel]);
 
   return (
-    <Element
-      style={{ ...style, minWidth }}
-      // @ts-expect-error HTMLAnchorElement and HTMLButtonElement do not have compatible APIs, but we aren't using them on either
-      ref={buttonRef}
-      type={href ? undefined : type}
-      href={href}
-      disabled={disabled || loading}
-      aria-label={ariaLabel}
-      title={tooltip}
-      className={clsx(
-        'dbx-button',
-        `dbx-button--${variant}`,
-        `dbx-button--${shape}`,
-        { 'dbx-button--block': fullWidth },
-        { 'dbx-button--disabled': disabled },
-        { 'dbx-button--loading': loading },
-        size && `dbx-button--${size}`,
-        className
-      )}
-      {...otherProps}
-    >
-      {loading && <Loadingindicator size={loadingindicatorSize} />}
-      {icon}
-      {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
-    </Element>
+    <>
+      <Element
+        style={{ ...style, minWidth }}
+        // @ts-expect-error HTMLAnchorElement and HTMLButtonElement do not have compatible APIs, but we aren't using them on either
+        ref={buttonRef}
+        type={href ? undefined : type}
+        href={href}
+        disabled={disabled || loading}
+        aria-label={ariaLabel}
+        title={tooltip}
+        className={clsx(
+          'dbx-button',
+          `dbx-button--${variant}`,
+          `dbx-button--${shape}`,
+          { 'dbx-button--block': fullWidth },
+          { 'dbx-button--disabled': disabled },
+          { 'dbx-button--loading': loading },
+          size && `dbx-button--${size}`,
+          className
+        )}
+        {...otherProps}
+      >
+        {loading && <Loadingindicator size={loadingindicatorSize} />}
+        {icon}
+        {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
+      </Element>
+      <span className="dbx-inline-spacer"> </span>
+    </>
   );
 };
 

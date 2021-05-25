@@ -1,5 +1,6 @@
 .dbx-status {
   @include dbx-text-style('copy', 's');
+  align-items: baseline;
   display: inline-flex;
   color: var(--dbx-primary-text-color);
 
@@ -8,7 +9,8 @@
     flex-shrink: 0;
     height: dbx-icon-size('s');
     margin: 0 dbx-spacing('xs') 0 #{-$icon-safe-area};
-    vertical-align: -5px;
+    position: relative;
+    top: 5px;
     width: dbx-icon-size('s');
   }
 

@@ -59,25 +59,25 @@ import { NavigationClose } from '@bahn-x/dbx-icons';
 
 ## Sizing
 
-```jsx { "props": { "className": "space-inbetween" } }
+```jsx
 <Button size={Button.sizes.S}>Button</Button>
 <Button size={Button.sizes.S} variant={Button.variants.SECONDARY}>Button</Button>
 <Button size={Button.sizes.S} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx { "props": { "className": "space-inbetween" } }
+```jsx
 <Button size={Button.sizes.M}>Button</Button>
 <Button size={Button.sizes.M} variant={Button.variants.SECONDARY}>Button</Button>
 <Button size={Button.sizes.M} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx { "props": { "className": "space-inbetween" } }
+```jsx
 <Button size={Button.sizes.L}>Button</Button>
 <Button size={Button.sizes.L} variant={Button.variants.SECONDARY}>Button</Button>
 <Button size={Button.sizes.L} variant={Button.variants.SOLID}>Button</Button>
 ```
 
-```jsx { "props": { "className": "space-inbetween" } }
+```jsx
 <Button size={Button.sizes.XL}>Button</Button>
 <Button size={Button.sizes.XL} variant={Button.variants.SECONDARY}>Button</Button>
 ```
@@ -345,4 +345,44 @@ The button can make use of different semantics while keeping the same style. All
 
 ```jsx
 <Button href="#">Button</Button>
+```
+
+## Aligning Buttons
+
+Buttons put next to each other automatically add spacing between each other:
+
+```jsx
+<>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</>
+```
+
+This spacing is independent of spacing. The next example has an additional space character added to the DOM, but visually results in the same spacing:
+
+```jsx
+<>
+  <Button>Button 1</Button> <Button>Button 2</Button> <Button>Button 3</Button>
+</>
+```
+
+The spacing used with a different Button size:
+
+```jsx
+<>
+  <Button size={Button.sizes.M}>Button 1</Button>
+  <Button size={Button.sizes.M}>Button 2</Button>
+  <Button size={Button.sizes.M}>Button 3</Button>
+</>
+```
+
+Textfield and Button combined:
+
+```jsx
+import { Textfield } from '@bahn-x/dbx-web';
+<>
+  <Textfield size={Textfield.sizes.XL} value="Textfield" />
+  <Button size={Button.sizes.XL}>Button</Button>
+</>;
 ```

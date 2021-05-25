@@ -64,6 +64,11 @@ exports[`Modal Component alertdialog role 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -238,6 +243,11 @@ exports[`Modal Component render PrimaryButton 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -256,6 +266,11 @@ exports[`Modal Component render PrimaryButton 1`] = `
               >
                 Primary Button Here
               </button>
+              <span
+                class="dbx-inline-spacer"
+              >
+                 
+              </span>
             </div>
           </div>
         </div>
@@ -356,6 +371,11 @@ exports[`Modal Component render SecondaryButton 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -374,6 +394,11 @@ exports[`Modal Component render SecondaryButton 1`] = `
               >
                 Secondary Button Here
               </button>
+              <span
+                class="dbx-inline-spacer"
+              >
+                 
+              </span>
             </div>
           </div>
         </div>
@@ -451,6 +476,11 @@ exports[`Modal Component render optional properties 1`] = `
                 Custom text
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
             <h2
               class="dbx-modal__title"
               id="ariaLabelledBy"
@@ -538,6 +568,11 @@ exports[`Modal Component render required properties only 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -624,6 +659,11 @@ exports[`Modal Component size auto 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -723,6 +763,11 @@ exports[`Modal Component size l 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -819,6 +864,11 @@ exports[`Modal Component size m 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
@@ -912,6 +962,11 @@ exports[`Modal Component size s 1`] = `
                 Close the dialogue
               </span>
             </button>
+            <span
+              class="dbx-inline-spacer"
+            >
+               
+            </span>
           </header>
           <main
             class="dbx-modal__content dbx-modal__content--right-gap"
