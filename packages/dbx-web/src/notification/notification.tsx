@@ -2,13 +2,8 @@
 import React, { Fragment, useEffect, useRef } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
-import {
-  ActionInfo,
-  NotificationErrorTriangle,
-  NavigationCancel,
-  ActionCheckCircle,
-} from '@bahn-x/dbx-icons';
 import NotificationPortal from './notification-portal';
+import Button from '../button/button';
 
 enum NotificationVariants {
   INFO = 'info',
@@ -26,10 +21,49 @@ const defaultLabels = {
 };
 
 const notificationIcons = {
-  info: <ActionInfo />,
-  warning: <NotificationErrorTriangle />,
-  error: <NavigationCancel />,
-  success: <ActionCheckCircle />,
+  info: (
+    <svg className="dbx-icon" width="24" height="24">
+      <circle fill="currentColor" cx="12" cy="12" r="10" />
+      <circle fill="#FFF" cx="12" cy="7.75" r="1.25" />
+      <path
+        stroke="#FFF"
+        strokeWidth="1.8"
+        fill="transparent"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 11h1.75v5H10h4"
+      />
+    </svg>
+  ),
+
+  warning: (
+    <svg className="dbx-icon" width="24" height="24">
+      <path
+        d="M10.31 4.1L2.25 18.5c-.16.29-.25.58-.25.88 0 .88.75 1.62 1.85 1.62h16.3c1.1 0 1.85-.74 1.85-1.62a2 2 0 00-.25-.89L13.72 4.1C13.3 3.4 12.66 3 12 3c-.66 0-1.26.38-1.69 1.1z"
+        fill="currentColor"
+      />
+      <path
+        d="M12 18.35c.65 0 1.15-.5 1.15-1.15 0-.65-.5-1.15-1.15-1.15-.65 0-1.15.5-1.15 1.15 0 .65.5 1.15 1.15 1.15z"
+        fill="#FFF"
+      />
+      <path stroke="#FFF" strokeWidth="2" strokeLinecap="round" d="M12 8.8v5" />
+    </svg>
+  ),
+  error: (
+    <svg className="dbx-icon" width="24" height="24">
+      <circle fill="currentColor" cx="12" cy="12" r="10" />
+      <path d="M8 16L16 8zM8 8L16 16z" stroke="#FFF" strokeWidth="1.9" strokeLinecap="round" />
+    </svg>
+  ),
+  success: (
+    <svg className="dbx-icon" width="24" height="24">
+      <circle cx="12" cy="12" r="10" />
+      <path
+        d="M15.97 7.7a1.08 1.08 0 011.77 1.25l-.08.12-6.28 7.74c-.46.54-1.07.54-1.58.04l-3.36-3.18A1.08 1.08 0 017.82 12l.11.1 2.53 2.4 5.51-6.8z"
+        fill="#fff"
+      />
+    </svg>
+  ),
 };
 
 const notificationPropTypes = {
@@ -113,20 +147,26 @@ const Notification: NotificationComponent = ({
           {message}
         </span>
         {onClose && (
-          <button
+          <Button
             ref={closeButtonRef}
-            type="button"
+            icon={
+              <span className="dbx-notification__close-icon">
+                <svg width="20" height="20">
+                  <path
+                    d="M4 15a1 1 0 01.28-.72L8.56 10 4.28 5.69A.97.97 0 014 5c0-.5.4-1 1-1 .25 0 .5.1.69.28L10 8.56l4.31-4.28A.97.97 0 0115 4a1 1 0 011 1c0 .25-.1.5-.28.69L11.44 10l4.28 4.28A1 1 0 0116 15a1 1 0 01-1 1 1 1 0 01-.72-.28L10 11.4l-4.28 4.3A1 1 0 015 16a1 1 0 01-1-1z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            }
             className="dbx-notification__close-btn"
             onClick={onClose}
-            title={labels.close}
-            aria-label={labels.close}
+            variant={Button.variants.HOVER_ONLY}
+            shape={Button.shapes.ROUND}
+            size={Button.sizes.S}
           >
-            <span className="dbx-notification__close-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
-                <path d="M13.4141 12l6.293-6.293a.9989.9989 0 000-1.414.9989.9989 0 00-1.414 0l-6.293 6.293-6.293-6.293a.9989.9989 0 00-1.414 0 .9989.9989 0 000 1.414L10.5861 12l-6.293 6.293a.9989.9989 0 000 1.414c.195.195.451.293.707.293.256 0 .512-.098.707-.293l6.293-6.293 6.293 6.293c.195.195.451.293.707.293.256 0 .512-.098.707-.293a.9989.9989 0 000-1.414L13.4141 12z" />
-              </svg>
-            </span>
-          </button>
+            {labels.close}
+          </Button>
         )}
       </div>
     </NotificationWrapper>

@@ -5,15 +5,15 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .dbx-notification {
   @include dbx-text-style('copy', 's');
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
   padding: dbx-spacing('m');
   color: dbx-background-color('primary');
   background-color: dbx-text-color('primary');
   border-style: solid;
-  border-width: 0 0 0 4px;
-  border-radius: 4px;
+  border-radius: dbx-border-radius('l');
+  border-width: 4px;
 }
 
 .dbx-notification + .dbx-notification {
@@ -21,38 +21,13 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .dbx-notification__icon {
-  margin-right: dbx-spacing('m');
+  padding: 2px;
+  margin-right: dbx-spacing('sm');
+  align-self: start;
 }
 
 .dbx-notification__variant {
   @include dbx-visually-hidden;
-}
-
-/**
- * 1. the icon size is 24px, but we want a nice, Apple HIG-complaint
- *     tap target size of 44x44px, so we add 10px padding everywhere
- * 2. for hover and active states, we don't want the button size to be
- *    44px large visually to maintain decent margins, so we style
- *    the inner close-icon wrapper instead of the whole button
- * 3. we don't want the padding to increase the overall component
- *     dimensions, so we subtract it from the margins
- */
-.dbx-notification__close-btn {
-  $button-padding: 10px; /* 1 */
-
-  @include dbx-focus-ring($target: '.dbx-notification__close-icon'); /* 2 */
-  margin: $button-padding * -1; /* 3 */
-  margin-left: dbx-spacing('m') - $button-padding;
-  background-color: transparent;
-  appearance: none;
-
-  .dbx-notification__close-icon {
-    display: block;
-    padding: $button-padding * 0.2; /* 2 */
-    margin: $button-padding * 0.8; /* 2 */
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in;
-  }
 }
 
 .dbx-notification__icon,
@@ -64,6 +39,9 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .dbx-notification__content {
+  @include dbx-text-style('copy');
+  font-weight: inherit;
+  padding: 2px 0;
   text-align: left;
   flex-grow: 1;
 }
@@ -74,23 +52,56 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .dbx-notification--global {
-  border-width: 1px 1px 1px 4px;
+  border-radius: dbx-border-radius('xl');
+  border-width: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-width: dbx-spacing('xxxl') * 4;
+  border-color: dbx-palette-color('white') !important;
+  background-color: dbx-palette-color('white') !important;
 }
 
-@each $variant in $notification-variants {
-  $color-name: if($variant == 'info', 'active', $variant);
+.dbx-notification--info {
+  color: dbx-text-color('primary');
+  background-color: dbx-palette-color('blue050');
+  border-color: dbx-palette-color('blue100');
 
-  .dbx-notification--#{$variant} {
-    color: dbx-text-color('notification.#{$color-name}');
-    background-color: dbx-background-color('notification.#{$color-name}');
-    border-color: dbx-text-color('notification.#{$color-name}');
+  &.dbx-notification--global {
+    background-color: dbx-palette-color('blue050') !important;
+    border-color: dbx-palette-color('white');
+  }
 
-    .dbx-notification__close-btn:hover .dbx-notification__close-icon {
-      background-color: mix(dbx-background-color('notification.#{$color-name}'),
-      dbx-text-color('notification.#{$color-name}'),
-      80%);
-    }
+  .dbx-icon {
+    color: dbx-palette-color('blue500');
+  }
+}
+
+.dbx-notification--warning {
+  color: dbx-text-color('primary');
+  background-color: desaturate(dbx-palette-color('yellow200'), 15%);
+  border-color: dbx-palette-color('yellow200') !important;
+
+  .dbx-icon {
+    color: dbx-palette-color('coolgray600');
+  }
+}
+
+.dbx-notification--error {
+  color: #db0014;
+  background-color: desaturate(dbx-palette-color('yellow200'), 15%);
+  border-color: dbx-palette-color('yellow200') !important;
+}
+
+.dbx-notification--success {
+  color: dbx-text-color('primary');
+  background-color: dbx-palette-color('lightgreen050');
+  border-color: dbx-palette-color('lightgreen100');
+
+  &.dbx-notification--global {
+    background-color: dbx-palette-color('lightgreen050') !important;
+  }
+
+  circle {
+    fill: dbx-color('success');
   }
 }
 

@@ -112,6 +112,7 @@ const LiveNotifications = () => {
             key={variant}
             variant={variant}
             global
+            onClose={() => {}}
             message={`I am Notification number ${index + 1}`}
           />,
         ]);
