@@ -158,7 +158,7 @@ $code-background-color: dbx-background-color('secondary');
   [class^='rsg--root-'] > textarea {
     background: $code-background-color !important;
     border-color: $code-background-color !important;
-    @include dbx-focus-ring($border: true);
+    @include dbx-focus-ring;
     border-radius: inherit;
     border-width: 1px;
     padding: dbx-spacing('sm') dbx-spacing('m') !important;

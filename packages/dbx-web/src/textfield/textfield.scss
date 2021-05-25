@@ -3,7 +3,7 @@
 .dbx-textfield {
   @include dbx-focus-ring(
     $focus-selector: '.dbx-textfield--focus',
-    $border: true
+    $transition: 'border 200ms'
   );
   align-items: stretch;
   background-color: var(--dbx-secondary-background-color);
@@ -18,8 +18,8 @@
     cursor: text;
   }
 
-  &:not(.dbx-textfield--disabled):hover {
-    border-color: var(--dbx-border-color);
+  &:not(.dbx-textfield--disabled, .dbx-textfield--focus):hover {
+    border-color: var(--dbx-focus-ring-color);
   }
 
   /**
@@ -60,6 +60,10 @@
   textarea {
     color: var(--dbx-disabled-text-color);
   }
+}
+
+.dbx-textfield--readonly.dbx-textfield--focus {
+  border-color: transparent;
 }
 
 /**
@@ -164,7 +168,9 @@
       > * {
         display: block; /* 2 */
         margin-right: 0.15em;
-        transform: translateX(#{$vertical-padding - $horizontal-padding}); /* 2 */
+        transform: translateX(
+          #{$vertical-padding - $horizontal-padding}
+        ); /* 2 */
       }
     }
 
@@ -174,7 +180,9 @@
       > * {
         display: block; /* 2 */
         margin-right: 0.15em;
-        transform: translateX(#{$horizontal-padding - $vertical-padding}); /* 2 */
+        transform: translateX(
+          #{$horizontal-padding - $vertical-padding}
+        ); /* 2 */
       }
     }
 

@@ -13,7 +13,10 @@ $dbx-select-chevron-margin: 16px;
 
 .dbx-select {
   @include dbx-text-style($dbx-select-text-style);
-  @include dbx-focus-ring($focus-selector: '.dbx-select--focus', $border: true);
+  @include dbx-focus-ring(
+    $focus-selector: '.dbx-select--focus',
+    $transition: 'border 200ms'
+  );
   align-items: stretch;
   background-color: var(--dbx-secondary-background-color);
   border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
@@ -23,8 +26,8 @@ $dbx-select-chevron-margin: 16px;
   display: inline-flex;
   position: relative;
 
-  &:not(.dbx-select--disabled):hover {
-    border-color: var(--dbx-border-color);
+  &:not(.dbx-select--disabled, .dbx-textfield--focus):hover {
+    border-color: var(--dbx-focus-ring-color);
   }
 
   &--disabled {

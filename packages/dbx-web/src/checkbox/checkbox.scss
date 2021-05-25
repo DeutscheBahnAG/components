@@ -22,7 +22,7 @@ $dbx-checkbox-gap: 0.4em;
   user-select: none;
 
   input {
-    @include dbx-focus-ring($target: '+ .dbx-checkbox-box', $border: true);
+    @include dbx-focus-ring($target: '+ .dbx-checkbox-box');
     height: 100%; /* 1 */
     min-height: 24px; /* 1 */
     min-width: 24px; /* 1 */
