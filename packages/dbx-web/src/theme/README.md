@@ -31,14 +31,23 @@ import {
   Triptimespan,
 } from '@bahn-x/dbx-web';
 import Icons from '@bahn-x/dbx-icons';
-import { radius } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
+import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import { useState } from 'react';
 const [themeIndex, setThemeIndex] = useState(0);
 const themes = Object.values(Theme.themes);
 const themeNames = Object.keys(Theme.themes);
 <div className="rsg--preview-37" style={{ borderRadius: radius.l }}>
   <Theme theme={themes[themeIndex]}>
-    <Container filled align={Container.alignments.CENTER}>
+    <Container
+      filled
+      align={Container.alignments.CENTER}
+      style={{
+        padding: `${spacing.l}px`,
+        margin: `-${spacing.m}px`,
+        width: `calc(100% + ${2 * spacing.m}px)`,
+        borderRadius: '4.3px',
+      }}
+    >
       <Logo size={Logo.sizes.XXL} />
       <Pulse>
         <Title size={Title.sizes.XXL}>Preview theme</Title>
