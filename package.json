@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@ssh.git.tech.rz.db.de:bahn-x/webdev/web.git"
+    "url": "https://github.com/Bahn-X/dbx-web.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://git.tech.rz.db.de/bahn-x/webdev/web#readme",

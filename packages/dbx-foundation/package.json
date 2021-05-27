@@ -4,7 +4,7 @@
   "description": "DBX Styles in Sass and CSS",
   "repository": {
     "directory": "packages/dbx-foundation",
-    "url": "git@ssh.git.tech.rz.db.de:bahn-x/webdev/web.git",
+    "url": "https://github.com/Bahn-X/dbx-web.git",
     "type": "git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
