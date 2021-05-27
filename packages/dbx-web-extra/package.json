@@ -1,6 +1,6 @@
 {
   "name": "@bahn-x/dbx-web-extra",
-  "version": "0.5.0",
+  "version": "0.6.0-pre.0",
   "description": "DBX React Components - Non-core",
   "repository": {
     "directory": "packages/dbx-web-extra",
