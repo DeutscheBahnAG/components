@@ -149,6 +149,16 @@ lint-prod:
 #  tags: [prod]
 #  only: [prod]
 
+packages-prod:
+  extends: .build-packages
+  tags: [prod]
+  only: [prod]
+
+docs-prod:
+  extends: .build-docs
+  tags: [prod]
+  only: [prod]
+
 build-prod:
   extends: .build
   tags: [prod]
