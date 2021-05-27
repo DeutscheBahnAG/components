@@ -30,7 +30,7 @@
     "release:foundation": "yarn workspace @bahn-x/dbx-foundation release-it --disable-metrics",
     "release:icons": "yarn build:icons && yarn workspace @bahn-x/dbx-icons release-it --disable-metrics",
     "release:web": "yarn build:icons && yarn build:web && yarn workspace @bahn-x/dbx-web release-it --disable-metrics",
-    "release:web-extra": "yarn workspace @bahn-x/dbx-web release-it --disable-metrics",
+    "release:web-extra": "yarn workspace @bahn-x/dbx-web-extra release-it --disable-metrics",
     "commit": "git-cz"
   },
   "repository": {
