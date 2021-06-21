@@ -113,7 +113,8 @@ button.dbx-transportchip {
 
 .dbx-transportchip--ferry {
   background: dbx-background-color('transportation.ferry');
-  color: dbx-text-color('transportation.ferry');
+  // color: dbx-text-color('transportation.ferry');
+  color: #fff;
 }
 
 .dbx-transportchip--ic,
