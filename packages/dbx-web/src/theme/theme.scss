@@ -215,7 +215,6 @@ $dbx-s-bahn-green: #006f35;
 .dbx-theme--s-bahn,
 .dbx-theme--s-bahn-alternate {
   --dbx-loud-border-color: #{lighten($dbx-s-bahn-green, 4%)};
-  --dbx-pulse-background: #{$dbx-s-bahn-green};
   --dbx-link-color: #06964b;
   --dbx-link-hover-color: #025d2e;
   --dbx-link-pressed-color: #012613;
