@@ -6,7 +6,8 @@
   --dbx-content-margin: auto;
   --dbx-extended-margin: auto;
   --dbx-content-in-extended-margin: auto;
-  --dbx-sidebar-width: 0;
+  /* stylelint-disable-next-line length-zero-no-unit */
+  --dbx-sidebar-width: 0px; // do not remove px otherwise calc(var(..)) won’t work anymore.
 
   @media (min-width: #{8 * dbx-spacing('xxxl')}) {
     --dbx-content-max-width: calc(100vw - #{2 * dbx-spacing('xxl')});
