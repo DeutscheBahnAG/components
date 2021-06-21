@@ -48,7 +48,7 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
 }
 
 .dbx-modal__dialog {
-  @include dbx-focus-ring();
+  @include dbx-focus-ring($color: #5a9bc480, $offset-color: #000);
   box-sizing: border-box;
   position: relative;
   display: grid;

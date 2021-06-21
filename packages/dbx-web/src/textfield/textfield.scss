@@ -18,10 +18,6 @@
     cursor: text;
   }
 
-  &:not(.dbx-textfield--disabled, .dbx-textfield--focus):hover {
-    border-color: var(--dbx-focus-ring-color);
-  }
-
   /**
    * 1. Remove red shadow when validation fails (Firefox)
    */

@@ -26,10 +26,6 @@ $dbx-select-chevron-margin: 16px;
   display: inline-flex;
   position: relative;
 
-  &:not(.dbx-select--disabled, .dbx-textfield--focus):hover {
-    border-color: var(--dbx-focus-ring-color);
-  }
-
   &--disabled {
     background: transparent;
     border-color: var(--dbx-secondary-background-color);
