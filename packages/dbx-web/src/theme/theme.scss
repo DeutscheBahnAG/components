@@ -96,8 +96,8 @@
 .dbx-theme--s-bahn-loud,
 .dbx-theme--green-campaign-loud,
 .dbx-theme--display {
-  --dbx-logo-color: #{dbx-palette-color('white')};
-  --dbx-pulse-background: #{dbx-palette-color('white')};
+  --dbx-logo-color: #fe182e;
+  --dbx-pulse-background: #fe182e;
   --dbx-primary-background-color: #{dbx-palette-color('coolgray700')};
   --dbx-secondary-background-color: #{dbx-palette-color('coolgray800')};
   --dbx-darker-background-color: #{dbx-palette-color('coolgray800')};
@@ -177,6 +177,8 @@
 .dbx-theme--s-bahn-loud,
 .dbx-theme--green-campaign-loud,
 .dbx-theme--display {
+  --dbx-logo-color: #{dbx-palette-color('white')};
+  --dbx-pulse-background: #{dbx-palette-color('white')};
   --dbx-focus-ring-color: rgba(0, 0, 0, 0.4);
   --dbx-focus-border-color: #000;
   --dbx-border-color: #{dbx-palette-color('red600')};
