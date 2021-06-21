@@ -32,7 +32,7 @@
   dbx-palette-color('coolgray200'),
   30%)};
   --dbx-loud-border-color: #{dbx-palette-color('coolgray500')};
-  --dbx-focus-ring-color: #{rgba(dbx-palette-color('blue600'), 0.25)};
+  --dbx-focus-ring-color: #0043c740;
   --dbx-focus-border-color: #{dbx-border-color('input.focus')};
   --dbx-link-color: #{dbx-text-color('link.primary')};
   --dbx-link-hover-color: #{dbx-text-color('link.primary.hover')};
@@ -76,6 +76,9 @@
 .dbx-theme--s-bahn-alternate,
 .dbx-theme--green-campaign-alternate,
 .dbx-theme--pride-campaign-alternate {
+  --dbx-link-color: #{darken(dbx-text-color('link.primary'), 3%)};
+  --dbx-link-hover-color: #{darken(dbx-text-color('link.primary.hover'), 3%)};
+  --dbx-link-pressed-color: #{darken(dbx-text-color('link.primary.pressed'), 3%)};
   --dbx-primary-background-color: #{dbx-palette-color('coolgray100')};
   --dbx-secondary-background-color: #{dbx-palette-color('white')};
   --dbx-darker-background-color: #{dbx-palette-color('coolgray200')};
@@ -104,9 +107,9 @@
   --dbx-shadow-color: transparent;
   --dbx-loud-border-color: #{dbx-palette-color('red100')};
   --dbx-border-color: #e77579;
-  --dbx-focus-ring-color: rgba(60, 179, 255, 0.25);
+  --dbx-focus-ring-color: #70a0ff66;
   --dbx-focus-border-color: #{dbx-palette-color('blue300')};
-  --dbx-link-color: #ff433e;
+  --dbx-link-color: #ff5a56;
   --dbx-link-hover-color: #e41f18;
   --dbx-link-pressed-color: #{mix(dbx-palette-color('red600'),
   dbx-palette-color('red700'))};
@@ -129,7 +132,7 @@
   --dbx-secondary-button-text-color: var(--dbx-primary-text-color);
   --dbx-secondary-button-hover-text-color: var(--dbx-primary-text-color);
   --dbx-secondary-button-pressed-text-color: var(--dbx-primary-text-color);
-  --dbx-solid-button-background-color: #{dbx-palette-color('coolgray700')};
+  --dbx-solid-button-background-color: #{dbx-palette-color('coolgray600')};
   --dbx-solid-button-hover-background-color: #{dbx-palette-color('coolgray600')};
   --dbx-solid-button-pressed-background-color: #{dbx-palette-color('coolgray500')};
   --dbx-solid-button-text-color: var(--dbx-primary-text-color);
@@ -158,6 +161,7 @@
 }
 
 .dbx-theme--db-contrast-alternate {
+  --dbx-link-color: #ff433e;
   --dbx-primary-background-color: #{dbx-palette-color('coolgray800')};
   --dbx-secondary-background-color: #{dbx-palette-color('coolgray700')};
   --dbx-darker-background-color: #{dbx-palette-color('black')};
@@ -173,21 +177,20 @@
 .dbx-theme--s-bahn-loud,
 .dbx-theme--green-campaign-loud,
 .dbx-theme--display {
-  --dbx-focus-ring-color: rgba(0, 0, 0, 0.25);
+  --dbx-focus-ring-color: rgba(0, 0, 0, 0.4);
   --dbx-focus-border-color: #000;
   --dbx-border-color: #{dbx-palette-color('red600')};
   --dbx-primary-background-color: #{dbx-palette-color('dbrot')};
   --dbx-secondary-background-color: #{dbx-palette-color('white')};
   --dbx-darker-background-color: #{dbx-palette-color('red600')};
   --dbx-primary-text-color: #{dbx-palette-color('white')};
-  --dbx-secondary-text-color: #{dbx-palette-color('red700')};
+  --dbx-secondary-text-color: #000;
   --dbx-field-primary-text-color: #{dbx-palette-color('black')};
   --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
   --dbx-disabled-text-color: #{dbx-palette-color('red300')};
-  --dbx-link-color: #{dbx-palette-color('red800')};
-  --dbx-link-hover-color: #{mix(dbx-palette-color('red800'),
-  dbx-palette-color('black'))};
-  --dbx-link-pressed-color: #{dbx-palette-color('black')};
+  --dbx-link-color: #000;
+  --dbx-link-hover-color: #{mix(#000, dbx-palette-color('dbrot'), 60%)};
+  --dbx-link-pressed-color: #{mix(#000, dbx-palette-color('dbrot'), 40%)};
   --dbx-primary-button-background-color: #{dbx-palette-color('white')};
   --dbx-primary-button-hover-background-color: #{dbx-palette-color('red100')};
   --dbx-primary-button-pressed-background-color: #{dbx-palette-color('red200')};
@@ -210,14 +213,14 @@
   --dbx-track-text-color: #{#140f6f};
 }
 
-$dbx-s-bahn-green: #006f35;
+$dbx-s-bahn-green: #05883c;
 
 .dbx-theme--s-bahn,
 .dbx-theme--s-bahn-alternate {
   --dbx-loud-border-color: #{lighten($dbx-s-bahn-green, 4%)};
-  --dbx-link-color: #06964b;
-  --dbx-link-hover-color: #025d2e;
-  --dbx-link-pressed-color: #012613;
+  --dbx-link-color: #{$dbx-s-bahn-green};
+  --dbx-link-hover-color: #{mix(#000, $dbx-s-bahn-green, 80%)};
+  --dbx-link-pressed-color: #{mix(#000, $dbx-s-bahn-green, 60%)};
   --dbx-primary-button-background-color: #098a40;
   --dbx-primary-button-hover-background-color: #{darken($dbx-s-bahn-green, 2%)};
   --dbx-primary-button-pressed-background-color: #{darken($dbx-s-bahn-green, 8%)};
@@ -227,6 +230,12 @@ $dbx-s-bahn-green: #006f35;
   --dbx-secondary-button-pressed-background-color: #{mix($dbx-s-bahn-green,
   #fff,
   20%)};
+}
+
+.dbx-theme--s-bahn-alternate {
+  --dbx-link-color: #{darken($dbx-s-bahn-green, 3%)};
+  --dbx-link-hover-color: #{darken(mix(#000, $dbx-s-bahn-green, 80%), 3%)};
+  --dbx-link-pressed-color: #{darken(mix(#000, $dbx-s-bahn-green, 60%), 3%)};
 }
 
 .dbx-theme--green-campaign,
@@ -242,19 +251,19 @@ $dbx-s-bahn-green: #006f35;
   --dbx-secondary-button-pressed-background-color: #{dbx-palette-color('lightgreen200')};
 }
 
+$dbx-s-bahn-loud-background: #05883c;
+$dbx-green-campaign-loud-background: dbx-palette-color('lightgreen400');
+
 .dbx-theme--s-bahn-loud,
 .dbx-theme--green-campaign-loud {
   --dbx-focus-border-color: #bbffe7;
-  --dbx-primary-background-color: #098a40;
-  --dbx-darker-background-color: #{darken($dbx-s-bahn-green, 2%)};
-  --dbx-primary-text-color: #{dbx-palette-color('white')};
-  --dbx-secondary-text-color: #99ccb1;
+  --dbx-primary-background-color: #{$dbx-s-bahn-loud-background};
+  --dbx-darker-background-color: #{darken($dbx-s-bahn-loud-background, 2%)};
   --dbx-field-primary-text-color: #{dbx-palette-color('black')};
   --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
-  --dbx-disabled-text-color: #{mix(#99ccb1, #098a40)};
-  --dbx-link-color: #7af7ac;
-  --dbx-link-hover-color: #{darken(#7af7ac, 10%)};
-  --dbx-link-pressed-color: #{darken(#7af7ac, 30%)};
+  --dbx-disabled-text-color: #{mix(#99ccb1, $dbx-s-bahn-loud-background)};
+  --dbx-link-hover-color: #{mix(#000, $dbx-s-bahn-loud-background, 60%)};
+  --dbx-link-pressed-color: #{mix(#000, $dbx-s-bahn-loud-background, 40%)};
   --dbx-primary-button-background-color: #{dbx-palette-color('white')};
   --dbx-primary-button-hover-background-color: #{dbx-palette-color('green100')};
   --dbx-primary-button-pressed-background-color: #{dbx-palette-color('green200')};
@@ -284,13 +293,12 @@ $dbx-s-bahn-green: #006f35;
 }
 
 .dbx-theme--green-campaign-loud {
-  --dbx-link-color: #ecfcae;
-  --dbx-link-hover-color: #fff;
-  --dbx-link-pressed-color: #{darken(#ecfcae, 20%)};
-  --dbx-focus-ring-color: rgba(187, 255, 144, 0.25);
+  --dbx-link-hover-color: #{mix(#000, $dbx-green-campaign-loud-background, 60%)};
+  --dbx-link-pressed-color: #{mix(#000,
+  $dbx-green-campaign-loud-background,
+  40%)};
   --dbx-focus-border-color: #{dbx-palette-color('lightgreen100')};
-  --dbx-primary-background-color: #{dbx-palette-color('lightgreen400')};
-  --dbx-secondary-text-color: #{dbx-palette-color('lightgreen100')};
+  --dbx-primary-background-color: #{$dbx-green-campaign-loud-background};
   --dbx-field-primary-text-color: #{dbx-palette-color('black')};
   --dbx-field-secondary-text-color: #{dbx-palette-color('coolgray500')};
   --dbx-disabled-text-color: #{dbx-palette-color('lightgreen300')};
@@ -307,10 +315,9 @@ $dbx-s-bahn-green: #006f35;
 }
 
 .dbx-theme--display {
-  --dbx-focus-ring-color: #{rgba(dbx-palette-color('cyan100'), 0.25)};
+  --dbx-focus-ring-color: #{rgba(dbx-palette-color('cyan100'), 0.4)};
   --dbx-focus-border-color: #{dbx-palette-color('cyan300')};
   --dbx-primary-background-color: #{dbx-palette-color('blue700')};
-  --dbx-secondary-background-color: #{dbx-palette-color('blue600')};
   --dbx-darker-background-color: #{dbx-palette-color('blue800')};
   --dbx-primary-text-color: #{dbx-palette-color('white')};
   --dbx-secondary-text-color: #{dbx-palette-color('blue200')};
