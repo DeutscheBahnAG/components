@@ -32,28 +32,18 @@ $code-background-color: dbx-background-color('secondary');
     }
   }
 
-  nav input[class^='rsg--input-'] {
-    $horizontal-padding: dbx-component-horizontal-padding('m', 'input');
-    $vertical-padding: dbx-component-vertical-padding('m', 'input');
-    @include dbx-focus-ring($border: true);
-    background-color: dbx-background-color('input');
-    border: dbx-border-width('input') solid dbx-border-color('input');
-    border-radius: dbx-border-radius('m');
-    box-sizing: border-box;
-    color: dbx-text-color('primary');
-    display: inline-flex;
-    font-family: dbx-font-family('copy');
-    height: dbx-size('m');
+  nav [class^='rsg--search'] {
+    // Styleguidist doesn’t know about our themes
+    --dbx-primary-background-color: #{dbx-palette-color('coolgray100')};
+    --dbx-secondary-background-color: #{dbx-palette-color('white')};
+    @extend .dbx-textfield;
+    @extend .dbx-textfield--m;
+    margin: dbx-spacing('m');
+    padding: 0;
+  }
 
-    &:hover {
-      border-color: dbx-border-color('input.hover');
-    }
-
-    &::placeholder {
-      color: rgba(dbx-text-color('secondary'), 0.5);
-      font-family: dbx-font-family('copy');
-      font-style: italic;
-    }
+  [class^='rsg--heading-'] a {
+    @include dbx-secondary-link;
   }
 
   h1[class^='rsg--heading-'] {
@@ -327,4 +317,75 @@ main.rsg--content-3 {
   li {
     display: block;
   }
+}
+
+#rsg-root nav > ul {
+  padding-left: 10px;
+
+  > li[class^='rsg--item-'] {
+    @include dbx-text-style('copy', 'l');
+    color: var(--dbx-primary-text-color);
+    font-family: dbx-font-family('title');
+    font-weight: dbx-font-weight('title', 'bold');
+    text-decoration: none;
+    display: block;
+    padding: #{dbx-spacing('sm') / 2} dbx-spacing('m');
+    transition: color 0.15s ease-in;
+    li {
+      @include dbx-text-style('copy', 's');
+      font-weight: normal;
+    }
+  }
+}
+
+.rsg--pathline-29 {
+  display: none;
+}
+
+#rsg-root .rsg--button-31 {
+  @extend .dbx-button--solid;
+  @extend .dbx-button--s;
+  text-transform: none;
+}
+
+.rsg--heading1-21,
+.rsg--logo-5 {
+  display: none;
+}
+
+// Tables
+#rsg-root [class^='rsg--table'] {
+  margin: dbx-spacing('m') 0 dbx-spacing('l');
+
+  [class^='rsg--cellHeading'] {
+    @include dbx-text-style('copy', 's');
+    color: var(--dbx-secondary-text-color);
+  }
+
+  [class^='rsg--name'],
+  [class^='rsg--type'],
+  [class^='rsg--code'],
+  [class^='rsg--text'] {
+    @include dbx-text-style('copy', 'm');
+    background: transparent;
+    padding: 0;
+  }
+
+  [class^='rsg--name'] {
+    color: dbx-palette-color('lightgreen600');
+  }
+
+  [class^='rsg--type'] {
+    color: dbx-palette-color('blue400');
+  }
+
+  [class^='rsg--code'] {
+    color: var(--dbx-secondary-text-color);
+  }
+}
+
+#rsg-root [data-testid='Button-isolate-button'] {
+  @extend .dbx-button--hover-only;
+  @extend .dbx-button--round;
+  @extend .dbx-button--m;
 }
