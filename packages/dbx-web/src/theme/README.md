@@ -42,21 +42,27 @@ const themeNames = Object.keys(Theme.themes);
       filled
       align={Container.alignments.CENTER}
       style={{
+        display: 'grid',
+        gap: `${spacing.m}px`,
         padding: `${spacing.l}px`,
         margin: `-${spacing.m}px`,
         width: `calc(100% + ${2 * spacing.m}px)`,
         borderRadius: '4.3px',
       }}
     >
-      <Logo size={Logo.sizes.XXL} />
-      <Pulse>
-        <Title size={Title.sizes.XXL}>Preview theme</Title>
-        <Title variant="secondary" light size={Title.sizes.M}>
-          {themeNames[themeIndex]}
-        </Title>
-      </Pulse>
-      <br />
-      <br />
+      <div>
+        <Logo size={Logo.sizes.XXL} />
+        <Pulse>
+          <Title size={Title.sizes.XXL}>Primary title</Title>
+          <Title variant={Title.variants.SECONDARY} light size={Title.sizes.M}>
+            Secondary title
+          </Title>
+        </Pulse>
+      </div>
+      <p>
+        <Copy size={Copy.sizes.S}>Current theme:</Copy>
+        <Copy size={Copy.sizes.L}>{themeNames[themeIndex]}</Copy>
+      </p>
       <div>
         <Button
           onClick={() => {
@@ -64,8 +70,9 @@ const themeNames = Object.keys(Theme.themes);
               themeIndex === 0 ? themes.length - 1 : themeIndex - 1
             );
           }}
-          variant="secondary"
+          variant={Button.variants.SECONDARY}
           icon={<Icons.NavigationArrowBack />}
+          style={{ width: '212px' }}
         >
           Use previous theme
         </Button>
@@ -76,11 +83,11 @@ const themeNames = Object.keys(Theme.themes);
             );
           }}
           icon={<Icons.NavigationArrowForward />}
+          style={{ width: '212px' }}
         >
           Use next theme
         </Button>
       </div>
-      <br />
       <div>
         <Textfield
           inlineLabel="Textfield"
@@ -94,7 +101,6 @@ const themeNames = Object.keys(Theme.themes);
           prefix={<Icons.JourneyStart />}
         />
       </div>
-      <br />
       <div>
         <Checkbox checked>Checkbox</Checkbox>
         <Checkbox checked disabled>
@@ -105,7 +111,12 @@ const themeNames = Object.keys(Theme.themes);
         </Button>
         <a href="#">Link</a>
       </div>
-      <br />
+      <p style={{ marginTop: `${spacing.xl}px` }}>
+        <Copy size={Copy.sizes.M}>Travel information:</Copy>
+        <Copy variant={Copy.variants.SECONDARY} size={Copy.sizes.S}>
+          (possible but not recommended on coloured background)
+        </Copy>
+      </p>
       <div
         style={{
           border: 'solid var(--dbx-border-color)',
