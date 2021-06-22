@@ -2,7 +2,7 @@
 
 .dbx-textfield {
   @include dbx-focus-ring(
-    $focus-selector: '.dbx-textfield--focus',
+    $focus-selector: ':focus-within',
     $transition: 'border 200ms'
   );
   align-items: stretch;
@@ -111,7 +111,7 @@
   * 1. Calculating the scaling from M to S.
   * 2. Prefer `scale` over `font-size` for smooth transitions.
   */
-.dbx-textfield--focus .dbx-textfield__inline-label,
+.dbx-textfield:focus-within .dbx-textfield__inline-label,
 .dbx-textfield--filled .dbx-textfield__inline-label {
   $scale-down: dbx-font-size('copy', 's') / dbx-font-size('copy', 'm'); /* 1 */
   transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
@@ -168,9 +168,7 @@
       > * {
         display: block; /* 2 */
         margin-right: 0.15em;
-        transform: translateX(
-          #{$vertical-padding - $horizontal-padding}
-        ); /* 2 */
+        transform: translateX(#{$vertical-padding - $horizontal-padding}); /* 2 */
       }
     }
 
@@ -180,9 +178,7 @@
       > * {
         display: block; /* 2 */
         margin-right: 0.15em;
-        transform: translateX(
-          #{$horizontal-padding - $vertical-padding}
-        ); /* 2 */
+        transform: translateX(#{$horizontal-padding - $vertical-padding}); /* 2 */
       }
     }
 

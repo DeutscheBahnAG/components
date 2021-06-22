@@ -2,11 +2,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
-
-const noopFn = () => {};
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
@@ -43,10 +41,6 @@ const textfieldPropTypes = {
   suffix: PropTypes.node,
   /** Change event handler */
   onChange: PropTypes.func,
-  /** Focus event handler */
-  onFocus: PropTypes.func,
-  /** Blur event handler */
-  onBlur: PropTypes.func,
   /** Inline label */
   inlineLabel: PropTypes.string,
 };
@@ -68,8 +62,6 @@ const Textfield: TextfieldComponent = React.forwardRef(
   (
     {
       className = '',
-      onFocus = noopFn,
-      onBlur = noopFn,
       type = 'text',
       size = TextfieldSize.XL,
       value,
@@ -82,26 +74,10 @@ const Textfield: TextfieldComponent = React.forwardRef(
     },
     fieldRef
   ) => {
-    const [isFocused, setFocused] = useState(false);
-
     const handleClick = () => {
       // @ts-expect-error apparently the React types don't expect forwarded refs to be used in the same component.
       // the type that comes out of React.forwardRef is kinda weird
       fieldRef?.current?.focus();
-    };
-
-    const handleFocus = (event: React.FocusEvent<HTMLDivElement>) => {
-      setFocused(true);
-      if (onFocus) {
-        onFocus(event);
-      }
-    };
-
-    const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
-      setFocused(false);
-      if (onBlur) {
-        onBlur(event);
-      }
     };
 
     const Field = type === 'textarea' ? 'textarea' : 'input';
@@ -128,15 +104,12 @@ const Textfield: TextfieldComponent = React.forwardRef(
       <>
         <div
           onClick={handleClick} // Focus on click on the prefix/suffix
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           className={clsx(
             'dbx-textfield',
             `dbx-textfield--${type}`,
             `dbx-textfield--${fieldSize}`,
             {
               'dbx-textfield--filled': !!value,
-              'dbx-textfield--focus': isFocused,
               'dbx-textfield--inline-label': !!inlineLabel,
               'dbx-textfield--disabled': otherProps.disabled,
               'dbx-textfield--readonly': otherProps.readOnly,
