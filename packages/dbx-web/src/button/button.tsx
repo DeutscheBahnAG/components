@@ -215,7 +215,7 @@ Button.propTypes = {
   style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   /** content rendered inside the button, can be text or any element */
   children: PropTypes.node,
-  /** optional icon (as <svg>) */
+  /** optional icon (as `<svg>`) */
   icon: PropTypes.node,
   /** turns the Button into a regular link (anchor) */
   href: PropTypes.string,
