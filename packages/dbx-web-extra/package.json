@@ -13,7 +13,7 @@
     "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "@bahn-x/dbx-foundation": "^0.10.0",
+    "@bahn-x/dbx-foundation": "^0.11.0-pre.1",
     "clsx": "^1.1.1",
     "core-js": "^3.8.2",
     "include-media": "^1.4.9",
