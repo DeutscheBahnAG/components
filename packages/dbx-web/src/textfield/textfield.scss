@@ -46,6 +46,8 @@
 
   ::placeholder {
     color: var(--dbx-field-secondary-text-color);
+    font-family: inherit;
+    font-size: inherit;
     font-style: italic;
     opacity: 0.5;
   }
