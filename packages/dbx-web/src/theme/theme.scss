@@ -61,7 +61,6 @@
   --dbx-solid-button-hover-text-color: var(--dbx-primary-text-color);
   --dbx-solid-button-pressed-text-color: var(--dbx-primary-text-color);
   --dbx-solid-button-disabled-text-color: var(--dbx-primary-button-disabled-text-color);
-  --dbx-solid-button-mix-blend-mode: multiply;
   --dbx-track-background-color: #140f6f;
   --dbx-track-text-color: #{dbx-palette-color('coolgray100')};
   --dbx-on-time-text-color: #508b1b;
@@ -76,6 +75,8 @@
 .dbx-theme--s-bahn-alternate,
 .dbx-theme--green-campaign-alternate,
 .dbx-theme--pride-campaign-alternate {
+  --dbx-primary-button-disabled-background-color: #{dbx-palette-color('coolgray200')};
+  --dbx-primary-button-disabled-text-color: #{dbx-palette-color('coolgray300')};
   --dbx-link-color: #{darken(dbx-text-color('link.primary'), 3%)};
   --dbx-link-hover-color: #{darken(dbx-text-color('link.primary.hover'), 3%)};
   --dbx-link-pressed-color: #{darken(dbx-text-color('link.primary.pressed'), 3%)};
@@ -139,7 +140,6 @@
   --dbx-solid-button-hover-text-color: var(--dbx-primary-text-color);
   --dbx-solid-button-pressed-text-color: var(--dbx-primary-text-color);
   --dbx-solid-button-disabled-text-color: var(--dbx-primary-button-disabled-text-color);
-  --dbx-solid-button-mix-blend-mode: screen;
   --dbx-track-background-color: #{dbx-palette-color('white')};
   --dbx-track-text-color: #140f6f;
   --dbx-on-time-background-color: #{dbx-palette-color('white')};
@@ -210,7 +210,6 @@
   0.3)};
   --dbx-solid-button-pressed-background-color: #{rgba(dbx-palette-color('black'),
   0.4)};
-  --dbx-solid-button-mix-blend-mode: normal;
   --dbx-track-background-color: #{dbx-palette-color('white')};
   --dbx-track-text-color: #{#140f6f};
 }

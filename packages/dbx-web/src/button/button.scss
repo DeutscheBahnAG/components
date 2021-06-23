@@ -150,17 +150,6 @@
   min-width: unset;
 }
 
-.dbx-button--disabled,
-.dbx-button--secondary,
-.dbx-button--solid,
-.dbx-button--hover-only {
-  /**
-   * 1. Ensure contrast for Buttons on secondary backgrounds
-   *    until better solution available.
-   */
-  mix-blend-mode: var(--dbx-solid-button-mix-blend-mode); /* 1 */
-}
-
 .dbx-button--loading {
   .dbx-loadingindicator {
     background: inherit;
