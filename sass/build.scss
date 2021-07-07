@@ -12,9 +12,9 @@
 @import 'helpers/*.scss';
 
 // Components & Component Stories
-@import '../packages/dbx-icons/**/*.scss';
-@import '../packages/dbx-web/**/*.scss';
-@import '../packages/dbx-web-extra/**/*.scss';
+@import '../packages/dbx-icons/*.scss';
+@import '../packages/dbx-web/src/**/*.scss';
+@import '../packages/dbx-web-extra/src/**/*.scss';
 
 // Styleguide (specific elements for styleguide, classes prefixed with sg-)
 @import 'styleguide/*.scss';
