@@ -6,7 +6,8 @@
     "lib": ["dom", "ES2020"],
     "noImplicitAny": false,
     "outDir": "dist",
-    "target": "ES2015"
+    "target": "ES2015",
+    "sourceMap": false
   },
   "include": ["src"],
   "exclude": ["**/*.test.*", "**/*-doc.*", "**/*.snap"]
