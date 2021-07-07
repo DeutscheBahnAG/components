@@ -78,38 +78,4 @@ module.exports = [
     name: 'Additional components',
     components: webExtra(['code']),
   },
-  {
-    name: 'Email kit',
-    content: 'packages/dbx-email-kit/README.md',
-    sections: [
-      {
-        name: 'Email',
-        content: 'packages/dbx-email-kit/src/email/README.md',
-      },
-      {
-        name: 'Email header',
-        content: 'packages/dbx-email-kit/src/email-header/README.md',
-      },
-      {
-        name: 'Email body',
-        content: 'packages/dbx-email-kit/src/email-body/README.md',
-      },
-      {
-        name: 'Email button',
-        content: 'packages/dbx-email-kit/src/email-button/README.md',
-      },
-      {
-        name: 'Email pincode',
-        content: 'packages/dbx-email-kit/src/email-pincode/README.md',
-      },
-      {
-        name: 'Email separator',
-        content: 'packages/dbx-email-kit/src/email-separator/README.md',
-      },
-      {
-        name: 'Email footer',
-        content: 'packages/dbx-email-kit/src/email-footer/README.md',
-      },
-    ],
-  },
 ];

@@ -6,7 +6,6 @@ and feel of Deutsche Bahn AG.
 ## Usage
 
 ```bash
-yarn add @bahn-x/dbx-email-kit;
 yarn add @bahn-x/dbx-foundation;
 yarn add @bahn-x/dbx-icons;
 yarn add @bahn-x/dbx-web;
@@ -79,7 +78,6 @@ import { Button } from '@bahn-x/dbx-web';
 - `yarn update-snapshots`: [Update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
 - `yarn commit`: See [writing commits](#writing-commits)
 - release:
-  - `yarn release:email-kit` - Run release-it for `dbx-email-kit`. It compiles required files as well.
   - `yarn release:foundation` - Run release-it for `dbx-foundation`.
   - `yarn release:icons` - Run release-it for `dbx-icons`. It compiles required files as well.
   - `yarn release:web` - Run release-it for `dbx-web`. It compiles required files as well.
