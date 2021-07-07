@@ -1,7 +1,7 @@
 {
   "name": "react-web-components",
   "private": true,
-  "version": "0.5.6",
+  "version": "0.0.0",
   "description": "DB React components for building websites and applications fast in the look and feel of Deutsche Bahn AG",
   "scripts": {
     "styleguidist": "styleguidist server",
