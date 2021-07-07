@@ -1,7 +1,7 @@
 # Button
 
 ```js
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 ```
 
 ```jsx
@@ -45,7 +45,7 @@ Like a Solid Button but with no background by default.
 This is mostly useful for icons (toggle menu, close dialogue, …).
 
 ```jsx
-import { NavigationClose } from '@bahn-x/react-icons';
+import { NavigationClose } from '@db-design/react-icons';
 
 <Button
   variant={Button.variants.HOVER_ONLY}
@@ -90,7 +90,7 @@ import { NavigationClose } from '@bahn-x/react-icons';
 Icons can be added as SVG. They must match the [DBX Icon specifications](https://dbx.bahn-x.de/foundation/icons) (24 × 24 px incl. 2 px safe area).
 
 ```jsx
-import { ActionAdd } from '@bahn-x/react-icons';
+import { ActionAdd } from '@db-design/react-icons';
 <Button icon={<ActionAdd />}>Button</Button>;
 ```
 
@@ -99,14 +99,14 @@ import { ActionAdd } from '@bahn-x/react-icons';
 Icon-only Buttons can be either squared or round. They can be combined with different sizes and variants.
 
 ```jsx
-import { ActionAdd } from '@bahn-x/react-icons';
+import { ActionAdd } from '@db-design/react-icons';
 <Button icon={<ActionAdd />} shape={Button.shapes.SQUARE}>
   Button
 </Button>;
 ```
 
 ```jsx
-import { ActionAdd } from '@bahn-x/react-icons';
+import { ActionAdd } from '@db-design/react-icons';
 <Button icon={<ActionAdd />} shape={Button.shapes.ROUND}>
   Button
 </Button>;
@@ -122,7 +122,7 @@ combinations shouldn’t be used and will raise a props validation warning.
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import { validateVariantCombinations } from './button';
-import { NavigationClose } from '@bahn-x/react-icons';
+import { NavigationClose } from '@db-design/react-icons';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 <>
@@ -380,7 +380,7 @@ The spacing used with a different Button size:
 Textfield and Button combined:
 
 ```jsx
-import { Textfield } from '@bahn-x/react';
+import { Textfield } from '@db-design/react';
 <>
   <Textfield size={Textfield.sizes.XL} value="Textfield" />
   <Button size={Button.sizes.XL}>Button</Button>

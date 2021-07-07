@@ -6,26 +6,15 @@ and feel of Deutsche Bahn AG.
 ## Usage
 
 ```bash
-yarn add @bahn-x/styles;
-yarn add @bahn-x/react-icons;
-yarn add @bahn-x/react;
-yarn add @bahn-x/react-extra;
+yarn add @db-design/styles;
+yarn add @db-design/react-icons;
+yarn add @db-design/react;
+yarn add @db-design/react-extra;
 ```
-
-### Setup Access to Private GitHub Repositories as Dependencies
-
-In case you have not set up BahnX Git repo access on your machine already, follow these steps:
-
-- Go to https://github.com/settings/tokens/new
-- Select `repo`, `write:packages`, and `read:packages` (without `repo` some verifications will fail)
-- Copy the token in the green field after submitting the form
-- Run `npm login --registry=https://npm.pkg.github.com --scope=@bahn-x` and enter your GitHub username, the token (not your GitHub password) and your email address
 
 ## How to Develop
 
 Clone this repository and start adding components. On the repository for the web site that will include the components, add this repository as a dependency in your `package.json`.
-
-If you don’t publish your component library via `npm`, you can [link to the Git Repository directly](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies). Both ways will work, as we don’t have a prepublish step but rather build the `dist` folder on the target machine after installing this package as dependency.
 
 ### Adding a New Component
 
@@ -56,15 +45,15 @@ In order to import your React component easily in other repositories, add it as 
 In your target application, you can then import the component like this:
 
 ```javascript
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 ```
 
 ### Available Tasks
 
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
-  - `yarn build:react`: Transpiles just the `@bahn-x/react` package to `./dist/web`.
-  - `yarn build:react-extra`: Transpiles just the `@bahn-x/react-extra` package to `./dist/web-extra`.
-  - `yarn build:react-icons`: Generates `@bahn-x/react-icons` from SVG sources. This _must_ run before any other script that requires the `@bahn-x/react-icons` package, as the javascript files do not exist before that.
+  - `yarn build:react`: Transpiles just the `@db-design/react` package to `./dist/web`.
+  - `yarn build:react-extra`: Transpiles just the `@db-design/react-extra` package to `./dist/web-extra`.
+  - `yarn build:react-icons`: Generates `@db-design/react-icons` from SVG sources. This _must_ run before any other script that requires the `@db-design/react-icons` package, as the javascript files do not exist before that.
 - `yarn build:styleguidist`: Generate Styleguidist documentation to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
 - `yarn build:docs`: Lints and tests components and then builds Styleguidist and Sassdoc pages to `./build`

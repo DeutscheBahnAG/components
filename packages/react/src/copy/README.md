@@ -1,7 +1,7 @@
 # Copy (typography)
 
 ```js
-import { Copy } from '@bahn-x/react';
+import { Copy } from '@db-design/react';
 ```
 
 ```jsx

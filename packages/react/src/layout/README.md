@@ -3,7 +3,7 @@
 Sets the basic layout of the whole page.
 
 ```js
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 ```
 
 ```jsx static
@@ -19,7 +19,7 @@ import { Layout } from '@bahn-x/react';
 ```
 
 ```jsx static
-import { Container } from '@bahn-x/react';
+import { Container } from '@db-design/react';
 
 <Layout variant={Layout.variants.CENTERED}>
   <Container width="full">

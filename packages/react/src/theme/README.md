@@ -1,11 +1,11 @@
 # Theme
 
 ```js
-import { Theme } from '@bahn-x/react';
+import { Theme } from '@db-design/react';
 ```
 
 ```jsx
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 <>
   <Button>DB Button</Button>
   <Theme theme={Theme.themes.S_BAHN}>
@@ -29,8 +29,8 @@ import {
   Title,
   Copy,
   Triptimespan,
-} from '@bahn-x/react';
-import Icons from '@bahn-x/react-icons';
+} from '@db-design/react';
+import Icons from '@db-design/react-icons';
 import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import { useState } from 'react';
 const [themeIndex, setThemeIndex] = useState(0);
@@ -164,7 +164,7 @@ Themes can and should be nested. Especially `DB` and `DB_ALTERNATE` are made to 
 Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours won’t apply.
 
 ```jsx
-import { Container, Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
 <>
   <Theme theme={Theme.themes.DB_ALTERNATE}>
     <Container

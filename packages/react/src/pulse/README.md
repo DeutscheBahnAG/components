@@ -1,7 +1,7 @@
 # Pulse
 
 ```js
-import { Pulse } from '@bahn-x/react';
+import { Pulse } from '@db-design/react';
 ```
 
 The Pulse is an [additional brand element of Deutsche Bahn’s corporate design](https://marketingportal.extranet.deutschebahn.com/en/pulse). It should be used in combination with the Logo.
@@ -15,7 +15,7 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
 The spacing of the Logo and Pulse follow very specific guidelines. The Pulse component has been developed to follow the guidelines and create a worry-free implementation for developers. To make advantage of the automatic spacing, put the text of your headline within the Pulse component:
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo />
   <Pulse>
@@ -30,7 +30,7 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 10 : 7 aspect ratio). For each size of the Logo there’s a matching Pulse.
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.M} />
   <Pulse size={Logo.sizes.M}>
@@ -40,7 +40,7 @@ import { Logo, Title } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.L} />
   <Pulse size={Logo.sizes.L}>
@@ -50,7 +50,7 @@ import { Logo, Title } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.XL} />
   <Pulse size={Logo.sizes.XL}>
@@ -60,7 +60,7 @@ import { Logo, Title } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>
@@ -70,7 +70,7 @@ import { Logo, Title } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>
@@ -80,7 +80,7 @@ import { Logo, Title } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Logo, Title } from '@bahn-x/react';
+import { Logo, Title } from '@db-design/react';
 <>
   <Logo size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>

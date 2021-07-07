@@ -1,7 +1,7 @@
 # Checkbox
 
 ```js
-import { Checkbox } from '@bahn-x/react';
+import { Checkbox } from '@db-design/react';
 ```
 
 ```jsx
@@ -38,7 +38,7 @@ The indeterminate state can’t be restored by the user. It must be reset via Ja
 
 ```jsx
 import { useState } from 'react';
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 import { spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 const ExampleComponent = () => {

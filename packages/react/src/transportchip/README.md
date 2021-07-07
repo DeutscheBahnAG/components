@@ -1,7 +1,7 @@
 # Transportchip
 
 ```js
-import { Transportchip } from '@bahn-x/react';
+import { Transportchip } from '@db-design/react';
 ```
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
@@ -90,7 +90,7 @@ On purpose the styles do invert contrast (usually the logo is white on dark back
 Cancelled trips must be indicated with a [fatal Status](#/Components/Feedback/Status) message below:
 
 ```jsx noeditor
-import { Status } from '@bahn-x/react';
+import { Status } from '@db-design/react';
 <>
   <Transportchip canceled name="IC 123" />
   <div style={{ marginTop: 8 }}>
@@ -102,7 +102,7 @@ import { Status } from '@bahn-x/react';
 ## Sizing
 
 ```jsx
-import { Copy, Title } from '@bahn-x/react';
+import { Copy, Title } from '@db-design/react';
 <span>
   Take <Transportchip name="S 1" />
   <Copy size={Copy.sizes.L}>

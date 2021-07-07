@@ -8,7 +8,7 @@ The options will be presented as a modal dialogue that can only be closed by sel
 ## Usage example
 
 ```js
-import { Consentlayer } from '@bahn-x/react';
+import { Consentlayer } from '@db-design/react';
 ```
 
 ```jsx

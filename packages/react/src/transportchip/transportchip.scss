@@ -1,6 +1,6 @@
 // stylelint-disable selector-no-qualifying-type, max-nesting-depth
-@import '@bahn-x/styles/abstracts.scss';
-@import '@bahn-x/styles/mixins/focus-ring';
+@import '@db-design/styles/abstracts.scss';
+@import '@db-design/styles/mixins/focus-ring';
 
 @mixin db-transportchip-default-border-radius {
   border-radius: 1em / db-font-size('copy', 'm') * db-border-radius('s');

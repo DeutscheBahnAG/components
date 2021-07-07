@@ -1,7 +1,7 @@
 # Passwordfield
 
 ```js
-import { Passwordfield } from '@bahn-x/react';
+import { Passwordfield } from '@db-design/react';
 ```
 
 ```jsx

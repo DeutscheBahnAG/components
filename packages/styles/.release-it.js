@@ -1,7 +1,7 @@
 module.exports = {
   git: {
-    commitMessage: 'chore: Release @bahn-x/styles@${version}',
+    commitMessage: 'chore: Release @db-design/styles@${version}',
     requireBranch: 'main',
-    tagName: '@bahn-x/styles@${version}',
+    tagName: '@db-design/styles@${version}',
   },
 };

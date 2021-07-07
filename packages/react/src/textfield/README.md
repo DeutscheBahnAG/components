@@ -1,7 +1,7 @@
 # Textfield
 
 ```js
-import { Textfield } from '@bahn-x/react';
+import { Textfield } from '@db-design/react';
 ```
 
 ```jsx
@@ -71,7 +71,7 @@ For technical reasons you might want to add a `prefix`. For example:
 Any icon can be used as a `prefix` or `suffix`. In most cases it makes sense to use them as a `prefix`:
 
 ```jsx
-import { JourneyDestination } from '@bahn-x/react-icons';
+import { JourneyDestination } from '@db-design/react-icons';
 <Textfield prefix={<JourneyDestination />} />;
 ```
 
@@ -80,8 +80,8 @@ import { JourneyDestination } from '@bahn-x/react-icons';
 Any icon can be used as a `prefix` or `suffix`. In most cases it makes sense to use them as a `prefix`:
 
 ```jsx
-import { Button } from '@bahn-x/react';
-import { NavigationClose } from '@bahn-x/react-icons';
+import { Button } from '@db-design/react';
+import { NavigationClose } from '@db-design/react-icons';
 <Textfield
   size={Textfield.sizes.L}
   suffix={
@@ -102,7 +102,7 @@ Important: Make sure the `size` of the Button (e.g. `Button.sizes.S`) is two ste
 In very special use cases it is also possible to visually put a Button into the Textfield (maybe validating/formatting/copying an input). Before using this possibility, think about if this can’t automatically happen `onBlur`.
 
 ```jsx
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 <Textfield
   size={Textfield.sizes.L}
   value="Some user input"

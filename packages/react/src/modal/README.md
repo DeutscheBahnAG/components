@@ -3,7 +3,7 @@
 Modals are used to focus the users’ attention to a certain information or decision. This Component extends [react-modal](https://www.npmjs.com/package/react-modal), additional properties are inherited from it.
 
 ```jsx
-import { Button, Copy } from '@bahn-x/react';
+import { Button, Copy } from '@db-design/react';
 const { primaryActions } = Modal;
 
 <Modal
@@ -37,7 +37,7 @@ The following case might not be necessary if unsaved data in your app would alwa
 If the app doesn’t offer a draft folder or it would be too confusing for the user in that particular situation, the following Modal dialogue could be a solution:
 
 ```jsx
-import { Button, Copy } from '@bahn-x/react';
+import { Button, Copy } from '@db-design/react';
 const { primaryActions, secondaryActions } = Modal;
 const saveAs = alert;
 const discardEdit = alert;
@@ -171,7 +171,7 @@ To use this feature, you need to add the Modal portal container manually as a si
 You can customise possible user actions with the `primaryButton` and `secondaryButton` props. The former takes a single rendered `PrimaryButton` element, the latter one or two secondary Button elements.
 
 ```jsx static
-import { Modal, Button } from '@bahn-x/react';
+import { Modal, Button } from '@db-design/react';
 const { primaryActions, secondaryActions } = Modal;
 
 <Modal
@@ -189,7 +189,7 @@ There are two ways to get these components:
 1. They are available as named exports in the Modal package:
 
    ```jsx static
-   import { Modal } from '@bahn-x/react';
+   import { Modal } from '@db-design/react';
    const { PrimaryButton, SecondaryButton } = Modal;
    // ...
    <Modal
@@ -201,7 +201,7 @@ There are two ways to get these components:
 2. They are exported as properties of the default export:
 
    ```jsx static
-   import { Modal } from '@bahn-x/react';
+   import { Modal } from '@db-design/react';
    // ...
    <Modal
      primaryButton={<Modal.PrimaryButton>This also works.</Modal.PrimaryButton>}

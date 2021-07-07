@@ -1,5 +1,5 @@
 {
-  "name": "@bahn-x/react-icons",
+  "name": "@db-design/react-icons",
   "version": "0.8.0-pre.0",
   "description": "DBX Icon components for React",
   "main": "dist/index.js",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@bahn-x/dbx-tokens": "0.7.0",
-    "@bahn-x/styles": "^0.11.0-pre.1",
+    "@db-design/styles": "^0.11.0-pre.1",
     "@svgr/cli": "^5.5.0",
     "camelcase": "^6.2.0",
     "release-it": "^14.2.2",

@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Button from '../react/src/button';
 import Notification from '../react/src/notification';
-import * as Icons from '@bahn-x/react-icons';
+import * as Icons from '@db-design/react-icons';
 
 const [message, setMessage] = useState(null);
 

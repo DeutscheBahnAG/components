@@ -1,7 +1,7 @@
 # Title (typography)
 
 ```js
-import { Title } from '@bahn-x/react';
+import { Title } from '@db-design/react';
 ```
 
 ```jsx

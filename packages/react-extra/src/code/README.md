@@ -10,7 +10,7 @@ The code component builds on top of the [refractor](https://github.com/wooorm/re
 
 ```jsx
 // import the Code component
-import { Code } from '@bahn-x/react-extra';
+import { Code } from '@db-design/react-extra';
 
 // use it like this:
 <Code>{`a {
@@ -22,7 +22,7 @@ import { Code } from '@bahn-x/react-extra';
 
 ```jsx
 // import the Code component
-import { Code } from '@bahn-x/react-extra';
+import { Code } from '@db-design/react-extra';
 // import the syntax highlighting config for your language:
 import css from 'refractor/lang/css';
 

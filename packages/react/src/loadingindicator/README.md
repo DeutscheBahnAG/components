@@ -1,7 +1,7 @@
 # Loadingindicator
 
 ```js
-import { Loadingindicator } from '@bahn-x/react';
+import { Loadingindicator } from '@db-design/react';
 ```
 
 ```jsx

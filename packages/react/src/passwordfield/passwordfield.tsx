@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 import React, { useRef, useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
-import { ActionVisibility, ActionVisibilityOff } from '@bahn-x/react-icons';
+import { ActionVisibility, ActionVisibilityOff } from '@db-design/react-icons';
 import Textfield, { TextfieldSize, TextfieldRef } from '../textfield/textfield';
 import Button from '../button';
 

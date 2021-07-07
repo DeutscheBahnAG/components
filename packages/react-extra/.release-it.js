@@ -1,7 +1,7 @@
 module.exports = {
   git: {
-    commitMessage: 'chore: Release @bahn-x/react-extra@${version}',
+    commitMessage: 'chore: Release @db-design/react-extra@${version}',
     requireBranch: 'main',
-    tagName: '@bahn-x/react-extra@${version}',
+    tagName: '@db-design/react-extra@${version}',
   },
 };

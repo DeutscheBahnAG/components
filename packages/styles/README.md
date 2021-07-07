@@ -5,7 +5,7 @@
 To link all fonts required to display BahnX components, add to your main Sass file:
 
 ```scss
-@import '@bahn-x/styles/fonts';
+@import '@db-design/styles/fonts';
 ```
 
 This will link to WOFF and WOFF2 files on our CDN. The CDN will be kept up-to-date with the latest versions of our fonts.

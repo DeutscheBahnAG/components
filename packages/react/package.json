@@ -1,5 +1,5 @@
 {
-  "name": "@bahn-x/react",
+  "name": "@db-design/react",
   "version": "0.21.0-pre.7",
   "description": "DBX React Components",
   "repository": {
@@ -11,8 +11,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@bahn-x/styles": "^0.11.0-pre.1",
-    "@bahn-x/react-icons": "^0.8.0-pre.0",
+    "@db-design/styles": "^0.11.0-pre.1",
+    "@db-design/react-icons": "^0.8.0-pre.0",
     "clsx": "^1.1.1",
     "core-js": "^3.8.2",
     "include-media": "^1.4.9",

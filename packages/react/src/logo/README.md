@@ -1,7 +1,7 @@
 # Logo
 
 ```js
-import { Logo } from '@bahn-x/react';
+import { Logo } from '@db-design/react';
 ```
 
 ```jsx

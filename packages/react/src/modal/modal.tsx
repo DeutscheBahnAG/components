@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import clsx from 'clsx';
-import { NavigationClose } from '@bahn-x/react-icons';
+import { NavigationClose } from '@db-design/react-icons';
 import Button from '../button';
 import Title from '../title';
 

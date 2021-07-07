@@ -1,8 +1,8 @@
 module.exports = {
   git: {
-    commitMessage: 'chore: Release @bahn-x/react@${version}',
+    commitMessage: 'chore: Release @db-design/react@${version}',
     requireBranch: 'main',
-    tagName: '@bahn-x/react@${version}',
+    tagName: '@db-design/react@${version}',
   },
   npm: {
     publishPath: 'dist',

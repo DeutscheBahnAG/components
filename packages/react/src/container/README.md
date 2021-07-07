@@ -1,11 +1,11 @@
 # Container
 
 ```js
-import { Container } from '@bahn-x/react';
+import { Container } from '@db-design/react';
 ```
 
 ```jsx noeditor
-import { Notification, Button } from '@bahn-x/react';
+import { Notification, Button } from '@db-design/react';
 const onClick = () => {
   const isolatedLink = document.querySelector(
     '[data-testid="Container-isolate-button"]'
@@ -65,28 +65,28 @@ const onClick = () => {
 ## Left-aligned layout
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.CONTENT}>Content</Container>
 </Layout>;
 ```
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.EXTENDED}>Content</Container>
 </Layout>;
 ```
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.FULL}>Content</Container>
 </Layout>;
 ```
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.TEXT}>Content</Container>
 </Layout>;
@@ -109,7 +109,7 @@ Containers can and should be nested.
 ```
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.EXTENDED}>
     <Container width={Container.widths.CONTENT}>Content</Container>
@@ -118,7 +118,7 @@ import { Layout } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Layout } from '@bahn-x/react';
+import { Layout } from '@db-design/react';
 <Layout variant={Layout.variants.LEFT_ALIGNED}>
   <Container width={Container.widths.FULL}>
     <Container width={Container.widths.CONTENT}>Content</Container>
@@ -131,7 +131,7 @@ import { Layout } from '@bahn-x/react';
 No align (= left):
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width={Container.widths.CONTENT}>
   <Logo />
   <Pulse>
@@ -151,7 +151,7 @@ import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
 Center everything:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
   <Logo />
   <Pulse>
@@ -171,7 +171,7 @@ import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
 Center most things, but reset the text align for the copy:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
   <Logo />
   <Pulse>
@@ -191,7 +191,7 @@ import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
 Possible for edge-cases: completely reset the text align for the copy:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
   <Logo />
   <Pulse>
@@ -213,7 +213,7 @@ import { Logo, Pulse, Title, Copy } from '@bahn-x/react';
 ## Background colours/themes
 
 ```jsx
-import { Theme, Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container
   filled
   width={Container.widths.FULL}
@@ -235,7 +235,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@bahn-x/react';
 ```
 
 ```jsx
-import { Theme, Logo, Pulse, Title, Copy } from '@bahn-x/react';
+import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 <Theme theme={Theme.themes.DB_ALTERNATE}>
   <Container
     filled

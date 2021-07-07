@@ -1,7 +1,7 @@
 # Notification
 
 ```js
-import { Notification } from '@bahn-x/react';
+import { Notification } from '@db-design/react';
 ```
 
 ```jsx
@@ -81,7 +81,7 @@ import { Notification } from '@bahn-x/react';
 
 ```jsx noeditor
 import React, { useState } from 'react';
-import { Button } from '@bahn-x/react';
+import { Button } from '@db-design/react';
 const [isOpen, setOpen] = useState(false);
 <>
   {isOpen && <Notification global message="A global Notification" />}
@@ -99,7 +99,7 @@ being read out. This example is to demonstrate the accessibility feature only.
 
 ```jsx noeditor
 import React, { useState, useEffect } from 'react';
-import { Button, Copy } from '@bahn-x/react';
+import { Button, Copy } from '@db-design/react';
 const [isOpen, setOpen] = useState(false);
 const LiveNotifications = () => {
   const [notifications, setNotifications] = useState([]);
