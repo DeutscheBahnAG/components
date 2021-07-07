@@ -67,7 +67,7 @@ stages:
   image: bahnx/cd-base:latest
   stage: build
   script:
-    - /build-push-docker.sh --image=web/dbx-web
+    - /build-push-docker.sh --image=web/react
 
 .deploy:
   image: bahnx/cd-base:latest

@@ -23,9 +23,9 @@ module.exports = {
 
   ignore: [
     // These also need to be exlucded in the webpack config below
-    '**/packages/dbx-icons/dist/**',
-    '**/packages/dbx-web/dist/**',
-    '**/packages/dbx-web-extra/dist/**',
+    '**/packages/react-icons/dist/**',
+    '**/packages/react/dist/**',
+    '**/packages/react-extra/dist/**',
     '**/*.test.{js,jsx,ts,tsx}',
     '**/*.stories.{js,jsx,ts,tsx}',
     '**/*.d.ts',
@@ -62,7 +62,7 @@ module.exports = {
         // {.js,jsx}
         {
           test: /\.jsx?$/,
-          exclude: [/node_modules/, /dbx-icons\/dist/, /dbx-web\/dist/, /dbx-web-extra\/dist/],
+          exclude: [/node_modules/, /react-icons\/dist/, /react\/dist/, /react-extra\/dist/],
           loader: 'babel-loader',
         },
         // {.ts,tsx}

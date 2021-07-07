@@ -1,6 +1,6 @@
 // Abstracts (constants, functions and mixins)
-@import '@bahn-x/dbx-foundation/abstracts';
-@import '@bahn-x/dbx-foundation/fonts';
+@import '@bahn-x/styles/abstracts';
+@import '@bahn-x/styles/fonts';
 
 // Vendor (Vendor specific styles: DSM design tokens, Include media mixin...)
 @import 'vendor/**/*.scss';
@@ -12,9 +12,9 @@
 @import 'helpers/*.scss';
 
 // Components & Component Stories
-@import '../packages/dbx-icons/*.scss';
-@import '../packages/dbx-web/src/**/*.scss';
-@import '../packages/dbx-web-extra/src/**/*.scss';
+@import '../packages/react-icons/*.scss';
+@import '../packages/react/src/**/*.scss';
+@import '../packages/react-extra/src/**/*.scss';
 
 // Styleguide (specific elements for styleguide, classes prefixed with sg-)
 @import 'styleguide/*.scss';

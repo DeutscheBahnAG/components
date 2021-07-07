@@ -6,10 +6,10 @@ and feel of Deutsche Bahn AG.
 ## Usage
 
 ```bash
-yarn add @bahn-x/dbx-foundation;
-yarn add @bahn-x/dbx-icons;
-yarn add @bahn-x/dbx-web;
-yarn add @bahn-x/dbx-web-extra;
+yarn add @bahn-x/styles;
+yarn add @bahn-x/react-icons;
+yarn add @bahn-x/react;
+yarn add @bahn-x/react-extra;
 ```
 
 ### Setup Access to Private GitHub Repositories as Dependencies
@@ -31,9 +31,9 @@ If you don’t publish your component library via `npm`, you can [link to the Gi
 
 This is a multi-package repository. Each component library is a separate Node package with it's own `package.json`. This is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces). They reside in `./packages`.
 
-- `dbx-web`: Core components, for general use.
-- `dbx-web-extra`: Additional components for edge use cases.
-- `dbx-icons`: Icon components.
+- `react`: Core components, for general use.
+- `react-extra`: Additional components for edge use cases.
+- `react-icons`: Icon components.
 
 Components should be placed in the appropriate package folder, in their own subfolder.
 
@@ -56,15 +56,15 @@ In order to import your React component easily in other repositories, add it as 
 In your target application, you can then import the component like this:
 
 ```javascript
-import { Button } from '@bahn-x/dbx-web';
+import { Button } from '@bahn-x/react';
 ```
 
 ### Available Tasks
 
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
-  - `yarn build:web`: Transpiles just the `@bahn-x/dbx-web` package to `./dist/web`.
-  - `yarn build:web-extra`: Transpiles just the `@bahn-x/dbx-web-extra` package to `./dist/web-extra`.
-  - `yarn build:icons`: Generates `@bahn-x/dbx-icons` from SVG sources. This _must_ run before any other script that requires the `@bahn-x/dbx-icons` package, as the javascript files do not exist before that.
+  - `yarn build:react`: Transpiles just the `@bahn-x/react` package to `./dist/web`.
+  - `yarn build:react-extra`: Transpiles just the `@bahn-x/react-extra` package to `./dist/web-extra`.
+  - `yarn build:react-icons`: Generates `@bahn-x/react-icons` from SVG sources. This _must_ run before any other script that requires the `@bahn-x/react-icons` package, as the javascript files do not exist before that.
 - `yarn build:styleguidist`: Generate Styleguidist documentation to `./build`
 - `yarn build:sassdoc`: Generate SCSS documentation to `./build/sassdoc`
 - `yarn build:docs`: Lints and tests components and then builds Styleguidist and Sassdoc pages to `./build`
@@ -78,10 +78,10 @@ import { Button } from '@bahn-x/dbx-web';
 - `yarn update-snapshots`: [Update jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) in case you intentionally changed the markup of your components
 - `yarn commit`: See [writing commits](#writing-commits)
 - release:
-  - `yarn release:foundation` - Run release-it for `dbx-foundation`.
-  - `yarn release:icons` - Run release-it for `dbx-icons`. It compiles required files as well.
-  - `yarn release:web` - Run release-it for `dbx-web`. It compiles required files as well.
-  - `yarn release:web-extra` - Run release-it for `dbx-web-extra`. It compiles required files as well.
+  - `yarn release:styles` - Run release-it for `styles`.
+  - `yarn release:react-icons` - Run release-it for `react-icons`. It compiles required files as well.
+  - `yarn release:react` - Run release-it for `react`. It compiles required files as well.
+  - `yarn release:react-extra` - Run release-it for `react-extra`. It compiles required files as well.
 
 ### Writing Commits
 

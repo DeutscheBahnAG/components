@@ -2,27 +2,12 @@ const glob = require('glob');
 
 // Find component file; prefer `<name>-doc.jsx` if defined:
 const web = (components) =>
-  components.map((c) => glob.sync(`packages/dbx-web/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+  components.map((c) => glob.sync(`packages/react/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
 
 const webExtra = (components) =>
-  components.map((c) => glob.sync(`packages/dbx-web-extra/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+  components.map((c) => glob.sync(`packages/react-extra/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
 
 module.exports = [
-  {
-    name: 'Foundation',
-    content: 'packages/dbx-foundation/README.md',
-    sections: [
-      {
-        name: 'Mixins',
-        sections: [
-          {
-            name: 'Link',
-            content: 'packages/dbx-foundation/mixins/_link.md',
-          },
-        ],
-      },
-    ],
-  },
   {
     name: 'Components',
     sections: [
@@ -66,16 +51,31 @@ module.exports = [
     sections: [
       {
         name: 'Icons',
-        content: 'packages/dbx-icons/README.md',
+        content: 'packages/react-icons/README.md',
       },
       {
         name: 'Overview',
-        content: 'packages/dbx-icons/overview.md',
+        content: 'packages/react-icons/overview.md',
       },
     ],
   },
   {
     name: 'Additional components',
     components: webExtra(['code']),
+  },
+  {
+    name: 'Styles',
+    content: 'packages/styles/README.md',
+    sections: [
+      {
+        name: 'Mixins',
+        sections: [
+          {
+            name: 'Link',
+            content: 'packages/styles/mixins/_link.md',
+          },
+        ],
+      },
+    ],
   },
 ];

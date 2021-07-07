@@ -1,0 +1,169 @@
+@import '@bahn-x/styles/abstracts.scss';
+@import '@bahn-x/styles/mixins/focus-ring';
+
+@mixin db-button(
+  $bg-color,
+  $bg-color--hover,
+  $bg-color--pressed,
+  $bg-color--disabled,
+  $text-color,
+  $text-color--hover,
+  $text-color--pressed,
+  $text-color--disabled,
+  $border-color: transparent,
+  $border-color--hover: transparent,
+  $border-color--pressed: transparent,
+  $border-color--disabled: transparent
+) {
+  @include db-button-reset;
+  @include db-text-style('copy');
+  @include db-focus-ring(
+    $transition:
+    'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in'
+  );
+  align-items: center;
+  display: inline-flex;
+  background-color: $bg-color;
+  justify-content: center;
+  text-decoration: none;
+  border: db-border-width('button') solid
+    if($border-color == none, transparent, $border-color);
+  color: $text-color;
+  cursor: pointer;
+
+  &.db-button--disabled,
+  &.db-button--disabled:hover,
+  &.db-button--disabled:active,
+  &.db-button--disabled:focus {
+    color: $text-color--disabled;
+    background-color: $bg-color--disabled;
+    border-color: $border-color--disabled;
+    cursor: default;
+  }
+
+  &:hover,
+  &.db-button--loading,
+  &.db-button--loading:active,
+  &.db-button--loading:focus {
+    background-color: $bg-color--hover;
+    color: $text-color--hover;
+    border-color: $border-color--hover;
+  }
+
+  &:active {
+    background-color: $bg-color--pressed;
+    color: $text-color--pressed;
+    border-color: $border-color--pressed;
+  }
+}
+
+.db-button--block {
+  display: block;
+  width: 100%;
+}
+
+.db-button--primary {
+  @include db-button(
+    $bg-color: var(--db-primary-button-background-color),
+    $bg-color--hover: var(--db-primary-button-hover-background-color),
+    $bg-color--pressed: var(--db-primary-button-pressed-background-color),
+    $bg-color--disabled: var(--db-primary-button-disabled-background-color),
+    $text-color: var(--db-primary-button-text-color),
+    $text-color--hover: var(--db-primary-button-hover-text-color),
+    $text-color--pressed: var(--db-primary-button-pressed-text-color),
+    $text-color--disabled: var(--db-primary-button-disabled-text-color)
+  );
+  font-weight: db-font-weight('copy', 'bold');
+}
+
+.db-button--secondary {
+  @include db-button(
+    $bg-color: var(--db-secondary-button-background-color),
+    $bg-color--hover: var(--db-secondary-button-hover-background-color),
+    $bg-color--pressed: var(--db-secondary-button-pressed-background-color),
+    $bg-color--disabled: var(--db-secondary-button-disabled-background-color),
+    $text-color: var(--db-secondary-button-text-color),
+    $text-color--hover: var(--db-secondary-button-hover-text-color),
+    $text-color--pressed: var(--db-secondary-button-pressed-text-color),
+    $text-color--disabled: var(--db-secondary-button-disabled-text-color),
+    $border-color: var(--db-loud-border-color),
+    $border-color--hover: var(--db-loud-border-color),
+    $border-color--pressed: var(--db-loud-border-color)
+  );
+}
+
+.db-button--solid {
+  @include db-button(
+    $bg-color: var(--db-solid-button-background-color),
+    $bg-color--hover: var(--db-solid-button-hover-background-color),
+    $bg-color--pressed: var(--db-solid-button-pressed-background-color),
+    $bg-color--disabled: var(--db-solid-button-disabled-background-color),
+    $text-color: var(--db-solid-button-text-color),
+    $text-color--hover: var(--db-solid-button-hover-text-color),
+    $text-color--pressed: var(--db-solid-button-pressed-text-color),
+    $text-color--disabled: var(--db-solid-button-disabled-text-color)
+  );
+}
+
+.db-button--hover-only {
+  @include db-button(
+    $bg-color: transparent,
+    $bg-color--hover: var(--db-solid-button-background-color),
+    $bg-color--pressed: var(--db-solid-button-hover-background-color),
+    $bg-color--disabled: transparent,
+    $text-color: var(--db-solid-button-text-color),
+    $text-color--hover: var(--db-solid-button-hover-text-color),
+    $text-color--pressed: var(--db-solid-button-pressed-text-color),
+    $text-color--disabled: var(--db-solid-button-disabled-text-color)
+  );
+}
+
+@each $size in (xl l m s xs) {
+  .db-button--#{$size} {
+    @include db-component-text-style($size, 'button');
+    @include db-component-padding($size, 'button');
+
+    border-radius: db-border-radius($size);
+    min-height: db-size($size);
+    min-width: 4 * db-size($size);
+
+    &.db-button--default:not(.db-button--loading) > svg {
+      margin-right: db-component-icon-gap(db-component-textsize($size));
+    }
+
+    &.db-button--square,
+    &.db-button--round {
+      padding: db-component-vertical-padding($size, 'button');
+      padding: (db-size($size) - db-icon-size('m')) /
+        2 -
+        db-border-width('button');
+      min-width: db-size($size);
+      width: db-size($size);
+    }
+  }
+}
+
+.db-button--square,
+.db-button--round,
+.db-button--solid,
+.db-button--hover-only {
+  min-width: unset;
+}
+
+.db-button--loading {
+  .db-loadingindicator {
+    background: inherit;
+    position: absolute;
+    min-width: inherit;
+    border-left: inherit;
+    border-right: inherit;
+  }
+}
+
+.db-button--round {
+  border-radius: 50%;
+}
+
+.db-button [aria-hidden='false'] {
+  @include db-visually-hidden;
+}

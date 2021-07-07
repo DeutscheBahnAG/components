@@ -35,7 +35,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.{test,config}.{js,ts,jsx,tsx}', 'packages/dbx-foundation/*'],
+      files: ['**/*.{test,config}.{js,ts,jsx,tsx}', 'packages/styles/*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },

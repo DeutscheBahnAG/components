@@ -1,0 +1,12 @@
+@import '@bahn-x/styles/abstracts.scss';
+@import 'theme/theme.scss';
+
+.db-inline-spacer {
+  font-size: 0;
+  margin-left: db-spacing('m');
+  margin-top: db-spacing('m');
+
+  &:last-child {
+    margin: 0;
+  }
+}

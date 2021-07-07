@@ -1,0 +1,111 @@
+@import '@bahn-x/styles/abstracts.scss';
+
+$db-logo-sizes: (
+  'xs': 14px,
+  's': 21px,
+  'm': 28px,
+  'l': 35px,
+  'xl': 42px,
+  'xxl': 56px,
+);
+
+.db-logo {
+  @include db-hide-text;
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: var(--db-logo-color);
+  }
+
+  rect {
+    fill: transparent;
+  }
+}
+
+.db-logo--default,
+.db-logo--filled {
+  path {
+    fill: db-color('brand');
+  }
+}
+
+.db-logo--white path,
+.db-logo--filled rect {
+  fill: db-background-color('primary');
+}
+
+.db-logo[href]:focus {
+  @include db-focus-ring;
+}
+
+/**
+  * 1. To allow the ::after to be inline-block without addional margin caused
+  *    by the line-height. Inline-blocks inherit the text-align. This way the
+  *    Logo and the Pulse can be centered by applying `text-align: center`.
+  */
+.db-pulse {
+  color: var(--db-primary-text-color);
+  display: block;
+  line-height: 0; /* 1 */
+
+  &::after {
+    background: var(--db-pulse-background);
+    content: '';
+    display: inline-block; /* 1 */
+  }
+
+  /**
+   * 2. Left-align text to the left (remove side bearing).
+   *    When using two differnt font sizes, this effect becomes more visual.
+   */
+  > * {
+    margin: 0 calc(-0.07em + 1px); /* 2 */
+  }
+}
+
+.db-pulse--default {
+  &::after {
+    background: db-color('brand');
+  }
+}
+
+.db-pulse--white {
+  color: var(--db-primary-text-color);
+
+  &::after {
+    background: #fff;
+  }
+}
+
+@each $size, $height in $db-logo-sizes {
+  .db-logo--#{$size} {
+    border-radius: $height / 7.1;
+    height: $height;
+    width: $height / 7 * 10;
+  }
+
+  .db-logo--#{$size} ~ .db-pulse,
+  .db-pulse--#{$size} {
+    /**
+     * 3. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
+     */
+    &::after {
+      border-radius: $height / 7 / 2; /* 3 */
+      height: $height / 7; /* 3 */
+      width: $height / 7 * 10; /* 3 */
+    }
+
+    /**
+     * 4. Result: Visually half a Logo height from cap height/baseline
+     *    marketingportal.extranet.deutschebahn.com/en/layout#5f1cb927-48c0-4f94-a321-80fd20ac8517
+     */
+    > :first-child {
+      margin-top: calc(#{$height / 2} - 0.21em); /* 4 */
+    }
+
+    > :last-child {
+      margin-bottom: calc(#{$height / 2} - 0.16em); /* 4 */
+    }
+  }
+}

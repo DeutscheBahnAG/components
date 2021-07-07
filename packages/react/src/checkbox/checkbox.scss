@@ -1,0 +1,111 @@
+@import '@bahn-x/styles/abstracts.scss';
+
+/**
+ * 1. Setting the size avoids loosing the focus while clicking (which lets the focus ring flicker).
+ * 2. Safari bugfix: Avoid subpixel shifts between the border and the SVG in case the container
+ *    element is centered in a parent with uneven width. As a result the tick/dash wasn’t centered
+ *    within the square anymore. `1` must be use as `0` would crop the focus ring.
+ * 3. Avoid block links
+ * 4. Optimize visual alignment (0.01em) due to different font sizes
+ */
+
+$db-checkbox-size: 16px;
+$db-checkbox-outer-size: $db-checkbox-size + 2 * db-border-width('checkbox');
+$db-checkbox-gap: 0.4em;
+
+.db-checkbox {
+  align-items: baseline;
+  box-sizing: border-box;
+  color: var(--db-primary-text-color);
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  input {
+    @include db-focus-ring($target: '+ .db-checkbox-box');
+    height: 100%; /* 1 */
+    min-height: 24px; /* 1 */
+    min-width: 24px; /* 1 */
+    opacity: 0;
+    position: absolute;
+    width: 100%; /* 1 */
+    z-index: 1;
+  }
+
+  :disabled ~ * {
+    color: var(--db-disabled-text-color);
+  }
+}
+
+.db-checkbox-box {
+  background: var(--db-primary-background-color);
+  border: db-border-width('checkbox') solid;
+  border-radius: 2.2px;
+  box-sizing: content-box;
+  flex-shrink: 0;
+  height: $db-checkbox-size;
+  position: relative;
+  top: 4px;
+  width: $db-checkbox-size;
+
+  svg {
+    display: block;
+    height: inherit;
+    position: absolute; /* 2 */
+    transform: translateZ(0); /* 2 */
+    left: 50%; /* 2 */
+    transform: translateX(-50%); /* 2 */
+    width: inherit;
+  }
+
+  .db-checkbox:active > input:not(:disabled) + & {
+    background: var(--db-secondary-background-color);
+  }
+}
+
+.db-checkbox-checked,
+.db-checkbox-indeterminate {
+  fill: transparent;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.1s cubic-bezier(0.3, 0, 0.8, 1.8);
+}
+
+:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked,
+:indeterminate + .db-checkbox-box .db-checkbox-indeterminate {
+  fill: currentColor;
+  transform: scale(1);
+}
+
+.db-checkbox-label {
+  margin-left: $db-checkbox-gap;
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.db-checkbox__footer {
+  @include db-text-style('copy', 's');
+  align-items: flex-start /* 3 */;
+  color: var(--db-primary-text-color);
+  display: flex;
+  flex-direction: column;
+  grid-gap: db-spacing('s');
+  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em)
+    /* 4 */;
+  margin-top: db-spacing('xs');
+
+  > a {
+    @include db-primary-link;
+  }
+
+  > * + * {
+    margin-top: db-spacing('xs');
+  }
+
+  > a + p {
+    margin-top: db-spacing('sm');
+  }
+}

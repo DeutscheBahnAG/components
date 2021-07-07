@@ -10,8 +10,8 @@ module.exports = {
   modulePathIgnorePatterns: [
     '.cache',
     '<rootDir>/dist/',
-    '<rootDir>/packages/dbx-web/dist',
-    '<rootDir>/packages/dbx-icons/dist',
+    '<rootDir>/packages/react/dist',
+    '<rootDir>/packages/react-icons/dist',
   ],
   setupFiles: [
     '<rootDir>/.jest/shim.js', // makes jest work with React 16

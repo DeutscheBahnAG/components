@@ -1,0 +1,67 @@
+@import '@bahn-x/styles/abstracts.scss';
+
+.db-consentlayer__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.db-consentlayer__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.db-consentlayer__option {
+  margin-top: db-spacing('m');
+}
+
+.db-consentlayer__message {
+  flex-grow: 1;
+}
+
+.db-consentlayer__privacy-message {
+  display: flex;
+  flex-direction: column;
+  margin: db-spacing('ml') 0 db-spacing('s');
+
+  @include media('>=medium') {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  > :not(:first-child) {
+    margin-top: db-spacing('s');
+  }
+}
+
+.db-consentlayer__message,
+.db-consentlayer__privacy-message {
+  a {
+    @include db-primary-link;
+  }
+}
+
+.db-consentlayer__message p,
+.db-consentlayer__privacy-message p,
+.db-consentlayer__text {
+  @include db-text-style('copy');
+  margin: 0;
+  text-align: left;
+}
+
+.db-contentlayer__important-link {
+  margin: 0 db-spacing('sm') 0 0;
+
+  @include media('>=medium') {
+    margin: 0 0 0 db-spacing('sm');
+  }
+
+  a {
+    @include db-secondary-link;
+  }
+}

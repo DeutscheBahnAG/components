@@ -7,13 +7,13 @@ repositories:
     url: https://bahnhub.tech.rz.db.de/artifactory/tdpxw-helm-release-virtual
 
 releases:
-  - name: dbx-web
+  - name: react
     chart: bahnx/service
     version: 1.3.0
     values:
       - values.yaml.gotmpl
       - image:
-          repository: {{ requiredEnv "DOCKER_REGISTRY" }}/{{ requiredEnv "STAGE" }}/web/dbx-web
+          repository: {{ requiredEnv "DOCKER_REGISTRY" }}/{{ requiredEnv "STAGE" }}/web/react
           tag: {{ requiredEnv "CI_COMMIT_SHA" | quote }}
         service:
           port: 8080
@@ -27,7 +27,7 @@ releases:
             kubernetes.io/tls-acme: "true"
             nginx.ingress.kubernetes.io/auth-type: basic
             # name of the secret that contains the user/password definitions
-            nginx.ingress.kubernetes.io/auth-secret: dbx-web-service
+            nginx.ingress.kubernetes.io/auth-secret: react-service
             # message to display with an appropriate context why the authentication is required
             nginx.ingress.kubernetes.io/auth-realm: 'DPP'
             {{ else }}

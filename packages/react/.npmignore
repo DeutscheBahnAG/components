@@ -1,0 +1,10 @@
+# Documentation
+*-doc.js
+*-doc.scss
+*-doc.css
+# Tests
+*.snap
+*.test.*
+#
+.release-it.js
+tsconfig.build.json
