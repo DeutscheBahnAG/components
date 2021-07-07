@@ -2,7 +2,7 @@
 
 exports[`Modal Component alertdialog role 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -19,34 +19,34 @@ exports[`Modal Component alertdialog role 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="alertdialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -65,13 +65,13 @@ exports[`Modal Component alertdialog role 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal should have alert role.
           </main>
@@ -90,7 +90,7 @@ exports[`Modal Component alertdialog role 1`] = `
 
 exports[`Modal Component no close button 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -107,44 +107,44 @@ exports[`Modal Component no close button 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           />
           <main
-            class="dbx-modal__content"
+            class="db-modal__content"
           >
             Modal without a close button.
           </main>
@@ -163,7 +163,7 @@ exports[`Modal Component no close button 1`] = `
 
 exports[`Modal Component render PrimaryButton 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -180,52 +180,52 @@ exports[`Modal Component render PrimaryButton 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -244,30 +244,30 @@ exports[`Modal Component render PrimaryButton 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal with PrimaryButton.
           </main>
           <div
-            class="dbx-modal__actions"
+            class="db-modal__actions"
           >
             <div
-              class="dbx-modal__action dbx-modal__action--primary"
+              class="db-modal__action db-modal__action--primary"
             >
               <button
-                class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+                class="db-button db-button--primary db-button--default db-button--l"
                 type="button"
               >
                 Primary Button Here
               </button>
               <span
-                class="dbx-inline-spacer"
+                class="db-inline-spacer"
               >
                  
               </span>
@@ -288,7 +288,7 @@ exports[`Modal Component render PrimaryButton 1`] = `
 
 exports[`Modal Component render SecondaryButton 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -305,55 +305,55 @@ exports[`Modal Component render SecondaryButton 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -372,30 +372,30 @@ exports[`Modal Component render SecondaryButton 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal with SecondaryButton.
           </main>
           <div
-            class="dbx-modal__actions"
+            class="db-modal__actions"
           >
             <div
-              class="dbx-modal__action dbx-modal__action--secondary"
+              class="db-modal__action db-modal__action--secondary"
             >
               <button
-                class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+                class="db-button db-button--primary db-button--default db-button--l"
                 type="button"
               >
                 Secondary Button Here
               </button>
               <span
-                class="dbx-inline-spacer"
+                class="db-inline-spacer"
               >
                  
               </span>
@@ -416,7 +416,7 @@ exports[`Modal Component render SecondaryButton 1`] = `
 
 exports[`Modal Component render optional properties 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -433,32 +433,32 @@ exports[`Modal Component render optional properties 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal some-overlay-class dbx-modal--open"
+        class="db-modal some-overlay-class db-modal--open"
       >
         <div
           aria-describedby="modal-desc"
           aria-labelledby="modal-label"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m some-class dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m some-class db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header"
+            class="db-modal__header"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Custom text"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -477,23 +477,23 @@ exports[`Modal Component render optional properties 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
             <h2
-              class="dbx-modal__title"
+              class="db-modal__title"
               id="ariaLabelledBy"
             >
               <span
-                class="dbx-title dbx-title--size-l"
+                class="db-title db-title--size-l"
               >
                 Modal TITLE
               </span>
             </h2>
           </header>
           <main
-            class="dbx-modal__content"
+            class="db-modal__content"
           >
             This is a basic render including optional properties.
           </main>
@@ -512,7 +512,7 @@ exports[`Modal Component render optional properties 1`] = `
 
 exports[`Modal Component render required properties only 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -529,28 +529,28 @@ exports[`Modal Component render required properties only 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -569,13 +569,13 @@ exports[`Modal Component render required properties only 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             This is a basic render of required properties.
           </main>
@@ -594,7 +594,7 @@ exports[`Modal Component render required properties only 1`] = `
 
 exports[`Modal Component size auto 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -611,37 +611,37 @@ exports[`Modal Component size auto 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-auto dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-auto db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -660,13 +660,13 @@ exports[`Modal Component size auto 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal should have size=
             auto
@@ -689,7 +689,7 @@ exports[`Modal Component size auto 1`] = `
 
 exports[`Modal Component size l 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -706,46 +706,46 @@ exports[`Modal Component size l 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-l dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-l db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -764,13 +764,13 @@ exports[`Modal Component size l 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal should have size=
             l
@@ -793,7 +793,7 @@ exports[`Modal Component size l 1`] = `
 
 exports[`Modal Component size m 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -810,43 +810,43 @@ exports[`Modal Component size m 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-m dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-m db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -865,13 +865,13 @@ exports[`Modal Component size m 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal should have size=
             m
@@ -894,7 +894,7 @@ exports[`Modal Component size m 1`] = `
 
 exports[`Modal Component size s 1`] = `
 <body
-  class="body--dbx-modal-open"
+  class="body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -911,40 +911,40 @@ exports[`Modal Component size s 1`] = `
     id="portal-test-id"
   >
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     />
     <div
-      class="dbx-modal-portal"
+      class="db-modal-portal"
     >
       <div
-        class="dbx-modal dbx-modal--open"
+        class="db-modal db-modal--open"
       >
         <div
           aria-labelledby="modal-title"
           aria-modal="true"
-          class="dbx-modal__dialog dbx-modal__dialog--width-s dbx-modal__dialog--open"
+          class="db-modal__dialog db-modal__dialog--width-s db-modal__dialog--open"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="dbx-modal__header dbx-modal__header--collapse"
+            class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="dbx-button dbx-button--hover-only dbx-button--square dbx-button--m dbx-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
               <svg
-                class="dbx-icon"
+                class="db-icon"
                 height="24"
                 role="img"
                 width="24"
@@ -963,13 +963,13 @@ exports[`Modal Component size s 1`] = `
               </span>
             </button>
             <span
-              class="dbx-inline-spacer"
+              class="db-inline-spacer"
             >
                
             </span>
           </header>
           <main
-            class="dbx-modal__content dbx-modal__content--right-gap"
+            class="db-modal__content db-modal__content--right-gap"
           >
             Modal should have size=
             s

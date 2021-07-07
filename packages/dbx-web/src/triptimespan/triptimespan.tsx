@@ -22,9 +22,9 @@ const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
   ...props
 }) => {
   return (
-    <span className={clsx('dbx-triptimespan', className)} {...props}>
+    <span className={clsx('db-triptimespan', className)} {...props}>
       <Triptime dateTime={departureDateTime} predictedDateTime={predictedDepartureDateTime} />
-      <span className={clsx('dbx-triptimespan__separator')}>–</span>
+      <span className={clsx('db-triptimespan__separator')}>–</span>
       <Triptime dateTime={arrivalDateTime} predictedDateTime={predictedArivalDateTime} />
     </span>
   );

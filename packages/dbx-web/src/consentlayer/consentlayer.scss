@@ -1,6 +1,6 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-.dbx-consentlayer__form {
+.db-consentlayer__form {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -10,24 +10,24 @@
   width: 100%;
 }
 
-.dbx-consentlayer__options {
+.db-consentlayer__options {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.dbx-consentlayer__option {
-  margin-top: dbx-spacing('m');
+.db-consentlayer__option {
+  margin-top: db-spacing('m');
 }
 
-.dbx-consentlayer__message {
+.db-consentlayer__message {
   flex-grow: 1;
 }
 
-.dbx-consentlayer__privacy-message {
+.db-consentlayer__privacy-message {
   display: flex;
   flex-direction: column;
-  margin: dbx-spacing('ml') 0 dbx-spacing('s');
+  margin: db-spacing('ml') 0 db-spacing('s');
 
   @include media('>=medium') {
     align-items: flex-end;
@@ -35,33 +35,33 @@
   }
 
   > :not(:first-child) {
-    margin-top: dbx-spacing('s');
+    margin-top: db-spacing('s');
   }
 }
 
-.dbx-consentlayer__message,
-.dbx-consentlayer__privacy-message {
+.db-consentlayer__message,
+.db-consentlayer__privacy-message {
   a {
-    @include dbx-primary-link;
+    @include db-primary-link;
   }
 }
 
-.dbx-consentlayer__message p,
-.dbx-consentlayer__privacy-message p,
-.dbx-consentlayer__text {
-  @include dbx-text-style('copy');
+.db-consentlayer__message p,
+.db-consentlayer__privacy-message p,
+.db-consentlayer__text {
+  @include db-text-style('copy');
   margin: 0;
   text-align: left;
 }
 
-.dbx-contentlayer__important-link {
-  margin: 0 dbx-spacing('sm') 0 0;
+.db-contentlayer__important-link {
+  margin: 0 db-spacing('sm') 0 0;
 
   @include media('>=medium') {
-    margin: 0 0 0 dbx-spacing('sm');
+    margin: 0 0 0 db-spacing('sm');
   }
 
   a {
-    @include dbx-secondary-link;
+    @include db-secondary-link;
   }
 }

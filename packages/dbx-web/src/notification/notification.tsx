@@ -22,7 +22,7 @@ const defaultLabels = {
 
 const notificationIcons = {
   info: (
-    <svg className="dbx-icon" width="24" height="24">
+    <svg className="db-icon" width="24" height="24">
       <circle fill="currentColor" cx="12" cy="12" r="10" />
       <circle fill="#FFF" cx="12" cy="7.75" r="1.25" />
       <path
@@ -37,7 +37,7 @@ const notificationIcons = {
   ),
 
   warning: (
-    <svg className="dbx-icon" width="24" height="24">
+    <svg className="db-icon" width="24" height="24">
       <path
         d="M10.31 4.1L2.25 18.5c-.16.29-.25.58-.25.88 0 .88.75 1.62 1.85 1.62h16.3c1.1 0 1.85-.74 1.85-1.62a2 2 0 00-.25-.89L13.72 4.1C13.3 3.4 12.66 3 12 3c-.66 0-1.26.38-1.69 1.1z"
         fill="currentColor"
@@ -50,13 +50,13 @@ const notificationIcons = {
     </svg>
   ),
   error: (
-    <svg className="dbx-icon" width="24" height="24">
+    <svg className="db-icon" width="24" height="24">
       <circle fill="currentColor" cx="12" cy="12" r="10" />
       <path d="M8 16L16 8zM8 8L16 16z" stroke="#FFF" strokeWidth="1.9" strokeLinecap="round" />
     </svg>
   ),
   success: (
-    <svg className="dbx-icon" width="24" height="24">
+    <svg className="db-icon" width="24" height="24">
       <circle cx="12" cy="12" r="10" />
       <path
         d="M15.97 7.7a1.08 1.08 0 011.77 1.25l-.08.12-6.28 7.74c-.46.54-1.07.54-1.58.04l-3.36-3.18A1.08 1.08 0 017.82 12l.11.1 2.53 2.4 5.51-6.8z"
@@ -130,18 +130,18 @@ const Notification: NotificationComponent = ({
       <div
         {...otherProps}
         className={clsx(
-          'dbx-notification',
-          `dbx-notification--${variant}`,
-          { 'dbx-notification--global': global },
+          'db-notification',
+          `db-notification--${variant}`,
+          { 'db-notification--global': global },
           className
         )}
       >
-        {icon && <span className="dbx-notification__icon">{icon}</span>}
-        {label && <div className="dbx-notification__variant">{label}</div>}
-        <span className="dbx-notification__content">
+        {icon && <span className="db-notification__icon">{icon}</span>}
+        {label && <div className="db-notification__variant">{label}</div>}
+        <span className="db-notification__content">
           {title && (
             <>
-              <span className="dbx-notification__title">{title}</span>{' '}
+              <span className="db-notification__title">{title}</span>{' '}
             </>
           )}
           {message}
@@ -150,7 +150,7 @@ const Notification: NotificationComponent = ({
           <Button
             ref={closeButtonRef}
             icon={
-              <span className="dbx-notification__close-icon">
+              <span className="db-notification__close-icon">
                 <svg width="20" height="20">
                   <path
                     d="M4 15a1 1 0 01.28-.72L8.56 10 4.28 5.69A.97.97 0 014 5c0-.5.4-1 1-1 .25 0 .5.1.69.28L10 8.56l4.31-4.28A.97.97 0 0115 4a1 1 0 011 1c0 .25-.1.5-.28.69L11.44 10l4.28 4.28A1 1 0 0116 15a1 1 0 01-1 1 1 1 0 01-.72-.28L10 11.4l-4.28 4.3A1 1 0 015 16a1 1 0 01-1-1z"
@@ -159,7 +159,7 @@ const Notification: NotificationComponent = ({
                 </svg>
               </span>
             }
-            className="dbx-notification__close-btn"
+            className="db-notification__close-btn"
             onClick={onClose}
             variant={Button.variants.HOVER_ONLY}
             shape={Button.shapes.ROUND}

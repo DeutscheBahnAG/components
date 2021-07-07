@@ -58,8 +58,8 @@ const Select: React.FunctionComponent<SelectProps> = ({
   return (
     <div
       className={clsx(
-        'dbx-select',
-        { 'dbx-select--focus': isFocused, 'dbx-select--disabled': disabled },
+        'db-select',
+        { 'db-select--focus': isFocused, 'db-select--disabled': disabled },
         className
       )}
     >

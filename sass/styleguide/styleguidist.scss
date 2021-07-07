@@ -1,91 +1,91 @@
-$code-background-color: dbx-background-color('secondary');
+$code-background-color: db-background-color('secondary');
 
 #rsg-root {
   .rsg--hasSidebar-2 {
     @media (min-width: 801px) {
-      padding-left: 2 * dbx-spacing('xxxl');
+      padding-left: 2 * db-spacing('xxxl');
     }
     @media (min-width: 1201px) {
-      padding-left: 3 * dbx-spacing('xxxl');
+      padding-left: 3 * db-spacing('xxxl');
     }
   }
 
   li[class^='rsg--item-'] {
-    @include dbx-text-style('copy', 'm');
+    @include db-text-style('copy', 'm');
     overflow: visible;
 
     a {
-      @include dbx-primary-link($text-color: dbx-text-color('primary'));
+      @include db-primary-link($text-color: db-text-color('primary'));
     }
   }
 
   div[class^='rsg--sidebar-'] {
-    background: dbx-palette-color('violet100');
-    background: dbx-background-color('secondary');
+    background: db-palette-color('violet100');
+    background: db-background-color('secondary');
     border: 0;
 
     @media (min-width: 801px) {
-      width: 2 * dbx-spacing('xxxl');
+      width: 2 * db-spacing('xxxl');
     }
     @media (min-width: 1201px) {
-      width: 3 * dbx-spacing('xxxl');
+      width: 3 * db-spacing('xxxl');
     }
   }
 
   nav [class^='rsg--search'] {
     // Styleguidist doesn’t know about our themes
-    --dbx-primary-background-color: #{dbx-palette-color('coolgray100')};
-    --dbx-secondary-background-color: #{dbx-palette-color('white')};
-    @extend .dbx-textfield;
-    @extend .dbx-textfield--m;
-    margin: dbx-spacing('m');
+    --db-primary-background-color: #{db-palette-color('coolgray100')};
+    --db-secondary-background-color: #{db-palette-color('white')};
+    @extend .db-textfield;
+    @extend .db-textfield--m;
+    margin: db-spacing('m');
     padding: 0;
   }
 
   [class^='rsg--heading-'] a {
-    @include dbx-secondary-link;
+    @include db-secondary-link;
   }
 
   h1[class^='rsg--heading-'] {
-    @include dbx-text-style('title', 'xxl');
-    color: dbx-text-color('primary');
-    margin-bottom: dbx-spacing('m');
+    @include db-text-style('title', 'xxl');
+    color: db-text-color('primary');
+    margin-bottom: db-spacing('m');
   }
 
   h2[class^='rsg--heading-'] {
-    @include dbx-text-style('title', 'l');
-    color: dbx-text-color('primary');
-    margin-top: dbx-spacing('xl');
-    margin-bottom: dbx-spacing('m');
+    @include db-text-style('title', 'l');
+    color: db-text-color('primary');
+    margin-top: db-spacing('xl');
+    margin-bottom: db-spacing('m');
   }
 
   h3[class^='rsg--heading-'] {
-    @include dbx-text-style('title', 'm');
-    color: dbx-text-color('primary');
-    margin-top: dbx-spacing('l');
-    margin-bottom: dbx-spacing('m');
+    @include db-text-style('title', 'm');
+    color: db-text-color('primary');
+    margin-top: db-spacing('l');
+    margin-bottom: db-spacing('m');
 
     a {
-      @include dbx-primary-link;
+      @include db-primary-link;
     }
   }
 
   h4[class^='rsg--heading-'] {
-    @include dbx-text-style('copy', 'm');
-    color: dbx-text-color('primary');
-    font-weight: dbx-font-weight('copy', 'bold');
-    margin-top: dbx-spacing('l');
-    margin-bottom: dbx-spacing('m');
+    @include db-text-style('copy', 'm');
+    color: db-text-color('primary');
+    font-weight: db-font-weight('copy', 'bold');
+    margin-top: db-spacing('l');
+    margin-bottom: db-spacing('m');
   }
 
   [class^='rsg--para-'],
   [class^='rsg--li-'] {
-    @include dbx-text-style('copy', 'm');
-    color: dbx-text-color('primary');
-    margin-bottom: dbx-spacing('m');
+    @include db-text-style('copy', 'm');
+    color: db-text-color('primary');
+    margin-bottom: db-spacing('m');
 
     a {
-      @include dbx-primary-link;
+      @include db-primary-link;
     }
 
     strong,
@@ -94,9 +94,9 @@ $code-background-color: dbx-background-color('secondary');
     }
 
     code {
-      background: dbx-palette-color('blue100');
-      border-radius: dbx-border-radius('xs');
-      color: dbx-palette-color('blue700');
+      background: db-palette-color('blue100');
+      border-radius: db-border-radius('xs');
+      color: db-palette-color('blue700');
       font-family: monospace;
       font-size: 1.2em;
       padding: 2px 0.3em;
@@ -104,12 +104,12 @@ $code-background-color: dbx-background-color('secondary');
   }
 
   [class^='rsg--li-'] {
-    margin-bottom: dbx-spacing('s');
+    margin-bottom: db-spacing('s');
   }
 
   [class^='rsg--ul-'],
   [class^='rsg--ol-'] {
-    margin-bottom: dbx-spacing('m');
+    margin-bottom: db-spacing('m');
   }
 
   [class^='rsg--spacing-34'] {
@@ -131,9 +131,9 @@ $code-background-color: dbx-background-color('secondary');
         transparent 0
       )
       repeat 0 0/4px 4px;
-    background: var(--dbx-primary-background-color);
-    border: 2px dbx-background-color('secondary') solid;
-    border-radius: dbx-border-radius('l') dbx-border-radius('l') 0 0;
+    background: var(--db-primary-background-color);
+    border: 2px db-background-color('secondary') solid;
+    border-radius: db-border-radius('l') db-border-radius('l') 0 0;
 
     + [class^='rsg--controls-'] {
       display: none;
@@ -141,29 +141,29 @@ $code-background-color: dbx-background-color('secondary');
 
     ~ [class^='rsg--tab-'] [class^='rsg--root-'] {
       border: 0;
-      border-radius: 0.1px 0.1px dbx-border-radius('l') dbx-border-radius('l');
+      border-radius: 0.1px 0.1px db-border-radius('l') db-border-radius('l');
     }
   }
 
   [class^='rsg--root-'] > textarea {
     background: $code-background-color !important;
     border-color: $code-background-color !important;
-    @include dbx-focus-ring;
+    @include db-focus-ring;
     border-radius: inherit;
     border-width: 1px;
-    padding: dbx-spacing('sm') dbx-spacing('m') !important;
+    padding: db-spacing('sm') db-spacing('m') !important;
   }
 
   textarea + pre {
     background: $code-background-color;
-    border-radius: dbx-border-radius('l');
+    border-radius: db-border-radius('l');
     white-space: pre;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: dbx-spacing('sm') dbx-spacing('m') !important;
+    padding: db-spacing('sm') db-spacing('m') !important;
 
     .token.script {
-      color: dbx-palette-color('blue700');
+      color: db-palette-color('blue700');
     }
 
     .token.comment,
@@ -171,31 +171,31 @@ $code-background-color: dbx-background-color('secondary');
     .token.doctype,
     .token.cdata,
     .token.punctuation {
-      color: dbx-palette-color('coolgray400');
+      color: db-palette-color('coolgray400');
       font-weight: normal;
     }
 
     .token.number {
-      color: dbx-palette-color('green600');
+      color: db-palette-color('green600');
       font-weight: normal;
     }
 
     .token.property,
     .token.deleted {
-      color: dbx-palette-color('cyan600');
+      color: db-palette-color('cyan600');
       font-weight: normal;
     }
 
     .token.namespace,
     .token.constant {
-      color: dbx-palette-color('blue700');
+      color: db-palette-color('blue700');
       font-weight: normal;
     }
 
     .token.string,
     .token.char,
     .token.attr-value {
-      color: dbx-palette-color('lightgreen600');
+      color: db-palette-color('lightgreen600');
       font-weight: normal;
     }
 
@@ -205,12 +205,12 @@ $code-background-color: dbx-background-color('secondary');
     .token.builtin,
     .token.url,
     .token.inserted {
-      color: dbx-palette-color('blue400');
+      color: db-palette-color('blue400');
       font-weight: normal;
     }
 
     .token.entity {
-      color: dbx-palette-color('green400');
+      color: db-palette-color('green400');
       font-weight: normal;
     }
 
@@ -218,23 +218,23 @@ $code-background-color: dbx-background-color('secondary');
     .token.atrule,
     .token.keyword,
     .token.boolean {
-      color: dbx-palette-color('blue500');
+      color: db-palette-color('blue500');
       font-weight: bold;
     }
 
     .token.function {
-      color: dbx-palette-color('turquoise600');
+      color: db-palette-color('turquoise600');
       font-weight: normal;
     }
 
     .token.regex,
     .token.important {
-      color: dbx-palette-color('lightgreen500');
+      color: db-palette-color('lightgreen500');
       font-weight: normal;
     }
 
     .token.variable {
-      color: dbx-palette-color('violet600');
+      color: db-palette-color('violet600');
       font-weight: normal;
     }
 
@@ -248,12 +248,12 @@ $code-background-color: dbx-background-color('secondary');
     }
 
     .token.interpolation-punctuation {
-      color: dbx-palette-color('green400');
+      color: db-palette-color('green400');
     }
 
     .token.operator,
     .token.title {
-      color: dbx-palette-color('coolgray500');
+      color: db-palette-color('coolgray500');
     }
   }
 
@@ -263,56 +263,56 @@ $code-background-color: dbx-background-color('secondary');
 }
 
 .space-inbetween div * + * {
-  margin-left: dbx-spacing('m');
+  margin-left: db-spacing('m');
 }
 
 ::selection {
-  background: rgba(dbx-palette-color('blue500'), 0.15);
+  background: rgba(db-palette-color('blue500'), 0.15);
   text-shadow: none;
 }
 
 main.rsg--content-3 {
-  max-width: 8 * dbx-spacing('xxxl');
-  margin: 0 auto 0 dbx-spacing('xxxl');
+  max-width: 8 * db-spacing('xxxl');
+  margin: 0 auto 0 db-spacing('xxxl');
   padding: 0;
 
-  .dbx-container--filled {
-    padding-bottom: dbx-spacing('m');
-    padding-top: dbx-spacing('m');
+  .db-container--filled {
+    padding-bottom: db-spacing('m');
+    padding-top: db-spacing('m');
   }
 
-  .dbx-container:not(.dbx-container--filled) {
-    background: rgba(dbx-palette-color('turquoise300'), 0.1);
-    border: 1px dbx-palette-color('turquoise300') dashed;
+  .db-container:not(.db-container--filled) {
+    background: rgba(db-palette-color('turquoise300'), 0.1);
+    border: 1px db-palette-color('turquoise300') dashed;
     padding: 1px; // visually separate nested borders
   }
 
-  .dbx-container--extended:not(.dbx-container--filled) {
-    background: rgba(dbx-palette-color('yellow400'), 0.1);
-    border-color: dbx-palette-color('yellow400');
+  .db-container--extended:not(.db-container--filled) {
+    background: rgba(db-palette-color('yellow400'), 0.1);
+    border-color: db-palette-color('yellow400');
   }
 
-  .dbx-container--content:not(.dbx-container--filled) {
-    background: rgba(dbx-palette-color('pink300'), 0.1);
-    border-color: dbx-palette-color('pink300');
+  .db-container--content:not(.db-container--filled) {
+    background: rgba(db-palette-color('pink300'), 0.1);
+    border-color: db-palette-color('pink300');
   }
 
-  .dbx-container--text:not(.dbx-container--filled) {
-    background: rgba(dbx-palette-color('cyan300'), 0.1);
-    border-color: dbx-palette-color('cyan300');
+  .db-container--text:not(.db-container--filled) {
+    background: rgba(db-palette-color('cyan300'), 0.1);
+    border-color: db-palette-color('cyan300');
   }
 
-  .dbx-container--primary,
-  .dbx-container--secondary {
+  .db-container--primary,
+  .db-container--secondary {
     padding: 16px 0;
   }
 }
 
 .sg-icon-overview {
   display: grid;
-  gap: dbx-spacing('ml');
+  gap: db-spacing('ml');
   grid-template-columns: 1fr 1fr;
-  width: 8 * dbx-spacing('xxxl');
+  width: 8 * db-spacing('xxxl');
 
   li {
     display: block;
@@ -323,16 +323,16 @@ main.rsg--content-3 {
   padding-left: 10px;
 
   > li[class^='rsg--item-'] {
-    @include dbx-text-style('copy', 'l');
-    color: var(--dbx-primary-text-color);
-    font-family: dbx-font-family('title');
-    font-weight: dbx-font-weight('title', 'bold');
+    @include db-text-style('copy', 'l');
+    color: var(--db-primary-text-color);
+    font-family: db-font-family('title');
+    font-weight: db-font-weight('title', 'bold');
     text-decoration: none;
     display: block;
-    padding: #{dbx-spacing('sm') / 2} dbx-spacing('m');
+    padding: #{db-spacing('sm') / 2} db-spacing('m');
     transition: color 0.15s ease-in;
     li {
-      @include dbx-text-style('copy', 's');
+      @include db-text-style('copy', 's');
       font-weight: normal;
     }
   }
@@ -343,8 +343,8 @@ main.rsg--content-3 {
 }
 
 #rsg-root .rsg--button-31 {
-  @extend .dbx-button--solid;
-  @extend .dbx-button--s;
+  @extend .db-button--solid;
+  @extend .db-button--s;
   text-transform: none;
 }
 
@@ -355,37 +355,37 @@ main.rsg--content-3 {
 
 // Tables
 #rsg-root [class^='rsg--table'] {
-  margin: dbx-spacing('m') 0 dbx-spacing('l');
+  margin: db-spacing('m') 0 db-spacing('l');
 
   [class^='rsg--cellHeading'] {
-    @include dbx-text-style('copy', 's');
-    color: var(--dbx-secondary-text-color);
+    @include db-text-style('copy', 's');
+    color: var(--db-secondary-text-color);
   }
 
   [class^='rsg--name'],
   [class^='rsg--type'],
   [class^='rsg--code'],
   [class^='rsg--text'] {
-    @include dbx-text-style('copy', 'm');
+    @include db-text-style('copy', 'm');
     background: transparent;
     padding: 0;
   }
 
   [class^='rsg--name'] {
-    color: dbx-palette-color('lightgreen600');
+    color: db-palette-color('lightgreen600');
   }
 
   [class^='rsg--type'] {
-    color: dbx-palette-color('blue400');
+    color: db-palette-color('blue400');
   }
 
   [class^='rsg--code'] {
-    color: var(--dbx-secondary-text-color);
+    color: var(--db-secondary-text-color);
   }
 }
 
 #rsg-root [data-testid='Button-isolate-button'] {
-  @extend .dbx-button--hover-only;
-  @extend .dbx-button--round;
-  @extend .dbx-button--m;
+  @extend .db-button--hover-only;
+  @extend .db-button--round;
+  @extend .db-button--m;
 }

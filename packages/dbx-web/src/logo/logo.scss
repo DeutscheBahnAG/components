@@ -1,6 +1,6 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-$dbx-logo-sizes: (
+$db-logo-sizes: (
   'xs': 14px,
   's': 21px,
   'm': 28px,
@@ -9,13 +9,13 @@ $dbx-logo-sizes: (
   'xxl': 56px,
 );
 
-.dbx-logo {
-  @include dbx-hide-text;
+.db-logo {
+  @include db-hide-text;
   display: inline-block;
   vertical-align: middle;
 
   path {
-    fill: var(--dbx-logo-color);
+    fill: var(--db-logo-color);
   }
 
   rect {
@@ -23,20 +23,20 @@ $dbx-logo-sizes: (
   }
 }
 
-.dbx-logo--default,
-.dbx-logo--filled {
+.db-logo--default,
+.db-logo--filled {
   path {
-    fill: dbx-color('brand');
+    fill: db-color('brand');
   }
 }
 
-.dbx-logo--white path,
-.dbx-logo--filled rect {
-  fill: dbx-background-color('primary');
+.db-logo--white path,
+.db-logo--filled rect {
+  fill: db-background-color('primary');
 }
 
-.dbx-logo[href]:focus {
-  @include dbx-focus-ring;
+.db-logo[href]:focus {
+  @include db-focus-ring;
 }
 
 /**
@@ -44,13 +44,13 @@ $dbx-logo-sizes: (
   *    by the line-height. Inline-blocks inherit the text-align. This way the
   *    Logo and the Pulse can be centered by applying `text-align: center`.
   */
-.dbx-pulse {
-  color: var(--dbx-primary-text-color);
+.db-pulse {
+  color: var(--db-primary-text-color);
   display: block;
   line-height: 0; /* 1 */
 
   &::after {
-    background: var(--dbx-pulse-background);
+    background: var(--db-pulse-background);
     content: '';
     display: inline-block; /* 1 */
   }
@@ -64,29 +64,29 @@ $dbx-logo-sizes: (
   }
 }
 
-.dbx-pulse--default {
+.db-pulse--default {
   &::after {
-    background: dbx-color('brand');
+    background: db-color('brand');
   }
 }
 
-.dbx-pulse--white {
-  color: var(--dbx-primary-text-color);
+.db-pulse--white {
+  color: var(--db-primary-text-color);
 
   &::after {
     background: #fff;
   }
 }
 
-@each $size, $height in $dbx-logo-sizes {
-  .dbx-logo--#{$size} {
+@each $size, $height in $db-logo-sizes {
+  .db-logo--#{$size} {
     border-radius: $height / 7.1;
     height: $height;
     width: $height / 7 * 10;
   }
 
-  .dbx-logo--#{$size} ~ .dbx-pulse,
-  .dbx-pulse--#{$size} {
+  .db-logo--#{$size} ~ .db-pulse,
+  .db-pulse--#{$size} {
     /**
      * 3. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
      */

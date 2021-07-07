@@ -1,23 +1,23 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import 'include-media/dist/include-media';
 
-$dbx-modal--z-level: (
+$db-modal--z-level: (
   modal: 5000,
 );
 
-$dbx-modal--appearance-duration: 400ms;
-$dbx-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
-$dbx-modal--dialog-margin: dbx-spacing('s');
-$dbx-modal--dialog-padding-y-mobile: dbx-spacing('m');
-$dbx-modal--dialog-padding-x-mobile: dbx-spacing('l');
-$dbx-modal--dialog-padding-y-desktop: dbx-spacing('l');
-$dbx-modal--dialog-padding-x-desktop: dbx-spacing('xxl');
-$dbx-modal--action-gap: dbx-spacing('s');
-$dbx-modal--save-gap: dbx-spacing('s');
-$dbx-modal--shadow-background-color: dbx-color('background.primary');
-$dbx-modal--shadow-foreground-color: dbx-color('text.primary');
+$db-modal--appearance-duration: 400ms;
+$db-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
+$db-modal--dialog-margin: db-spacing('s');
+$db-modal--dialog-padding-y-mobile: db-spacing('m');
+$db-modal--dialog-padding-x-mobile: db-spacing('l');
+$db-modal--dialog-padding-y-desktop: db-spacing('l');
+$db-modal--dialog-padding-x-desktop: db-spacing('xxl');
+$db-modal--action-gap: db-spacing('s');
+$db-modal--save-gap: db-spacing('s');
+$db-modal--shadow-background-color: db-color('background.primary');
+$db-modal--shadow-foreground-color: db-color('text.primary');
 
-.dbx-modal {
+.db-modal {
   box-sizing: border-box;
   position: fixed;
   display: flex;
@@ -25,30 +25,30 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: map-get($dbx-modal--z-level, modal);
+  z-index: map-get($db-modal--z-level, modal);
   align-items: center;
   justify-content: center;
   background-color: transparent;
   opacity: 0;
-  transition: background-color $dbx-modal--appearance-duration,
-    opacity $dbx-modal--appearance-duration;
+  transition: background-color $db-modal--appearance-duration,
+    opacity $db-modal--appearance-duration;
   @include media('print') {
     position: static;
   }
 }
 
-.dbx-modal--open {
+.db-modal--open {
   opacity: 1;
   background-color: rgba(#000, 0.8);
 }
 
-.dbx-modal--close {
+.db-modal--close {
   opacity: 0;
   background-color: transparent;
 }
 
-.dbx-modal__dialog {
-  @include dbx-focus-ring($color: #5a9bc480, $offset-color: #000);
+.db-modal__dialog {
+  @include db-focus-ring($color: #5a9bc480, $offset-color: #000);
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -57,20 +57,19 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   grid-template-columns: auto;
   width: auto;
   max-width: map-get($breakpoints, xlarge);
-  height: calc(var(--dbx-vh, 1vh) * 100 - #{2 * dbx-spacing('s')});
-  padding: $dbx-modal--dialog-padding-y-mobile
-    $dbx-modal--dialog-padding-x-mobile;
-  border-radius: dbx-border-radius('xl') * 2;
-  box-shadow: map-get($dbx-shadows, high);
-  background-color: var(--dbx-primary-background-color);
+  height: calc(var(--db-vh, 1vh) * 100 - #{2 * db-spacing('s')});
+  padding: $db-modal--dialog-padding-y-mobile $db-modal--dialog-padding-x-mobile;
+  border-radius: db-border-radius('xl') * 2;
+  box-shadow: map-get($db-shadows, high);
+  background-color: var(--db-primary-background-color);
 
   @include media('>small') {
-    margin: $dbx-modal--dialog-margin;
+    margin: $db-modal--dialog-margin;
   }
   @include media('>=medium') {
     height: auto;
-    padding: $dbx-modal--dialog-padding-y-desktop
-      $dbx-modal--dialog-padding-x-desktop;
+    padding: $db-modal--dialog-padding-y-desktop
+      $db-modal--dialog-padding-x-desktop;
     max-height: 90%;
   }
   @include media('>=large') {
@@ -83,47 +82,47 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   }
 }
 
-.dbx-modal__dialog--width-s {
+.db-modal__dialog--width-s {
   max-width: map-get($breakpoints, small);
 }
 
-.dbx-modal__dialog--width-m {
+.db-modal__dialog--width-m {
   @include media('>=medium') {
     max-width: map-get($breakpoints, medium);
   }
 }
 
-.dbx-modal__dialog--width-l {
+.db-modal__dialog--width-l {
   max-width: map-get($breakpoints, large);
 }
 
-.dbx-modal__header {
+.db-modal__header {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: #{$dbx-modal--dialog-padding-y-mobile / 2};
+  margin-bottom: #{$db-modal--dialog-padding-y-mobile / 2};
 
   &:empty {
     margin-bottom: 0;
   }
 }
 
-.dbx-modal__header--collapse {
-  height: dbx-spacing('s');
+.db-modal__header--collapse {
+  height: db-spacing('s');
   margin: 0;
 }
 
-.dbx-modal__closebutton {
+.db-modal__closebutton {
   // Place visually right aligned.
-  transform: translate(dbx-spacing('s'), dbx-spacing('xs', $negative: true));
+  transform: translate(db-spacing('s'), db-spacing('xs', $negative: true));
   @include media('print') {
     display: none;
   }
 }
 
-.dbx-modal__title {
+.db-modal__title {
   margin: 0;
 
   &:first-of-type {
@@ -132,40 +131,40 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   }
 }
 
-.dbx-modal__content {
+.db-modal__content {
   position: relative;
   display: block; // support <main> for IE 11
   overflow-y: auto;
-  min-height: dbx-size('xl');
-  padding: $dbx-modal--save-gap;
-  margin: -$dbx-modal--save-gap;
+  min-height: db-size('xl');
+  padding: $db-modal--save-gap;
+  margin: -$db-modal--save-gap;
   // Not themed yet:
-  background-image: linear-gradient($dbx-modal--shadow-background-color 10%,
-  change-color($dbx-modal--shadow-background-color, $alpha: 0)),
-    linear-gradient(change-color($dbx-modal--shadow-background-color, $alpha: 0),
-  $dbx-modal--shadow-background-color 90%),
+  background-image: linear-gradient($db-modal--shadow-background-color 10%,
+  change-color($db-modal--shadow-background-color, $alpha: 0)),
+    linear-gradient(change-color($db-modal--shadow-background-color, $alpha: 0),
+  $db-modal--shadow-background-color 90%),
     radial-gradient(farthest-side at 50% 0,
-  change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2),
-  change-color($dbx-modal--shadow-foreground-color, $alpha: 0)),
+  change-color($db-modal--shadow-foreground-color, $alpha: 0.2),
+  change-color($db-modal--shadow-foreground-color, $alpha: 0)),
     radial-gradient(farthest-side at 50% 100%,
-  change-color($dbx-modal--shadow-foreground-color, $alpha: 0.2),
-  change-color($dbx-modal--shadow-foreground-color, $alpha: 0));
-  background-size: 100% $dbx-modal--save-gap * 3, 100% $dbx-modal--save-gap * 3,
-    100% $dbx-modal--save-gap, 100% $dbx-modal--save-gap;
+  change-color($db-modal--shadow-foreground-color, $alpha: 0.2),
+  change-color($db-modal--shadow-foreground-color, $alpha: 0));
+  background-size: 100% $db-modal--save-gap * 3, 100% $db-modal--save-gap * 3,
+    100% $db-modal--save-gap, 100% $db-modal--save-gap;
   background-position: 0 0, 0 100%, 0 0, 0 100%;
   background-attachment: local, local, scroll, scroll;
   background-repeat: no-repeat;
-  background-color: $dbx-modal--shadow-background-color;
+  background-color: $db-modal--shadow-background-color;
 
   @include media('>=medium') {
-    padding: 0 $dbx-modal--dialog-padding-x-desktop;
-    margin: 0 #{-$dbx-modal--dialog-padding-x-desktop};
+    padding: 0 $db-modal--dialog-padding-x-desktop;
+    margin: 0 #{-$db-modal--dialog-padding-x-desktop};
   }
 
   @include media('print') {
     overflow-y: visible;
     background: none;
-    border-bottom: dbx-border-width('input') solid dbx-border-color('input');
+    border-bottom: db-border-width('input') solid db-border-color('input');
   }
 
   &:empty {
@@ -175,120 +174,120 @@ $dbx-modal--shadow-foreground-color: dbx-color('text.primary');
   }
 }
 
-.dbx-modal__content--right-gap {
-  margin-right: dbx-spacing('l');
+.db-modal__content--right-gap {
+  margin-right: db-spacing('l');
 }
 
-.dbx-modal__actions {
+.db-modal__actions {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: stretch;
   margin: 0 -1px;
-  padding-top: $dbx-modal--dialog-padding-y-mobile;
+  padding-top: $db-modal--dialog-padding-y-mobile;
 
   @include media('print') {
     display: none;
   }
 }
 
-.dbx-modal__actions--full-s {
+.db-modal__actions--full-s {
   @include media('<=small') {
     flex-direction: column;
 
-    .dbx-modal__action--secondary {
-      margin: 2 * $dbx-modal--action-gap 0 0;
+    .db-modal__action--secondary {
+      margin: 2 * $db-modal--action-gap 0 0;
     }
 
-    .dbx-button {
+    .db-button {
       width: 100%;
     }
   }
 }
 
-.dbx-modal__actions--full-m {
+.db-modal__actions--full-m {
   @include media('<=medium') {
     flex-direction: column;
 
-    .dbx-modal__action--secondary {
-      margin: 2 * $dbx-modal--action-gap 0 0;
+    .db-modal__action--secondary {
+      margin: 2 * $db-modal--action-gap 0 0;
     }
 
-    .dbx-button {
+    .db-button {
       width: 100%;
     }
   }
 }
 
-.dbx-modal__actions--full-l {
+.db-modal__actions--full-l {
   flex-direction: column;
 
-  .dbx-modal__action--secondary {
-    margin: 2 * $dbx-modal--action-gap 0 0;
+  .db-modal__action--secondary {
+    margin: 2 * $db-modal--action-gap 0 0;
   }
 
-  .dbx-button {
+  .db-button {
     width: 100%;
   }
 }
 
-.dbx-modal__actions--center-s {
+.db-modal__actions--center-s {
   @include media('<=small') {
     justify-content: center;
 
-    .dbx-button {
+    .db-button {
       width: auto;
     }
   }
 }
 
-.dbx-modal__actions--center-m {
+.db-modal__actions--center-m {
   @include media('<=medium') {
     justify-content: center;
 
-    .dbx-button {
+    .db-button {
       width: auto;
     }
   }
 }
 
-.dbx-modal__actions--center-l {
+.db-modal__actions--center-l {
   justify-content: center;
 
-  .dbx-button {
+  .db-button {
     width: auto;
   }
 }
 
-.dbx-modal__actions--collapse {
+.db-modal__actions--collapse {
   padding-top: 0;
 }
 
-.dbx-modal__action--secondary {
-  margin-right: 2 * $dbx-modal--action-gap;
+.db-modal__action--secondary {
+  margin-right: 2 * $db-modal--action-gap;
 }
 
-.dbx-modal__footer {
-  @include dbx-text-style('copy', 's');
-  background: var(--dbx-darker-background-color);
-  color: var(--dbx-secondary-text-color);
-  margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-mobile)
-    (-$dbx-modal--dialog-padding-y-mobile);
-  padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-mobile;
+.db-modal__footer {
+  @include db-text-style('copy', 's');
+  background: var(--db-darker-background-color);
+  color: var(--db-secondary-text-color);
+  margin: db-spacing('m') (-$db-modal--dialog-padding-x-mobile)
+    (-$db-modal--dialog-padding-y-mobile);
+  padding: db-spacing('sm') $db-modal--dialog-padding-x-mobile;
 
   @include media('>=medium') {
-    margin: dbx-spacing('m') (-$dbx-modal--dialog-padding-x-desktop)
-      (-$dbx-modal--dialog-padding-y-desktop);
-    padding: dbx-spacing('sm') $dbx-modal--dialog-padding-x-desktop;
+    margin: db-spacing('m') (-$db-modal--dialog-padding-x-desktop)
+      (-$db-modal--dialog-padding-y-desktop);
+    padding: db-spacing('sm') $db-modal--dialog-padding-x-desktop;
     text-align: right;
   }
 
   > a {
-    @include dbx-secondary-link;
+    @include db-secondary-link;
   }
 }
 
-.body--dbx-modal-open,
-.html--dbx-modal-open {
+.body--db-modal-open,
+.html--db-modal-open {
   overflow: hidden;
 }

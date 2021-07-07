@@ -3,105 +3,105 @@
 // TODO: replace with DBX colors as soon as they are available in DBX Web
 $notification-variants: ('info' 'warning' 'error' 'success');
 
-.dbx-notification {
-  @include dbx-text-style('copy', 's');
+.db-notification {
+  @include db-text-style('copy', 's');
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  padding: dbx-spacing('m');
-  color: dbx-background-color('primary');
-  background-color: dbx-text-color('primary');
+  padding: db-spacing('m');
+  color: db-background-color('primary');
+  background-color: db-text-color('primary');
   border-style: solid;
-  border-radius: dbx-border-radius('l');
+  border-radius: db-border-radius('l');
   border-width: 4px;
 }
 
-.dbx-notification + .dbx-notification {
-  margin-top: dbx-spacing('m');
+.db-notification + .db-notification {
+  margin-top: db-spacing('m');
 }
 
-.dbx-notification__icon {
+.db-notification__icon {
   padding: 2px;
-  margin-right: dbx-spacing('sm');
+  margin-right: db-spacing('sm');
   align-self: start;
 }
 
-.dbx-notification__variant {
-  @include dbx-visually-hidden;
+.db-notification__variant {
+  @include db-visually-hidden;
 }
 
-.dbx-notification__icon,
-.dbx-notification__close-icon {
+.db-notification__icon,
+.db-notification__close-icon {
   svg {
     display: block;
     fill: currentColor;
   }
 }
 
-.dbx-notification__content {
-  @include dbx-text-style('copy');
+.db-notification__content {
+  @include db-text-style('copy');
   font-weight: inherit;
   padding: 2px 0;
   text-align: left;
   flex-grow: 1;
 }
 
-.dbx-notification__title {
+.db-notification__title {
   display: block;
   font-weight: bold;
 }
 
-.dbx-notification--global {
-  border-radius: dbx-border-radius('xl');
+.db-notification--global {
+  border-radius: db-border-radius('xl');
   border-width: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  min-width: dbx-spacing('xxxl') * 4;
-  border-color: dbx-palette-color('white') !important;
-  background-color: dbx-palette-color('white') !important;
+  min-width: db-spacing('xxxl') * 4;
+  border-color: db-palette-color('white') !important;
+  background-color: db-palette-color('white') !important;
 }
 
-.dbx-notification--info {
-  color: dbx-text-color('primary');
-  background-color: dbx-palette-color('blue050');
-  border-color: dbx-palette-color('blue100');
+.db-notification--info {
+  color: db-text-color('primary');
+  background-color: db-palette-color('blue050');
+  border-color: db-palette-color('blue100');
 
-  &.dbx-notification--global {
-    background-color: dbx-palette-color('blue050') !important;
-    border-color: dbx-palette-color('white');
+  &.db-notification--global {
+    background-color: db-palette-color('blue050') !important;
+    border-color: db-palette-color('white');
   }
 
-  .dbx-icon {
-    color: dbx-palette-color('blue500');
-  }
-}
-
-.dbx-notification--warning {
-  color: dbx-text-color('primary');
-  background-color: desaturate(dbx-palette-color('yellow200'), 15%);
-  border-color: dbx-palette-color('yellow200') !important;
-
-  .dbx-icon {
-    color: dbx-palette-color('coolgray600');
+  .db-icon {
+    color: db-palette-color('blue500');
   }
 }
 
-.dbx-notification--error {
+.db-notification--warning {
+  color: db-text-color('primary');
+  background-color: desaturate(db-palette-color('yellow200'), 15%);
+  border-color: db-palette-color('yellow200') !important;
+
+  .db-icon {
+    color: db-palette-color('coolgray600');
+  }
+}
+
+.db-notification--error {
   color: #db0014;
-  background-color: desaturate(dbx-palette-color('yellow200'), 15%);
-  border-color: dbx-palette-color('yellow200') !important;
+  background-color: desaturate(db-palette-color('yellow200'), 15%);
+  border-color: db-palette-color('yellow200') !important;
 }
 
-.dbx-notification--success {
-  color: dbx-text-color('primary');
-  background-color: dbx-palette-color('lightgreen050');
-  border-color: dbx-palette-color('lightgreen100');
+.db-notification--success {
+  color: db-text-color('primary');
+  background-color: db-palette-color('lightgreen050');
+  border-color: db-palette-color('lightgreen100');
 
-  &.dbx-notification--global {
-    background-color: dbx-palette-color('lightgreen050') !important;
+  &.db-notification--global {
+    background-color: db-palette-color('lightgreen050') !important;
   }
 
   circle {
-    fill: dbx-color('success');
+    fill: db-color('success');
   }
 }
 
@@ -111,7 +111,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
  *    to take up only the miminmal amount of the space necessary to
  *    not block interactions with large parts of the site.
  */
-.dbx-notification-portal {
+.db-notification-portal {
   position: fixed;
   display: flex;
   flex-flow: column nowrap;
@@ -120,5 +120,5 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   left: 50%;
   transform: translateX(-50%);
   max-width: 64rem; /* 1 */
-  padding: dbx-spacing('m');
+  padding: db-spacing('m');
 }

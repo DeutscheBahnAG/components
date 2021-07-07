@@ -1,20 +1,20 @@
-.dbx-copy {
-  color: var(--dbx-primary-text-color);
+.db-copy {
+  color: var(--db-primary-text-color);
   display: inherit;
 }
 
-.dbx-copy--secondary {
-  color: var(--dbx-secondary-text-color);
+.db-copy--secondary {
+  color: var(--db-secondary-text-color);
 }
 
 @each $size in (xs s m l) {
-  .dbx-copy--size-#{$size} {
-    @include dbx-text-style('copy', $size);
+  .db-copy--size-#{$size} {
+    @include db-text-style('copy', $size);
   }
 }
 
-.dbx-copy--bold,
-.dbx-copy b,
-.dbx-copy strong {
-  font-weight: dbx-font-weight('copy', 'bold');
+.db-copy--bold,
+.db-copy b,
+.db-copy strong {
+  font-weight: db-font-weight('copy', 'bold');
 }

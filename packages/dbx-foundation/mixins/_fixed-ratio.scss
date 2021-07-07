@@ -5,7 +5,7 @@
 ///   .foo {
 ///     @include fixed-ratio(4 / 3);
 ///   }
-@mixin dbx-fixed-ratio($ratio) {
+@mixin db-fixed-ratio($ratio) {
   display: block;
   position: relative;
 

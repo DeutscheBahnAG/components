@@ -1,20 +1,20 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-.dbx-textfield {
-  @include dbx-focus-ring(
+.db-textfield {
+  @include db-focus-ring(
     $focus-selector: ':focus-within',
     $transition: 'border 200ms'
   );
   align-items: stretch;
-  background-color: var(--dbx-secondary-background-color);
-  border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
+  background-color: var(--db-secondary-background-color);
+  border: db-border-width('input') solid var(--db-secondary-background-color);
   box-sizing: border-box;
-  color: var(--dbx-field-secondary-text-color);
+  color: var(--db-field-secondary-text-color);
   display: inline-flex;
-  font-family: dbx-font-family('copy');
+  font-family: db-font-family('copy');
   vertical-align: top;
 
-  &:not(.dbx-textfield--disabled) {
+  &:not(.db-textfield--disabled) {
     cursor: text;
   }
 
@@ -26,7 +26,7 @@
     border: 0;
     background: transparent;
     box-shadow: none; /* 1 */
-    color: var(--dbx-field-primary-text-color);
+    color: var(--db-field-primary-text-color);
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -41,7 +41,7 @@
   }
 
   ::placeholder {
-    color: var(--dbx-field-secondary-text-color);
+    color: var(--db-field-secondary-text-color);
     font-family: inherit;
     font-size: inherit;
     font-style: italic;
@@ -49,30 +49,30 @@
   }
 }
 
-.dbx-textfield--disabled,
-.dbx-textfield--readonly {
+.db-textfield--disabled,
+.db-textfield--readonly {
   background: transparent;
-  border-color: var(--dbx-secondary-background-color);
+  border-color: var(--db-secondary-background-color);
 
   input,
   textarea {
-    color: var(--dbx-disabled-text-color);
+    color: var(--db-disabled-text-color);
   }
 }
 
-.dbx-textfield--readonly.dbx-textfield--focus {
+.db-textfield--readonly.db-textfield--focus {
   border-color: transparent;
 }
 
 /**
  * 2. Fixes a Safari bug not applying colors via variables when disabled
  */
-.dbx-textfield--disabled {
-  color: var(--dbx-disabled-text-color);
-  -webkit-text-fill-color: var(--dbx-disabled-text-color); /* 2 */
+.db-textfield--disabled {
+  color: var(--db-disabled-text-color);
+  -webkit-text-fill-color: var(--db-disabled-text-color); /* 2 */
 }
 
-.dbx-textfield--textarea {
+.db-textfield--textarea {
   overflow: hidden;
   position: relative;
 
@@ -81,7 +81,7 @@
     background: linear-gradient(to top, transparent);
     bottom: 0;
     content: '';
-    height: dbx-spacing('s');
+    height: db-spacing('s');
     pointer-events: none;
     position: absolute;
     z-index: 1;
@@ -93,12 +93,12 @@
   }
 }
 
-.dbx-textfield-prefix,
-.dbx-textfield-suffix {
+.db-textfield-prefix,
+.db-textfield-suffix {
   transition: transform 0.2s;
 }
 
-.dbx-textfield__inline-label {
+.db-textfield__inline-label {
   pointer-events: none;
   position: absolute;
   transition: all 0.2s;
@@ -109,50 +109,50 @@
   * 1. Calculating the scaling from M to S.
   * 2. Prefer `scale` over `font-size` for smooth transitions.
   */
-.dbx-textfield:focus-within .dbx-textfield__inline-label,
-.dbx-textfield--filled .dbx-textfield__inline-label {
-  $scale-down: dbx-font-size('copy', 's') / dbx-font-size('copy', 'm'); /* 1 */
+.db-textfield:focus-within .db-textfield__inline-label,
+.db-textfield--filled .db-textfield__inline-label {
+  $scale-down: db-font-size('copy', 's') / db-font-size('copy', 'm'); /* 1 */
   transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
 }
 
-.dbx-textfield--inline-label {
+.db-textfield--inline-label {
   ::placeholder {
     color: transparent;
     transition: color 0.2;
   }
 
-  &.dbx-textfield--focus ::placeholder {
-    color: var(--dbx-secondary-background-color);
+  &.db-textfield--focus ::placeholder {
+    color: var(--db-secondary-background-color);
   }
 
   input,
-  &.dbx-textfield--filled .dbx-textfield-prefix,
-  &.dbx-textfield--filled .dbx-textfield-suffix,
-  &.dbx-textfield--focus .dbx-textfield-prefix,
-  &.dbx-textfield--focus .dbx-textfield-suffix {
+  &.db-textfield--filled .db-textfield-prefix,
+  &.db-textfield--filled .db-textfield-suffix,
+  &.db-textfield--focus .db-textfield-prefix,
+  &.db-textfield--focus .db-textfield-suffix {
     transform: translateY(8px);
   }
 }
 
 @each $size in (xl l m s xs) {
-  .dbx-textfield--#{$size} {
-    $horizontal-padding: dbx-component-horizontal-padding($size, 'input');
-    $vertical-padding: dbx-component-vertical-padding($size, 'input');
+  .db-textfield--#{$size} {
+    $horizontal-padding: db-component-horizontal-padding($size, 'input');
+    $vertical-padding: db-component-vertical-padding($size, 'input');
 
-    @include dbx-component-text-style($size, 'input');
+    @include db-component-text-style($size, 'input');
 
-    border-radius: dbx-border-radius($size);
-    min-height: dbx-size($size);
+    border-radius: db-border-radius($size);
+    min-height: db-size($size);
 
     input,
     textarea,
-    .dbx-textfield-prefix {
+    .db-textfield-prefix {
       padding-left: $horizontal-padding;
     }
 
     input,
     textarea,
-    .dbx-textfield-suffix {
+    .db-textfield-suffix {
       padding-right: $horizontal-padding;
     }
 
@@ -160,7 +160,7 @@
       * 1. Equals a Thin Space character
       * 2. Icons/Buttons should have equal margin to the border on all sides
       */
-    .dbx-textfield-prefix {
+    .db-textfield-prefix {
       margin-right: calc(0.15em - #{$horizontal-padding}); /* 1 */
 
       > * {
@@ -170,7 +170,7 @@
       }
     }
 
-    .dbx-textfield-suffix {
+    .db-textfield-suffix {
       margin-left: calc(0.15em - #{$horizontal-padding}); /* 1 */
 
       > * {
@@ -180,7 +180,7 @@
       }
     }
 
-    .dbx-textfield--textarea {
+    .db-textfield--textarea {
       &::before,
       &::after {
         left: $horizontal-padding;
@@ -188,16 +188,16 @@
       }
     }
 
-    .dbx-textfield__inline-label {
+    .db-textfield__inline-label {
       margin-left: $horizontal-padding;
     }
 
     input,
     textarea,
-    .dbx-textfield-prefix,
-    .dbx-textfield-suffix,
-    .dbx-textfield__inline-label {
-      border-radius: dbx-border-radius($size);
+    .db-textfield-prefix,
+    .db-textfield-suffix,
+    .db-textfield__inline-label {
+      border-radius: db-border-radius($size);
       padding-bottom: $vertical-padding;
       padding-top: $vertical-padding;
     }
@@ -207,10 +207,10 @@
 /**
   * 3. Negative margins as Buttons are higher than the expected line-height
   */
-.dbx-textfield {
+.db-textfield {
   @each $size in (xl l m s xs) {
-    .dbx-button--#{$size} {
-      margin: #{(dbx-line-height('copy', 'm') - dbx-size($size)) / 2};
+    .db-button--#{$size} {
+      margin: #{(db-line-height('copy', 'm') - db-size($size)) / 2};
     }
   }
 }

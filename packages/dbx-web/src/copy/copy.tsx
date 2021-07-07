@@ -38,10 +38,10 @@ const Copy: CopyType<CopyProps> = ({
 }: CopyProps) => (
   <span
     className={clsx(
-      'dbx-copy',
-      `dbx-copy--size-${size}`,
-      bold && 'dbx-copy--bold',
-      variant === CopyVariants.SECONDARY && 'dbx-copy--secondary',
+      'db-copy',
+      `db-copy--size-${size}`,
+      bold && 'db-copy--bold',
+      variant === CopyVariants.SECONDARY && 'db-copy--secondary',
       className
     )}
     {...otherProps}

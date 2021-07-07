@@ -164,13 +164,13 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
       isOpen
       autoFocus={false}
       title={title!}
-      className={clsx('dbx-consentlayer', className)}
+      className={clsx('db-consentlayer', className)}
       enableCloseButton={false}
       fullActionSize={Modal.fullActionSizes.M}
       appId={appId}
       primaryButton={
         <Button
-          className="dbx-consentlayer__accept-all-btn"
+          className="db-consentlayer__accept-all-btn"
           onClick={handleSaveAll}
           data-autofocus
           variant={Button.variants.PRIMARY}
@@ -180,7 +180,7 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
       }
       secondaryButton={
         <Button
-          className="dbx-consentlayer__save-btn"
+          className="db-consentlayer__save-btn"
           onClick={handleSave}
           disabled={allOptionsChecked}
           variant={Button.variants.PRIMARY}
@@ -192,26 +192,26 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
         (importantLinks.length > 0 || footer) &&
         spacedLinks([
           ...importantLinks.map((link) => (
-            <span className="dbx-contentlayer__important-link">{link}</span>
+            <span className="db-contentlayer__important-link">{link}</span>
           )),
           footer,
         ])
       }
       {...otherProps}
     >
-      <form className="dbx-consentlayer__form">
+      <form className="db-consentlayer__form">
         {message && (
-          <div className="dbx-consentlayer__message">
+          <div className="db-consentlayer__message">
             {typeof message === 'string' && message.length > 0 ? (
-              <p className="dbx-consentlayer__text">{message}</p>
+              <p className="db-consentlayer__text">{message}</p>
             ) : (
               message
             )}
           </div>
         )}
-        <ul className="dbx-consentlayer__options">
+        <ul className="db-consentlayer__options">
           {options.map(({ name, label, description, required, checked }) => (
-            <li key={name} className="dbx-consentlayer__option">
+            <li key={name} className="db-consentlayer__option">
               <Checkbox
                 name={name}
                 checked={checked}
@@ -225,15 +225,13 @@ const Consentlayer: React.FC<ConsentLayerProps> = ({
                   )
                 }
               >
-                <div className="dbx-consentlayer__option-label">{label}</div>
+                <div className="db-consentlayer__option-label">{label}</div>
               </Checkbox>
             </li>
           ))}
         </ul>
-        {children && <div className="dbx-consentlayer__children">{children}</div>}
-        {privacyMessage && (
-          <div className="dbx-consentlayer__privacy-message">{privacyMessage}</div>
-        )}
+        {children && <div className="db-consentlayer__children">{children}</div>}
+        {privacyMessage && <div className="db-consentlayer__privacy-message">{privacyMessage}</div>}
       </form>
     </Modal>
   );

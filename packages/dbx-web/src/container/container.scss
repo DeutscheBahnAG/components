@@ -1,57 +1,57 @@
-.dbx-container {
+.db-container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.dbx-container--extended {
-  border-radius: dbx-border-radius('xl');
-  margin-left: var(--dbx-extended-margin);
-  margin-right: var(--dbx-extended-margin);
-  max-width: var(--dbx-extended-max-width);
+.db-container--extended {
+  border-radius: db-border-radius('xl');
+  margin-left: var(--db-extended-margin);
+  margin-right: var(--db-extended-margin);
+  max-width: var(--db-extended-max-width);
 }
 
-.dbx-container--content {
-  border-radius: dbx-border-radius('l');
-  margin-left: var(--dbx-content-margin);
-  margin-right: var(--dbx-content-margin);
-  max-width: var(--dbx-content-max-width);
+.db-container--content {
+  border-radius: db-border-radius('l');
+  margin-left: var(--db-content-margin);
+  margin-right: var(--db-content-margin);
+  max-width: var(--db-content-max-width);
 
-  .dbx-container--extended & {
-    margin-left: var(--dbx-content-in-extended-margin);
-    margin-right: var(--dbx-content-in-extended-margin);
+  .db-container--extended & {
+    margin-left: var(--db-content-in-extended-margin);
+    margin-right: var(--db-content-in-extended-margin);
   }
 
-  .dbx-container--content & {
+  .db-container--content & {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
-.dbx-container--text {
-  max-width: var(--dbx-text-max-width);
+.db-container--text {
+  max-width: var(--db-text-max-width);
 }
 
-.dbx-container--left {
+.db-container--left {
   align-items: flex-start;
   text-align: left;
 }
 
-.dbx-container--center {
+.db-container--center {
   align-items: center;
   text-align: center;
 }
 
-.dbx-container--right {
+.db-container--right {
   align-items: flex-end;
   text-align: right;
 }
 
-.dbx-container--filled {
-  background-color: var(--dbx-primary-background-color);
+.db-container--filled {
+  background-color: var(--db-primary-background-color);
 
-  &:not(.dbx-container--full) {
-    box-shadow: var(--dbx-shadow-color) 0 1px 16px;
+  &:not(.db-container--full) {
+    box-shadow: var(--db-shadow-color) 0 1px 16px;
   }
 }

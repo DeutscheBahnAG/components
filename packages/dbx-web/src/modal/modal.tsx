@@ -153,7 +153,7 @@ const setViewportUnitCssVariable = () => {
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     const vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--dbx-vh', `${vh}px`);
+    document.documentElement.style.setProperty('--db-vh', `${vh}px`);
   }
 };
 
@@ -236,16 +236,16 @@ const Modal: ModalType<ModalProps> = ({
       isOpen={isOpen!}
       onRequestClose={onClose && onClose}
       closeTimeoutMS={duration!}
-      portalClassName="dbx-modal-portal"
+      portalClassName="db-modal-portal"
       overlayClassName={{
-        base: clsx('dbx-modal', overlayClassName),
-        afterOpen: 'dbx-modal--open',
-        beforeClose: 'dbx-modal--close',
+        base: clsx('db-modal', overlayClassName),
+        afterOpen: 'db-modal--open',
+        beforeClose: 'db-modal--close',
       }}
       className={{
-        base: clsx('dbx-modal__dialog', `dbx-modal__dialog--width-${size}`, className),
-        afterOpen: 'dbx-modal__dialog--open',
-        beforeClose: 'dbx-modal__dialog--close',
+        base: clsx('db-modal__dialog', `db-modal__dialog--width-${size}`, className),
+        afterOpen: 'db-modal__dialog--open',
+        beforeClose: 'db-modal__dialog--close',
       }}
       ariaHideApp
       shouldFocusAfterRender={autoFocus!}
@@ -259,14 +259,14 @@ const Modal: ModalType<ModalProps> = ({
         labelledby: ariaLabelledBy!,
         describedby: ariaDescribedBy!,
       }}
-      bodyOpenClassName={disableBodyScrollWhenOpen ? 'body--dbx-modal-open' : undefined}
-      htmlOpenClassName={disableBodyScrollWhenOpen ? 'html--dbx-modal-open' : undefined}
+      bodyOpenClassName={disableBodyScrollWhenOpen ? 'body--db-modal-open' : undefined}
+      htmlOpenClassName={disableBodyScrollWhenOpen ? 'html--db-modal-open' : undefined}
       {...otherProps}
     >
       <header
         className={clsx(
-          'dbx-modal__header',
-          ((children && !title) || (!children && title)) && 'dbx-modal__header--collapse'
+          'db-modal__header',
+          ((children && !title) || (!children && title)) && 'db-modal__header--collapse'
         )}
       >
         {enableCloseButton && (
@@ -275,22 +275,22 @@ const Modal: ModalType<ModalProps> = ({
             shape={Button.shapes.SQUARE}
             size={Button.sizes.M}
             icon={<NavigationClose />}
-            className={clsx('dbx-modal__closebutton')}
+            className={clsx('db-modal__closebutton')}
             onClick={onClose && onClose}
           >
             {closeText}
           </Button>
         )}
         {title && (
-          <h2 id="ariaLabelledBy" className="dbx-modal__title">
+          <h2 id="ariaLabelledBy" className="db-modal__title">
             <Title size={Title.sizes.L}>{title}</Title>
           </h2>
         )}
       </header>
       <main
         className={clsx(
-          'dbx-modal__content',
-          !title && enableCloseButton && 'dbx-modal__content--right-gap'
+          'db-modal__content',
+          !title && enableCloseButton && 'db-modal__content--right-gap'
         )}
       >
         {children}
@@ -299,20 +299,20 @@ const Modal: ModalType<ModalProps> = ({
       {(PrimaryButton || SecondaryButton) && (
         <div
           className={clsx(
-            'dbx-modal__actions',
-            fullActionSize !== 'none' && `dbx-modal__actions--full-${fullActionSize}`,
-            centerActions !== 'none' && `dbx-modal__actions--center-${centerActions}`
+            'db-modal__actions',
+            fullActionSize !== 'none' && `db-modal__actions--full-${fullActionSize}`,
+            centerActions !== 'none' && `db-modal__actions--center-${centerActions}`
           )}
         >
           {PrimaryButton && (
-            <div className="dbx-modal__action dbx-modal__action--primary">{PrimaryButton}</div>
+            <div className="db-modal__action db-modal__action--primary">{PrimaryButton}</div>
           )}
           {SecondaryButton && (
-            <div className="dbx-modal__action dbx-modal__action--secondary">{SecondaryButton}</div>
+            <div className="db-modal__action db-modal__action--secondary">{SecondaryButton}</div>
           )}
         </div>
       )}
-      {footer && <footer className="dbx-modal__footer">{footer}</footer>}
+      {footer && <footer className="db-modal__footer">{footer}</footer>}
     </ReactModal>
   );
 };

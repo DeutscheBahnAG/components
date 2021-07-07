@@ -1,21 +1,21 @@
 // applies a text style from the DBX design system
 // (see variables/text-styles for available styles)
-@mixin dbx-text-style($text-style: 'copy', $size: 'm') {
-  $font-size: dbx-font-size($text-style, $size);
-  $font-size-large: dbx-font-size($text-style, $size, 'desktop');
-  $line-height: dbx-line-height($text-style, $size);
-  $line-height-large: dbx-line-height($text-style, $size, 'desktop');
+@mixin db-text-style($text-style: 'copy', $size: 'm') {
+  $font-size: db-font-size($text-style, $size);
+  $font-size-large: db-font-size($text-style, $size, 'desktop');
+  $line-height: db-line-height($text-style, $size);
+  $line-height-large: db-line-height($text-style, $size, 'desktop');
   $font-weight: if($text-style == 'title', bold, normal);
-  $font-family: dbx-font-family($text-style);
+  $font-family: db-font-family($text-style);
   $breakpoint: 48em;
 
-  @include dbx-rem-font-size($font-size);
+  @include db-rem-font-size($font-size);
   line-height: $line-height / $font-size; // use relative (unitless) font-size
   font-weight: $font-weight;
   font-family: $font-family;
 
   @media (min-width: $breakpoint) {
-    @include dbx-rem-font-size($font-size-large);
+    @include db-rem-font-size($font-size-large);
     line-height: $line-height-large / $font-size-large; // use relative (unitless) font-size
   }
 }

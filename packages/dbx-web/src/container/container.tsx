@@ -39,10 +39,10 @@ const Container: ContainerType<ContainerProps> = ({
 }: ContainerProps) => (
   <div
     className={clsx(
-      'dbx-container',
-      `dbx-container--${width}`,
-      align && `dbx-container--${align}`,
-      filled && 'dbx-container--filled',
+      'db-container',
+      `db-container--${width}`,
+      align && `db-container--${align}`,
+      filled && 'db-container--filled',
       className
     )}
     {...otherProps}

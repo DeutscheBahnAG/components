@@ -128,13 +128,13 @@ const Button: ButtonType = ({
         aria-label={ariaLabel}
         title={tooltip}
         className={clsx(
-          'dbx-button',
-          `dbx-button--${variant}`,
-          `dbx-button--${shape}`,
-          { 'dbx-button--block': fullWidth },
-          { 'dbx-button--disabled': disabled },
-          { 'dbx-button--loading': loading },
-          size && `dbx-button--${size}`,
+          'db-button',
+          `db-button--${variant}`,
+          `db-button--${shape}`,
+          { 'db-button--block': fullWidth },
+          { 'db-button--disabled': disabled },
+          { 'db-button--loading': loading },
+          size && `db-button--${size}`,
           className
         )}
         {...otherProps}
@@ -143,7 +143,7 @@ const Button: ButtonType = ({
         {icon}
         {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
       </Element>
-      <span className="dbx-inline-spacer"> </span>
+      <span className="db-inline-spacer"> </span>
     </>
   );
 };

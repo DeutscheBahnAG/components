@@ -1,49 +1,49 @@
-.dbx-status {
-  @include dbx-text-style('copy', 's');
+.db-status {
+  @include db-text-style('copy', 's');
   align-items: baseline;
   display: inline-flex;
-  color: var(--dbx-primary-text-color);
+  color: var(--db-primary-text-color);
 
   svg {
     $icon-safe-area: 2px;
     flex-shrink: 0;
-    height: dbx-icon-size('s');
-    margin: 0 dbx-spacing('xs') 0 #{-$icon-safe-area};
+    height: db-icon-size('s');
+    margin: 0 db-spacing('xs') 0 #{-$icon-safe-area};
     position: relative;
     top: 5px;
-    width: dbx-icon-size('s');
+    width: db-icon-size('s');
   }
 
   path {
     fill: transparent;
-    stroke: dbx-palette-color('white');
+    stroke: db-palette-color('white');
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
 
   circle {
-    fill: dbx-palette-color('coolgray500');
+    fill: db-palette-color('coolgray500');
   }
 
   circle + circle {
-    fill: dbx-palette-color('white');
+    fill: db-palette-color('white');
   }
 }
 
-.dbx-status--success circle {
-  fill: dbx-color('success');
+.db-status--success circle {
+  fill: db-color('success');
 }
 
-.dbx-status--error,
-.dbx-status--fatal {
+.db-status--error,
+.db-status--fatal {
   color: #db0014;
 
   circle {
-    fill: dbx-palette-color('red500');
+    fill: db-palette-color('red500');
   }
 }
 
-.dbx-status__message {
+.db-status__message {
   display: inline-block;
 }

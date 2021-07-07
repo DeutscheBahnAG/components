@@ -15,7 +15,7 @@ type TimeProps = InferProps<typeof timePropTypes>;
 const Time: React.FunctionComponent<TimeProps> = ({ dateTime, className, ...props }) => {
   const date = new Date(parseTime(dateTime));
   return (
-    <time className={clsx('dbx-time', className)} dateTime={dateTime} {...props}>
+    <time className={clsx('db-time', className)} dateTime={dateTime} {...props}>
       {`${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}`}
     </time>
   );

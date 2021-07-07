@@ -4,7 +4,7 @@ import DefaultModal from './modal';
 export const overrides = {
   appId: 'rsg-root',
   autoFocus: false,
-  overlayClassName: 'dbx-modal--doc',
+  overlayClassName: 'db-modal--doc',
   disableBodyScrollWhenOpen: false,
 };
 

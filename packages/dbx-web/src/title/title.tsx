@@ -39,10 +39,10 @@ const Title: TitleType<TitleProps> = ({
 }) => (
   <span
     className={clsx(
-      'dbx-title',
-      `dbx-title--size-${size}`,
-      light && 'dbx-title--light',
-      variant === TitleVariants.SECONDARY && 'dbx-title--secondary',
+      'db-title',
+      `db-title--size-${size}`,
+      light && 'db-title--light',
+      variant === TitleVariants.SECONDARY && 'db-title--secondary',
       className
     )}
     {...otherProps}

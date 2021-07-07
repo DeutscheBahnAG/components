@@ -3,13 +3,13 @@
 exports[`Button Component should render a button 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     type="button"
   >
     My button 1
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -19,13 +19,13 @@ exports[`Button Component should render a button 1`] = `
 exports[`Button Component should render a button when \`href\` is not set 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     type="button"
   >
     My button 7
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -35,14 +35,14 @@ exports[`Button Component should render a button when \`href\` is not set 1`] = 
 exports[`Button Component should render a button with addional attributes 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     title="Click me"
     type="button"
   >
     My button 5
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -52,13 +52,13 @@ exports[`Button Component should render a button with addional attributes 1`] = 
 exports[`Button Component should render a button with addional classes 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l my-class"
+    class="db-button db-button--primary db-button--default db-button--l my-class"
     type="button"
   >
     My button 6
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -69,13 +69,13 @@ exports[`Button Component should render a button with custom \`aria-label\` 1`] 
 <div>
   <button
     aria-label="This is a custom aria-label"
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     type="button"
   >
     My button 9
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -85,13 +85,13 @@ exports[`Button Component should render a button with custom \`aria-label\` 1`] 
 exports[`Button Component should render a full-width button 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--block dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--block db-button--l"
     type="button"
   >
     My button 4
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -101,13 +101,13 @@ exports[`Button Component should render a full-width button 1`] = `
 exports[`Button Component should render a secondary button 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--secondary dbx-button--default dbx-button--l"
+    class="db-button db-button--secondary db-button--default db-button--l"
     type="button"
   >
     My button 3
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -117,13 +117,13 @@ exports[`Button Component should render a secondary button 1`] = `
 exports[`Button Component should render a submit button 1`] = `
 <div>
   <button
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     type="submit"
   >
     My button 2
   </button>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>
@@ -133,13 +133,13 @@ exports[`Button Component should render a submit button 1`] = `
 exports[`Button Component should render an anchor when \`href\` is set 1`] = `
 <div>
   <a
-    class="dbx-button dbx-button--primary dbx-button--default dbx-button--l"
+    class="db-button db-button--primary db-button--default db-button--l"
     href="#"
   >
     My button 8
   </a>
   <span
-    class="dbx-inline-spacer"
+    class="db-inline-spacer"
   >
      
   </span>

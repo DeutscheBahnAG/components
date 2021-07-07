@@ -1,5 +1,5 @@
 // Mixin that will include the fall back px declaration as well as the calculated rem value.
-@mixin dbx-rem-font-size($size) {
+@mixin db-rem-font-size($size) {
   font-size: $size;
-  font-size: dbx-calculate-rem($size);
+  font-size: db-calculate-rem($size);
 }

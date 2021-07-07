@@ -35,17 +35,17 @@ const Triptime: TriptimeComponent = ({
   const isTripSlightlyDelayed =
     predictedDateTime && isTripDelayed && isSlightlyDelayed(dateTime, predictedDateTime);
   return (
-    <span className={clsx('dbx-triptime', `dbx-triptime--${stopType}`, className)} {...props}>
+    <span className={clsx('db-triptime', `db-triptime--${stopType}`, className)} {...props}>
       <Time
         dateTime={dateTime}
-        className={clsx(stopType !== Triptime.stopTypes.INTERMEDIATE && 'dbx-triptime--bold')}
+        className={clsx(stopType !== Triptime.stopTypes.INTERMEDIATE && 'db-triptime--bold')}
       />
       {predictedDateTime && isTripDelayed && (
         <Time
           className={clsx({
-            'dbx-triptime--delayed': !isTripSlightlyDelayed,
-            'dbx-triptime--slightly-delayed': isTripSlightlyDelayed,
-            'dbx-triptime--bold': stopType === Triptime.stopTypes.CURRENT,
+            'db-triptime--delayed': !isTripSlightlyDelayed,
+            'db-triptime--slightly-delayed': isTripSlightlyDelayed,
+            'db-triptime--bold': stopType === Triptime.stopTypes.CURRENT,
           })}
           dateTime={predictedDateTime}
         />

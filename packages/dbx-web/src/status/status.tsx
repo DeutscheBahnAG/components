@@ -40,7 +40,7 @@ type StatusComponent = React.FunctionComponent<StatusProps> & { variants: typeof
 const Status: StatusComponent = ({ variant, message, className, ...props }) => {
   return (
     <>
-      <span className={clsx('dbx-status', `dbx-status--${variant}`, className)} {...props}>
+      <span className={clsx('db-status', `db-status--${variant}`, className)} {...props}>
         <svg>
           <circle cx="10" cy="10" r="8" />
           {(() => {
@@ -57,9 +57,9 @@ const Status: StatusComponent = ({ variant, message, className, ...props }) => {
             }
           })()}
         </svg>
-        <span className="dbx-status__message">{message}</span>
+        <span className="db-status__message">{message}</span>
       </span>
-      <span className="dbx-inline-spacer"> </span>
+      <span className="db-inline-spacer"> </span>
     </>
   );
 };

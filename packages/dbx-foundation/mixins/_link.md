@@ -16,7 +16,7 @@ Usually a red link:
 
 ```scss
 .my-link {
-  @include dbx-primary-link;
+  @include db-primary-link;
 }
 ```
 
@@ -30,7 +30,7 @@ Usually a black link:
 
 ```scss
 .my-link {
-  @include dbx-secondary-link;
+  @include db-secondary-link;
 }
 ```
 
@@ -44,20 +44,20 @@ Sometimes a single color of a link might need a replacement:
 
 ```scss
 .my-link {
-  @include dbx-primary-link($text-color: dbx-text-color('primary'));
+  @include db-primary-link($text-color: db-text-color('primary'));
 }
 ```
 
 It’s possible to override `$text-color`, `$text-color--hover` and `$text-color--pressed`.
 
-In all three values need to be overridden, use the shorter `dbx-link` mixin. This still takes care of other important stylings to be consistent like the focus ring.
+In all three values need to be overridden, use the shorter `db-link` mixin. This still takes care of other important stylings to be consistent like the focus ring.
 
 ```scss
 .my-link {
-  @include dbx-link(
-    $text-color: dbx-palette-color('green500'),
-    $text-color--hover: dbx-palette-color('green600'),
-    $text-color--pressed: dbx-palette-color('green800')
+  @include db-link(
+    $text-color: db-palette-color('green500'),
+    $text-color--hover: db-palette-color('green600'),
+    $text-color--pressed: db-palette-color('green800')
   );
 }
 ```

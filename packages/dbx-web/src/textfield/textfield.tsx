@@ -105,31 +105,31 @@ const Textfield: TextfieldComponent = React.forwardRef(
         <div
           onClick={handleClick} // Focus on click on the prefix/suffix
           className={clsx(
-            'dbx-textfield',
-            `dbx-textfield--${type}`,
-            `dbx-textfield--${fieldSize}`,
+            'db-textfield',
+            `db-textfield--${type}`,
+            `db-textfield--${fieldSize}`,
             {
-              'dbx-textfield--filled': !!value,
-              'dbx-textfield--inline-label': !!inlineLabel,
-              'dbx-textfield--disabled': otherProps.disabled,
-              'dbx-textfield--readonly': otherProps.readOnly,
+              'db-textfield--filled': !!value,
+              'db-textfield--inline-label': !!inlineLabel,
+              'db-textfield--disabled': otherProps.disabled,
+              'db-textfield--readonly': otherProps.readOnly,
             },
             className
           )}
         >
-          {contentBefore && <span className={clsx('dbx-textfield-prefix')}>{contentBefore}</span>}
+          {contentBefore && <span className={clsx('db-textfield-prefix')}>{contentBefore}</span>}
           {(inlineLabel && (
             // eslint-disable-next-line jsx-a11y/label-has-associated-control
             <label>
-              <span className={clsx('dbx-textfield__inline-label')}>{inlineLabel}</span>
+              <span className={clsx('db-textfield__inline-label')}>{inlineLabel}</span>
               {configuredField}
             </label>
           )) ||
             configuredField}
 
-          {contentAfter && <span className={clsx('dbx-textfield-suffix')}>{contentAfter}</span>}
+          {contentAfter && <span className={clsx('db-textfield-suffix')}>{contentAfter}</span>}
         </div>
-        <span className="dbx-inline-spacer"> </span>
+        <span className="db-inline-spacer"> </span>
       </>
     );
   }

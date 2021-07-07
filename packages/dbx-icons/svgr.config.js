@@ -70,7 +70,7 @@ module.exports = {
     '#282D37': 'currentColor',
   },
   svgProps: {
-    className: 'dbx-icon',
+    className: 'db-icon',
     width: '24',
     height: '24',
     role: 'img',

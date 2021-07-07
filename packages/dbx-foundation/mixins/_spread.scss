@@ -2,7 +2,7 @@
 /// ancestor. `width` and `height` are being output to prevent a buggy behaviour
 /// in Chrome (48 atow).
 /// @group Layout
-@mixin dbx-spread {
+@mixin db-spread {
   bottom: 0;
   height: 100%;
   left: 0;

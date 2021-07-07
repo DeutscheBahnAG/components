@@ -1,35 +1,34 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-$dbx-select-text-style: 'copy';
-$dbx-select-border-width: dbx-border-width('input');
-$dbx-select-adjustment: 1px;
-$dbx-select-padding-horizontal: dbx-spacing('m') - $dbx-select-border-width;
-$dbx-select-padding-vertical: dbx-spacing('m') - $dbx-select-border-width;
-$dbx-select-padding-top: $dbx-select-padding-vertical - $dbx-select-adjustment;
-$dbx-select-padding-bottom: $dbx-select-padding-vertical +
-  $dbx-select-adjustment;
-$dbx-select-chevron-width: 16px;
-$dbx-select-chevron-margin: 16px;
+$db-select-text-style: 'copy';
+$db-select-border-width: db-border-width('input');
+$db-select-adjustment: 1px;
+$db-select-padding-horizontal: db-spacing('m') - $db-select-border-width;
+$db-select-padding-vertical: db-spacing('m') - $db-select-border-width;
+$db-select-padding-top: $db-select-padding-vertical - $db-select-adjustment;
+$db-select-padding-bottom: $db-select-padding-vertical + $db-select-adjustment;
+$db-select-chevron-width: 16px;
+$db-select-chevron-margin: 16px;
 
-.dbx-select {
-  @include dbx-text-style($dbx-select-text-style);
-  @include dbx-focus-ring(
-    $focus-selector: '.dbx-select--focus',
+.db-select {
+  @include db-text-style($db-select-text-style);
+  @include db-focus-ring(
+    $focus-selector: '.db-select--focus',
     $transition: 'border 200ms'
   );
   align-items: stretch;
-  background-color: var(--dbx-secondary-background-color);
-  border: dbx-border-width('input') solid var(--dbx-secondary-background-color);
-  border-radius: dbx-border-radius('xl');
+  background-color: var(--db-secondary-background-color);
+  border: db-border-width('input') solid var(--db-secondary-background-color);
+  border-radius: db-border-radius('xl');
   box-sizing: border-box;
-  color: var(--dbx-primary-text-color);
+  color: var(--db-primary-text-color);
   display: inline-flex;
   position: relative;
 
   &--disabled {
     background: transparent;
-    border-color: var(--dbx-secondary-background-color);
-    color: var(--dbx-disabled-text-color);
+    border-color: var(--db-secondary-background-color);
+    color: var(--db-disabled-text-color);
   }
 
   /**
@@ -45,12 +44,12 @@ $dbx-select-chevron-margin: 16px;
     font-weight: inherit;
     line-height: inherit;
     flex: 1;
-    padding: $dbx-select-padding-top
+    padding: $db-select-padding-top
       (
-        $dbx-select-padding-horizontal + $dbx-select-chevron-width +
-        $dbx-select-chevron-margin
+        $db-select-padding-horizontal + $db-select-chevron-width +
+        $db-select-chevron-margin
       )
-      $dbx-select-padding-bottom $dbx-select-padding-horizontal;
+      $db-select-padding-bottom $db-select-padding-horizontal;
     outline: 0;
     width: inherit;
   }
@@ -66,8 +65,8 @@ $dbx-select-chevron-margin: 16px;
     pointer-events: none;
     position: absolute;
     top: 50%;
-    right: $dbx-select-chevron-margin;
+    right: $db-select-chevron-margin;
     transform: translateY(-50%);
-    width: $dbx-select-chevron-width;
+    width: $db-select-chevron-width;
   }
 }

@@ -1,4 +1,4 @@
-$dbx-tokens: (
+$db-tokens: (
   'palette': (
     'dbrot': #ec0016,
     'white': #fff,
@@ -110,7 +110,7 @@ $dbx-tokens: (
     'coolgray500': #646973,
     'coolgray600': #3c414b,
     'coolgray700': #282d37,
-    'coolgray800': #131821
+    'coolgray800': #131821,
   ),
   'color': (
     'brand': #ec0016,
@@ -225,7 +225,7 @@ $dbx-tokens: (
     'border.button.solid': #0000,
     'border.button.solid.hover': #0000,
     'border.button.solid.pressed': #0000,
-    'border.button.solid.disabled': #f0f3f5
+    'border.button.solid.disabled': #f0f3f5,
   ),
   'nativeColor': (
     'brand': #ec0016,
@@ -277,22 +277,22 @@ $dbx-tokens: (
     'foreground.interactive.toggle.on': #fff,
     'foreground.interactive.toggle.off': #282d37,
     'background.interactive.info.default': #646973,
-    'background.interactive.info.success': #fff
+    'background.interactive.info.success': #fff,
   ),
   'bordersize': (
     'input': 1px,
     'checkbox': 2px,
-    'button': 1px
+    'button': 1px,
   ),
   'fontfamily': (
     'title': 'DB Screen Head',
-    'copy': 'DB Screen Sans'
+    'copy': 'DB Screen Sans',
   ),
   'fontweight': (
     'title': 300,
     'title.bold': 700,
     'copy': 400,
-    'copy.bold': 700
+    'copy.bold': 700,
   ),
   'textsize': (
     'title.xxl': 36px,
@@ -312,7 +312,7 @@ $dbx-tokens: (
     'copy.s': 14px,
     'copy.s.desktop': 14px,
     'copy.xs': 12px,
-    'copy.xs.desktop': 12px
+    'copy.xs.desktop': 12px,
   ),
   'lineheight': (
     'title.xxl': 40px,
@@ -332,7 +332,7 @@ $dbx-tokens: (
     'copy.s': 20px,
     'copy.s.desktop': 20px,
     'copy.xs': 16px,
-    'copy.xs.desktop': 16px
+    'copy.xs.desktop': 16px,
   ),
   'linespacing': (
     'title.xxl': 4px,
@@ -352,7 +352,7 @@ $dbx-tokens: (
     'copy.s': 6px,
     'copy.s.desktop': 6px,
     'copy.xs': 4px,
-    'copy.xs.desktop': 4px
+    'copy.xs.desktop': 4px,
   ),
   'spacing': (
     'xs': 4px,
@@ -363,21 +363,21 @@ $dbx-tokens: (
     'l': 32px,
     'xl': 48px,
     'xxl': 72px,
-    'xxxl': 96px
+    'xxxl': 96px,
   ),
   'size': (
     'xs': 20px,
     's': 28px,
     'm': 36px,
     'l': 44px,
-    'xl': 56px
+    'xl': 56px,
   ),
   'radius': (
     'xs': 2.9px,
     's': 4px,
     'm': 5.1px,
     'l': 6.3px,
-    'xl': 8px
+    'xl': 8px,
   ),
   'icon': (
     'xs': 12px,
@@ -385,6 +385,6 @@ $dbx-tokens: (
     'm': 24px,
     'l': 32px,
     'xl': 48px,
-    'xxl': 64px
-  )
+    'xxl': 64px,
+  ),
 ) !default;

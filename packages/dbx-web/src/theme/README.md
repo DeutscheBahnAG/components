@@ -119,7 +119,7 @@ const themeNames = Object.keys(Theme.themes);
       </p>
       <div
         style={{
-          border: 'solid var(--dbx-border-color)',
+          border: 'solid var(--db-border-color)',
           borderWidth: '1px  0',
           padding: '8px 2px',
         }}

@@ -1,10 +1,10 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import 'theme/theme.scss';
 
-.dbx-inline-spacer {
+.db-inline-spacer {
   font-size: 0;
-  margin-left: dbx-spacing('m');
-  margin-top: dbx-spacing('m');
+  margin-left: db-spacing('m');
+  margin-top: db-spacing('m');
 
   &:last-child {
     margin: 0;

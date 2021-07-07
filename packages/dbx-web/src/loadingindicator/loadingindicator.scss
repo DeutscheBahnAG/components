@@ -1,14 +1,14 @@
-.dbx-loadingindicator {
+.db-loadingindicator {
   display: block;
 }
 
 @each $size in (xl l m s xs) {
-  .dbx-loadingindicator--#{$size} {
-    height: dbx-size($size);
+  .db-loadingindicator--#{$size} {
+    height: db-size($size);
   }
 }
 
-.dbx-loadingindicator rect {
+.db-loadingindicator rect {
   fill: currentColor;
   animation-name: loadingindicator-item-animation;
   animation-iteration-count: infinite;
@@ -17,11 +17,11 @@
   animation-delay: -2s;
 }
 
-.dbx-loadingindicator rect:nth-child(2) {
+.db-loadingindicator rect:nth-child(2) {
   animation-delay: -1.75s;
 }
 
-.dbx-loadingindicator rect:nth-child(3) {
+.db-loadingindicator rect:nth-child(3) {
   animation-delay: -1.5s;
 }
 

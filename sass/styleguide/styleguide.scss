@@ -3,9 +3,9 @@ $shadow--high: 0 6px 16px rgba(135, 140, 150, 0.5);
 $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-full-page {
-  @include dbx-text-style('copy');
-  color: dbx-text-color('primary');
-  padding: dbx-spacing('l') 0;
+  @include db-text-style('copy');
+  color: db-text-color('primary');
+  padding: db-spacing('l') 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -13,29 +13,29 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-page {
-  @include dbx-text-style('copy');
-  color: dbx-text-color('primary');
-  padding: dbx-spacing('l');
+  @include db-text-style('copy');
+  color: db-text-color('primary');
+  padding: db-spacing('l');
   margin: 0 auto;
   max-width: 64em;
 }
 
 .sg-page > h2 {
-  @include dbx-text-style('title', 'xl');
+  @include db-text-style('title', 'xl');
 }
 
 .sg-section h3 {
-  @include dbx-text-style('title', 'm');
+  @include db-text-style('title', 'm');
 }
 
 .sg-code-preview {
   display: inline-block;
-  margin: dbx-spacing('s') 0;
-  padding: dbx-spacing('s') dbx-spacing('m');
+  margin: db-spacing('s') 0;
+  padding: db-spacing('s') db-spacing('m');
   font-family: Courier, monospace;
   font-size: 14px;
-  background-color: dbx-background-color('secondary');
-  border-radius: dbx-border-radius('s');
+  background-color: db-background-color('secondary');
+  border-radius: db-border-radius('s');
 }
 
 .sg-section {
@@ -44,13 +44,13 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-section__heading {
   font-size: 1.5em;
-  margin-bottom: dbx-spacing('ml');
+  margin-bottom: db-spacing('ml');
 }
 
 .sg-card-group {
   display: flex;
   flex-flow: row wrap;
-  margin: dbx-spacing('m', $negative: true);
+  margin: db-spacing('m', $negative: true);
 }
 
 .sg-card-group--icons {
@@ -68,10 +68,10 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-card {
   min-width: 120px;
-  margin: dbx-spacing('m');
+  margin: db-spacing('m');
   box-shadow: $shadow--low;
-  background-color: dbx-background-color('primary');
-  border-radius: dbx-border-radius('xl');
+  background-color: db-background-color('primary');
+  border-radius: db-border-radius('xl');
   overflow: hidden;
 
   .sg-card-group--horizontal & {
@@ -81,15 +81,15 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-card__preview {
-  @include dbx-fixed-ratio(1);
+  @include db-fixed-ratio(1);
   align-items: flex-end;
   display: flex;
   justify-content: center;
-  padding: dbx-spacing('m');
+  padding: db-spacing('m');
   position: relative;
 
   .sg-card-group--horizontal & {
-    width: dbx-spacing('xxxl');
+    width: db-spacing('xxxl');
   }
 
   .sg-card-group--icons & {
@@ -97,7 +97,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
     align-self: stretch;
     align-items: center;
     justify-content: center;
-    background-color: dbx-palette-color('coolgray100');
+    background-color: db-palette-color('coolgray100');
 
     &::before {
       display: none;
@@ -108,7 +108,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 .sg-card-group__icon {
   align-items: center;
   border-radius: 50%;
-  background-color: dbx-palette-color('coolgray200');
+  background-color: db-palette-color('coolgray200');
   display: inline-flex;
   height: 32px;
   justify-content: center;
@@ -116,7 +116,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 }
 
 .sg-card__content {
-  padding: dbx-spacing('s') dbx-spacing('m');
+  padding: db-spacing('s') db-spacing('m');
   text-align: center;
 
   .sg-card-group--horizontal & {
@@ -126,30 +126,30 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-text-style {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8px" height="8px"><style>path{stroke-antialiasing:true;fill:red;stroke:%23E0EFFB;stroke-linecap:square;stroke-width:3px;stroke-opacity:.5}</style><path d="M4 0 0 4"/><path d="M8 4 4 8"/></svg>');
-  margin: dbx-spacing('s') 0 dbx-spacing('l');
-  padding: dbx-spacing('m') dbx-spacing('ml');
+  margin: db-spacing('s') 0 db-spacing('l');
+  padding: db-spacing('m') db-spacing('ml');
 }
 
 @each $size in (s m l xl xxl) {
   .sg-text-style--title-#{$size} {
-    @include dbx-text-style('title', $size);
+    @include db-text-style('title', $size);
   }
 }
 
 @each $size in (xs s m l) {
   .sg-text-style--copy-#{$size} {
-    @include dbx-text-style('copy', $size);
+    @include db-text-style('copy', $size);
   }
 }
 
 .sg-headline-with-margin {
-  margin: dbx-spacing('l') 0 dbx-spacing('m');
+  margin: db-spacing('l') 0 db-spacing('m');
 }
 
 .sg-spacing {
   position: absolute;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8px" height="8px"><style>path{stroke-antialiasing:true;fill:red;stroke:%23fcd0d0;stroke-linecap:square;stroke-width:3px}</style><path d="M4 0 0 4"/><path d="M8 4 4 8"/></svg>');
-  border: dbx-border-width('input') dbx-color('brand') solid;
+  border: db-border-width('input') db-color('brand') solid;
 }
 
 .sg-table {
@@ -157,12 +157,12 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
   td,
   th {
-    padding: dbx-spacing('s');
+    padding: db-spacing('s');
   }
 
   thead th {
-    @include dbx-text-style('copy', 's');
-    font-weight: dbx-font-weight('copy', 'bold');
+    @include db-text-style('copy', 's');
+    font-weight: db-font-weight('copy', 'bold');
     padding-top: unset;
   }
 
@@ -171,13 +171,13 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   }
 
   tbody tr {
-    border-top: 1px var(--dbx-border-color) solid;
+    border-top: 1px var(--db-border-color) solid;
   }
 }
 
 .sg-not-allowed {
   &::before {
-    color: dbx-palette-color('pink500');
+    color: db-palette-color('pink500');
     content: '×';
     margin: -16px 0 0 -8px;
     position: absolute;
@@ -197,14 +197,14 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   }
 
   & + & {
-    margin-top: dbx-spacing('xl');
+    margin-top: db-spacing('xl');
   }
 
   p + p {
-    margin-top: dbx-spacing('s');
+    margin-top: db-spacing('s');
   }
 
-  .dbx-transportchip {
+  .db-transportchip {
     margin-right: 1em;
 
     &:last-child {

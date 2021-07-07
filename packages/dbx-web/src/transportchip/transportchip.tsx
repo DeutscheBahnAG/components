@@ -12,7 +12,7 @@ import {
   specialProducts,
 } from './helper';
 
-const iconClassName = clsx('dbx-transportchip__transport-logo');
+const iconClassName = clsx('db-transportchip__transport-logo');
 
 const icons = {
   [Products.FERRY]: <Icons.Ferry className={iconClassName} />,
@@ -80,31 +80,31 @@ const Transportchip: TransportchipComponent = ({
     <Component
       href={href ?? undefined}
       onClick={onClick ?? undefined}
-      className={clsx('dbx-transportchip', canceled && 'dbx-transportchip--canceled', className)}
+      className={clsx('db-transportchip', canceled && 'db-transportchip--canceled', className)}
       {...otherProps}
     >
       {showProductLogo &&
         (icons as Record<string, unknown>)[prefix === 'A' ? 'akn' : displayProduct]}
       <span
         className={clsx(
-          'dbx-transportchip__line',
-          `dbx-transportchip--${displayProduct}`,
-          specialProduct && `dbx-transportchip--${specialProduct}`,
-          detectedStyle && `dbx-transportchip--${detectedStyle}`,
-          `dbx-transportchip--${lineNumberClass(name)}`
+          'db-transportchip__line',
+          `db-transportchip--${displayProduct}`,
+          specialProduct && `db-transportchip--${specialProduct}`,
+          detectedStyle && `db-transportchip--${detectedStyle}`,
+          `db-transportchip--${lineNumberClass(name)}`
         )}
       >
         {lineNumber && (
           <span
             className={clsx(
-              'dbx-transportchip__text',
-              prefix && prefix.length === 1 && 'dbx-transportchip__text--short-prefix'
+              'db-transportchip__text',
+              prefix && prefix.length === 1 && 'db-transportchip__text--short-prefix'
             )}
           >
             {prefix || lineNumber}
           </span>
         )}
-        {number && <span className="dbx-transportchip__text">{number}</span>}
+        {number && <span className="db-transportchip__text">{number}</span>}
       </span>
     </Component>
   );

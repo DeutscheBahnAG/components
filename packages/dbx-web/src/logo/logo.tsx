@@ -55,7 +55,7 @@ const Logo: LogoComponent = React.forwardRef(
       <Wrapper
         ref={ref}
         href={href ?? undefined}
-        className={clsx('dbx-logo', `dbx-logo--${size}`, `dbx-logo--${variant}`, className)}
+        className={clsx('db-logo', `db-logo--${size}`, `db-logo--${variant}`, className)}
       >
         {/* Do not copy this SVG code. This is optimized for this component only. */}
         <svg viewBox="0 0 40 28" version="1.1" xmlns="http://www.w3.org/2000/svg">

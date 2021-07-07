@@ -13,7 +13,7 @@ const pulsePropTypes = {
 type PulseProps = InferProps<typeof pulsePropTypes>;
 
 const Pulse: React.FunctionComponent<PulseProps> = ({ className, size, variant, children }) => (
-  <div className={clsx('dbx-pulse', `dbx-pulse--${size}`, `dbx-pulse--${variant}`, className)}>
+  <div className={clsx('db-pulse', `db-pulse--${size}`, `db-pulse--${variant}`, className)}>
     {children}
   </div>
 );

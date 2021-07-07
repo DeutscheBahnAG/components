@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
-const notificationPortalName = 'dbx-notification-portal';
+const notificationPortalName = 'db-notification-portal';
 
 const canUseDOM = () =>
   !!(typeof window !== 'undefined' && window.document && window.document.createElement);

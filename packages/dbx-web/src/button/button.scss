@@ -1,7 +1,7 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
-@mixin dbx-button(
+@mixin db-button(
   $bg-color,
   $bg-color--hover,
   $bg-color--pressed,
@@ -15,9 +15,9 @@
   $border-color--pressed: transparent,
   $border-color--disabled: transparent
 ) {
-  @include dbx-button-reset;
-  @include dbx-text-style('copy');
-  @include dbx-focus-ring(
+  @include db-button-reset;
+  @include db-text-style('copy');
+  @include db-focus-ring(
     $transition:
     'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in'
   );
@@ -26,15 +26,15 @@
   background-color: $bg-color;
   justify-content: center;
   text-decoration: none;
-  border: dbx-border-width('button') solid
+  border: db-border-width('button') solid
     if($border-color == none, transparent, $border-color);
   color: $text-color;
   cursor: pointer;
 
-  &.dbx-button--disabled,
-  &.dbx-button--disabled:hover,
-  &.dbx-button--disabled:active,
-  &.dbx-button--disabled:focus {
+  &.db-button--disabled,
+  &.db-button--disabled:hover,
+  &.db-button--disabled:active,
+  &.db-button--disabled:focus {
     color: $text-color--disabled;
     background-color: $bg-color--disabled;
     border-color: $border-color--disabled;
@@ -42,9 +42,9 @@
   }
 
   &:hover,
-  &.dbx-button--loading,
-  &.dbx-button--loading:active,
-  &.dbx-button--loading:focus {
+  &.db-button--loading,
+  &.db-button--loading:active,
+  &.db-button--loading:focus {
     background-color: $bg-color--hover;
     color: $text-color--hover;
     border-color: $border-color--hover;
@@ -57,101 +57,101 @@
   }
 }
 
-.dbx-button--block {
+.db-button--block {
   display: block;
   width: 100%;
 }
 
-.dbx-button--primary {
-  @include dbx-button(
-    $bg-color: var(--dbx-primary-button-background-color),
-    $bg-color--hover: var(--dbx-primary-button-hover-background-color),
-    $bg-color--pressed: var(--dbx-primary-button-pressed-background-color),
-    $bg-color--disabled: var(--dbx-primary-button-disabled-background-color),
-    $text-color: var(--dbx-primary-button-text-color),
-    $text-color--hover: var(--dbx-primary-button-hover-text-color),
-    $text-color--pressed: var(--dbx-primary-button-pressed-text-color),
-    $text-color--disabled: var(--dbx-primary-button-disabled-text-color)
+.db-button--primary {
+  @include db-button(
+    $bg-color: var(--db-primary-button-background-color),
+    $bg-color--hover: var(--db-primary-button-hover-background-color),
+    $bg-color--pressed: var(--db-primary-button-pressed-background-color),
+    $bg-color--disabled: var(--db-primary-button-disabled-background-color),
+    $text-color: var(--db-primary-button-text-color),
+    $text-color--hover: var(--db-primary-button-hover-text-color),
+    $text-color--pressed: var(--db-primary-button-pressed-text-color),
+    $text-color--disabled: var(--db-primary-button-disabled-text-color)
   );
-  font-weight: dbx-font-weight('copy', 'bold');
+  font-weight: db-font-weight('copy', 'bold');
 }
 
-.dbx-button--secondary {
-  @include dbx-button(
-    $bg-color: var(--dbx-secondary-button-background-color),
-    $bg-color--hover: var(--dbx-secondary-button-hover-background-color),
-    $bg-color--pressed: var(--dbx-secondary-button-pressed-background-color),
-    $bg-color--disabled: var(--dbx-secondary-button-disabled-background-color),
-    $text-color: var(--dbx-secondary-button-text-color),
-    $text-color--hover: var(--dbx-secondary-button-hover-text-color),
-    $text-color--pressed: var(--dbx-secondary-button-pressed-text-color),
-    $text-color--disabled: var(--dbx-secondary-button-disabled-text-color),
-    $border-color: var(--dbx-loud-border-color),
-    $border-color--hover: var(--dbx-loud-border-color),
-    $border-color--pressed: var(--dbx-loud-border-color)
-  );
-}
-
-.dbx-button--solid {
-  @include dbx-button(
-    $bg-color: var(--dbx-solid-button-background-color),
-    $bg-color--hover: var(--dbx-solid-button-hover-background-color),
-    $bg-color--pressed: var(--dbx-solid-button-pressed-background-color),
-    $bg-color--disabled: var(--dbx-solid-button-disabled-background-color),
-    $text-color: var(--dbx-solid-button-text-color),
-    $text-color--hover: var(--dbx-solid-button-hover-text-color),
-    $text-color--pressed: var(--dbx-solid-button-pressed-text-color),
-    $text-color--disabled: var(--dbx-solid-button-disabled-text-color)
+.db-button--secondary {
+  @include db-button(
+    $bg-color: var(--db-secondary-button-background-color),
+    $bg-color--hover: var(--db-secondary-button-hover-background-color),
+    $bg-color--pressed: var(--db-secondary-button-pressed-background-color),
+    $bg-color--disabled: var(--db-secondary-button-disabled-background-color),
+    $text-color: var(--db-secondary-button-text-color),
+    $text-color--hover: var(--db-secondary-button-hover-text-color),
+    $text-color--pressed: var(--db-secondary-button-pressed-text-color),
+    $text-color--disabled: var(--db-secondary-button-disabled-text-color),
+    $border-color: var(--db-loud-border-color),
+    $border-color--hover: var(--db-loud-border-color),
+    $border-color--pressed: var(--db-loud-border-color)
   );
 }
 
-.dbx-button--hover-only {
-  @include dbx-button(
+.db-button--solid {
+  @include db-button(
+    $bg-color: var(--db-solid-button-background-color),
+    $bg-color--hover: var(--db-solid-button-hover-background-color),
+    $bg-color--pressed: var(--db-solid-button-pressed-background-color),
+    $bg-color--disabled: var(--db-solid-button-disabled-background-color),
+    $text-color: var(--db-solid-button-text-color),
+    $text-color--hover: var(--db-solid-button-hover-text-color),
+    $text-color--pressed: var(--db-solid-button-pressed-text-color),
+    $text-color--disabled: var(--db-solid-button-disabled-text-color)
+  );
+}
+
+.db-button--hover-only {
+  @include db-button(
     $bg-color: transparent,
-    $bg-color--hover: var(--dbx-solid-button-background-color),
-    $bg-color--pressed: var(--dbx-solid-button-hover-background-color),
+    $bg-color--hover: var(--db-solid-button-background-color),
+    $bg-color--pressed: var(--db-solid-button-hover-background-color),
     $bg-color--disabled: transparent,
-    $text-color: var(--dbx-solid-button-text-color),
-    $text-color--hover: var(--dbx-solid-button-hover-text-color),
-    $text-color--pressed: var(--dbx-solid-button-pressed-text-color),
-    $text-color--disabled: var(--dbx-solid-button-disabled-text-color)
+    $text-color: var(--db-solid-button-text-color),
+    $text-color--hover: var(--db-solid-button-hover-text-color),
+    $text-color--pressed: var(--db-solid-button-pressed-text-color),
+    $text-color--disabled: var(--db-solid-button-disabled-text-color)
   );
 }
 
 @each $size in (xl l m s xs) {
-  .dbx-button--#{$size} {
-    @include dbx-component-text-style($size, 'button');
-    @include dbx-component-padding($size, 'button');
+  .db-button--#{$size} {
+    @include db-component-text-style($size, 'button');
+    @include db-component-padding($size, 'button');
 
-    border-radius: dbx-border-radius($size);
-    min-height: dbx-size($size);
-    min-width: 4 * dbx-size($size);
+    border-radius: db-border-radius($size);
+    min-height: db-size($size);
+    min-width: 4 * db-size($size);
 
-    &.dbx-button--default:not(.dbx-button--loading) > svg {
-      margin-right: dbx-component-icon-gap(dbx-component-textsize($size));
+    &.db-button--default:not(.db-button--loading) > svg {
+      margin-right: db-component-icon-gap(db-component-textsize($size));
     }
 
-    &.dbx-button--square,
-    &.dbx-button--round {
-      padding: dbx-component-vertical-padding($size, 'button');
-      padding: (dbx-size($size) - dbx-icon-size('m')) /
+    &.db-button--square,
+    &.db-button--round {
+      padding: db-component-vertical-padding($size, 'button');
+      padding: (db-size($size) - db-icon-size('m')) /
         2 -
-        dbx-border-width('button');
-      min-width: dbx-size($size);
-      width: dbx-size($size);
+        db-border-width('button');
+      min-width: db-size($size);
+      width: db-size($size);
     }
   }
 }
 
-.dbx-button--square,
-.dbx-button--round,
-.dbx-button--solid,
-.dbx-button--hover-only {
+.db-button--square,
+.db-button--round,
+.db-button--solid,
+.db-button--hover-only {
   min-width: unset;
 }
 
-.dbx-button--loading {
-  .dbx-loadingindicator {
+.db-button--loading {
+  .db-loadingindicator {
     background: inherit;
     position: absolute;
     min-width: inherit;
@@ -160,10 +160,10 @@
   }
 }
 
-.dbx-button--round {
+.db-button--round {
   border-radius: 50%;
 }
 
-.dbx-button [aria-hidden='false'] {
-  @include dbx-visually-hidden;
+.db-button [aria-hidden='false'] {
+  @include db-visually-hidden;
 }

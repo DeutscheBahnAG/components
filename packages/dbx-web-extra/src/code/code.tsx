@@ -36,10 +36,10 @@ const Code: CodeType = ({ children, className = '', inline = false, language }) 
     return children;
   }, [children, language]);
 
-  const classNames = clsx('dbx-code', className, {
-    [`dbx-code--language-${language}`]: !!language,
-    'dbx-code--inline': inline,
-    'dbx-code--block': !inline,
+  const classNames = clsx('db-code', className, {
+    [`db-code--language-${language}`]: !!language,
+    'db-code--inline': inline,
+    'db-code--block': !inline,
   });
 
   if (inline) {
@@ -51,7 +51,7 @@ const Code: CodeType = ({ children, className = '', inline = false, language }) 
     // the view horizontally if they need to
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
     <pre className={classNames} tabIndex={0}>
-      <code className="dbx-code__inner">{code}</code>
+      <code className="db-code__inner">{code}</code>
     </pre>
   );
 };

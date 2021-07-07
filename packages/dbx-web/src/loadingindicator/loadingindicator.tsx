@@ -21,7 +21,7 @@ interface LoadingindicatorProps {
 
 const Loadingindicator: LoadingindicatorType<LoadingindicatorProps> = ({ className, size }) => (
   <svg
-    className={clsx('dbx-loadingindicator', `dbx-loadingindicator--${size}`, className)}
+    className={clsx('db-loadingindicator', `db-loadingindicator--${size}`, className)}
     viewBox="0 0 62 20"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

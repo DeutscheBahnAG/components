@@ -34,7 +34,7 @@ const Theme: ThemeType<ThemeProps> = ({
   theme = undefined,
   ...otherProps
 }: ThemeProps) => (
-  <div className={`dbx-theme dbx-theme--${theme}`} {...otherProps}>
+  <div className={`db-theme db-theme--${theme}`} {...otherProps}>
     {children}
   </div>
 );

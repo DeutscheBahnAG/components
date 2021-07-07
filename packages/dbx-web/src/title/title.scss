@@ -1,5 +1,5 @@
-.dbx-title {
-  color: var(--dbx-primary-text-color);
+.db-title {
+  color: var(--db-primary-text-color);
   display: inherit;
   overflow-wrap: break-word;
 
@@ -8,16 +8,16 @@
   }
 }
 
-.dbx-title--secondary {
-  color: var(--dbx-secondary-text-color);
+.db-title--secondary {
+  color: var(--db-secondary-text-color);
 }
 
 @each $size in (s m l xl xxl) {
-  .dbx-title--size-#{$size} {
-    @include dbx-text-style('title', $size);
+  .db-title--size-#{$size} {
+    @include db-text-style('title', $size);
   }
 }
 
-.dbx-title--light {
-  font-weight: dbx-token('fontweight', 'title');
+.db-title--light {
+  font-weight: db-token('fontweight', 'title');
 }

@@ -2,20 +2,20 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 @import '@bahn-x/dbx-foundation/mixins/focus-ring';
 
-@mixin dbx-transportchip-default-border-radius {
-  border-radius: 1em / dbx-font-size('copy', 'm') * dbx-border-radius('s');
+@mixin db-transportchip-default-border-radius {
+  border-radius: 1em / db-font-size('copy', 'm') * db-border-radius('s');
   margin: 0; // Reset overlap
 }
 
-@mixin dbx-transportchip-border($px, $color) {
+@mixin db-transportchip-border($px, $color) {
   $border-in-em: $px / 1px * 0.0625em;
   border: $border-in-em $color solid;
   line-height: #{1.75em - 2 * $border-in-em};
 }
 
-$dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
+$db-transportchip-overlap: 1em / db-font-size('copy', 'm') * 1px;
 
-.dbx-transportchip {
+.db-transportchip {
   background: transparent;
   border: 0;
   font-size: inherit;
@@ -24,28 +24,28 @@ $dbx-transportchip-overlap: 1em / dbx-font-size('copy', 'm') * 1px;
   white-space: nowrap;
 }
 
-.dbx-transportchip__line {
-  @include dbx-transportchip-default-border-radius;
-  background: dbx-palette-color('coolgray500');
+.db-transportchip__line {
+  @include db-transportchip-default-border-radius;
+  background: db-palette-color('coolgray500');
   box-sizing: border-box;
-  color: dbx-palette-color('white');
+  color: db-palette-color('white');
   display: inline-block;
   height: 1.75em;
   line-height: 1.75em;
   min-width: 1.75em;
-  padding: 0 1em / dbx-font-size('copy', 'm') * dbx-spacing('s');
+  padding: 0 1em / db-font-size('copy', 'm') * db-spacing('s');
   position: relative;
   text-align: center;
   white-space: nowrap;
 
   & + & {
-    margin-left: dbx-spacing('xs') / dbx-font-size('copy', 'm') * 1em;
+    margin-left: db-spacing('xs') / db-font-size('copy', 'm') * 1em;
   }
 }
 
-a.dbx-transportchip,
-button.dbx-transportchip {
-  @include dbx-focus-ring($target: '.dbx-transportchip__line');
+a.db-transportchip,
+button.db-transportchip {
+  @include db-focus-ring($target: '.db-transportchip__line');
   text-decoration: none;
 
   &:hover {
@@ -57,342 +57,342 @@ button.dbx-transportchip {
   }
 }
 
-.dbx-transportchip__transport-logo {
+.db-transportchip__transport-logo {
   // Round shapes (like S-Bahn) need to visually overlap by 1px
   $size: 1.75em;
-  $size: 1em / dbx-font-size('copy', 'm') * dbx-line-height('copy', 'm') + 2 *
-    $dbx-transportchip-overlap;
-  $size: 1em / dbx-font-size('copy', 'm') * dbx-size('s') + 2 *
-    $dbx-transportchip-overlap;
+  $size: 1em / db-font-size('copy', 'm') * db-line-height('copy', 'm') + 2 *
+    $db-transportchip-overlap;
+  $size: 1em / db-font-size('copy', 'm') * db-size('s') + 2 *
+    $db-transportchip-overlap;
   display: inline-block;
   height: $size;
-  margin: #{-$dbx-transportchip-overlap} #{0.25em - $dbx-transportchip-overlap} #{-$dbx-transportchip-overlap}
-    #{-$dbx-transportchip-overlap};
+  margin: #{-$db-transportchip-overlap} #{0.25em - $db-transportchip-overlap} #{-$db-transportchip-overlap}
+    #{-$db-transportchip-overlap};
   position: relative;
-  vertical-align: 1em / dbx-font-size('copy', 'm') * -8px;
+  vertical-align: 1em / db-font-size('copy', 'm') * -8px;
   width: $size;
   transform: translateZ(0);
 }
 
-.dbx-transportchip__text {
-  font-family: dbx-font-family('copy');
+.db-transportchip__text {
+  font-family: db-font-family('copy');
   font-size: 0.92em;
-  font-weight: dbx-font-weight('copy', 'bold');
+  font-weight: db-font-weight('copy', 'bold');
   line-height: 1;
   margin-right: 0.25em; // = a space character
-  vertical-align: (dbx-font-size('copy', 'm') - dbx-font-size('copy', 's')) / 2;
+  vertical-align: (db-font-size('copy', 'm') - db-font-size('copy', 's')) / 2;
 
   &:last-child {
     margin-right: 0;
   }
 }
 
-.dbx-transportchip__text--short-prefix {
+.db-transportchip__text--short-prefix {
   margin-right: 0.1em; // = more space than “S1”, less space than “S 1”
 }
 
-.dbx-transportchip--tram {
-  background: dbx-background-color('transportation.tram');
-  color: dbx-text-color('transportation.tram');
+.db-transportchip--tram {
+  background: db-background-color('transportation.tram');
+  color: db-text-color('transportation.tram');
 }
 
-.dbx-transportchip--airplane {
-  background: dbx-background-color('transportation.airplane');
-  color: dbx-text-color('transportation.airplane');
+.db-transportchip--airplane {
+  background: db-background-color('transportation.airplane');
+  color: db-text-color('transportation.airplane');
 }
 
-.dbx-transportchip--bus {
-  background: dbx-background-color('transportation.bus');
-  color: dbx-text-color('transportation.bus');
+.db-transportchip--bus {
+  background: db-background-color('transportation.bus');
+  color: db-text-color('transportation.bus');
 }
 
-.dbx-transportchip--ec {
-  background: dbx-background-color('transportation.ec');
-  color: dbx-text-color('transportation.ec');
+.db-transportchip--ec {
+  background: db-background-color('transportation.ec');
+  color: db-text-color('transportation.ec');
 }
 
-.dbx-transportchip--ferry {
-  background: dbx-background-color('transportation.ferry');
-  // color: dbx-text-color('transportation.ferry');
+.db-transportchip--ferry {
+  background: db-background-color('transportation.ferry');
+  // color: db-text-color('transportation.ferry');
   color: #fff;
 }
 
-.dbx-transportchip--ic,
-.dbx-transportchip--national {
-  background: dbx-background-color('transportation.ic');
-  color: dbx-text-color('transportation.ic');
+.db-transportchip--ic,
+.db-transportchip--national {
+  background: db-background-color('transportation.ic');
+  color: db-text-color('transportation.ic');
 }
 
-.dbx-transportchip--ice,
-.dbx-transportchip--nationalexpress {
-  background: var(--dbx-primary-text-color);
-  color: var(--dbx-primary-background-color);
+.db-transportchip--ice,
+.db-transportchip--nationalexpress {
+  background: var(--db-primary-text-color);
+  color: var(--db-primary-background-color);
 }
 
-.dbx-transportchip--rb,
-.dbx-transportchip--regional {
-  background: dbx-background-color('transportation.rb');
-  color: dbx-text-color('transportation.rb');
+.db-transportchip--rb,
+.db-transportchip--regional {
+  background: db-background-color('transportation.rb');
+  color: db-text-color('transportation.rb');
 }
 
-.dbx-transportchip--re,
-.dbx-transportchip--regionalexpress {
-  background: dbx-background-color('transportation.re');
-  color: dbx-text-color('transportation.re');
+.db-transportchip--re,
+.db-transportchip--regionalexpress {
+  background: db-background-color('transportation.re');
+  color: db-text-color('transportation.re');
 }
 
-.dbx-transportchip--suburban {
-  background: dbx-background-color('transportation.sbahn');
-  color: dbx-text-color('transportation.sbahn');
+.db-transportchip--suburban {
+  background: db-background-color('transportation.sbahn');
+  color: db-text-color('transportation.sbahn');
 }
 
-.dbx-transportchip--subway {
-  background: dbx-background-color('transportation.ubahn');
-  color: dbx-text-color('transportation.ubahn');
+.db-transportchip--subway {
+  background: db-background-color('transportation.ubahn');
+  color: db-text-color('transportation.ubahn');
 }
 
-.dbx-transportchip--taxi {
-  background: dbx-background-color('transportation.taxi');
-  color: dbx-text-color('transportation.taxi');
+.db-transportchip--taxi {
+  background: db-background-color('transportation.taxi');
+  color: db-text-color('transportation.taxi');
 }
 
-.dbx-transportchip--intercitybus {
-  background: dbx-background-color('transportation.intercitybus');
-  color: dbx-text-color('transportation.intercitybus');
+.db-transportchip--intercitybus {
+  background: db-background-color('transportation.intercitybus');
+  color: db-text-color('transportation.intercitybus');
 }
 
-.dbx-transportchip--bikesharing {
-  background: dbx-background-color('transportation.bikesharing');
-  color: dbx-text-color('transportation.bikesharing');
+.db-transportchip--bikesharing {
+  background: db-background-color('transportation.bikesharing');
+  color: db-text-color('transportation.bikesharing');
 }
 
-.dbx-transportchip--carsharing {
-  background: dbx-background-color('transportation.carsharing');
-  color: dbx-text-color('transportation.carsharing');
+.db-transportchip--carsharing {
+  background: db-background-color('transportation.carsharing');
+  color: db-text-color('transportation.carsharing');
 }
 
 // Shared regional styles
 
-.dbx-transportchip--akna1,
-.dbx-transportchip--akna2,
-.dbx-transportchip--akna3,
-.dbx-transportchip--suburban {
+.db-transportchip--akna1,
+.db-transportchip--akna2,
+.db-transportchip--akna3,
+.db-transportchip--suburban {
   border-radius: 0.875em;
   color: #fff;
-  margin: 0 #{-$dbx-transportchip-overlap};
-  min-width: (1.75em + $dbx-transportchip-overlap) * 2;
+  margin: 0 #{-$db-transportchip-overlap};
+  min-width: (1.75em + $db-transportchip-overlap) * 2;
 }
 
-.dbx-transportchip--subway,
-.dbx-transportchip--tram {
-  @include dbx-transportchip-default-border-radius;
+.db-transportchip--subway,
+.db-transportchip--tram {
+  @include db-transportchip-default-border-radius;
   color: #fff;
   min-width: 1.75em * 1.5;
 }
 
 // Berlin
 
-.dbx-transportchip--sbahn-berlin {
-  &.dbx-transportchip--s1 {
+.db-transportchip--sbahn-berlin {
+  &.db-transportchip--s1 {
     background: #de4da4;
   }
 
-  &.dbx-transportchip--s2,
-  &.dbx-transportchip--s25,
-  &.dbx-transportchip--s26 {
+  &.db-transportchip--s2,
+  &.db-transportchip--s25,
+  &.db-transportchip--s26 {
     background: #005e28;
   }
 
-  &.dbx-transportchip--s3 {
+  &.db-transportchip--s3 {
     background: #0a4c99;
   }
 
-  &.dbx-transportchip--s41 {
+  &.db-transportchip--s41 {
     background: #a23b1e;
   }
 
-  &.dbx-transportchip--s42 {
+  &.db-transportchip--s42 {
     background: #c26936;
   }
 
-  &.dbx-transportchip--s45,
-  &.dbx-transportchip--s46,
-  &.dbx-transportchip--s47 {
+  &.db-transportchip--s45,
+  &.db-transportchip--s46,
+  &.db-transportchip--s47 {
     background: #c38736;
   }
 
-  &.dbx-transportchip--s5 {
+  &.db-transportchip--s5 {
     background: #ff5800;
   }
 
-  &.dbx-transportchip--s7,
-  &.dbx-transportchip--s75 {
+  &.db-transportchip--s7,
+  &.db-transportchip--s75 {
     background: #6f4e9c;
   }
 
-  &.dbx-transportchip--s8,
-  &.dbx-transportchip--s85 {
+  &.db-transportchip--s8,
+  &.db-transportchip--s85 {
     background: #54a823;
   }
 
-  &.dbx-transportchip--s9 {
+  &.db-transportchip--s9 {
     background: #8a0f30;
   }
 }
 
-.dbx-transportchip--bvg {
-  &.dbx-transportchip--bus,
-  &.dbx-transportchip--tram,
-  &.dbx-transportchip--ferry {
+.db-transportchip--bvg {
+  &.db-transportchip--bus,
+  &.db-transportchip--tram,
+  &.db-transportchip--ferry {
     background-color: transparent;
-    color: var(--dbx-primary-text-color);
+    color: var(--db-primary-text-color);
     min-width: unset;
     padding: 0;
 
-    .dbx-transportchip--canceled & {
+    .db-transportchip--canceled & {
       border-color: transparent;
     }
   }
 
-  &.dbx-transportchip--u1 {
+  &.db-transportchip--u1 {
     background: #7dad4c;
   }
 
-  &.dbx-transportchip--u12 {
+  &.db-transportchip--u12 {
     background: linear-gradient(to bottom right, #7dad4c 50%, #da421e 0);
   }
 
-  &.dbx-transportchip--u2 {
+  &.db-transportchip--u2 {
     background: #da421e;
   }
 
-  &.dbx-transportchip--u3 {
+  &.db-transportchip--u3 {
     background: #007a5b;
   }
 
-  &.dbx-transportchip--u4 {
+  &.db-transportchip--u4 {
     background: #f0d722;
     color: #000;
   }
 
-  &.dbx-transportchip--u5,
-  &.dbx-transportchip--u55 {
+  &.db-transportchip--u5,
+  &.db-transportchip--u55 {
     background: #7e5330;
   }
 
-  &.dbx-transportchip--u6 {
+  &.db-transportchip--u6 {
     background: #8c6dab;
   }
 
-  &.dbx-transportchip--u7 {
+  &.db-transportchip--u7 {
     background: #528dba;
   }
 
-  &.dbx-transportchip--u8 {
+  &.db-transportchip--u8 {
     background: #224f86;
   }
 
-  &.dbx-transportchip--u9 {
+  &.db-transportchip--u9 {
     background: #f3791d;
   }
 }
 
 // Hamburg
 
-.dbx-transportchip--sbahn-hamburg,
-.dbx-transportchip--akna1,
-.dbx-transportchip--akna2,
-.dbx-transportchip--akna3 {
+.db-transportchip--sbahn-hamburg,
+.db-transportchip--akna1,
+.db-transportchip--akna2,
+.db-transportchip--akna3 {
   background: #fe7f1a;
-  width: 1.75em * 2.5 + $dbx-transportchip-overlap * 2;
+  width: 1.75em * 2.5 + $db-transportchip-overlap * 2;
 }
 
-.dbx-transportchip--sbahn-hamburg {
-  &.dbx-transportchip--s1 {
+.db-transportchip--sbahn-hamburg {
+  &.db-transportchip--s1 {
     background: #039729;
   }
 
-  &.dbx-transportchip--s11,
-  &.dbx-transportchip--s2 {
-    @include dbx-transportchip-border(2px, #039729);
+  &.db-transportchip--s11,
+  &.db-transportchip--s2 {
+    @include db-transportchip-border(2px, #039729);
     background: #fff;
     color: #039729;
   }
 
-  &.dbx-transportchip--s2 {
+  &.db-transportchip--s2 {
     border-color: #b60d36;
     color: #b60d36;
   }
 
-  &.dbx-transportchip--s21 {
+  &.db-transportchip--s21 {
     background: #b60d36;
   }
 
-  &.dbx-transportchip--s3,
-  &.dbx-transportchip--s31 {
+  &.db-transportchip--s3,
+  &.db-transportchip--s31 {
     background: #531b6e;
   }
 }
 
-.dbx-transportchip--hvv {
+.db-transportchip--hvv {
   width: 1.75em * 2.5;
 
-  &.dbx-transportchip--u1 {
+  &.db-transportchip--u1 {
     background: #0059a4;
   }
 
-  &.dbx-transportchip--u2 {
+  &.db-transportchip--u2 {
     background: #ed0220;
   }
 
-  &.dbx-transportchip--u3 {
-    @include dbx-transportchip-border(1px, #00000050);
+  &.db-transportchip--u3 {
+    @include db-transportchip-border(1px, #00000050);
     background: #ffd602;
     text-shadow: #000 0 0 0.0625em;
   }
 
-  &.dbx-transportchip--u4 {
+  &.db-transportchip--u4 {
     background: #028b8f;
   }
 
-  &.dbx-transportchip--u5 {
+  &.db-transportchip--u5 {
     background: #2c3174;
   }
 
-  &.dbx-transportchip--bus,
-  &.dbx-transportchip--taxi,
-  &.dbx-transportchip--ferry {
-    @include dbx-transportchip-default-border-radius;
+  &.db-transportchip--bus,
+  &.db-transportchip--taxi,
+  &.db-transportchip--ferry {
+    @include db-transportchip-default-border-radius;
     background: #e2011a;
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%, 15% 0);
     text-align: center;
   }
 
-  &.dbx-transportchip--taxi,
-  &.dbx-transportchip--bus {
-    margin: 0 #{-$dbx-transportchip-overlap};
-    width: 1.75em * 2.5 + $dbx-transportchip-overlap * 2;
+  &.db-transportchip--taxi,
+  &.db-transportchip--bus {
+    margin: 0 #{-$db-transportchip-overlap};
+    width: 1.75em * 2.5 + $db-transportchip-overlap * 2;
   }
 
-  &.dbx-transportchip--taxi {
-    background: dbx-background-color('transportation.taxi');
+  &.db-transportchip--taxi {
+    background: db-background-color('transportation.taxi');
   }
 
-  &.dbx-transportchip--ferry {
+  &.db-transportchip--ferry {
     background: #009dd1;
     clip-path: polygon(10% 0, 90% 0, 72% 100%, 28% 100%);
     color: #fff;
   }
 
-  &.dbx-transportchip--expressbus {
+  &.db-transportchip--expressbus {
     background: #1a962c;
   }
 
-  &.dbx-transportchip--nachtbus {
+  &.db-transportchip--nachtbus {
     background: #000;
   }
 
-  &.dbx-transportchip--ast {
+  &.db-transportchip--ast {
     background: #ffdd02;
     color: #000;
   }
@@ -400,196 +400,196 @@ button.dbx-transportchip {
 
 // München
 
-.dbx-transportchip--sbahn-muenchen {
-  &.dbx-transportchip--s1 {
+.db-transportchip--sbahn-muenchen {
+  &.db-transportchip--s1 {
     background: #19b3e3;
   }
 
-  &.dbx-transportchip--s2 {
+  &.db-transportchip--s2 {
     background: #71bf44;
   }
 
-  &.dbx-transportchip--s3 {
+  &.db-transportchip--s3 {
     background: #7b107d;
   }
 
-  &.dbx-transportchip--s4 {
+  &.db-transportchip--s4 {
     background: #ee1d26;
   }
 
-  &.dbx-transportchip--s6 {
+  &.db-transportchip--s6 {
     background: #008a50;
   }
 
-  &.dbx-transportchip--s7 {
+  &.db-transportchip--s7 {
     background: #953833;
   }
 
-  &.dbx-transportchip--s8 {
+  &.db-transportchip--s8 {
     background: #000;
     color: #ffcb08;
   }
 
-  &.dbx-transportchip--s20 {
+  &.db-transportchip--s20 {
     background: #f05a72;
   }
 }
 
-.dbx-transportchip--mvg {
-  &.dbx-transportchip--u1 {
+.db-transportchip--mvg {
+  &.db-transportchip--u1 {
     background: #3b7233;
   }
 
-  &.dbx-transportchip--u2 {
+  &.db-transportchip--u2 {
     background: #c4012e;
   }
 
-  &.dbx-transportchip--u3 {
+  &.db-transportchip--u3 {
     background: #ed6721;
   }
 
-  &.dbx-transportchip--u4 {
+  &.db-transportchip--u4 {
     background: #00ab84;
   }
 
-  &.dbx-transportchip--u5 {
+  &.db-transportchip--u5 {
     background: #be7a00;
   }
 
-  &.dbx-transportchip--u6 {
+  &.db-transportchip--u6 {
     background: #0164af;
   }
 
-  &.dbx-transportchip--u7 {
+  &.db-transportchip--u7 {
     background: linear-gradient(to bottom right, #3b7233 50%, #c4012e 0);
   }
 
-  &.dbx-transportchip--u8 {
+  &.db-transportchip--u8 {
     background: linear-gradient(to bottom right, #c4012e 50%, #ed6721 0);
   }
 
-  &.dbx-transportchip--tram,
-  &.dbx-transportchip--bus {
-    @include dbx-transportchip-default-border-radius;
+  &.db-transportchip--tram,
+  &.db-transportchip--bus {
+    @include db-transportchip-default-border-radius;
     background: #e2011a;
     min-width: 1.75em * 1.5;
     padding: 0 0.43em;
     text-align: center;
   }
 
-  &.dbx-transportchip--tram-temporary {
-    @include dbx-transportchip-border(2px, #e2011a);
+  &.db-transportchip--tram-temporary {
+    @include db-transportchip-border(2px, #e2011a);
     background: #fff;
     color: #e2011a;
   }
 
-  &.dbx-transportchip--nachttram {
+  &.db-transportchip--nachttram {
     background: #656565;
     color: #fff000;
   }
 
-  .dbx-transportchip--e7 {
+  .db-transportchip--e7 {
     background: transparent;
-    color: dbx-text-color('primary');
+    color: db-text-color('primary');
   }
 
-  &.dbx-transportchip--bus {
+  &.db-transportchip--bus {
     background: #005f5f;
   }
 
-  &.dbx-transportchip--nachtbus {
+  &.db-transportchip--nachtbus {
     background: #3f3f3f;
     color: #ff0;
   }
 
-  &.dbx-transportchip--metrobus {
+  &.db-transportchip--metrobus {
     background: #ff5f00;
   }
 
-  &.dbx-transportchip--expressbus {
+  &.db-transportchip--expressbus {
     background: #6fcf8f;
   }
 }
 
 // Frankfurt (Main)
 
-.dbx-transportchip--sbahn-rheinmain {
+.db-transportchip--sbahn-rheinmain {
   width: 1.75em * 1.75;
 
-  &.dbx-transportchip--s1 {
+  &.db-transportchip--s1 {
     background: #047fb8;
   }
 
-  &.dbx-transportchip--s2 {
+  &.db-transportchip--s2 {
     background: #ff0100;
   }
 
-  &.dbx-transportchip--s3 {
+  &.db-transportchip--s3 {
     background: #009377;
   }
 
-  &.dbx-transportchip--s4 {
-    @include dbx-transportchip-border(2px, #000);
+  &.db-transportchip--s4 {
+    @include db-transportchip-border(2px, #000);
     background: #fc0;
     color: #000;
   }
 
-  &.dbx-transportchip--s5 {
+  &.db-transportchip--s5 {
     background: #7e3206;
   }
 
-  &.dbx-transportchip--s6 {
+  &.db-transportchip--s6 {
     background: #f47822;
   }
 
-  &.dbx-transportchip--s7 {
+  &.db-transportchip--s7 {
     background: #01220f;
   }
 
-  &.dbx-transportchip--s8 {
+  &.db-transportchip--s8 {
     background: #82c421;
   }
 
-  &.dbx-transportchip--s9 {
+  &.db-transportchip--s9 {
     background: #81027e;
   }
 }
 
-.dbx-transportchip--vgf {
-  &.dbx-transportchip--u1 {
+.db-transportchip--vgf {
+  &.db-transportchip--u1 {
     background: #a30118;
   }
 
-  &.dbx-transportchip--u2 {
+  &.db-transportchip--u2 {
     background: #02a650;
   }
 
-  &.dbx-transportchip--u3 {
+  &.db-transportchip--u3 {
     background: #35418b;
   }
 
-  &.dbx-transportchip--u4 {
+  &.db-transportchip--u4 {
     background: #e03181;
   }
 
-  &.dbx-transportchip--u5 {
+  &.db-transportchip--u5 {
     background: #005e24;
   }
 
-  &.dbx-transportchip--u6 {
+  &.db-transportchip--u6 {
     background: #005e24;
   }
 
-  &.dbx-transportchip--u7 {
+  &.db-transportchip--u7 {
     background: #005e24;
   }
 
-  &.dbx-transportchip--u8 {
+  &.db-transportchip--u8 {
     background: #c066a0;
   }
 
-  &.dbx-transportchip--u9 {
-    @include dbx-transportchip-border(2px, #000);
+  &.db-transportchip--u9 {
+    @include db-transportchip-border(2px, #000);
     background: #ffd602;
     color: #000;
   }
@@ -597,446 +597,446 @@ button.dbx-transportchip {
 
 // Nürnberg
 
-.dbx-transportchip--sbahn-nuernberg {
-  &.dbx-transportchip--s1 {
+.db-transportchip--sbahn-nuernberg {
+  &.db-transportchip--s1 {
     background: #94211a;
   }
 
-  &.dbx-transportchip--s2 {
+  &.db-transportchip--s2 {
     background: #53b030;
   }
 
-  &.dbx-transportchip--s3 {
+  &.db-transportchip--s3 {
     background: #e54e04;
   }
 
-  &.dbx-transportchip--s4 {
+  &.db-transportchip--s4 {
     background: #26297c;
   }
 }
 
-.dbx-transportchip--vgn {
-  &.dbx-transportchip--u1 {
+.db-transportchip--vgn {
+  &.db-transportchip--u1 {
     background: #005d9c;
   }
 
-  &.dbx-transportchip--u2 {
+  &.db-transportchip--u2 {
     background: #e1011a;
   }
 
-  &.dbx-transportchip--u3 {
+  &.db-transportchip--u3 {
     background: #37b5b7;
   }
 
-  &.dbx-transportchip--tram,
-  &.dbx-transportchip--bus {
-    @include dbx-transportchip-default-border-radius;
+  &.db-transportchip--tram,
+  &.db-transportchip--bus {
+    @include db-transportchip-default-border-radius;
     min-width: 1.75em;
     text-align: center;
   }
 
-  &.dbx-transportchip--bus {
+  &.db-transportchip--bus {
     background: #ff2a0e;
     border-radius: 1.75em;
     padding: 0 0.15em;
   }
 
-  &.dbx-transportchip--str4 {
+  &.db-transportchip--str4 {
     background: #f4898f;
   }
 
-  &.dbx-transportchip--str5 {
+  &.db-transportchip--str5 {
     background: #9860a9;
   }
 
-  &.dbx-transportchip--str6 {
+  &.db-transportchip--str6 {
     background: #fef405;
     color: #000;
   }
 
-  &.dbx-transportchip--str7 {
+  &.db-transportchip--str7 {
     background: #667ab4;
   }
 
-  &.dbx-transportchip--str8 {
+  &.db-transportchip--str8 {
     background: #01bcfe;
   }
 }
 
 // NRW/Köln/Rhein/Ruhr
 
-.dbx-transportchip--sbahn-rheinruhrkoeln {
-  &.dbx-transportchip--s11 {
+.db-transportchip--sbahn-rheinruhrkoeln {
+  &.db-transportchip--s11 {
     background: #ef7b00;
   }
 
-  &.dbx-transportchip--s12 {
+  &.db-transportchip--s12 {
     background: #60af21;
   }
 
-  &.dbx-transportchip--s13,
-  &.dbx-transportchip--s19 {
+  &.db-transportchip--s13,
+  &.db-transportchip--s19 {
     background: #2e6b7e;
   }
 
-  &.dbx-transportchip--s23 {
+  &.db-transportchip--s23 {
     background: #8b3c59;
   }
 }
 
-.dbx-transportchip--kvb {
-  &.dbx-transportchip--str1 {
+.db-transportchip--kvb {
+  &.db-transportchip--str1 {
     background: #ed1c24;
   }
 
-  &.dbx-transportchip--str3 {
+  &.db-transportchip--str3 {
     background: #f49ac1;
   }
 
-  &.dbx-transportchip--str4 {
+  &.db-transportchip--str4 {
     background: #f271ac;
   }
 
-  &.dbx-transportchip--str5 {
+  &.db-transportchip--str5 {
     background: #a59dce;
   }
 
-  &.dbx-transportchip--str7 {
+  &.db-transportchip--str7 {
     background: #f7946a;
   }
 
-  &.dbx-transportchip--str9 {
+  &.db-transportchip--str9 {
     background: #f69b95;
   }
 
-  &.dbx-transportchip--str12 {
+  &.db-transportchip--str12 {
     background: #8cc73f;
   }
 
-  &.dbx-transportchip--str13 {
+  &.db-transportchip--str13 {
     background: #8b6c42;
   }
 
-  &.dbx-transportchip--str15 {
+  &.db-transportchip--str15 {
     background: #50b848;
   }
 
-  &.dbx-transportchip--str16 {
+  &.db-transportchip--str16 {
     background: #00accd;
   }
 
-  &.dbx-transportchip--str17 {
+  &.db-transportchip--str17 {
     background: #00accd;
   }
 
-  &.dbx-transportchip--str18 {
+  &.db-transportchip--str18 {
     background: #0095da;
   }
 }
 
 // Mannheim/Ludwigshafen/Heidelberg
 
-.dbx-transportchip--sbahn-rheinneckar {
-  &.dbx-transportchip--s1 {
+.db-transportchip--sbahn-rheinneckar {
+  &.db-transportchip--s1 {
     background: #ec192e;
   }
 
-  &.dbx-transportchip--s2 {
+  &.db-transportchip--s2 {
     background: #2960b5;
   }
 
-  &.dbx-transportchip--s3 {
+  &.db-transportchip--s3 {
     background: #fcd806;
     color: #333;
   }
 
-  &.dbx-transportchip--s33 {
+  &.db-transportchip--s33 {
     background: #744a86;
   }
 
-  &.dbx-transportchip--s39 {
-    @include dbx-transportchip-border(2px, #000);
+  &.db-transportchip--s39 {
+    @include db-transportchip-border(2px, #000);
     background: #fff;
     color: #000;
   }
 
-  &.dbx-transportchip--s4 {
+  &.db-transportchip--s4 {
     background: #1a9d47;
   }
 
-  &.dbx-transportchip--s5,
-  &.dbx-transportchip--s51 {
+  &.db-transportchip--s5,
+  &.db-transportchip--s51 {
     background: #de9450;
   }
 
-  &.dbx-transportchip--s6 {
+  &.db-transportchip--s6 {
     background: #28c9f6;
   }
 }
 
-.dbx-transportchip--rnv {
-  &.dbx-transportchip--tram {
+.db-transportchip--rnv {
+  &.db-transportchip--tram {
     padding: 0 0.3em;
     min-width: 1.75em;
     text-align: center;
     width: unset;
   }
 
-  &.dbx-transportchip--str1 {
+  &.db-transportchip--str1 {
     background: #ff9798;
   }
 
-  &.dbx-transportchip--str2 {
+  &.db-transportchip--str2 {
     background: #bc1c4a;
   }
 
-  &.dbx-transportchip--str3 {
+  &.db-transportchip--str3 {
     background: #d9aa34;
   }
 
-  &.dbx-transportchip--rnv4,
-  &.dbx-transportchip--rnv4a {
+  &.db-transportchip--rnv4,
+  &.db-transportchip--rnv4a {
     background: #ff2d16;
   }
 
-  &.dbx-transportchip--rnv5,
-  &.dbx-transportchip--rnv5a {
+  &.db-transportchip--rnv5,
+  &.db-transportchip--rnv5a {
     background: #00ac6e;
   }
 
-  &.dbx-transportchip--rnv15 {
+  &.db-transportchip--rnv15 {
     background: #f7aa61;
   }
 
-  &.dbx-transportchip--rnv6,
-  &.dbx-transportchip--rnv6a {
+  &.db-transportchip--rnv6,
+  &.db-transportchip--rnv6a {
     background: #916d2e;
   }
 
-  &.dbx-transportchip--rnv7 {
+  &.db-transportchip--rnv7 {
     background: #ffc735;
   }
 
-  &.dbx-transportchip--rnv8 {
+  &.db-transportchip--rnv8 {
     background: #f57421;
   }
 
-  &.dbx-transportchip--rnv9 {
+  &.db-transportchip--rnv9 {
     background: #93c13b;
   }
 
-  &.dbx-transportchip--rnv15 {
+  &.db-transportchip--rnv15 {
     background: #f6aa62;
   }
 
-  &.dbx-transportchip--str21 {
+  &.db-transportchip--str21 {
     background: #ff2d16;
   }
 
-  &.dbx-transportchip--str21a {
-    @include dbx-transportchip-border(2px, #000);
+  &.db-transportchip--str21a {
+    @include db-transportchip-border(2px, #000);
     background: #fff;
     color: #ff2d16;
   }
 
-  &.dbx-transportchip--str22 {
+  &.db-transportchip--str22 {
     background: #ffbe31;
     color: #000;
   }
 
-  &.dbx-transportchip--str23 {
+  &.db-transportchip--str23 {
     background: #f68b25;
   }
 
-  &.dbx-transportchip--str24 {
+  &.db-transportchip--str24 {
     background: #7e2885;
   }
 
-  &.dbx-transportchip--str26 {
+  &.db-transportchip--str26 {
     background: #ff9798;
   }
 }
 
 // Bremen
-.dbx-transportchip--bsag {
-  &.dbx-transportchip--tram,
-  &.dbx-transportchip--bus {
-    @include dbx-transportchip-default-border-radius;
+.db-transportchip--bsag {
+  &.db-transportchip--tram,
+  &.db-transportchip--bus {
+    @include db-transportchip-default-border-radius;
     min-width: 1.75em;
     text-align: center;
   }
 
-  &.dbx-transportchip--bus {
+  &.db-transportchip--bus {
     border-radius: 1.75em;
     padding: 0 0.15em;
     background: #9c9c9c;
   }
 
-  &.dbx-transportchip--str1 {
+  &.db-transportchip--str1 {
     background: #009640;
   }
 
-  &.dbx-transportchip--str2 {
+  &.db-transportchip--str2 {
     background: #005ca9;
   }
 
-  &.dbx-transportchip--str3 {
+  &.db-transportchip--str3 {
     background: #009fe3;
   }
 
-  &.dbx-transportchip--str4 {
+  &.db-transportchip--str4 {
     background: #e30613;
   }
 
-  &.dbx-transportchip--str5 {
+  &.db-transportchip--str5 {
     background: #099;
   }
 
-  &.dbx-transportchip--str6 {
+  &.db-transportchip--str6 {
     background: #fc0;
     color: #32474f;
   }
 
-  &.dbx-transportchip--str8 {
+  &.db-transportchip--str8 {
     background: #95c11f;
   }
 
-  &.dbx-transportchip--str10 {
+  &.db-transportchip--str10 {
     background: #312783;
   }
 
-  &.dbx-transportchip--strn1 {
+  &.db-transportchip--strn1 {
     background: #009640;
   }
 
-  &.dbx-transportchip--strn4 {
+  &.db-transportchip--strn4 {
     background: #e30613;
   }
 
-  &.dbx-transportchip--strn10 {
+  &.db-transportchip--strn10 {
     background: #0075bf;
   }
 
-  &.dbx-transportchip--bus20,
-  &.dbx-transportchip--bus29,
-  &.dbx-transportchip--bus31,
-  &.dbx-transportchip--bus52,
-  &.dbx-transportchip--bus65,
-  &.dbx-transportchip--bus66,
-  &.dbx-transportchip--bus80,
-  &.dbx-transportchip--busn7 {
+  &.db-transportchip--bus20,
+  &.db-transportchip--bus29,
+  &.db-transportchip--bus31,
+  &.db-transportchip--bus52,
+  &.db-transportchip--bus65,
+  &.db-transportchip--bus66,
+  &.db-transportchip--bus80,
+  &.db-transportchip--busn7 {
     background: #95c11f;
   }
 
-  &.dbx-transportchip--bus21,
-  &.dbx-transportchip--bus61,
-  &.dbx-transportchip--bus91,
-  &.dbx-transportchip--bus92,
-  &.dbx-transportchip--busn6 {
+  &.db-transportchip--bus21,
+  &.db-transportchip--bus61,
+  &.db-transportchip--bus91,
+  &.db-transportchip--bus92,
+  &.db-transportchip--busn6 {
     background: #009fe3;
   }
 
-  &.dbx-transportchip--bus22,
-  &.dbx-transportchip--busn94 {
+  &.db-transportchip--bus22,
+  &.db-transportchip--busn94 {
     background: #a69dcd;
   }
 
-  &.dbx-transportchip--bus24,
-  &.dbx-transportchip--bus37,
-  &.dbx-transportchip--bus96 {
+  &.db-transportchip--bus24,
+  &.db-transportchip--bus37,
+  &.db-transportchip--bus96 {
     background: #951b81;
   }
 
-  &.dbx-transportchip--bus25,
-  &.dbx-transportchip--bus62,
-  &.dbx-transportchip--bus81,
-  &.dbx-transportchip--bus98 {
+  &.db-transportchip--bus25,
+  &.db-transportchip--bus62,
+  &.db-transportchip--bus81,
+  &.db-transportchip--bus98 {
     background: #009640;
   }
 
-  &.dbx-transportchip--bus26,
-  &.dbx-transportchip--bus40,
-  &.dbx-transportchip--bus41,
-  &.dbx-transportchip--bus94 {
+  &.db-transportchip--bus26,
+  &.db-transportchip--bus40,
+  &.db-transportchip--bus41,
+  &.db-transportchip--bus94 {
     background: #e30613;
   }
 
-  &.dbx-transportchip--bus27,
-  &.dbx-transportchip--bus44,
-  &.dbx-transportchip--bus57,
-  &.dbx-transportchip--bus58,
-  &.dbx-transportchip--bus82,
-  &.dbx-transportchip--bus95,
-  &.dbx-transportchip--busn5 {
+  &.db-transportchip--bus27,
+  &.db-transportchip--bus44,
+  &.db-transportchip--bus57,
+  &.db-transportchip--bus58,
+  &.db-transportchip--bus82,
+  &.db-transportchip--bus95,
+  &.db-transportchip--busn5 {
     background: #ef7d00;
   }
 
-  &.dbx-transportchip--bus28,
-  &.dbx-transportchip--bus33,
-  &.dbx-transportchip--bus34,
-  &.dbx-transportchip--bus38,
-  &.dbx-transportchip--bus39,
-  &.dbx-transportchip--bus42,
-  &.dbx-transportchip--bus55,
-  &.dbx-transportchip--bus63,
-  &.dbx-transportchip--bus93,
-  &.dbx-transportchip--busn9 {
+  &.db-transportchip--bus28,
+  &.db-transportchip--bus33,
+  &.db-transportchip--bus34,
+  &.db-transportchip--bus38,
+  &.db-transportchip--bus39,
+  &.db-transportchip--bus42,
+  &.db-transportchip--bus55,
+  &.db-transportchip--bus63,
+  &.db-transportchip--bus93,
+  &.db-transportchip--busn9 {
     background: #fc0;
     color: #32474f;
   }
 
-  &.dbx-transportchip--bus90 {
+  &.db-transportchip--bus90 {
     background: #312783;
   }
 
-  &.dbx-transportchip--busn3 {
+  &.db-transportchip--busn3 {
     background: #fb3099;
   }
 }
 
-.dbx-transportchip--nordwestbahn {
-  &.dbx-transportchip--suburban {
-    @include dbx-transportchip-default-border-radius;
+.db-transportchip--nordwestbahn {
+  &.db-transportchip--suburban {
+    @include db-transportchip-default-border-radius;
   }
 
-  &.dbx-transportchip--nwbrs1 {
+  &.db-transportchip--nwbrs1 {
     background: #00468e;
   }
 
-  &.dbx-transportchip--nwbrs2 {
+  &.db-transportchip--nwbrs2 {
     background: #ec9127;
   }
 
-  &.dbx-transportchip--nwbrs3 {
+  &.db-transportchip--nwbrs3 {
     background: #94c12f;
   }
 
-  &.dbx-transportchip--nwbrs4 {
+  &.db-transportchip--nwbrs4 {
     background: #e30513;
   }
 }
 
-.dbx-transportchip--canceled {
-  mix-blend-mode: var(--dbx-solid-button-mix-blend-mode);
+.db-transportchip--canceled {
+  mix-blend-mode: var(--db-solid-button-mix-blend-mode);
 
-  .dbx-transportchip__line {
-    @include dbx-transportchip-border(
+  .db-transportchip__line {
+    @include db-transportchip-border(
       2px,
-      var(--dbx-primary-button-disabled-background-color)
+      var(--db-primary-button-disabled-background-color)
     );
     background: transparent;
     clip-path: unset; // Hochbahn bus and ferry’s shape won’t allow borders
-    color: var(--dbx-primary-button-disabled-text-color);
+    color: var(--db-primary-button-disabled-text-color);
     text-shadow: unset;
   }
 
   rect,
   circle {
-    fill: var(--dbx-primary-button-disabled-background-color);
+    fill: var(--db-primary-button-disabled-background-color);
   }
 
   text,
   path {
-    fill: var(--dbx-primary-button-disabled-text-color);
+    fill: var(--db-primary-button-disabled-text-color);
   }
 }

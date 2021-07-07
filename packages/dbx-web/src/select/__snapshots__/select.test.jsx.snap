@@ -3,7 +3,7 @@
 exports[`Select Component should render a disabled select 1`] = `
 <div>
   <div
-    class="dbx-select dbx-select--disabled"
+    class="db-select db-select--disabled"
   >
     <select
       disabled=""
@@ -23,7 +23,7 @@ exports[`Select Component should render a disabled select 1`] = `
 exports[`Select Component should render a select 1`] = `
 <div>
   <div
-    class="dbx-select"
+    class="db-select"
   >
     <select />
     <svg

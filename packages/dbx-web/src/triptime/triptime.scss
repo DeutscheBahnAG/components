@@ -1,38 +1,38 @@
-.dbx-triptime {
+.db-triptime {
   display: inline-flex;
   flex-direction: column;
   font-weight: normal;
 
-  .dbx-time + .dbx-time {
+  .db-time + .db-time {
     margin-top: -2px;
   }
 }
 
-.dbx-triptime--bold {
-  font-weight: dbx-font-weight('copy', 'bold');
+.db-triptime--bold {
+  font-weight: db-font-weight('copy', 'bold');
 }
 
-.dbx-triptime--slightly-delayed,
-.dbx-triptime--delayed {
-  border-radius: dbx-border-radius('s');
+.db-triptime--slightly-delayed,
+.db-triptime--delayed {
+  border-radius: db-border-radius('s');
   margin: 0 -0.3em;
   padding: 0 0.3em;
 }
 
-.dbx-triptime--slightly-delayed {
-  background: var(--dbx-on-time-background-color);
-  color: var(--dbx-on-time-light-text-color);
+.db-triptime--slightly-delayed {
+  background: var(--db-on-time-background-color);
+  color: var(--db-on-time-light-text-color);
 
-  &.dbx-triptime--bold {
-    color: var(--dbx-on-time-light-text-color);
+  &.db-triptime--bold {
+    color: var(--db-on-time-light-text-color);
   }
 }
 
-.dbx-triptime--delayed {
-  background: var(--dbx-delayed-background-color);
-  color: var(--dbx-delayed-light-text-color);
+.db-triptime--delayed {
+  background: var(--db-delayed-background-color);
+  color: var(--db-delayed-light-text-color);
 
-  &.dbx-triptime--bold {
-    color: var(--dbx-delayed-light-text-color);
+  &.db-triptime--bold {
+    color: var(--db-delayed-light-text-color);
   }
 }

@@ -24,7 +24,7 @@ const Layout: LayoutType<LayoutProps> = ({
   className = '',
   ...otherProps
 }: LayoutProps) => (
-  <div className={clsx('dbx-layout', `dbx-layout--${variant}`, className)} {...otherProps}>
+  <div className={clsx('db-layout', `db-layout--${variant}`, className)} {...otherProps}>
     {children}
   </div>
 );

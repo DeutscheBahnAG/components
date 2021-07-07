@@ -1,37 +1,37 @@
-@function dbx-component-line-height($size, $border-width-key) {
-  $border-width: dbx-border-width($border-width-key);
-  $height: dbx-size($size);
+@function db-component-line-height($size, $border-width-key) {
+  $border-width: db-border-width($border-width-key);
+  $height: db-size($size);
   $inner-height: $height - 2 * $border-width;
-  $line-height: dbx-line-height('copy', dbx-component-textsize($size));
+  $line-height: db-line-height('copy', db-component-textsize($size));
   @return if($inner-height > $line-height, $line-height, $inner-height);
 }
 
-@function dbx-component-horizontal-padding($size, $border-width-key) {
-  @return ceil(dbx-size($size) / 3) - dbx-border-width($border-width-key);
+@function db-component-horizontal-padding($size, $border-width-key) {
+  @return ceil(db-size($size) / 3) - db-border-width($border-width-key);
 }
 
-@function dbx-component-vertical-padding($size, $border-width-key) {
-  $line-height: dbx-component-line-height($size, $border-width-key);
-  @return (dbx-size($size) - $line-height) / 2 -
-    dbx-border-width($border-width-key);
+@function db-component-vertical-padding($size, $border-width-key) {
+  $line-height: db-component-line-height($size, $border-width-key);
+  @return (db-size($size) - $line-height) / 2 -
+    db-border-width($border-width-key);
 }
 
-@function dbx-component-padding-top($size, $border-width-key) {
-  @return floor(dbx-component-vertical-padding($size, $border-width-key));
+@function db-component-padding-top($size, $border-width-key) {
+  @return floor(db-component-vertical-padding($size, $border-width-key));
 }
 
-@function dbx-component-padding-bottom($size, $border-width-key) {
-  @return floor(dbx-component-vertical-padding($size, $border-width-key));
+@function db-component-padding-bottom($size, $border-width-key) {
+  @return floor(db-component-vertical-padding($size, $border-width-key));
 }
 
-@function dbx-component-textsize($size) {
+@function db-component-textsize($size) {
   @if $size == 'xs' or $size == 's' {
     @return 's';
   }
   @return 'm';
 }
 
-@function dbx-component-icon-gap($text-size) {
+@function db-component-icon-gap($text-size) {
   $icon-safe-area: 2px;
-  @return ceil(dbx-line-height('copy', $text-size) / 3) - $icon-safe-area;
+  @return ceil(db-line-height('copy', $text-size) / 3) - $icon-safe-area;
 }

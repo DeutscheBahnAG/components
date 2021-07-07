@@ -1,6 +1,6 @@
 /// Micro clearfix hack.
 /// @group Layout
-@mixin dbx-clearfix {
+@mixin db-clearfix {
   &::after {
     clear: both;
     content: '';

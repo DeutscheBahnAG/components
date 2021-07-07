@@ -1,35 +1,35 @@
-.dbx-track {
-  @include dbx-text-style('copy', 's');
-  background: var(--dbx-track-background-color);
+.db-track {
+  @include db-text-style('copy', 's');
+  background: var(--db-track-background-color);
   display: inline-block;
-  color: var(--dbx-track-text-color);
-  font-weight: dbx-font-weight('copy', 'bold');
+  color: var(--db-track-text-color);
+  font-weight: db-font-weight('copy', 'bold');
 
   abbr {
     text-decoration: none;
   }
 }
 
-.dbx-track__fragment {
+.db-track__fragment {
   margin-left: 0.1em;
 }
 
-.dbx-track__separator {
+.db-track__separator {
   margin: 0 0.05em;
 }
 
 @each $size in (xl l m s xs) {
-  $textsize: dbx-component-textsize($size);
+  $textsize: db-component-textsize($size);
 
-  .dbx-track--#{$size} {
-    border-radius: dbx-border-radius($size);
-    font-size: dbx-font-size('copy', $textsize);
-    height: dbx-size($size);
-    line-height: dbx-line-height('copy', $textsize);
-    padding: #{(dbx-size($size) - dbx-line-height('copy', $textsize)) /
+  .db-track--#{$size} {
+    border-radius: db-border-radius($size);
+    font-size: db-font-size('copy', $textsize);
+    height: db-size($size);
+    line-height: db-line-height('copy', $textsize);
+    padding: #{(db-size($size) - db-line-height('copy', $textsize)) /
       2}
-      #{(dbx-size($size) - dbx-line-height('copy', $textsize)) /
+      #{(db-size($size) - db-line-height('copy', $textsize)) /
       2 +
-      dbx-spacing('xs')};
+      db-spacing('xs')};
   }
 }

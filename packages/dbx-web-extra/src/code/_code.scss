@@ -1,37 +1,37 @@
 @import '@bahn-x/dbx-foundation/abstracts.scss';
 
-.dbx-code {
+.db-code {
   // GitHub uses this stack, so it can't be bad :p
-  background-color: var(--dbx-secondary-background-color);
-  color: var(--dbx-primary-text-color);
+  background-color: var(--db-secondary-background-color);
+  color: var(--db-primary-text-color);
 
   // inline style ('inline' prop == true)
   &--inline {
-    padding: (dbx-line-height('copy', 's') - dbx-font-size('copy', 's')) / 2;
-    border-radius: dbx-border-radius('s');
+    padding: (db-line-height('copy', 's') - db-font-size('copy', 's')) / 2;
+    border-radius: db-border-radius('s');
   }
 
   // block style ('inline' prop == false)
   &--block {
-    @include dbx-focus-ring;
+    @include db-focus-ring;
     white-space: pre;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: dbx-spacing('sm') dbx-spacing('m');
-    border-radius: dbx-border-radius('l');
+    padding: db-spacing('sm') db-spacing('m');
+    border-radius: db-border-radius('l');
   }
 
   &--inline,
   &--block &__inner {
-    font-family: $dbx-code-font-stack;
-    font-size: dbx-font-size('copy', 's');
-    line-height: dbx-line-height('copy', 's');
+    font-family: $db-code-font-stack;
+    font-size: db-font-size('copy', 's');
+    line-height: db-line-height('copy', 's');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   .token.script {
-    color: dbx-palette-color('blue700');
+    color: db-palette-color('blue700');
   }
 
   .token.comment,
@@ -39,32 +39,32 @@
   .token.doctype,
   .token.cdata,
   .token.punctuation {
-    color: var(--dbx-secondary-text-color);
+    color: var(--db-secondary-text-color);
     font-weight: normal;
   }
 
   .token.number {
-    color: dbx-palette-color('green600');
+    color: db-palette-color('green600');
     font-weight: normal;
   }
 
   .token.property,
   .token.deleted {
-    color: dbx-palette-color('cyan600');
+    color: db-palette-color('cyan600');
     font-weight: normal;
   }
 
   .token.namespace,
   .token.constant,
   .token.boolean {
-    color: dbx-palette-color('blue700');
+    color: db-palette-color('blue700');
     font-weight: normal;
   }
 
   .token.string,
   .token.char,
   .token.attr-value {
-    color: dbx-palette-color('lightgreen600');
+    color: db-palette-color('lightgreen600');
     font-weight: normal;
   }
 
@@ -74,35 +74,35 @@
   .token.builtin,
   .token.url,
   .token.inserted {
-    color: dbx-palette-color('blue400');
+    color: db-palette-color('blue400');
     font-weight: normal;
   }
 
   .token.entity {
-    color: dbx-palette-color('green400');
+    color: db-palette-color('green400');
     font-weight: normal;
   }
 
   .token.tag,
   .token.atrule,
   .token.keyword {
-    color: dbx-palette-color('blue500');
+    color: db-palette-color('blue500');
     font-weight: bold;
   }
 
   .token.function {
-    color: dbx-palette-color('turquoise600');
+    color: db-palette-color('turquoise600');
     font-weight: normal;
   }
 
   .token.regex,
   .token.important {
-    color: dbx-palette-color('lightgreen500');
+    color: db-palette-color('lightgreen500');
     font-weight: normal;
   }
 
   .token.variable {
-    color: dbx-palette-color('violet600');
+    color: db-palette-color('violet600');
     font-weight: normal;
   }
 
@@ -116,11 +116,11 @@
   }
 
   .token.interpolation-punctuation {
-    color: dbx-palette-color('green400');
+    color: db-palette-color('green400');
   }
 
   .token.operator,
   .token.title {
-    color: dbx-palette-color('coolgray500');
+    color: db-palette-color('coolgray500');
   }
 }

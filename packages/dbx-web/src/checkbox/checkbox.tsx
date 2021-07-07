@@ -39,24 +39,24 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
 
   return (
     <>
-      <label style={style as CSSProperties} className={clsx('dbx-checkbox', className)}>
+      <label style={style as CSSProperties} className={clsx('db-checkbox', className)}>
         <input type="checkbox" ref={inputRef} {...otherProps} />
-        <span className="dbx-checkbox-box">
+        <span className="db-checkbox-box">
           <svg viewBox="0 0 16 16">
             <path
-              className="dbx-checkbox-checked"
+              className="db-checkbox-checked"
               d="M6.5,12.2 C6.1,12.5 5.6,12.6 5.2,12.3 L5,12.1 C4.8,11.9 3.9,11 2.3,9.3 C1.9,9 1.9,8.3 2.3,7.9 C2.6,7.5 3.3,7.5 3.7,7.9 L5.8,10 L12.2,3.7 C12.5,3.3 13.2,3.3 13.6,3.7 C14,4.1 14,4.7 13.6,5.1 L6.5,12.2 Z"
             />
             <path
-              className="dbx-checkbox-indeterminate"
+              className="db-checkbox-indeterminate"
               d="M3.5,9 C2.9,9 2.5,8.5 2.5,8 C2.5,7.4 2.9,7 3.5,7 L12.5,7 C13,7 13.5,7.4 13.5,8 C13.5,8.5 13,9 12.5,9 L3.5,9 Z"
             />
           </svg>
         </span>
-        <span className="dbx-checkbox-label">{children}</span>
+        <span className="db-checkbox-label">{children}</span>
       </label>
-      {footer && <div className="dbx-checkbox__footer">{footer}</div>}
-      <span className="dbx-inline-spacer"> </span>
+      {footer && <div className="db-checkbox__footer">{footer}</div>}
+      <span className="db-inline-spacer"> </span>
     </>
   );
 };

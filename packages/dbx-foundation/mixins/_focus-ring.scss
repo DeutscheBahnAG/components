@@ -9,14 +9,14 @@
 /// @param {Number} $size - Size in px (border width) of the focus ring
 /// @param {Number} $grow - Additional grow size in px used for the transition
 /// @param {Color} $color - Color of the focus ring; may use an alpha value
-@mixin dbx-focus-ring(
+@mixin db-focus-ring(
   $transition: [],
   $target: '',
   $focus-selector: ':focus',
   $size: $focus-ring-size,
   $grow: $focus-ring-grow,
-  $color: var(--dbx-focus-ring-color),
-  $offset-color: var(--dbx-primary-background-color),
+  $color: var(--db-focus-ring-color),
+  $offset-color: var(--db-primary-background-color),
   $border: false,
   $parent: false,
   $offset: $focus-ring-offset
@@ -25,7 +25,7 @@
     outline: 0;
   }
 
-  #{dbx-focus-ring-target-selector($target)} {
+  #{db-focus-ring-target-selector($target)} {
     @content;
     box-shadow: transparent 0 0 0 (2 * $offset),
       transparent 0 0 0 ($size + $grow);
@@ -36,9 +36,9 @@
     }
   }
 
-  #{dbx-focus-ring-focussed-target-selector($target, $focus-selector)} {
+  #{db-focus-ring-focussed-target-selector($target, $focus-selector)} {
     @if $border {
-      border-color: var(--dbx-focus-border-color) !important;
+      border-color: var(--db-focus-border-color) !important;
     }
     box-shadow: $offset-color 0 0 0 $offset, $color 0 0 0 ($size + $offset);
     outline: 2px transparent; /* 1 */
@@ -51,15 +51,15 @@
 /// @param {Number} $size - Size in px (border width) of the focus ring
 /// @param {Number} $grow - Additional grow size in px used for the transition
 /// @param {Color} $color - Color of the focus ring; may use an alpha value
-@mixin dbx-focus-ring-for-text(
+@mixin db-focus-ring-for-text(
   $transition: [],
   $target: '',
   $focus-selector: ':focus',
   $size: $focus-ring-size,
   $grow: $focus-ring-grow,
-  $color: var(--dbx-focus-ring-color)
+  $color: var(--db-focus-ring-color)
 ) {
-  @include dbx-focus-ring(
+  @include db-focus-ring(
     $transition: $transition,
     $target: $target,
     $focus-selector: $focus-selector,
@@ -77,12 +77,12 @@
 }
 
 /// Builds the selector for the target element before getting the focus
-@function dbx-focus-ring-target-selector($target) {
+@function db-focus-ring-target-selector($target) {
   @return unquote(if($target == '', '&', $target));
 }
 
 /// Builds the selector for the target element having the focus
-@function dbx-focus-ring-focussed-target-selector($target, $focus-selector) {
+@function db-focus-ring-focussed-target-selector($target, $focus-selector) {
   @if (str-index($target, $focus-selector)) {
     // If the selector already includes the focus state, it was set manually on purpose.
     @return unquote($target);

@@ -1,48 +1,48 @@
 :root {
-  --dbx-container-margin: 0 auto;
-  --dbx-content-max-width: calc(100vw - #{2 * dbx-spacing('m')});
-  --dbx-extended-max-width: calc(100vw - #{2 * dbx-spacing('sm')});
-  --dbx-text-max-width: calc(100vw - #{2 * dbx-spacing('sm')});
-  --dbx-content-margin: auto;
-  --dbx-extended-margin: auto;
-  --dbx-content-in-extended-margin: auto;
+  --db-container-margin: 0 auto;
+  --db-content-max-width: calc(100vw - #{2 * db-spacing('m')});
+  --db-extended-max-width: calc(100vw - #{2 * db-spacing('sm')});
+  --db-text-max-width: calc(100vw - #{2 * db-spacing('sm')});
+  --db-content-margin: auto;
+  --db-extended-margin: auto;
+  --db-content-in-extended-margin: auto;
   /* stylelint-disable-next-line length-zero-no-unit */
-  --dbx-sidebar-width: 0px; // do not remove px otherwise calc(var(..)) won’t work anymore.
+  --db-sidebar-width: 0px; // do not remove px otherwise calc(var(..)) won’t work anymore.
 
-  @media (min-width: #{8 * dbx-spacing('xxxl')}) {
-    --dbx-content-max-width: calc(100vw - #{2 * dbx-spacing('xxl')});
-    --dbx-extended-max-width: calc(100vw - #{2 * dbx-spacing('xl')});
-    --dbx-text-max-width: #{6 * dbx-spacing('xxxl')};
+  @media (min-width: #{8 * db-spacing('xxxl')}) {
+    --db-content-max-width: calc(100vw - #{2 * db-spacing('xxl')});
+    --db-extended-max-width: calc(100vw - #{2 * db-spacing('xl')});
+    --db-text-max-width: #{6 * db-spacing('xxxl')};
   }
 
-  @media (min-width: #{12 * dbx-spacing('xxxl')}) {
-    --dbx-content-max-width: #{10 * dbx-spacing('xxxl')};
-    --dbx-extended-max-width: #{12 * dbx-spacing('xxxl')};
+  @media (min-width: #{12 * db-spacing('xxxl')}) {
+    --db-content-max-width: #{10 * db-spacing('xxxl')};
+    --db-extended-max-width: #{12 * db-spacing('xxxl')};
   }
 }
 
-.dbx-layout--left-aligned {
+.db-layout--left-aligned {
   background: linear-gradient(to right,
-  #{dbx-color('brand')} var(--dbx-sidebar-width),
+  #{db-color('brand')} var(--db-sidebar-width),
   transparent 0);
-  padding-left: var(--dbx-sidebar-width);
+  padding-left: var(--db-sidebar-width);
 
-  @media (min-width: #{8 * dbx-spacing('xxxl')}) {
-    --dbx-sidebar-width: #{2 * dbx-spacing('xxxl')};
-    --dbx-content-margin: #{dbx-spacing('xxl')};
-    --dbx-extended-margin: #{dbx-spacing('xl')};
-    --dbx-content-in-extended-margin: #{dbx-spacing('xl')};
-    --dbx-content-max-width: calc(100vw - 2 * var(--dbx-content-margin) - var(--dbx-sidebar-width));
-    --dbx-extended-max-width: calc(100vw - 2 * var(--dbx-extended-margin) - var(--dbx-sidebar-width));
-    --dbx-content-in-extended-margin: calc(var(--dbx-content-margin) - var(--dbx-extended-margin));
+  @media (min-width: #{8 * db-spacing('xxxl')}) {
+    --db-sidebar-width: #{2 * db-spacing('xxxl')};
+    --db-content-margin: #{db-spacing('xxl')};
+    --db-extended-margin: #{db-spacing('xl')};
+    --db-content-in-extended-margin: #{db-spacing('xl')};
+    --db-content-max-width: calc(100vw - 2 * var(--db-content-margin) - var(--db-sidebar-width));
+    --db-extended-max-width: calc(100vw - 2 * var(--db-extended-margin) - var(--db-sidebar-width));
+    --db-content-in-extended-margin: calc(var(--db-content-margin) - var(--db-extended-margin));
   }
 
-  @media (min-width: #{13 * dbx-spacing('xxxl')}) {
-    --dbx-sidebar-width: #{3 * dbx-spacing('xxxl')};
-    --dbx-content-max-width: #{8 * dbx-spacing('xxxl')};
-    --dbx-extended-max-width: #{9 * dbx-spacing('xxxl')};
-    --dbx-content-margin: #{dbx-spacing('xxxl')};
-    --dbx-extended-margin: #{dbx-spacing('xl')};
-    --dbx-content-in-extended-margin: calc(var(--dbx-content-margin) - var(--dbx-extended-margin));
+  @media (min-width: #{13 * db-spacing('xxxl')}) {
+    --db-sidebar-width: #{3 * db-spacing('xxxl')};
+    --db-content-max-width: #{8 * db-spacing('xxxl')};
+    --db-extended-max-width: #{9 * db-spacing('xxxl')};
+    --db-content-margin: #{db-spacing('xxxl')};
+    --db-extended-margin: #{db-spacing('xl')};
+    --db-content-in-extended-margin: calc(var(--db-content-margin) - var(--db-extended-margin));
   }
 }
