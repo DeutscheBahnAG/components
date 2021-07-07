@@ -25,7 +25,7 @@ import { Passwordfield } from '@db-design/react';
 ## Inline label
 
 For rare cases (e.g. a login form), it might make sense to use inline labels.
-The DBX Passwordfield offers full support.
+The DB Passwordfield offers full support.
 
 Inline labels will cover the Passwordfield until it got filled out. Then they’ll
 move on top of the input.

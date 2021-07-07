@@ -214,7 +214,7 @@ There are two ways to get these components:
    />;
    ```
 
-These components internally render the DBX `Button` component with some settings pre-set.
+These components internally render the DB `Button` component with some settings pre-set.
 See the corresponding Button documentation to find the available props.
 
 ## Responsive design

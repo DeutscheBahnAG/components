@@ -2,7 +2,7 @@
 
 ## Fonts
 
-To link all fonts required to display BahnX components, add to your main Sass file:
+To link all fonts required to display DB React components, add to your main Sass file:
 
 ```scss
 @import '@db-design/styles/fonts';

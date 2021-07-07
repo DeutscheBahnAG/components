@@ -24,7 +24,7 @@ import { ActionSettings, SeatWindow } from '@db-design/react-icons';
 ## Sizing
 
 The icons are already exported in the correct size they should be used with.
-The sizes are optimized to be interoperable with other DBX components (e.g. icons in buttons) and should not be altered.
+The sizes are optimized to be interoperable with other DB components (e.g. icons in buttons) and should not be altered.
 
 ## Setting the icon color
 

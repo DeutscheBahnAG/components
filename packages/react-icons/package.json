@@ -1,7 +1,7 @@
 {
   "name": "@db-design/react-icons",
   "version": "0.8.0-pre.0",
-  "description": "DBX Icon components for React",
+  "description": "DB Icon components for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "SEE LICENSE IN LICENSE.md",

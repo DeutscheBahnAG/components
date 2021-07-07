@@ -18,7 +18,7 @@ module.exports = {
   require: [path.join(__dirname, './sass/build.scss')],
   pagePerSection: true,
   exampleMode: 'expand',
-  title: 'BahnX React components',
+  title: 'DB React components',
   styleguideDir: 'build',
 
   ignore: [

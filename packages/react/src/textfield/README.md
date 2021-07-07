@@ -149,7 +149,7 @@ Do not misuse the `placeholder` as label. Use `inlineLabel` for a similar effect
 ## Inline label
 
 For some cases (e.g. a login form), it might make sense to use inline labels.
-The DBX Textfield offers full support.
+The DB Textfield offers full support.
 
 Inline labels will cover the Textfield until it got filled out. Then they’ll
 move on top of the input in a beautiful transition.

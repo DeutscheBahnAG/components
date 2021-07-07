@@ -2,7 +2,7 @@
   "name": "react-web-components",
   "private": true,
   "version": "0.5.6",
-  "description": "BahnX React components for building websites and applications fast in the look and feel of Deutsche Bahn AG",
+  "description": "DB React components for building websites and applications fast in the look and feel of Deutsche Bahn AG",
   "scripts": {
     "styleguidist": "styleguidist server",
     "dev": "yarn styleguidist",

@@ -166,9 +166,9 @@ The Logo can be linked. It automatically will show a DB-styled focus ring.
 - Pixel-perfect rendering
 - Retina and high-resolution displays compatible
 - Exact proportions – the logo will look exactly as it should
-- The DBX Logo component gets visually optimized to look visually balanced when used in white on darker background
+- The DB Logo component gets visually optimized to look visually balanced when used in white on darker background
 
-By using the DBX Logo component you can be sure your project adheres the DB brand with the highest possible quality.
+By using the DB Logo component you can be sure your project adheres the DB brand with the highest possible quality.
 
 ```jsx noeditor
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';

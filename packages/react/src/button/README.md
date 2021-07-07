@@ -87,7 +87,7 @@ import { NavigationClose } from '@db-design/react-icons';
 
 ## Icons
 
-Icons can be added as SVG. They must match the [DBX Icon specifications](https://dbx.bahn-x.de/foundation/icons) (24 × 24 px incl. 2 px safe area).
+Icons can be added as SVG. They must match the [DB Icon specifications](https://dpp.bahn-x.de/foundation/icons) (24 × 24 px incl. 2 px safe area).
 
 ```jsx
 import { ActionAdd } from '@db-design/react-icons';

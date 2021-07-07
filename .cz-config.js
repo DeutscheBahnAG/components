@@ -2,7 +2,8 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name: 'feat:     A new feature/visual update (build in JavaScript and/or CSS)',
+      name:
+        'feat:     A new feature/visual update (build in JavaScript and/or CSS)',
     },
     {
       value: 'fix',
@@ -21,7 +22,8 @@ module.exports = {
     },
     {
       value: 'refactor',
-      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
+      name:
+        'refactor: A code change that neither fixes a bug nor adds a feature',
     },
     {
       value: 'perf',
@@ -47,13 +49,16 @@ module.exports = {
   messages: {
     type: 'Select the type of change that you’re committing.',
     scope: '\nDenote the SCOPE of this change – optional:',
-    ticketNumber: 'Enter the ticket number (without ‘DBXPORTAL-’ prefix) – optional:\n',
-    subject: 'Commit title (SHORT (50 char), IMPERATIVE, starting titlecase):\n',
+    ticketNumber:
+      'Enter the ticket number (without BDDP-’ prefix) – optional:\n',
+    subject:
+      'Commit title (SHORT (50 char), IMPERATIVE, starting titlecase):\n',
     editor:
       'Commit details (LONGER description of the change. ' +
       ' Use ‘|’ to break new line) – optional:\n',
     breaking: 'List any BREAKING CHANGES – optional:\n',
-    footer: 'List any ISSUES CLOSED by this change – optional. E.g.: #31, #34:\n',
+    footer:
+      'List any ISSUES CLOSED by this change – optional. E.g.: #31, #34:\n',
     confirmCommit:
       'Are you sure you want to proceed with the commit above?\n' +
       '  (To add a commit body, press ‘e’)',

@@ -1,4 +1,4 @@
-# BahnX React components
+# DB React components
 
 React components for building websites and applications fast in the look
 and feel of Deutsche Bahn AG.
@@ -91,7 +91,7 @@ Optional parts are set in square brackets.
 Valid examples of commit messages:
 
 - ```
-  feat: DBXPORTAL-123 Add focus ring to Button
+  feat: BDDP-123 Add focus ring to Button
   ```
 - ```
   fix: Make focus ring work in Firefox
@@ -103,9 +103,9 @@ Valid examples of commit messages:
   chore: Update dependencies
   ```
 - ```
-  feat: DBXPORTAL-124 Implement new sizes
+  feat: BDDP-124 Implement new sizes
 
-  The new sizes improve consistency between DBX and Product XYZ.
+  The new sizes improve consistency between DB and Product XYZ.
 
   BREAKING CHANGE:
   All buttons increased by 2 pixels in height.
@@ -124,7 +124,7 @@ Rules (you can also use [Commitizen](#commitizen) which helps generate commit me
   - `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
   - `revert`: Revert to a commit
 - Separate the _type_ with `:` (colon + space)
-- Optional Jira _ticket number_ (e.g. `DBXPORTAL-123`); if set, add one space afterwards
+- Optional Jira _ticket number_ (e.g. `BDDP-123`); if set, add one space afterwards
 - Mandatory _subject_ – imperative style, 50 characters max, start titlecase, no period at the end
 - Optional _body_
   - Separate with one empty line from the first line (_type, ticket number and subject_)

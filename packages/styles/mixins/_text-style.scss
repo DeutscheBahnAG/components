@@ -1,4 +1,4 @@
-// applies a text style from the DBX design system
+// applies a text style from the DB design system
 // (see variables/text-styles for available styles)
 @mixin db-text-style($text-style: 'copy', $size: 'm') {
   $font-size: db-font-size($text-style, $size);

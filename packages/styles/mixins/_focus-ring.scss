@@ -2,7 +2,7 @@
  * 1. For IE high-contrast mode which ignores `box-shadow` but will make `outline` visible
  */
 
-/// Adds an focus ring in DBX style including transitions
+/// Adds an focus ring in DB style including transitions
 /// @param {String} $transition - Additional transitions (quoted as string)
 /// @param {String} $target - Child selector which should display the focus ring (quoted as string)
 /// @param {String} $focus-selector - Use class name instead of :focus selector (quoted as string)
@@ -45,7 +45,7 @@
   }
 }
 
-/// Adds an focus ring in DBX style including transitions for text links (including rounded corners and spacing)
+/// Adds an focus ring in DB style including transitions for text links (including rounded corners and spacing)
 /// @param {String} $transition - Additional transitions (quoted as string)
 /// @param {String} $target - Child selector which should display the focus ring (quoted as string)
 /// @param {Number} $size - Size in px (border width) of the focus ring
