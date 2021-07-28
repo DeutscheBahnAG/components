@@ -1,6 +1,6 @@
 // Abstracts (constants, functions and mixins)
 @import '@db-design/styles/abstracts';
-@import '@db-design/styles/fonts';
+@import '@db-design/styles/global';
 
 // Vendor (Vendor specific styles: DSM design tokens, Include media mixin...)
 @import 'vendor/**/*.scss';
@@ -12,9 +12,7 @@
 @import 'helpers/*.scss';
 
 // Components & Component Stories
-@import '../packages/react-icons/*.scss';
-@import '../packages/react/src/**/*.scss';
-@import '../packages/react-extra/src/**/*.scss';
+@import '../packages/styles/components/*.scss';
 
 // Styleguide (specific elements for styleguide, classes prefixed with sg-)
 @import 'styleguide/*.scss';
