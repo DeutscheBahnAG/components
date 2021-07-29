@@ -39,10 +39,6 @@ module.exports = [
         name: 'Layout and grid',
         components: web(['layout', 'container']),
       },
-      {
-        name: 'Useful compositions',
-        components: web(['consentlayer']),
-      },
     ],
     sectionDepth: 2,
   },

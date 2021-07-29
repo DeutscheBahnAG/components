@@ -37,7 +37,6 @@
   "sideEffects": [
     "./dist/button/*",
     "./dist/modal/*",
-    "./dist/consentlayer/*",
     "./dist/pulse/*",
     "./dist/triptime/*",
     "./dist/triptimespan/*"
