@@ -110,7 +110,7 @@
   --db-border-color: #e77579;
   --db-focus-ring-color: #70a0ff66;
   --db-focus-border-color: #{db-palette-color('blue300')};
-  --db-link-color: #ff5a56;
+  --db-link-color: #f55;
   --db-link-hover-color: #e41f18;
   --db-link-pressed-color: #{mix(db-palette-color('red600'),
   db-palette-color('red700'))};
@@ -315,11 +315,11 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 .db-theme--display {
   --db-focus-ring-color: #{rgba(db-palette-color('cyan100'), 0.4)};
   --db-focus-border-color: #{db-palette-color('cyan300')};
-  --db-primary-background-color: #{db-palette-color('blue700')};
+  --db-primary-background-color: #213a7e;
   --db-darker-background-color: #{db-palette-color('blue800')};
   --db-primary-text-color: #{db-palette-color('white')};
   --db-secondary-text-color: #{db-palette-color('blue200')};
-  --db-disabled-text-color: #{db-palette-color('blue500')};
+  --db-disabled-text-color: #3e68ac;
   --db-link-color: #{db-palette-color('cyan300')};
   --db-link-hover-color: #{db-palette-color('cyan400')};
   --db-link-pressed-color: #{db-palette-color('cyan500')};
@@ -331,9 +331,9 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
   --db-secondary-button-hover-background-color: #{db-palette-color('blue600')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('blue500')};
-  --db-solid-button-background-color: #{db-palette-color('blue600')};
-  --db-solid-button-hover-background-color: #{db-palette-color('blue500')};
-  --db-solid-button-pressed-background-color: #{db-palette-color('blue400')};
-  --db-border-color: #264d8e;
+  --db-solid-button-background-color: #142a65;
+  --db-solid-button-hover-background-color: #0a1a44;
+  --db-solid-button-pressed-background-color: #030d27;
+  --db-border-color: #3e5c90;
   --db-loud-border-color: #{db-palette-color('blue100')};
 }
