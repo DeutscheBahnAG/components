@@ -3,19 +3,19 @@
 }
 
 :root,
-.db-theme--db,
-.db-theme--db-alternate,
-.db-theme--db-loud,
-.db-theme--s-bahn,
-.db-theme--s-bahn-alternate,
-.db-theme--s-bahn-loud,
+.db-theme--db-light,
+.db-theme--db-light-alternate,
+.db-theme--db-branded,
+.db-theme--db-dark,
+.db-theme--db-dark-alternate,
+.db-theme--s-bahn-light,
+.db-theme--s-bahn-light-alternate,
+.db-theme--s-bahn-branded,
+.db-theme--green-campaign-light,
+.db-theme--green-campaign-light-alternate,
 .db-theme--green-campaign,
-.db-theme--green-campaign-alternate,
-.db-theme--green-campaign-loud,
-.db-theme--pride-campaign,
-.db-theme--pride-campaign-alternate,
-.db-theme--db-contrast,
-.db-theme--db-contrast-alternate,
+.db-theme--pride-campaign-light,
+.db-theme--pride-campaign-light-alternate,
 .db-theme--display {
   --db-logo-color: #{db-palette-color('dbrot')};
   --db-pulse-background: #{db-palette-color('dbrot')};
@@ -71,10 +71,10 @@
   --db-delayed-background-color: transparent;
 }
 
-.db-theme--db-alternate,
-.db-theme--s-bahn-alternate,
-.db-theme--green-campaign-alternate,
-.db-theme--pride-campaign-alternate {
+.db-theme--db-light-alternate,
+.db-theme--s-bahn-light-alternate,
+.db-theme--green-campaign-light-alternate,
+.db-theme--pride-campaign-light-alternate {
   --db-primary-button-disabled-background-color: #{db-palette-color('coolgray200')};
   --db-primary-button-disabled-text-color: #{db-palette-color('coolgray300')};
   --db-link-color: #{darken(db-text-color('link.primary'), 3%)};
@@ -91,11 +91,11 @@
   --db-loud-border-color: #{db-palette-color('coolgray600')};
 }
 
-.db-theme--db-loud,
-.db-theme--db-contrast,
-.db-theme--db-contrast-alternate,
-.db-theme--s-bahn-loud,
-.db-theme--green-campaign-loud,
+.db-theme--db-branded,
+.db-theme--db-dark,
+.db-theme--db-dark-alternate,
+.db-theme--s-bahn-branded,
+.db-theme--green-campaign-branded,
 .db-theme--display {
   --db-logo-color: #fe182e;
   --db-pulse-background: #fe182e;
@@ -146,8 +146,8 @@
   --db-delayed-background-color: #{db-palette-color('white')};
 }
 
-.db-theme--db-contrast,
-.db-theme--db-contrast-alternate {
+.db-theme--db-dark,
+.db-theme--db-dark-alternate {
   --db-on-time-text-color: #{db-palette-color('white')};
   --db-on-time-light-text-color: #{db-palette-color('white')};
   --db-on-time-background-color: #467a18;
@@ -160,7 +160,7 @@
   --db-loud-border-color: #{db-palette-color('coolgray200')};
 }
 
-.db-theme--db-contrast-alternate {
+.db-theme--db-dark-alternate {
   --db-link-color: #ff433e;
   --db-primary-background-color: #{db-palette-color('coolgray800')};
   --db-secondary-background-color: #{db-palette-color('coolgray700')};
@@ -173,9 +173,9 @@
   60%)};
 }
 
-.db-theme--db-loud,
-.db-theme--s-bahn-loud,
-.db-theme--green-campaign-loud,
+.db-theme--db-branded,
+.db-theme--s-bahn-branded,
+.db-theme--green-campaign-branded,
 .db-theme--display {
   --db-logo-color: #{db-palette-color('white')};
   --db-pulse-background: #{db-palette-color('white')};
@@ -216,8 +216,8 @@
 
 $db-s-bahn-green: #05883c;
 
-.db-theme--s-bahn,
-.db-theme--s-bahn-alternate {
+.db-theme--s-bahn-light,
+.db-theme--s-bahn-light-alternate {
   --db-loud-border-color: #{lighten($db-s-bahn-green, 4%)};
   --db-link-color: #{$db-s-bahn-green};
   --db-link-hover-color: #{mix(#000, $db-s-bahn-green, 80%)};
@@ -233,14 +233,14 @@ $db-s-bahn-green: #05883c;
   20%)};
 }
 
-.db-theme--s-bahn-alternate {
+.db-theme--s-bahn-light-alternate {
   --db-link-color: #{darken($db-s-bahn-green, 3%)};
   --db-link-hover-color: #{darken(mix(#000, $db-s-bahn-green, 80%), 3%)};
   --db-link-pressed-color: #{darken(mix(#000, $db-s-bahn-green, 60%), 3%)};
 }
 
-.db-theme--green-campaign,
-.db-theme--green-campaign-alternate {
+.db-theme--green-campaign-light,
+.db-theme--green-campaign-light-alternate {
   --db-loud-border-color: #{db-palette-color('lightgreen400')};
   --db-link-color: #{db-palette-color('lightgreen400')};
   --db-link-hover-color: #{db-palette-color('lightgreen500')};
@@ -255,8 +255,8 @@ $db-s-bahn-green: #05883c;
 $db-s-bahn-loud-background: #05883c;
 $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
-.db-theme--s-bahn-loud,
-.db-theme--green-campaign-loud {
+.db-theme--s-bahn-branded,
+.db-theme--green-campaign-branded {
   --db-focus-border-color: #bbffe7;
   --db-primary-background-color: #{$db-s-bahn-loud-background};
   --db-darker-background-color: #{darken($db-s-bahn-loud-background, 2%)};
@@ -277,8 +277,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-loud-border-color: #{db-palette-color('green100')};
 }
 
-.db-theme--pride-campaign,
-.db-theme--pride-campaign-alternate {
+.db-theme--pride-campaign-light,
+.db-theme--pride-campaign-light-alternate {
   --db-pulse-background: linear-gradient(135deg,
   #{db-palette-color('red500')} #{100% / 6 * 1},
   #{db-palette-color('orange500')} 0,
@@ -292,7 +292,7 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   #{db-palette-color('violet500')} 0);
 }
 
-.db-theme--green-campaign-loud {
+.db-theme--green-campaign-branded {
   --db-link-hover-color: #{mix(#000, $db-green-campaign-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-green-campaign-loud-background, 40%)};
   --db-focus-border-color: #{db-palette-color('lightgreen100')};

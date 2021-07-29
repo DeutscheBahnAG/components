@@ -3,19 +3,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export enum Themes {
-  DB = 'db',
-  DB_ALTERNATE = 'db-alternate',
-  DB_LOUD = 'db-loud',
-  DB_CONTRAST = 'db-contrast',
-  DB_CONTRAST_ALTERNATE = 'db-contrast-alternate',
-  S_BAHN = 's-bahn',
-  S_BAHN_ALTERNATE = 's-bahn-alternate',
-  S_BAHN_LOUD = 's-bahn-loud',
-  GREEN_CAMPAIGN = 'green-campaign',
-  GREEN_CAMPAIGN_ALTERNATE = 'green-campaign-alternate',
-  GREEN_CAMPAIGN_LOUD = 'green-campaign-loud',
-  PRIDE_CAMPAIGN = 'pride-campaign',
-  PRIDE_CAMPAIGN_ALTERNATE = 'pride-campaign-alternate',
+  DB_BRANDED = 'db-branded',
+  DB_LIGHT = 'db-light',
+  DB_LIGHT_ALTERNATE = 'db-light-alternate',
+  DB_DARK = 'db-dark',
+  DB_DARK_ALTERNATE = 'db-dark-alternate',
+  S_BAHN_BRANDED = 's-bahn-branded',
+  S_BAHN_LIGHT = 's-bahn-light',
+  S_BAHN_LIGHT_ALTERNATE = 's-bahn-light-alternate',
+  GREEN_CAMPAIGN_BRANDED = 'green-campaign-branded',
+  GREEN_CAMPAIGN_LIGHT = 'green-campaign-light',
+  GREEN_CAMPAIGN_LIGHT_ALTERNATE = 'green-campaign-light-alternate',
+  PRIDE_CAMPAIGN_LIGHT = 'pride-campaign-light',
+  PRIDE_CAMPAIGN_LIGHT_ALTERNATE = 'pride-campaign-light-alternate',
   DISPLAY = 'display',
 }
 

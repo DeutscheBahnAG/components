@@ -8,7 +8,7 @@ import { Theme } from '@db-design/react';
 import { Button } from '@db-design/react';
 <>
   <Button>DB Button</Button>
-  <Theme theme={Theme.themes.S_BAHN}>
+  <Theme theme={Theme.themes.S_BAHN_LIGHT}>
     <Button>S-Bahn Button</Button>
   </Theme>
 </>;
@@ -159,20 +159,20 @@ Even though possible, forms and travel information should be avoided in `loud` t
 
 ## Nesting themes
 
-Themes can and should be nested. Especially `DB` and `DB_ALTERNATE` are made to structure a page. `DB_LOUD` can highlight a teaser or special section. `DB_CONTRAST` is perfect for a footer section. Find out more [how to apply themes on websites](https://dpp.bahn-x.de/foundation/colours/how-to-use-colours).
+Themes can and should be nested. Especially `DB_LIGHT` and `DB_LIGHT_ALTERNATE` are made to structure a page. `DB` (with red background) can highlight a teaser or special section. `DB_DARK` is perfect for a footer section. Find out more [how to apply themes on websites](https://dpp.bahn-x.de/foundation/colours/how-to-use-colours).
 
 Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours won’t apply.
 
 ```jsx
 import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
 <>
-  <Theme theme={Theme.themes.DB_ALTERNATE}>
+  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
     <Container
       filled
       width={Container.widths.FULL}
       align={Container.alignments.CENTER}
     >
-      <Theme theme={Theme.themes.DB}>
+      <Theme theme={Theme.themes.DB_LIGHT}>
         <Container
           filled
           width={Container.widths.CONTENT}
@@ -193,7 +193,7 @@ import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
       </Container>
     </Container>
   </Theme>
-  <Theme theme={Theme.themes.DB_CONTRAST}>
+  <Theme theme={Theme.themes.DB_DARK}>
     <Container
       filled
       width={Container.widths.FULL}
@@ -209,7 +209,7 @@ import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
 
 If you want to implement a ‘dark mode’ of your website, use this switch:
 
-- `DB` ↔︎ `CONTRAST`
-- `DB_ALTERNATE` ↔︎ `CONTRAST_ALTERNATE`
+- `DB_LIGHT` ↔︎ `DB_DARK`
+- `DB_LIGHT_ALTERNATE` ↔︎ `DB_DARK_ALTERNATE`
 
 Do _not_ switch from alternate to non-alternate and vice versa.
