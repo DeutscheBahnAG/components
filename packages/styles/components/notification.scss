@@ -9,11 +9,10 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   display: flex;
   flex-flow: row nowrap;
   padding: db-spacing('m');
-  color: db-background-color('primary');
-  background-color: db-text-color('primary');
-  border-style: solid;
+  color: var(--db-primary-text-color);
+  background-color: var(--db-primary-background-color);
+  border: solid var(--db-primary-background-color) 4px;
   border-radius: db-border-radius('l');
-  border-width: 4px;
 }
 
 .db-notification + .db-notification {
@@ -56,19 +55,11 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   border-width: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   min-width: db-spacing('xxxl') * 4;
-  border-color: db-palette-color('white') !important;
-  background-color: db-palette-color('white') !important;
+  border-color: db-palette-color('white');
 }
 
 .db-notification--info {
-  color: db-text-color('primary');
-  background-color: db-palette-color('blue050');
-  border-color: db-palette-color('blue100');
-
-  &.db-notification--global {
-    background-color: db-palette-color('blue050') !important;
-    border-color: db-palette-color('white');
-  }
+  --db-primary-background-color: #{db-palette-color('blue050')};
 
   .db-icon {
     color: db-palette-color('blue500');
@@ -76,9 +67,8 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .db-notification--warning {
-  color: db-text-color('primary');
-  background-color: desaturate(db-palette-color('yellow200'), 15%);
-  border-color: db-palette-color('yellow200') !important;
+  --db-primary-background-color: #{desaturate(db-palette-color('yellow200'),
+  15%)};
 
   .db-icon {
     color: db-palette-color('coolgray600');
@@ -86,19 +76,13 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .db-notification--error {
+  --db-primary-background-color: #{desaturate(db-palette-color('yellow200'),
+  15%)};
   color: #db0014;
-  background-color: desaturate(db-palette-color('yellow200'), 15%);
-  border-color: db-palette-color('yellow200') !important;
 }
 
 .db-notification--success {
-  color: db-text-color('primary');
-  background-color: db-palette-color('lightgreen050');
-  border-color: db-palette-color('lightgreen100');
-
-  &.db-notification--global {
-    background-color: db-palette-color('lightgreen050') !important;
-  }
+  --db-primary-background-color: #{db-palette-color('lightgreen050')};
 
   circle {
     fill: db-color('success');
