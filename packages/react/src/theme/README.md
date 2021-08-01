@@ -162,8 +162,8 @@ Themes can and should be nested. Especially `DB_LIGHT` and `DB_LIGHT_ALTERNATE` 
 
 Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours won’t apply.
 
-```jsx
-import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
+```jsx { "props": { "className": "nesting-themes" } }
+import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
 <>
   <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
     <Container
@@ -177,7 +177,7 @@ import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
           width={Container.widths.CONTENT}
           align={Container.alignments.CENTER}
         >
-          <Logo />
+          <Logo size={Logo.sizes.XL} />
           <Pulse>
             <Title>Headline</Title>
           </Pulse>
@@ -189,6 +189,16 @@ import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
         align={Container.alignments.CENTER}
       >
         <Copy>More content</Copy>
+        <Theme theme={Theme.themes.DB}>
+          <Container
+            filled
+            width={Container.widths.CONTENT}
+            align={Container.alignments.CENTER}
+          >
+            <Title size={Title.sizes.L}>Teaser</Title>
+            <Button>Click me</Button>
+          </Container>
+        </Theme>
       </Container>
     </Container>
   </Theme>
@@ -198,11 +208,35 @@ import { Container, Logo, Pulse, Title, Copy } from '@db-design/react';
       width={Container.widths.FULL}
       align={Container.alignments.CENTER}
     >
-      <Copy>Footer section</Copy>
+      <Copy>© Deutsche Bahn AG {new Date().getFullYear()}</Copy>
+      <Logo size={Logo.sizes.M} variant={Logo.variants.WHITE} />
     </Container>
   </Theme>
 </>;
 ```
+
+<style>
+  .nesting-themes > div {
+    border-radius: 4.3px;
+    overflow: hidden;
+  }
+
+  .nesting-themes > div > div > .db-container {
+    padding: 16px;
+  }
+
+  .nesting-themes .db-theme--db .db-container {
+    margin-top: 32px;
+  }
+
+  .nesting-themes .db-button {
+    margin-top: 8px;
+  }
+
+  .nesting-themes .db-theme--db-dark .db-logo {
+    margin-top: 8px;
+  }
+</style>
 
 ## A note on ‘dark mode’
 
