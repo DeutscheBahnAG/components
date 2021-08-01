@@ -49,19 +49,14 @@ This component implements the guidelines of:
 Using `copy.s`
 
 ```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
+import { Copy } from '@db-design/react';
 
-<p
-  style={{
-    fontSize: `${tokens.textsize['copy.s']}px`,
-    lineHeight: `${tokens.lineheight['copy.s']}px`,
-  }}
->
+<Copy size={Copy.sizes.S}>
   <Triptimespan
     departureDateTime="09:54"
     predictedDepartureDateTime="09:57"
     arrivalDateTime="12:48"
     predictedArivalDateTime="13:07"
   />
-</p>;
+</Copy>;
 ```
