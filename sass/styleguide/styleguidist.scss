@@ -46,6 +46,7 @@ $code-background-color: db-background-color('secondary');
     @include db-secondary-link;
   }
 
+  [class^='rsg--header-'] h2[class^='rsg--heading-'],
   h1[class^='rsg--heading-'] {
     @include db-text-style('title', 'xxl');
     color: db-text-color('primary');
@@ -55,19 +56,23 @@ $code-background-color: db-background-color('secondary');
   h2[class^='rsg--heading-'] {
     @include db-text-style('title', 'l');
     color: db-text-color('primary');
-    margin-top: db-spacing('xl');
+    margin-top: db-spacing('xxl');
     margin-bottom: db-spacing('m');
   }
 
   h3[class^='rsg--heading-'] {
     @include db-text-style('title', 'm');
     color: db-text-color('primary');
-    margin-top: db-spacing('l');
+    margin-top: db-spacing('xxl');
     margin-bottom: db-spacing('m');
 
     a {
       @include db-primary-link;
     }
+  }
+
+  .rsg--spacing-34 + .rsg--spacing-34 h3[class^='rsg--heading-'] {
+    margin-top: db-spacing('l');
   }
 
   h4[class^='rsg--heading-'] {
@@ -121,19 +126,9 @@ $code-background-color: db-background-color('secondary');
   }
 
   [class^='rsg--preview-'] {
-    background: linear-gradient(
-        to top left,
-        $code-background-color 12%,
-        transparent 0,
-        50%,
-        $code-background-color 0,
-        62%,
-        transparent 0
-      )
-      repeat 0 0/4px 4px;
-    background: var(--db-primary-background-color);
-    border: 2px db-background-color('secondary') solid;
+    border: none;
     border-radius: db-border-radius('l') db-border-radius('l') 0 0;
+    padding: 0 0 db-spacing('sm') !important;
 
     + [class^='rsg--controls-'] {
       display: none;
@@ -141,7 +136,8 @@ $code-background-color: db-background-color('secondary');
 
     ~ [class^='rsg--tab-'] [class^='rsg--root-'] {
       border: 0;
-      border-radius: 0.1px 0.1px db-border-radius('l') db-border-radius('l');
+      border-radius: db-border-radius('l');
+      margin: 0 -2px;
     }
   }
 

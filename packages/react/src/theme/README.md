@@ -45,7 +45,6 @@ const themeNames = Object.keys(Theme.themes);
         display: 'grid',
         gap: `${spacing.m}px`,
         padding: `${spacing.l}px`,
-        margin: `-${spacing.m}px`,
         width: `calc(100% + ${2 * spacing.m}px)`,
         borderRadius: '4.3px',
       }}
