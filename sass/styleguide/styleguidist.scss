@@ -150,6 +150,7 @@ $code-background-color: db-background-color('secondary');
     padding: db-spacing('sm') db-spacing('m') !important;
   }
 
+  [class^='rsg--root-'] > div > pre,
   textarea + pre {
     background: $code-background-color;
     border-radius: db-border-radius('l');
@@ -255,6 +256,10 @@ $code-background-color: db-background-color('secondary');
 
   footer[class^='rsg--footer-'] {
     display: none;
+  }
+
+  [class^='rsg--root-'] > div > pre {
+    margin-bottom: db-spacing('l');
   }
 }
 
