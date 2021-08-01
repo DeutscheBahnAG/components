@@ -34,6 +34,7 @@
     flex: 1;
     margin: 0;
     outline: 0;
+    transition: color 0.2s;
   }
 
   input::-ms-clear {
@@ -60,7 +61,7 @@
   }
 }
 
-.db-textfield--readonly.db-textfield--focus {
+.db-textfield--readonly:focus-within {
   border-color: transparent;
 }
 
@@ -101,7 +102,7 @@
 .db-textfield__inline-label {
   pointer-events: none;
   position: absolute;
-  transition: all 0.2s;
+  transition: transform 0.2s;
   transform-origin: 0 0;
 }
 
@@ -121,15 +122,15 @@
     transition: color 0.2;
   }
 
-  &.db-textfield--focus ::placeholder {
+  &:focus-within ::placeholder {
     color: var(--db-secondary-background-color);
   }
 
   input,
   &.db-textfield--filled .db-textfield-prefix,
   &.db-textfield--filled .db-textfield-suffix,
-  &.db-textfield--focus .db-textfield-prefix,
-  &.db-textfield--focus .db-textfield-suffix {
+  &:focus-within .db-textfield-prefix,
+  &:focus-within .db-textfield-suffix {
     transform: translateY(8px);
   }
 }
