@@ -119,11 +119,11 @@
 .db-textfield--inline-label {
   ::placeholder {
     color: transparent;
-    transition: color 0.2;
+    transition: color 0.4;
   }
 
   &:focus-within ::placeholder {
-    color: var(--db-secondary-background-color);
+    color: var(--db-field-secondary-text-color);
   }
 
   input,
