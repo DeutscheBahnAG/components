@@ -339,17 +339,17 @@ main.rsg--content-3 {
   }
 }
 
-.rsg--pathline-29 {
+#rsg-root [class^='rsg--pathline'] {
   display: none;
 }
 
-#rsg-root .rsg--button-31 {
+#rsg-root [class^='rsg--button-'] {
   @extend .db-button--solid;
   @extend .db-button--s;
   text-transform: none;
 }
 
-.rsg--heading1-21,
+h1[class^='rsg--heading'],
 .rsg--logo-5 {
   display: none;
 }
