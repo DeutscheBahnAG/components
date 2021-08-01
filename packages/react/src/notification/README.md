@@ -5,7 +5,7 @@ import { Notification } from '@db-design/react';
 ```
 
 ```jsx
-<Notification message="Hello There!" />
+<Notification message="Hello there!" />
 ```
 
 ## Variants
