@@ -22,46 +22,61 @@ const defaultLabels = {
 
 const notificationIcons = {
   info: (
-    <svg className="db-icon" width="24" height="24">
-      <circle fill="currentColor" cx="12" cy="12" r="10" />
-      <circle fill="#FFF" cx="12" cy="7.75" r="1.25" />
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
       <path
-        stroke="#FFF"
-        strokeWidth="1.8"
-        fill="transparent"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M10.5 11h1.75v5H10h4"
+        d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm1.494 13.965.006.113v9.48a1 1 0 0 1-1.993.117l-.007-.116v-8.201l-.372.094a1 1 0 0 1-.12.022l-.123.008H29.5a1 1 0 0 1-.117-1.994l.117-.006 1.262-.001 1.495-.373a1 1 0 0 1 1.237.857zM32.4 22.45c.78 0 1.42.593 1.493 1.352l.007.144a1.5 1.5 0 0 1-2.993.152l-.007-.144a1.5 1.5 0 0 1 1.5-1.504z"
+        fill="#000"
+      />
+      <path
+        d="M35.844 41.001a1 1 0 0 1 .117 1.993l-.117.007h-7.692a1 1 0 0 1-.117-1.993l.117-.007h7.692z"
+        fill="#EC0016"
       />
     </svg>
   ),
-
   warning: (
-    <svg className="db-icon" width="24" height="24">
-      <path
-        d="M10.31 4.1L2.25 18.5c-.16.29-.25.58-.25.88 0 .88.75 1.62 1.85 1.62h16.3c1.1 0 1.85-.74 1.85-1.62a2 2 0 00-.25-.89L13.72 4.1C13.3 3.4 12.66 3 12 3c-.66 0-1.26.38-1.69 1.1z"
-        fill="currentColor"
-      />
-      <path
-        d="M12 18.35c.65 0 1.15-.5 1.15-1.15 0-.65-.5-1.15-1.15-1.15-.65 0-1.15.5-1.15 1.15 0 .65.5 1.15 1.15 1.15z"
-        fill="#FFF"
-      />
-      <path stroke="#FFF" strokeWidth="2" strokeLinecap="round" d="M12 8.8v5" />
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fillRule="evenodd">
+        <path
+          d="M32 12.984a3.035 3.035 0 0 1 2.678 1.605l14.946 27.958a3.037 3.037 0 0 1-2.679 4.469h-29.89a3.037 3.037 0 0 1-2.679-4.469L29.322 14.59A3.035 3.035 0 0 1 32 12.984z"
+          stroke="#000"
+          strokeWidth="2"
+        />
+        <g transform="translate(30.4 23.5)">
+          <path stroke="#EC0016" strokeWidth="2.2" strokeLinecap="round" d="M1.6 0v12" />
+          <circle fill="#EC0016" cx="1.6" cy="17" r="1.6" />
+        </g>
+      </g>
     </svg>
   ),
   error: (
-    <svg className="db-icon" width="24" height="24">
-      <circle fill="currentColor" cx="12" cy="12" r="10" />
-      <path d="M8 16L16 8zM8 8L16 16z" stroke="#FFF" strokeWidth="1.9" strokeLinecap="round" />
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18z"
+        fill="#000"
+      />
+      <path
+        stroke="#EC0016"
+        strokeLinecap="round"
+        strokeWidth="2.1"
+        d="M39.071 24.929 24.93 39.07M39.071 39.071 24.93 24.93"
+      />
     </svg>
   ),
   success: (
-    <svg className="db-icon" width="24" height="24">
-      <circle cx="12" cy="12" r="10" />
-      <path
-        d="M15.97 7.7a1.08 1.08 0 011.77 1.25l-.08.12-6.28 7.74c-.46.54-1.07.54-1.58.04l-3.36-3.18A1.08 1.08 0 017.82 12l.11.1 2.53 2.4 5.51-6.8z"
-        fill="#fff"
-      />
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fillRule="evenodd">
+        <path
+          d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18z"
+          fill="#000"
+        />
+        <path
+          stroke="#2B7230"
+          strokeWidth="2.42"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M23.5 33.583 29.473 39 40.5 26"
+        />
+      </g>
     </svg>
   ),
 };

@@ -8,7 +8,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  padding: db-spacing('m');
+  padding: db-spacing('m') db-spacing('ml');
   color: var(--db-primary-text-color);
   background-color: var(--db-primary-background-color);
   border: solid var(--db-primary-background-color) 4px;
@@ -21,7 +21,9 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .db-notification__icon {
   padding: 2px;
-  margin-right: db-spacing('sm');
+  margin: db-spacing('sm', $negative: true) db-spacing('xs')
+    db-spacing('sm', $negative: true) #{db-spacing('m', $negative: true) -
+    db-spacing('xs')};
   align-self: start;
 }
 
@@ -82,7 +84,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .db-notification--success {
-  --db-primary-background-color: #{db-palette-color('lightgreen050')};
+  --db-primary-background-color: #eff9e5;
 
   circle {
     fill: db-color('success');
