@@ -102,7 +102,7 @@ Therefor we recommend to place links associated with the Checkbox right below it
 </Checkbox>
 ```
 
-However, links can be used within the label. Clicking the link won’t change the [state](#states) of the Checkbox. Make sure to style the link properly or use a link component.
+Labels must not contain links for [accessibility](https://dpp.bahn-x.de/foundation/accessibility/screen-reader) reasons. Therefore this antipattern gets overridden by CSS:
 
 ```jsx
 // Avoid this design pattern

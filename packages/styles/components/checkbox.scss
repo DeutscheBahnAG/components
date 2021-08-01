@@ -81,8 +81,16 @@ $db-checkbox-gap: 0.4em;
   margin-left: $db-checkbox-gap;
 
   a {
-    position: relative;
-    z-index: 1;
+    font-size: 0;
+    text-decoration: none;
+  }
+
+  a::before {
+    background: db-palette-color('yellow300');
+    border-radius: db-border-radius('xs');
+    color: db-palette-color('red500');
+    content: '⚠️ Dont use links in labels (use footer={…}) ⚠️';
+    font-size: db-font-size('copy', 'm');
   }
 }
 
