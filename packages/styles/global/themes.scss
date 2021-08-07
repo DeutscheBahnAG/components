@@ -133,9 +133,9 @@
   --db-secondary-button-text-color: var(--db-primary-text-color);
   --db-secondary-button-hover-text-color: var(--db-primary-text-color);
   --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
-  --db-solid-button-background-color: #{db-palette-color('coolgray600')};
-  --db-solid-button-hover-background-color: #{db-palette-color('coolgray600')};
-  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray500')};
+  --db-solid-button-background-color: #{db-palette-color('coolgray500')};
+  --db-solid-button-hover-background-color: #{db-palette-color('coolgray400')};
+  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray300')};
   --db-solid-button-text-color: var(--db-primary-text-color);
   --db-solid-button-hover-text-color: var(--db-primary-text-color);
   --db-solid-button-pressed-text-color: var(--db-primary-text-color);
@@ -171,6 +171,9 @@
   --db-border-color: #{mix(db-palette-color('coolgray500'),
   db-palette-color('coolgray700'),
   60%)};
+  --db-solid-button-background-color: #{db-palette-color('coolgray600')};
+  --db-solid-button-hover-background-color: #{db-palette-color('coolgray500')};
+  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray400')};
 }
 
 .db-theme--db-branded,
