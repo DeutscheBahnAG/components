@@ -45,7 +45,7 @@
   --db-primary-button-hover-text-color: #{db-palette-color('white')};
   --db-primary-button-pressed-text-color: #{db-palette-color('white')};
   --db-primary-button-disabled-text-color: #{db-palette-color('coolgray200')};
-  --db-secondary-button-background-color: transparent;
+  --db-secondary-button-background-color: var(--db-primary-background-color);
   --db-secondary-button-hover-background-color: #{db-palette-color('coolgray200')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('coolgray300')};
   --db-secondary-button-disabled-background-color: var(--db-primary-button-disabled-background-color);
