@@ -71,10 +71,18 @@ $db-checkbox-gap: 0.4em;
   transition: all 0.1s cubic-bezier(0.3, 0, 0.8, 1.8);
 }
 
-:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked,
 :indeterminate + .db-checkbox-box .db-checkbox-indeterminate {
   fill: currentColor;
   transform: scale(1);
+}
+
+:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked {
+  fill: var(--db-primary-background-color);
+  transform: scale(1);
+}
+
+:checked:not(:indeterminate) + .db-checkbox-box {
+  background: currentColor;
 }
 
 .db-checkbox-label {

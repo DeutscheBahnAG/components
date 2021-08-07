@@ -101,7 +101,8 @@ const themeNames = Object.keys(Theme.themes);
         />
       </div>
       <div>
-        <Checkbox checked>Checkbox</Checkbox>
+        <Checkbox>Checkbox</Checkbox>
+        <Checkbox checked>Checked</Checkbox>
         <Checkbox checked disabled>
           Disabled
         </Checkbox>
