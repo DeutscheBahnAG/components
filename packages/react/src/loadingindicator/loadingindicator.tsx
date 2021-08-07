@@ -22,13 +22,18 @@ interface LoadingindicatorProps {
 const Loadingindicator: LoadingindicatorType<LoadingindicatorProps> = ({ className, size }) => (
   <svg
     className={clsx('db-loadingindicator', `db-loadingindicator--${size}`, className)}
-    viewBox="0 0 62 20"
+    viewBox="0 0 44 44"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect x="0" y="0" width="18" height="12" rx="2" />
-    <rect x="22" y="0" width="18" height="12" rx="2" />
-    <rect x="44" y="0" width="18" height="12" rx="2" />
+    <circle
+      className="db-loadingindicator__circle"
+      cx="22"
+      cy="22"
+      r="20"
+      fill="none"
+      strokeMiterlimit="10"
+    />
   </svg>
 );
 

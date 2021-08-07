@@ -151,12 +151,15 @@
 }
 
 .db-button--loading {
-  .db-loadingindicator {
+  .db-button__loadingindicator {
     background: inherit;
-    position: absolute;
-    min-width: inherit;
     border-left: inherit;
     border-right: inherit;
+    display: flex;
+    justify-content: center;
+    min-width: inherit;
+    position: absolute;
+    text-align: center;
   }
 }
 

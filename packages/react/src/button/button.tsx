@@ -139,7 +139,11 @@ const Button: ButtonType = ({
         )}
         {...otherProps}
       >
-        {loading && <Loadingindicator size={loadingindicatorSize} />}
+        {loading && (
+          <span className="db-button__loadingindicator">
+            <Loadingindicator size={loadingindicatorSize} />
+          </span>
+        )}
         {icon}
         {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
       </Element>

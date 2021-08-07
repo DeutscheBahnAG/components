@@ -3,36 +3,53 @@
 }
 
 @each $size in (xl l m s xs) {
+  $stroke-width: 3px;
+  @if $size == s or $size == xs {
+    $stroke-width: 2px;
+  }
   .db-loadingindicator--#{$size} {
+    --db-loadingindicator--stroke-width: #{44px /
+      db-size($size) *
+      $stroke-width};
+    --db-loadingindicator--r: #{22 - 44px / db-size($size) * $stroke-width};
     height: db-size($size);
+    width: db-size($size);
   }
 }
 
-.db-loadingindicator rect {
-  fill: currentColor;
-  animation-name: loadingindicator-item-animation;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
-  animation-delay: -2s;
+.db-loadingindicator {
+  animation: db-loadingindicator-rotate 3s linear infinite;
 }
 
-.db-loadingindicator rect:nth-child(2) {
-  animation-delay: -1.75s;
+.db-loadingindicator__circle {
+  r: var(--db-loadingindicator--r);
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: currentColor;
+  stroke-width: var(--db-loadingindicator--stroke-width);
+  animation: db-loadingindicator-stroke 1.5s ease-in-out infinite;
+  stroke-linecap: round;
 }
 
-.db-loadingindicator rect:nth-child(3) {
-  animation-delay: -1.5s;
+@keyframes db-loadingindicator-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes loadingindicator-item-animation {
+@keyframes db-loadingindicator-stroke {
   0% {
-    opacity: 1;
-    transform: translateY(0);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
   }
 
   50% {
-    opacity: 0.3;
-    transform: translateY(8px);
+    stroke-dasharray: 96, 200;
+    stroke-dashoffset: -32;
+  }
+
+  100% {
+    stroke-dasharray: 96, 200;
+    stroke-dashoffset: -124;
   }
 }
