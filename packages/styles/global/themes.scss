@@ -40,11 +40,14 @@
   --db-primary-button-background-color: #{db-palette-color('red500')};
   --db-primary-button-hover-background-color: #{db-palette-color('red600')};
   --db-primary-button-pressed-background-color: #{db-palette-color('red700')};
-  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray100')};
+  --db-primary-button-disabled-background-color: #{mix(db-palette-color('coolgray100'),
+  db-palette-color('coolgray200'))};
   --db-primary-button-text-color: #{db-palette-color('white')};
   --db-primary-button-hover-text-color: #{db-palette-color('white')};
   --db-primary-button-pressed-text-color: #{db-palette-color('white')};
-  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray200')};
+  --db-primary-button-disabled-text-color: #{mix(db-palette-color('coolgray200'),
+  db-palette-color('coolgray300'),
+  30%)};
   --db-secondary-button-background-color: var(--db-primary-background-color);
   --db-secondary-button-hover-background-color: #{db-palette-color('coolgray200')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('coolgray300')};
@@ -114,10 +117,9 @@
   --db-link-hover-color: #e41f18;
   --db-link-pressed-color: #{mix(db-palette-color('red600'),
   db-palette-color('red700'))};
-  --db-primary-button-background-color: #{mix(db-palette-color('red500'),
-  db-palette-color('red600'))};
-  --db-primary-button-hover-background-color: #{db-palette-color('red600')};
-  --db-primary-button-pressed-background-color: #{db-palette-color('red700')};
+  --db-primary-button-background-color: #fe182e;
+  --db-primary-button-hover-background-color: #{darken(#fe182e, 12%)};
+  --db-primary-button-pressed-background-color: #{darken(#fe182e, 24%)};
   --db-primary-button-disabled-background-color: #{db-palette-color('coolgray100')};
   --db-primary-button-text-color: #{db-palette-color('white')};
   --db-primary-button-hover-text-color: #{db-palette-color('white')};
@@ -200,12 +202,12 @@
   --db-primary-button-hover-background-color: #{db-palette-color('red100')};
   --db-primary-button-pressed-background-color: #{db-palette-color('red200')};
   --db-primary-button-disabled-background-color: #{rgba(db-palette-color('white'),
-  0.1)};
+  0.2)};
   --db-primary-button-text-color: #{db-palette-color('black')};
   --db-primary-button-hover-text-color: #{db-palette-color('black')};
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
   --db-primary-button-disabled-text-color: #{rgba(db-palette-color('white'),
-  0.3)};
+  0.5)};
   --db-secondary-button-hover-background-color: #{db-palette-color('red600')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('red700')};
   --db-solid-button-background-color: #{rgba(db-palette-color('black'), 0.2)};
@@ -215,6 +217,10 @@
   0.4)};
   --db-track-background-color: #{db-palette-color('white')};
   --db-track-text-color: #{#140f6f};
+}
+
+.db-theme--db-branded {
+  --db-primary-button-disabled-background-color: #ec5758;
 }
 
 $db-s-bahn-green: #05883c;
@@ -269,8 +275,10 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-link-hover-color: #{mix(#000, $db-s-bahn-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-s-bahn-loud-background, 40%)};
   --db-primary-button-background-color: #{db-palette-color('white')};
-  --db-primary-button-hover-background-color: #{db-palette-color('green100')};
-  --db-primary-button-pressed-background-color: #{db-palette-color('green200')};
+  --db-primary-button-hover-background-color: #{mix(db-palette-color('coolgray100'),
+  db-palette-color('green100'))};
+  --db-primary-button-pressed-background-color: #{mix(db-palette-color('coolgray200'),
+  db-palette-color('green200'))};
   --db-primary-button-text-color: #{db-palette-color('black')};
   --db-primary-button-hover-text-color: #{db-palette-color('black')};
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
