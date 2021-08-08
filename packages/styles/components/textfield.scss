@@ -53,22 +53,29 @@
 .db-textfield--disabled,
 .db-textfield--readonly {
   background: transparent;
-  border-color: var(--db-secondary-background-color);
+  border-color: var(--db-primary-button-disabled-background-color);
+}
 
+.db-textfield--disabled {
   input,
   textarea {
     color: var(--db-disabled-text-color);
   }
 }
 
-.db-textfield--readonly:focus-within {
-  border-color: transparent;
+.db-textfield--readonly {
+  input,
+  textarea {
+    color: var(--db-primary-text-color);
+    -webkit-text-fill-color: var(--db-primary-text-color); /* 2 */
+  }
 }
 
 /**
  * 2. Fixes a Safari bug not applying colors via variables when disabled
  */
-.db-textfield--disabled {
+.db-textfield--disabled,
+.db-textfield--readonly {
   color: var(--db-disabled-text-color);
   -webkit-text-fill-color: var(--db-disabled-text-color); /* 2 */
 }
