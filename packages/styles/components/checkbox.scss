@@ -58,7 +58,7 @@ $db-checkbox-gap: 0.4em;
     width: inherit;
   }
 
-  .db-checkbox:active > input:not(:disabled) + & {
+  .db-checkbox:active > input:not(:disabled):not(:checked) + & {
     background: var(--db-secondary-background-color);
   }
 }
@@ -81,8 +81,22 @@ $db-checkbox-gap: 0.4em;
   transform: scale(1);
 }
 
+:active:indeterminate + .db-checkbox-box .db-checkbox-indeterminate,
+:active:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked {
+  transform: scale(0.9);
+}
+
+:checked:disabled + .db-checkbox-box .db-checkbox-checked {
+  fill: var(--db-primary-button-disabled-text-color);
+}
+
 :checked:not(:indeterminate) + .db-checkbox-box {
+  border-color: transparent;
   background: currentColor;
+}
+
+:disabled + .db-checkbox-box {
+  color: var(--db-primary-button-disabled-background-color);
 }
 
 .db-checkbox-label {
