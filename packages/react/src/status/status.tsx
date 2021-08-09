@@ -17,17 +17,17 @@ const iconExclamation = (
   </>
 );
 
-enum StatusVariants {
-  SUCCESS = 'success',
-  INFO = 'info',
+enum StatusSeverities {
+  INFORMATIVE = 'informative',
   WARNING = 'warning',
   ERROR = 'error',
-  FATAL = 'fatal',
+  FATAL = 'error',
+  SUCCESS = 'success',
 }
 
 const statusPropTypes = {
   /** The purpose of the Status, affects visual styling */
-  variant: PropTypes.oneOf(Object.values(StatusVariants)),
+  severity: PropTypes.oneOf(Object.values(StatusSeverities)),
   /** The text to be displayed */
   message: PropTypes.node.isRequired,
   className: PropTypes.string,
@@ -35,22 +35,24 @@ const statusPropTypes = {
 
 type StatusProps = InferProps<typeof statusPropTypes>;
 
-type StatusComponent = React.FunctionComponent<StatusProps> & { variants: typeof StatusVariants };
+type StatusComponent = React.FunctionComponent<StatusProps> & {
+  severities: typeof StatusSeverities;
+};
 
-const Status: StatusComponent = ({ variant, message, className, ...props }) => {
+const Status: StatusComponent = ({ severity, message, className, ...props }) => {
   return (
     <>
-      <span className={clsx('db-status', `db-status--${variant}`, className)} {...props}>
+      <span className={clsx('db-status', `db-status--${severity}`, className)} {...props}>
         <svg>
           <circle cx="10" cy="10" r="8" />
           {(() => {
-            switch (variant) {
-              case StatusVariants.SUCCESS:
+            switch (severity) {
+              case StatusSeverities.SUCCESS:
                 return iconCheck;
-              case StatusVariants.WARNING:
-              case StatusVariants.ERROR:
+              case StatusSeverities.WARNING:
+              case StatusSeverities.ERROR:
                 return iconExclamation;
-              case StatusVariants.FATAL:
+              case StatusSeverities.FATAL:
                 return iconCross;
               default:
                 return iconInfo;
@@ -64,12 +66,12 @@ const Status: StatusComponent = ({ variant, message, className, ...props }) => {
   );
 };
 
-Status.variants = StatusVariants;
+Status.severities = StatusSeverities;
 
 Status.propTypes = statusPropTypes;
 
 Status.defaultProps = {
-  variant: StatusVariants.INFO,
+  severity: StatusSeverities.INFORMATIVE,
   className: '',
 };
 

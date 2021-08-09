@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
 import Button from '../button/button';
 
-enum NotificationVariants {
-  INFO = 'info',
+enum NotificationSeverities {
+  INFORMATIVE = 'informative',
   WARNING = 'warning',
   ERROR = 'error',
   SUCCESS = 'success',
@@ -14,14 +14,14 @@ enum NotificationVariants {
 
 const defaultLabels = {
   close: 'Schließen',
-  [NotificationVariants.INFO]: 'Info',
-  [NotificationVariants.WARNING]: 'Warnung',
-  [NotificationVariants.ERROR]: 'Fehler',
-  [NotificationVariants.SUCCESS]: 'Erfolg',
+  [NotificationSeverities.INFORMATIVE]: 'Info',
+  [NotificationSeverities.WARNING]: 'Warnung',
+  [NotificationSeverities.ERROR]: 'Fehler',
+  [NotificationSeverities.SUCCESS]: 'Erfolg',
 };
 
 const notificationIcons = {
-  info: (
+  informative: (
     <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm1.494 13.965.006.113v9.48a1 1 0 0 1-1.993.117l-.007-.116v-8.201l-.372.094a1 1 0 0 1-.12.022l-.123.008H29.5a1 1 0 0 1-.117-1.994l.117-.006 1.262-.001 1.495-.373a1 1 0 0 1 1.237.857zM32.4 22.45c.78 0 1.42.593 1.493 1.352l.007.144a1.5 1.5 0 0 1-2.993.152l-.007-.144a1.5 1.5 0 0 1 1.5-1.504z"
@@ -91,16 +91,16 @@ const notificationPropTypes = {
   /** displays the notification overlaid on top of the page */
   global: PropTypes.bool,
   /** the purpose of the notification, affects visual styling */
-  variant: PropTypes.oneOf(Object.values(NotificationVariants)),
+  severity: PropTypes.oneOf(Object.values(NotificationSeverities)),
   /** close button click handler, required to display the close button */
   onClose: PropTypes.func,
   /** custom translation strings */
   labels: PropTypes.shape({
     close: PropTypes.string.isRequired,
-    [NotificationVariants.INFO]: PropTypes.string.isRequired,
-    [NotificationVariants.WARNING]: PropTypes.string.isRequired,
-    [NotificationVariants.ERROR]: PropTypes.string.isRequired,
-    [NotificationVariants.SUCCESS]: PropTypes.string.isRequired,
+    [NotificationSeverities.INFORMATIVE]: PropTypes.string.isRequired,
+    [NotificationSeverities.WARNING]: PropTypes.string.isRequired,
+    [NotificationSeverities.ERROR]: PropTypes.string.isRequired,
+    [NotificationSeverities.SUCCESS]: PropTypes.string.isRequired,
   }),
   /** whether to automatically focus the close button when the notification
    * is displayed. Can be useful for global notifications as they are appended
@@ -113,13 +113,13 @@ const notificationPropTypes = {
 type NotificationProps = InferProps<typeof notificationPropTypes> & Record<string, any>;
 
 export type NotificationComponent = React.FunctionComponent<NotificationProps> & {
-  variants: typeof NotificationVariants;
+  severities: typeof NotificationSeverities;
 };
 
 const Notification: NotificationComponent = ({
   title = null,
   message = null,
-  variant: _variant = NotificationVariants.INFO,
+  severity: _severity = NotificationSeverities.INFORMATIVE,
   global = false,
   className = '',
   onClose = null,
@@ -127,10 +127,10 @@ const Notification: NotificationComponent = ({
   autofocusCloseButton = false,
   ...otherProps
 }) => {
-  const variant = _variant ?? NotificationVariants.INFO;
+  const severity = _severity ?? NotificationSeverities.INFORMATIVE;
   const labels = _labels ?? defaultLabels;
-  const icon = notificationIcons[variant];
-  const label = labels[variant];
+  const icon = notificationIcons[severity];
+  const label = labels[severity];
   const NotificationWrapper = global ? NotificationPortal : Fragment;
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -146,13 +146,13 @@ const Notification: NotificationComponent = ({
         {...otherProps}
         className={clsx(
           'db-notification',
-          `db-notification--${variant}`,
+          `db-notification--${severity}`,
           { 'db-notification--global': global },
           className
         )}
       >
         {icon && <span className="db-notification__icon">{icon}</span>}
-        {label && <div className="db-notification__variant">{label}</div>}
+        {label && <div className="db-notification__severity">{label}</div>}
         <span className="db-notification__content">
           {title && (
             <>
@@ -188,7 +188,7 @@ const Notification: NotificationComponent = ({
   );
 };
 
-Notification.variants = NotificationVariants;
+Notification.severities = NotificationSeverities;
 
 Notification.propTypes = notificationPropTypes;
 

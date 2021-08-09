@@ -12,28 +12,28 @@ import { Notification } from '@db-design/react';
 
 ```jsx
 <Notification
-  variant={Notification.variants.INFO}
+  severity={Notification.severities.INFORMATIVE}
   message="I am a notification."
 />
 ```
 
 ```jsx
 <Notification
-  variant={Notification.variants.WARNING}
+  severity={Notification.severities.WARNING}
   message="I am a notification."
 />
 ```
 
 ```jsx
 <Notification
-  variant={Notification.variants.ERROR}
+  severity={Notification.severities.ERROR}
   message="I am a notification."
 />
 ```
 
 ```jsx
 <Notification
-  variant={Notification.variants.SUCCESS}
+  severity={Notification.severities.SUCCESS}
   message="I am a notification."
 />
 ```
@@ -43,22 +43,22 @@ import { Notification } from '@db-design/react';
 ```jsx
 <Notification
   onClose={() => {}}
-  variant={Notification.variants.INFO}
+  severity={Notification.severities.INFORMATIVE}
   message="I am a notification."
 />
 <Notification
   onClose={() => {}}
-  variant={Notification.variants.WARNING}
+  severity={Notification.severities.WARNING}
   message="I am a notification."
 />
 <Notification
   onClose={() => {}}
-  variant={Notification.variants.ERROR}
+  severity={Notification.severities.ERROR}
   message="I am a notification."
 />
 <Notification
   onClose={() => {}}
-  variant={Notification.variants.SUCCESS}
+  severity={Notification.severities.SUCCESS}
   message="I am a notification."
 />
 ```
@@ -104,13 +104,13 @@ const [isOpen, setOpen] = useState(false);
 const LiveNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   useEffect(() => {
-    Object.values(Notification.variants).forEach((variant, index) => {
+    Object.values(Notification.severities).forEach((severity, index) => {
       setTimeout(() => {
         setNotifications((prevNotifications) => [
           ...prevNotifications,
           <Notification
-            key={variant}
-            variant={variant}
+            key={severity}
+            severity={severity}
             global
             onClose={() => {}}
             message={`I am Notification number ${index + 1}`}
@@ -133,7 +133,7 @@ const LiveNotifications = () => {
 
 ```jsx
 <Notification
-  variant={Notification.variants.WARNING}
+  severity={Notification.severities.WARNING}
   title="Your testing period is expired."
   message="Please purchase a copy to continue using this product."
 />

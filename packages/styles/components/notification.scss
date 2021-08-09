@@ -27,7 +27,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   align-self: start;
 }
 
-.db-notification__variant {
+.db-notification__severity {
   @include db-visually-hidden;
 }
 
@@ -60,7 +60,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   border-color: db-palette-color('white');
 }
 
-.db-notification--info {
+.db-notification--informative {
   --db-primary-background-color: #{db-palette-color('blue050')};
 
   .db-icon {

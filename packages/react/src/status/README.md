@@ -9,13 +9,16 @@
 ### Success
 
 ```jsx
-<Status message="This feature is included" variant={Status.variants.SUCCESS} />
+<Status
+  message="This feature is included"
+  severity={Status.severities.SUCCESS}
+/>
 ```
 
 ### Info
 
 ```jsx
-<Status message="Works as expected" variant={Status.variants.INFO} />
+<Status message="Works as expected" severity={Status.severities.INFORMATIVE} />
 ```
 
 ### Warning
@@ -23,7 +26,7 @@
 ```jsx
 <Status
   message="This feature is not included"
-  variant={Status.variants.WARNING}
+  severity={Status.severities.WARNING}
 />
 ```
 
@@ -32,14 +35,14 @@
 ```jsx
 <Status
   message="You might not reach a connecting train"
-  variant={Status.variants.ERROR}
+  severity={Status.severities.ERROR}
 />
 ```
 
 ### Fatal
 
 ```jsx
-<Status message="The train got cancelled" variant={Status.variants.FATAL} />
+<Status message="The train got cancelled" severity={Status.severities.FATAL} />
 ```
 
 ## Tests
