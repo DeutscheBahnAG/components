@@ -72,6 +72,15 @@
   --db-delayed-text-color: #ec0016;
   --db-delayed-light-text-color: #db0014;
   --db-delayed-background-color: transparent;
+  --db-success-color: #006f35;
+  --db-success-background-color: #006f35;
+  --db-success-on-background-color: #fff;
+  --db-warning-color: #de2f00;
+  --db-warning-background-color: #fb3f0d;
+  --db-warning-on-background-color: #fff;
+  --db-informative-color: #000;
+  --db-informative-background-color: #444d60;
+  --db-informative-on-background-color: #fff;
 }
 
 .db-theme--db-light-alternate,
@@ -92,6 +101,8 @@
   db-palette-color('coolgray300'),
   70%)};
   --db-loud-border-color: #{db-palette-color('coolgray600')};
+  --db-warning-color: #d42c00;
+  --db-warning-background-color: #d42c00;
 }
 
 .db-theme--db-branded,
@@ -146,6 +157,15 @@
   --db-track-text-color: #140f6f;
   --db-on-time-background-color: #{db-palette-color('white')};
   --db-delayed-background-color: #{db-palette-color('white')};
+  --db-success-color: #29ab67;
+  --db-success-background-color: #fff;
+  --db-success-on-background-color: #006f35;
+  --db-warning-color: #ff653c;
+  --db-warning-background-color: #fff;
+  --db-warning-on-background-color: #fb3f0d;
+  --db-informative-color: #fff;
+  --db-informative-background-color: #fff;
+  --db-informative-on-background-color: #444d60;
 }
 
 .db-theme--db-dark,
@@ -217,6 +237,8 @@
   0.4)};
   --db-track-background-color: #{db-palette-color('white')};
   --db-track-text-color: #{#140f6f};
+  --db-success-color: #fff;
+  --db-warning-color: #fff;
 }
 
 .db-theme--db-branded {

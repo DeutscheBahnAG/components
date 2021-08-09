@@ -21,7 +21,7 @@ enum StatusSeverities {
   INFORMATIVE = 'informative',
   WARNING = 'warning',
   ERROR = 'error',
-  FATAL = 'error',
+  FATAL = 'fatal',
   SUCCESS = 'success',
 }
 

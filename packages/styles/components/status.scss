@@ -16,31 +16,49 @@
 
   path {
     fill: transparent;
-    stroke: db-palette-color('white');
+    stroke: var(--db-informative-on-background-color);
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
 
   circle {
-    fill: db-palette-color('coolgray500');
+    fill: var(--db-informative-background-color);
   }
 
   circle + circle {
-    fill: db-palette-color('white');
+    fill: var(--db-informative-on-background-color);
   }
 }
 
-.db-status--success circle {
-  fill: db-color('success');
+.db-status--success {
+  path {
+    stroke: var(--db-success-on-background-color);
+  }
+
+  circle {
+    fill: var(--db-success-background-color);
+  }
+
+  circle + circle {
+    fill: var(--db-success-on-background-color);
+  }
 }
 
 .db-status--error,
 .db-status--fatal {
-  color: #db0014;
+  color: var(--db-warning-color);
+
+  path {
+    stroke: var(--db-warning-on-background-color);
+  }
 
   circle {
-    fill: db-palette-color('red500');
+    fill: var(--db-warning-background-color);
+  }
+
+  circle + circle {
+    fill: var(--db-warning-on-background-color);
   }
 }
 
