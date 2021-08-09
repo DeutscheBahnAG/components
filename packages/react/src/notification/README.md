@@ -5,78 +5,64 @@ import { Notification } from '@db-design/react';
 ```
 
 ```jsx
-<Notification message="Hello there!" />
+<Notification>Hello there!</Notification>
 ```
 
 ## Variants
 
 ```jsx
-<Notification
-  severity={Notification.severities.INFORMATIVE}
-  message="I am a notification."
-/>
+<Notification severity={Notification.severities.INFORMATIVE}>
+  I am a notification.
+</Notification>
 ```
 
 ```jsx
-<Notification
-  severity={Notification.severities.WARNING}
-  message="I am a notification."
-/>
+<Notification severity={Notification.severities.WARNING}>
+  I am a notification.
+</Notification>
 ```
 
 ```jsx
-<Notification
-  severity={Notification.severities.ERROR}
-  message="I am a notification."
-/>
+<Notification severity={Notification.severities.ERROR}>
+  I am a notification.
+</Notification>
 ```
 
 ```jsx
-<Notification
-  severity={Notification.severities.SUCCESS}
-  message="I am a notification."
-/>
+<Notification severity={Notification.severities.SUCCESS}>
+  I am a notification.
+</Notification>
 ```
 
 ## Closeable
 
 ```jsx
-<Notification
-  onClose={() => {}}
-  severity={Notification.severities.INFORMATIVE}
-  message="I am a notification."
-/>
-<Notification
-  onClose={() => {}}
-  severity={Notification.severities.WARNING}
-  message="I am a notification."
-/>
-<Notification
-  onClose={() => {}}
-  severity={Notification.severities.ERROR}
-  message="I am a notification."
-/>
-<Notification
-  onClose={() => {}}
-  severity={Notification.severities.SUCCESS}
-  message="I am a notification."
-/>
+<Notification onClose={() => {}} severity={Notification.severities.INFORMATIVE}>
+  I am a notification.
+</Notification>
+<Notification onClose={() => {}} severity={Notification.severities.WARNING}>
+  I am a notification.
+</Notification>
+<Notification onClose={() => {}} severity={Notification.severities.ERROR}>
+  I am a notification.
+</Notification>
+<Notification onClose={() => {}} severity={Notification.severities.SUCCESS}>
+  I am a notification.
+</Notification>
 ```
 
 ## Autofocus close button
 
 ```jsx
-<Notification
-  autofocusCloseButton
-  message="My close button is focused."
-  onClose={() => {}}
-/>
+<Notification autofocusCloseButton onClose={() => {}}>
+  My close button is focused.
+</Notification>
 ```
 
 ## Global (popup)
 
 ```jsx static
-<Notification global message="A global Notification" />
+<Notification global>A global Notification</Notification>
 ```
 
 ```jsx noeditor
@@ -84,7 +70,7 @@ import React, { useState } from 'react';
 import { Button } from '@db-design/react';
 const [isOpen, setOpen] = useState(false);
 <>
-  {isOpen && <Notification global message="A global Notification" />}
+  {isOpen && <Notification global>A global Notification</Notification>}
   <Button onClick={() => setOpen(!isOpen)}>
     {isOpen ? 'Hide Notification' : 'Show Notification'}
   </Button>
@@ -113,8 +99,9 @@ const LiveNotifications = () => {
             severity={severity}
             global
             onClose={() => {}}
-            message={`I am Notification number ${index + 1}`}
-          />,
+          >
+            {`I am Notification number ${index + 1}`}
+          </Notification>,
         ]);
       }, index * 4000 + 100);
     });
@@ -135,12 +122,20 @@ const LiveNotifications = () => {
 <Notification
   severity={Notification.severities.WARNING}
   title="Your testing period is expired."
-  message="Please purchase a copy to continue using this product."
-/>
+>
+  Please purchase a copy to continue using this product.
+</Notification>
 ```
 
 ## Multiline
 
 ```jsx
-<Notification message="This is a very long text with a whole lot of words and characters in order to demonstrate the behavior of the notificiation component with multiple lines of text, so we can see that we get details like line heights and adjstument of the icon in relation to the text right. In fact, it is an anti-pattern to display very long texts in notifications, but technically we do not restrict the text length." />
+<Notification>
+  This is a very long text with a whole lot of words and characters in order to
+  demonstrate the behavior of the Notificiation component with multiple lines of
+  text, so we can see that we get details like line heights and adjstument of
+  the icon in relation to the text right. In fact, it is an anti-pattern to
+  display very long texts in notifications, but technically we do not restrict
+  the text length.
+</Notification>
 ```

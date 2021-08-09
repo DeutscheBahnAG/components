@@ -1,7 +1,7 @@
 # Status
 
 ```jsx
-<Status message="This is a status" />
+<Status>This is a status</Status>
 ```
 
 ## Variants
@@ -9,40 +9,35 @@
 ### Success
 
 ```jsx
-<Status
-  message="This feature is included"
-  severity={Status.severities.SUCCESS}
-/>
+<Status severity={Status.severities.SUCCESS}>This feature is included</Status>
 ```
 
 ### Info
 
 ```jsx
-<Status message="Works as expected" severity={Status.severities.INFORMATIVE} />
+<Status severity={Status.severities.INFORMATIVE}>Works as expected</Status>
 ```
 
 ### Warning
 
 ```jsx
-<Status
-  message="This feature is not included"
-  severity={Status.severities.WARNING}
-/>
+<Status severity={Status.severities.WARNING}>
+  This feature is not included
+</Status>
 ```
 
 ### Error
 
 ```jsx
-<Status
-  message="You might not reach a connecting train"
-  severity={Status.severities.ERROR}
-/>
+<Status severity={Status.severities.ERROR}>
+  You might not reach a connecting train
+</Status>
 ```
 
 ### Fatal
 
 ```jsx
-<Status message="The train got cancelled" severity={Status.severities.FATAL} />
+<Status severity={Status.severities.FATAL}>The train got cancelled</Status>
 ```
 
 ## Tests
@@ -50,5 +45,9 @@
 ### Long text
 
 ```jsx
-<Status message="The message of the Status can get a very long text which is sometimes needed. In this case the label wraps nicely and the checkbox stays aligned with the first line of the label." />
+<Status>
+  The message of the Status can get a very long text which is sometimes needed.
+  In this case the label wraps nicely and the checkbox stays aligned with the
+  first line of the label.
+</Status>
 ```

@@ -29,7 +29,7 @@ const statusPropTypes = {
   /** The purpose of the Status, affects visual styling */
   severity: PropTypes.oneOf(Object.values(StatusSeverities)),
   /** The text to be displayed */
-  message: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
@@ -39,7 +39,7 @@ type StatusComponent = React.FunctionComponent<StatusProps> & {
   severities: typeof StatusSeverities;
 };
 
-const Status: StatusComponent = ({ severity, message, className, ...props }) => {
+const Status: StatusComponent = ({ severity, children, className, ...props }) => {
   return (
     <>
       <span className={clsx('db-status', `db-status--${severity}`, className)} {...props}>
@@ -59,7 +59,7 @@ const Status: StatusComponent = ({ severity, message, className, ...props }) => 
             }
           })()}
         </svg>
-        <span className="db-status__message">{message}</span>
+        <span className="db-status__message">{children}</span>
       </span>
       <span className="db-inline-spacer"> </span>
     </>
