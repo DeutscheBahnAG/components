@@ -42,8 +42,8 @@ const notificationIcons = {
           strokeWidth="2"
         />
         <g transform="translate(30.4 23.5)">
-          <path stroke="#EC0016" strokeWidth="2.2" strokeLinecap="round" d="M1.6 0v12" />
-          <circle fill="#EC0016" cx="1.6" cy="17" r="1.6" />
+          <path stroke="#FF4F20" strokeWidth="2.2" strokeLinecap="round" d="M1.6 0v12" />
+          <circle fill="#FF4F20" cx="1.6" cy="17" r="1.6" />
         </g>
       </g>
     </svg>
@@ -55,7 +55,7 @@ const notificationIcons = {
         fill="#000"
       />
       <path
-        stroke="#EC0016"
+        stroke="#FF4F20"
         strokeLinecap="round"
         strokeWidth="2.1"
         d="M39.071 24.929 24.93 39.07M39.071 39.071 24.93 24.93"
@@ -70,11 +70,11 @@ const notificationIcons = {
           fill="#000"
         />
         <path
-          stroke="#2B7230"
+          stroke="#178f1f"
           strokeWidth="2.42"
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M23.5 33.583 29.473 39 40.5 26"
+          d="M23.5 33.583 29.473 39 40.5 25.5"
         />
       </g>
     </svg>
@@ -148,6 +148,7 @@ const Notification: NotificationComponent = ({
           'db-notification',
           `db-notification--${severity}`,
           { 'db-notification--global': global },
+          'db-theme--db-light-alternate',
           className
         )}
       >

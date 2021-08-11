@@ -8,7 +8,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  padding: db-spacing('m') db-spacing('ml');
+  padding: db-spacing('s') db-spacing('ml');
   color: var(--db-primary-text-color);
   background-color: var(--db-primary-background-color);
   border: solid var(--db-primary-background-color) 4px;
@@ -21,9 +21,9 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .db-notification__icon {
   padding: 2px;
-  margin: db-spacing('sm', $negative: true) db-spacing('xs')
-    db-spacing('sm', $negative: true) #{db-spacing('m', $negative: true) -
-    db-spacing('xs')};
+  margin: db-spacing('s', $negative: true) 2px
+    db-spacing('s', $negative: true) #{db-spacing('ml', $negative: true) +
+    2px};
   align-self: start;
 }
 
@@ -60,35 +60,30 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   border-color: db-palette-color('white');
 }
 
-.db-notification--informative {
-  --db-primary-background-color: #{db-palette-color('blue050')};
-
-  .db-icon {
-    color: db-palette-color('blue500');
-  }
+@mixin db-notification--colors($color) {
+  --db-primary-background-color: #{$color};
+  --db-secondary-button-hover-background-color: #{mix($color, #000, 90%)};
+  --db-secondary-button-pressed-background-color: #{mix($color, #000, 80%)};
+  --db-solid-button-background-color: #{mix($color, #000, 90%)};
+  --db-solid-button-hover-background-color: #{mix($color, #000, 80%)};
+  --db-solid-button-pressed-background-color: #{mix($color, #000, 70%)};
 }
 
-.db-notification--warning {
-  --db-primary-background-color: #{desaturate(db-palette-color('yellow200'),
-  15%)};
+.db-notification--informative {
+  @include db-notification--colors(#DBEEFA);
+}
 
-  .db-icon {
-    color: db-palette-color('coolgray600');
-  }
+.db-notification--warning,
+.db-notification--error {
+  @include db-notification--colors(#FCFCB8);
 }
 
 .db-notification--error {
-  --db-primary-background-color: #{desaturate(db-palette-color('yellow200'),
-  15%)};
-  color: #db0014;
+  color: #c70012;
 }
 
 .db-notification--success {
-  --db-primary-background-color: #eff9e5;
-
-  circle {
-    fill: db-color('success');
-  }
+  @include db-notification--colors(#E1F1D0);
 }
 
 /**
