@@ -26,8 +26,8 @@
     "build:react": "yarn workspace @db-design/react build",
     "build:react-extra": "yarn workspace @db-design/react-extra build",
     "release:styles": "yarn workspace @db-design/styles release-it --disable-metrics",
-    "release:react-icons": "yarn build:icons && yarn workspace @db-design/react-icons release-it --disable-metrics",
-    "release:react": "yarn build:icons && yarn build:react && yarn workspace @db-design/react release-it --disable-metrics",
+    "release:react-icons": "yarn build:react-icons && yarn workspace @db-design/react-icons release-it --disable-metrics",
+    "release:react": "yarn build:react-icons && yarn build:react && yarn workspace @db-design/react release-it --disable-metrics",
     "release:react-extra": "yarn workspace @db-design/react-extra release-it --disable-metrics",
     "commit": "git-cz"
   },
