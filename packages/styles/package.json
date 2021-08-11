@@ -8,9 +8,6 @@
     "type": "git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "clsx": "^1.1.1",

@@ -10,9 +10,6 @@
     "url": "https://github.com/Bahn-X/dbx-web.git",
     "type": "git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build:tsx": "rm -rf src && svgr --config-file svgr.config.js --out-dir src svg/24",
     "build:js": "rm -rf dist && tsc --project tsconfig.build.json --outDir dist",
