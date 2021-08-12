@@ -1,13 +1,13 @@
 {
   "name": "@db-design/react-icons",
-  "version": "0.8.0-pre.0",
+  "version": "1.0.0-pre.1",
   "description": "DB Icon components for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "directory": "packages/react-icons",
-    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "url": "git@ssh.git.tech.rz.db.de:bahn-x/webdev/web.git",
     "type": "git"
   },
   "scripts": {
