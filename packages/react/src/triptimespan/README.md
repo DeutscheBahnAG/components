@@ -29,7 +29,7 @@ This component implements the guidelines of:
 <Triptimespan
   departureDateTime="09:54"
   arrivalDateTime="12:48"
-  predictedArivalDateTime="12:49"
+  predictedArrivalDateTime="12:49"
 />
 ```
 
@@ -40,7 +40,7 @@ This component implements the guidelines of:
   departureDateTime="09:54"
   predictedDepartureDateTime="09:57"
   arrivalDateTime="12:48"
-  predictedArivalDateTime="13:07"
+  predictedArrivalDateTime="13:07"
 />
 ```
 
@@ -56,7 +56,7 @@ import { Copy } from '@db-design/react';
     departureDateTime="09:54"
     predictedDepartureDateTime="09:57"
     arrivalDateTime="12:48"
-    predictedArivalDateTime="13:07"
+    predictedArrivalDateTime="13:07"
   />
 </Copy>;
 ```

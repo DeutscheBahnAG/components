@@ -7,7 +7,7 @@ const triptimespanPropTypes = {
   departureDateTime: PropTypes.string.isRequired,
   predictedDepartureDateTime: PropTypes.string,
   arrivalDateTime: PropTypes.string.isRequired,
-  predictedArivalDateTime: PropTypes.string,
+  predictedArrivalDateTime: PropTypes.string,
   className: PropTypes.string,
 };
 
@@ -17,7 +17,7 @@ const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
   departureDateTime,
   predictedDepartureDateTime,
   arrivalDateTime,
-  predictedArivalDateTime,
+  predictedArrivalDateTime,
   className,
   ...props
 }) => {
@@ -25,7 +25,7 @@ const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
     <span className={clsx('db-triptimespan', className)} {...props}>
       <Triptime dateTime={departureDateTime} predictedDateTime={predictedDepartureDateTime} />
       <span className={clsx('db-triptimespan__separator')}>–</span>
-      <Triptime dateTime={arrivalDateTime} predictedDateTime={predictedArivalDateTime} />
+      <Triptime dateTime={arrivalDateTime} predictedDateTime={predictedArrivalDateTime} />
     </span>
   );
 };
@@ -34,7 +34,7 @@ Triptimespan.propTypes = triptimespanPropTypes;
 
 Triptimespan.defaultProps = {
   predictedDepartureDateTime: undefined,
-  predictedArivalDateTime: undefined,
+  predictedArrivalDateTime: undefined,
   className: '',
 };
 
