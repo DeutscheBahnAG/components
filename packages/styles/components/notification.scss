@@ -86,6 +86,45 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   @include db-notification--colors(#E1F1D0);
 }
 
+.db-notification__action {
+  margin-left: db-spacing('m');
+
+  + .db-notification__close-btn {
+    margin-left: db-spacing('m');
+  }
+}
+
+.db-notification__close-btn {
+  align-self: flex-start;
+  margin-top: 13px;
+}
+
+@media (max-width: #{8 * db-spacing('xxxl') - 1px}) {
+  .db-notification {
+    display: grid;
+    grid-template-areas: 'icon content close' 'icon action close';
+    grid-template-columns: 0fr 1fr 0fr;
+    grid-template-rows: 1fr 0fr;
+  }
+
+  .db-notification__icon {
+    grid-area: icon;
+  }
+
+  .db-notification__close-btn {
+    grid-area: close;
+  }
+
+  .db-notification__action {
+    grid-area: action;
+    margin: db-spacing('s') 0 0;
+
+    + .db-notification__close-btn {
+      margin-left: 0;
+    }
+  }
+}
+
 /**
  * 1. Preserve a comfortably readable line length of the messages.
  *    We don't set a (min)-width as we want the notifications

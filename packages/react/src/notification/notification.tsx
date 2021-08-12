@@ -86,6 +86,8 @@ const notificationPropTypes = {
   title: PropTypes.node,
   /** the notification message to display */
   children: PropTypes.node,
+  /** optional action (Button or link) */
+  action: PropTypes.node,
   /** optional className to add to the notification */
   className: PropTypes.string,
   /** displays the notification overlaid on top of the page */
@@ -119,6 +121,7 @@ export type NotificationComponent = React.FunctionComponent<NotificationProps> &
 const Notification: NotificationComponent = ({
   title = null,
   children = null,
+  action = null,
   severity: _severity = NotificationSeverities.INFORMATIVE,
   global = false,
   className = '',
@@ -162,6 +165,7 @@ const Notification: NotificationComponent = ({
           )}
           {children}
         </span>
+        {action && <span className="db-notification__action">{action}</span>}
         {onClose && (
           <Button
             ref={closeButtonRef}

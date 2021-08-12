@@ -59,6 +59,16 @@ import { Notification } from '@db-design/react';
 </Notification>
 ```
 
+## Action
+
+```jsx
+import { Button } from '@db-design/react';
+
+<Notification onClose={() => {}} action={<Button variant={Button.variants.SECONDARY} size={Button.sizes.M}>Do something</Button>}>
+  Somehing happened.
+</Notification>
+```
+
 ## Global (popup)
 
 ```jsx static
