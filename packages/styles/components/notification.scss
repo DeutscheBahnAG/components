@@ -89,6 +89,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .db-notification__action {
   margin-left: db-spacing('m');
+  white-space: nowrap;
 
   + .db-notification__close-btn {
     margin-left: db-spacing('m');
