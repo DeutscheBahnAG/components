@@ -2,7 +2,7 @@
 
 exports[`Modal Component alertdialog role 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -90,7 +90,7 @@ exports[`Modal Component alertdialog role 1`] = `
 
 exports[`Modal Component no close button 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -163,7 +163,7 @@ exports[`Modal Component no close button 1`] = `
 
 exports[`Modal Component render PrimaryButton 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -288,7 +288,7 @@ exports[`Modal Component render PrimaryButton 1`] = `
 
 exports[`Modal Component render SecondaryButton 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -416,7 +416,7 @@ exports[`Modal Component render SecondaryButton 1`] = `
 
 exports[`Modal Component render optional properties 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -512,7 +512,7 @@ exports[`Modal Component render optional properties 1`] = `
 
 exports[`Modal Component render required properties only 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -594,7 +594,7 @@ exports[`Modal Component render required properties only 1`] = `
 
 exports[`Modal Component size auto 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -689,7 +689,7 @@ exports[`Modal Component size auto 1`] = `
 
 exports[`Modal Component size l 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -793,7 +793,7 @@ exports[`Modal Component size l 1`] = `
 
 exports[`Modal Component size m 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""
@@ -894,7 +894,7 @@ exports[`Modal Component size m 1`] = `
 
 exports[`Modal Component size s 1`] = `
 <body
-  class="body--db-modal-open"
+  class="db-body--db-modal-open"
 >
   <div
     data-react-modal-body-trap=""

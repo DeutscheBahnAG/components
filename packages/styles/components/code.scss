@@ -30,6 +30,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* stylelint-disable selector-class-pattern */
   .token.script {
     color: db-palette-color('blue700');
   }
@@ -123,4 +124,5 @@
   .token.title {
     color: db-palette-color('coolgray500');
   }
+  /* stylelint-enable selector-class-pattern */
 }

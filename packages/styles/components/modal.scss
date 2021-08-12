@@ -287,7 +287,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   }
 }
 
-.body--db-modal-open,
-.html--db-modal-open {
+.db-body--db-modal-open,
+.db-html--db-modal-open {
   overflow: hidden;
 }

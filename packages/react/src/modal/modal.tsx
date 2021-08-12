@@ -259,8 +259,8 @@ const Modal: ModalType<ModalProps> = ({
         labelledby: ariaLabelledBy!,
         describedby: ariaDescribedBy!,
       }}
-      bodyOpenClassName={disableBodyScrollWhenOpen ? 'body--db-modal-open' : undefined}
-      htmlOpenClassName={disableBodyScrollWhenOpen ? 'html--db-modal-open' : undefined}
+      bodyOpenClassName={disableBodyScrollWhenOpen ? 'db-body--db-modal-open' : undefined}
+      htmlOpenClassName={disableBodyScrollWhenOpen ? 'db-html--db-modal-open' : undefined}
       {...otherProps}
     >
       <header

@@ -151,7 +151,7 @@ const Notification: NotificationComponent = ({
           'db-notification',
           `db-notification--${severity}`,
           { 'db-notification--global': global },
-          'db-theme--db-light-alternate',
+          'DB_LIGHT_ALTERNATE',
           className
         )}
       >

@@ -234,7 +234,7 @@ import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
     margin-top: 8px;
   }
 
-  .nesting-themes .db-theme--db-dark .db-logo {
+  .nesting-themes .DB_DARK .db-logo {
     margin-top: 8px;
   }
 </style>
