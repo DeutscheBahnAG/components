@@ -62,6 +62,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 @mixin db-notification--colors($color) {
   --db-primary-background-color: #{$color};
+  --db-secondary-button-background-color: #{$color};
   --db-secondary-button-hover-background-color: #{mix($color, #000, 90%)};
   --db-secondary-button-pressed-background-color: #{mix($color, #000, 80%)};
   --db-solid-button-background-color: #{mix($color, #000, 90%)};
