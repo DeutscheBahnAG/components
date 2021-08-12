@@ -19,9 +19,10 @@ const onClick = (event) => {
   {message && (
     <Notification
       variant={Notification.variants.INFO}
-      message={message}
       global
-    />
+    >
+      {message}
+    </Notification>
   )}
   <ol className="sg-icon-overview">
     {Object.keys(Icons).map((name) => {

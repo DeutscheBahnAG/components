@@ -15,20 +15,15 @@ const onClick = () => {
   }
 };
 <Notification
-  message={
-    <>
-      This layout documentation might require a screen wider than 1440 px to
-      show the examples. If you use a smaller screen, zoom out the page or{' '}
-      <Button
-        size={Button.sizes.S}
-        variant={Button.variants.SOLID}
-        onClick={onClick}
-      >
-        Toggle sidebar
-      </Button>
-    </>
+  action={
+    <Button size={Button.sizes.S} variant={Button.variants.PRIMARY} onClick={onClick}>
+      Toggle sidebar
+    </Button>
   }
-/>;
+>
+  This layout documentation might require a screen wider than 1440 px to show the examples. If you
+  use a smaller screen, zoom out the page or
+</Notification>;
 ```
 
 <style>

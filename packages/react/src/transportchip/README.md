@@ -94,7 +94,7 @@ import { Status } from '@db-design/react';
 <>
   <Transportchip canceled name="IC 123" />
   <div style={{ marginTop: 8 }}>
-    <Status message="The train got cancelled" variant={Status.variants.FATAL} />
+    <Status severity={Status.severities.FATAL}>The train got cancelled</Status>
   </div>
 </>;
 ```
