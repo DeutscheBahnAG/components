@@ -1,18 +1,18 @@
 {
   "name": "@db-design/react",
-  "version": "0.21.0-pre.7",
+  "version": "1.0.0-pre.1",
   "description": "DB React Components",
   "repository": {
     "directory": "packages/react",
-    "url": "https://github.com/Bahn-X/dbx-web.git",
+    "url": "git@ssh.git.tech.rz.db.de:bahn-x/webdev/web.git",
     "type": "git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@db-design/styles": "^0.11.0-pre.1",
-    "@db-design/react-icons": "^0.8.0-pre.0",
+    "@db-design/styles": "^1.0.0-pre.1",
+    "@db-design/react-icons": "^1.0.0-pre.1",
     "clsx": "^1.1.1",
     "core-js": "^3.8.2",
     "include-media": "^1.4.9",
