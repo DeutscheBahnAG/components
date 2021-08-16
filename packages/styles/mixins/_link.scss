@@ -2,17 +2,51 @@
 /// @param {String} $text-color - The default text-color
 /// @param {String} $text-color--hover - The text-color used on hover
 /// @param {String} $text-color--pressed - The text-color used on press (:active)
-@mixin db-link($text-color, $text-color--hover, $text-color--pressed) {
-  @include db-focus-ring-for-text;
+@mixin db-link($text-color, $text-color--hover, $text-color--pressed, $target: '', $underline-color: var(--db-underline-color)) {
+  /**
+   * 1. 0.11 needed for Firefox
+   */
+  @include db-focus-ring-for-text($target: $target);
   color: $text-color;
-  text-decoration: none;
+  text-decoration-line: none;
+  text-underline-offset: 0.11em; /* 1 */
+  text-decoration-thickness: 1px;
 
-  &:hover {
-    color: $text-color--hover;
+  @if $target == '' {
+    text-decoration-line: underline;
+    text-decoration-color: $underline-color;
+
+    &:hover {
+      color: $text-color--hover;
+      text-decoration-color: unset;
+    }
+
+    &:active {
+      color: $text-color--pressed;
+    }
+
+    &:focus {
+      text-decoration-color: transparent;
+    }
   }
+  @else {
+    #{unquote($target)} {
+      text-decoration-line: underline;
+      text-decoration-color: $underline-color;
+    }
 
-  &:active {
-    color: $text-color--pressed;
+    &:hover #{unquote($target)} {
+      color: $text-color--hover;
+      text-decoration-color: unset;
+    }
+
+    &:active #{unquote($target)} {
+      color: $text-color--pressed;
+    }
+
+    &:focus #{unquote($target)} {
+      text-decoration-color: transparent;
+    }
   }
 }
 
@@ -23,9 +57,11 @@
 @mixin db-primary-link(
   $text-color: var(--db-link-color),
   $text-color--hover: var(--db-link-hover-color),
-  $text-color--pressed: var(--db-link-pressed-color)
+  $text-color--pressed: var(--db-link-pressed-color),
+  $target: '',
+  $underline: true
 ) {
-  @include db-link($text-color, $text-color--hover, $text-color--pressed);
+  @include db-link($text-color, $text-color--hover, $text-color--pressed, $target, if($underline, var(--db-link-underline-color), transparent));
 }
 
 /// Styles a primary link including hover and pressed styles
@@ -35,7 +71,9 @@
 @mixin db-secondary-link(
   $text-color: var(--db-primary-text-color),
   $text-color--hover: var(--db-link-hover-color),
-  $text-color--pressed: var(--db-link-pressed-color)
+  $text-color--pressed: var(--db-link-pressed-color),
+  $target: '',
+  $underline: true
 ) {
-  @include db-link($text-color, $text-color--hover, $text-color--pressed);
+  @include db-link($text-color, $text-color--hover, $text-color--pressed, $target, if($underline, var(--db-underline-color), transparent));
 }

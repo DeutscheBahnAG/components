@@ -15,7 +15,7 @@ $code-background-color: db-background-color('secondary');
     overflow: visible;
 
     a {
-      @include db-primary-link($text-color: db-text-color('primary'));
+      @include db-primary-link($text-color: db-text-color('primary'), $underline: false);
     }
   }
 
@@ -43,7 +43,7 @@ $code-background-color: db-background-color('secondary');
   }
 
   [class^='rsg--heading-'] a {
-    @include db-secondary-link;
+    @include db-secondary-link($underline: false);
   }
 
   [class^='rsg--header-'] h2[class^='rsg--heading-'],
