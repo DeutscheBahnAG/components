@@ -280,8 +280,8 @@ $db-s-bahn-green: #05883c;
   --db-link-pressed-color: #{darken(mix(#000, $db-s-bahn-green, 60%), 3%)};
 }
 
-.S_BAHN_LIGHT,
-.S_BAHN_LIGHT_ALTERNATE {
+.GREEN_CAMPAIGN_LIGHT,
+.GREEN_CAMPAIGN_LIGHT_ALTERNATE {
   --db-loud-border-color: #{db-palette-color('lightgreen400')};
   --db-link-color: #{db-palette-color('lightgreen400')};
   --db-link-hover-color: #{db-palette-color('lightgreen500')};
