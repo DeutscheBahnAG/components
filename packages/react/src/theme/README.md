@@ -129,7 +129,7 @@ const themeNames = Object.keys(Theme.themes);
             departureDateTime="09:54"
             predictedDepartureDateTime="09:57"
             arrivalDateTime="12:48"
-            predictedArivalDateTime="13:07"
+            predictedArrivalDateTime="13:07"
           />
           {'   '}
           <Transportchip name="ICE 123" />
