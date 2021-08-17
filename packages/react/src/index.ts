@@ -21,3 +21,4 @@ export { default as Track } from './track';
 export { default as Transportchip } from './transportchip';
 export { default as Triptime } from './triptime';
 export { default as Triptimespan } from './triptimespan';
+export { default as Anchor } from './anchor';
