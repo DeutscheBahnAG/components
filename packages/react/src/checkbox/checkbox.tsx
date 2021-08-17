@@ -21,6 +21,12 @@ const checkboxPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type CheckboxProps = InferProps<typeof checkboxPropTypes> & Record<string, any>;
 
+const enforceFocusRingInSafari = (event) => {
+  const { style } = event.target.nextSibling;
+  style.transform = 'translateZ(0)';
+  style.removeProperty('transform');
+};
+
 const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className = '',
   indeterminate = false,
@@ -40,7 +46,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   return (
     <>
       <label style={style as CSSProperties} className={clsx('db-checkbox', className)}>
-        <input type="checkbox" ref={inputRef} {...otherProps} />
+        <input type="checkbox" ref={inputRef} onFocus={enforceFocusRingInSafari} {...otherProps} />
         <span className="db-checkbox-box">
           <svg viewBox="0 0 16 16">
             <path
