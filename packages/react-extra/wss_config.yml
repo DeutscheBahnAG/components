@@ -1,0 +1,38 @@
+#DISCLAIMER
+#All sensible data is not persisted and deleted shortly after usage. So be assured we cope according to any law with your data!
+
+# NOTE: see here how these configs are used https://git.tech.rz.db.de/ass/dependencychecker/whitesource/whitesource-dockered-scanner/-/blob/master/Docker/base/wrapper/scan
+
+##################
+#   WHITESOURCE  #
+##################
+wss_project_name="db-design-react-extra"
+wss_project_version="$CI_COMMIT_BRANCH"
+  #wss_product_version="latest" DO NOT SET THIS IF USING wss_project_version as this overrides it
+
+  # The following variables must be set as env variables in the Gitlab bahn-x group, they are valid for all subgroups
+  #
+  # wss_apiKey  -> your organization key, from Whitesource WebGUI:  Integrate > Organization > API key
+  # wss_userKey -> CI tech-user key, as received initially via email, also found in 1pass
+
+  # The following variables must be set as env variables in the Gitlab bahn-x subgroups like TMP, Analytics etc
+  #
+  # wss_product_name  -> set set this to one of our whitesource "products"  https://whitesource.int-app.comp.db.de/Wss/WSS.html#!allProducts
+  # wss_product_token -> the products key, from Whitesource WebGUI:  Integrate > Product Tokens > Token
+
+  # Npm specific config: If you have scoped dependencies, please add them according to the conventions below:
+  # npmScopedDeps="@yourScope:registry=yourRegistryLink;@yourScope2:registry=yourRegistryLink2"
+npmScopedDeps="@bahn-x:registry=https://npm.pkg.github.com"
+
+  # Whitesource will scan your entire project by deafult.
+  # Change this, if you want scan only a specific path.
+wss_scan_folder=packages/react-extra/
+
+# You feel brave today?
+# Great, use your own wss-unified-agent.config file as of here: https://whitesource.atlassian.net/wiki/spaces/WD/pages/489160834/Unified+Agent+Configuration+File+Parameters
+# Tell us, where we will find it in your repo structure, starting from the root directory.
+# no leading slash!!
+#
+# !! Please note that in this case all information (including project / product name and version) must be specified in this team-specific Whitesource config file and will no longer be read from wss_config.yml
+# (apart from wss_scan_folder and wss_javaParams which is meta-information (i.e. not Whitesource specific) and therefore still needs to be specified).
+#wss_specific_team_config=whitesource/wss-unified-agent.config

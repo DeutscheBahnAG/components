@@ -8,3 +8,5 @@
 !*.d.ts
 .eslintrc.js
 .release-it.js
+tsconfig.build.json
+wss_config.yml

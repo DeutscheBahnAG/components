@@ -8,3 +8,4 @@
 #
 .release-it.js
 tsconfig.build.json
+wss_config.yml

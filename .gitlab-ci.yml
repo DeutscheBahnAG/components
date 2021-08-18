@@ -1,3 +1,9 @@
+# include
+include:
+  - project: bahn-x/platform/gitlab-ci-utils
+    ref: main
+    file: whitesource.yml
+
 image: node:latest
 
 # define order of stages
@@ -37,16 +43,6 @@ stages:
   stage: test
   script:
     - yarn lint
-
-.whitesource:
-  stage: test
-  image:
-    name: ass-docker-stage-test-local.bahnhub.tech.rz.db.de/appsec-dependency-check:npm
-    entrypoint: ['']
-  script:
-    - npm config set //$NPM_REGISTRY/:_authToken $NPM_TOKEN
-    - npm config set //$NPM_REGISTRY/:always-auth true
-    - scan wss_config.yml
 
 .build-docs:
   stage: build-packages
@@ -94,10 +90,45 @@ lint-dev:
   tags: [dev]
   except: [prod]
 
-#whitesource-dev:
-#  extends: .whitesource
-#  tags: [dev]
-#  except: [beta, prod]
+whitesource-dev-root:
+  extends: .whitesource
+  tags: [dev]
+  except: [beta, prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: wss_config.yml
+
+whitesource-dev-react:
+  extends: .whitesource
+  tags: [dev]
+  except: [beta, prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react/wss_config.yml
+
+whitesource-dev-react-icons:
+  extends: .whitesource
+  tags: [dev]
+  except: [beta, prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react-icons/wss_config.yml
+
+whitesource-dev-react-extra:
+  extends: .whitesource
+  tags: [dev]
+  except: [beta, prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react-extra/wss_config.yml
+
+whitesource-dev-styles:
+  extends: .whitesource
+  tags: [dev]
+  except: [beta, prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/styles/wss_config.yml
 
 packages-dev:
   extends: .build-packages
@@ -144,10 +175,45 @@ lint-prod:
   tags: [prod]
   only: [prod]
 
-#whitesource-prod:
-#  extends: .whitesource
-#  tags: [prod]
-#  only: [prod]
+whitesource-prod-root:
+  extends: .whitesource
+  tags: [prod]
+  only: [prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: wss_config.yml
+
+whitesource-prod-react:
+  extends: .whitesource
+  tags: [prod]
+  only: [prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react/wss_config.yml
+
+whitesource-prod-react-icons:
+  extends: .whitesource
+  tags: [prod]
+  only: [prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react-icons/wss_config.yml
+
+whitesource-prod-react-extra:
+  extends: .whitesource
+  tags: [prod]
+  only: [prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/react-extra/wss_config.yml
+
+whitesource-prod-styles:
+  extends: .whitesource
+  tags: [prod]
+  only: [prod]
+  variables:
+    wss_javaParams: "-offline false"
+    whitesource_config: packages/styles/wss_config.yml
 
 packages-prod:
   extends: .build-packages
