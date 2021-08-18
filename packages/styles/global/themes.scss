@@ -28,9 +28,7 @@
   --db-field-secondary-text-color: var(--db-secondary-text-color);
   --db-disabled-text-color: #{db-palette-color('coolgray200')};
   --db-shadow-color: #0000000a;
-  --db-border-color: #{mix(db-palette-color('coolgray100'),
-  db-palette-color('coolgray200'),
-  30%)};
+  --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 30%)};
   --db-loud-border-color: #{db-palette-color('coolgray500')};
   --db-focus-ring-color: #0043c740;
   --db-focus-border-color: #{db-border-color('input.focus')};
@@ -87,7 +85,7 @@
 
 .DB_LIGHT_ALTERNATE,
 .S_BAHN_LIGHT_ALTERNATE,
-.S_BAHN_LIGHT_ALTERNATE,
+.GREEN_CAMPAIGN_LIGHT_ALTERNATE,
 .PRIDE_LIGHT_ALTERNATE {
   --db-primary-button-disabled-background-color: #{db-palette-color('coolgray200')};
   --db-primary-button-disabled-text-color: #{db-palette-color('coolgray300')};
