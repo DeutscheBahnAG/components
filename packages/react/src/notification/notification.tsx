@@ -22,40 +22,32 @@ const defaultLabels = {
 
 const notificationIcons = {
   informative: (
-    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+    <svg width="64" height="64">
       <path
-        d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm1.494 13.965.006.113v9.48a1 1 0 0 1-1.993.117l-.007-.116v-8.201l-.372.094a1 1 0 0 1-.12.022l-.123.008H29.5a1 1 0 0 1-.117-1.994l.117-.006 1.262-.001 1.495-.373a1 1 0 0 1 1.237.857zM32.4 22.45c.78 0 1.42.593 1.493 1.352l.007.144a1.5 1.5 0 0 1-2.993.152l-.007-.144a1.5 1.5 0 0 1 1.5-1.504z"
+        d="M33.494 27.965l.006.113v9.48a1 1 0 01-1.993.117l-.007-.116v-8.201l-.372.094a1 1 0 01-.12.022l-.123.008H29.5a1 1 0 01-.117-1.994l.117-.006 1.262-.001 1.495-.373a1 1 0 011.237.857zM32.4 22.45c.78 0 1.42.593 1.493 1.352l.007.144a1.5 1.5 0 01-2.993.152l-.007-.144a1.5 1.5 0 011.5-1.504z"
         fill="#000"
       />
-      <path
-        d="M35.844 41.001a1 1 0 0 1 .117 1.993l-.117.007h-7.692a1 1 0 0 1-.117-1.993l.117-.007h7.692z"
-        fill="#EC0016"
-      />
+      <circle stroke="#000" fill="none" strokeWidth="2" cx="32" cy="32" r="19" />
+      <path stroke="#ec0016" strokeWidth="2.1" strokeLinecap="round" d="M28 42h8" />
     </svg>
   ),
   warning: (
-    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fillRule="evenodd">
-        <path
-          d="M32 12.984a3.035 3.035 0 0 1 2.678 1.605l14.946 27.958a3.037 3.037 0 0 1-2.679 4.469h-29.89a3.037 3.037 0 0 1-2.679-4.469L29.322 14.59A3.035 3.035 0 0 1 32 12.984z"
-          stroke="#000"
-          strokeWidth="2"
-        />
-        <g transform="translate(30.4 23.5)">
-          <path stroke="#FF4F20" strokeWidth="2.2" strokeLinecap="round" d="M1.6 0v12" />
-          <circle fill="#FF4F20" cx="1.6" cy="17" r="1.6" />
-        </g>
-      </g>
+    <svg width="64" height="64">
+      <path
+        d="M32 13.984a3.035 3.035 0 012.678 1.605h0l14.946 27.958a3.037 3.037 0 01-2.679 4.47v-.001h-29.89a3.037 3.037 0 01-2.679-4.469h0L29.322 15.59A3.035 3.035 0 0132 13.984z"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+      <path stroke="#ec0016" strokeWidth="2.1" strokeLinecap="round" d="M32 24.5v12" />
+      <circle fill="#ec0016" cx="32" cy="41.5" r="1.6" />
     </svg>
   ),
   error: (
-    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+    <svg width="64" height="64">
+      <circle stroke="#000" fill="none" strokeWidth="2" cx="32" cy="32" r="19" />
       <path
-        d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18z"
-        fill="#000"
-      />
-      <path
-        stroke="#FF4F20"
+        stroke="#ec0016"
         strokeLinecap="round"
         strokeWidth="2.1"
         d="M39.071 24.929 24.93 39.07M39.071 39.071 24.93 24.93"
@@ -63,20 +55,16 @@ const notificationIcons = {
     </svg>
   ),
   success: (
-    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fillRule="evenodd">
-        <path
-          d="M32 12c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18z"
-          fill="#000"
-        />
-        <path
-          stroke="#178f1f"
-          strokeWidth="2.42"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M23.5 33.583 29.473 39 40.5 25.5"
-        />
-      </g>
+    <svg width="64" height="64">
+      <circle stroke="#000" fill="none" strokeWidth="2" cx="32" cy="32" r="19" />
+      <path
+        fill="none"
+        stroke="#006f35"
+        strokeWidth="2.42"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M23.5 33.583 29.473 39 40.5 25.5"
+      />
     </svg>
   ),
 };

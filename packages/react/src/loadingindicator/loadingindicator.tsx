@@ -23,8 +23,6 @@ const Loadingindicator: LoadingindicatorType<LoadingindicatorProps> = ({ classNa
   <svg
     className={clsx('db-loadingindicator', `db-loadingindicator--${size}`, className)}
     viewBox="0 0 44 44"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
   >
     <circle
       className="db-loadingindicator__circle"
