@@ -139,8 +139,8 @@
     &.db-button--square,
     &.db-button--round {
       padding: db-component-vertical-padding($size, 'button');
-      padding: (db-size($size) - db-icon-size('m')) /
-        2 -
+      padding: (db-size($size) - db-icon-size('m')) *
+        0.5 -
         db-border-width('button');
       min-width: db-size($size);
       width: db-size($size);

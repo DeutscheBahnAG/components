@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '@db-design/styles/abstracts.scss';
 
 .db-textfield {
@@ -125,7 +126,8 @@
   */
 .db-textfield:focus-within .db-textfield__inline-label,
 .db-textfield--filled .db-textfield__inline-label {
-  $scale-down: db-font-size('copy', 's') / db-font-size('copy', 'm'); /* 1 */
+  $scale-down: math.div(db-font-size('copy', 's'),
+  db-font-size('copy', 'm')); /* 1 */
   transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
 }
 
@@ -224,7 +226,7 @@
 .db-textfield {
   @each $size in (xl l m s xs) {
     .db-button--#{$size} {
-      margin: #{(db-line-height('copy', 'm') - db-size($size)) / 2};
+      margin: #{(db-line-height('copy', 'm') - db-size($size)) * 0.5};
     }
   }
 }

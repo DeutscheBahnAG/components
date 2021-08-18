@@ -1,19 +1,21 @@
+@use 'sass:math';
 // stylelint-disable selector-no-qualifying-type, max-nesting-depth
 @import '@db-design/styles/abstracts.scss';
 @import '@db-design/styles/mixins/focus-ring';
 
 @mixin db-transportchip-default-border-radius {
-  border-radius: 1em / db-font-size('copy', 'm') * db-border-radius('s');
+  border-radius: math.div(1em, db-font-size('copy', 'm')) *
+    db-border-radius('s');
   margin: 0; // Reset overlap
 }
 
 @mixin db-transportchip-border($px, $color) {
-  $border-in-em: $px / 1px * 0.0625em;
+  $border-in-em: math.div($px, 1px) * 0.0625em;
   border: $border-in-em $color solid;
   line-height: #{1.75em - 2 * $border-in-em};
 }
 
-$db-transportchip-overlap: 1em / db-font-size('copy', 'm') * 1px;
+$db-transportchip-overlap: math.div(1em, db-font-size('copy', 'm')) * 1px;
 
 .db-transportchip {
   background: transparent;
@@ -33,13 +35,13 @@ $db-transportchip-overlap: 1em / db-font-size('copy', 'm') * 1px;
   height: 1.75em;
   line-height: 1.75em;
   min-width: 1.75em;
-  padding: 0 1em / db-font-size('copy', 'm') * db-spacing('s');
+  padding: 0 math.div(1em, db-font-size('copy', 'm')) * db-spacing('s');
   position: relative;
   text-align: center;
   white-space: nowrap;
 
   & + & {
-    margin-left: db-spacing('xs') / db-font-size('copy', 'm') * 1em;
+    margin-left: math.div(db-spacing('xs'), db-font-size('copy', 'm')) * 1em;
   }
 }
 
@@ -60,15 +62,16 @@ button.db-transportchip {
 .db-transportchip__transport-logo {
   // Round shapes (like S-Bahn) need to visually overlap by 1px
   $size: 1.75em;
-  $size: 1em / db-font-size('copy', 'm') * db-line-height('copy', 'm') + 2 *
+  $size: math.div(1em, db-font-size('copy', 'm')) * db-line-height('copy', 'm') +
+    2 * $db-transportchip-overlap;
+  $size: math.div(1em, db-font-size('copy', 'm')) * db-size('s') + 2 *
     $db-transportchip-overlap;
-  $size: 1em / db-font-size('copy', 'm') * db-size('s') + 2 * $db-transportchip-overlap;
   display: inline-block;
   height: $size;
   margin: #{-$db-transportchip-overlap} #{0.25em - $db-transportchip-overlap} #{-$db-transportchip-overlap}
     #{-$db-transportchip-overlap};
   position: relative;
-  vertical-align: 1em / db-font-size('copy', 'm') * -8px;
+  vertical-align: math.div(1em, db-font-size('copy', 'm')) * -8px;
   width: $size;
   transform: translateZ(0);
 }
@@ -79,7 +82,7 @@ button.db-transportchip {
   font-weight: db-font-weight('copy', 'bold');
   line-height: 1;
   margin-right: 0.25em; // = a space character
-  vertical-align: (db-font-size('copy', 'm') - db-font-size('copy', 's')) / 2;
+  vertical-align: (db-font-size('copy', 'm') - db-font-size('copy', 's')) * 0.5;
 
   &:last-child {
     margin-right: 0;
@@ -1021,7 +1024,7 @@ button.db-transportchip {
   .db-transportchip__line {
     background: var(--db-transportchip-background-color);
     color: var(--db-transportchip-text-color);
-    padding: 0 1em / db-font-size('copy', 'm') * db-spacing('s');
+    padding: 0 math.div(1em, db-font-size('copy', 'm')) * db-spacing('s');
   }
 
   .db-transportchip__line {
@@ -1047,7 +1050,10 @@ button.db-transportchip {
 
 .db-transportchip--canceled {
   .db-transportchip__line {
-    @include db-transportchip-border(2px, var(--db-primary-button-disabled-background-color));
+    @include db-transportchip-border(
+      2px,
+      var(--db-primary-button-disabled-background-color)
+    );
     background: transparent;
     clip-path: unset; // Hochbahn bus and ferry’s shape won’t allow borders
     color: var(--db-secondary-text-color);

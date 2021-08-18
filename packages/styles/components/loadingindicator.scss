@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .db-loadingindicator {
   display: block;
 }
@@ -8,10 +10,11 @@
     $stroke-width: 2px;
   }
   .db-loadingindicator--#{$size} {
-    --db-loadingindicator--stroke-width: #{44px /
-      db-size($size) *
+    --db-loadingindicator--stroke-width: #{math.div(44px, db-size($size)) *
       $stroke-width};
-    --db-loadingindicator--r: #{22 - 44px / db-size($size) * $stroke-width};
+    --db-loadingindicator--r: #{22 -
+      math.div(44px, db-size($size)) *
+      $stroke-width};
     height: db-size($size);
     width: db-size($size);
   }

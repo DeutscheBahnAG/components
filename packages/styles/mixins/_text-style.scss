@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // applies a text style from the DB design system
 // (see variables/text-styles for available styles)
 @mixin db-text-style($text-style: 'copy', $size: 'm') {
@@ -10,12 +12,12 @@
   $breakpoint: 48em;
 
   @include db-rem-font-size($font-size);
-  line-height: $line-height / $font-size; // use relative (unitless) font-size
+  line-height: #{math.div($line-height, $font-size)}; // use relative (unitless) font-size
   font-weight: $font-weight;
   font-family: $font-family;
 
   @media (min-width: $breakpoint) {
     @include db-rem-font-size($font-size-large);
-    line-height: $line-height-large / $font-size-large; // use relative (unitless) font-size
+    line-height: #{math.div($line-height-large, $font-size-large)}; // use relative (unitless) font-size
   }
 }

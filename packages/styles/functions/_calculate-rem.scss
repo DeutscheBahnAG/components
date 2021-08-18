@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 // Function for converting a px based font-size to rem.
 @function db-calculate-rem($size) {
-  $rem-size: $size / 16px;
+  $rem-size: #{math.div($size, 16px)};
   // default font size on html element is 100%, equivalent to 16px;
   @return #{$rem-size}rem;
 }

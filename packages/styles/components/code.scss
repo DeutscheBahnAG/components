@@ -7,7 +7,7 @@
 
   // inline style ('inline' prop == true)
   &--inline {
-    padding: (db-line-height('copy', 's') - db-font-size('copy', 's')) / 2;
+    padding: (db-line-height('copy', 's') - db-font-size('copy', 's')) * 0.5;
     border-radius: db-border-radius('s');
   }
 

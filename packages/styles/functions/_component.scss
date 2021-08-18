@@ -7,12 +7,12 @@
 }
 
 @function db-component-horizontal-padding($size, $border-width-key) {
-  @return ceil(db-size($size) / 3) - db-border-width($border-width-key);
+  @return ceil(db-size($size) * 0.33) - db-border-width($border-width-key);
 }
 
 @function db-component-vertical-padding($size, $border-width-key) {
   $line-height: db-component-line-height($size, $border-width-key);
-  @return (db-size($size) - $line-height) / 2 -
+  @return (db-size($size) - $line-height) * 0.5 -
     db-border-width($border-width-key);
 }
 
@@ -33,5 +33,5 @@
 
 @function db-component-icon-gap($text-size) {
   $icon-safe-area: 2px;
-  @return ceil(db-line-height('copy', $text-size) / 3) - $icon-safe-area;
+  @return ceil(db-line-height('copy', $text-size) * 0.33) - $icon-safe-area;
 }

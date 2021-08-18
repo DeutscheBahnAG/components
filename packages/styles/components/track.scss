@@ -26,10 +26,10 @@
     font-size: db-font-size('copy', $textsize);
     height: db-size($size);
     line-height: db-line-height('copy', $textsize);
-    padding: #{(db-size($size) - db-line-height('copy', $textsize)) /
-      2}
-      #{(db-size($size) - db-line-height('copy', $textsize)) /
-      2 +
+    padding: #{(db-size($size) - db-line-height('copy', $textsize)) *
+      0.5}
+      #{(db-size($size) - db-line-height('copy', $textsize)) *
+      0.5 +
       db-spacing('xs')};
   }
 }

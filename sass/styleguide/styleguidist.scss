@@ -330,7 +330,7 @@ main.rsg--content-3 {
     font-weight: db-font-weight('title', 'bold');
     text-decoration: none;
     display: block;
-    padding: #{db-spacing('sm') / 2} db-spacing('m');
+    padding: #{db-spacing('sm') * 0.5} db-spacing('m');
     transition: color 0.15s ease-in;
     li {
       @include db-text-style('copy', 's');
