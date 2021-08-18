@@ -17,10 +17,7 @@ const onClick = (event) => {
 
 <>
   {message && (
-    <Notification
-      variant={Notification.variants.INFO}
-      global
-    >
+    <Notification variant={Notification.severities.INFORMATIVE} global>
       {message}
     </Notification>
   )}
