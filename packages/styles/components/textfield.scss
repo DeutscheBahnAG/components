@@ -14,6 +14,10 @@
   font-family: db-font-family('copy');
   vertical-align: top;
 
+  @media (prefers-contrast: more) {
+    border-color: var(--db-loud-border-color);
+  }
+
   &:not(.db-textfield--disabled) {
     cursor: text;
   }

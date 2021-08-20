@@ -25,6 +25,10 @@ $db-select-chevron-margin: 16px;
   display: inline-flex;
   position: relative;
 
+  @media (prefers-contrast: more) {
+    border-color: var(--db-loud-border-color);
+  }
+
   &--disabled {
     background: transparent;
     border-color: var(--db-secondary-background-color);
