@@ -26,6 +26,7 @@
   --db-secondary-text-color: #{db-palette-color('coolgray500')};
   --db-field-primary-text-color: var(--db-primary-text-color);
   --db-field-secondary-text-color: var(--db-secondary-text-color);
+  --db-caret-color: #{darken(db-palette-color('dbrot'), 3%)};
   --db-disabled-text-color: #{db-palette-color('coolgray200')};
   --db-shadow-color: #0000000a;
   --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 30%)};
@@ -103,6 +104,7 @@
   --db-loud-border-color: #{db-palette-color('coolgray600')};
   --db-warning-color: #d42c00;
   --db-warning-background-color: #d42c00;
+  --db-caret-color: #{db-palette-color('dbrot')};
 }
 
 .DB_BRANDED,
@@ -185,6 +187,7 @@
   db-palette-color('coolgray600'),
   60%)};
   --db-loud-border-color: #{db-palette-color('coolgray200')};
+  --db-caret-color: #ff5a5a;
 }
 
 .DB_DARK_ALTERNATE {
@@ -264,12 +267,9 @@ $db-s-bahn-green: #05883c;
   --db-primary-button-background-color: #098a40;
   --db-primary-button-hover-background-color: #{darken($db-s-bahn-green, 2%)};
   --db-primary-button-pressed-background-color: #{darken($db-s-bahn-green, 8%)};
-  --db-secondary-button-hover-background-color: #{mix($db-s-bahn-green,
-  #fff,
-  10%)};
-  --db-secondary-button-pressed-background-color: #{mix($db-s-bahn-green,
-  #fff,
-  20%)};
+  --db-secondary-button-hover-background-color: #{mix($db-s-bahn-green, #fff, 10%)};
+  --db-secondary-button-pressed-background-color: #{mix($db-s-bahn-green, #fff, 20%)};
+  --db-caret-color: #{$db-s-bahn-green};
 }
 
 .S_BAHN_LIGHT_ALTERNATE {
@@ -290,6 +290,7 @@ $db-s-bahn-green: #05883c;
   --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
   --db-secondary-button-hover-background-color: #{db-palette-color('lightgreen100')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('lightgreen200')};
+  --db-caret-color: #{db-palette-color('lightgreen400')};
 }
 
 $db-s-bahn-loud-background: #05883c;
@@ -356,6 +357,7 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   12%)};
   --db-border-color: #b3dd80;
   --db-loud-border-color: #{db-palette-color('lightgreen100')};
+  --db-caret-color: #{db-palette-color('lightgreen400')};
 }
 
 .DISPLAY {
@@ -384,4 +386,5 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-solid-button-pressed-background-color: #030d27;
   --db-border-color: #3e5c90;
   --db-loud-border-color: #{db-palette-color('blue100')};
+  --db-caret-color: #213a7e;
 }

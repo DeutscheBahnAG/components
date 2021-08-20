@@ -9,6 +9,7 @@
   background-color: var(--db-secondary-background-color);
   border: db-border-width('input') solid var(--db-secondary-background-color);
   box-sizing: border-box;
+  caret-color: var(--db-caret-color);
   color: var(--db-field-secondary-text-color);
   display: inline-flex;
   font-family: db-font-family('copy');
