@@ -78,7 +78,7 @@ $db-checkbox-gap: 0.4em;
 }
 
 :checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked {
-  fill: var(--db-primary-background-color);
+  fill: var(--db-checkbox-tick-color);
   transform: scale(1);
 }
 
@@ -124,8 +124,7 @@ $db-checkbox-gap: 0.4em;
   display: flex;
   flex-direction: column;
   grid-gap: db-spacing('s');
-  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em)
-    /* 4 */;
+  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em) /* 4 */;
   margin-top: db-spacing('xs');
 
   > a {

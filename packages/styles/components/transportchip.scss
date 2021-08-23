@@ -62,8 +62,7 @@ button.db-transportchip {
   $size: 1.75em;
   $size: 1em / db-font-size('copy', 'm') * db-line-height('copy', 'm') + 2 *
     $db-transportchip-overlap;
-  $size: 1em / db-font-size('copy', 'm') * db-size('s') + 2 *
-    $db-transportchip-overlap;
+  $size: 1em / db-font-size('copy', 'm') * db-size('s') + 2 * $db-transportchip-overlap;
   display: inline-block;
   height: $size;
   margin: #{-$db-transportchip-overlap} #{0.25em - $db-transportchip-overlap} #{-$db-transportchip-overlap}
@@ -1016,27 +1015,54 @@ button.db-transportchip {
   }
 }
 
-.db-transportchip--canceled {
-  mix-blend-mode: var(--db-solid-button-mix-blend-mode);
+.DB_BRANDED,
+.S_BAHN_BRANDED,
+.GREEN_CAMPAIGN_BRANDED {
+  .db-transportchip__line {
+    background: var(--db-transportchip-background-color);
+    color: var(--db-transportchip-text-color);
+    padding: 0 1em / db-font-size('copy', 'm') * db-spacing('s');
+  }
 
   .db-transportchip__line {
-    @include db-transportchip-border(
-      2px,
-      var(--db-primary-button-disabled-background-color)
-    );
+    text-shadow: none;
+  }
+
+  .db-transportchip {
+    rect,
+    circle {
+      fill: var(--db-transportchip-background-color);
+    }
+
+    text,
+    path {
+      fill: var(--db-transportchip-text-color);
+    }
+  }
+}
+
+.DISPLAY .db-transportchip {
+  filter: saturate(0.8) brightness(1.1);
+}
+
+.db-transportchip--canceled {
+  .db-transportchip__line {
+    @include db-transportchip-border(2px, var(--db-primary-button-disabled-background-color));
     background: transparent;
     clip-path: unset; // Hochbahn bus and ferry’s shape won’t allow borders
-    color: var(--db-primary-button-disabled-text-color);
+    color: var(--db-secondary-text-color);
     text-shadow: unset;
   }
 
-  rect,
-  circle {
-    fill: var(--db-primary-button-disabled-background-color);
-  }
+  &.db-transportchip {
+    rect,
+    circle {
+      fill: var(--db-primary-button-disabled-background-color);
+    }
 
-  text,
-  path {
-    fill: var(--db-primary-button-disabled-text-color);
+    text,
+    path {
+      fill: var(--db-primary-button-disabled-text-color);
+    }
   }
 }

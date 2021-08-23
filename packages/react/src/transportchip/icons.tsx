@@ -28,7 +28,7 @@ const Square: React.FunctionComponent<ShapeProps> = ({ fill, children, ...props 
 Square.propTypes = propTypes;
 
 export const SBahn: React.FunctionComponent<ShapeProps> = (props) => (
-  <Circle fill="#006f35" {...props}>
+  <Circle fill="#038531" {...props}>
     <path
       d="M6.49 23.26v-5.03c3.24 5.16 12.01 6.6 12.1 2.33.07-3.8-11.25-.98-12.29-9.94 0-7.42 10.44-8.71 16.54-4.03v4.25c-2.23-2.33-5.38-4.22-7.77-4.22-2.39 0-3.55.92-3.55 2.08-.03 4.5 12.64 2.42 12.64 10.03 0 7.46-10.31 10.16-17.67 4.53z"
       fill="#fff"
@@ -46,7 +46,7 @@ export const AKN: React.FunctionComponent<ShapeProps> = (props) => (
 );
 
 export const UBahn: React.FunctionComponent<ShapeProps> = (props) => (
-  <Square fill="#1455c0" {...props}>
+  <Square fill="#275eb9" {...props}>
     <text x="50%" y="23.5" textAnchor="middle" fontWeight="bold" fontSize="24" fill="#fff">
       U
     </text>
@@ -54,8 +54,7 @@ export const UBahn: React.FunctionComponent<ShapeProps> = (props) => (
 );
 
 export const Tram: React.FunctionComponent<ShapeProps> = (props) => (
-  // The Tram logo must be red (Tokens use different color):
-  <Square fill="#c50014" {...props}>
+  <Square fill="#bb2a40" {...props}>
     <text x="50%" y="18" textAnchor="middle" fontWeight="bold" fontSize="10" fill="#fff">
       Tram
     </text>
@@ -63,7 +62,7 @@ export const Tram: React.FunctionComponent<ShapeProps> = (props) => (
 );
 
 export const Bus: React.FunctionComponent<ShapeProps> = (props) => (
-  <Circle fill="#95276e" {...props}>
+  <Circle fill="#973f87" {...props}>
     <text x="50%" y="19.5" textAnchor="middle" fontWeight="bold" fontSize="12" fill="#fff">
       BUS
     </text>
@@ -71,7 +70,7 @@ export const Bus: React.FunctionComponent<ShapeProps> = (props) => (
 );
 
 export const Ferry: React.FunctionComponent<ShapeProps> = (props) => (
-  <Circle fill="#309fd1" {...props}>
+  <Circle fill="#007eb3" {...props}>
     <path
       d="M11.13 22.99l1.27-6.02h6.37l.83-3.94h-6.37l.92-4.4h6.8l.83-3.95H9.65L5.83 22.91c-.87.22-1.64.54-2.37.87.33.44.69.85 1.06 1.24a9.24 9.24 0 013.76-.8c2.33 0 4 .69 5.79 1.46 3.17 1.37 5.8 1.9 8.38 1.76a14.5 14.5 0 002.61-2c-1.45.38-2.58.44-4.39.38-3.4-.11-6.35-2.01-9.54-2.83z"
       fill="#fff"

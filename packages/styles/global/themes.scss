@@ -27,9 +27,11 @@
   --db-field-primary-text-color: var(--db-primary-text-color);
   --db-field-secondary-text-color: var(--db-secondary-text-color);
   --db-caret-color: #{darken(db-palette-color('dbrot'), 3%)};
-  --db-disabled-text-color: #{db-palette-color('coolgray200')};
+  --db-disabled-text-color: #{#{mix(db-palette-color('coolgray200'),
+  db-palette-color('coolgray300'),
+  80%)}};
   --db-shadow-color: #0000000a;
-  --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 30%)};
+  --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 35%)};
   --db-loud-border-color: #{db-palette-color('coolgray500')};
   --db-focus-ring-color: #0043c740;
   --db-focus-border-color: #{db-border-color('input.focus')};
@@ -67,21 +69,22 @@
   --db-solid-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
   --db-track-background-color: #140f6f;
   --db-track-text-color: #{db-palette-color('coolgray100')};
-  --db-on-time-text-color: #508b1b;
-  --db-on-time-light-text-color: #467a18;
+  --db-on-time-text-color: #038531;
+  --db-on-time-light-text-color: #02822f;
   --db-on-time-background-color: transparent;
   --db-delayed-text-color: #ec0016;
   --db-delayed-light-text-color: #db0014;
   --db-delayed-background-color: transparent;
-  --db-success-color: #006f35;
-  --db-success-background-color: #006f35;
+  --db-success-color: #02822f;
+  --db-success-background-color: #038531;
   --db-success-on-background-color: #fff;
   --db-warning-color: #de2f00;
   --db-warning-background-color: #fb3f0d;
-  --db-warning-on-background-color: #fff;
+  --db-warning-on-background-color: #{db-palette-color('coolgray050')};
   --db-informative-color: #000;
   --db-informative-background-color: #444d60;
   --db-informative-on-background-color: #fff;
+  --db-checkbox-tick-color: var(--db-primary-background-color);
 }
 
 .DB_LIGHT_ALTERNATE,
@@ -98,9 +101,7 @@
   --db-darker-background-color: #{db-palette-color('coolgray200')};
   --db-disabled-text-color: #{db-palette-color('coolgray300')};
   --db-shadow-color: transparent;
-  --db-border-color: #{mix(db-palette-color('coolgray200'),
-  db-palette-color('coolgray300'),
-  70%)};
+  --db-border-color: #{mix(db-palette-color('coolgray200'), db-palette-color('coolgray300'), 70%)};
   --db-loud-border-color: #{db-palette-color('coolgray600')};
   --db-warning-color: #d42c00;
   --db-warning-background-color: #d42c00;
@@ -128,28 +129,24 @@
   --db-focus-border-color: #{db-palette-color('blue300')};
   --db-link-color: #f55;
   --db-link-hover-color: #e41f18;
-  --db-link-pressed-color: #{mix(db-palette-color('red600'),
-  db-palette-color('red700'))};
+  --db-link-pressed-color: #{mix(db-palette-color('red600'), db-palette-color('red700'))};
   --db-link-color: #ff5a5a;
   --db-link-hover-color: #ff7575;
   --db-link-pressed-color: #f89292;
-  --db-underline-color: #{mix(db-palette-color('white'), db-palette-color('coolgray700'), 30%)};
-  --db-link-underline-color: #{mix(#ff5a5a, db-palette-color('coolgray700'), 30%)};
+  --db-underline-color: #{mix(db-palette-color('white'), db-palette-color('coolgray700'), 35%)};
+  --db-link-underline-color: #{mix(#ff5a5a, db-palette-color('coolgray700'), 35%)};
   --db-primary-button-background-color: #fe182e;
   --db-primary-button-hover-background-color: #{darken(#fe182e, 12%)};
   --db-primary-button-pressed-background-color: #{darken(#fe182e, 24%)};
-  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray100')};
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray600')};
   --db-primary-button-text-color: #{db-palette-color('white')};
   --db-primary-button-hover-text-color: #{db-palette-color('white')};
   --db-primary-button-pressed-text-color: #{db-palette-color('white')};
   --db-primary-button-disabled-text-color: #{db-palette-color('coolgray200')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray700')};
   --db-secondary-button-background-color: transparent;
   --db-secondary-button-hover-background-color: #{db-palette-color('coolgray600')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('coolgray500')};
-  --db-primary-button-disabled-background-color: #{rgba(db-palette-color('white'),
-  0.1)};
-  --db-primary-button-disabled-text-color: #{rgba(db-palette-color('white'),
-  0.3)};
   --db-secondary-button-text-color: var(--db-primary-text-color);
   --db-secondary-button-hover-text-color: var(--db-primary-text-color);
   --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
@@ -162,48 +159,51 @@
   --db-solid-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
   --db-track-background-color: #{db-palette-color('white')};
   --db-track-text-color: #140f6f;
+  --db-track-text-color: #{db-palette-color('coolgray800')};
   --db-on-time-background-color: #{db-palette-color('white')};
   --db-delayed-background-color: #{db-palette-color('white')};
-  --db-success-color: #29ab67;
-  --db-success-background-color: #fff;
-  --db-success-on-background-color: #006f35;
-  --db-warning-color: #ff653c;
-  --db-warning-background-color: #fff;
-  --db-warning-on-background-color: #fb3f0d;
-  --db-informative-color: #fff;
-  --db-informative-background-color: #fff;
-  --db-informative-on-background-color: #444d60;
 }
 
 .DB_DARK,
 .DB_DARK_ALTERNATE {
   --db-on-time-text-color: #{db-palette-color('white')};
   --db-on-time-light-text-color: #{db-palette-color('white')};
-  --db-on-time-background-color: #467a18;
+  --db-on-time-background-color: #087d2a;
   --db-delayed-text-color: #{db-palette-color('white')};
   --db-delayed-light-text-color: #{db-palette-color('white')};
-  --db-delayed-background-color: #db0014;
-  --db-border-color: #{mix(db-palette-color('coolgray400'),
-  db-palette-color('coolgray600'),
-  60%)};
+  --db-delayed-background-color: #cc1526;
+  --db-border-color: #{mix(db-palette-color('coolgray400'), db-palette-color('coolgray600'), 40%)};
   --db-loud-border-color: #{db-palette-color('coolgray200')};
+  --db-track-background-color: #4c70ab;
+  --db-track-text-color: #fff;
   --db-caret-color: #ff5a5a;
+  --db-success-color: #018531;
+  --db-success-background-color: #339863;
+  --db-warning-color: #ff653c;
+  --db-warning-background-color: #e64e26;
+  --db-informative-color: #fff;
+  --db-informative-background-color: #{mix(db-palette-color('coolgray400'),
+  db-palette-color('coolgray500'))};
 }
 
 .DB_DARK_ALTERNATE {
-  --db-link-color: #ff433e;
+  --db-link-color: #fa5c57;
   --db-primary-background-color: #{db-palette-color('coolgray800')};
   --db-secondary-background-color: #{db-palette-color('coolgray700')};
   --db-darker-background-color: #{db-palette-color('black')};
-  --db-secondary-text-color: #{mix(db-palette-color('coolgray300'),
-  db-palette-color('coolgray400'))};
-  --db-disabled-text-color: #{db-palette-color('coolgray600')};
-  --db-border-color: #{mix(db-palette-color('coolgray500'),
-  db-palette-color('coolgray700'),
-  60%)};
+  --db-secondary-text-color: #{mix(db-palette-color('coolgray300'), db-palette-color('coolgray400'))};
+  --db-disabled-text-color: #{mix(db-palette-color('coolgray500'),
+  db-palette-color('coolgray600'),
+  30%)};
+  --db-border-color: #{mix(db-palette-color('coolgray500'), db-palette-color('coolgray700'), 65%)};
   --db-solid-button-background-color: #{db-palette-color('coolgray600')};
   --db-solid-button-hover-background-color: #{db-palette-color('coolgray500')};
   --db-solid-button-pressed-background-color: #{db-palette-color('coolgray400')};
+  --db-informative-background-color: #{db-palette-color('coolgray500')};
+  --db-primary-button-disabled-background-color: #{mix(db-palette-color('coolgray600'),
+  db-palette-color('coolgray700'),
+  30%)};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray800')};
 }
 
 .DB_BRANDED,
@@ -219,43 +219,53 @@
   --db-secondary-background-color: #{db-palette-color('white')};
   --db-darker-background-color: #{db-palette-color('red600')};
   --db-primary-text-color: #{db-palette-color('white')};
-  --db-secondary-text-color: #000;
+  --db-secondary-text-color: #fffdfd;
   --db-field-primary-text-color: #{db-palette-color('black')};
   --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
   --db-disabled-text-color: #{db-palette-color('red300')};
-  --db-underline-color: #{mix(#fff, db-palette-color('dbrot'), 30%)};
-  --db-link-underline-color: #{mix(#000, db-palette-color('dbrot'), 30%)};
-  --db-link-color: #000;
+  --db-underline-color: #{mix(#fff, db-palette-color('dbrot'), 50%)};
+  --db-link-underline-color: #{mix(#fff, db-palette-color('dbrot'), 50%)};
+  --db-link-color: #fff;
   --db-link-hover-color: #{mix(#000, db-palette-color('dbrot'), 60%)};
   --db-link-pressed-color: #{mix(#000, db-palette-color('dbrot'), 40%)};
   --db-primary-button-background-color: #{db-palette-color('white')};
   --db-primary-button-hover-background-color: #{db-palette-color('red100')};
   --db-primary-button-pressed-background-color: #{db-palette-color('red200')};
-  --db-primary-button-disabled-background-color: #{rgba(db-palette-color('white'),
-  0.2)};
+  --db-primary-button-disabled-background-color: #{rgba(db-palette-color('white'), 0.2)};
   --db-primary-button-text-color: #{db-palette-color('black')};
   --db-primary-button-hover-text-color: #{db-palette-color('black')};
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
-  --db-primary-button-disabled-text-color: #{rgba(db-palette-color('white'),
-  0.5)};
+  --db-primary-button-disabled-text-color: #{rgba(db-palette-color('white'), 0.5)};
   --db-secondary-button-hover-background-color: #{db-palette-color('red600')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('red700')};
   --db-solid-button-background-color: #{rgba(db-palette-color('black'), 0.2)};
-  --db-solid-button-hover-background-color: #{rgba(db-palette-color('black'),
-  0.3)};
-  --db-solid-button-pressed-background-color: #{rgba(db-palette-color('black'),
-  0.4)};
+  --db-solid-button-hover-background-color: #{rgba(db-palette-color('black'), 0.3)};
+  --db-solid-button-pressed-background-color: #{rgba(db-palette-color('black'), 0.4)};
   --db-track-background-color: #{db-palette-color('white')};
-  --db-track-text-color: #{#140f6f};
+  --db-track-text-color: #{db-palette-color('coolgray800')};
   --db-success-color: #fff;
+  --db-success-background-color: #fff;
+  --db-success-on-background-color: #{db-palette-color('red800')};
   --db-warning-color: #fff;
+  --db-warning-background-color: #fff;
+  --db-warning-on-background-color: #{db-palette-color('red800')};
+  --db-informative-color: #fff;
+  --db-informative-background-color: #fff;
+  --db-informative-on-background-color: #{db-palette-color('red800')};
+  --db-checkbox-tick-color: #000;
 }
 
 .DB_BRANDED {
-  --db-primary-button-disabled-background-color: #ec5758;
+  --db-primary-button-disabled-background-color: #ec5757;
+  --db-primary-button-disabled-text-color: #da2020;
+  --db-primary-button-disabled-background-color: #{db-palette-color('red400')};
+  --db-primary-button-disabled-text-color: #{mix(db-palette-color('red500'),
+  db-palette-color('red600'))};
+  --db-transportchip-background-color: #{db-palette-color('red600')};
+  --db-transportchip-text-color: #fff;
 }
 
-$db-s-bahn-green: #05883c;
+$db-s-bahn-green: #038531;
 
 .S_BAHN_LIGHT,
 .S_BAHN_LIGHT_ALTERNATE {
@@ -284,7 +294,9 @@ $db-s-bahn-green: #05883c;
   --db-link-color: #{db-palette-color('lightgreen400')};
   --db-link-hover-color: #{db-palette-color('lightgreen500')};
   --db-link-pressed-color: #{db-palette-color('lightgreen600')};
-  --db-link-underline-color: #{mix(db-palette-color('lightgreen400'), db-palette-color('white'), 30%)};
+  --db-link-underline-color: #{mix(db-palette-color('lightgreen400'),
+  db-palette-color('white'),
+  30%)};
   --db-primary-button-background-color: #{db-palette-color('lightgreen400')};
   --db-primary-button-hover-background-color: #{db-palette-color('lightgreen500')};
   --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
@@ -293,7 +305,7 @@ $db-s-bahn-green: #05883c;
   --db-caret-color: #{db-palette-color('lightgreen400')};
 }
 
-$db-s-bahn-loud-background: #05883c;
+$db-s-bahn-loud-background: #038531;
 $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
 .S_BAHN_BRANDED,
@@ -301,13 +313,14 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-focus-border-color: #bbffe7;
   --db-primary-background-color: #{$db-s-bahn-loud-background};
   --db-darker-background-color: #{darken($db-s-bahn-loud-background, 2%)};
+  --db-secondary-text-color: #eafff2;
   --db-field-primary-text-color: #{db-palette-color('black')};
   --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
   --db-disabled-text-color: #{mix(#99ccb1, $db-s-bahn-loud-background)};
   --db-link-hover-color: #{mix(#000, $db-s-bahn-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-s-bahn-loud-background, 40%)};
-  --db-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 30%)};
-  --db-link-underline-color: #{mix(#000, $db-s-bahn-loud-background, 30%)};
+  --db-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
+  --db-link-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
   --db-primary-button-background-color: #{db-palette-color('white')};
   --db-primary-button-hover-background-color: #{mix(db-palette-color('coolgray100'),
   db-palette-color('green100'))};
@@ -316,10 +329,17 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-primary-button-text-color: #{db-palette-color('black')};
   --db-primary-button-hover-text-color: #{db-palette-color('black')};
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-disabled-text-color: #{darken($db-s-bahn-loud-background, 3%)};
   --db-secondary-button-hover-background-color: #{darken($db-s-bahn-green, 2%)};
   --db-secondary-button-pressed-background-color: #{darken($db-s-bahn-green, 8%)};
   --db-border-color: #56a17a;
   --db-loud-border-color: #{db-palette-color('green100')};
+  --db-caret-color: #{$db-s-bahn-green};
+  --db-transportchip-background-color: #036123;
+  --db-transportchip-text-color: #fff;
+  --db-success-on-background-color: #0e4a22;
+  --db-warning-on-background-color: #0e4a22;
+  --db-informative-on-background-color: #0e4a22;
 }
 
 .PRIDE_LIGHT,
@@ -341,7 +361,7 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-link-hover-color: #{mix(#000, $db-green-campaign-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-green-campaign-loud-background, 40%)};
   --db-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
-  --db-link-underline-color: #{mix(#000, $db-green-campaign-loud-background, 30%)};
+  --db-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
   --db-focus-border-color: #{db-palette-color('lightgreen100')};
   --db-primary-background-color: #{$db-green-campaign-loud-background};
   --db-field-primary-text-color: #{db-palette-color('black')};
@@ -351,13 +371,17 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-primary-button-text-color: #{db-palette-color('lightgreen400')};
   --db-primary-button-hover-text-color: #{db-palette-color('lightgreen400')};
   --db-primary-button-pressed-text-color: #{db-palette-color('lightgreen400')};
-  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'),
-  6%)};
-  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'),
-  12%)};
+  --db-primary-button-disabled-text-color: #61a518;
+  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'), 6%)};
+  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'), 12%)};
   --db-border-color: #b3dd80;
   --db-loud-border-color: #{db-palette-color('lightgreen100')};
   --db-caret-color: #{db-palette-color('lightgreen400')};
+  --db-transportchip-background-color: #529813;
+  --db-transportchip-text-color: #fff;
+  --db-success-on-background-color: #476847;
+  --db-warning-on-background-color: #476847;
+  --db-informative-on-background-color: #476847;
 }
 
 .DISPLAY {
@@ -371,14 +395,15 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-link-color: #{db-palette-color('cyan300')};
   --db-link-hover-color: #{db-palette-color('cyan400')};
   --db-link-pressed-color: #{db-palette-color('cyan500')};
-  --db-underline-color: #{mix(#000, #213a7e, 30%)};
-  --db-link-underline-color: #{mix(#fff, #213a7e, 30%)};
+  --db-underline-color: #{mix(#fff, #213a7e, 30%)};
+  --db-link-underline-color: #{mix(db-palette-color('cyan300'), #213a7e, 40%)};
   --db-primary-button-background-color: #{db-palette-color('white')};
   --db-primary-button-hover-background-color: #{db-palette-color('blue100')};
   --db-primary-button-pressed-background-color: #{db-palette-color('blue200')};
   --db-primary-button-text-color: #{db-palette-color('black')};
   --db-primary-button-hover-text-color: #{db-palette-color('black')};
   --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-disabled-text-color: #{darken(#213a7e, 3%)};
   --db-secondary-button-hover-background-color: #{db-palette-color('blue600')};
   --db-secondary-button-pressed-background-color: #{db-palette-color('blue500')};
   --db-solid-button-background-color: #142a65;
@@ -386,5 +411,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-solid-button-pressed-background-color: #030d27;
   --db-border-color: #3e5c90;
   --db-loud-border-color: #{db-palette-color('blue100')};
-  --db-caret-color: #213a7e;
+  --db-caret-color: #387df5;
+  --db-success-on-background-color: #038531;
+  --db-warning-on-background-color: #e73504;
+  --db-informative-on-background-color: #121e3f;
 }

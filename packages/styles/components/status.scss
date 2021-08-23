@@ -45,9 +45,17 @@
   }
 }
 
+.db-status--warning,
+.db-status--error {
+  path {
+    stroke-width: 2.1;
+  }
+}
+
 .db-status--error,
 .db-status--fatal {
   color: var(--db-warning-color);
+  font-weight: 550;
 
   path {
     stroke: var(--db-warning-on-background-color);
