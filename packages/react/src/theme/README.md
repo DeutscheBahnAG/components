@@ -29,6 +29,7 @@ import {
   Title,
   Copy,
   Triptimespan,
+  Status,
 } from '@db-design/react';
 import Icons from '@db-design/react-icons';
 import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
@@ -114,7 +115,7 @@ const themeNames = Object.keys(Theme.themes);
       <p style={{ marginTop: `${spacing.xl}px` }}>
         <Copy size={Copy.sizes.M}>Travel information:</Copy>
         <Copy variant={Copy.variants.SECONDARY} size={Copy.sizes.S}>
-          (possible but not recommended on coloured background)
+          (possible but not recommended on branded background)
         </Copy>
       </p>
       <div
@@ -125,31 +126,59 @@ const themeNames = Object.keys(Theme.themes);
         }}
       >
         <Copy>
-          <Triptimespan
-            departureDateTime="09:54"
-            predictedDepartureDateTime="09:57"
-            arrivalDateTime="12:48"
-            predictedArrivalDateTime="13:07"
-          />
-          {'   '}
-          <Transportchip name="ICE 123" />
-          {'   '}
-          <Transportchip name="IC 456" />
-          {'   '}
-          <Transportchip name="S1" zipCode="10111" showProductLogo />
-          {'   '}
-          <Transportchip name="U12" zipCode="10111" showProductLogo />
-          {'   '}
-          <Transportchip
-            name="M10"
-            zipCode="10111"
-            showProductLogo
-            product="tram"
-          />
-          {'   '}
+          <span
+            style={{
+              width: '600px',
+              display: 'inline-block',
+              textAlign: 'left',
+            }}
+          >
+            <Triptimespan
+              departureDateTime="09:54"
+              predictedDepartureDateTime="09:57"
+              arrivalDateTime="12:48"
+              predictedArrivalDateTime="13:07"
+            />
+            {'      '}
+            <Transportchip name="ICE 123" />
+            {'   '}
+            <Transportchip name="IC 456" />
+            {'   '}
+            <Transportchip name="S1" zipCode="10111" showProductLogo />
+            {'   '}
+            <Transportchip name="U12" zipCode="10111" showProductLogo />
+            {'   '}
+            <Transportchip
+              name="M10"
+              zipCode="10111"
+              showProductLogo
+              product="tram"
+            />
+          </span>
           <Track track="2a" />
         </Copy>
       </div>
+      <Copy
+        className="statusPreview"
+        style={{ lineHeight: '24px', width: '240px', margin: 'auto' }}
+      >
+        <Status severity={Status.severities.SUCCESS}>
+          This feature is included
+        </Status>
+        <Status severity={Status.severities.WARNING}>
+          This feature is not included
+        </Status>
+        <Status severity={Status.severities.INFORMATIVE}>
+          This feature is optional
+        </Status>
+        <Status severity={Status.severities.ERROR}>
+          This feature got removed
+        </Status>
+        <Status severity={Status.severities.FATAL}>
+          No information available
+        </Status>
+        <style>{`.statusPreview .db-inline-spacer { margin-top: 4px }`}</style>
+      </Copy>
     </Container>
   </Theme>
 </div>;
