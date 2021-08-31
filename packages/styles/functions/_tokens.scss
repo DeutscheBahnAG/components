@@ -15,7 +15,7 @@
     }
   }
 
-  $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DBX tokens map. Valid values are: (#{map-keys($tokens-map)})';
+  $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DB tokens map. Valid values are: (#{map-keys($tokens-map)})';
   @if (
     str-index($token-name, 'turquois') and not
     str-index($token-name, 'turquoise')
