@@ -13,6 +13,7 @@
   text-decoration-thickness: 1px;
 
   @if $target == '' {
+    font-weight: 550;
     text-decoration-line: underline;
     text-decoration-color: $underline-color;
 
@@ -31,6 +32,7 @@
   }
   @else {
     #{unquote($target)} {
+      font-weight: 550;
       text-decoration-line: underline;
       text-decoration-color: $underline-color;
     }
