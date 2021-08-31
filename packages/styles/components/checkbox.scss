@@ -125,14 +125,10 @@ $db-checkbox-gap: 0.5em;
   flex-direction: column;
   grid-gap: db-spacing('s');
   margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em) /* 4 */;
-  margin-top: db-spacing('xs');
+  margin-top: db-spacing('s') - 2px;
 
   > a {
     @include db-secondary-link;
-  }
-
-  > * + * {
-    margin-top: db-spacing('xs');
   }
 
   > a + p {
