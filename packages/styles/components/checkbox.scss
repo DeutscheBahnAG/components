@@ -11,7 +11,7 @@
 
 $db-checkbox-size: 16px;
 $db-checkbox-outer-size: $db-checkbox-size + 2 * db-border-width('checkbox');
-$db-checkbox-gap: 0.4em;
+$db-checkbox-gap: 0.5em;
 
 .db-checkbox {
   @include db-text-style('copy', 'm');
