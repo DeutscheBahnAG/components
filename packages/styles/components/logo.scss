@@ -80,14 +80,14 @@ $db-logo-sizes: (
 }
 
 @each $size, $height in $db-logo-sizes {
-  .db-logo--#{$size} {
+  .db-logo--size-#{$size} {
     border-radius: math.div($height, 7.1);
     height: $height;
     width: math.div($height, 7) * 10;
   }
 
-  .db-logo--#{$size} ~ .db-pulse,
-  .db-pulse--#{$size} {
+  .db-logo--size-#{$size} ~ .db-pulse,
+  .db-pulse--size-#{$size} {
     /**
      * 3. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
      */

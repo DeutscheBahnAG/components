@@ -134,7 +134,7 @@ const Button: ButtonType = ({
           { 'db-button--block': fullWidth },
           { 'db-button--disabled': disabled },
           { 'db-button--loading': loading },
-          size && `db-button--${size}`,
+          size && `db-button--size-${size}`,
           className
         )}
         {...otherProps}

@@ -37,7 +37,7 @@ $code-background-color: db-background-color('secondary');
     --db-primary-background-color: #{db-palette-color('coolgray100')};
     --db-secondary-background-color: #{db-palette-color('white')};
     @extend .db-textfield;
-    @extend .db-textfield--m;
+    @extend .db-textfield--size-m;
     margin: db-spacing('m');
     padding: 0;
   }
@@ -388,5 +388,5 @@ h1[class^='rsg--heading'],
 #rsg-root [data-testid='Button-isolate-button'] {
   @extend .db-button--hover-only;
   @extend .db-button--round;
-  @extend .db-button--m;
+  @extend .db-button--size-m;
 }

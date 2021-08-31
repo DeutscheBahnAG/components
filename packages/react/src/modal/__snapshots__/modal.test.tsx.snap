@@ -41,7 +41,7 @@ exports[`Modal Component alertdialog role 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -220,7 +220,7 @@ exports[`Modal Component render PrimaryButton 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -261,7 +261,7 @@ exports[`Modal Component render PrimaryButton 1`] = `
               class="db-modal__action db-modal__action--primary"
             >
               <button
-                class="db-button db-button--primary db-button--default db-button--l"
+                class="db-button db-button--primary db-button--default db-button--size-l"
                 type="button"
               >
                 Primary Button Here
@@ -348,7 +348,7 @@ exports[`Modal Component render SecondaryButton 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -389,7 +389,7 @@ exports[`Modal Component render SecondaryButton 1`] = `
               class="db-modal__action db-modal__action--secondary"
             >
               <button
-                class="db-button db-button--primary db-button--default db-button--l"
+                class="db-button db-button--primary db-button--default db-button--size-l"
                 type="button"
               >
                 Secondary Button Here
@@ -453,7 +453,7 @@ exports[`Modal Component render optional properties 1`] = `
             class="db-modal__header"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Custom text"
               type="button"
             >
@@ -545,7 +545,7 @@ exports[`Modal Component render required properties only 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -636,7 +636,7 @@ exports[`Modal Component size auto 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -740,7 +740,7 @@ exports[`Modal Component size l 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -841,7 +841,7 @@ exports[`Modal Component size m 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >
@@ -939,7 +939,7 @@ exports[`Modal Component size s 1`] = `
             class="db-modal__header db-modal__header--collapse"
           >
             <button
-              class="db-button db-button--hover-only db-button--square db-button--m db-modal__closebutton"
+              class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
               title="Close the dialogue"
               type="button"
             >

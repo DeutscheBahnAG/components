@@ -124,7 +124,7 @@
 }
 
 @each $size in (xl l m s xs) {
-  .db-button--#{$size} {
+  .db-button--size-#{$size} {
     @include db-component-text-style($size, 'button');
     @include db-component-padding($size, 'button');
 

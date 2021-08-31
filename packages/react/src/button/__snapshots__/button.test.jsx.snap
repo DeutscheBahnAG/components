@@ -3,7 +3,7 @@
 exports[`Button Component should render a button 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     type="button"
   >
     My button 1
@@ -19,7 +19,7 @@ exports[`Button Component should render a button 1`] = `
 exports[`Button Component should render a button when \`href\` is not set 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     type="button"
   >
     My button 7
@@ -35,7 +35,7 @@ exports[`Button Component should render a button when \`href\` is not set 1`] = 
 exports[`Button Component should render a button with addional attributes 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     title="Click me"
     type="button"
   >
@@ -52,7 +52,7 @@ exports[`Button Component should render a button with addional attributes 1`] = 
 exports[`Button Component should render a button with addional classes 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--l my-class"
+    class="db-button db-button--primary db-button--default db-button--size-l my-class"
     type="button"
   >
     My button 6
@@ -69,7 +69,7 @@ exports[`Button Component should render a button with custom \`aria-label\` 1`] 
 <div>
   <button
     aria-label="This is a custom aria-label"
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     type="button"
   >
     My button 9
@@ -85,7 +85,7 @@ exports[`Button Component should render a button with custom \`aria-label\` 1`] 
 exports[`Button Component should render a full-width button 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--block db-button--l"
+    class="db-button db-button--primary db-button--default db-button--block db-button--size-l"
     type="button"
   >
     My button 4
@@ -101,7 +101,7 @@ exports[`Button Component should render a full-width button 1`] = `
 exports[`Button Component should render a secondary button 1`] = `
 <div>
   <button
-    class="db-button db-button--secondary db-button--default db-button--l"
+    class="db-button db-button--secondary db-button--default db-button--size-l"
     type="button"
   >
     My button 3
@@ -117,7 +117,7 @@ exports[`Button Component should render a secondary button 1`] = `
 exports[`Button Component should render a submit button 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     type="submit"
   >
     My button 2
@@ -133,7 +133,7 @@ exports[`Button Component should render a submit button 1`] = `
 exports[`Button Component should render an anchor when \`href\` is set 1`] = `
 <div>
   <a
-    class="db-button db-button--primary db-button--default db-button--l"
+    class="db-button db-button--primary db-button--default db-button--size-l"
     href="#"
   >
     My button 8

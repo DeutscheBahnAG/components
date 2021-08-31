@@ -21,7 +21,7 @@
 @each $size in (xl l m s xs) {
   $textsize: db-component-textsize($size);
 
-  .db-track--#{$size} {
+  .db-track--size-#{$size} {
     border-radius: db-border-radius($size);
     font-size: db-font-size('copy', $textsize);
     height: db-size($size);

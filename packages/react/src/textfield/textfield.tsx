@@ -107,7 +107,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
           className={clsx(
             'db-textfield',
             `db-textfield--${type}`,
-            `db-textfield--${fieldSize}`,
+            `db-textfield--size-${fieldSize}`,
             {
               'db-textfield--filled': !!value,
               'db-textfield--inline-label': !!inlineLabel,

@@ -29,7 +29,7 @@ const Track: TrackComponent = ({ track, size, labels, className, ...props }) => 
   const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
   const { platform, platformAbbreviation } = labels ?? defaultLabels;
   return (
-    <span className={clsx('db-track', `db-track--${size}`, className)} {...props}>
+    <span className={clsx('db-track', `db-track--size-${size}`, className)} {...props}>
       {number ? (
         <>
           {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}

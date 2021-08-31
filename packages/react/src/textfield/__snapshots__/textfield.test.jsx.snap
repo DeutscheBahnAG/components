@@ -3,7 +3,7 @@
 exports[`Textfield Component should render a disabled input 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled db-textfield--disabled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled db-textfield--disabled"
   >
     <input
       disabled=""
@@ -22,7 +22,7 @@ exports[`Textfield Component should render a disabled input 1`] = `
 exports[`Textfield Component should render a disabled textarea 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--textarea db-textfield--xl db-textfield--filled db-textfield--disabled"
+    class="db-textfield db-textfield--textarea db-textfield--size-xl db-textfield--filled db-textfield--disabled"
   >
     <textarea
       disabled=""
@@ -41,7 +41,7 @@ exports[`Textfield Component should render a disabled textarea 1`] = `
 exports[`Textfield Component should render a number input 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--number db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--number db-textfield--size-xl db-textfield--filled"
   >
     <input
       type="number"
@@ -59,7 +59,7 @@ exports[`Textfield Component should render a number input 1`] = `
 exports[`Textfield Component should render a read-only input 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled db-textfield--readonly"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled db-textfield--readonly"
   >
     <input
       readonly=""
@@ -78,7 +78,7 @@ exports[`Textfield Component should render a read-only input 1`] = `
 exports[`Textfield Component should render a text input 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
       type="text"
@@ -96,7 +96,7 @@ exports[`Textfield Component should render a text input 1`] = `
 exports[`Textfield Component should render a textarea 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--textarea db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--textarea db-textfield--size-xl db-textfield--filled"
   >
     <textarea>
       Textarea
@@ -113,7 +113,7 @@ exports[`Textfield Component should render a textarea 1`] = `
 exports[`Textfield Component should use a prefix 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <span
       class="db-textfield-prefix"
@@ -136,7 +136,7 @@ exports[`Textfield Component should use a prefix 1`] = `
 exports[`Textfield Component should use a suffix 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
       type="text"
@@ -159,7 +159,7 @@ exports[`Textfield Component should use a suffix 1`] = `
 exports[`Textfield Component should use an unit after the field 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
       type="text"
@@ -182,7 +182,7 @@ exports[`Textfield Component should use an unit after the field 1`] = `
 exports[`Textfield Component should use an unit before the field 1`] = `
 <div>
   <div
-    class="db-textfield db-textfield--text db-textfield--xl db-textfield--filled"
+    class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <span
       class="db-textfield-prefix"

@@ -151,7 +151,7 @@
 }
 
 @each $size in (xl l m s xs) {
-  .db-textfield--#{$size} {
+  .db-textfield--size-#{$size} {
     $horizontal-padding: db-component-horizontal-padding($size, 'input');
     $vertical-padding: db-component-vertical-padding($size, 'input');
 
