@@ -70,8 +70,8 @@
 /// @param {String} $text-color--pressed - The text-color used on press (:active)
 @mixin db-secondary-link(
   $text-color: var(--db-primary-text-color),
-  $text-color--hover: var(--db-link-hover-color),
-  $text-color--pressed: var(--db-link-pressed-color),
+  $text-color--hover: var(--db-link-color),
+  $text-color--pressed: var(--db-link-hover-color),
   $target: '',
   $underline: true
 ) {
