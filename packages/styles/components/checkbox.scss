@@ -128,7 +128,7 @@ $db-checkbox-gap: 0.5em;
   margin-top: db-spacing('xs');
 
   > a {
-    @include db-primary-link;
+    @include db-secondary-link;
   }
 
   > * + * {
