@@ -59,7 +59,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   max-width: map-get($breakpoints, xlarge);
   height: calc(var(--db-vh, 1vh) * 100 - #{2 * db-spacing('s')});
   padding: $db-modal--dialog-padding-y-mobile $db-modal--dialog-padding-x-mobile;
-  border-radius: db-border-radius('xl') * 2;
+  border-radius: db-border-radius('modal');
   box-shadow: map-get($db-shadows, high);
   background-color: var(--db-primary-background-color);
 
