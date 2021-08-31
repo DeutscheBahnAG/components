@@ -131,8 +131,34 @@ It’s possible to use more than one link in the footer:
 
 ```jsx
 <Checkbox>
-  The label of the Checkbox can get a very long text which is sometimes needed
-  for accepting terms of use or privacy terms. In this case the label wraps
-  nicely and the checkbox stays aligned with the first line of the label.
+  The label of the Checkbox can get a very long text which is sometimes needed for accepting terms
+  of use or privacy terms. In this case the label wraps nicely and the checkbox stays aligned with
+  the first line of the label.
 </Checkbox>
+```
+
+## Error messages
+
+Currently error messages need to be set manually. The footer is a great place to keep them aligned
+with the label:
+
+```jsx
+import { Status } from '@db-design/react';
+<Checkbox footer={<Status severity={Status.severities.FATAL}>Please check this checkbox</Status>}>
+  Check me
+</Checkbox>;
+```
+
+```jsx
+import { Status } from '@db-design/react';
+<Checkbox
+  footer={
+    <>
+      <a href="#terms">Read our Terms and Conditions</a>{' '}
+      <Status severity={Status.severities.FATAL}>You must accept the Terms and Conditions</Status>
+    </>
+  }
+>
+  I accept the <b>Terms and Conditions</b>.
+</Checkbox>;
 ```

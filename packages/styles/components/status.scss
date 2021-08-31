@@ -8,7 +8,7 @@
     $icon-safe-area: 2px;
     flex-shrink: 0;
     height: db-icon-size('s');
-    margin: 0 db-spacing('xs') 0 #{-$icon-safe-area};
+    margin: 0 db-spacing('xs') 0 #{-$icon-safe-area - 1px};
     position: relative;
     top: 5px;
     width: db-icon-size('s');
