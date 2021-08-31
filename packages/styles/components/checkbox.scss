@@ -23,7 +23,7 @@ $db-checkbox-gap: 0.4em;
   user-select: none;
 
   input {
-    @include db-focus-ring($target: '+ .db-checkbox-box');
+    @include db-focus-ring($target: '+ .db-checkbox__box');
     height: 100%; /* 1 */
     min-height: 24px; /* 1 */
     min-width: 24px; /* 1 */
@@ -38,7 +38,7 @@ $db-checkbox-gap: 0.4em;
   }
 }
 
-.db-checkbox-box {
+.db-checkbox__box {
   background: var(--db-primary-background-color);
   border: db-border-width('checkbox') solid;
   border-radius: 2.2px;
@@ -64,43 +64,43 @@ $db-checkbox-gap: 0.4em;
   }
 }
 
-.db-checkbox-checked,
-.db-checkbox-indeterminate {
+.db-checkbox__checked,
+.db-checkbox__indeterminate {
   fill: transparent;
   transform: scale(0);
   transform-origin: center;
   transition: all 0.1s cubic-bezier(0.3, 0, 0.8, 1.8);
 }
 
-:indeterminate + .db-checkbox-box .db-checkbox-indeterminate {
+:indeterminate + .db-checkbox__box .db-checkbox__indeterminate {
   fill: currentColor;
   transform: scale(1);
 }
 
-:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked {
+:checked:not(:indeterminate) + .db-checkbox__box .db-checkbox__checked {
   fill: var(--db-checkbox-tick-color);
   transform: scale(1);
 }
 
-:active:indeterminate + .db-checkbox-box .db-checkbox-indeterminate,
-:active:checked:not(:indeterminate) + .db-checkbox-box .db-checkbox-checked {
+:active:indeterminate + .db-checkbox__box .db-checkbox__indeterminate,
+:active:checked:not(:indeterminate) + .db-checkbox__box .db-checkbox__checked {
   transform: scale(0.9);
 }
 
-:checked:disabled + .db-checkbox-box .db-checkbox-checked {
+:checked:disabled + .db-checkbox__box .db-checkbox-checked {
   fill: var(--db-primary-button-disabled-text-color);
 }
 
-:checked:not(:indeterminate) + .db-checkbox-box {
+:checked:not(:indeterminate) + .db-checkbox__box {
   border-color: transparent;
   background: currentColor;
 }
 
-:disabled + .db-checkbox-box {
+:disabled + .db-checkbox__box {
   color: var(--db-primary-button-disabled-background-color);
 }
 
-.db-checkbox-label {
+.db-checkbox__label {
   margin-left: $db-checkbox-gap;
 
   a {
