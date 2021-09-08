@@ -80,8 +80,12 @@ $db-checkbox-gap: 0.5em;
   transform: scale(1);
 }
 
-:active:indeterminate + .db-checkbox__box .db-checkbox__indeterminate,
-:active:checked:not(:indeterminate) + .db-checkbox__box .db-checkbox__checked {
+:checked:disabled:not(:indeterminate) + .db-checkbox__box .db-checkbox__checked {
+  fill: var(--db-primary-background-color);
+}
+
+:active:indeterminate:not(:disabled) + .db-checkbox__box .db-checkbox__indeterminate,
+:active:checked:not(:indeterminate):not(:disabled) + .db-checkbox__box .db-checkbox__checked {
   transform: scale(0.9);
 }
 
