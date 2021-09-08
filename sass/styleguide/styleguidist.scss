@@ -345,7 +345,7 @@ main.rsg--content-3 {
 
 #rsg-root [class^='rsg--button-'] {
   @extend .db-button--solid;
-  @extend .db-button--s;
+  @extend .db-button--size-s;
   text-transform: none;
 }
 

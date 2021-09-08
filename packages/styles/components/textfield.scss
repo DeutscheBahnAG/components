@@ -224,7 +224,7 @@
   */
 .db-textfield {
   @each $size in (xl l m s xs) {
-    .db-button--#{$size} {
+    .db-button--size-#{$size} {
       margin: #{(db-line-height('copy', 'm') - db-size($size)) * 0.5};
     }
   }
