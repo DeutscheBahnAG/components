@@ -43,6 +43,8 @@ const textfieldPropTypes = {
   onChange: PropTypes.func,
   /** Inline label */
   inlineLabel: PropTypes.string,
+  /** Width in characters (equals `<input size="10">`) */
+  htmlSize: PropTypes.number,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -70,6 +72,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
       suffix = null,
       onChange = null,
       inlineLabel = null,
+      htmlSize = null,
       ...otherProps
     },
     fieldRef
@@ -94,6 +97,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
       <Field
         ref={fieldRef}
         placeholder={otherProps.placeholder || ' ' /* Important for baseline alignment! */}
+        size={htmlSize || undefined}
         {...otherProps}
         value={value ?? ''}
         type={type === 'textarea' ? undefined : type ?? 'text'}

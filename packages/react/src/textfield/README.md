@@ -33,6 +33,12 @@ All attributes of an HTML [<input\> field](https://developer.mozilla.org/en-US/d
 ```
 
 ```jsx
+<Textfield htmlSize="5" />
+```
+
+Instead of `size`, `htmlSize` must be used, when limiting the field’s width based on characters.
+
+```jsx
 <Textfield spellCheck="false" />
 ```
 
