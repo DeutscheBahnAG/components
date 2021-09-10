@@ -83,8 +83,8 @@ $code-background-color: db-background-color('secondary');
     margin-bottom: db-spacing('m');
   }
 
-  [class^='rsg--para-'],
-  [class^='rsg--li-'] {
+  p[class^='rsg--para-'],
+  li[class^='rsg--li-'] {
     @include db-text-style('copy', 'm');
     color: db-text-color('primary');
     margin-bottom: db-spacing('m');
@@ -108,12 +108,12 @@ $code-background-color: db-background-color('secondary');
     }
   }
 
-  [class^='rsg--li-'] {
+  li[class^='rsg--li-'] {
     margin-bottom: db-spacing('s');
   }
 
-  [class^='rsg--ul-'],
-  [class^='rsg--ol-'] {
+  ul[class^='rsg--ul-'],
+  ol[class^='rsg--ol-'] {
     margin-bottom: db-spacing('m');
   }
 
