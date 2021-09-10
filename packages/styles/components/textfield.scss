@@ -137,6 +137,15 @@
     transition: color 0.4;
   }
 
+  input {
+    opacity: 0;
+  }
+
+  &.db-textfield--filled input,
+  &:focus-within input {
+    opacity: 1;
+  }
+
   &:focus-within ::placeholder {
     color: var(--db-field-secondary-text-color);
   }
