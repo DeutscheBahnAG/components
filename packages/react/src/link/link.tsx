@@ -9,7 +9,7 @@ import {
   NavigationArrowBack,
 } from '@db-design/react-icons';
 
-enum IconPositions {
+enum LinkIconPositions {
   NONE = 'none',
   AUTO = 'auto',
   BEFORE = 'before',
@@ -39,14 +39,14 @@ interface LinkProps extends Record<string, any> {
   icon?: React.ReactNode;
   loading?: boolean;
   loadingLabel?: string;
-  iconPosition?: IconPositions;
+  iconPosition?: LinkIconPositions;
   style?: React.CSSProperties;
   type?: LinkTypes;
   variant?: LinkVariants;
 }
 
 type LinkType = React.FunctionComponent<LinkProps> & {
-  iconPositions: typeof IconPositions;
+  iconPositions: typeof LinkIconPositions;
   types: typeof LinkTypes;
   variants: typeof LinkVariants;
 };
@@ -58,7 +58,7 @@ const Link: LinkType = ({
   download = false,
   href = undefined,
   icon: customIcon,
-  iconPosition = IconPositions.AUTO,
+  iconPosition = LinkIconPositions.AUTO,
   style = {},
   type = undefined,
   variant = LinkVariants.PRIMARY,
@@ -70,7 +70,7 @@ const Link: LinkType = ({
     customIcon ||
     (download && <ActionDownload />) ||
     (isExternal && <NavigationLinkExternal className="db-link__icon-arrow" />) ||
-    (iconPosition === IconPositions.BEFORE ? (
+    (iconPosition === LinkIconPositions.BEFORE ? (
       <NavigationArrowBack className="db-link__icon-arrow" />
     ) : (
       <NavigationArrowForward className="db-link__icon-arrow" />
@@ -90,18 +90,18 @@ const Link: LinkType = ({
         className={clsx('db-link', `db-link--${variant}`, className)}
         {...otherProps}
       >
-        {(iconPosition === IconPositions.BEFORE && icon) ||
-          (iconPosition === IconPositions.AUTO && (download || customIcon) && icon)}
+        {(iconPosition === LinkIconPositions.BEFORE && icon) ||
+          (iconPosition === LinkIconPositions.AUTO && (download || customIcon) && icon)}
         <span>{children}</span>
-        {(iconPosition === IconPositions.AFTER && icon) ||
-          (iconPosition === IconPositions.AUTO && !download && !customIcon && icon)}
+        {(iconPosition === LinkIconPositions.AFTER && icon) ||
+          (iconPosition === LinkIconPositions.AUTO && !download && !customIcon && icon)}
       </Element>
       <span className="db-inline-spacer"> </span>
     </>
   );
 };
 
-Link.iconPositions = IconPositions;
+Link.iconPositions = LinkIconPositions;
 Link.types = LinkTypes;
 Link.variants = LinkVariants;
 
