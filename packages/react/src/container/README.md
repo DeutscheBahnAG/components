@@ -7,9 +7,7 @@ import { Container } from '@db-design/react';
 ```jsx noeditor
 import { Notification, Button } from '@db-design/react';
 const onClick = () => {
-  const isolatedLink = document.querySelector(
-    '[data-testid="Container-isolate-button"]'
-  );
+  const isolatedLink = document.querySelector('[data-testid="Container-isolate-button"]');
   if (isolatedLink) {
     isolatedLink.click();
   }
@@ -134,10 +132,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width={Container.widths.TEXT}>
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
-      hendrerit nisl facilisis. Duise consequat libero vela urnat pellentesque,
-      lobortis porta ligula. Nulla facilisi. Morbi placerat ex a arcu tristique,
-      non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
+      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
+      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
     </Copy>
   </Container>
 </Container>;
@@ -154,10 +151,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width={Container.widths.TEXT}>
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
-      hendrerit nisl facilisis. Duise consequat libero vela urnat pellentesque,
-      lobortis porta ligula. Nulla facilisi. Morbi placerat ex a arcu tristique,
-      non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
+      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
+      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
     </Copy>
   </Container>
 </Container>;
@@ -174,10 +170,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width={Container.widths.TEXT} align={Container.alignments.LEFT}>
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
-      hendrerit nisl facilisis. Duise consequat libero vela urnat pellentesque,
-      lobortis porta ligula. Nulla facilisi. Morbi placerat ex a arcu tristique,
-      non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
+      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
+      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
     </Copy>
   </Container>
 </Container>;
@@ -195,10 +190,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   <Container width={Container.widths.CONTENT} align={Container.alignments.LEFT}>
     <Container width={Container.widths.TEXT}>
       <Copy>
-        Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac
-        urna hendrerit nisl facilisis. Duise consequat libero vela urnat
-        pellentesque, lobortis porta ligula. Nulla facilisi. Morbi placerat ex a
-        arcu tristique, non viverra metus mollis.
+        Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
+        facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
+        facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
       </Copy>
     </Container>
   </Container>
@@ -209,17 +203,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container
-  filled
-  width={Container.widths.FULL}
-  align={Container.alignments.CENTER}
->
+<Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
   <Theme theme={Theme.themes.DB_ALTERNATE}>
-    <Container
-      filled
-      width={Container.widths.CONTENT}
-      align={Container.alignments.CENTER}
-    >
+    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
       <Logo />
       <Pulse>
         <Title>Headline</Title>
@@ -232,17 +218,9 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 <Theme theme={Theme.themes.DB_ALTERNATE}>
-  <Container
-    filled
-    width={Container.widths.FULL}
-    align={Container.alignments.CENTER}
-  >
+  <Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
     <Theme theme={Theme.themes.DB}>
-      <Container
-        filled
-        width={Container.widths.CONTENT}
-        align={Container.alignments.CENTER}
-      >
+      <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
         <Logo />
         <Pulse>
           <Title>Headline</Title>

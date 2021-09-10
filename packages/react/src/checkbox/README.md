@@ -54,11 +54,7 @@ const ExampleComponent = () => {
 
   return (
     <>
-      <Checkbox
-        indeterminate={isIndeterminate}
-        checked
-        onClick={handleCheckboxClick}
-      >
+      <Checkbox indeterminate={isIndeterminate} checked onClick={handleCheckboxClick}>
         Checkbox indeterminate checked
       </Checkbox>
       <Button

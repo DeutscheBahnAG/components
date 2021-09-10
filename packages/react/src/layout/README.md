@@ -7,15 +7,11 @@ import { Layout } from '@db-design/react';
 ```
 
 ```jsx static
-<Layout variant={Layout.variants.CENTERED}>
-  {/* See <Container> documentation */}
-</Layout>
+<Layout variant={Layout.variants.CENTERED}>{/* See <Container> documentation */}</Layout>
 ```
 
 ```jsx static
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  {/* See <Container> documentation */}
-</Layout>
+<Layout variant={Layout.variants.LEFT_ALIGNED}>{/* See <Container> documentation */}</Layout>
 ```
 
 ```jsx static

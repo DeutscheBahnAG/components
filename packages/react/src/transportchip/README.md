@@ -120,8 +120,7 @@ import { Copy, Title } from '@db-design/react';
 
 ```jsx
 <>
-  Take <Transportchip href="#s-1" name="S 1" /> or{' '}
-  <Transportchip href="#u-5" name="U 5" />
+  Take <Transportchip href="#s-1" name="S 1" /> or <Transportchip href="#u-5" name="U 5" />
 </>
 ```
 
@@ -154,11 +153,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 'S1 S2 S25 S26 S3 S41 S42 S46 S47 S5 S7 S75 S8 S85 S9'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="10115"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="10115" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -168,11 +163,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 'U1 U12 U2 U3 U4 U5 U55 U6 U7 U8 U9'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="10115"
-      product={Transportchip.products.SUBWAY}
-      name={name}
-    />
+    <Transportchip zipCode="10115" product={Transportchip.products.SUBWAY} name={name} />
   ));
 ```
 
@@ -231,11 +222,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 'S1 S11 S2 S21 S3 S31'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="20000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="20000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -245,11 +232,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 'AKN A1  AKN A2  AKN A3'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="25000"
-      product={Transportchip.products.REGIONAL}
-      name={name}
-    />
+    <Transportchip zipCode="25000" product={Transportchip.products.REGIONAL} name={name} />
   ));
 ```
 
@@ -274,11 +257,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
 'U1 U2 U3 U4 U5'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="20000"
-      product={Transportchip.products.SUBWAY}
-      name={name}
-    />
+    <Transportchip zipCode="20000" product={Transportchip.products.SUBWAY} name={name} />
   ));
 ```
 
@@ -288,11 +267,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
 '1 29 X3 X86 31 37 111 978 600 688 837 8129 1705 8895'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="20000"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
+    <Transportchip zipCode="20000" product={Transportchip.products.BUS} name={name} />
   ));
 ```
 
@@ -302,11 +277,7 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
 '61 62 72 73 75'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="20000"
-      product={Transportchip.products.FERRY}
-      name={name}
-    />
+    <Transportchip zipCode="20000" product={Transportchip.products.FERRY} name={name} />
   ));
 ```
 
@@ -314,49 +285,17 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 
 ```jsx noeditor
 <div className="sg-components-transportationchip-list">
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.SUBURBAN}
-    name="S 1"
-  />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.SUBURBAN}
-    name="S 2"
-  />
+  <Transportchip zipCode="20000" product={Transportchip.products.SUBURBAN} name="S 1" />
+  <Transportchip zipCode="20000" product={Transportchip.products.SUBURBAN} name="S 2" />
   <br />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.SUBWAY}
-    name="U 3"
-  />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.SUBWAY}
-    name="U 4"
-  />
+  <Transportchip zipCode="20000" product={Transportchip.products.SUBWAY} name="U 3" />
+  <Transportchip zipCode="20000" product={Transportchip.products.SUBWAY} name="U 4" />
   <br />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.BUS}
-    name="29"
-  />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.BUS}
-    name="X3"
-  />
+  <Transportchip zipCode="20000" product={Transportchip.products.BUS} name="29" />
+  <Transportchip zipCode="20000" product={Transportchip.products.BUS} name="X3" />
   <br />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.FERRY}
-    name="61"
-  />
-  <Transportchip
-    zipCode="20000"
-    product={Transportchip.products.FERRY}
-    name="62"
-  />
+  <Transportchip zipCode="20000" product={Transportchip.products.FERRY} name="61" />
+  <Transportchip zipCode="20000" product={Transportchip.products.FERRY} name="62" />
 </div>
 ```
 
@@ -368,11 +307,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'S1 S2 S3 S4 S6 S7 S8 S20'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="80000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="80000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -382,11 +317,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'U1 U2 U3 U4 U5 U6 U7 U8'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="80000"
-      product={Transportchip.products.SUBWAY}
-      name={name}
-    />
+    <Transportchip zipCode="80000" product={Transportchip.products.SUBWAY} name={name} />
   ));
 ```
 
@@ -396,11 +327,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 '12 16 17 18 19 20 21 23 25 27 28 29 E7 N17 N19 N20 N27'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="80000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="80000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -410,11 +337,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'X30 X98 50 63 100 199 N40 N81'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="80000"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
+    <Transportchip zipCode="80000" product={Transportchip.products.BUS} name={name} />
   ));
 ```
 
@@ -426,11 +349,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'S1 S2 S3 S4 S5 S6 S7 S8 S9'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="60000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="60000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -440,11 +359,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'U1 U2 U3 U4 U5 U6 U7 U8 U9'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="60000"
-      product={Transportchip.products.SUBWAY}
-      name={name}
-    />
+    <Transportchip zipCode="60000" product={Transportchip.products.SUBWAY} name={name} />
   ));
 ```
 
@@ -456,11 +371,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 '12 14 15 16 17 18 19 20 21'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="60000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="60000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -472,11 +383,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'S11 S12 S13 S19 S23'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="50667"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="50667" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -486,11 +393,7 @@ In Hamburg, all transport products use the same width to align well. The ferry d
 'STR 1  STR 3  STR 4  STR 5  STR 7  STR 9  STR 12  STR 13  STR 15  STR 16  STR 17  STR 18'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="50667"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="50667" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -504,11 +407,7 @@ The styles are shared with Fürth.
 'S1 S2 S3 S4'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="90000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="90000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -518,11 +417,7 @@ The styles are shared with Fürth.
 'U1 U2 U3'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="90000"
-      product={Transportchip.products.SUBWAY}
-      name={name}
-    />
+    <Transportchip zipCode="90000" product={Transportchip.products.SUBWAY} name={name} />
   ));
 ```
 
@@ -534,11 +429,7 @@ The styles are shared with Fürth.
 '4 5 6 7 8'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="90000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="90000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -548,11 +439,7 @@ The styles are shared with Fürth.
 '20 31 43 56 99'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="90000"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
+    <Transportchip zipCode="90000" product={Transportchip.products.BUS} name={name} />
   ));
 ```
 
@@ -563,21 +450,13 @@ The styles are shared with Nürnberg.
 #### S-Bahn Fürth
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-<Transportchip
-  zipCode="90000"
-  product={Transportchip.products.SUBURBAN}
-  name="S1"
-/>
+<Transportchip zipCode="90000" product={Transportchip.products.SUBURBAN} name="S1" />
 ```
 
 #### U-Bahn Fürth
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-<Transportchip
-  zipCode="90000"
-  product={Transportchip.products.SUBWAY}
-  name="U1"
-/>
+<Transportchip zipCode="90000" product={Transportchip.products.SUBWAY} name="U1" />
 ```
 
 #### Bus Fürth
@@ -586,11 +465,7 @@ The styles are shared with Nürnberg.
 '33 67 171 179 189'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="90000"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
+    <Transportchip zipCode="90000" product={Transportchip.products.BUS} name={name} />
   ));
 ```
 
@@ -602,11 +477,7 @@ The styles are shared with Nürnberg.
 'S1 S2 S3 S33 S39 S4 S5 S51 S6'
   .split(' ')
   .map((name) => (
-    <Transportchip
-      zipCode="68000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="68000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -616,11 +487,7 @@ The styles are shared with Nürnberg.
 'STR 1  STR 3  STR 4  RNV 4A  RNV 5  RNV 5A  RNV 15  RNV 6  RNV 6A  RNV 7  RNV 8  RNV 9  RNV 15'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="68000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="68000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -630,11 +497,7 @@ The styles are shared with Nürnberg.
 'RNV 4A  RNV 5  RNV 5A  RNV 15  RNV 6  RNV 6A  RNV 7  RNV 9'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="67000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="67000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -644,11 +507,7 @@ The styles are shared with Nürnberg.
 'RNV 5  STR 21  STR 21A  STR 22  STR 23  STR 24  STR 26'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="69000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="69000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -662,11 +521,7 @@ The styles are shared with Nürnberg.
 'NWB RS1  NWB RS2  NWB RS3  NWB RS4'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="28000"
-      product={Transportchip.products.SUBURBAN}
-      name={name}
-    />
+    <Transportchip zipCode="28000" product={Transportchip.products.SUBURBAN} name={name} />
   ));
 ```
 
@@ -676,11 +531,7 @@ The styles are shared with Nürnberg.
 'STR 1  STR 2  STR 3  STR 4  STR 5  STR 6  STR 8  STR 10  STR N1  STR N4  STR N10'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="28000"
-      product={Transportchip.products.TRAM}
-      name={name}
-    />
+    <Transportchip zipCode="28000" product={Transportchip.products.TRAM} name={name} />
   ));
 ```
 
@@ -690,10 +541,6 @@ The styles are shared with Nürnberg.
 'BUS 20  BUS 21  BUS 22  BUS 24  BUS 25  BUS 26  BUS 27  BUS 28  BUS 29  BUS 31  BUS 33  BUS 34  BUS 37  BUS 38  BUS 39  BUS 40  BUS 41  BUS 42  BUS 44  BUS 52  BUS 55  BUS 57  BUS 58  BUS 61  BUS 62  BUS 63  BUS 65  BUS 66  BUS 80  BUS 81  BUS 82  BUS 90  BUS 91  BUS 92  BUS 93  BUS 94  BUS 95  BUS 96  BUS 98  BUS N3  BUS N5  BUS N6  BUS N7  BUS N9  BUS N94  BUS 101  BUS 102  BUS 120'
   .split('  ')
   .map((name) => (
-    <Transportchip
-      zipCode="28000"
-      product={Transportchip.products.BUS}
-      name={name}
-    />
+    <Transportchip zipCode="28000" product={Transportchip.products.BUS} name={name} />
   ));
 ```

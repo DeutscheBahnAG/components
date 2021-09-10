@@ -21,17 +21,13 @@
 ### Warning
 
 ```jsx
-<Status severity={Status.severities.WARNING}>
-  This feature is not included
-</Status>
+<Status severity={Status.severities.WARNING}>This feature is not included</Status>
 ```
 
 ### Error
 
 ```jsx
-<Status severity={Status.severities.ERROR}>
-  You might not reach a connecting train
-</Status>
+<Status severity={Status.severities.ERROR}>You might not reach a connecting train</Status>
 ```
 
 ### Fatal
@@ -46,8 +42,7 @@
 
 ```jsx
 <Status>
-  The message of the Status can get a very long text which is sometimes needed.
-  In this case the label wraps nicely and the checkbox stays aligned with the
-  first line of the label.
+  The message of the Status can get a very long text which is sometimes needed. In this case the
+  label wraps nicely and the checkbox stays aligned with the first line of the label.
 </Status>
 ```

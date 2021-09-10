@@ -42,8 +42,5 @@ This is the parking position of the train in uppercase characters.
 ## Translations
 
 ```jsx
-<Track
-  track="1"
-  labels={{ platform: 'Platform', platformAbbreviation: 'Pl.' }}
-/>
+<Track track="1" labels={{ platform: 'Platform', platformAbbreviation: 'Pl.' }} />
 ```

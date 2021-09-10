@@ -11,27 +11,19 @@ import { Notification } from '@db-design/react';
 ## Variants
 
 ```jsx
-<Notification severity={Notification.severities.INFORMATIVE}>
-  I am a notification.
-</Notification>
+<Notification severity={Notification.severities.INFORMATIVE}>I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.WARNING}>
-  I am a notification.
-</Notification>
+<Notification severity={Notification.severities.WARNING}>I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.ERROR}>
-  I am a notification.
-</Notification>
+<Notification severity={Notification.severities.ERROR}>I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.SUCCESS}>
-  I am a notification.
-</Notification>
+<Notification severity={Notification.severities.SUCCESS}>I am a notification.</Notification>
 ```
 
 ## Closeable
@@ -64,9 +56,16 @@ import { Notification } from '@db-design/react';
 ```jsx
 import { Button } from '@db-design/react';
 
-<Notification onClose={() => {}} action={<Button variant={Button.variants.SECONDARY} size={Button.sizes.M}>Do something</Button>}>
+<Notification
+  onClose={() => {}}
+  action={
+    <Button variant={Button.variants.SECONDARY} size={Button.sizes.M}>
+      Do something
+    </Button>
+  }
+>
   Somehing happened.
-</Notification>
+</Notification>;
 ```
 
 ## Global (popup)
@@ -104,12 +103,7 @@ const LiveNotifications = () => {
       setTimeout(() => {
         setNotifications((prevNotifications) => [
           ...prevNotifications,
-          <Notification
-            key={severity}
-            severity={severity}
-            global
-            onClose={() => {}}
-          >
+          <Notification key={severity} severity={severity} global onClose={() => {}}>
             {`I am Notification number ${index + 1}`}
           </Notification>,
         ]);
@@ -129,10 +123,7 @@ const LiveNotifications = () => {
 ## With title
 
 ```jsx
-<Notification
-  severity={Notification.severities.WARNING}
-  title="Your testing period is expired."
->
+<Notification severity={Notification.severities.WARNING} title="Your testing period is expired.">
   Please purchase a copy to continue using this product.
 </Notification>
 ```
@@ -141,11 +132,10 @@ const LiveNotifications = () => {
 
 ```jsx
 <Notification>
-  This is a very long text with a whole lot of words and characters in order to
-  demonstrate the behavior of the Notificiation component with multiple lines of
-  text, so we can see that we get details like line heights and adjstument of
-  the icon in relation to the text right. In fact, it is an anti-pattern to
-  display very long texts in notifications, but technically we do not restrict
+  This is a very long text with a whole lot of words and characters in order to demonstrate the
+  behavior of the Notificiation component with multiple lines of text, so we can see that we get
+  details like line heights and adjstument of the icon in relation to the text right. In fact, it is
+  an anti-pattern to display very long texts in notifications, but technically we do not restrict
   the text length.
 </Notification>
 ```

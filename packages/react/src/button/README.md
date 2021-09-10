@@ -205,15 +205,8 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
                       'sg-not-allowed': notAllowed,
                     })}
                   >
-                    <Button
-                      variant={variant}
-                      size={size}
-                      shape={shape}
-                      icon={<NavigationClose />}
-                    >
-                      {shape === Button.shapes.DEFAULT
-                        ? 'Icon'
-                        : shape.toUpperCase()}
+                    <Button variant={variant} size={size} shape={shape} icon={<NavigationClose />}>
+                      {shape === Button.shapes.DEFAULT ? 'Icon' : shape.toUpperCase()}
                     </Button>
                   </td>
                 );

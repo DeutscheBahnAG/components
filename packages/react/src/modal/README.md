@@ -6,11 +6,7 @@ Modals are used to focus the users’ attention to a certain information or deci
 import { Button, Copy } from '@db-design/react';
 const { primaryActions } = Modal;
 
-<Modal
-  title="Modal"
-  primaryButton={<Button {...primaryActions}>OK</Button>}
-  isOpen
->
+<Modal title="Modal" primaryButton={<Button {...primaryActions}>OK</Button>} isOpen>
   <Copy>Modal content</Copy>
 </Modal>;
 ```
@@ -52,11 +48,7 @@ const openState = true;
     </Button>
   }
   secondaryButton={
-    <Button
-      variant={Button.variants.SECONDARY}
-      {...secondaryActions}
-      onClick={discardEdit}
-    >
+    <Button variant={Button.variants.SECONDARY} {...secondaryActions} onClick={discardEdit}>
       Discard
     </Button>
   }
@@ -65,8 +57,8 @@ const openState = true;
   appId="root"
 >
   <Copy>
-    If you decide to discard the unsaved document, you will lose all changes and
-    you will not be able to recover your data.
+    If you decide to discard the unsaved document, you will lose all changes and you will not be
+    able to recover your data.
   </Copy>
 </Modal>;
 ```
@@ -125,8 +117,7 @@ Another helpful addition for accessibility is the `ariaDescribedBy` property. Pa
 ```jsx static
 <Modal title="Modal dialogue" ariaDescribedBy="modal-desc" open>
   <p id="modal-desc">
-    This Modal dialogue demonstrates the technical use of `ariaDescribedBy` the
-    property.
+    This Modal dialogue demonstrates the technical use of `ariaDescribedBy` the property.
   </p>
   ... some content
 </Modal>
@@ -206,9 +197,7 @@ There are two ways to get these components:
    <Modal
      primaryButton={<Modal.PrimaryButton>This also works.</Modal.PrimaryButton>}
      secondaryButton={[
-       <Modal.SecondaryButton>
-         Here is a secondary Button.
-       </Modal.SecondaryButton>,
+       <Modal.SecondaryButton>Here is a secondary Button.</Modal.SecondaryButton>,
        <Modal.SecondaryButton>And another one.</Modal.SecondaryButton>,
      ]}
    />;
