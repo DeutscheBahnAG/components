@@ -13,7 +13,7 @@ module.exports = [
     sections: [
       {
         name: 'Interactive',
-        components: web(['button', 'anchor']),
+        components: web(['button', 'link', 'anchor']),
       },
       {
         name: 'User input',

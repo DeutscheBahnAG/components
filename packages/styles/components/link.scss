@@ -1,0 +1,44 @@
+.db-link {
+  $icon-safe-area: 2px;
+  appearance: none;
+  background: transparent;
+  gap: db-spacing('xs');
+  display: inline-flex;
+  white-space: nowrap;
+
+  &::before {
+    content: ' ';
+    width: 0;
+    margin-right: -0.25em;
+  }
+}
+
+.db-link__icon-arrow {
+  margin: 0 -3px;
+}
+
+.db-link--primary {
+  @include db-primary-link($target: 'span');
+}
+
+.db-link--secondary,
+.db-link--mixed {
+  @include db-secondary-link($target: 'span');
+}
+
+.db-link:disabled {
+  &,
+  &:hover,
+  &:active,
+  span {
+    color: var(--db-disabled-text-color);
+    cursor: default;
+    text-decoration-color: transparent;
+  }
+}
+
+.db-link--mixed {
+  svg {
+    color: var(--db-link-color);
+  }
+}
