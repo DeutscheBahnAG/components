@@ -128,8 +128,12 @@
     min-height: db-size($size);
     min-width: 4 * db-size($size);
 
-    &.db-button--default:not(.db-button--loading) > svg {
+    &.db-button--icon-position-before:not(.db-button--loading) > svg {
       margin-right: db-component-icon-gap(db-component-textsize($size));
+    }
+
+    &.db-button--icon-position-after:not(.db-button--loading) > svg {
+      margin-left: db-component-icon-gap(db-component-textsize($size));
     }
 
     &.db-button--square,

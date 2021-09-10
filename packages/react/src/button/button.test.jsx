@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Button from './button';
 
+const DummyIcon = () => <svg className="db-icon" />;
+
 describe('Button Component', () => {
   it('should render a button', () => {
     const { container } = render(<Button>My button 1</Button>);
@@ -49,6 +51,35 @@ describe('Button Component', () => {
   it('should render a button with custom `aria-label`', () => {
     const { container } = render(
       <Button aria-label="This is a custom aria-label">My button 9</Button>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should a Button with an Icon on the left side', () => {
+    const { container } = render(<Button icon={<DummyIcon />}>My button 10</Button>);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should a Button with an Icon on the right side', () => {
+    const { container } = render(<Button icon={<DummyIcon />}>My button 11</Button>);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should not add an icon position class name when no icon is used', () => {
+    const { container } = render(<Button>My button 12</Button>);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should not add an icon position class name in icon-only Buttons', () => {
+    const { container } = render(
+      <>
+        <Button icon={<DummyIcon />} shape={Button.shapes.ROUND}>
+          My button 13
+        </Button>
+        <Button icon={<DummyIcon />} shape={Button.shapes.SQUARE}>
+          My button 14
+        </Button>
+      </>
     );
     expect(container).toMatchSnapshot();
   });

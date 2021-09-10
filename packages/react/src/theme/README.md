@@ -81,6 +81,7 @@ const themeNames = Object.keys(Theme.themes);
           }}
           icon={<Icons.NavigationArrowForward />}
           style={{ width: '212px' }}
+          iconPosition={Button.iconPositions.AFTER}
         >
           Use next theme
         </Button>

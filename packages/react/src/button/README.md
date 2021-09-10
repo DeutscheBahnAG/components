@@ -118,6 +118,22 @@ import { ActionAdd } from '@db-design/react-icons';
 <Button icon={<ActionAdd />}>Button</Button>;
 ```
 
+## Icon position
+
+```jsx
+import { NavigationArrowBack } from '@db-design/react-icons';
+<Button icon={<NavigationArrowBack />} iconPosition={Button.iconPositions.BEFORE}>
+  Button
+</Button>;
+```
+
+```jsx
+import { NavigationArrowForward } from '@db-design/react-icons';
+<Button icon={<NavigationArrowForward />} iconPosition={Button.iconPositions.AFTER}>
+  Button
+</Button>;
+```
+
 ## Shapes
 
 Icon-only Buttons can be either squared or round. They can be combined with different sizes and variants.

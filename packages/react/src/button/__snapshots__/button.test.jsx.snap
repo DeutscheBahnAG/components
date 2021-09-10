@@ -1,5 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button Component should a Button with an Icon on the left side 1`] = `
+<div>
+  <button
+    class="db-button db-button--primary db-button--default db-button--icon-position-before db-button--size-l"
+    type="button"
+  >
+    <svg
+      class="db-icon"
+    />
+    My button 10
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
+exports[`Button Component should a Button with an Icon on the right side 1`] = `
+<div>
+  <button
+    class="db-button db-button--primary db-button--default db-button--icon-position-before db-button--size-l"
+    type="button"
+  >
+    <svg
+      class="db-icon"
+    />
+    My button 11
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
+exports[`Button Component should not add an icon position class name in icon-only Buttons 1`] = `
+<div>
+  <button
+    class="db-button db-button--primary db-button--round db-button--size-l"
+    title="My button 13"
+    type="button"
+  >
+    <svg
+      class="db-icon"
+    />
+    <span
+      aria-hidden="false"
+    >
+      My button 13
+    </span>
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+  <button
+    class="db-button db-button--primary db-button--square db-button--size-l"
+    title="My button 14"
+    type="button"
+  >
+    <svg
+      class="db-icon"
+    />
+    <span
+      aria-hidden="false"
+    >
+      My button 14
+    </span>
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
+exports[`Button Component should not add an icon position class name when no icon is used 1`] = `
+<div>
+  <button
+    class="db-button db-button--primary db-button--default db-button--size-l"
+    type="button"
+  >
+    My button 12
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
 exports[`Button Component should render a button 1`] = `
 <div>
   <button

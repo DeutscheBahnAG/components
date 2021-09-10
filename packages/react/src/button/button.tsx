@@ -10,6 +10,11 @@ const Screenreader: React.FunctionComponent = ({ children }) => (
 );
 Screenreader.propTypes = { children: PropTypes.node.isRequired };
 
+enum ButtonIconPositions {
+  BEFORE = 'before',
+  AFTER = 'after',
+}
+
 enum ButtonShapes {
   DEFAULT = 'default',
   SQUARE = 'square',
@@ -44,6 +49,7 @@ interface ButtonProps extends Record<string, any> {
   fullWidth?: boolean;
   href?: string;
   icon?: React.ReactNode;
+  iconPosition?: ButtonIconPositions;
   loading?: boolean;
   loadingLabel?: string;
   shape?: ButtonShapes;
@@ -54,6 +60,7 @@ interface ButtonProps extends Record<string, any> {
 }
 
 type ButtonType = React.FunctionComponent<ButtonProps> & {
+  iconPositions: typeof ButtonIconPositions;
   shapes: typeof ButtonShapes;
   sizes: typeof ButtonSizes;
   types: typeof ButtonTypes;
@@ -68,6 +75,7 @@ const Button: ButtonType = ({
   // @NOTE The `href` property switches between a `<button>` and `<a>` element. Should be explicit.
   href,
   icon,
+  iconPosition = ButtonIconPositions.BEFORE,
   loading = false,
   loadingLabel = 'Wird geladen …',
   shape = ButtonShapes.DEFAULT,
@@ -132,6 +140,7 @@ const Button: ButtonType = ({
           `db-button--${variant}`,
           `db-button--${shape}`,
           { 'db-button--block': fullWidth },
+          { [`db-button--icon-position-${iconPosition}`]: icon && shape === ButtonShapes.DEFAULT },
           { 'db-button--disabled': disabled },
           { 'db-button--loading': loading },
           size && `db-button--size-${size}`,
@@ -144,14 +153,16 @@ const Button: ButtonType = ({
             <Loadingindicator size={loadingindicatorSize} />
           </span>
         )}
-        {icon}
+        {iconPosition === ButtonIconPositions.BEFORE && icon}
         {shape === Button.shapes.DEFAULT ? children : <Screenreader>{children}</Screenreader>}
+        {iconPosition === ButtonIconPositions.AFTER && icon}
       </Element>
       <span className="db-inline-spacer"> </span>
     </>
   );
 };
 
+Button.iconPositions = ButtonIconPositions;
 Button.shapes = ButtonShapes;
 Button.sizes = ButtonSizes;
 Button.types = ButtonTypes;
