@@ -20,6 +20,7 @@ import { Button } from '@db-design/react';
 import {
   Container,
   Button,
+  Link,
   Textfield,
   Checkbox,
   Transportchip,
@@ -102,7 +103,10 @@ const themeNames = Object.keys(Theme.themes);
         <Button variant="solid" size="m">
           Solid
         </Button>
-        <a href="#">Link</a>
+        <Link href="#" variant={Link.variants.SECONDARY} iconPosition={Link.iconPositions.BEFORE}>
+          Link
+        </Link>
+        <Link href="#">Link</Link>
       </div>
       <p style={{ marginTop: `${spacing.xl}px` }}>
         <Copy size={Copy.sizes.M}>Travel information:</Copy>
