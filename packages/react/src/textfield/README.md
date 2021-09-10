@@ -4,8 +4,20 @@
 import { Textfield } from '@db-design/react';
 ```
 
-```jsx
-<Textfield />
+```jsx noeditor
+import { Copy } from '@db-design/react';
+import { JourneyDestination } from '@db-design/react-icons';
+<div className="textfield-preview">
+  <span>
+    <Copy>Examples:</Copy>
+  </span>
+  <span className="db-inline-spacer" />
+  <Textfield value="Textfield" />
+  <Textfield inlineLabel="Maximum" unit="€" value="19.99" type="number" />
+  <Textfield inlineLabel="Username" />
+  <Textfield prefix={<JourneyDestination />} value="Köln" />
+  <style>{`.textfield-preview .db-textfield { width: 136px }`}</style>
+</div>;
 ```
 
 ## HTML attributes
@@ -173,12 +185,7 @@ You can use inline Textfields in combination with other attributes:
 ```
 
 ```jsx
-<Textfield
-  readOnly
-  value="my.name"
-  suffix="@deutschebahn.com"
-  inlineLabel="Email address"
-/>
+<Textfield readOnly value="my.name" suffix="@deutschebahn.com" inlineLabel="Email address" />
 ```
 
 It is possible to combine `inlineLabel` and `placeholder`. Click inside the Textfield to see:

@@ -4,8 +4,32 @@
 import { Button } from '@db-design/react';
 ```
 
-```jsx
-<Button onClick={alert}>Button</Button>
+This component handles everthing that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
+
+```jsx noeditor
+import { Copy } from '@db-design/react';
+import { ActionAdd } from '@db-design/react-icons';
+<>
+  <span>
+    <Copy>Examples:</Copy>
+  </span>
+  <span className="db-inline-spacer" />
+  <Button onClick={alert} icon={<ActionAdd />}>
+    Button
+  </Button>
+  <Button onClick={alert} variant={Button.variants.SECONDARY}>
+    Button
+  </Button>
+  <Button onClick={alert} variant={Button.variants.SOLID}>
+    Button
+  </Button>
+  <Button onClick={alert} variant={Button.variants.HOVER_ONLY}>
+    Button
+  </Button>
+  <Button onClick={alert} loading shape={Button.shapes.SQUARE}>
+    Button
+  </Button>
+</>;
 ```
 
 ## Variants
