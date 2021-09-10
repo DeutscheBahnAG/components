@@ -93,6 +93,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
     const configuredField = (
       <Field
         ref={fieldRef}
+        placeholder={otherProps.placeholder || ' ' /* Important for baseline alignment! */}
         {...otherProps}
         value={value ?? ''}
         type={type === 'textarea' ? undefined : type ?? 'text'}

@@ -7,6 +7,7 @@ exports[`Textfield Component should render a disabled input 1`] = `
   >
     <input
       disabled=""
+      placeholder=" "
       type="text"
       value="My disabled 2"
     />
@@ -26,6 +27,7 @@ exports[`Textfield Component should render a disabled textarea 1`] = `
   >
     <textarea
       disabled=""
+      placeholder=" "
     >
       My disabled 1
     </textarea>
@@ -44,6 +46,7 @@ exports[`Textfield Component should render a number input 1`] = `
     class="db-textfield db-textfield--number db-textfield--size-xl db-textfield--filled"
   >
     <input
+      placeholder=" "
       type="number"
       value="123"
     />
@@ -62,6 +65,7 @@ exports[`Textfield Component should render a read-only input 1`] = `
     class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled db-textfield--readonly"
   >
     <input
+      placeholder=" "
       readonly=""
       type="text"
       value="Read Only"
@@ -81,6 +85,7 @@ exports[`Textfield Component should render a text input 1`] = `
     class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
+      placeholder=" "
       type="text"
       value="My value 1"
     />
@@ -98,7 +103,9 @@ exports[`Textfield Component should render a textarea 1`] = `
   <div
     class="db-textfield db-textfield--textarea db-textfield--size-xl db-textfield--filled"
   >
-    <textarea>
+    <textarea
+      placeholder=" "
+    >
       Textarea
     </textarea>
   </div>
@@ -121,6 +128,7 @@ exports[`Textfield Component should use a prefix 1`] = `
       $
     </span>
     <input
+      placeholder=" "
       type="text"
       value="Text"
     />
@@ -139,6 +147,7 @@ exports[`Textfield Component should use a suffix 1`] = `
     class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
+      placeholder=" "
       type="text"
       value="Text"
     />
@@ -162,6 +171,7 @@ exports[`Textfield Component should use an unit after the field 1`] = `
     class="db-textfield db-textfield--text db-textfield--size-xl db-textfield--filled"
   >
     <input
+      placeholder=" "
       type="text"
       value="Text"
     />
@@ -190,6 +200,7 @@ exports[`Textfield Component should use an unit before the field 1`] = `
       £
     </span>
     <input
+      placeholder=" "
       type="text"
       value="Text"
     />

@@ -401,12 +401,39 @@ The spacing used with a different Button size:
 </>
 ```
 
-Textfield and Button combined:
+Text, Textfield, Button and Link **automatically align well** next to each other without any wrapper/extra CSS needed:
 
 ```jsx
-import { Textfield } from '@db-design/react';
+import { Textfield, Link } from '@db-design/react';
 <>
+  <Link>Link</Link>
   <Textfield size={Textfield.sizes.XL} value="Textfield" />
   <Button size={Button.sizes.XL}>Button</Button>
+  <Button size={Button.sizes.M} variant={Button.variants.SOLID}>
+    Button
+  </Button>
+  <span>Some text</span>
+  {/* at least a <span>/<b>/… should be put around plain text */}
+  <hr
+    style={{
+      border: '#73aef4 dashed',
+      borderWidth: '1px 0 0',
+      marginTop: '-23px',
+      position: 'absolute',
+      width: '768px',
+      pointerEvents: 'none',
+    }}
+  />
+  <hr
+    style={{
+      border: '#b4d5f6 dashed',
+      borderWidth: '1px 0',
+      marginTop: '-57px',
+      position: 'absolute',
+      height: '58px',
+      width: '768px',
+      pointerEvents: 'none',
+    }}
+  />
 </>;
 ```

@@ -1,11 +1,8 @@
 @use 'sass:math';
 
 .db-textfield {
-  @include db-focus-ring(
-    $focus-selector: ':focus-within',
-    $transition: 'border 200ms'
-  );
-  align-items: stretch;
+  @include db-focus-ring($focus-selector: ':focus-within', $transition: 'border 200ms');
+  align-items: baseline;
   background-color: var(--db-secondary-background-color);
   border: db-border-width('input') solid var(--db-secondary-background-color);
   box-sizing: border-box;
@@ -13,7 +10,7 @@
   color: var(--db-field-secondary-text-color);
   display: inline-flex;
   font-family: db-font-family('copy');
-  vertical-align: top;
+  vertical-align: baseline;
 
   @media (prefers-contrast: more) {
     border-color: var(--db-loud-border-color);
@@ -40,6 +37,8 @@
     margin: 0;
     outline: 0;
     transition: color 0.2s;
+    vertical-align: baseline;
+    width: 100%;
   }
 
   input::-ms-clear {
@@ -108,7 +107,10 @@
 
 .db-textfield-prefix,
 .db-textfield-suffix {
+  display: flex;
   transition: transform 0.2s;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
 
 .db-textfield__inline-label {
@@ -173,25 +175,26 @@
 
     /**
       * 1. Equals a Thin Space character
-      * 2. Icons/Buttons should have equal margin to the border on all sides
+      * 2. X: Icons/Buttons should have equal margin to the border on all sides
+      *    Z: Avoid sub-pixel placement (Safari + Retina)
       */
     .db-textfield-prefix {
-      margin-right: calc(0.15em - #{$horizontal-padding}); /* 1 */
+      margin-right: #{3px - $horizontal-padding}; /* 1 */
 
       > * {
-        display: block; /* 2 */
-        margin-right: 0.15em;
-        transform: translateX(#{$vertical-padding - $horizontal-padding}); /* 2 */
+        display: flex; /* 2 */
+        margin-right: 0.125em;
+        transform: translateX(#{$vertical-padding - $horizontal-padding}) translateZ(0); /* 2 */
       }
     }
 
     .db-textfield-suffix {
-      margin-left: calc(0.15em - #{$horizontal-padding}); /* 1 */
+      margin-left: #{3px - $horizontal-padding}; /* 1 */
 
       > * {
-        display: block; /* 2 */
-        margin-right: 0.15em;
-        transform: translateX(#{$horizontal-padding - $vertical-padding}); /* 2 */
+        display: flex; /* 2 */
+        margin-right: 0.125em;
+        transform: translateX(#{$horizontal-padding - $vertical-padding}) translateZ(0); /* 2 */
       }
     }
 
@@ -213,19 +216,42 @@
     .db-textfield-suffix,
     .db-textfield__inline-label {
       border-radius: db-border-radius($size);
-      padding-bottom: $vertical-padding;
-      padding-top: $vertical-padding;
+      padding-bottom: $vertical-padding + 1px;
+      padding-top: $vertical-padding - 1px;
     }
   }
 }
 
 /**
   * 3. Negative margins as Buttons are higher than the expected line-height
+  *    The margin-bottom needs to be 1px more
   */
 .db-textfield {
   @each $size in (xl l m s xs) {
     .db-button--size-#{$size} {
-      margin: #{(db-line-height('copy', 'm') - db-size($size)) * 0.5};
+      margin: #{(db-line-height('copy', 'm') - db-size($size)) *
+        0.5 +
+        1px}
+        #{(db-line-height('copy', 'm') - db-size($size)) *
+        0.5}
+        #{(db-line-height('copy', 'm') - db-size($size)) *
+        0.5 -
+        2px};
     }
+  }
+}
+
+/**
+  * The following code has very positive effects on aligning Textfields (and other
+  * elements like Links and Textfields) to each other as well as text placed
+  * to them. Without this code, even Textfields wouldn’t align to each other in
+  * case some of them do have an icon while others don’t.
+  */
+.db-textfield,
+.db-textfield-prefix,
+.db-textfield-suffix {
+  &::before {
+    content: ' ';
+    width: 0;
   }
 }
