@@ -10,10 +10,7 @@ $db-select-chevron-margin: 16px;
 
 .db-select {
   @include db-text-style($db-select-text-style);
-  @include db-focus-ring(
-    $focus-selector: '.db-select--focus',
-    $transition: 'border 200ms'
-  );
+  @include db-focus-ring($focus-selector: '.db-select--focus', $transition: 'border 200ms');
   align-items: stretch;
   background-color: var(--db-secondary-background-color);
   border: db-border-width('input') solid var(--db-secondary-background-color);
@@ -47,10 +44,7 @@ $db-select-chevron-margin: 16px;
     line-height: inherit;
     flex: 1;
     padding: $db-select-padding-top
-      (
-        $db-select-padding-horizontal + $db-select-chevron-width +
-        $db-select-chevron-margin
-      )
+      ($db-select-padding-horizontal + $db-select-chevron-width + $db-select-chevron-margin)
       $db-select-padding-bottom $db-select-padding-horizontal;
     outline: 0;
     width: inherit;

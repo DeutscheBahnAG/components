@@ -68,8 +68,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   }
   @include media('>=medium') {
     height: auto;
-    padding: $db-modal--dialog-padding-y-desktop
-      $db-modal--dialog-padding-x-desktop;
+    padding: $db-modal--dialog-padding-y-desktop $db-modal--dialog-padding-x-desktop;
     max-height: 90%;
   }
   @include media('>=large') {

@@ -4,8 +4,7 @@
 @import '@db-design/styles/mixins/focus-ring';
 
 @mixin db-transportchip-default-border-radius {
-  border-radius: math.div(1em, db-font-size('copy', 'm')) *
-    db-border-radius('s');
+  border-radius: math.div(1em, db-font-size('copy', 'm')) * db-border-radius('s');
   margin: 0; // Reset overlap
 }
 
@@ -62,10 +61,9 @@ button.db-transportchip {
 .db-transportchip__transport-logo {
   // Round shapes (like S-Bahn) need to visually overlap by 1px
   $size: 1.75em;
-  $size: math.div(1em, db-font-size('copy', 'm')) * db-line-height('copy', 'm') +
-    2 * $db-transportchip-overlap;
-  $size: math.div(1em, db-font-size('copy', 'm')) * db-size('s') + 2 *
+  $size: math.div(1em, db-font-size('copy', 'm')) * db-line-height('copy', 'm') + 2 *
     $db-transportchip-overlap;
+  $size: math.div(1em, db-font-size('copy', 'm')) * db-size('s') + 2 * $db-transportchip-overlap;
   display: inline-block;
   height: $size;
   margin: #{-$db-transportchip-overlap} #{0.25em - $db-transportchip-overlap} #{-$db-transportchip-overlap}
@@ -1050,10 +1048,7 @@ button.db-transportchip {
 
 .db-transportchip--canceled {
   .db-transportchip__line {
-    @include db-transportchip-border(
-      2px,
-      var(--db-primary-button-disabled-background-color)
-    );
+    @include db-transportchip-border(2px, var(--db-primary-button-disabled-background-color));
     background: transparent;
     clip-path: unset; // Hochbahn bus and ferry’s shape won’t allow borders
     color: var(--db-secondary-text-color);

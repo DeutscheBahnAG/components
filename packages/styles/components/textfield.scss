@@ -127,8 +127,7 @@
   */
 .db-textfield:focus-within .db-textfield__inline-label,
 .db-textfield--filled .db-textfield__inline-label {
-  $scale-down: math.div(db-font-size('copy', 's'),
-  db-font-size('copy', 'm')); /* 1 */
+  $scale-down: math.div(db-font-size('copy', 's'), db-font-size('copy', 'm')); /* 1 */
   transform: scale(#{$scale-down}) translateY(-12px); /* 2 */
 }
 

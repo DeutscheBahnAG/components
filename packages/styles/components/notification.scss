@@ -19,9 +19,8 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .db-notification__icon {
   padding: 2px;
-  margin: db-spacing('s', $negative: true) 2px
-    db-spacing('s', $negative: true) #{db-spacing('ml', $negative: true) +
-    2px};
+  margin: db-spacing('s', $negative: true) 2px db-spacing('s', $negative: true) #{db-spacing('ml',
+  $negative: true) + 2px};
   align-self: start;
 }
 
@@ -70,12 +69,12 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .db-notification--informative {
-  @include db-notification--colors(#DBEEFA);
+  @include db-notification--colors(#dbeefa);
 }
 
 .db-notification--warning,
 .db-notification--error {
-  @include db-notification--colors(#FCFCB8);
+  @include db-notification--colors(#fcfcb8);
 }
 
 .db-notification--error {
@@ -83,7 +82,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 }
 
 .db-notification--success {
-  @include db-notification--colors(#E1F1D0);
+  @include db-notification--colors(#e1f1d0);
 }
 
 .db-notification__action {
