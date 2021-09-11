@@ -183,6 +183,19 @@ When both properties are set, a link (= `<a>`) gets rendered. The `onClick` stil
 </form>
 ```
 
+### Using Next.js
+
+As Next.js requires to set the `href` in a parent element, the `Link` will not recognize automatically that it’s a link (= `<a>`) and render as a `<button>`. Therefore, the `type` must be set manually:
+
+```jsx static
+import NextLink from 'next/link';
+import { Link } from '@db-design/react';
+
+<NextLink href="/">
+  <Link type={Link.types.LINK}>Link</Button>
+</NextLink>;
+```
+
 Think twice if you really want this to look like a link. [Button](/#/Components/Interactive/Button) is your friend.
 
 ## Aligning Links

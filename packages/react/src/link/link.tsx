@@ -1,5 +1,5 @@
 /* eslint-disable react/no-did-update-set-state, no-unused-vars */
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -17,6 +17,7 @@ enum LinkIconPositions {
 }
 
 enum LinkTypes {
+  LINK = 'link',
   BUTTON = 'button',
   SUBMIT = 'submit',
   RESET = 'reset',
@@ -65,6 +66,7 @@ const Link: LinkType = ({
   ...otherProps
 }) => {
   const LinkRef = React.createRef<HTMLAnchorElement | HTMLLinkElement>();
+  const isLink = type === LinkTypes.LINK || href !== undefined;
   const isExternal = href && href.match(/^((https?):)?\/\//);
   const icon =
     customIcon ||
@@ -76,7 +78,7 @@ const Link: LinkType = ({
       <NavigationArrowForward className="db-link__icon-arrow" />
     ));
 
-  const Element = href !== undefined ? 'a' : 'button';
+  const Element = isLink ? 'a' : 'button';
 
   return (
     <>
@@ -84,7 +86,7 @@ const Link: LinkType = ({
         style={{ ...style }}
         // @ts-expect-error HTMLAnchorElement and HTMLLinkElement do not have compatible APIs, but we aren't using them on either
         ref={LinkRef}
-        type={href !== undefined ? undefined : type}
+        type={isLink ? undefined : (type as ButtonHTMLAttributes<HTMLButtonElement>['type'])}
         href={href}
         disabled={disabled}
         className={clsx(

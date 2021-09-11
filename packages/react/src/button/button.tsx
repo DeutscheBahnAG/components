@@ -1,5 +1,5 @@
 /* eslint-disable react/no-did-update-set-state, no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ButtonHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
@@ -29,6 +29,7 @@ enum ButtonSizes {
 }
 
 enum ButtonTypes {
+  LINK = 'link',
   BUTTON = 'button',
   SUBMIT = 'submit',
   RESET = 'reset',
@@ -106,7 +107,8 @@ const Button: ButtonType = ({
     }
   }, [loading, buttonRef, previousMinWidth]);
 
-  const Element = href ? 'a' : 'button';
+  const isLink = type === ButtonTypes.LINK || href !== undefined;
+  const Element = isLink ? 'a' : 'button';
   const loadingindicatorSize = { xl: 'm', l: 's', m: 'xs', s: 'xs' }[size] as LoadingIndicatorSizes;
 
   useEffect(() => {
@@ -130,7 +132,7 @@ const Button: ButtonType = ({
         style={{ ...style, minWidth }}
         // @ts-expect-error HTMLAnchorElement and HTMLButtonElement do not have compatible APIs, but we aren't using them on either
         ref={buttonRef}
-        type={href ? undefined : type}
+        type={isLink ? undefined : (type as ButtonHTMLAttributes<HTMLButtonElement>['type'])}
         href={href}
         disabled={disabled || loading}
         aria-label={ariaLabel}
