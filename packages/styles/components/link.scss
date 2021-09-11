@@ -1,9 +1,17 @@
 .db-link {
-  $icon-safe-area: 2px;
   appearance: none;
   background: transparent;
-  gap: db-spacing('xs');
+  border: 0;
+  font-family: #{db-font-family('copy')};
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.db-link--icon {
+  $icon-safe-area: 2px;
   display: inline-flex;
+  gap: db-spacing('xs');
   white-space: nowrap;
 
   &::before {

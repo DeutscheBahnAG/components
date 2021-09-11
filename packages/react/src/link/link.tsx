@@ -87,7 +87,12 @@ const Link: LinkType = ({
         type={href !== undefined ? undefined : type}
         href={href}
         disabled={disabled}
-        className={clsx('db-link', `db-link--${variant}`, className)}
+        className={clsx(
+          'db-link',
+          `db-link--${variant}`,
+          { 'db-link--icon': !IconPositions.NONE },
+          className
+        )}
         {...otherProps}
       >
         {(iconPosition === LinkIconPositions.BEFORE && icon) ||
