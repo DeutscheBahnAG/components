@@ -90,7 +90,7 @@ const Link: LinkType = ({
         className={clsx(
           'db-link',
           `db-link--${variant}`,
-          { 'db-link--icon': !IconPositions.NONE },
+          { 'db-link--icon': !LinkIconPositions.NONE },
           className
         )}
         {...otherProps}
@@ -99,7 +99,11 @@ const Link: LinkType = ({
           (iconPosition === LinkIconPositions.AUTO && (download || customIcon) && icon)}
         <span>{children}</span>
         {(iconPosition === LinkIconPositions.AFTER && icon) ||
-          (iconPosition === LinkIconPositions.AUTO && !download && !customIcon && icon)}
+          (iconPosition === LinkIconPositions.AUTO &&
+            !download &&
+            !customIcon &&
+            href !== undefined &&
+            icon)}
       </Element>
       <span className="db-inline-spacer"> </span>
     </>
