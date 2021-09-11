@@ -97,4 +97,13 @@ describe('Link Component', () => {
     const { container } = render(<Link className="my-custom-class">My link 15</Link>);
     expect(container).toMatchSnapshot();
   });
+
+  it('should render a link if both href and onClick are defined', () => {
+    const { container } = render(
+      <Link href="/" onClick={() => {}}>
+        My link 16
+      </Link>
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

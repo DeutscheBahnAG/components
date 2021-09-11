@@ -80,6 +80,37 @@ exports[`Link Component should render a link 1`] = `
 </div>
 `;
 
+exports[`Link Component should render a link if both href and onClick are defined 1`] = `
+<div>
+  <a
+    class="db-link db-link--primary"
+    href="/"
+  >
+    <span>
+      My link 16
+    </span>
+    <svg
+      class="db-link__icon-arrow"
+      height="24"
+      role="img"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 12c0 .563.438 1 1 1h11.594l-4.282 4.281A.998.998 0 0012 18c0 .438.375 1 1.031 1 .25 0 .5-.094.688-.281l6-6A1 1 0 0020 12c.031-.25-.078-.515-.281-.719l-6-6A1.026 1.026 0 0013.03 5C12.47 5 12 5.469 12 6c0 .281.109.515.313.719L16.593 11H5c-.563 0-1 .438-1 1z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </a>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
 exports[`Link Component should render a link when \`href\` is not set 1`] = `
 <div>
   <button

@@ -164,6 +164,16 @@ The Link can make use of different semantics while keeping the same style. All a
 <Link onClick={alert}>Link</Link>
 ```
 
+### Combined Links
+
+When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g. for tracking links):
+
+```jsx
+<Link href="#" onClick={alert}>
+  Link
+</Link>
+```
+
 ### Submit Links for forms:
 
 ```jsx

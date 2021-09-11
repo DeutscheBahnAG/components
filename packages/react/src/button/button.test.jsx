@@ -83,4 +83,13 @@ describe('Button Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  it('should render a link if both href and onClick are defined', () => {
+    const { container } = render(
+      <Button href="/" onClick={() => {}}>
+        My button 15
+      </Button>
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

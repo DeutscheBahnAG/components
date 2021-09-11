@@ -195,6 +195,22 @@ exports[`Button Component should render a full-width button 1`] = `
 </div>
 `;
 
+exports[`Button Component should render a link if both href and onClick are defined 1`] = `
+<div>
+  <a
+    class="db-button db-button--primary db-button--default db-button--size-l"
+    href="/"
+  >
+    My button 15
+  </a>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
 exports[`Button Component should render a secondary button 1`] = `
 <div>
   <button

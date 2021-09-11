@@ -380,6 +380,16 @@ The button can make use of different semantics while keeping the same style. All
 <Button href="#">Button</Button>
 ```
 
+### Combined Links
+
+When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g. for tracking links):
+
+```jsx
+<Button href="#" onClick={alert}>
+  Button
+</Button>
+```
+
 ## Aligning Buttons
 
 Buttons put next to each other automatically add spacing between each other:
