@@ -370,7 +370,7 @@ The button can make use of different semantics while keeping the same style. All
 ```jsx
 <form action="#">
   {/* <Textfield /> */}
-  <Button type="submit">Button</Button>
+  <Button type={Button.types.SUBMIT}>Button</Button>
 </form>
 ```
 

@@ -169,7 +169,7 @@ The Link can make use of different semantics while keeping the same style. All a
 ```jsx
 <form action="#">
   {/* <Textfield /> */}
-  <Link type="submit">Link</Link>
+  <Link type={Link.types.SUBMIT}>Link</Link>
 </form>
 ```
 
