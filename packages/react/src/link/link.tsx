@@ -90,7 +90,7 @@ const Link: LinkType = ({
         className={clsx(
           'db-link',
           `db-link--${variant}`,
-          { 'db-link--icon': !LinkIconPositions.NONE },
+          { 'db-link--icon': iconPosition !== LinkIconPositions.NONE },
           className
         )}
         {...otherProps}

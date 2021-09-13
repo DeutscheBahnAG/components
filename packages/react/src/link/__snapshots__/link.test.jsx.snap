@@ -3,7 +3,7 @@
 exports[`Link Component should allow custom class names 1`] = `
 <div>
   <button
-    class="db-link db-link--primary my-custom-class"
+    class="db-link db-link--primary db-link--icon my-custom-class"
     type="button"
   >
     <span>
@@ -21,7 +21,7 @@ exports[`Link Component should allow custom class names 1`] = `
 exports[`Link Component should render a custom icon 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <svg
@@ -52,7 +52,7 @@ exports[`Link Component should render a custom icon 1`] = `
 exports[`Link Component should render a link 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <span>
@@ -83,7 +83,7 @@ exports[`Link Component should render a link 1`] = `
 exports[`Link Component should render a link if both href and onClick are defined 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <span>
@@ -114,7 +114,7 @@ exports[`Link Component should render a link if both href and onClick are define
 exports[`Link Component should render a link when \`href\` is not set 1`] = `
 <div>
   <button
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     type="button"
   >
     <span>
@@ -132,7 +132,7 @@ exports[`Link Component should render a link when \`href\` is not set 1`] = `
 exports[`Link Component should render a link with addional attributes 1`] = `
 <div>
   <button
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     title="Click me"
     type="button"
   >
@@ -151,7 +151,7 @@ exports[`Link Component should render a link with addional attributes 1`] = `
 exports[`Link Component should render a link with addional classes 1`] = `
 <div>
   <button
-    class="db-link db-link--primary my-class"
+    class="db-link db-link--primary db-link--icon my-class"
     type="button"
   >
     <span>
@@ -169,7 +169,7 @@ exports[`Link Component should render a link with addional classes 1`] = `
 exports[`Link Component should render a mixed link 1`] = `
 <div>
   <button
-    class="db-link db-link--mixed"
+    class="db-link db-link--mixed db-link--icon"
     type="button"
   >
     <span>
@@ -187,7 +187,7 @@ exports[`Link Component should render a mixed link 1`] = `
 exports[`Link Component should render a secondary link 1`] = `
 <div>
   <button
-    class="db-link db-link--secondary"
+    class="db-link db-link--secondary db-link--icon"
     type="button"
   >
     <span>
@@ -205,7 +205,7 @@ exports[`Link Component should render a secondary link 1`] = `
 exports[`Link Component should render a submit link 1`] = `
 <div>
   <button
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     type="submit"
   >
     <span>
@@ -223,7 +223,7 @@ exports[`Link Component should render a submit link 1`] = `
 exports[`Link Component should render a the icon on the left side 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <svg
@@ -254,7 +254,7 @@ exports[`Link Component should render a the icon on the left side 1`] = `
 exports[`Link Component should render a the icon on the right side 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <span>
@@ -285,7 +285,7 @@ exports[`Link Component should render a the icon on the right side 1`] = `
 exports[`Link Component should render an download link anchor when \`href\` is set 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <svg
@@ -316,7 +316,7 @@ exports[`Link Component should render an download link anchor when \`href\` is s
 exports[`Link Component should render an external link anchor when \`href\` starts with http 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="http://www.bahn.de/"
   >
     <span>
@@ -347,7 +347,7 @@ exports[`Link Component should render an external link anchor when \`href\` star
 exports[`Link Component should render an external link anchor when \`href\` starts with https 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="https://www.bahn.de/"
   >
     <span>
@@ -378,7 +378,7 @@ exports[`Link Component should render an external link anchor when \`href\` star
 exports[`Link Component should render an internal link anchor when \`href\` is set 1`] = `
 <div>
   <a
-    class="db-link db-link--primary"
+    class="db-link db-link--primary db-link--icon"
     href="/"
   >
     <span>
