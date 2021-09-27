@@ -34,7 +34,8 @@ $db-select-chevron-margin: 16px;
    * 1. do not apply browser-default select styles
    */
   select {
-    appearance: none; /* 1 */
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-appearance: none; /* 1 */
     border: 0;
     background: transparent;
     color: inherit;
