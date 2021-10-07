@@ -9,7 +9,7 @@ repositories:
 releases:
   - name: react
     chart: bahnx/service
-    version: 1.3.0
+    version: 1.5.1
     values:
       - values.yaml.gotmpl
       - image:
@@ -19,6 +19,8 @@ releases:
           port: 8080
         readinessProbe:
           path: /
+        dbComplianceAnnotations:
+          beamIds: A-107310
         ingress:
           enabled: true
           annotations:
