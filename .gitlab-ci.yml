@@ -3,6 +3,10 @@ include:
   - project: bahn-x/platform/gitlab-ci-utils
     ref: main
     file: whitesource.yml
+  - project: bahn-x/platform/gitlab-ci-utils
+    ref: main
+    file: hadolint.yml
+
 
 image: node:latest
 
@@ -25,12 +29,6 @@ stages:
     - npm config set //$NPM_REGISTRY/:always-auth true
     - npm config set @bahn-x:registry https://$NPM_REGISTRY
     - yarn install --cache-folder .yarn
-
-.hadolint:
-  image: hadolint/hadolint:latest-alpine
-  stage: test
-  script:
-    - hadolint --ignore SC2039 --ignore DL3060 Dockerfile
 
 .test:
   extends: .install
@@ -60,13 +58,13 @@ stages:
     - yarn build
 
 .build:
-  image: bahnx/cd-base:latest
+  image: tdpxw-docker-release-local.bahnhub.tech.rz.db.de/cd-base:latest
   stage: build
   script:
     - /build-push-docker.sh --image=web/react
 
 .deploy:
-  image: bahnx/cd-base:latest
+  image: tdpxw-docker-release-local.bahnhub.tech.rz.db.de/cd-base:latest
   stage: deploy
   script:
     - source /bootstrap-deploy.sh
@@ -77,6 +75,7 @@ stages:
 # dev
 hadolint-dev:
   extends: .hadolint
+  stage: test
   tags: [dev]
   except: [prod]
 
@@ -162,6 +161,7 @@ deploy-dev:
 # prod
 hadolint-prod:
   extends: .hadolint
+  stage: test
   tags: [prod]
   only: [prod]
 
