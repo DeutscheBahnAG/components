@@ -3,7 +3,7 @@
 exports[`Select Component should render a disabled select 1`] = `
 <div>
   <div
-    class="db-select db-select--disabled"
+    class="db-select db-select--disabled db-select--size-l"
   >
     <select
       disabled=""
@@ -11,9 +11,8 @@ exports[`Select Component should render a disabled select 1`] = `
     <svg
       viewBox="0 0 16 10"
     >
-      <polygon
-        fill="currentColor"
-        points="8 9.56 0.29 1.85 1.71 0.44 8 6.73 14.29 0.44 15.71 1.85"
+      <path
+        d="M1 2l6 6l6-6"
       />
     </svg>
   </div>
@@ -23,15 +22,14 @@ exports[`Select Component should render a disabled select 1`] = `
 exports[`Select Component should render a select 1`] = `
 <div>
   <div
-    class="db-select"
+    class="db-select db-select--size-l"
   >
     <select />
     <svg
       viewBox="0 0 16 10"
     >
-      <polygon
-        fill="currentColor"
-        points="8 9.56 0.29 1.85 1.71 0.44 8 6.73 14.29 0.44 15.71 1.85"
+      <path
+        d="M1 2l6 6l6-6"
       />
     </svg>
   </div>

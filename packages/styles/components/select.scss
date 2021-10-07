@@ -5,16 +5,15 @@ $db-select-padding-horizontal: db-spacing('m') - $db-select-border-width;
 $db-select-padding-vertical: db-spacing('m') - $db-select-border-width;
 $db-select-padding-top: $db-select-padding-vertical - $db-select-adjustment;
 $db-select-padding-bottom: $db-select-padding-vertical + $db-select-adjustment;
-$db-select-chevron-width: 16px;
 $db-select-chevron-margin: 16px;
 
 .db-select {
+  --db-select--chevron-width: 16px;
   @include db-text-style($db-select-text-style);
   @include db-focus-ring($focus-selector: '.db-select--focus', $transition: 'border 200ms');
   align-items: stretch;
   background-color: var(--db-secondary-background-color);
   border: db-border-width('input') solid var(--db-secondary-background-color);
-  border-radius: db-border-radius('xl');
   box-sizing: border-box;
   color: var(--db-primary-text-color);
   display: inline-flex;
@@ -44,9 +43,6 @@ $db-select-chevron-margin: 16px;
     font-weight: inherit;
     line-height: inherit;
     flex: 1;
-    padding: $db-select-padding-top
-      ($db-select-padding-horizontal + $db-select-chevron-width + $db-select-chevron-margin)
-      $db-select-padding-bottom $db-select-padding-horizontal;
     outline: 0;
     width: inherit;
   }
@@ -62,8 +58,46 @@ $db-select-chevron-margin: 16px;
     pointer-events: none;
     position: absolute;
     top: 50%;
-    right: $db-select-chevron-margin;
     transform: translateY(-50%);
-    width: $db-select-chevron-width;
+    width: var(--db-select--chevron-width);
+  }
+
+  path {
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    fill-rule: evenodd;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.db-select--size-s {
+  --db-select--chevron-width: 12px;
+
+  path {
+    stroke-width: 2.4;
+  }
+}
+
+@each $size in (xl l m s xs) {
+  .db-select--size-#{$size} {
+    $horizontal-padding: db-component-horizontal-padding($size, 'input');
+    $vertical-padding: db-component-vertical-padding($size, 'input');
+    @include db-component-text-style($size, 'input');
+    border-radius: db-border-radius($size);
+    min-height: db-size($size);
+
+    select {
+      border-radius: db-border-radius($size);
+      padding-bottom: $vertical-padding + 1px;
+      padding-left: $horizontal-padding;
+      padding-right: calc(#{1.5 * $horizontal-padding} + var(--db-select--chevron-width));
+      padding-top: $vertical-padding - 1px;
+    }
+
+    svg {
+      right: $horizontal-padding;
+    }
   }
 }

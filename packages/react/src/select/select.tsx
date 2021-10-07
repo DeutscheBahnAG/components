@@ -5,11 +5,20 @@ import clsx from 'clsx';
 
 const noopFn = () => {};
 
+export enum SelectSizes {
+  S = 's',
+  M = 'm',
+  L = 'l',
+  XL = 'xl',
+}
+
 const selectPropTypes = {
   /** Additional class names */
   className: PropTypes.string,
   /** The user input */
   value: PropTypes.string,
+  /** The size of the Select */
+  size: PropTypes.oneOf(Object.values(SelectSizes)),
   /** Whether input can be edited */
   disabled: PropTypes.bool,
   /** Focus event handler */
@@ -29,13 +38,18 @@ const selectPropTypes = {
 
 type SelectProps = InferProps<typeof selectPropTypes>;
 
-const Select: React.FunctionComponent<SelectProps> = ({
+type SelectType = React.FunctionComponent<SelectProps> & {
+  sizes: typeof SelectSizes;
+};
+
+const Select: SelectType = ({
   className = '',
   disabled = false,
   onBlur = noopFn,
   onFocus = noopFn,
   options = [],
   value = '',
+  size = SelectSizes.L,
   ...otherProps
 }) => {
   const [isFocused, setFocused] = useState(false);
@@ -60,6 +74,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
       className={clsx(
         'db-select',
         { 'db-select--focus': isFocused, 'db-select--disabled': disabled },
+        `db-select--size-${size}`,
         className
       )}
     >
@@ -82,15 +97,13 @@ const Select: React.FunctionComponent<SelectProps> = ({
         ))}
       </select>
       <svg viewBox="0 0 16 10">
-        <polygon
-          fill="currentColor"
-          points="8 9.56 0.29 1.85 1.71 0.44 8 6.73 14.29 0.44 15.71 1.85"
-        />
+        <path d="M1 2l6 6l6-6" />
       </svg>
     </div>
   );
 };
 
 Select.propTypes = selectPropTypes;
+Select.sizes = SelectSizes;
 
 export default Select;

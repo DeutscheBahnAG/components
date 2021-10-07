@@ -46,3 +46,45 @@
   ]}
 />
 ```
+
+## Sizing
+
+```jsx
+<Select
+  size={Select.sizes.S}
+  options={[
+    { value: 1, label: 'Cats' },
+    { value: 2, label: 'Dogs' },
+  ]}
+/>
+```
+
+```jsx
+<Select
+  size={Select.sizes.M}
+  options={[
+    { value: 1, label: 'Cats' },
+    { value: 2, label: 'Dogs' },
+  ]}
+/>
+```
+
+```jsx
+<Select
+  size={Select.sizes.L}
+  options={[
+    { value: 1, label: 'Cats' },
+    { value: 2, label: 'Dogs' },
+  ]}
+/>
+```
+
+```jsx
+<Select
+  size={Select.sizes.XL}
+  options={[
+    { value: 1, label: 'Cats' },
+    { value: 2, label: 'Dogs' },
+  ]}
+/>
+```
