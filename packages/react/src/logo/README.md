@@ -27,7 +27,7 @@ This component has been carefully co-created with the Brand Team to strictly fol
 ```jsx noeditor
 import { Container } from '@db-design/react';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div style={{ display: 'flex', margin: '48px 0' }}>
+<div style={{ display: 'flex', margin: '48px 0', borderRadius: '6.3px', overflow: 'hidden' }}>
   <Container
     style={{
       padding: tokens.spacing['l'],
@@ -136,6 +136,8 @@ By default the logo has a transparent background.
     height: '200px',
     display: 'flex',
     alignItems: 'center',
+    borderRadius: '6.3px',
+    overflow: 'hidden',
   }}
 >
   <Logo variant={Logo.variants.DEFAULT} />
@@ -151,6 +153,8 @@ By default the logo has a transparent background.
     height: '200px',
     display: 'flex',
     alignItems: 'center',
+    borderRadius: '6.3px',
+    overflow: 'hidden',
   }}
 >
   <Logo variant={Logo.variants.FILLED} />
@@ -164,14 +168,7 @@ The `DEFAULT` and `WHITE` variants do have transparent background. Light backgro
 Red or white logo with transparent background depending on the theme.
 
 ```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div
-  style={{
-    padding: tokens.spacing['m'],
-  }}
->
-  <Logo />
-</div>;
+<Logo />
 ```
 
 ### Default
@@ -179,14 +176,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 Red logo with transparent background.
 
 ```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div
-  style={{
-    padding: tokens.spacing['m'],
-  }}
->
-  <Logo variant={Logo.variants.DEFAULT} />
-</div>;
+<Logo variant={Logo.variants.DEFAULT} />
 ```
 
 ### Filled
@@ -200,6 +190,9 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     background:
       'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
     padding: tokens.spacing['m'],
+    height: '192px',
+    borderRadius: '6.3px',
+    overflow: 'hidden',
   }}
 >
   <Logo variant={Logo.variants.FILLED} />
@@ -218,6 +211,8 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
   style={{
     background: tokens.palette['dbrot'],
     padding: tokens.spacing['m'],
+    borderRadius: '6.3px',
+    overflow: 'hidden',
   }}
 >
   <Logo variant={Logo.variants.WHITE} />
