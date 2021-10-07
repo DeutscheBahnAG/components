@@ -62,6 +62,7 @@ const Logo: LogoComponent = React.forwardRef(
       productMarking = undefined,
       direction = 'horizontal',
       href,
+      ...otherProps
     },
     ref
   ) => {
@@ -83,6 +84,7 @@ const Logo: LogoComponent = React.forwardRef(
           direction !== 'horizontal' && `db-logo--${direction}`,
           className
         )}
+        {...otherProps}
       >
         {/* Do not copy this SVG code. This is optimized for this component only. */}
         <svg viewBox="0 0 40 28" className="db-logo__db">
