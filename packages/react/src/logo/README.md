@@ -35,7 +35,9 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     filled
     className="DB_LIGHT_ALTERNATE"
   >
-    <Logo size={Logo.sizes.XL} />
+    <div>
+      <Logo size={Logo.sizes.XL} href="/" />
+    </div>
   </Container>
   <Container
     style={{
@@ -45,8 +47,13 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     className="DB_DARK"
   >
     <div style={{ width: '192px' }}>
-      <Logo size={Logo.sizes.XL} />
-      <Logo size={Logo.sizes.XL} variant={Logo.variants.WHITE} style={{ marginLeft: '12px' }} />
+      <Logo size={Logo.sizes.XL} href="/" />
+      <Logo
+        size={Logo.sizes.XL}
+        href="/"
+        variant={Logo.variants.WHITE}
+        style={{ marginLeft: '12px' }}
+      />
     </div>
   </Container>
   <Container
@@ -56,7 +63,9 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     filled
     className="DB_BRANDED"
   >
-    <Logo size={Logo.sizes.XL} variant={Logo.variants.WHITE} />
+    <div>
+      <Logo size={Logo.sizes.XL} href="/" variant={Logo.variants.WHITE} />
+    </div>
   </Container>
   <Container
     style={{
@@ -66,7 +75,9 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     }}
     filled
   >
-    <Logo size={Logo.sizes.XL} variant={Logo.variants.FILLED} />
+    <div>
+      <Logo size={Logo.sizes.XL} href="/" variant={Logo.variants.FILLED} />
+    </div>
   </Container>
 </div>;
 ```
@@ -400,6 +411,9 @@ The Logo can be linked. It automatically will show a DB-styled focus ring.
 
 ```jsx
 <Logo href="/" />
+<Logo href="/" productMarking="Marking" />
+<Logo href="/" brand="netze" />
+<Logo href="/" brand="cargo" align="center" />
 ```
 
 ## Highlights

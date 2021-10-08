@@ -79,8 +79,26 @@ $db-logo-sizes: (
   fill: db-background-color('primary');
 }
 
-.db-logo[href]:focus {
-  @include db-focus-ring;
+.db-logo[href] {
+  @include db-focus-ring($offset: 3 * $focus-ring-offset);
+  position: relative;
+  z-index: 0;
+}
+
+.db-logo[href]::before {
+  border-radius: calc(var(--db-logo--height) / 3.8);
+  bottom: db-spacing('xs', $negative: true);
+  content: '';
+  left: db-spacing('xs', $negative: true);
+  position: absolute;
+  right: db-spacing('xs', $negative: true);
+  top: db-spacing('xs', $negative: true);
+  transition: background 0.15ms;
+  z-index: -1;
+}
+
+.db-logo[href]:hover::before {
+  background: var(--db-darker-background-color);
 }
 
 .db-logo__product-marking {
