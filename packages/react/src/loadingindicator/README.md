@@ -11,23 +11,23 @@ import { Loadingindicator } from '@db-design/react';
 ## Size
 
 ```jsx
-<Loadingindicator size={Loadingindicator.sizes.XS} />
+<Loadingindicator size="xs" />
 ```
 
 ```jsx
-<Loadingindicator size={Loadingindicator.sizes.S} />
+<Loadingindicator size="s" />
 ```
 
 ```jsx
-<Loadingindicator size={Loadingindicator.sizes.M} />
+<Loadingindicator size="m" />
 ```
 
 ```jsx
-<Loadingindicator size={Loadingindicator.sizes.L} />
+<Loadingindicator size="l" />
 ```
 
 ```jsx
-<Loadingindicator size={Loadingindicator.sizes.XL} />
+<Loadingindicator size="xl" />
 ```
 
 ## Controlling the colour

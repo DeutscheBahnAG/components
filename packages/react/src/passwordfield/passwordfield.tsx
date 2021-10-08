@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import { ActionVisibility, ActionVisibilityOff } from '@db-design/react-icons';
-import Textfield, { TextfieldSize, TextfieldRef } from '../textfield/textfield';
+import Textfield, { TextfieldRef } from '../textfield/textfield';
 import Button from '../button';
 
 const defaultLabels = {
@@ -25,9 +25,7 @@ const passwordfieldPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PasswordfieldProps = InferProps<typeof passwordfieldPropTypes> & Record<string, any>;
 
-export type PasswordfieldComponent = React.FunctionComponent<PasswordfieldProps> & {
-  sizes: typeof TextfieldSize;
-};
+export type PasswordfieldComponent = React.FunctionComponent<PasswordfieldProps>;
 
 const Passwordfield: PasswordfieldComponent = ({
   concealed = true,
@@ -69,9 +67,9 @@ const Passwordfield: PasswordfieldComponent = ({
       spellCheck={false}
       suffix={
         <Button
-          variant={Button.variants.HOVER_ONLY}
-          shape={Button.shapes.ROUND}
-          size={Button.sizes.S}
+          variant="hover-only"
+          shape="round"
+          size="s"
           disabled={disabled || !value}
           icon={isConcealed ? <ActionVisibility /> : <ActionVisibilityOff />}
           onClick={toggleConcealed}
@@ -82,8 +80,6 @@ const Passwordfield: PasswordfieldComponent = ({
     />
   );
 };
-
-Passwordfield.sizes = TextfieldSize;
 
 Passwordfield.propTypes = passwordfieldPropTypes;
 

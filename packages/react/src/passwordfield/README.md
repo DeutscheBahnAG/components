@@ -41,15 +41,15 @@ move on top of the input.
 ## Sizing
 
 ```jsx
-<Passwordfield size={Passwordfield.sizes.M} />
+<Passwordfield size="m" />
 ```
 
 ```jsx
-<Passwordfield size={Passwordfield.sizes.L} />
+<Passwordfield size="l" />
 ```
 
 ```jsx
-<Passwordfield size={Passwordfield.sizes.XL} />
+<Passwordfield size="xl" />
 ```
 
-Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `XL`.
+Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `xl`.

@@ -17,17 +17,12 @@ const iconExclamation = (
   </>
 );
 
-enum StatusSeverities {
-  INFORMATIVE = 'informative',
-  WARNING = 'warning',
-  ERROR = 'error',
-  FATAL = 'fatal',
-  SUCCESS = 'success',
-}
+export const StatusSeverities = ['informative', 'warning', 'error', 'fatal', 'success'] as const;
+export type StatusSeveritiesType = typeof StatusSeverities[number];
 
 const statusPropTypes = {
   /** The purpose of the Status, affects visual styling */
-  severity: PropTypes.oneOf(Object.values(StatusSeverities)),
+  severity: PropTypes.oneOf(StatusSeverities),
   /** The text to be displayed */
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
@@ -35,10 +30,7 @@ const statusPropTypes = {
 
 type StatusProps = InferProps<typeof statusPropTypes>;
 
-type StatusComponent = React.FunctionComponent<StatusProps> & {
-  severities: typeof StatusSeverities;
-};
-
+type StatusComponent = React.FunctionComponent<StatusProps>;
 const Status: StatusComponent = ({ severity, children, className, ...props }) => {
   return (
     <>
@@ -47,12 +39,12 @@ const Status: StatusComponent = ({ severity, children, className, ...props }) =>
           <circle cx="10" cy="10" r="8" />
           {(() => {
             switch (severity) {
-              case StatusSeverities.SUCCESS:
+              case 'success':
                 return iconCheck;
-              case StatusSeverities.WARNING:
-              case StatusSeverities.ERROR:
+              case 'warning':
+              case 'error':
                 return iconExclamation;
-              case StatusSeverities.FATAL:
+              case 'fatal':
                 return iconCross;
               default:
                 return iconInfo;
@@ -66,12 +58,10 @@ const Status: StatusComponent = ({ severity, children, className, ...props }) =>
   );
 };
 
-Status.severities = StatusSeverities;
-
 Status.propTypes = statusPropTypes;
 
 Status.defaultProps = {
-  severity: StatusSeverities.INFORMATIVE,
+  severity: 'informative',
   className: '',
 };
 

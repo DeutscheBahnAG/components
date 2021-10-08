@@ -1,74 +1,99 @@
 /* eslint-disable unicorn/better-regex */
 
-export enum Products {
-  ICE = 'ice',
-  IC = 'ic',
-  EC = 'ec',
-  FERRY = 'ferry',
-  SUBWAY = 'subway',
-  SUBURBAN = 'suburban',
-  AIRPLANE = 'airplane',
-  INTERCITYBUS = 'intercitybus',
-  TRAM = 'tram',
-  BUS = 'bus',
-  RE = 're',
-  RB = 'rb',
-  REGIONAL = 'rb',
-  TAXI = 'taxi',
-  WALKING = 'walking',
-  CARSHARING = 'carsharing',
-  BIKESHARING = 'bikesharing',
-}
+export const ProductsEnum = [
+  'ice',
+  'ic',
+  'ec',
+  'ferry',
+  'subway',
+  'suburban',
+  'airplane',
+  'intercitybus',
+  'tram',
+  'bus',
+  're',
+  'rb',
+  'taxi',
+  'walking',
+  'carsharing',
+  'bikesharing',
+] as const;
+export type ProductsEnumType = typeof ProductsEnum[number];
 
-export const styles = {
-  'sbahn-mitteldeutschland': { products: [Products.SUBURBAN], zipCodes: /^(0[3467]|149)/ },
-  'sbahn-berlin': { products: [Products.SUBURBAN], zipCodes: /^1([012356]|4[1345])/ },
-  'sbahn-hamburg': { products: [Products.SUBURBAN], zipCodes: /^2[02]|2161/ },
-  'sbahn-rheinmain': { products: [Products.SUBURBAN], zipCodes: /^(55|6[01345])/ },
-  'sbahn-rheinneckar': { products: [Products.SUBURBAN], zipCodes: /^(6[6789])/ },
-  'sbahn-rheinruhrkoeln': { products: [Products.SUBURBAN], zipCodes: /^(4|5[0123789])/ },
-  'sbahn-muenchen': { products: [Products.SUBURBAN], zipCodes: /^(8[0125])/ },
-  'sbahn-nuernberg': { products: [Products.SUBURBAN], zipCodes: /^(9[012])/ },
-  akn: { products: [Products.REGIONAL], zipCodes: /^(2[0245])/ },
-  bvg: {
-    products: [Products.SUBWAY, Products.TRAM, Products.BUS, Products.FERRY],
-    zipCodes: /^1[0-3]|141/,
-  },
-  hvv: {
-    products: [Products.SUBWAY, Products.TRAM, Products.BUS, Products.FERRY, Products.TAXI],
-    zipCodes: /^2[02]/,
-  },
-  mvg: { products: [Products.SUBWAY, Products.TRAM, Products.BUS], zipCodes: /^8[0125]/ },
-  vgf: { products: [Products.SUBWAY, Products.TRAM, Products.BUS], zipCodes: /^6[05]/ },
-  rnv: { products: [Products.TRAM], zipCodes: /^6[789]/ },
-  vgn: { products: [Products.SUBWAY, Products.TRAM, Products.BUS], zipCodes: /^9[012]/ },
-  kvb: { products: [Products.TRAM, Products.BUS], zipCodes: /^5[013]/ },
-  bsag: { products: [Products.TRAM, Products.BUS], zipCodes: /^28/ },
-  nordwestbahn: { products: [Products.SUBURBAN], zipCodes: /^2[78]/ },
+export const Styles = [
+  'sbahn-mitteldeutschland',
+  'sbahn-berlin',
+  'sbahn-hamburg',
+  'sbahn-rheinmain',
+  'sbahn-rheinneckar',
+  'sbahn-rheinruhrkoeln',
+  'sbahn-muenchen',
+  'sbahn-nuernberg',
+  'akn',
+  'bvg',
+  'hvv',
+  'mvg',
+  'vgf',
+  'rnv',
+  'vgn',
+  'kvb',
+  'bsag',
+  'nordwestbahn',
+] as const;
+export type StylesType = typeof Styles[number];
+
+type StylesObject = Record<
+  StylesType,
+  {
+    products: ProductsEnumType[];
+    zipCodes: RegExp;
+  }
+>;
+
+export const styles: StylesObject = {
+  'sbahn-mitteldeutschland': { products: ['suburban'], zipCodes: /^(0[3467]|149)/ },
+  'sbahn-berlin': { products: ['suburban'], zipCodes: /^1([012356]|4[1345])/ },
+  'sbahn-hamburg': { products: ['suburban'], zipCodes: /^2[02]|2161/ },
+  'sbahn-rheinmain': { products: ['suburban'], zipCodes: /^(55|6[01345])/ },
+  'sbahn-rheinneckar': { products: ['suburban'], zipCodes: /^(6[6789])/ },
+  'sbahn-rheinruhrkoeln': { products: ['suburban'], zipCodes: /^(4|5[0123789])/ },
+  'sbahn-muenchen': { products: ['suburban'], zipCodes: /^(8[0125])/ },
+  'sbahn-nuernberg': { products: ['suburban'], zipCodes: /^(9[012])/ },
+  akn: { products: ['rb'], zipCodes: /^(2[0245])/ },
+  bvg: { products: ['subway', 'tram', 'bus', 'ferry'], zipCodes: /^1[0-3]|141/ },
+  hvv: { products: ['subway', 'tram', 'bus', 'ferry', 'taxi'], zipCodes: /^2[02]/ },
+  mvg: { products: ['subway', 'tram', 'bus'], zipCodes: /^8[0125]/ },
+  vgf: { products: ['subway', 'tram', 'bus'], zipCodes: /^6[05]/ },
+  rnv: { products: ['tram'], zipCodes: /^6[789]/ },
+  vgn: { products: ['subway', 'tram', 'bus'], zipCodes: /^9[012]/ },
+  kvb: { products: ['tram', 'bus'], zipCodes: /^5[013]/ },
+  bsag: { products: ['tram', 'bus'], zipCodes: /^28/ },
+  nordwestbahn: { products: ['suburban'], zipCodes: /^2[78]/ },
 };
 
-type RegionalOperators = keyof typeof styles;
-
-const autoProducts = {
-  [Products.ICE]: /ICE ?\d+/,
-  [Products.IC]: /IC ?\d+/,
-  [Products.EC]: /EC ?\d+/,
-  [Products.FERRY]: /F ?\d+/,
-  [Products.SUBWAY]: /U ?\d+/,
-  [Products.SUBURBAN]: /S ?\d+/,
-  [Products.TRAM]: /STR ?(M ?)?\d+|Tram \d+/i,
-  [Products.BUS]: /Bus \d+/i,
-  [Products.RE]: /RE ?\d+/,
-  [Products.RB]: /RB ?\d+/,
-  [Products.TAXI]: /taxi/i,
+type AutoProductsType = Partial<Record<ProductsEnumType, RegExp>>;
+const autoProducts: AutoProductsType = {
+  ice: /ICE ?\d+/,
+  ic: /IC ?\d+/,
+  ec: /EC ?\d+/,
+  ferry: /F ?\d+/,
+  subway: /U ?\d+/,
+  suburban: /S ?\d+/,
+  tram: /STR ?(M ?)?\d+|Tram \d+/i,
+  bus: /Bus \d+/i,
+  re: /RE ?\d+/,
+  rb: /RB ?\d+/,
+  taxi: /taxi/i,
 };
 
 type AutoProducts = keyof typeof autoProducts;
 
 export const findProduct = (lineNumber: string): AutoProducts | undefined => {
-  return (Object.keys(autoProducts) as AutoProducts[]).find((key) =>
-    lineNumber.match(autoProducts[key])
-  );
+  return ProductsEnum.find((key) => {
+    const autoProduct = autoProducts[key];
+    if (!autoProduct) return false;
+    return lineNumber.match(autoProduct);
+  });
 };
 
 export const findStyle = ({
@@ -76,12 +101,12 @@ export const findStyle = ({
   zipCode,
   lineNumber,
 }: {
-  product?: Products;
+  product?: ProductsEnumType;
   zipCode: string;
   lineNumber: string;
 }): string | undefined => {
   const productKey = product || findProduct(lineNumber);
-  return (Object.keys(styles) as RegionalOperators[]).find((key) => {
+  return Styles.find((key) => {
     const { products: productKeys, zipCodes } = styles[key];
     return productKey && productKeys.includes(productKey) && zipCode.match(zipCodes);
   });
@@ -97,7 +122,7 @@ type SpecialProducts = Record<string, (transportType: string, lineNumber: string
 
 export const specialProducts: SpecialProducts = {
   hvv: (transportType, lineNumber) => {
-    if (transportType === Products.BUS) {
+    if (transportType === 'bus') {
       const number = Number.parseInt(lineNumber, 10);
       if (lineNumber.startsWith('X')) {
         return 'expressbus';
@@ -117,7 +142,7 @@ export const specialProducts: SpecialProducts = {
     return null;
   },
   mvg: (transportType, lineNumber) => {
-    if (transportType === Products.TRAM) {
+    if (transportType === 'tram') {
       if (['15', '16', '21', '22', '28', '29'].includes(lineNumber)) {
         return 'tram-temporary';
       }
@@ -125,7 +150,7 @@ export const specialProducts: SpecialProducts = {
         return 'nachttram';
       }
     }
-    if (transportType === Products.BUS) {
+    if (transportType === 'bus') {
       if (lineNumber.match(/x\d/i)) {
         return 'expressbus';
       }
@@ -139,7 +164,7 @@ export const specialProducts: SpecialProducts = {
     return null;
   },
   vgn: (transportType, lineNumber) => {
-    if (transportType === Products.TRAM) {
+    if (transportType === 'tram') {
       if (['19', '20'].includes(lineNumber)) {
         return 'tram-temporary';
       }

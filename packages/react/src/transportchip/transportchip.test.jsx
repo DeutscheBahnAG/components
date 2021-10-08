@@ -30,7 +30,7 @@ describe('Transportchip Component', () => {
   });
 
   it('should allow setting the transport type manually', () => {
-    const { container } = render(<Transportchip product={Transportchip.products.BUS} name="U 1" />);
+    const { container } = render(<Transportchip product="bus" name="U 1" />);
     expect(container).toMatchSnapshot();
   });
 

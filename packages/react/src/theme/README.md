@@ -8,7 +8,7 @@ import { Theme } from '@db-design/react';
 import { Button } from '@db-design/react';
 <>
   <Button>DB Button</Button>
-  <Theme theme={Theme.themes.S_BAHN_LIGHT}>
+  <Theme theme="S_BAHN_LIGHT">
     <Button>S-Bahn Button</Button>
   </Theme>
 </>;
@@ -35,14 +35,15 @@ import {
 import Icons from '@db-design/react-icons';
 import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import { useState } from 'react';
+import { Themes } from './theme'
+
 const [themeIndex, setThemeIndex] = useState(0);
-const themes = Object.values(Theme.themes);
-const themeNames = Object.keys(Theme.themes);
+
 <div className="rsg--preview-37" style={{ borderRadius: radius.l }}>
-  <Theme theme={themes[themeIndex]}>
+  <Theme theme={Themes[themeIndex]}>
     <Container
       filled
-      align={Container.alignments.CENTER}
+      align="center"
       style={{
         display: 'grid',
         gap: `${spacing.m}px`,
@@ -52,24 +53,24 @@ const themeNames = Object.keys(Theme.themes);
       }}
     >
       <div>
-        <Logo size={Logo.sizes.XXL} />
+        <Logo size="xxl" />
         <Pulse>
-          <Title size={Title.sizes.XXL}>Primary title</Title>
-          <Title variant={Title.variants.SECONDARY} light size={Title.sizes.M}>
+          <Title size="xxl">Primary title</Title>
+          <Title variant="secondary" light size="m">
             Secondary title
           </Title>
         </Pulse>
       </div>
       <p>
-        <Copy size={Copy.sizes.S}>Current theme:</Copy>
-        <Copy size={Copy.sizes.L}>{themeNames[themeIndex]}</Copy>
+        <Copy size="s">Current theme:</Copy>
+        <Copy size="l">{Themes[themeIndex]}</Copy>
       </p>
       <div>
         <Button
           onClick={() => {
-            setThemeIndex(themeIndex === 0 ? themes.length - 1 : themeIndex - 1);
+            setThemeIndex(themeIndex === 0 ? Themes.length - 1 : themeIndex - 1);
           }}
-          variant={Button.variants.SECONDARY}
+          variant="secondary"
           icon={<Icons.NavigationArrowBack />}
           style={{ width: '212px' }}
         >
@@ -77,11 +78,11 @@ const themeNames = Object.keys(Theme.themes);
         </Button>
         <Button
           onClick={() => {
-            setThemeIndex(themeIndex === themes.length - 1 ? 0 : themeIndex + 1);
+            setThemeIndex(themeIndex === Themes.length - 1 ? 0 : themeIndex + 1);
           }}
           icon={<Icons.NavigationArrowForward />}
           style={{ width: '212px' }}
-          iconPosition={Button.iconPositions.AFTER}
+          iconPosition="after"
         >
           Use next theme
         </Button>
@@ -104,14 +105,14 @@ const themeNames = Object.keys(Theme.themes);
         <Button variant="solid" size="m">
           Solid
         </Button>
-        <Link href="#" variant={Link.variants.SECONDARY} iconPosition={Link.iconPositions.BEFORE}>
+        <Link href="#" variant="secondary" iconPosition="before">
           Link
         </Link>
         <Link href="#">Link</Link>
       </div>
       <p style={{ marginTop: `${spacing.xl}px` }}>
-        <Copy size={Copy.sizes.M}>Travel information:</Copy>
-        <Copy variant={Copy.variants.SECONDARY} size={Copy.sizes.S}>
+        <Copy size="m">Travel information:</Copy>
+        <Copy variant="secondary" size="s">
           (possible but not recommended on branded background)
         </Copy>
       </p>
@@ -154,11 +155,11 @@ const themeNames = Object.keys(Theme.themes);
         className="statusPreview"
         style={{ lineHeight: '24px', width: '240px', margin: 'auto' }}
       >
-        <Status severity={Status.severities.SUCCESS}>This feature is included</Status>
-        <Status severity={Status.severities.WARNING}>This feature is not included</Status>
-        <Status severity={Status.severities.INFORMATIVE}>This feature is optional</Status>
-        <Status severity={Status.severities.ERROR}>This feature got removed</Status>
-        <Status severity={Status.severities.FATAL}>No information available</Status>
+        <Status severity="success">This feature is included</Status>
+        <Status severity="warning">This feature is not included</Status>
+        <Status severity="informative">This feature is optional</Status>
+        <Status severity="error">This feature got removed</Status>
+        <Status severity="fatal">No information available</Status>
         <style>{`.statusPreview .db-inline-spacer { margin-top: 4px }`}</style>
       </Copy>
     </Container>
@@ -177,31 +178,31 @@ Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours wonâ
 ```jsx { "props": { "className": "nesting-themes" } }
 import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
 <>
-  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
-    <Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
-      <Theme theme={Theme.themes.DB_LIGHT}>
-        <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
-          <Logo size={Logo.sizes.XL} />
+  <Theme theme="DB_LIGHT_ALTERNATE">
+    <Container filled width="full" align="center">
+      <Theme theme="DB_LIGHT">
+        <Container filled width="content" align="center">
+          <Logo size="xl" />
           <Pulse>
             <Title>Headline</Title>
           </Pulse>
         </Container>
       </Theme>
-      <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+      <Container filled width="content" align="center">
         <Copy>More content</Copy>
-        <Theme theme={Theme.themes.DB}>
-          <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
-            <Title size={Title.sizes.L}>Teaser</Title>
+        <Theme theme="DB">
+          <Container filled width="content" align="center">
+            <Title size="l">Teaser</Title>
             <Button>Click me</Button>
           </Container>
         </Theme>
       </Container>
     </Container>
   </Theme>
-  <Theme theme={Theme.themes.DB_DARK}>
-    <Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
+  <Theme theme="DB_DARK">
+    <Container filled width="full" align="center">
       <Copy>Â© Deutsche Bahn AG {new Date().getFullYear()}</Copy>
-      <Logo size={Logo.sizes.M} variant={Logo.variants.WHITE} />
+      <Logo size="m" variant="white" />
     </Container>
   </Theme>
 </>;

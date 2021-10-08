@@ -17,7 +17,7 @@ const onClick = (event) => {
 
 <>
   {message && (
-    <Notification variant={Notification.severities.INFORMATIVE} global>
+    <Notification variant="informative" global>
       {message}
     </Notification>
   )}
@@ -27,8 +27,8 @@ const onClick = (event) => {
       return (
         <li>
           <Button
-            size={Button.sizes.M}
-            variant={Button.variants.HOVER_ONLY}
+            size="m"
+            variant="hover-only"
             icon={<Icon />}
             onClick={onClick}
             title="Click to copy"

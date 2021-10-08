@@ -5,19 +5,15 @@ import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
 import Button from '../button/button';
 
-enum NotificationSeverities {
-  INFORMATIVE = 'informative',
-  WARNING = 'warning',
-  ERROR = 'error',
-  SUCCESS = 'success',
-}
+export const NotificationSeverities = ['informative', 'warning', 'error', 'success'] as const;
+export type NotificationSeveritiesType = typeof NotificationSeverities[number];
 
-const defaultLabels = {
+const defaultLabels: Record<NotificationSeveritiesType | 'close', string> = {
   close: 'Schließen',
-  [NotificationSeverities.INFORMATIVE]: 'Info',
-  [NotificationSeverities.WARNING]: 'Warnung',
-  [NotificationSeverities.ERROR]: 'Fehler',
-  [NotificationSeverities.SUCCESS]: 'Erfolg',
+  informative: 'Info',
+  warning: 'Warnung',
+  error: 'Fehler',
+  success: 'Erfolg',
 };
 
 const notificationIcons = {
@@ -81,16 +77,16 @@ const notificationPropTypes = {
   /** displays the notification overlaid on top of the page */
   global: PropTypes.bool,
   /** the purpose of the notification, affects visual styling */
-  severity: PropTypes.oneOf(Object.values(NotificationSeverities)),
+  severity: PropTypes.oneOf(NotificationSeverities),
   /** close button click handler, required to display the close button */
   onClose: PropTypes.func,
   /** custom translation strings */
   labels: PropTypes.shape({
     close: PropTypes.string.isRequired,
-    [NotificationSeverities.INFORMATIVE]: PropTypes.string.isRequired,
-    [NotificationSeverities.WARNING]: PropTypes.string.isRequired,
-    [NotificationSeverities.ERROR]: PropTypes.string.isRequired,
-    [NotificationSeverities.SUCCESS]: PropTypes.string.isRequired,
+    informative: PropTypes.string.isRequired,
+    warning: PropTypes.string.isRequired,
+    error: PropTypes.string.isRequired,
+    success: PropTypes.string.isRequired,
   }),
   /** whether to automatically focus the close button when the notification
    * is displayed. Can be useful for global notifications as they are appended
@@ -102,15 +98,13 @@ const notificationPropTypes = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type NotificationProps = InferProps<typeof notificationPropTypes> & Record<string, any>;
 
-export type NotificationComponent = React.FunctionComponent<NotificationProps> & {
-  severities: typeof NotificationSeverities;
-};
+export type NotificationComponent = React.FunctionComponent<NotificationProps>;
 
 const Notification: NotificationComponent = ({
   title = null,
   children = null,
   action = null,
-  severity: _severity = NotificationSeverities.INFORMATIVE,
+  severity: _severity = 'informative',
   global = false,
   className = '',
   onClose = null,
@@ -118,7 +112,7 @@ const Notification: NotificationComponent = ({
   autofocusCloseButton = false,
   ...otherProps
 }) => {
-  const severity = _severity ?? NotificationSeverities.INFORMATIVE;
+  const severity = _severity ?? 'informative';
   const labels = _labels ?? defaultLabels;
   const icon = notificationIcons[severity];
   const label = labels[severity];
@@ -169,9 +163,9 @@ const Notification: NotificationComponent = ({
             }
             className="db-notification__close-btn"
             onClick={onClose}
-            variant={Button.variants.HOVER_ONLY}
-            shape={Button.shapes.ROUND}
-            size={Button.sizes.S}
+            variant="hover-only"
+            shape="round"
+            size="s"
           >
             {labels.close}
           </Button>
@@ -180,8 +174,6 @@ const Notification: NotificationComponent = ({
     </NotificationWrapper>
   );
 };
-
-Notification.severities = NotificationSeverities;
 
 Notification.propTypes = notificationPropTypes;
 

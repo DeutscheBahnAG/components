@@ -21,6 +21,4 @@ Passwordfield.defaultProps = {
   value: '',
 };
 
-Passwordfield.sizes = DefaultPasswordfield.sizes;
-
 export default Passwordfield;

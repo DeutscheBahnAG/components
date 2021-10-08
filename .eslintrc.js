@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    JSX: true,
+  },
   extends: './node_modules/@bahn-x/webdev-configs/eslint.js',
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],

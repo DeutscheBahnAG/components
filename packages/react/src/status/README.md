@@ -9,31 +9,31 @@
 ### Success
 
 ```jsx
-<Status severity={Status.severities.SUCCESS}>This feature is included</Status>
+<Status severity="success">This feature is included</Status>
 ```
 
 ### Info
 
 ```jsx
-<Status severity={Status.severities.INFORMATIVE}>Works as expected</Status>
+<Status severity="informative">Works as expected</Status>
 ```
 
 ### Warning
 
 ```jsx
-<Status severity={Status.severities.WARNING}>This feature is not included</Status>
+<Status severity="warning">This feature is not included</Status>
 ```
 
 ### Error
 
 ```jsx
-<Status severity={Status.severities.ERROR}>You might not reach a connecting train</Status>
+<Status severity="error">You might not reach a connecting train</Status>
 ```
 
 ### Fatal
 
 ```jsx
-<Status severity={Status.severities.FATAL}>The train got cancelled</Status>
+<Status severity="fatal">The train got cancelled</Status>
 ```
 
 ## Tests

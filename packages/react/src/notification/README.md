@@ -1,7 +1,7 @@
 # Notification
 
 ```js
-import { Notification } from '@db-design/react';
+import { Notification, NotificationSeverities } from '@db-design/react';
 ```
 
 ```jsx
@@ -11,34 +11,34 @@ import { Notification } from '@db-design/react';
 ## Variants
 
 ```jsx
-<Notification severity={Notification.severities.INFORMATIVE}>I am a notification.</Notification>
+<Notification severity="informative">I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.WARNING}>I am a notification.</Notification>
+<Notification severity="warning">I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.ERROR}>I am a notification.</Notification>
+<Notification severity="error">I am a notification.</Notification>
 ```
 
 ```jsx
-<Notification severity={Notification.severities.SUCCESS}>I am a notification.</Notification>
+<Notification severity="success">I am a notification.</Notification>
 ```
 
 ## Closeable
 
 ```jsx
-<Notification onClose={() => {}} severity={Notification.severities.INFORMATIVE}>
+<Notification onClose={() => {}} severity="informative">
   I am a notification.
 </Notification>
-<Notification onClose={() => {}} severity={Notification.severities.WARNING}>
+<Notification onClose={() => {}} severity="warning">
   I am a notification.
 </Notification>
-<Notification onClose={() => {}} severity={Notification.severities.ERROR}>
+<Notification onClose={() => {}} severity="error">
   I am a notification.
 </Notification>
-<Notification onClose={() => {}} severity={Notification.severities.SUCCESS}>
+<Notification onClose={() => {}} severity="success">
   I am a notification.
 </Notification>
 ```
@@ -59,7 +59,7 @@ import { Button } from '@db-design/react';
 <Notification
   onClose={() => {}}
   action={
-    <Button variant={Button.variants.SECONDARY} size={Button.sizes.M}>
+    <Button variant="secondary" size="m">
       Do something
     </Button>
   }
@@ -99,7 +99,7 @@ const [isOpen, setOpen] = useState(false);
 const LiveNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   useEffect(() => {
-    Object.values(Notification.severities).forEach((severity, index) => {
+    NotificationSeverities.forEach((severity, index) => {
       setTimeout(() => {
         setNotifications((prevNotifications) => [
           ...prevNotifications,
@@ -123,7 +123,7 @@ const LiveNotifications = () => {
 ## With title
 
 ```jsx
-<Notification severity={Notification.severities.WARNING} title="Your testing period is expired.">
+<Notification severity="warning" title="Your testing period is expired.">
   Please purchase a copy to continue using this product.
 </Notification>
 ```

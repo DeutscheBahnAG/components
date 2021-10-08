@@ -8,12 +8,8 @@ import clsx from 'clsx';
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
-export enum TextfieldSize {
-  S = 's',
-  M = 'm',
-  L = 'l',
-  XL = 'xl',
-}
+export const TextfieldSize = ['s', 'm', 'l', 'xl'] as const;
+export type TextfieldSizeType = typeof TextfieldSize[number];
 
 const textfieldPropTypes = {
   /** Type of the <input> or define a <textarea> */
@@ -28,7 +24,7 @@ const textfieldPropTypes = {
     'search',
   ]),
   /** The size of the Textfield */
-  size: PropTypes.oneOf(Object.values(TextfieldSize)),
+  size: PropTypes.oneOf(TextfieldSize),
   /** Additional class names */
   className: PropTypes.string,
   /** The user input */
@@ -57,7 +53,7 @@ type TextfieldComponent = React.ForwardRefExoticComponent<
 >;
 
 export type TextfieldExport = TextfieldComponent & {
-  sizes: typeof TextfieldSize;
+  sizes: TextfieldSizeType;
 };
 
 const Textfield: TextfieldComponent = React.forwardRef(
@@ -65,7 +61,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
     {
       className = '',
       type = 'text',
-      size = TextfieldSize.XL,
+      size = 'xl',
       value,
       unit = null,
       prefix = null,
@@ -84,7 +80,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
     };
 
     const Field = type === 'textarea' ? 'textarea' : 'input';
-    const fieldSize = inlineLabel ? TextfieldSize.XL : size;
+    const fieldSize = inlineLabel ? 'xl' : size;
     let contentBefore = prefix;
     let contentAfter = suffix;
 
@@ -139,8 +135,6 @@ const Textfield: TextfieldComponent = React.forwardRef(
     );
   }
 );
-
-(Textfield as TextfieldExport).sizes = TextfieldSize;
 
 Textfield.propTypes = textfieldPropTypes;
 

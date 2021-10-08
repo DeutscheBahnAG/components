@@ -11,23 +11,23 @@ import { Title } from '@db-design/react';
 ## Size
 
 ```jsx
-<Title size={Title.sizes.XXL}>Title in size XXL</Title>
+<Title size="xxl">Title in size XXL</Title>
 ```
 
 ```jsx
-<Title size={Title.sizes.XL}>Title in size XL</Title>
+<Title size="xl">Title in size XL</Title>
 ```
 
 ```jsx
-<Title size={Title.sizes.L}>Title in size L</Title>
+<Title size="l">Title in size L</Title>
 ```
 
 ```jsx
-<Title size={Title.sizes.M}>Title in size M</Title>
+<Title size="m">Title in size M</Title>
 ```
 
 ```jsx
-<Title size={Title.sizes.S}>Title in size S</Title>
+<Title size="s">Title in size S</Title>
 ```
 
 ## Weight
@@ -39,7 +39,7 @@ import { Title } from '@db-design/react';
 ## Secondary
 
 ```jsx
-<Title variant={Title.variants.SECONDARY}>Secondary Title</Title>
+<Title variant="secondary">Secondary Title</Title>
 ```
 
 ## Usage
@@ -48,18 +48,18 @@ The `<Title>` component adds the text style only. It is recommended to wrap it i
 
 ```jsx
 <h1>
-  <Title size={Title.sizes.XXL}>Title in a h1.</Title>
+  <Title size="xxl">Title in a h1.</Title>
 </h1>
 ```
 
 ```jsx
 <h2>
-  <Title size={Title.sizes.XXL}>Title in a h2.</Title>
+  <Title size="xxl">Title in a h2.</Title>
 </h2>
 ```
 
 ```jsx
 <h2>
-  <Title size={Title.sizes.M}>Medium title in a h2.</Title>
+  <Title size="m">Medium title in a h2.</Title>
 </h2>
 ```

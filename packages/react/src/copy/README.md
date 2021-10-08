@@ -11,7 +11,7 @@ import { Copy } from '@db-design/react';
 ## Size
 
 ```jsx
-<Copy size={Copy.sizes.L}>
+<Copy size="l">
   Copy in size L. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
   die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
   spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte denken Sie daran, in unseren
@@ -20,7 +20,7 @@ import { Copy } from '@db-design/react';
 ```
 
 ```jsx
-<Copy size={Copy.sizes.M}>
+<Copy size="m">
   Copy in size M. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
   die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
   spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr.
@@ -28,7 +28,7 @@ import { Copy } from '@db-design/react';
 ```
 
 ```jsx
-<Copy size={Copy.sizes.S}>
+<Copy size="s">
   Copy in size S. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
   die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
   spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte denken Sie daran, in unseren
@@ -37,7 +37,7 @@ import { Copy } from '@db-design/react';
 ```
 
 ```jsx
-<Copy size={Copy.sizes.XS}>
+<Copy size="xs">
   Copy in size XS. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
   die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
   spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte denken Sie daran, in unseren
@@ -80,7 +80,7 @@ import { Copy } from '@db-design/react';
 ## Secondary
 
 ```jsx
-<Copy variant={Copy.variants.SECONDARY}>Secondary Copy</Copy>
+<Copy variant="secondary">Secondary Copy</Copy>
 ```
 
 ## Usage
@@ -111,7 +111,7 @@ The `<Copy>` component adds the text style only. It is recommended to wrap it in
 
 ```jsx
 <label>
-  <Copy size={Copy.sizes.S}>Copy S in a label.</Copy>
+  <Copy size="s">Copy S in a label.</Copy>
 </label>
 ```
 
@@ -119,7 +119,7 @@ If you expect more than one line, take care the wrapping element is a block elem
 
 ```jsx
 <label>
-  <Copy size={Copy.sizes.S}>
+  <Copy size="s">
     Copy in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
     die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
     spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte denken Sie daran, in unseren
@@ -132,7 +132,7 @@ By applying `display: block`, the line-height works as expected:
 
 ```jsx
 <label style={{ display: 'block' }}>
-  <Copy size={Copy.sizes.S}>
+  <Copy size="s">
     Copy in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir haben
     die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen. Außerdem finden Sie
     spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte denken Sie daran, in unseren

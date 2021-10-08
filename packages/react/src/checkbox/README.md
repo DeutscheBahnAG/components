@@ -60,7 +60,7 @@ const ExampleComponent = () => {
       <Button
         onClick={handleButtonClick}
         disabled={isIndeterminate}
-        size={Button.sizes.M}
+        size="m"
         style={{ marginLeft: `${spacing.m}px` }}
       >
         Reset
@@ -140,9 +140,7 @@ with the label:
 
 ```jsx
 import { Status } from '@db-design/react';
-<Checkbox footer={<Status severity={Status.severities.FATAL}>Please check this checkbox</Status>}>
-  Check me
-</Checkbox>;
+<Checkbox footer={<Status severity="fatal">Please check this checkbox</Status>}>Check me</Checkbox>;
 ```
 
 ```jsx
@@ -151,7 +149,7 @@ import { Status } from '@db-design/react';
   footer={
     <>
       <a href="#terms">Read our Terms and Conditions</a>{' '}
-      <Status severity={Status.severities.FATAL}>You must accept the Terms and Conditions</Status>
+      <Status severity="fatal">You must accept the Terms and Conditions</Status>
     </>
   }
 >

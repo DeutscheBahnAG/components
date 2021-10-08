@@ -4,25 +4,19 @@ import clsx from 'clsx';
 import Time from '../time';
 import { isSlightlyDelayed } from './helper';
 
-enum TriptimeStopTypes {
-  START = 'start',
-  INTERMEDIATE = 'intermediate',
-  DESTINATION = 'destination',
-  CURRENT = 'current',
-}
+export const TriptimeStopTypes = ['start', 'intermediate', 'destination', 'current'] as const;
+export type TriptimeStopTypesType = typeof TriptimeStopTypes[number];
 
 const triptimePropTypes = {
   dateTime: PropTypes.string.isRequired,
   predictedDateTime: PropTypes.string,
-  stopType: PropTypes.oneOf(Object.values(TriptimeStopTypes)),
+  stopType: PropTypes.oneOf(TriptimeStopTypes),
   className: PropTypes.string,
 };
 
 type TriptimeProps = InferProps<typeof triptimePropTypes>;
 
-type TriptimeComponent = React.FunctionComponent<TriptimeProps> & {
-  stopTypes: typeof TriptimeStopTypes;
-};
+type TriptimeComponent = React.FunctionComponent<TriptimeProps>;
 
 const Triptime: TriptimeComponent = ({
   dateTime,
@@ -38,14 +32,14 @@ const Triptime: TriptimeComponent = ({
     <span className={clsx('db-triptime', `db-triptime--${stopType}`, className)} {...props}>
       <Time
         dateTime={dateTime}
-        className={clsx(stopType !== Triptime.stopTypes.INTERMEDIATE && 'db-triptime--bold')}
+        className={clsx(stopType !== 'intermediate' && 'db-triptime--bold')}
       />
       {predictedDateTime && isTripDelayed && (
         <Time
           className={clsx({
             'db-triptime--delayed': !isTripSlightlyDelayed,
             'db-triptime--slightly-delayed': isTripSlightlyDelayed,
-            'db-triptime--bold': stopType === Triptime.stopTypes.CURRENT,
+            'db-triptime--bold': stopType === 'current',
           })}
           dateTime={predictedDateTime}
         />
@@ -54,13 +48,11 @@ const Triptime: TriptimeComponent = ({
   );
 };
 
-Triptime.stopTypes = TriptimeStopTypes;
-
 Triptime.propTypes = triptimePropTypes;
 
 Triptime.defaultProps = {
   predictedDateTime: undefined,
-  stopType: TriptimeStopTypes.START,
+  stopType: 'start',
   className: '',
 };
 

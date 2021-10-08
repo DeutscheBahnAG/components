@@ -36,7 +36,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     className="DB_LIGHT_ALTERNATE"
   >
     <div>
-      <Logo size={Logo.sizes.XL} href="/" />
+      <Logo size="xl" href="/" />
     </div>
   </Container>
   <Container
@@ -47,13 +47,8 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     className="DB_DARK"
   >
     <div style={{ width: '192px' }}>
-      <Logo size={Logo.sizes.XL} href="/" />
-      <Logo
-        size={Logo.sizes.XL}
-        href="/"
-        variant={Logo.variants.WHITE}
-        style={{ marginLeft: '12px' }}
-      />
+      <Logo size="xl" href="/" />
+      <Logo size="xl" href="/" variant="white" style={{ marginLeft: '12px' }} />
     </div>
   </Container>
   <Container
@@ -64,7 +59,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     className="DB_BRANDED"
   >
     <div>
-      <Logo size={Logo.sizes.XL} href="/" variant={Logo.variants.WHITE} />
+      <Logo size="xl" href="/" variant="white" />
     </div>
   </Container>
   <Container
@@ -76,7 +71,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     filled
   >
     <div>
-      <Logo size={Logo.sizes.XL} href="/" variant={Logo.variants.FILLED} />
+      <Logo size="xl" href="/" variant="filled" />
     </div>
   </Container>
 </div>;
@@ -97,27 +92,27 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 10 : 7 aspect ratio). For each size of the Logo there’s a matching Pulse.
 
 ```jsx
-<Logo size={Logo.sizes.XS} />
+<Logo size="xs" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.S} />
+<Logo size="s" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.M} />
+<Logo size="m" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.L} />
+<Logo size="l" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XL} />
+<Logo size="xl" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XXL} />
+<Logo size="xxl" />
 ```
 
 ## Alt text
@@ -151,7 +146,7 @@ By default the logo has a transparent background.
     overflow: 'hidden',
   }}
 >
-  <Logo variant={Logo.variants.DEFAULT} />
+  <Logo variant="default" />
 </div>
 ```
 
@@ -168,11 +163,11 @@ By default the logo has a transparent background.
     overflow: 'hidden',
   }}
 >
-  <Logo variant={Logo.variants.FILLED} />
+  <Logo variant="filled" />
 </div>
 ```
 
-The `DEFAULT` and `WHITE` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `FILLED` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
+The `default` and `white` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `filled` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
 
 ### Auto
 
@@ -187,7 +182,7 @@ Red or white logo with transparent background depending on the theme.
 Red logo with transparent background.
 
 ```jsx
-<Logo variant={Logo.variants.DEFAULT} />
+<Logo variant="default" />
 ```
 
 ### Filled
@@ -206,11 +201,11 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     overflow: 'hidden',
   }}
 >
-  <Logo variant={Logo.variants.FILLED} />
+  <Logo variant="filled" />
 </div>;
 ```
 
-The variant `FILLED` has no visual effect on the Pulse.
+The variant `filled` has no visual effect on the Pulse.
 
 ### White
 
@@ -226,7 +221,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     overflow: 'hidden',
   }}
 >
-  <Logo variant={Logo.variants.WHITE} />
+  <Logo variant="white" />
 </div>;
 ```
 
@@ -274,14 +269,14 @@ Additional markings are not designed logos. Their use is optional.
 ```
 
 ```jsx
-<Logo additionalMarking="Zugportal.de" size={Logo.sizes.XXL} />
+<Logo additionalMarking="Zugportal.de" size="xxl" />
 ```
 
 ```jsx
 import { Theme, Container } from '@db-design/react';
-<Theme theme={Theme.themes.DB_BRANDED}>
-  <Container filled style={{ padding: '16px' }} width={Container.widths.CONTENT}>
-    <Logo additionalMarking="Westfalenbus" size={Logo.sizes.M} />
+<Theme theme="DB_BRANDED">
+  <Container filled style={{ padding: '16px' }} width="content">
+    <Logo additionalMarking="Westfalenbus" size="m" />
   </Container>
 </Theme>;
 ```
@@ -289,7 +284,7 @@ import { Theme, Container } from '@db-design/react';
 ### One line
 
 ```jsx
-<Logo additionalMarking="Oberweißbacher Berg- und Schwarztalbahn" size={Logo.sizes.XL} />
+<Logo additionalMarking="Oberweißbacher Berg- und Schwarztalbahn" size="xl" />
 ```
 
 ### Two lines
@@ -297,7 +292,7 @@ import { Theme, Container } from '@db-design/react';
 The font size adjusts automatically according to our brand standards:
 
 ```jsx
-<Logo additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size={Logo.sizes.XL} />
+<Logo additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size="xl" />
 ```
 
 Use `\n` to set the line-break. Each marking must set the line-break manually for consistency with other (non-digital) marketing usage.
@@ -319,19 +314,11 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ### Vertical
 
 ```jsx
-<Logo
-  direction="vertical"
-  additionalMarking="Oberweißbacher Berg- und Schwarztalbahn"
-  size={Logo.sizes.XL}
-/>
+<Logo direction="vertical" additionalMarking="Oberweißbacher Berg- und Schwarztalbahn" size="xl" />
 ```
 
 ```jsx
-<Logo
-  direction="vertical"
-  additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
-  size={Logo.sizes.XL}
-/>
+<Logo direction="vertical" additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size="xl" />
 ```
 
 ```jsx
@@ -348,7 +335,7 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 <Logo
   direction="full-width"
   additionalMarking="Oberweißbacher Berg- und Schwarztalbahn"
-  size={Logo.sizes.XL}
+  size="xl"
 />
 ```
 
@@ -356,7 +343,7 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 <Logo
   direction="full-width"
   additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
-  size={Logo.sizes.XL}
+  size="xl"
 />
 ```
 
@@ -376,33 +363,33 @@ For accessibility reasons
 - and switch to one-line text to ensure a minimum text size
 
 ```jsx
-<Logo size={Logo.sizes.XS} additionalMarking="Marking" />
-<Logo size={Logo.sizes.XS} additionalMarking="Marking\nand more marking" />
+<Logo size="xs" additionalMarking="Marking" />
+<Logo size="xs" additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.S} additionalMarking="Marking" />
-<Logo size={Logo.sizes.S} additionalMarking="Marking\nand more marking" />
+<Logo size="s" additionalMarking="Marking" />
+<Logo size="s" additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.M} additionalMarking="Marking" />
-<Logo size={Logo.sizes.M} additionalMarking="Marking\nand more marking" />
+<Logo size="m" additionalMarking="Marking" />
+<Logo size="m" additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.L} additionalMarking="Marking" />
-<Logo size={Logo.sizes.L} additionalMarking="Marking\nand more marking" />
+<Logo size="l" additionalMarking="Marking" />
+<Logo size="l" additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XL} additionalMarking="Marking" />
-<Logo size={Logo.sizes.XL} additionalMarking="Marking\nand more marking" />
+<Logo size="xl" additionalMarking="Marking" />
+<Logo size="xl" additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XXL} additionalMarking="Marking" />
-<Logo size={Logo.sizes.XXL} additionalMarking="Marking\nand more marking" />
+<Logo size="xxl" additionalMarking="Marking" />
+<Logo size="xxl" additionalMarking="Marking\nand more marking" />
 ```
 
 ## Linking the logo

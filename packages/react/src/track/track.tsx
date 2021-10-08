@@ -5,16 +5,13 @@ import parseTrack from './parse-track';
 
 const defaultLabels = { platform: 'Gleis', platformAbbreviation: 'Gl.' };
 
-export enum TrackSizes {
-  XS = 'xs',
-  S = 's',
-  M = 'm',
-}
+export const TrackSizes = ['xs', 's', 'm'] as const;
+export type TrackSizesType = typeof TrackSizes[number];
 
 const trackPropTypes = {
   track: PropTypes.string.isRequired,
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(TrackSizes)),
+  size: PropTypes.oneOf(TrackSizes),
   labels: PropTypes.shape({
     platform: PropTypes.string.isRequired,
     platformAbbreviation: PropTypes.string.isRequired,
@@ -58,7 +55,7 @@ Track.propTypes = trackPropTypes;
 
 Track.defaultProps = {
   className: '',
-  size: Track.sizes.XS,
+  size: 'xs',
   labels: defaultLabels,
 };
 

@@ -28,23 +28,23 @@ This component implements the guidelines of:
 ## Triptime start
 
 ```jsx
-<Triptime stopType={Triptime.stopTypes.START} dateTime="09:54" predictedDateTime="09:57" />
+<Triptime stopType="start" dateTime="09:54" predictedDateTime="09:57" />
 ```
 
 ## Triptime destination
 
 ```jsx
-<Triptime stopType={Triptime.stopTypes.DESTINATION} dateTime="09:54" predictedDateTime="09:57" />
+<Triptime stopType="destination" dateTime="09:54" predictedDateTime="09:57" />
 ```
 
 ## Triptime intermediate
 
 ```jsx
-<Triptime stopType={Triptime.stopTypes.INTERMEDIATE} dateTime="09:54" predictedDateTime="09:57" />
+<Triptime stopType="intermediate" dateTime="09:54" predictedDateTime="09:57" />
 ```
 
 ## Triptime current
 
 ```jsx
-<Triptime stopType={Triptime.stopTypes.CURRENT} dateTime="09:54" predictedDateTime="09:57" />
+<Triptime stopType="current" dateTime="09:54" predictedDateTime="09:57" />
 ```

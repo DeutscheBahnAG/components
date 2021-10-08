@@ -1,37 +1,34 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
-enum ContainerWidths {
-  TEXT = 'text',
-  CONTENT = 'content',
-  EXTENDED = 'extended',
-  FULL = 'full',
-}
+export const ContainerWidths = ['text', 'content', 'extended', 'full'] as const;
+export type ContainerWidthsType = typeof ContainerWidths[number];
 
-enum ContainerAlignments {
-  LEFT = 'left',
-  CENTER = 'center',
-  RIGHT = 'right',
-}
+export const ContainerAlignments = ['left', 'center', 'right'] as const;
+export type ContainerAlignmentsType = typeof ContainerAlignments[number];
 
-interface ContainerProps {
-  children: React.ReactNode | React.ReactNode[];
-  width?: ContainerWidths;
-  align?: ContainerAlignments;
-  className?: string;
-  filled?: boolean;
-}
-
-type ContainerType<P> = React.FunctionComponent<P> & {
-  widths: typeof ContainerWidths;
-  alignments: typeof ContainerAlignments;
+const ContainerPropTypes = {
+  /** Content of the Container */
+  children: PropTypes.node.isRequired,
+  /** The width of the Container */
+  width: PropTypes.oneOf(ContainerWidths),
+  /** The alignment of the Container */
+  align: PropTypes.oneOf(ContainerAlignments),
+  /** Adds a primary background color for the Container */
+  filled: PropTypes.bool,
+  /** Additional class names you want to add to the Container */
+  className: PropTypes.string,
 };
+
+type ContainerProps = InferProps<typeof ContainerPropTypes>;
+
+type ContainerType<P> = React.FunctionComponent<P>;
 
 const Container: ContainerType<ContainerProps> = ({
   children,
-  width = Container.widths.FULL,
+  width = 'full',
   align = undefined,
   filled = false,
   className = '',
@@ -51,20 +48,6 @@ const Container: ContainerType<ContainerProps> = ({
   </div>
 );
 
-Container.widths = ContainerWidths;
-Container.alignments = ContainerAlignments;
-
-Container.propTypes = {
-  /** Content of the Container */
-  children: PropTypes.node.isRequired,
-  /** The width of the Container */
-  width: PropTypes.oneOf(Object.values(ContainerWidths)),
-  /** The alignment of the Container */
-  align: PropTypes.oneOf(Object.values(ContainerAlignments)),
-  /** Adds a primary background color for the Container */
-  filled: PropTypes.bool,
-  /** Additional class names you want to add to the Container */
-  className: PropTypes.string,
-};
+Container.propTypes = ContainerPropTypes;
 
 export default Container;

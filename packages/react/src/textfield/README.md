@@ -101,31 +101,26 @@ Any icon can be used as a `prefix` or `suffix`. In most cases it makes sense to 
 import { Button } from '@db-design/react';
 import { NavigationClose } from '@db-design/react-icons';
 <Textfield
-  size={Textfield.sizes.L}
+  size="l"
   suffix={
-    <Button
-      variant={Button.variants.HOVER_ONLY}
-      shape={Button.shapes.ROUND}
-      size={Button.sizes.S}
-      icon={<NavigationClose />}
-    >
+    <Button variant="hover-only" shape="round" size="s" icon={<NavigationClose />}>
       Clear
     </Button>
   }
 />;
 ```
 
-Important: Make sure the `size` of the Button (e.g. `Button.sizes.S`) is two steps smaller than the `size` of the Textfield (e.g. `Textfield.sizes.L`).
+Important: Make sure the `size` of the Button (e.g. `s`) is two steps smaller than the `size` of the Textfield (e.g. `l`).
 
 In very special use cases it is also possible to visually put a Button into the Textfield (maybe validating/formatting/copying an input). Before using this possibility, think about if this can’t automatically happen `onBlur`.
 
 ```jsx
 import { Button } from '@db-design/react';
 <Textfield
-  size={Textfield.sizes.L}
+  size="l"
   value="Some user input"
   suffix={
-    <Button variant={Button.variants.SOLID} size={Button.sizes.S}>
+    <Button variant="solid" size="s">
       Do something
     </Button>
   }
@@ -207,22 +202,22 @@ It is possible to combine `inlineLabel` and `placeholder`. Click inside the Text
 ## Sizing
 
 ```jsx
-<Textfield size={Textfield.sizes.S} />
+<Textfield size="s" />
 ```
 
 ```jsx
-<Textfield size={Textfield.sizes.M} />
+<Textfield size="m" />
 ```
 
 ```jsx
-<Textfield size={Textfield.sizes.L} />
+<Textfield size="l" />
 ```
 
 ```jsx
-<Textfield size={Textfield.sizes.XL} />
+<Textfield size="xl" />
 ```
 
-Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `XL`.
+Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `xl`.
 
 ## Aligning Textfields
 
@@ -232,9 +227,9 @@ Text, Textfield, Button and Link **automatically align well** next to each other
 import { Button, Link } from '@db-design/react';
 <>
   <Link>Link</Link>
-  <Textfield size={Textfield.sizes.XL} value="Textfield" />
-  <Button size={Button.sizes.XL}>Button</Button>
-  <Button size={Button.sizes.M} variant={Button.variants.SOLID}>
+  <Textfield size="xl" value="Textfield" />
+  <Button size="xl">Button</Button>
+  <Button size="m" variant="solid">
     Button
   </Button>
   <span>Some text</span>

@@ -64,7 +64,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
   return (
     <>
       {notification && (
-        <Notification global severity={Notification.severities.SUCCESS} onClose={hideNotification}>
+        <Notification global severity="success" onClose={hideNotification}>
           {notification}
         </Notification>
       )}
@@ -72,9 +72,9 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
         <span className="db-anchor__button" id={sanitizedID}>
           <Button
             href={`#${sanitizedID}`}
-            variant={Button.variants.HOVER_ONLY}
-            shape={Button.shapes.ROUND}
-            size={Button.sizes.M}
+            variant="hover-only"
+            shape="round"
+            size="m"
             icon={<Icon />}
             onClick={onClick}
           >

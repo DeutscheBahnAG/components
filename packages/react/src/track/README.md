@@ -36,7 +36,7 @@ This is the parking position of the train in uppercase characters.
 ## Sizing
 
 ```jsx
-<Track track="1" size={Track.sizes.M} />
+<Track track="1" size="m" />
 ```
 
 ## Translations

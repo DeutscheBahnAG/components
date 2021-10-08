@@ -48,7 +48,7 @@ const openState = true;
     </Button>
   }
   secondaryButton={
-    <Button variant={Button.variants.SECONDARY} {...secondaryActions} onClick={discardEdit}>
+    <Button variant="secondary" {...secondaryActions} onClick={discardEdit}>
       Discard
     </Button>
   }
@@ -168,7 +168,7 @@ const { primaryActions, secondaryActions } = Modal;
 <Modal
   primaryButton={<Button {...primaryActions}>Oh hey!</Button>}
   secondaryButton={
-    <Button variant={Button.variants.Secondary} {...secondaryActions}>
+    <Button variant="secondary" {...secondaryActions}>
       Don’t mind me
     </Button>
   }

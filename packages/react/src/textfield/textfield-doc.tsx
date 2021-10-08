@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DefaultTextfield, { TextfieldProps, TextfieldExport } from './textfield';
+import DefaultTextfield, { TextfieldProps } from './textfield';
 
 const Textfield: React.FunctionComponent<TextfieldProps> = ({ value, ...props }) => {
   const [currentValue, setValue] = useState(value);
@@ -20,7 +20,5 @@ Textfield.propTypes = {
 Textfield.defaultProps = {
   value: '',
 };
-
-(Textfield as TextfieldExport).sizes = (DefaultTextfield as TextfieldExport).sizes;
 
 export default Textfield;

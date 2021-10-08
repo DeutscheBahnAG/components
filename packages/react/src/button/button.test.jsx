@@ -14,12 +14,12 @@ describe('Button Component', () => {
   });
 
   it('should render a submit button', () => {
-    const { container } = render(<Button type={Button.types.SUBMIT}>My button 2</Button>);
+    const { container } = render(<Button type="submit">My button 2</Button>);
     expect(container).toMatchSnapshot();
   });
 
   it('should render a secondary button', () => {
-    const { container } = render(<Button variant={Button.variants.SECONDARY}>My button 3</Button>);
+    const { container } = render(<Button variant="secondary">My button 3</Button>);
     expect(container).toMatchSnapshot();
   });
 
@@ -73,10 +73,10 @@ describe('Button Component', () => {
   it('should not add an icon position class name in icon-only Buttons', () => {
     const { container } = render(
       <>
-        <Button icon={<DummyIcon />} shape={Button.shapes.ROUND}>
+        <Button icon={<DummyIcon />} shape="round">
           My button 13
         </Button>
-        <Button icon={<DummyIcon />} shape={Button.shapes.SQUARE}>
+        <Button icon={<DummyIcon />} shape="square">
           My button 14
         </Button>
       </>

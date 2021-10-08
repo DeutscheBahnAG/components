@@ -13,7 +13,7 @@ import { Copy } from '@db-design/react';
     <Copy>Examples:</Copy>
   </span>
   <span className="db-inline-spacer" />
-  <Link href="" iconPosition={Link.iconPositions.NONE}>
+  <Link href="" iconPosition="none">
     Link
   </Link>
   <Link href="">Link</Link>
@@ -21,10 +21,10 @@ import { Copy } from '@db-design/react';
   <Link href="" download>
     Link
   </Link>
-  <Link href="" variant={Link.variants.SECONDARY}>
+  <Link href="" variant="secondary">
     Link
   </Link>
-  <Link href="" variant={Link.variants.MIXED}>
+  <Link href="" variant="mixed">
     Link
   </Link>
 </>;
@@ -41,7 +41,7 @@ import { Copy } from '@db-design/react';
 ### Secondary
 
 ```jsx
-<Link href="#" variant={Link.variants.SECONDARY}>
+<Link href="#" variant="secondary">
   Link
 </Link>
 ```
@@ -49,7 +49,7 @@ import { Copy } from '@db-design/react';
 ### Mixed
 
 ```jsx
-<Link href="#" variant={Link.variants.MIXED}>
+<Link href="#" variant="mixed">
   Link
 </Link>
 ```
@@ -92,14 +92,14 @@ import { ActionSettings } from '@db-design/react-icons';
 
 ```jsx
 import { ActionSettings } from '@db-design/react-icons';
-<Link icon={<ActionSettings />} iconPosition={Link.iconPositions.BEFORE}>
+<Link icon={<ActionSettings />} iconPosition="before">
   Settings
 </Link>;
 ```
 
 ```jsx
 import { ActionLogOut } from '@db-design/react-icons';
-<Link icon={<ActionLogOut />} iconPosition={Link.iconPositions.AFTER}>
+<Link icon={<ActionLogOut />} iconPosition="after">
   Log out
 </Link>;
 ```
@@ -115,7 +115,7 @@ By default, an icon is automatically set by the type of link:
 Remove the icon entirely:
 
 ```jsx
-<Link href="" iconPosition={Link.iconPositions.NONE}>
+<Link href="" iconPosition="none">
   Link
 </Link>
 ```
@@ -133,7 +133,7 @@ Disabled Links always look the same, independent of the `variant`.
 ```
 
 ```jsx
-<Link disabled onClick={() => {}} variant={Link.variants.SECONDARY}>
+<Link disabled onClick={() => {}} variant="secondary">
   Link
 </Link>
 ```
@@ -143,7 +143,7 @@ Disabled links usually do not make sense. Please avoid them. They only work, whe
 You cannot disable ‘real’ links (`<a>`):
 
 ```jsx
-<Link disabled href="" variant={Link.variants.SECONDARY}>
+<Link disabled href="" variant="secondary">
   Link
 </Link>
 ```
@@ -179,7 +179,7 @@ When both properties are set, a link (= `<a>`) gets rendered. The `onClick` stil
 ```jsx
 <form action="#">
   {/* <Textfield /> */}
-  <Link type={Link.types.SUBMIT}>Link</Link>
+  <Link type="submit">Link</Link>
 </form>
 ```
 
@@ -192,7 +192,7 @@ import NextLink from 'next/link';
 import { Link } from '@db-design/react';
 
 <NextLink href="/">
-  <Link type={Link.types.LINK}>Link</Button>
+  <Link type='link'>Link</Button>
 </NextLink>;
 ```
 
@@ -224,9 +224,9 @@ Text, Textfield, Button and Link **automatically align well** next to each other
 import { Textfield, Button } from '@db-design/react';
 <>
   <Link>Link</Link>
-  <Textfield size={Textfield.sizes.XL} value="Textfield" />
-  <Button size={Button.sizes.XL}>Button</Button>
-  <Button size={Button.sizes.M} variant={Button.variants.SOLID}>
+  <Textfield size="xl" value="Textfield" />
+  <Button size="xl">Button</Button>
+  <Button size="m" variant="solid">
     Button
   </Button>
   <span>Some text</span>

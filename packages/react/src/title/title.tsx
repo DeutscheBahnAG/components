@@ -3,38 +3,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-enum TitleSizes {
-  S = 's',
-  M = 'm',
-  L = 'l',
-  XL = 'xl',
-  XXL = 'xxl',
-}
+export const TitleSizes = ['s', 'm', 'l', 'xl', 'xxl'] as const;
+export type TitleSizesType = typeof TitleSizes[number];
 
-enum TitleVariants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+export const TitleVariants = ['primary', 'secondary'] as const;
+export type TitleVariantsType = typeof TitleVariants[number];
 
 interface TitleProps {
   children?: React.ReactNode;
-  size?: TitleSizes;
+  size?: TitleSizesType;
   light?: boolean;
   className?: string;
-  variant?: TitleVariants;
+  variant?: TitleVariantsType;
 }
 
-type TitleType<P> = React.FunctionComponent<P> & {
-  sizes: typeof TitleSizes;
-  variants: typeof TitleVariants;
-};
+type TitleType<P> = React.FunctionComponent<P>;
 
 const Title: TitleType<TitleProps> = ({
   children,
-  size = TitleSizes.XXL,
+  size = 'xxl',
   light = false,
   className = '',
-  variant = TitleVariants.PRIMARY,
+  variant = 'primary',
   ...otherProps
 }) => (
   <span
@@ -42,7 +32,7 @@ const Title: TitleType<TitleProps> = ({
       'db-title',
       `db-title--size-${size}`,
       light && 'db-title--light',
-      variant === TitleVariants.SECONDARY && 'db-title--secondary',
+      variant === 'secondary' && 'db-title--secondary',
       className
     )}
     {...otherProps}
@@ -51,20 +41,17 @@ const Title: TitleType<TitleProps> = ({
   </span>
 );
 
-Title.sizes = TitleSizes;
-Title.variants = TitleVariants;
-
 Title.propTypes = {
   /** Text */
   children: PropTypes.node.isRequired,
   /** The size of the Cutton */
-  size: PropTypes.oneOf(Object.values(TitleSizes)),
+  size: PropTypes.oneOf(TitleSizes),
   /** Style Title in light */
   light: PropTypes.bool,
   /** Additional class names you want to add to the Title */
   className: PropTypes.string,
   /** Color of the text */
-  variant: PropTypes.oneOf(Object.values(TitleVariants)),
+  variant: PropTypes.oneOf(TitleVariants),
 };
 
 export default Title;

@@ -2,21 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-export enum LoadingIndicatorSizes {
-  XS = 'xs',
-  S = 's',
-  M = 'm',
-  L = 'l',
-  XL = 'xl',
-}
+export const LoadingIndicatorSizes = ['xs', 's', 'm', 'l', 'xl'] as const;
+export type LoadingIndicatorSizesType = typeof LoadingIndicatorSizes[number];
 
-type LoadingindicatorType<P> = React.FunctionComponent<P> & {
-  sizes: typeof LoadingIndicatorSizes;
-};
+type LoadingindicatorType<P> = React.FunctionComponent<P>;
 
 interface LoadingindicatorProps {
   className?: string;
-  size?: LoadingIndicatorSizes;
+  size?: LoadingIndicatorSizesType;
 }
 
 const Loadingindicator: LoadingindicatorType<LoadingindicatorProps> = ({ className, size }) => (
@@ -35,16 +28,14 @@ const Loadingindicator: LoadingindicatorType<LoadingindicatorProps> = ({ classNa
   </svg>
 );
 
-Loadingindicator.sizes = LoadingIndicatorSizes;
-
 Loadingindicator.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(Loadingindicator.sizes)),
+  size: PropTypes.oneOf(LoadingIndicatorSizes),
 };
 
 Loadingindicator.defaultProps = {
   className: '',
-  size: LoadingIndicatorSizes.M,
+  size: 'm',
 };
 
 export default Loadingindicator;

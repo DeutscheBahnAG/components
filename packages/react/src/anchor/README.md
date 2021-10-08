@@ -17,7 +17,7 @@ Hover over ‘My section’ to see the Anchor appearing:
 ```jsx
 import { Title } from '@db-design/react';
 <h1>
-  <Title size={Title.sizes.XXL}>
+  <Title size="xxl">
     <Anchor id="my-title">My title</Anchor>
   </Title>
 </h1>;
@@ -31,6 +31,6 @@ This example results in `#my-title`:
 import { Title } from '@db-design/react';
 const title = 'My title';
 <Anchor id={title}>
-  <Title size={Title.sizes.XXL}>{title}</Title>
+  <Title size="xxl">{title}</Title>
 </Anchor>;
 ```

@@ -13,17 +13,17 @@ describe('Link Component', () => {
   });
 
   it('should render a submit link', () => {
-    const { container } = render(<Link type={Link.types.SUBMIT}>My link 2</Link>);
+    const { container } = render(<Link type="submit">My link 2</Link>);
     expect(container).toMatchSnapshot();
   });
 
   it('should render a secondary link', () => {
-    const { container } = render(<Link variant={Link.variants.SECONDARY}>My link 3</Link>);
+    const { container } = render(<Link variant="secondary">My link 3</Link>);
     expect(container).toMatchSnapshot();
   });
 
   it('should render a mixed link', () => {
-    const { container } = render(<Link variant={Link.variants.MIXED}>My link 4</Link>);
+    const { container } = render(<Link variant="mixed">My link 4</Link>);
     expect(container).toMatchSnapshot();
   });
 
@@ -68,7 +68,7 @@ describe('Link Component', () => {
 
   it('should render a the icon on the left side', () => {
     const { container } = render(
-      <Link href="/" iconPosition={Link.iconPositions.BEFORE}>
+      <Link href="/" iconPosition="before">
         My link 12
       </Link>
     );
@@ -77,7 +77,7 @@ describe('Link Component', () => {
 
   it('should render a the icon on the right side', () => {
     const { container } = render(
-      <Link href="/" iconPosition={Link.iconPositions.AFTER} download>
+      <Link href="/" iconPosition="after" download>
         My link 13
       </Link>
     );

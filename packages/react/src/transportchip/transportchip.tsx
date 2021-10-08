@@ -5,21 +5,24 @@ import * as Icons from './icons';
 import {
   findProduct,
   findStyle,
-  styles,
-  Products,
+  Styles,
+  ProductsEnum,
   sanitizeLineNumber,
   lineNumberClass,
   specialProducts,
+  ProductsEnumType,
+  StylesType,
 } from './helper';
 
 const iconClassName = clsx('db-transportchip__transport-logo');
 
-const icons = {
-  [Products.FERRY]: <Icons.Ferry className={iconClassName} />,
-  [Products.SUBWAY]: <Icons.UBahn className={iconClassName} />,
-  [Products.SUBURBAN]: <Icons.SBahn className={iconClassName} />,
-  [Products.TRAM]: <Icons.Tram className={iconClassName} />,
-  [Products.BUS]: <Icons.Bus className={iconClassName} />,
+type IconsType = Partial<Record<ProductsEnumType | StylesType, JSX.Element>>;
+const icons: IconsType = {
+  ferry: <Icons.Ferry className={iconClassName} />,
+  subway: <Icons.UBahn className={iconClassName} />,
+  suburban: <Icons.SBahn className={iconClassName} />,
+  tram: <Icons.Tram className={iconClassName} />,
+  bus: <Icons.Bus className={iconClassName} />,
   akn: <Icons.AKN className={iconClassName} />,
 };
 
@@ -29,9 +32,9 @@ const transportchipPropTypes = {
   /** Additional class names you want to add to the Transportchip */
   className: PropTypes.string,
   /** The transport type (e.g. Transportchip.Products.SBAHN) */
-  product: PropTypes.oneOf(Object.values(Products)),
+  product: PropTypes.oneOf<ProductsEnumType>(ProductsEnum),
   /** Use a local style to display line number */
-  style: PropTypes.oneOf(Object.keys(styles)),
+  style: PropTypes.oneOf<StylesType>(Styles),
   /** Optional link target (will create an <a>) */
   href: PropTypes.string,
   /** Optional click handler (will create a <button>) */
@@ -46,13 +49,11 @@ const transportchipPropTypes = {
 
 type TransportchipProps = InferProps<typeof transportchipPropTypes>;
 
-type TransportchipComponent = React.FunctionComponent<TransportchipProps> & {
-  products: typeof Products;
-};
+type TransportchipComponent = React.FunctionComponent<TransportchipProps>;
 
 const Transportchip: TransportchipComponent = ({
   name,
-  product,
+  product: productKey,
   style,
   className,
   href,
@@ -62,10 +63,10 @@ const Transportchip: TransportchipComponent = ({
   showProductLogo,
   ...otherProps
 }) => {
+  const product = productKey || undefined;
   const displayProduct = (product || findProduct(name) || 'unknown').toLowerCase();
   const lineNumber = sanitizeLineNumber(name);
-  const detectedStyle =
-    style || findStyle({ product: product ?? undefined, zipCode: zipCode ?? '', lineNumber });
+  const detectedStyle = style || findStyle({ product, zipCode: zipCode ?? '', lineNumber });
   const specialProduct =
     product &&
     detectedStyle &&
@@ -109,8 +110,6 @@ const Transportchip: TransportchipComponent = ({
     </Component>
   );
 };
-
-Transportchip.products = Products;
 
 Transportchip.propTypes = transportchipPropTypes;
 

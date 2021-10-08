@@ -19,7 +19,7 @@ import { Logo, Title } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse>
-    <Title size={Title.sizes.L}>Your headline</Title>
+    <Title size="l">Your headline</Title>
   </Pulse>
 </>;
 ```
@@ -35,10 +35,10 @@ import { Logo, Title, Container, Theme } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse mt="2">
-    <Title size={Title.sizes.L}>Your headline</Title>
+    <Title size="l">Your headline</Title>
   </Pulse>
-  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
-    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+  <Theme theme="DB_LIGHT_ALTERNATE">
+    <Container filled width="content" align="center">
       (After)
     </Container>
   </Theme>
@@ -52,10 +52,10 @@ import { Logo, Title, Container, Theme } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse mb="0.5">
-    <Title size={Title.sizes.L}>Your headline</Title>
+    <Title size="l">Your headline</Title>
   </Pulse>
-  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
-    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+  <Theme theme="DB_LIGHT_ALTERNATE">
+    <Container filled width="content" align="center">
       (After)
     </Container>
   </Theme>
@@ -70,9 +70,9 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.M} />
-  <Pulse size={Logo.sizes.M}>
-    <Title size={Title.sizes.M}>Headline</Title>
+  <Logo mb="1" size="m" />
+  <Pulse size="m">
+    <Title size="m">Headline</Title>
   </Pulse>
 </>;
 ```
@@ -80,9 +80,9 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.L} />
-  <Pulse size={Logo.sizes.L}>
-    <Title size={Title.sizes.L}>Headline</Title>
+  <Logo mb="1" size="l" />
+  <Pulse size="l">
+    <Title size="l">Headline</Title>
   </Pulse>
 </>;
 ```
@@ -90,9 +90,9 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.XL} />
-  <Pulse size={Logo.sizes.XL}>
-    <Title size={Title.sizes.L}>Headline</Title>
+  <Logo mb="1" size="xl" />
+  <Pulse size="xl">
+    <Title size="l">Headline</Title>
   </Pulse>
 </>;
 ```
@@ -100,9 +100,9 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.XXL} />
-  <Pulse size={Logo.sizes.XXL}>
-    <Title size={Title.sizes.L}>Headline</Title>
+  <Logo mb="1" size="xxl" />
+  <Pulse size="xxl">
+    <Title size="l">Headline</Title>
   </Pulse>
 </>;
 ```
@@ -110,9 +110,9 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.XXL} />
-  <Pulse size={Logo.sizes.XXL}>
-    <Title size={Title.sizes.XXL}>Headline</Title>
+  <Logo mb="1" size="xxl" />
+  <Pulse size="xxl">
+    <Title size="xxl">Headline</Title>
   </Pulse>
 </>;
 ```
@@ -120,10 +120,10 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo mb="1" size={Logo.sizes.XXL} />
-  <Pulse size={Logo.sizes.XXL}>
-    <Title size={Title.sizes.XXL}>Headline</Title>
-    <Title variant={Title.variants.SECONDARY} light size={Title.sizes.L}>
+  <Logo mb="1" size="xxl" />
+  <Pulse size="xxl">
+    <Title size="xxl">Headline</Title>
+    <Title variant="secondary" light size="l">
       Subline
     </Title>
   </Pulse>
@@ -133,10 +133,10 @@ import { Logo, Title } from '@db-design/react';
 Never use different sizes for the Logo and the Pulse.
 
 ```jsx static
-<Logo mb="1" size={Logo.sizes.S} />
-<Pulse size={Logo.sizes.XXL} />
+<Logo mb="1" size="s" />
+<Pulse size="xxl" />
 ```
 
-Even though technically possible, using the Pulse in size `XS` and `S` might not make sense. Therefore no example has been included into this documentation.
+Even though technically possible, using the Pulse in size `xs` and `s` might not make sense. Therefore no example has been included into this documentation.
 
 Check the [Pulse guidelines](https://marketingportal.extranet.deutschebahn.com/en/pulse) for details.

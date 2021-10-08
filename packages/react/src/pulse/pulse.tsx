@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
-import Logo from '../logo/logo';
+import { LogoSizes, LogoVariants } from '../logo/logo';
 
 const pulsePropTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(Logo.sizes)),
-  variant: PropTypes.oneOf(Object.values(Logo.variants)),
+  size: PropTypes.oneOf(LogoSizes),
+  variant: PropTypes.oneOf(LogoVariants),
   children: PropTypes.node,
   mt: PropTypes.string,
   mb: PropTypes.string,
@@ -39,8 +39,8 @@ Pulse.propTypes = pulsePropTypes;
 
 Pulse.defaultProps = {
   className: '',
-  size: Logo.sizes.M,
-  variant: Logo.variants.AUTO,
+  size: 'm',
+  variant: 'auto',
   children: null,
   mt: undefined,
   mb: undefined,

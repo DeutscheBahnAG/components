@@ -14,7 +14,7 @@ const onClick = () => {
 };
 <Notification
   action={
-    <Button size={Button.sizes.S} variant={Button.variants.PRIMARY} onClick={onClick}>
+    <Button size="s" variant="primary" onClick={onClick}>
       Toggle sidebar
     </Button>
   }
@@ -40,48 +40,48 @@ const onClick = () => {
 ## Centered layout
 
 ```jsx
-<Container width={Container.widths.FULL}>Content</Container>
+<Container width="full">Content</Container>
 ```
 
 ```jsx
-<Container width={Container.widths.EXTENDED}>Content</Container>
+<Container width="extended">Content</Container>
 ```
 
 ```jsx
-<Container width={Container.widths.CONTENT}>Content</Container>
+<Container width="content">Content</Container>
 ```
 
 ```jsx
-<Container width={Container.widths.TEXT}>Text</Container>
+<Container width="text">Text</Container>
 ```
 
 ## Left-aligned layout
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.CONTENT}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="content">Content</Container>
 </Layout>;
 ```
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.EXTENDED}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="extended">Content</Container>
 </Layout>;
 ```
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.FULL}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="full">Content</Container>
 </Layout>;
 ```
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.TEXT}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="text">Content</Container>
 </Layout>;
 ```
 
@@ -90,31 +90,31 @@ import { Layout } from '@db-design/react';
 Containers can and should be nested.
 
 ```jsx
-<Container width={Container.widths.EXTENDED}>
-  <Container width={Container.widths.CONTENT}>Content</Container>
+<Container width="extended">
+  <Container width="content">Content</Container>
 </Container>
 ```
 
 ```jsx
-<Container width={Container.widths.FULL}>
-  <Container width={Container.widths.CONTENT}>Content</Container>
+<Container width="full">
+  <Container width="content">Content</Container>
 </Container>
 ```
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.EXTENDED}>
-    <Container width={Container.widths.CONTENT}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="extended">
+    <Container width="content">Content</Container>
   </Container>
 </Layout>;
 ```
 
 ```jsx
 import { Layout } from '@db-design/react';
-<Layout variant={Layout.variants.LEFT_ALIGNED}>
-  <Container width={Container.widths.FULL}>
-    <Container width={Container.widths.CONTENT}>Content</Container>
+<Layout variant="left-aligned">
+  <Container width="full">
+    <Container width="content">Content</Container>
   </Container>
 </Layout>;
 ```
@@ -125,12 +125,12 @@ No align (= left):
 
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container width={Container.widths.CONTENT}>
+<Container width="content">
   <Logo />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width={Container.widths.TEXT}>
+  <Container width="text">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
       facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
@@ -144,12 +144,12 @@ Center everything:
 
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+<Container width="content" align="center">
   <Logo />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width={Container.widths.TEXT}>
+  <Container width="text">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
       facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
@@ -163,12 +163,12 @@ Center most things, but reset the text align for the copy:
 
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+<Container width="content" align="center">
   <Logo />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width={Container.widths.TEXT} align={Container.alignments.LEFT}>
+  <Container width="text" align="left">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
       facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
@@ -182,13 +182,13 @@ Possible for edge-cases: completely reset the text align for the copy:
 
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+<Container width="content" align="center">
   <Logo />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width={Container.widths.CONTENT} align={Container.alignments.LEFT}>
-    <Container width={Container.widths.TEXT}>
+  <Container width="content" align="left">
+    <Container width="text">
       <Copy>
         Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
         facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
@@ -203,9 +203,9 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
-<Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
-  <Theme theme={Theme.themes.DB_ALTERNATE}>
-    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+<Container filled width="full" align="center">
+  <Theme theme="DB_ALTERNATE">
+    <Container filled width="content" align="center">
       <Logo />
       <Pulse>
         <Title>Headline</Title>
@@ -217,10 +217,10 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
-<Theme theme={Theme.themes.DB_ALTERNATE}>
-  <Container filled width={Container.widths.FULL} align={Container.alignments.CENTER}>
-    <Theme theme={Theme.themes.DB}>
-      <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+<Theme theme="DB_ALTERNATE">
+  <Container filled width="full" align="center">
+    <Theme theme="DB">
+      <Container filled width="content" align="center">
         <Logo />
         <Pulse>
           <Title>Headline</Title>

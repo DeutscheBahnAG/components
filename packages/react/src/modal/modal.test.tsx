@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Button from '../button';
-import Modal from './modal';
+import Modal, { ModalSizes } from './modal';
 
 const APP_ID = 'root-test-id';
 const PORTAL_ID = 'portal-test-id';
@@ -72,14 +72,14 @@ describe('Modal Component', () => {
 
   test('alertdialog role', () => {
     const { baseElement } = render(
-      <Modal isOpen appId={APP_ID} portalId={PORTAL_ID} kind={Modal.kinds.ALERT}>
+      <Modal isOpen appId={APP_ID} portalId={PORTAL_ID} kind="alert">
         Modal should have alert role.
       </Modal>
     );
     expect(baseElement).toMatchSnapshot();
   });
 
-  test.each(Object.values(Modal.sizes))('size %s', (size) => {
+  test.each(ModalSizes)('size %s', (size) => {
     const { baseElement } = render(
       <Modal isOpen appId={APP_ID} portalId={PORTAL_ID} size={size}>
         Modal should have size={size}.
@@ -106,7 +106,7 @@ describe('Modal Component', () => {
         isOpen
         appId={APP_ID}
         portalId={PORTAL_ID}
-        primaryButton={<Button variant={Button.variants.PRIMARY}>Primary Button Here</Button>}
+        primaryButton={<Button variant="primary">Primary Button Here</Button>}
       >
         Modal with PrimaryButton.
       </Modal>

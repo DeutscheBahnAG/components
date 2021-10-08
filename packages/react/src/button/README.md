@@ -17,16 +17,16 @@ import { ActionAdd } from '@db-design/react-icons';
   <Button onClick={alert} icon={<ActionAdd />}>
     Button
   </Button>
-  <Button onClick={alert} variant={Button.variants.SECONDARY}>
+  <Button onClick={alert} variant="secondary">
     Button
   </Button>
-  <Button onClick={alert} variant={Button.variants.SOLID}>
+  <Button onClick={alert} variant="solid">
     Button
   </Button>
-  <Button onClick={alert} variant={Button.variants.HOVER_ONLY}>
+  <Button onClick={alert} variant="hover-only">
     Button
   </Button>
-  <Button onClick={alert} loading shape={Button.shapes.SQUARE}>
+  <Button onClick={alert} loading shape="square">
     Button
   </Button>
 </>;
@@ -47,7 +47,7 @@ Primary Buttons must appear one time only. Primary is the default button style.
 Secondary Buttons should appear next to Primary Buttons.
 
 ```jsx
-<Button variant={Button.variants.SECONDARY}>Button</Button>
+<Button variant="secondary">Button</Button>
 ```
 
 ### Solid
@@ -55,7 +55,7 @@ Secondary Buttons should appear next to Primary Buttons.
 Solid Buttons can appear on other places of a website like inline actions (table row action, choose file, …).
 
 ```jsx
-<Button variant={Button.variants.SOLID}>Button</Button>
+<Button variant="solid">Button</Button>
 ```
 
 ### Hover only
@@ -63,7 +63,7 @@ Solid Buttons can appear on other places of a website like inline actions (table
 Like a Solid Button but with no background by default.
 
 ```jsx
-<Button variant={Button.variants.HOVER_ONLY}>Button</Button>
+<Button variant="hover-only">Button</Button>
 ```
 
 This is mostly useful for icons (toggle menu, close dialogue, …).
@@ -71,12 +71,7 @@ This is mostly useful for icons (toggle menu, close dialogue, …).
 ```jsx
 import { NavigationClose } from '@db-design/react-icons';
 
-<Button
-  variant={Button.variants.HOVER_ONLY}
-  shape={Button.shapes.ROUND}
-  size={Button.sizes.M}
-  icon={<NavigationClose />}
->
+<Button variant="hover-only" shape="round" size="m" icon={<NavigationClose />}>
   Button
 </Button>;
 ```
@@ -84,30 +79,30 @@ import { NavigationClose } from '@db-design/react-icons';
 ## Sizing
 
 ```jsx
-<Button size={Button.sizes.S}>Button</Button>
-<Button size={Button.sizes.S} variant={Button.variants.SECONDARY}>Button</Button>
-<Button size={Button.sizes.S} variant={Button.variants.SOLID}>Button</Button>
+<Button size="s">Button</Button>
+<Button size="s" variant="secondary">Button</Button>
+<Button size="s" variant="solid">Button</Button>
 ```
 
 ```jsx
-<Button size={Button.sizes.M}>Button</Button>
-<Button size={Button.sizes.M} variant={Button.variants.SECONDARY}>Button</Button>
-<Button size={Button.sizes.M} variant={Button.variants.SOLID}>Button</Button>
+<Button size="m">Button</Button>
+<Button size="m" variant="secondary">Button</Button>
+<Button size="m" variant="solid">Button</Button>
 ```
 
 ```jsx
-<Button size={Button.sizes.L}>Button</Button>
-<Button size={Button.sizes.L} variant={Button.variants.SECONDARY}>Button</Button>
-<Button size={Button.sizes.L} variant={Button.variants.SOLID}>Button</Button>
+<Button size="l">Button</Button>
+<Button size="l" variant="secondary">Button</Button>
+<Button size="l" variant="solid">Button</Button>
 ```
 
 ```jsx
-<Button size={Button.sizes.XL}>Button</Button>
-<Button size={Button.sizes.XL} variant={Button.variants.SECONDARY}>Button</Button>
+<Button size="xl">Button</Button>
+<Button size="xl" variant="secondary">Button</Button>
 ```
 
-- Avoid using `primary` and `secondary` Buttons in size `S` and `M`.
-- `solid` Buttons should not be used in size `XL`.
+- Avoid using `primary` and `secondary` Buttons in size `s` and `m`.
+- `solid` Buttons should not be used in size `xl`.
 
 ## Icons
 
@@ -122,14 +117,14 @@ import { ActionAdd } from '@db-design/react-icons';
 
 ```jsx
 import { NavigationArrowBack } from '@db-design/react-icons';
-<Button icon={<NavigationArrowBack />} iconPosition={Button.iconPositions.BEFORE}>
+<Button icon={<NavigationArrowBack />} iconPosition="before">
   Button
 </Button>;
 ```
 
 ```jsx
 import { NavigationArrowForward } from '@db-design/react-icons';
-<Button icon={<NavigationArrowForward />} iconPosition={Button.iconPositions.AFTER}>
+<Button icon={<NavigationArrowForward />} iconPosition="after">
   Button
 </Button>;
 ```
@@ -140,46 +135,53 @@ Icon-only Buttons can be either squared or round. They can be combined with diff
 
 ```jsx
 import { ActionAdd } from '@db-design/react-icons';
-<Button icon={<ActionAdd />} shape={Button.shapes.SQUARE}>
+<Button icon={<ActionAdd />} shape="square">
   Button
 </Button>;
 ```
 
 ```jsx
 import { ActionAdd } from '@db-design/react-icons';
-<Button icon={<ActionAdd />} shape={Button.shapes.ROUND}>
+<Button icon={<ActionAdd />} shape="round">
   Button
 </Button>;
 ```
 
 ## Overview of possible combinations
 
-Below all possible combinations of `Button.sizes`, `Button.shapes`,
-and `Button.variants` as well as with and without Icon are listed. Crossed out
+Below all possible combinations of `ButtonSizes`, `ButtonShapes`,
+and `ButtonVariants` as well as with and without Icon are listed. Crossed out
 combinations shouldn’t be used and will raise a props validation warning.
 
 ```jsx noeditor
 import { Fragment } from 'react';
 import clsx from 'clsx';
-import { validateVariantCombinations } from './button';
+import {
+  validateVariantCombinations,
+  ButtonVariants,
+  ButtonIconPositions,
+  ButtonShapes,
+  ButtonSizes,
+  ButtonTypes,
+} from './button';
 import { NavigationClose } from '@db-design/react-icons';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 <>
-  {Object.values(Button.variants).map((variant) => (
+  {ButtonVariants.map((variant) => (
     <Fragment key={variant}>
-      <h3>Button.variants.{variant.toUpperCase().replace(/-/g, '_')}</h3>
+      <h3>ButtonVariant: {variant}</h3>
       <table className="sg-table">
         <thead>
           <tr>
             <th colSpan="3">&nbsp;</th>
-            <th colSpan="2">Button.shapes.</th>
+            <th colSpan="2">Button shapes</th>
           </tr>
           <tr>
             <th>
-              Button.
+              Button
               <br />
-              sizes.
+              sizes
             </th>
             <th>Default</th>
             <th>With Icon</th>
@@ -188,7 +190,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
           </tr>
         </thead>
         <tbody>
-          {Object.values(Button.sizes).map((size) => (
+          {ButtonSizes.map((size) => (
             <tr key={`${variant}-${size}`}>
               <th>{size.toUpperCase()}</th>
               <td
@@ -196,7 +198,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
                   'sg-not-allowed':
                     validateVariantCombinations({
                       size,
-                      shape: Button.shapes.DEFAULT,
+                      shape: 'default',
                       variant,
                       icon: false,
                     }) !== null,
@@ -206,7 +208,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
                   Default
                 </Button>
               </td>
-              {Object.values(Button.shapes).map((shape) => {
+              {ButtonShapes.map((shape) => {
                 const notAllowed =
                   validateVariantCombinations({
                     size,
@@ -222,7 +224,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
                     })}
                   >
                     <Button variant={variant} size={size} shape={shape} icon={<NavigationClose />}>
-                      {shape === Button.shapes.DEFAULT ? 'Icon' : shape.toUpperCase()}
+                      {shape === 'default' ? 'Icon' : shape.toUpperCase()}
                     </Button>
                   </td>
                 );
@@ -248,19 +250,19 @@ Full-width buttons can be used in combination with all other attributes.
 ```
 
 ```jsx
-<Button fullWidth variant={Button.variants.SECONDARY}>
+<Button fullWidth variant="secondary">
   Button
 </Button>
 ```
 
 ```jsx
-<Button fullWidth size={Button.sizes.XL}>
+<Button fullWidth size="xl">
   Button
 </Button>
 ```
 
 ```jsx
-<Button fullWidth size={Button.sizes.XL} variant={Button.variants.SECONDARY}>
+<Button fullWidth size="xl" variant="secondary">
   Button
 </Button>
 ```
@@ -276,7 +278,7 @@ Disabled Buttons always look the same, independent of the `variant`.
 ```
 
 ```jsx
-<Button disabled variant={Button.variants.SECONDARY}>
+<Button disabled variant="secondary">
   Button
 </Button>
 ```
@@ -312,43 +314,43 @@ const onClick = async () => {
 ```
 
 ```jsx
-<Button loading variant={Button.variants.SECONDARY}>
+<Button loading variant="secondary">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.S}>
+<Button loading size="s">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.S} variant={Button.variants.SECONDARY}>
+<Button loading size="s" variant="secondary">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.M}>
+<Button loading size="m">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.M} variant={Button.variants.SECONDARY}>
+<Button loading size="m" variant="secondary">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.XL}>
+<Button loading size="xl">
   Button
 </Button>
 ```
 
 ```jsx
-<Button loading size={Button.sizes.XL} variant={Button.variants.SECONDARY}>
+<Button loading size="xl" variant="secondary">
   Button
 </Button>
 ```
@@ -370,7 +372,7 @@ The button can make use of different semantics while keeping the same style. All
 ```jsx
 <form action="#">
   {/* <Textfield /> */}
-  <Button type={Button.types.SUBMIT}>Button</Button>
+  <Button type="submit">Button</Button>
 </form>
 ```
 
@@ -399,7 +401,7 @@ import NextLink from 'next/link';
 import { Button } from '@db-design/react';
 
 <NextLink href="/">
-  <Button type={Button.types.LINK}>Button</Button>
+  <Button type="link">Button</Button>
 </NextLink>;
 ```
 
@@ -427,9 +429,9 @@ The spacing used with a different Button size:
 
 ```jsx
 <>
-  <Button size={Button.sizes.M}>Button 1</Button>
-  <Button size={Button.sizes.M}>Button 2</Button>
-  <Button size={Button.sizes.M}>Button 3</Button>
+  <Button size="m">Button 1</Button>
+  <Button size="m">Button 2</Button>
+  <Button size="m">Button 3</Button>
 </>
 ```
 
@@ -439,9 +441,9 @@ Text, Textfield, Button and Link **automatically align well** next to each other
 import { Textfield, Link } from '@db-design/react';
 <>
   <Link>Link</Link>
-  <Textfield size={Textfield.sizes.XL} value="Textfield" />
-  <Button size={Button.sizes.XL}>Button</Button>
-  <Button size={Button.sizes.M} variant={Button.variants.SOLID}>
+  <Textfield size="xl" value="Textfield" />
+  <Button size="xl">Button</Button>
+  <Button size="m" variant="solid">
     Button
   </Button>
   <span>Some text</span>

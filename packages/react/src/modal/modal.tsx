@@ -18,30 +18,19 @@ const kindValues = {
   },
 };
 
-export enum ModalActionSizes {
-  NONE = 'none',
-  S = 's',
-  M = 'm',
-  L = 'l',
-}
+export const ModalActionSizes = ['none', 's', 'm', 'l'] as const;
+export type ModalActionSizesType = typeof ModalActionSizes[number];
 
-export enum ModalKinds {
-  DEFAULT = 'default',
-  ALERT = 'alert',
-}
-
-export enum ModalSizes {
-  AUTO = 'auto',
-  S = 's',
-  M = 'm',
-  L = 'l',
-}
+export const ModalKinds = ['default', 'alert'] as const;
+export type ModalKindsType = typeof ModalKinds[number];
+export const ModalSizes = ['auto', 's', 'm', 'l'] as const;
+export type ModalSizesType = typeof ModalSizes[number];
 
 export interface ModalProps {
   /** Sets the top title of the Modal dialog */
   title?: string;
 
-  /** Sets the primary button. Requires a Button component and overrides the variant to Button.variants.PRIMARY
+  /** Sets the primary button. Requires a Button component and overrides the variant to 'primary'
    */
   primaryButton?: React.ReactNode;
 
@@ -66,20 +55,20 @@ export interface ModalProps {
 
   /** Set the kind of Modal dialogue.
    * Note: This affects the accessibility behaviour of the dialogue. */
-  kind?: ModalKinds;
+  kind?: ModalKindsType;
 
   /**
    * Limit width of dialog to small, medium or large size.
    * When set to `auto`, the dialogs width depends on its content width. */
-  size?: ModalSizes;
+  size?: ModalSizesType;
 
   /** Set action buttons to full width for viewport widths up to the given size.
    * Note: The size relates to the viewport size and not to the given dialog size. */
-  fullActionSize?: ModalActionSizes;
+  fullActionSize?: ModalActionSizesType;
 
   /** Center action buttons for viewport widths up to the given size.
    * Note: The size relates to the viewport size and not to the given dialog size. */
-  centerActions?: ModalActionSizes;
+  centerActions?: ModalActionSizesType;
 
   /** Append custom css classes to the Modal container */
   overlayClassName?: string;
@@ -136,12 +125,7 @@ export interface ModalProps {
   footer?: React.ReactNode;
 }
 
-type ModalType<P> = React.FunctionComponent<P> & {
-  kinds: typeof ModalKinds;
-  sizes: typeof ModalSizes;
-  fullActionSizes: typeof ModalActionSizes;
-  centerActions: typeof ModalActionSizes;
-};
+type ModalType<P> = React.FunctionComponent<P>;
 
 /**
  * Apply a fix for mobile browsers reporting wrong CSS viewport unit
@@ -166,10 +150,10 @@ const Modal: ModalType<ModalProps> = ({
   onClose,
   isOpen = false,
   duration = 400,
-  kind = ModalKinds.DEFAULT,
-  size = ModalSizes.M,
-  fullActionSize = ModalActionSizes.NONE,
-  centerActions = ModalActionSizes.NONE,
+  kind = 'default',
+  size = 'm',
+  fullActionSize = 'none',
+  centerActions = 'none',
   className,
   overlayClassName,
   ariaLabelledBy = 'modal-title',
@@ -271,9 +255,9 @@ const Modal: ModalType<ModalProps> = ({
       >
         {enableCloseButton && (
           <Button
-            variant={Button.variants.HOVER_ONLY}
-            shape={Button.shapes.SQUARE}
-            size={Button.sizes.M}
+            variant="hover-only"
+            shape="square"
+            size="m"
             icon={<NavigationClose />}
             className={clsx('db-modal__closebutton')}
             onClick={onClose && onClose}
@@ -283,7 +267,7 @@ const Modal: ModalType<ModalProps> = ({
         )}
         {title && (
           <h2 id="ariaLabelledBy" className="db-modal__title">
-            <Title size={Title.sizes.L}>{title}</Title>
+            <Title size="l">{title}</Title>
           </h2>
         )}
       </header>
@@ -316,10 +300,5 @@ const Modal: ModalType<ModalProps> = ({
     </ReactModal>
   );
 };
-
-Modal.kinds = ModalKinds;
-Modal.sizes = ModalSizes;
-Modal.fullActionSizes = ModalActionSizes;
-Modal.centerActions = ModalActionSizes;
 
 export default Modal;

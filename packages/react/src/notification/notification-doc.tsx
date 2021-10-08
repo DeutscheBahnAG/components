@@ -17,6 +17,5 @@ const Notification: NotificationComponent = ({ onClose, ...props }) => {
 };
 
 Notification.propTypes = DefaultNotification.propTypes;
-Notification.severities = DefaultNotification.severities;
 
 export default Notification;

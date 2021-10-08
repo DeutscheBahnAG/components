@@ -9,25 +9,14 @@ import {
   NavigationArrowBack,
 } from '@db-design/react-icons';
 
-enum LinkIconPositions {
-  NONE = 'none',
-  AUTO = 'auto',
-  BEFORE = 'before',
-  AFTER = 'after',
-}
+export const LinkIconPositions = ['none', 'auto', 'before', 'after'] as const;
+export type LinkIconPositionsType = typeof LinkIconPositions[number];
 
-enum LinkTypes {
-  LINK = 'link',
-  BUTTON = 'button',
-  SUBMIT = 'submit',
-  RESET = 'reset',
-}
+export const LinkTypes = ['link', 'button', 'submit', 'reset'] as const;
+export type LinkTypesType = typeof LinkTypes[number];
 
-export enum LinkVariants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  MIXED = 'mixed',
-}
+export const LinkVariants = ['primary', 'secondary', 'mixed'] as const;
+export type LinkVariantsType = typeof LinkVariants[number];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface LinkProps extends Record<string, any> {
@@ -40,17 +29,13 @@ interface LinkProps extends Record<string, any> {
   icon?: React.ReactNode;
   loading?: boolean;
   loadingLabel?: string;
-  iconPosition?: LinkIconPositions;
+  iconPosition?: LinkIconPositionsType;
   style?: React.CSSProperties;
-  type?: LinkTypes;
-  variant?: LinkVariants;
+  type?: LinkTypesType;
+  variant?: LinkVariantsType;
 }
 
-type LinkType = React.FunctionComponent<LinkProps> & {
-  iconPositions: typeof LinkIconPositions;
-  types: typeof LinkTypes;
-  variants: typeof LinkVariants;
-};
+type LinkType = React.FunctionComponent<LinkProps>;
 
 const Link: LinkType = ({
   children,
@@ -59,20 +44,20 @@ const Link: LinkType = ({
   download = false,
   href = undefined,
   icon: customIcon,
-  iconPosition = LinkIconPositions.AUTO,
+  iconPosition = 'auto',
   style = {},
   type = undefined,
-  variant = LinkVariants.PRIMARY,
+  variant = 'primary',
   ...otherProps
 }) => {
   const LinkRef = React.createRef<HTMLAnchorElement | HTMLLinkElement>();
-  const isLink = type === LinkTypes.LINK || href !== undefined;
+  const isLink = type === 'link' || href !== undefined;
   const isExternal = href && href.match(/^((https?):)?\/\//);
   const icon =
     customIcon ||
     (download && <ActionDownload />) ||
     (isExternal && <NavigationLinkExternal className="db-link__icon-arrow" />) ||
-    (iconPosition === LinkIconPositions.BEFORE ? (
+    (iconPosition === 'before' ? (
       <NavigationArrowBack className="db-link__icon-arrow" />
     ) : (
       <NavigationArrowForward className="db-link__icon-arrow" />
@@ -92,36 +77,28 @@ const Link: LinkType = ({
         className={clsx(
           'db-link',
           `db-link--${variant}`,
-          { 'db-link--icon': iconPosition !== LinkIconPositions.NONE },
+          { 'db-link--icon': iconPosition !== 'none' },
           className
         )}
         {...otherProps}
       >
-        {(iconPosition === LinkIconPositions.BEFORE && icon) ||
-          (iconPosition === LinkIconPositions.AUTO && (download || customIcon) && icon)}
+        {(iconPosition === 'before' && icon) ||
+          (iconPosition === 'auto' && (download || customIcon) && icon)}
         <span>{children}</span>
-        {(iconPosition === LinkIconPositions.AFTER && icon) ||
-          (iconPosition === LinkIconPositions.AUTO &&
-            !download &&
-            !customIcon &&
-            href !== undefined &&
-            icon)}
+        {(iconPosition === 'after' && icon) ||
+          (iconPosition === 'auto' && !download && !customIcon && href !== undefined && icon)}
       </Element>
       <span className="db-inline-spacer"> </span>
     </>
   );
 };
 
-Link.iconPositions = LinkIconPositions;
-Link.types = LinkTypes;
-Link.variants = LinkVariants;
-
 Link.propTypes = {
-  type: PropTypes.oneOf(Object.values(Link.types)),
+  type: PropTypes.oneOf(LinkTypes),
   /** the appearance of the Link */
-  variant: PropTypes.oneOf(Object.values(Link.variants)),
+  variant: PropTypes.oneOf(LinkVariants),
   /** the position of the icon */
-  iconPosition: PropTypes.oneOf(Object.values(Link.iconPositions)),
+  iconPosition: PropTypes.oneOf(LinkIconPositions),
   /** when true, Link will be disabled */
   disabled: PropTypes.bool,
   /** when true the browser will try to download the target */
@@ -140,9 +117,9 @@ Link.propTypes = {
 
 // @TODO Remove no other component requires this
 Link.defaultProps = {
-  type: Link.types.BUTTON,
-  variant: Link.variants.PRIMARY,
-  iconPosition: Link.iconPositions.AUTO,
+  type: 'button',
+  variant: 'primary',
+  iconPosition: 'auto',
   className: '',
   style: {},
   children: undefined,
