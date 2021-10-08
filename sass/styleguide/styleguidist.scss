@@ -71,7 +71,7 @@ $code-background-color: db-background-color('secondary');
     }
   }
 
-  .rsg--spacing-34 + .rsg--spacing-34 h3[class^='rsg--heading-'] {
+  [class^='rsg--spacing'] + [class^='rsg--spacing'] h3[class^='rsg--heading-'] {
     margin-top: db-spacing('l');
   }
 
@@ -117,7 +117,7 @@ $code-background-color: db-background-color('secondary');
     margin-bottom: db-spacing('m');
   }
 
-  [class^='rsg--spacing-34'] {
+  [class^='rsg--spacing'] {
     margin: 0;
   }
 
