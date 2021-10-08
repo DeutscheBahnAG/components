@@ -4,7 +4,7 @@
 import { Button } from '@db-design/react';
 ```
 
-This component handles everthing that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
+This component handles everything that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
 
 ```jsx noeditor
 import { Copy } from '@db-design/react';

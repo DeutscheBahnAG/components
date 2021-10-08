@@ -55,7 +55,7 @@ describe('Button Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should a Button with an Icon on the left side', () => {
+  it('should render a Button with an Icon on the left side', () => {
     const { container } = render(<Button icon={<DummyIcon />}>My button 10</Button>);
     expect(container).toMatchSnapshot();
   });

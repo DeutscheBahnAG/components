@@ -199,7 +199,7 @@ Button.propTypes = {
   loading: PropTypes.bool,
   /** additional class names you want to add to the button */
   className: PropTypes.string,
-  /** when true, button will take up all available with */
+  /** when true, button will take up all available width */
   fullWidth: PropTypes.bool,
   /** a11y label for the button while in loading state */
   loadingLabel: PropTypes.string,

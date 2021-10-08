@@ -1,24 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Component should a Button with an Icon on the left side 1`] = `
-<div>
-  <button
-    class="db-button db-button--primary db-button--default db-button--icon-position-before db-button--size-l"
-    type="button"
-  >
-    <svg
-      class="db-icon"
-    />
-    My button 10
-  </button>
-  <span
-    class="db-inline-spacer"
-  >
-     
-  </span>
-</div>
-`;
-
 exports[`Button Component should a Button with an Icon on the right side 1`] = `
 <div>
   <button
@@ -88,6 +69,25 @@ exports[`Button Component should not add an icon position class name when no ico
     type="button"
   >
     My button 12
+  </button>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
+</div>
+`;
+
+exports[`Button Component should render a Button with an Icon on the left side 1`] = `
+<div>
+  <button
+    class="db-button db-button--primary db-button--default db-button--icon-position-before db-button--size-l"
+    type="button"
+  >
+    <svg
+      class="db-icon"
+    />
+    My button 10
   </button>
   <span
     class="db-inline-spacer"
