@@ -3,13 +3,13 @@
 exports[`Button Component should a Button with an Icon on the right side 1`] = `
 <div>
   <button
-    class="db-button db-button--primary db-button--default db-button--icon-position-before db-button--size-l"
+    class="db-button db-button--primary db-button--default db-button--icon-position-after db-button--size-l"
     type="button"
   >
+    My button 11
     <svg
       class="db-icon"
     />
-    My button 11
   </button>
   <span
     class="db-inline-spacer"

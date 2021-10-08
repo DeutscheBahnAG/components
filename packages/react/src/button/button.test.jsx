@@ -61,7 +61,11 @@ describe('Button Component', () => {
   });
 
   it('should a Button with an Icon on the right side', () => {
-    const { container } = render(<Button icon={<DummyIcon />}>My button 11</Button>);
+    const { container } = render(
+      <Button icon={<DummyIcon />} iconPosition="after">
+        My button 11
+      </Button>
+    );
     expect(container).toMatchSnapshot();
   });
 
