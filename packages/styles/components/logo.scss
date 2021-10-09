@@ -11,8 +11,8 @@ $db-logo-sizes: (
 
 .db-logo {
   @include db-hide-text;
+  border-radius: calc(var(--db-logo--height) / 7.1);
   display: inline-flex;
-  min-height: var(--db-logo--height);
   vertical-align: middle;
 }
 
@@ -172,18 +172,36 @@ $db-logo-sizes: (
   display: block;
   line-height: 0; /* 1 */
 
+  /**
+   * 2. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
+   */
   &::after {
     background: var(--db-pulse-background);
+    border-radius: calc(var(--db-logo--height) / 7 * 0.5); /* 3 */
     content: '';
     display: inline-block; /* 1 */
+    height: calc(var(--db-logo--height) / 7); /* 3 */
+    width: calc(var(--db-logo--height) / 7 * 10); /* 3 */
   }
 
   /**
-   * 2. Left-align text to the left (remove side bearing).
+   * 3. Left-align text to the left (remove side bearing).
    *    When using two differnt font sizes, this effect becomes more visual.
    */
   > * {
     margin: 0 calc(-0.07em + 1px); /* 2 */
+  }
+
+  /**
+   * 4. Result: Visually half a Logo height from cap height/baseline
+   *    marketingportal.extranet.deutschebahn.com/en/layout#5f1cb927-48c0-4f94-a321-80fd20ac8517
+   */
+  > :first-child {
+    margin-top: calc(var(--db-logo--height) * 0.5 - 0.21em); /* 4 */
+  }
+
+  > :last-child {
+    margin-bottom: calc(var(--db-logo--height) * 0.5 - 0.16em); /* 4 */
   }
 }
 
@@ -202,32 +220,8 @@ $db-logo-sizes: (
 }
 
 @each $size, $height in $db-logo-sizes {
-  .db-logo--size-#{$size} {
+  .db-logo--size-#{$size},
+  .db-logo--size-#{$size} ~ .db-pulse {
     --db-logo--height: #{$height};
-    border-radius: math.div($height, 7.1);
-  }
-
-  .db-logo--size-#{$size} ~ .db-pulse,
-  .db-pulse--size-#{$size} {
-    /**
-     * 3. marketingportal.extranet.deutschebahn.com/en/pulse#6eefb0f2-5282-43cf-b49b-be30b51d39ee
-     */
-    &::after {
-      border-radius: math.div($height, 7) * 0.5; /* 3 */
-      height: math.div($height, 7); /* 3 */
-      width: math.div($height, 7) * 10; /* 3 */
-    }
-
-    /**
-     * 4. Result: Visually half a Logo height from cap height/baseline
-     *    marketingportal.extranet.deutschebahn.com/en/layout#5f1cb927-48c0-4f94-a321-80fd20ac8517
-     */
-    > :first-child {
-      margin-top: calc(#{$height * 0.5} - 0.21em); /* 4 */
-    }
-
-    > :last-child {
-      margin-bottom: calc(#{$height * 0.5} - 0.16em); /* 4 */
-    }
   }
 }
