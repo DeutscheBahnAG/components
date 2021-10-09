@@ -10,9 +10,13 @@ $db-logo-sizes: (
 );
 
 .db-logo {
+  --db-logo--mb: 0;
+  --db-logo--mt: 0;
   @include db-hide-text;
   border-radius: calc(var(--db-logo--height) / 7.1);
   display: inline-flex;
+  margin-bottom: calc(var(--db-logo--mb) * var(--db-logo--height));
+  margin-top: calc(var(--db-logo--mt) * var(--db-logo--height));
   vertical-align: middle;
 }
 
@@ -168,6 +172,8 @@ $db-logo-sizes: (
   *    Logo and the Pulse can be centered by applying `text-align: center`.
   */
 .db-pulse {
+  --db-pulse--mt: 0.5;
+  --db-pulse--mb: 0;
   color: var(--db-primary-text-color);
   display: block;
   line-height: 0; /* 1 */
@@ -181,6 +187,8 @@ $db-logo-sizes: (
     content: '';
     display: inline-block; /* 1 */
     height: calc(var(--db-logo--height) / 7); /* 3 */
+    margin-bottom: calc(var(--db-pulse--mb) * var(--db-logo--height));
+    margin-top: calc(var(--db-pulse--mt) * var(--db-logo--height));
     width: calc(var(--db-logo--height) / 7 * 10); /* 3 */
   }
 
@@ -193,15 +201,17 @@ $db-logo-sizes: (
   }
 
   /**
-   * 4. Result: Visually half a Logo height from cap height/baseline
-   *    marketingportal.extranet.deutschebahn.com/en/layout#5f1cb927-48c0-4f94-a321-80fd20ac8517
+   * 4. Remove white space above cap height of first line
    */
   > :first-child {
-    margin-top: calc(var(--db-logo--height) * 0.5 - 0.21em); /* 4 */
+    margin-top: -0.21em; /* 4 */
   }
 
+  /**
+   * 5. Remove white space below baseline of last line
+   */
   > :last-child {
-    margin-bottom: calc(var(--db-logo--height) * 0.5 - 0.16em); /* 4 */
+    margin-bottom: -0.16em; /* 5 */
   }
 }
 

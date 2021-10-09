@@ -17,10 +17,48 @@ The spacing of the Logo and Pulse follow very specific guidelines. The Pulse com
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo />
+  <Logo mb="1" />
   <Pulse>
     <Title size={Title.sizes.L}>Your headline</Title>
   </Pulse>
+</>;
+```
+
+## Margins
+
+`mt`, `gap` and `mb` can set a margin using the Logo’s height as a unit:
+
+`mt`: Margin top – between Logo and first line of text within the Pulse (must be set to at least `0.5` (better `1`) when `<Logo>` and `<Pulse>` directly follow each other):
+
+```jsx
+import { Logo, Title, Container, Theme } from '@db-design/react';
+<>
+  <Logo mb="1" />
+  <Pulse mt="2">
+    <Title size={Title.sizes.L}>Your headline</Title>
+  </Pulse>
+  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
+    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+      (After)
+    </Container>
+  </Theme>
+</>;
+```
+
+`mb`: Margin bottom – between the visual representation of the Pulse and the next element:
+
+```jsx
+import { Logo, Title, Container, Theme } from '@db-design/react';
+<>
+  <Logo mb="1" />
+  <Pulse mb="0.5">
+    <Title size={Title.sizes.L}>Your headline</Title>
+  </Pulse>
+  <Theme theme={Theme.themes.DB_LIGHT_ALTERNATE}>
+    <Container filled width={Container.widths.CONTENT} align={Container.alignments.CENTER}>
+      (After)
+    </Container>
+  </Theme>
 </>;
 ```
 
@@ -32,7 +70,7 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.M} />
+  <Logo mb="1" size={Logo.sizes.M} />
   <Pulse size={Logo.sizes.M}>
     <Title size={Title.sizes.M}>Headline</Title>
   </Pulse>
@@ -42,7 +80,7 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.L} />
+  <Logo mb="1" size={Logo.sizes.L} />
   <Pulse size={Logo.sizes.L}>
     <Title size={Title.sizes.L}>Headline</Title>
   </Pulse>
@@ -52,7 +90,7 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.XL} />
+  <Logo mb="1" size={Logo.sizes.XL} />
   <Pulse size={Logo.sizes.XL}>
     <Title size={Title.sizes.L}>Headline</Title>
   </Pulse>
@@ -62,7 +100,7 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.XXL} />
+  <Logo mb="1" size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>
     <Title size={Title.sizes.L}>Headline</Title>
   </Pulse>
@@ -72,7 +110,7 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.XXL} />
+  <Logo mb="1" size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>
     <Title size={Title.sizes.XXL}>Headline</Title>
   </Pulse>
@@ -82,7 +120,7 @@ import { Logo, Title } from '@db-design/react';
 ```jsx
 import { Logo, Title } from '@db-design/react';
 <>
-  <Logo size={Logo.sizes.XXL} />
+  <Logo mb="1" size={Logo.sizes.XXL} />
   <Pulse size={Logo.sizes.XXL}>
     <Title size={Title.sizes.XXL}>Headline</Title>
     <Title variant={Title.variants.SECONDARY} light size={Title.sizes.L}>
@@ -95,7 +133,7 @@ import { Logo, Title } from '@db-design/react';
 Never use different sizes for the Logo and the Pulse.
 
 ```jsx static
-<Logo size={Logo.sizes.S} />
+<Logo mb="1" size={Logo.sizes.S} />
 <Pulse size={Logo.sizes.XXL} />
 ```
 

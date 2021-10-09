@@ -37,6 +37,8 @@ const logoPropTypes = {
   productMarking: PropTypes.string,
   direction: PropTypes.oneOf(['horizontal', 'vertical', 'full-width']),
   href: PropTypes.string,
+  mt: PropTypes.string,
+  mb: PropTypes.string,
 };
 
 type LogoProps = InferProps<typeof logoPropTypes>;
@@ -62,6 +64,8 @@ const Logo: LogoComponent = React.forwardRef(
       productMarking = undefined,
       direction = 'horizontal',
       href,
+      mb = undefined,
+      mt = undefined,
       ...otherProps
     },
     ref
@@ -72,6 +76,9 @@ const Logo: LogoComponent = React.forwardRef(
     const [productMarkingFirstLine, productMarkingSecondLine] = prepareProductMarking(
       productMarking || ''
     ).split('\n');
+    const cssProperties = {};
+    if (mb) cssProperties['--db-logo--mb'] = mb;
+    if (mt) cssProperties['--db-logo--mt'] = mt;
     return (
       <Wrapper
         ref={ref}
@@ -84,6 +91,7 @@ const Logo: LogoComponent = React.forwardRef(
           direction !== 'horizontal' && `db-logo--${direction}`,
           className
         )}
+        style={cssProperties}
         {...otherProps}
       >
         {/* Do not copy this SVG code. This is optimized for this component only. */}
