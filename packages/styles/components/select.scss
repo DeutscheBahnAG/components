@@ -92,7 +92,7 @@ $db-select-chevron-margin: 16px;
       border-radius: db-border-radius($size);
       padding-bottom: $vertical-padding + 1px;
       padding-left: $horizontal-padding;
-      padding-right: calc(#{1.5 * $horizontal-padding} + var(--db-select--chevron-width));
+      padding-right: calc(#{2 * $horizontal-padding} + var(--db-select--chevron-width));
       padding-top: $vertical-padding - 1px;
     }
 
