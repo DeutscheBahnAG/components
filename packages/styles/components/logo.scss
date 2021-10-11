@@ -204,14 +204,14 @@ $db-logo-sizes: (
   /**
    * 4. Remove white space above cap height of first line
    */
-  > :first-child {
+  > :first-child .db-title {
     margin-top: -0.21em; /* 4 */
   }
 
   /**
    * 5. Remove white space below baseline of last line
    */
-  > :last-child {
+  > :last-child .db-title {
     margin-bottom: -0.16em; /* 5 */
   }
 }
