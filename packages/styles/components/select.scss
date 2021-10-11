@@ -25,7 +25,7 @@ $db-select-chevron-margin: 16px;
 
   &--disabled {
     background: transparent;
-    border-color: var(--db-secondary-background-color);
+    border-color: var(--db-primary-button-disabled-background-color);
     color: var(--db-disabled-text-color);
   }
 
