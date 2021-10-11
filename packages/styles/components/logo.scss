@@ -189,6 +189,7 @@ $db-logo-sizes: (
     height: calc(var(--db-logo--height) / 7); /* 3 */
     margin-bottom: calc(var(--db-pulse--mb) * var(--db-logo--height));
     margin-top: calc(var(--db-pulse--mt) * var(--db-logo--height));
+    vertical-align: middle;
     width: calc(var(--db-logo--height) / 7 * 10); /* 3 */
   }
 
