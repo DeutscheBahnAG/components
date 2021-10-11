@@ -16,6 +16,11 @@ exports[`Select Component should render a disabled select 1`] = `
       />
     </svg>
   </div>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;
 
@@ -33,5 +38,10 @@ exports[`Select Component should render a select 1`] = `
       />
     </svg>
   </div>
+  <span
+    class="db-inline-spacer"
+  >
+     
+  </span>
 </div>
 `;

@@ -70,36 +70,39 @@ const Select: SelectType = ({
   };
 
   return (
-    <div
-      className={clsx(
-        'db-select',
-        { 'db-select--focus': isFocused, 'db-select--disabled': disabled },
-        `db-select--size-${size}`,
-        className
-      )}
-    >
-      <select
-        ref={field}
-        {...otherProps}
-        disabled={disabled ?? false}
-        value={value ?? ''}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+    <>
+      <div
+        className={clsx(
+          'db-select',
+          { 'db-select--focus': isFocused, 'db-select--disabled': disabled },
+          `db-select--size-${size}`,
+          className
+        )}
       >
-        {(options ?? []).map(({ label, value: optionValue, disabled: optionDisabled }) => (
-          <option
-            key={`option_${optionValue}`}
-            value={optionValue}
-            disabled={optionDisabled ?? false}
-          >
-            {label}
-          </option>
-        ))}
-      </select>
-      <svg viewBox="0 0 16 10">
-        <path d="M1 2l6 6l6-6" />
-      </svg>
-    </div>
+        <select
+          ref={field}
+          {...otherProps}
+          disabled={disabled ?? false}
+          value={value ?? ''}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        >
+          {(options ?? []).map(({ label, value: optionValue, disabled: optionDisabled }) => (
+            <option
+              key={`option_${optionValue}`}
+              value={optionValue}
+              disabled={optionDisabled ?? false}
+            >
+              {label}
+            </option>
+          ))}
+        </select>
+        <svg viewBox="0 0 16 10">
+          <path d="M1 2l6 6l6-6" />
+        </svg>
+      </div>
+      <span className="db-inline-spacer"> </span>
+    </>
   );
 };
 
