@@ -129,7 +129,7 @@ exports[`Button Component should render a button when \`href\` is not set 1`] = 
 </div>
 `;
 
-exports[`Button Component should render a button with addional attributes 1`] = `
+exports[`Button Component should render a button with additional attributes 1`] = `
 <div>
   <button
     class="db-button db-button--primary db-button--default db-button--size-l"
@@ -146,7 +146,7 @@ exports[`Button Component should render a button with addional attributes 1`] = 
 </div>
 `;
 
-exports[`Button Component should render a button with addional classes 1`] = `
+exports[`Button Component should render a button with additional classes 1`] = `
 <div>
   <button
     class="db-button db-button--primary db-button--default db-button--size-l my-class"

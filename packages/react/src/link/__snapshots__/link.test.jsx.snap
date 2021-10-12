@@ -129,7 +129,7 @@ exports[`Link Component should render a link when \`href\` is not set 1`] = `
 </div>
 `;
 
-exports[`Link Component should render a link with addional attributes 1`] = `
+exports[`Link Component should render a link with additional attributes 1`] = `
 <div>
   <button
     class="db-link db-link--primary db-link--icon"
@@ -148,7 +148,7 @@ exports[`Link Component should render a link with addional attributes 1`] = `
 </div>
 `;
 
-exports[`Link Component should render a link with addional classes 1`] = `
+exports[`Link Component should render a link with additional classes 1`] = `
 <div>
   <button
     class="db-link db-link--primary db-link--icon my-class"

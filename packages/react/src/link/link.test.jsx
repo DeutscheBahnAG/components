@@ -27,12 +27,12 @@ describe('Link Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render a link with addional attributes', () => {
+  it('should render a link with additional attributes', () => {
     const { container } = render(<Link title="Click me">My link 5</Link>);
     expect(container).toMatchSnapshot();
   });
 
-  it('should render a link with addional classes', () => {
+  it('should render a link with additional classes', () => {
     const { container } = render(<Link className="my-class">My link 6</Link>);
     expect(container).toMatchSnapshot();
   });

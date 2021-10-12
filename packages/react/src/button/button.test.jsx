@@ -28,12 +28,12 @@ describe('Button Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render a button with addional attributes', () => {
+  it('should render a button with additional attributes', () => {
     const { container } = render(<Button title="Click me">My button 5</Button>);
     expect(container).toMatchSnapshot();
   });
 
-  it('should render a button with addional classes', () => {
+  it('should render a button with additional classes', () => {
     const { container } = render(<Button className="my-class">My button 6</Button>);
     expect(container).toMatchSnapshot();
   });
