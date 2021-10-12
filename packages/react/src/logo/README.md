@@ -122,7 +122,7 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 
 ## Alt text
 
-By default “Deutsche Bahn” is used as a text alternative for screen readers by the Logo component.
+By default “DB” is used as a text alternative for screen readers by the Logo component.
 
 ```jsx
 <Logo />
