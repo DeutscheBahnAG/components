@@ -21,6 +21,7 @@ $db-logo-sizes: (
 }
 
 .db-logo__db {
+  @include safari-svg-fix;
   display: inline-block;
   height: var(--db-logo--height);
   transform: translateZ(0);
@@ -37,10 +38,12 @@ $db-logo-sizes: (
 
 .db-logo__netze,
 .db-logo__schenker {
+  @include safari-svg-fix;
   height: var(--db-logo--height);
 }
 
 .db-logo__cargo {
+  @include safari-svg-fix;
   display: inline-block;
   height: calc(var(--db-logo--height) / 28 * 25);
 }

@@ -6,6 +6,10 @@
   font-size: inherit;
   margin: 0;
   padding: 0;
+
+  svg {
+    @include safari-svg-fix;
+  }
 }
 
 .db-link--icon {

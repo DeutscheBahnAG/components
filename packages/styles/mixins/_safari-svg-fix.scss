@@ -1,0 +1,8 @@
+/**
+ * Safari sometimes moves SVG images by -0.5px on retina displays, when a
+ * negative margin resulted in subpixels prior in the document. Rotating the
+ * SVG by 0deg fixes this unwanted shift.
+ */
+@mixin safari-svg-fix {
+  rotate: 0deg;
+}

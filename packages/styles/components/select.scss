@@ -55,6 +55,7 @@ $db-select-chevron-margin: 16px;
   }
 
   svg {
+    @include safari-svg-fix;
     pointer-events: none;
     position: absolute;
     top: 50%;
