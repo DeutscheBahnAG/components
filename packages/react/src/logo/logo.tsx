@@ -34,7 +34,7 @@ const logoPropTypes = {
   size: PropTypes.oneOf(Object.values(LogoSizes)),
   variant: PropTypes.oneOf(Object.values(LogoVariants)),
   children: PropTypes.node,
-  productMarking: PropTypes.string,
+  additionalMarking: PropTypes.string,
   direction: PropTypes.oneOf(['horizontal', 'vertical', 'full-width']),
   href: PropTypes.string,
   mt: PropTypes.string,
@@ -61,7 +61,7 @@ const Logo: LogoComponent = React.forwardRef(
       size = LogoSizes.M,
       variant = LogoVariants.AUTO,
       children = undefined,
-      productMarking = undefined,
+      additionalMarking = undefined,
       direction = 'horizontal',
       href,
       mb = undefined,
@@ -71,10 +71,10 @@ const Logo: LogoComponent = React.forwardRef(
     ref
   ) => {
     const Wrapper = href ? 'a' : 'span';
-    const prepareProductMarking = (m) =>
+    const prepareadditionalMarking = (m) =>
       ['xs', 's', 'm', 'l'].includes(size || '') ? m.replace('\n', ' ') : m;
-    const [productMarkingFirstLine, productMarkingSecondLine] = prepareProductMarking(
-      productMarking || ''
+    const [additionalMarkingFirstLine, additionalMarkingSecondLine] = prepareadditionalMarking(
+      additionalMarking || ''
     ).split('\n');
     const cssProperties = {};
     if (mb) cssProperties['--db-logo--mb'] = mb;
@@ -119,15 +119,15 @@ const Logo: LogoComponent = React.forwardRef(
           </svg>
         )}
         {children || brands[brand || 'db']}
-        {productMarkingSecondLine && (
-          <span className="db-logo__product-marking db-logo__product-marking--two-line">
-            {productMarkingFirstLine}
+        {additionalMarkingSecondLine && (
+          <span className="db-logo__additional-marking db-logo__additional-marking--two-line">
+            {additionalMarkingFirstLine}
             <br />
-            {productMarkingSecondLine}
+            {additionalMarkingSecondLine}
           </span>
         )}
-        {productMarkingFirstLine && !productMarkingSecondLine && (
-          <span className="db-logo__product-marking">{productMarkingFirstLine}</span>
+        {additionalMarkingFirstLine && !additionalMarkingSecondLine && (
+          <span className="db-logo__additional-marking">{additionalMarkingFirstLine}</span>
         )}
       </Wrapper>
     );

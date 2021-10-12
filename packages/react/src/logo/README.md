@@ -19,8 +19,8 @@ This component has been carefully co-created with the Brand Team to strictly fol
   <Logo brand="cargo" />
 </div>
 <div style={{ display: 'flex', margin: '48px 0' }}>
-  <Logo productMarking="Rhein-Neckar-Bus" />
-  <Logo productMarking="Regio Südost" direction="vertical"/>
+  <Logo additionalMarking="Rhein-Neckar-Bus" />
+  <Logo additionalMarking="Regio Südost" direction="vertical"/>
 </div>
 ```
 
@@ -264,24 +264,24 @@ This applies to the DB Cargo brand only.
 <Logo brand="cargo" align="right" />
 ```
 
-## Product markings
+## Additional markings
 
-Product markings denote the products and services assigned to a brand.
-Product markings are not designed logos. Their use is optional.
+Additional markings denote the products and services assigned to a brand.
+Additional markings are not designed logos. Their use is optional.
 
 ```jsx
-<Logo productMarking="Regio Schleswig-Holstein" />
+<Logo additionalMarking="Regio Schleswig-Holstein" />
 ```
 
 ```jsx
-<Logo productMarking="Zugportal.de" size={Logo.sizes.XXL} />
+<Logo additionalMarking="Zugportal.de" size={Logo.sizes.XXL} />
 ```
 
 ```jsx
 import { Theme, Container } from '@db-design/react';
 <Theme theme={Theme.themes.DB_BRANDED}>
   <Container filled style={{ padding: '16px' }} width={Container.widths.CONTENT}>
-    <Logo productMarking="Westfalenbus" size={Logo.sizes.M} />
+    <Logo additionalMarking="Westfalenbus" size={Logo.sizes.M} />
   </Container>
 </Theme>;
 ```
@@ -289,7 +289,7 @@ import { Theme, Container } from '@db-design/react';
 ### One line
 
 ```jsx
-<Logo productMarking="Oberweißbacher Berg- und Schwarztalbahn" size={Logo.sizes.XL} />
+<Logo additionalMarking="Oberweißbacher Berg- und Schwarztalbahn" size={Logo.sizes.XL} />
 ```
 
 ### Two lines
@@ -297,7 +297,7 @@ import { Theme, Container } from '@db-design/react';
 The font size adjusts automatically according to our brand standards:
 
 ```jsx
-<Logo productMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size={Logo.sizes.XL} />
+<Logo additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size={Logo.sizes.XL} />
 ```
 
 Use `\n` to set the line-break. Each marking must set the line-break manually for consistency with other (non-digital) marketing usage.
@@ -307,11 +307,11 @@ Use `\n` to set the line-break. Each marking must set the line-break manually fo
 In combination with a DB brand, the marking switches to the secondary text colour.
 
 ```jsx
-<Logo brand="netze" productMarking="Notfalltechnik" />
+<Logo brand="netze" additionalMarking="Notfalltechnik" />
 ```
 
 ```jsx
-<Logo brand="schenker" productMarking="Oslo City Hub" />
+<Logo brand="schenker" additionalMarking="Oslo City Hub" />
 ```
 
 Markings are not defined for the **DB Cargo** brand. Please contact the [Brand Team](marke@deutschebahn.com) first in case you have a need for it.
@@ -321,7 +321,7 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ```jsx
 <Logo
   direction="vertical"
-  productMarking="Oberweißbacher Berg- und Schwarztalbahn"
+  additionalMarking="Oberweißbacher Berg- und Schwarztalbahn"
   size={Logo.sizes.XL}
 />
 ```
@@ -329,17 +329,17 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ```jsx
 <Logo
   direction="vertical"
-  productMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
+  additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
   size={Logo.sizes.XL}
 />
 ```
 
 ```jsx
-<Logo direction="vertical" brand="netze" productMarking="Notfalltechnik" />
+<Logo direction="vertical" brand="netze" additionalMarking="Notfalltechnik" />
 ```
 
 ```jsx
-<Logo direction="vertical" brand="schenker" productMarking="Kärnten" />
+<Logo direction="vertical" brand="schenker" additionalMarking="Kärnten" />
 ```
 
 ### Full width
@@ -347,7 +347,7 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ```jsx
 <Logo
   direction="full-width"
-  productMarking="Oberweißbacher Berg- und Schwarztalbahn"
+  additionalMarking="Oberweißbacher Berg- und Schwarztalbahn"
   size={Logo.sizes.XL}
 />
 ```
@@ -355,17 +355,17 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ```jsx
 <Logo
   direction="full-width"
-  productMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
+  additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
   size={Logo.sizes.XL}
 />
 ```
 
 ```jsx
-<Logo direction="full-width" brand="netze" productMarking="Notfalltechnik" />
+<Logo direction="full-width" brand="netze" additionalMarking="Notfalltechnik" />
 ```
 
 ```jsx
-<Logo direction="full-width" brand="schenker" productMarking="Oslo City Hub" />
+<Logo direction="full-width" brand="schenker" additionalMarking="Oslo City Hub" />
 ```
 
 ### Size
@@ -376,33 +376,33 @@ For accessibility reasons
 - and switch to one-line text to ensure a minimum text size
 
 ```jsx
-<Logo size={Logo.sizes.XS} productMarking="Marking" />
-<Logo size={Logo.sizes.XS} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.XS} additionalMarking="Marking" />
+<Logo size={Logo.sizes.XS} additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.S} productMarking="Marking" />
-<Logo size={Logo.sizes.S} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.S} additionalMarking="Marking" />
+<Logo size={Logo.sizes.S} additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.M} productMarking="Marking" />
-<Logo size={Logo.sizes.M} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.M} additionalMarking="Marking" />
+<Logo size={Logo.sizes.M} additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.L} productMarking="Marking" />
-<Logo size={Logo.sizes.L} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.L} additionalMarking="Marking" />
+<Logo size={Logo.sizes.L} additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XL} productMarking="Marking" />
-<Logo size={Logo.sizes.XL} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.XL} additionalMarking="Marking" />
+<Logo size={Logo.sizes.XL} additionalMarking="Marking\nand more marking" />
 ```
 
 ```jsx
-<Logo size={Logo.sizes.XXL} productMarking="Marking" />
-<Logo size={Logo.sizes.XXL} productMarking="Marking\nand more marking" />
+<Logo size={Logo.sizes.XXL} additionalMarking="Marking" />
+<Logo size={Logo.sizes.XXL} additionalMarking="Marking\nand more marking" />
 ```
 
 ## Linking the logo
@@ -411,7 +411,7 @@ The Logo can be linked. It automatically will show a DB-styled focus ring.
 
 ```jsx
 <Logo href="/" />
-<Logo href="/" productMarking="Marking" />
+<Logo href="/" additionalMarking="Marking" />
 <Logo href="/" brand="netze" />
 <Logo href="/" brand="cargo" align="center" />
 ```

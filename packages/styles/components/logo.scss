@@ -106,11 +106,11 @@ $db-logo-sizes: (
   background: var(--db-darker-background-color);
 }
 
-.db-logo__product-marking {
+.db-logo__additional-marking {
   align-items: flex-end;
   color: var(--db-primary-text-color);
   display: inline-flex;
-  font-family: db-font-family('productmarking');
+  font-family: db-font-family('additionalmarking');
   font-size: calc(var(--db-logo--height) * 0.46);
   font-style: italic;
   height: var(--db-logo--height);
@@ -128,19 +128,19 @@ $db-logo-sizes: (
   }
 }
 
-.db-logo__product-marking--two-line {
+.db-logo__additional-marking--two-line {
   font-size: calc(var(--db-logo--height) * 0.26);
   padding-bottom: calc(0.12 * var(--db-logo--height));
 }
 
-.db-logo--size-xs .db-logo__product-marking {
+.db-logo--size-xs .db-logo__additional-marking {
   transform: translateY(2px);
 }
 
-.db-logo--size-xs .db-logo__product-marking,
-.db-logo--size-s .db-logo__product-marking,
-.db-logo--size-m .db-logo__product-marking,
-.db-logo--size-xl .db-logo__product-marking--two-line {
+.db-logo--size-xs .db-logo__additional-marking,
+.db-logo--size-s .db-logo__additional-marking,
+.db-logo--size-m .db-logo__additional-marking,
+.db-logo--size-xl .db-logo__additional-marking--two-line {
   font-size: 14px;
   letter-spacing: 0.015em;
 }
@@ -148,7 +148,7 @@ $db-logo-sizes: (
 .db-logo--vertical {
   display: block;
 
-  .db-logo__product-marking {
+  .db-logo__additional-marking {
     display: block;
     height: unset;
     margin-left: 0;
@@ -160,7 +160,7 @@ $db-logo-sizes: (
 .db-logo--full-width {
   display: flex;
 
-  .db-logo__product-marking {
+  .db-logo__additional-marking {
     margin-left: auto;
     text-align: right;
   }

@@ -35,7 +35,7 @@ $asset-url: 'https://assets.bahn-x.de/fonts/latest/';
   $style: italic
 );
 @include db-font-face(
-  'productmarking',
+  'additionalmarking',
   'DBScreenSansAlternate-BoldItalic',
   $weight: db-font-weight('copy', 'bold'),
   $style: italic
