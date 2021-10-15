@@ -24,7 +24,6 @@ $db-logo-sizes: (
   @include safari-svg-fix;
   display: inline-block;
   height: var(--db-logo--height);
-  transform: translateZ(0);
   width: calc(var(--db-logo--height) / 7 * 10);
 
   path {
