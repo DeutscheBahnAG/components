@@ -1,6 +1,7 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
+import clsx from 'clsx';
 
 export const Themes = [
   'DB_BRANDED',
@@ -36,11 +37,10 @@ type ThemeType<P> = React.FunctionComponent<P>;
 const Theme: ThemeType<ThemeProps> = ({
   children,
   theme = undefined,
+  className,
   ...otherProps
 }: ThemeProps) => (
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error This is here to let the build pass without changing behaviour. Will be fixed in next commit
-  <div className={`db-theme ${theme}`} {...otherProps}>
+  <div className={clsx('db-theme', theme, className)} {...otherProps}>
     {children}
   </div>
 );
