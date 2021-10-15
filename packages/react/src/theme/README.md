@@ -190,7 +190,7 @@ import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
       </Theme>
       <Container filled width="content" align="center">
         <Copy>More content</Copy>
-        <Theme theme="DB">
+        <Theme theme="DB_LIGHT">
           <Container filled width="content" align="center">
             <Title size="l">Teaser</Title>
             <Button>Click me</Button>
