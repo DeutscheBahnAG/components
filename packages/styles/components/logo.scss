@@ -33,6 +33,19 @@ $db-logo-sizes: (
 
   rect {
     fill: transparent;
+    transition: all 0.15ms;
+  }
+
+  a:hover & rect,
+  button:hover & rect {
+    fill: var(--db-logo-color);
+    opacity: 0.2;
+  }
+
+  a:active & rect,
+  button:active & rect {
+    fill: var(--db-logo-color);
+    opacity: 0.4;
   }
 }
 
@@ -68,6 +81,7 @@ $db-logo-sizes: (
 .db-logo__cargo {
   path {
     fill: var(--db-primary-text-color);
+    transition: fill 0.15ms;
   }
 }
 
@@ -91,22 +105,6 @@ $db-logo-sizes: (
   @include db-focus-ring($offset: 3 * $focus-ring-offset);
   position: relative;
   z-index: 0;
-}
-
-.db-logo[href]::before {
-  border-radius: calc(var(--db-logo--height) / 3.8);
-  bottom: db-spacing('xs', $negative: true);
-  content: '';
-  left: db-spacing('xs', $negative: true);
-  position: absolute;
-  right: db-spacing('xs', $negative: true);
-  top: db-spacing('xs', $negative: true);
-  transition: background 0.15ms;
-  z-index: -1;
-}
-
-.db-logo[href]:hover::before {
-  background: var(--db-darker-background-color);
 }
 
 .db-logo__additional-marking {
