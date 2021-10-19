@@ -48,10 +48,10 @@ $db-checkbox-gap: 0.5em;
   width: $db-checkbox-size;
 
   svg {
+    @include safari-svg-fix;
     display: block;
     height: inherit;
     position: absolute; /* 2 */
-    transform: translateZ(0); /* 2 */
     left: 50%; /* 2 */
     transform: translateX(-50%); /* 2 */
     width: inherit;
