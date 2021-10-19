@@ -1,10 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
 import { LogoSizesType, LogoVariantsType } from '../logo/logo';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 export interface PulseProps {
   className?: string;
-  size?: LogoSizesType;
+  size?: ResponsiveType<LogoSizesType>;
   variant?: LogoVariantsType;
   children?: React.ReactNode;
   mt?: string;
@@ -24,7 +26,12 @@ const Pulse: React.FC<PulseProps> = ({
   if (mt) cssProperties['--db-pulse--mt'] = mt;
   return (
     <div
-      className={clsx('db-pulse', `db-logo--size-${size}`, `db-pulse--${variant}`, className)}
+      className={clsx(
+        'db-pulse',
+        responsiveClassNames(size, 'db-logo--size-'),
+        `db-pulse--${variant}`,
+        className
+      )}
       style={cssProperties}
     >
       {children}

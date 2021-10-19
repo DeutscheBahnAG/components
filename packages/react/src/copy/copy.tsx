@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 export const CopySizes = ['xs', 's', 'm', 'l'] as const;
 export type CopySizesType = typeof CopySizes[number];
@@ -9,7 +11,7 @@ export type CopyVariantsType = typeof CopyVariants[number];
 
 export interface CopyProps {
   children?: React.ReactNode;
-  size?: CopySizesType;
+  size?: ResponsiveType<CopySizesType>;
   bold?: boolean;
   className?: string;
   variant?: CopyVariantsType;
@@ -26,7 +28,7 @@ const Copy: React.FC<CopyProps> = ({
   <span
     className={clsx(
       'db-copy',
-      `db-copy--size-${size}`,
+      responsiveClassNames(size, 'db-copy--size-'),
       bold && 'db-copy--bold',
       variant === 'secondary' && 'db-copy--secondary',
       className

@@ -12,9 +12,27 @@
   color: var(--db-secondary-text-color);
 }
 
-@each $size in (s m l xl xxl) {
+$db-title--sizes: (s m l xl xxl);
+
+@each $size in $db-title--sizes {
   .db-title--size-#{$size} {
     @include db-text-style('title', $size);
+  }
+}
+
+@include tablet {
+  @each $size in $db-title--sizes {
+    .t\:db-title--size-#{$size} {
+      @include db-desktop-text-size('title', $size);
+    }
+  }
+}
+
+@include desktop {
+  @each $size in $db-title--sizes {
+    .d\:db-title--size-#{$size} {
+      @include db-desktop-text-size('title', $size);
+    }
   }
 }
 

@@ -282,23 +282,23 @@ main.rsg--content-3 {
     padding-top: db-spacing('m');
   }
 
-  .db-container:not(.db-container--filled) {
+  .db-container:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
     background: rgba(db-palette-color('turquoise300'), 0.1);
     border: 1px db-palette-color('turquoise300') dashed;
     padding: 1px; // visually separate nested borders
   }
 
-  .db-container--extended:not(.db-container--filled) {
+  .db-container--extended:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
     background: rgba(db-palette-color('yellow400'), 0.1);
     border-color: db-palette-color('yellow400');
   }
 
-  .db-container--content:not(.db-container--filled) {
+  .db-container--content:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
     background: rgba(db-palette-color('pink300'), 0.1);
     border-color: db-palette-color('pink300');
   }
 
-  .db-container--text:not(.db-container--filled) {
+  .db-container--text:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
     background: rgba(db-palette-color('cyan300'), 0.1);
     border-color: db-palette-color('cyan300');
   }

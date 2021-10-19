@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import clsx from 'clsx';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 export const SelectSizes = ['s', 'm', 'l', 'xl'] as const;
 export type SelectSizesType = typeof SelectSizes[number];
@@ -7,7 +9,7 @@ export type SelectSizesType = typeof SelectSizes[number];
 export interface SelectProps {
   className?: string;
   value?: string;
-  size?: SelectSizesType;
+  size?: ResponsiveType<SelectSizesType>;
   disabled?: boolean;
   options?: {
     label: string;
@@ -32,7 +34,7 @@ const Select: React.FC<SelectProps> = ({
         className={clsx(
           'db-select',
           { 'db-select--disabled': disabled },
-          `db-select--size-${size}`,
+          responsiveClassNames(size, 'db-select--size-'),
           className
         )}
       >

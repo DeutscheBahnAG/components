@@ -4,18 +4,21 @@
   display: block;
 }
 
-@each $size in (xl l m s xs) {
-  $stroke-width: 3px;
-  @if $size == s or $size == xs {
-    $stroke-width: 2px;
-  }
-  .db-loadingindicator--size-#{$size} {
-    --db-loadingindicator--stroke-width: #{math.div(44px, db-size($size)) * $stroke-width};
-    --db-loadingindicator--r: #{22 - math.div(44px, db-size($size)) * $stroke-width};
-    height: db-size($size);
-    width: db-size($size);
+@mixin db-loadingindicator--sizes($prefix) {
+  @each $size in (xl l m s xs) {
+    $stroke-width: 3px;
+    @if $size == s or $size == xs {
+      $stroke-width: 2px;
+    }
+    .#{$prefix}db-loadingindicator--size-#{$size} {
+      --db-loadingindicator--stroke-width: #{math.div(44px, db-size($size)) * $stroke-width};
+      --db-loadingindicator--r: #{22 - math.div(44px, db-size($size)) * $stroke-width};
+      height: db-size($size);
+      width: db-size($size);
+    }
   }
 }
+@include db-loadingindicator--sizes('');
 
 .db-loadingindicator {
   animation: db-loadingindicator-rotate 3s linear infinite;
@@ -52,4 +55,12 @@
     stroke-dasharray: 96, 200;
     stroke-dashoffset: -124;
   }
+}
+
+@include tablet {
+  @include db-loadingindicator--sizes('t\\:');
+}
+
+@include desktop {
+  @include db-loadingindicator--sizes('d\\:');
 }

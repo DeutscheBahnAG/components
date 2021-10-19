@@ -10,6 +10,8 @@ import React, {
   ForwardRefExoticComponent,
 } from 'react';
 import clsx from 'clsx';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
@@ -33,7 +35,7 @@ export interface TextfieldProps
   /** Type of the <input> or define a <textarea> */
   type?: TextfieldTypesType;
   /** The size of the Textfield */
-  size?: TextfieldSizesType;
+  size?: ResponsiveType<TextfieldSizesType>;
   /** Additional class names */
   className?: string;
   /** The user input */
@@ -124,7 +126,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
           className={clsx(
             'db-textfield',
             `db-textfield--${type}`,
-            `db-textfield--size-${fieldSize}`,
+            responsiveClassNames(fieldSize || 'm', 'db-textfield--size-'),
             {
               'db-textfield--filled': !!value,
               'db-textfield--inline-label': !!inlineLabel,

@@ -81,24 +81,35 @@ $db-select-chevron-margin: 16px;
   }
 }
 
-@each $size in (xl l m s xs) {
-  .db-select--size-#{$size} {
-    $horizontal-padding: db-component-horizontal-padding($size, 'input');
-    $vertical-padding: db-component-vertical-padding($size, 'input');
-    @include db-component-text-style($size, 'input');
-    border-radius: db-border-radius($size);
-    min-height: db-size($size);
-
-    select {
+@mixin db-select--sizes($prefix) {
+  @each $size in (xl l m s xs) {
+    .#{$prefix}db-select--size-#{$size} {
+      $horizontal-padding: db-component-horizontal-padding($size, 'input');
+      $vertical-padding: db-component-vertical-padding($size, 'input');
+      @include db-component-text-style($size, 'input');
       border-radius: db-border-radius($size);
-      padding-bottom: $vertical-padding + 1px;
-      padding-left: $horizontal-padding;
-      padding-right: calc(#{2 * $horizontal-padding} + var(--db-select--chevron-width));
-      padding-top: $vertical-padding - 1px;
-    }
+      min-height: db-size($size);
 
-    svg {
-      right: $horizontal-padding;
+      select {
+        border-radius: db-border-radius($size);
+        padding-bottom: $vertical-padding + 1px;
+        padding-left: $horizontal-padding;
+        padding-right: calc(#{2 * $horizontal-padding} + var(--db-select--chevron-width));
+        padding-top: $vertical-padding - 1px;
+      }
+
+      svg {
+        right: $horizontal-padding;
+      }
     }
   }
+}
+@include db-select--sizes('');
+
+@include tablet {
+  @include db-select--sizes('t\\:');
+}
+
+@include desktop {
+  @include db-select--sizes('d\\:');
 }

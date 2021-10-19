@@ -36,11 +36,12 @@ module.exports = {
     // db-abcd-efgh__jk--no-pq
     // db-abcd-efgh__jk-lm--no
     // db-abcd-efgh__jk-lm--no-pq
+    // t:db-abcd-efgh__jk-lm--no-pq
+    // d:db-abcd-efgh__jk-lm--no-pq
     // ABC
     // ABC_DEF
     // ABC_DEF_GHI
     'selector-class-pattern':
-      '^((db-[a-z0-9]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?)|([A-Z]+(_[A-Z]+)*))$',
+      '^([td]:)?((db-[a-z0-9]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?)|([A-Z]+(_[A-Z]+)*))$',
   },
 };
-

@@ -236,3 +236,21 @@ $db-logo-sizes: (
     --db-logo--height: #{$height};
   }
 }
+
+@include tablet {
+  @each $size, $height in $db-logo-sizes {
+    .t\:db-logo--size-#{$size},
+    .t\:db-logo--size-#{$size} ~ .db-pulse {
+      --db-logo--height: #{$height};
+    }
+  }
+}
+
+@include desktop {
+  @each $size, $height in $db-logo-sizes {
+    .d\:db-logo--size-#{$size},
+    .d\:db-logo--size-#{$size} ~ .db-pulse {
+      --db-logo--height: #{$height};
+    }
+  }
+}

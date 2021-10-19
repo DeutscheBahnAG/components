@@ -159,76 +159,79 @@
   }
 }
 
-@each $size in (xl l m s xs) {
-  .db-textfield--size-#{$size} {
-    $horizontal-padding: db-component-horizontal-padding($size, 'input');
-    $vertical-padding: db-component-vertical-padding($size, 'input');
+@mixin db-textfield--sizes($prefix) {
+  @each $size in (xl l m s xs) {
+    .#{$prefix}db-textfield--size-#{$size} {
+      $horizontal-padding: db-component-horizontal-padding($size, 'input');
+      $vertical-padding: db-component-vertical-padding($size, 'input');
 
-    @include db-component-text-style($size, 'input');
+      @include db-component-text-style($size, 'input');
 
-    border-radius: db-border-radius($size);
-    min-height: db-size($size);
+      border-radius: db-border-radius($size);
+      min-height: db-size($size);
 
-    input,
-    textarea,
-    .db-textfield-prefix {
-      padding-left: $horizontal-padding;
-    }
+      input,
+      textarea,
+      .db-textfield-prefix {
+        padding-left: $horizontal-padding;
+      }
 
-    input,
-    textarea,
-    .db-textfield-suffix {
-      padding-right: $horizontal-padding;
-    }
+      input,
+      textarea,
+      .db-textfield-suffix {
+        padding-right: $horizontal-padding;
+      }
 
-    /**
+      /**
       * 1. Equals a Thin Space character
       * 2. X: Icons/Buttons should have equal margin to the border on all sides
       *    Z: Avoid sub-pixel placement (Safari + Retina)
       */
-    .db-textfield-prefix {
-      margin-right: #{3px - $horizontal-padding}; /* 1 */
+      .db-textfield-prefix {
+        margin-right: #{3px - $horizontal-padding}; /* 1 */
 
-      > * {
-        display: flex; /* 2 */
-        margin-right: 0.125em;
-        transform: translateX(#{$vertical-padding - $horizontal-padding}) translateZ(0); /* 2 */
+        > * {
+          display: flex; /* 2 */
+          margin-right: 0.125em;
+          transform: translateX(#{$vertical-padding - $horizontal-padding}) translateZ(0); /* 2 */
+        }
       }
-    }
 
-    .db-textfield-suffix {
-      margin-left: #{3px - $horizontal-padding}; /* 1 */
+      .db-textfield-suffix {
+        margin-left: #{3px - $horizontal-padding}; /* 1 */
 
-      > * {
-        display: flex; /* 2 */
-        margin-right: 0.125em;
-        transform: translateX(#{$horizontal-padding - $vertical-padding}) translateZ(0); /* 2 */
+        > * {
+          display: flex; /* 2 */
+          margin-right: 0.125em;
+          transform: translateX(#{$horizontal-padding - $vertical-padding}) translateZ(0); /* 2 */
+        }
       }
-    }
 
-    .db-textfield--textarea {
-      &::before,
-      &::after {
-        left: $horizontal-padding;
-        right: $horizontal-padding;
+      .db-textfield--textarea {
+        &::before,
+        &::after {
+          left: $horizontal-padding;
+          right: $horizontal-padding;
+        }
       }
-    }
 
-    .db-textfield__inline-label {
-      margin-left: $horizontal-padding;
-    }
+      .db-textfield__inline-label {
+        margin-left: $horizontal-padding;
+      }
 
-    input,
-    textarea,
-    .db-textfield-prefix,
-    .db-textfield-suffix,
-    .db-textfield__inline-label {
-      border-radius: db-border-radius($size);
-      padding-bottom: $vertical-padding + 1px;
-      padding-top: $vertical-padding - 1px;
+      input,
+      textarea,
+      .db-textfield-prefix,
+      .db-textfield-suffix,
+      .db-textfield__inline-label {
+        border-radius: db-border-radius($size);
+        padding-bottom: $vertical-padding + 1px;
+        padding-top: $vertical-padding - 1px;
+      }
     }
   }
 }
+@include db-textfield--sizes('');
 
 /**
   * 3. Negative margins as Buttons are higher than the expected line-height
@@ -262,4 +265,12 @@
     content: ' ';
     width: 0;
   }
+}
+
+@include tablet {
+  @include db-textfield--sizes('t\\:');
+}
+
+@include desktop {
+  @include db-textfield--sizes('d\\:');
 }

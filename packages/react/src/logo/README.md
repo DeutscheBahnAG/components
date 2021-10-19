@@ -115,6 +115,20 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 <Logo size="xxl" />
 ```
 
+## Responsive sizing
+
+```jsx
+<Logo size={{ mobile: 'm', tablet: 'xl' }} />
+```
+
+Use Logo size `m` on mobile and `xl` on tablet and desktop.
+
+```jsx
+<Logo size={{ mobile: 'm', tablet: 'l', desktop: 'xl' }} />
+```
+
+Use Logo size `m` on mobile, `l` on tablet and `xl` on desktop.
+
 ## Alt text
 
 By default “DB” is used as a text alternative for screen readers by the Logo component.

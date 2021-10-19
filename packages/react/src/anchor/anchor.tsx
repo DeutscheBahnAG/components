@@ -8,7 +8,7 @@ const defaultLabels = {
   notification: '„$1“ in die Zwischenablage kopiert',
 };
 
-export interface AnchorPros {
+export interface AnchorProps {
   children: React.ReactNode;
   /** Optional class name */
   className?: string;
@@ -33,7 +33,7 @@ const Icon = () => (
   </svg>
 );
 
-const Anchor: React.FC<AnchorPros> = ({
+const Anchor: React.FC<AnchorProps> = ({
   children,
   id,
   labels: _labels = defaultLabels,

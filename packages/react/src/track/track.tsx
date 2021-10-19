@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import parseTrack from './parse-track';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 const defaultLabels = { platform: 'Gleis', platformAbbreviation: 'Gl.' };
 
@@ -10,7 +12,7 @@ export type TrackSizesType = typeof TrackSizes[number];
 export interface TrackProps {
   track: string;
   className?: string;
-  size?: TrackSizesType;
+  size?: ResponsiveType<TrackSizesType>;
   labels?: {
     platform: string;
     platformAbbreviation: string;
@@ -27,7 +29,10 @@ const Track: React.FC<TrackProps> = ({
   const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
   const { platform, platformAbbreviation } = labels ?? defaultLabels;
   return (
-    <span className={clsx('db-track', `db-track--size-${size}`, className)} {...props}>
+    <span
+      className={clsx('db-track', responsiveClassNames(size, 'db-track--size-'), className)}
+      {...props}
+    >
       {number ? (
         <>
           {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}

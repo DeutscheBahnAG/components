@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+@mixin db-desktop-text-size($text-style, $size) {
+  $font-size-large: db-font-size($text-style, $size, 'desktop');
+  $line-height-large: db-line-height($text-style, $size, 'desktop');
+  @include db-rem-font-size($font-size-large);
+  line-height: #{math.div($line-height-large, $font-size-large)};
+}

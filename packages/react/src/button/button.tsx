@@ -1,8 +1,9 @@
 /* eslint-disable react/no-did-update-set-state, no-unused-vars */
 import React, { useState, useEffect, ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
-
+import { responsiveClassNames } from '../helper/responsive-class-names';
 import Loadingindicator, { LoadingIndicatorSizesType } from '../loadingindicator';
+import { ResponsiveType } from '../shared';
 
 const Screenreader: React.FC = ({ children }) => <span aria-hidden="false">{children}</span>;
 
@@ -45,7 +46,7 @@ export interface ButtonProps extends Record<string, any> {
   /** the shape of the button */
   shape?: ButtonShapesType;
   /** the size of the button */
-  size?: ButtonSizesType;
+  size?: ResponsiveType<ButtonSizesType>;
   /** inline styles */
   style?: React.CSSProperties;
   /** the type of the button */
@@ -103,7 +104,14 @@ const Button: React.FC<ButtonProps> = ({
   const isLink = type === 'link' || href !== undefined;
   const Element = isLink ? 'a' : 'button';
 
-  const loadingindicatorSize = loadingIndicatorSizeMap[size];
+  const loadingindicatorSize =
+    size instanceof Object
+      ? {
+          mobile: loadingIndicatorSizeMap[size.mobile],
+          tablet: size.tablet && loadingIndicatorSizeMap[size.tablet],
+          desktop: size.desktop && loadingIndicatorSizeMap[size.desktop],
+        }
+      : loadingIndicatorSizeMap[size];
 
   useEffect(() => {
     const buttonEl = buttonRef.current;
@@ -134,12 +142,12 @@ const Button: React.FC<ButtonProps> = ({
         className={clsx(
           'db-button',
           `db-button--${variant}`,
-          `db-button--${shape}`,
+          responsiveClassNames(shape, 'db-button--'),
           { 'db-button--block': fullWidth },
           { [`db-button--icon-position-${iconPosition}`]: icon && shape === 'default' },
           { 'db-button--disabled': disabled },
           { 'db-button--loading': loading },
-          size && `db-button--size-${size}`,
+          responsiveClassNames(size, 'db-button--size-'),
           className
         )}
         {...otherProps}

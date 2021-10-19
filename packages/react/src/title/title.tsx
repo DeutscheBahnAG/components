@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 export const TitleSizes = ['s', 'm', 'l', 'xl', 'xxl'] as const;
 export type TitleSizesType = typeof TitleSizes[number];
@@ -9,7 +11,7 @@ export type TitleVariantsType = typeof TitleVariants[number];
 
 export interface TitleProps {
   children?: React.ReactNode;
-  size?: TitleSizesType;
+  size?: ResponsiveType<TitleSizesType>;
   light?: boolean;
   className?: string;
   variant?: TitleVariantsType;
@@ -26,7 +28,7 @@ const Title: React.FC<TitleProps> = ({
   <span
     className={clsx(
       'db-title',
-      `db-title--size-${size}`,
+      responsiveClassNames(size, 'db-title--size-'),
       light && 'db-title--light',
       variant === 'secondary' && 'db-title--secondary',
       className

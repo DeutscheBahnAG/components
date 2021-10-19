@@ -159,6 +159,25 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 </Container>;
 ```
 
+Center on mobile only:
+
+```jsx
+import { Logo, Pulse, Title, Copy } from '@db-design/react';
+<Container width="content" align={{ mobile: 'center', tablet: 'left' }}>
+  <Logo />
+  <Pulse>
+    <Title>Headline</Title>
+  </Pulse>
+  <Container width="text">
+    <Copy>
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
+      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
+      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+    </Copy>
+  </Container>
+</Container>;
+```
+
 Center most things, but reset the text align for the copy:
 
 ```jsx

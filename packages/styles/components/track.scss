@@ -18,18 +18,29 @@
   margin: 0 0.05em;
 }
 
-@each $size in (xl l m s xs) {
-  $textsize: db-component-textsize($size);
+@mixin db-track--sizes($prefix) {
+  @each $size in (xl l m s xs) {
+    $textsize: db-component-textsize($size);
 
-  .db-track--size-#{$size} {
-    border-radius: db-border-radius($size);
-    font-size: db-font-size('copy', $textsize);
-    height: db-size($size);
-    line-height: db-line-height('copy', $textsize);
-    padding: #{(db-size($size) - db-line-height('copy', $textsize)) *
-      0.5}
-      #{(db-size($size) - db-line-height('copy', $textsize)) *
-      0.5 +
-      db-spacing('xs')};
+    .#{$prefix}db-track--size-#{$size} {
+      border-radius: db-border-radius($size);
+      font-size: db-font-size('copy', $textsize);
+      height: db-size($size);
+      line-height: db-line-height('copy', $textsize);
+      padding: #{(db-size($size) - db-line-height('copy', $textsize)) *
+        0.5}
+        #{(db-size($size) - db-line-height('copy', $textsize)) *
+        0.5 +
+        db-spacing('xs')};
+    }
   }
+}
+@include db-track--sizes('');
+
+@include tablet {
+  @include db-track--sizes('t\\:');
+}
+
+@include desktop {
+  @include db-track--sizes('d\\:');
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import { responsiveClassNames } from '../helper/responsive-class-names';
+import { ResponsiveType } from '../shared';
 
 export const LogoSizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'] as const;
 export type LogoSizesType = typeof LogoSizes[number];
@@ -17,7 +19,7 @@ export interface LogoProps {
   className?: string;
   brand?: LogoBrandsType;
   align?: string;
-  size?: LogoSizesType;
+  size?: ResponsiveType<LogoSizesType>;
   variant?: LogoVariantsType;
   children?: React.ReactNode;
   additionalMarking?: string;
@@ -66,7 +68,7 @@ const Logo: LogoComponent = React.forwardRef(
         href={href ?? undefined}
         className={clsx(
           'db-logo',
-          `db-logo--size-${size}`,
+          responsiveClassNames(size, 'db-logo--size-'),
           `db-logo--${variant}`,
           brand === 'cargo' && `db-logo--align-${align}`,
           direction !== 'horizontal' && `db-logo--${direction}`,
