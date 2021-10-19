@@ -29,6 +29,11 @@ describe('Transportchip Component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should use the zip code', () => {
+    const { container } = render(<Transportchip name="S1" zipCode="10115" />);
+    expect(container).toMatchSnapshot();
+  });
+
   it('should allow setting the transport type manually', () => {
     const { container } = render(<Transportchip product="bus" name="U 1" />);
     expect(container).toMatchSnapshot();

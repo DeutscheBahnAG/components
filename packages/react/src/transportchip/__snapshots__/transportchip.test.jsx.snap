@@ -201,3 +201,26 @@ exports[`Transportchip Component should split S1 1`] = `
   </span>
 </div>
 `;
+
+exports[`Transportchip Component should use the zip code 1`] = `
+<div>
+  <span
+    class="db-transportchip"
+  >
+    <span
+      class="db-transportchip__line db-transportchip--suburban db-transportchip--sbahn-berlin db-transportchip--s1"
+    >
+      <span
+        class="db-transportchip__text db-transportchip__text--short-prefix"
+      >
+        S
+      </span>
+      <span
+        class="db-transportchip__text"
+      >
+        1
+      </span>
+    </span>
+  </span>
+</div>
+`;
