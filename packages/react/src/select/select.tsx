@@ -1,9 +1,7 @@
 /* eslint-disable react/require-default-props */
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
-
-const noopFn = () => {};
 
 export enum SelectSizes {
   S = 's',
@@ -21,10 +19,6 @@ const selectPropTypes = {
   size: PropTypes.oneOf(Object.values(SelectSizes)),
   /** Whether input can be edited */
   disabled: PropTypes.bool,
-  /** Focus event handler */
-  onFocus: PropTypes.func,
-  /** Blur event handler */
-  onBlur: PropTypes.func,
   /** List of options */
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -45,48 +39,24 @@ type SelectType = React.FunctionComponent<SelectProps> & {
 const Select: SelectType = ({
   className = '',
   disabled = false,
-  onBlur = noopFn,
-  onFocus = noopFn,
   options = [],
   value = '',
   size = SelectSizes.L,
   ...otherProps
 }) => {
-  const [isFocused, setFocused] = useState(false);
   const field = useRef(null);
-
-  const handleFocus = (event: React.FocusEvent<HTMLSelectElement>) => {
-    setFocused(true);
-    if (onFocus) {
-      onFocus(event);
-    }
-  };
-
-  const handleBlur = (event: React.FocusEvent<HTMLSelectElement>) => {
-    setFocused(false);
-    if (onBlur) {
-      onBlur(event);
-    }
-  };
 
   return (
     <>
       <div
         className={clsx(
           'db-select',
-          { 'db-select--focus': isFocused, 'db-select--disabled': disabled },
+          { 'db-select--disabled': disabled },
           `db-select--size-${size}`,
           className
         )}
       >
-        <select
-          ref={field}
-          {...otherProps}
-          disabled={disabled ?? false}
-          value={value ?? ''}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        >
+        <select ref={field} {...otherProps} disabled={disabled ?? false} value={value ?? ''}>
           {(options ?? []).map(({ label, value: optionValue, disabled: optionDisabled }) => (
             <option
               key={`option_${optionValue}`}

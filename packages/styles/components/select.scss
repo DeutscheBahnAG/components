@@ -10,7 +10,7 @@ $db-select-chevron-margin: 16px;
 .db-select {
   --db-select--chevron-width: 16px;
   @include db-text-style($db-select-text-style);
-  @include db-focus-ring($focus-selector: '.db-select--focus', $transition: 'border 200ms');
+  @include db-focus-ring($focus-selector: ':focus-within', $transition: 'border 200ms');
   align-items: stretch;
   background-color: var(--db-secondary-background-color);
   border: db-border-width('input') solid var(--db-secondary-background-color);
