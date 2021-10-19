@@ -1,26 +1,3 @@
-:root {
-  --db-container-margin: 0 auto;
-  --db-content-max-width: calc(100vw - #{2 * db-spacing('m')});
-  --db-extended-max-width: calc(100vw - #{2 * db-spacing('sm')});
-  --db-text-max-width: calc(100vw - #{2 * db-spacing('sm')});
-  --db-content-margin: auto;
-  --db-extended-margin: auto;
-  --db-content-in-extended-margin: auto;
-  /* stylelint-disable-next-line length-zero-no-unit */
-  --db-sidebar-width: 0px; // do not remove px otherwise calc(var(..)) won’t work anymore.
-
-  @media (min-width: #{8 * db-spacing('xxxl')}) {
-    --db-content-max-width: calc(100vw - #{2 * db-spacing('xxl')});
-    --db-extended-max-width: calc(100vw - #{2 * db-spacing('xl')});
-    --db-text-max-width: #{6 * db-spacing('xxxl')};
-  }
-
-  @media (min-width: #{12 * db-spacing('xxxl')}) {
-    --db-content-max-width: #{10 * db-spacing('xxxl')};
-    --db-extended-max-width: #{12 * db-spacing('xxxl')};
-  }
-}
-
 .db-layout--left-aligned {
   background: linear-gradient(to right,
   #{db-color('brand')} var(--db-sidebar-width),
