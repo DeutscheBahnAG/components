@@ -9,14 +9,13 @@
   $line-height-large: db-line-height($text-style, $size, 'desktop');
   $font-weight: if($text-style == 'title', bold, normal);
   $font-family: db-font-family($text-style);
-  $breakpoint: 48em;
 
   @include db-rem-font-size($font-size);
   line-height: #{math.div($line-height, $font-size)}; // use relative (unitless) font-size
   font-weight: $font-weight;
   font-family: $font-family;
 
-  @media (min-width: $breakpoint) {
+  @include tablet {
     @include db-rem-font-size($font-size-large);
     line-height: #{math.div($line-height-large, $font-size-large)}; // use relative (unitless) font-size
   }

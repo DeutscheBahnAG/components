@@ -4,7 +4,7 @@
   transparent 0);
   padding-left: var(--db-sidebar-width);
 
-  @media (min-width: #{8 * db-spacing('xxxl')}) {
+  @include tablet {
     --db-sidebar-width: #{2 * db-spacing('xxxl')};
     --db-content-margin: #{db-spacing('xxl')};
     --db-extended-margin: #{db-spacing('xl')};
@@ -14,7 +14,7 @@
     --db-content-in-extended-margin: calc(var(--db-content-margin) - var(--db-extended-margin));
   }
 
-  @media (min-width: #{13 * db-spacing('xxxl')}) {
+  @include desktop {
     --db-sidebar-width: #{3 * db-spacing('xxxl')};
     --db-content-max-width: #{8 * db-spacing('xxxl')};
     --db-extended-max-width: #{9 * db-spacing('xxxl')};

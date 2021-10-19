@@ -1,8 +1,7 @@
 /// Example values for breakpoints. Use these with include media: @include media('>medium') {...}
-/// @group Layout
+/// Naming discussions see: https://teams.microsoft.com/l/message/19:7dd9929be1fe494c823b11e0e2d22341@thread.skype/1624543916156?tenantId=a1a72d9c-49e6-4f6d-9af6-5aafa1183bfd&groupId=72c53609-2941-46dd-8be9-e4d1d2c45c77&parentMessageId=1624543916156&teamName=UX%20Network%40DB&channelName=UX%20Standards&createdTime=1624543916156
 $breakpoints: (
-  small: 320px,
-  medium: 800px,
-  large: 1200px,
-  xlarge: 1400px
+  mobile: 0,
+  tablet: 8 * db-spacing('xxxl'),
+  desktop: 12 * db-spacing('xxxl'),
 ) !default;

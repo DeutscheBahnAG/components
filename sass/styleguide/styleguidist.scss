@@ -2,10 +2,10 @@ $code-background-color: db-background-color('secondary');
 
 #rsg-root {
   .rsg--hasSidebar-2 {
-    @media (min-width: 801px) {
+    @include tablet {
       padding-left: 2 * db-spacing('xxxl');
     }
-    @media (min-width: 1201px) {
+    @include desktop {
       padding-left: 3 * db-spacing('xxxl');
     }
   }
@@ -24,10 +24,10 @@ $code-background-color: db-background-color('secondary');
     background: db-background-color('secondary');
     border: 0;
 
-    @media (min-width: 801px) {
+    @include tablet {
       width: 2 * db-spacing('xxxl');
     }
-    @media (min-width: 1201px) {
+    @include desktop {
       width: 3 * db-spacing('xxxl');
     }
   }

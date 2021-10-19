@@ -1,5 +1,4 @@
 @use 'sass:math';
-@import 'include-media/dist/include-media';
 
 $db-modal--z-level: (
   modal: 5000,
@@ -62,16 +61,13 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   border-radius: db-border-radius('modal');
   box-shadow: map-get($db-shadows, high);
   background-color: var(--db-primary-background-color);
-
-  @include media('>small') {
-    margin: $db-modal--dialog-margin;
-  }
-  @include media('>=medium') {
+  margin: $db-modal--dialog-margin;
+  @include tablet {
     height: auto;
     padding: $db-modal--dialog-padding-y-desktop $db-modal--dialog-padding-x-desktop;
     max-height: 90%;
   }
-  @include media('>=large') {
+  @include desktop {
     max-height: 75%;
   }
   @include media('print') {
@@ -86,7 +82,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__dialog--width-m {
-  @include media('>=medium') {
+  @include tablet {
     max-width: map-get($breakpoints, medium);
   }
 }
@@ -154,12 +150,10 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   background-attachment: local, local, scroll, scroll;
   background-repeat: no-repeat;
   background-color: $db-modal--shadow-background-color;
-
-  @include media('>=medium') {
+  @include tablet {
     padding: 0 $db-modal--dialog-padding-x-desktop;
     margin: 0 #{-$db-modal--dialog-padding-x-desktop};
   }
-
   @include media('print') {
     overflow-y: visible;
     background: none;
@@ -184,14 +178,13 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   align-items: stretch;
   margin: 0 -1px;
   padding-top: $db-modal--dialog-padding-y-mobile;
-
   @include media('print') {
     display: none;
   }
 }
 
 .db-modal__actions--full-s {
-  @include media('<=small') {
+  @include media('<tablet') {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -205,7 +198,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--full-m {
-  @include media('<=medium') {
+  @include media('<desktop') {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -231,7 +224,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--center-s {
-  @include media('<=small') {
+  @include media('<tablet') {
     justify-content: center;
 
     .db-button {
@@ -241,7 +234,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--center-m {
-  @include media('<=medium') {
+  @include media('<desktop') {
     justify-content: center;
 
     .db-button {
@@ -273,8 +266,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   margin: db-spacing('m') (-$db-modal--dialog-padding-x-mobile)
     (-$db-modal--dialog-padding-y-mobile);
   padding: db-spacing('sm') $db-modal--dialog-padding-x-mobile;
-
-  @include media('>=medium') {
+  @include tablet {
     margin: db-spacing('m') (-$db-modal--dialog-padding-x-desktop)
       (-$db-modal--dialog-padding-y-desktop);
     padding: db-spacing('sm') $db-modal--dialog-padding-x-desktop;

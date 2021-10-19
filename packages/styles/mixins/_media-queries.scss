@@ -1,0 +1,13 @@
+@import 'include-media';
+
+@mixin tablet {
+  @include media('>=tablet') {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include media('>=desktop') {
+    @content;
+  }
+}
