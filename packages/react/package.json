@@ -15,7 +15,6 @@
     "@db-design/react-icons": "^1.0.0-pre.1",
     "clsx": "^1.1.1",
     "core-js": "^3.8.2",
-    "include-media": "^1.4.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

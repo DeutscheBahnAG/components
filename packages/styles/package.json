@@ -8,11 +8,11 @@
     "type": "git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "include-media": "^1.4.10"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "clsx": "^1.1.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
     "release-it": "^14.11.5"
   }
 }
