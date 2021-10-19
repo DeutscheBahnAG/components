@@ -1,7 +1,4 @@
-/* eslint-disable react/require-default-props */
-
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 export const LogoSizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'] as const;
@@ -10,28 +7,25 @@ export type LogoSizesType = typeof LogoSizes[number];
 export const LogoVariants = ['auto', 'default', 'filled', 'white'] as const;
 export type LogoVariantsType = typeof LogoVariants[number];
 
-const brands = {
-  db: 'DB',
-  netze: 'DB Netze',
-  schenker: 'DB Schenker',
-  cargo: 'DB Cargo',
-};
+export const LogoBrands = ['DB', 'DB Netze', 'DB Schenker', 'DB Cargo'] as const;
+export type LogoBrandsType = typeof LogoBrands[number];
 
-const logoPropTypes = {
-  className: PropTypes.string,
-  brand: PropTypes.oneOf(Object.keys(brands)),
-  align: PropTypes.oneOf(['left', 'center', 'right']),
-  size: PropTypes.oneOf(LogoSizes),
-  variant: PropTypes.oneOf(LogoVariants),
-  children: PropTypes.node,
-  additionalMarking: PropTypes.string,
-  direction: PropTypes.oneOf(['horizontal', 'vertical', 'full-width']),
-  href: PropTypes.string,
-  mt: PropTypes.string,
-  mb: PropTypes.string,
-};
+export const LogoDirections = ['horizontal', 'vertical', 'full-width'] as const;
+export type LogoDirectionsType = typeof LogoDirections[number];
 
-type LogoProps = InferProps<typeof logoPropTypes>;
+export interface LogoProps {
+  className?: string;
+  brand?: LogoBrandsType;
+  align?: string;
+  size?: LogoSizesType;
+  variant?: LogoVariantsType;
+  children?: React.ReactNode;
+  additionalMarking?: string;
+  direction?: LogoDirectionsType;
+  href?: string;
+  mt?: string;
+  mb?: string;
+}
 
 type LogoWrapperRef = HTMLAnchorElement & HTMLSpanElement;
 
@@ -59,7 +53,7 @@ const Logo: LogoComponent = React.forwardRef(
   ) => {
     const Wrapper = href ? 'a' : 'span';
     const prepareadditionalMarking = (m) =>
-      ['xs', 's', 'm', 'l'].includes(size || '') ? m.replace('\n', ' ') : m;
+      ['xs', 's', 'm', 'l'].includes(size as string) ? m.replace('\n', ' ') : m;
     const [additionalMarkingFirstLine, additionalMarkingSecondLine] = prepareadditionalMarking(
       additionalMarking || ''
     ).split('\n');
@@ -105,7 +99,7 @@ const Logo: LogoComponent = React.forwardRef(
             <path d="M35.676 10.458c1.304 0 2.282.442 3.337 1.498l.46-1.268h2.263v9.836c0 2.978-1.822 4.476-5.484 4.476a12.941 12.941 0 01-3.874-.615v-2.459a10.69 10.69 0 003.643.711c1.88 0 2.627-.615 2.627-2.19V19.41a4.71 4.71 0 01-3.279 1.306c-2.435 0-3.72-1.729-3.72-5.033 0-3.304 1.477-5.225 4.027-5.225zm-18.254-.096c3.163 0 4.467 1.171 4.467 3.995v4.227c0 1.075.115 1.517.48 1.786v.538h-2.992l-.46-1.44c-.824 1.19-1.821 1.748-3.145 1.748-1.879 0-2.972-1.096-2.972-2.997 0-1.595.71-2.498 2.301-2.882.959-.25 1.573-.307 3.701-.403v-.557c0-1.172-.46-1.614-1.668-1.614-.997 0-1.764.134-3.528.653v-2.382a11.51 11.51 0 013.816-.672zm31.16 0c3.316 0 5.138 1.92 5.138 5.436 0 3.497-1.822 5.418-5.139 5.418-3.355 0-5.139-1.921-5.139-5.495 0-3.438 1.841-5.36 5.14-5.36zM7.661 6.616a9.763 9.763 0 013.432.576v2.632a8.695 8.695 0 00-3.337-.673c-2.512 0-3.47 1.345-3.47 4.822 0 3.343.997 4.687 3.451 4.687a9.025 9.025 0 003.432-.691v2.459a8.497 8.497 0 01-3.624.768c-2.32 0-4.18-.73-5.35-2.113C1.2 17.893.72 16.26.72 13.993c0-2.67.69-4.515 2.167-5.802C4.076 7.154 5.705 6.616 7.66 6.616zM27.45 10.38v1.94c.978-1.172 2.032-1.786 3.279-1.882v2.823a12.776 12.776 0 00-3.28.577v7.07h-3.086v-9.894c1.227-.039 1.994-.25 2.377-.634h.71zm-8.648 5.993a9.736 9.736 0 00-2.07.212c-.672.192-.921.538-.921 1.345 0 .845.345 1.21 1.15 1.21a2.607 2.607 0 001.841-.826v-1.94zm29.78-3.86a1.644 1.644 0 00-1.63.979 5.987 5.987 0 00-.288 2.248c0 1.383.115 2.074.402 2.535.313.532.901.838 1.515.788a1.644 1.644 0 001.63-.98c.192-.442.288-1.133.288-2.305 0-1.326-.115-2.017-.403-2.478a1.606 1.606 0 00-1.515-.788zm-11.832.345c-1.342 0-1.898.865-1.898 2.958 0 2.056.498 2.824 1.84 2.824.652 0 1.132-.172 1.956-.71v-4.515a3.368 3.368 0 00-1.898-.557z" />
           </svg>
         )}
-        {children || brands[brand || 'db']}
+        {children || LogoBrands[brand || 'db']}
         {additionalMarkingSecondLine && (
           <span className="db-logo__additional-marking db-logo__additional-marking--two-line">
             {additionalMarkingFirstLine}
@@ -120,7 +114,5 @@ const Logo: LogoComponent = React.forwardRef(
     );
   }
 );
-
-Logo.propTypes = logoPropTypes;
 
 export default Logo;

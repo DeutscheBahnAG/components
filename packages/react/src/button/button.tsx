@@ -1,14 +1,10 @@
 /* eslint-disable react/no-did-update-set-state, no-unused-vars */
 import React, { useState, useEffect, ButtonHTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import Loadingindicator, { LoadingIndicatorSizesType } from '../loadingindicator';
 
-const Screenreader: React.FunctionComponent = ({ children }) => (
-  <span aria-hidden="false">{children}</span>
-);
-Screenreader.propTypes = { children: PropTypes.node.isRequired };
+const Screenreader: React.FC = ({ children }) => <span aria-hidden="false">{children}</span>;
 
 // Done this way because we want them for PropTypes
 export const ButtonIconPositions = ['before', 'after'] as const;
@@ -27,20 +23,34 @@ export const ButtonVariants = ['primary', 'secondary', 'solid', 'hover-only'] as
 export type ButtonVariantsType = typeof ButtonVariants[number];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface ButtonProps extends Record<string, any> {
+export interface ButtonProps extends Record<string, any> {
+  /** content rendered inside the button, can be text or any element */
   children?: React.ReactNode;
+  /** additional class names you want to add to the button */
   className?: string;
+  /** when true, button will be disabled */
   disabled?: boolean;
+  /** when true, button will take up all available width */
   fullWidth?: boolean;
+  /** turns the Button into a regular link (anchor) */
   href?: string;
+  /** optional icon (as `<svg>`) */
   icon?: React.ReactNode;
+  /** the position of the icon */
   iconPosition?: ButtonIconPositionsType;
+  /** whether the loading state is enabled */
   loading?: boolean;
+  /** a11y label for the button while in loading state */
   loadingLabel?: string;
+  /** the shape of the button */
   shape?: ButtonShapesType;
+  /** the size of the button */
   size?: ButtonSizesType;
+  /** inline styles */
   style?: React.CSSProperties;
+  /** the type of the button */
   type?: ButtonTypesType;
+  /** the appearance of the button */
   variant?: ButtonVariantsType;
 }
 
@@ -51,7 +61,7 @@ const loadingIndicatorSizeMap: Record<ButtonSizesType, LoadingIndicatorSizesType
   s: 'xs',
 };
 
-const Button: React.FunctionComponent<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   className = '',
   disabled = false,
@@ -180,54 +190,6 @@ export const validateVariantCombinations: React.Validator<ButtonVariantsType> = 
     return new Error(`Size \`${size}\` should not be used for a ${variant} ${componentName}.`);
   }
   return null;
-};
-
-Button.propTypes = {
-  /** the type of the button */
-  type: PropTypes.oneOf(ButtonTypes),
-  /** the appearance of the button */
-  variant: validateVariantCombinations,
-  /** the size of the button */
-  size: PropTypes.oneOf(ButtonSizes),
-  /** the shape of the button */
-  shape: PropTypes.oneOf(ButtonShapes),
-  /** the position of the icon */
-  iconPosition: PropTypes.oneOf(ButtonIconPositions),
-  /** when true, button will be disabled */
-  disabled: PropTypes.bool,
-  /** whether the loading state is enabled */
-  loading: PropTypes.bool,
-  /** additional class names you want to add to the button */
-  className: PropTypes.string,
-  /** when true, button will take up all available width */
-  fullWidth: PropTypes.bool,
-  /** a11y label for the button while in loading state */
-  loadingLabel: PropTypes.string,
-  /** inline styles */
-  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
-  /** content rendered inside the button, can be text or any element */
-  children: PropTypes.node,
-  /** optional icon (as `<svg>`) */
-  icon: PropTypes.node,
-  /** turns the Button into a regular link (anchor) */
-  href: PropTypes.string,
-};
-
-// @TODO Remove no other component requires this
-Button.defaultProps = {
-  type: 'button',
-  variant: 'primary',
-  disabled: false,
-  loading: false,
-  size: 'l',
-  shape: 'default',
-  className: '',
-  fullWidth: false,
-  loadingLabel: 'Wird geladen …',
-  style: {},
-  children: undefined,
-  icon: undefined,
-  href: undefined,
 };
 
 export default Button;

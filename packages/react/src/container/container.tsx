@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 export const ContainerWidths = ['text', 'content', 'extended', 'full'] as const;
@@ -9,31 +7,27 @@ export type ContainerWidthsType = typeof ContainerWidths[number];
 export const ContainerAlignments = ['left', 'center', 'right'] as const;
 export type ContainerAlignmentsType = typeof ContainerAlignments[number];
 
-const ContainerPropTypes = {
+export interface ContainerProps {
   /** Content of the Container */
-  children: PropTypes.node.isRequired,
+  children?: React.ReactNode;
   /** The width of the Container */
-  width: PropTypes.oneOf(ContainerWidths),
+  width?: ContainerWidthsType;
   /** The alignment of the Container */
-  align: PropTypes.oneOf(ContainerAlignments),
+  align?: ContainerAlignmentsType;
   /** Adds a primary background color for the Container */
-  filled: PropTypes.bool,
+  filled?: boolean;
   /** Additional class names you want to add to the Container */
-  className: PropTypes.string,
-};
+  className?: string;
+}
 
-type ContainerProps = InferProps<typeof ContainerPropTypes>;
-
-type ContainerType<P> = React.FunctionComponent<P>;
-
-const Container: ContainerType<ContainerProps> = ({
+const Container: React.FC<ContainerProps> = ({
   children,
   width = 'full',
   align = undefined,
   filled = false,
   className = '',
   ...otherProps
-}: ContainerProps) => (
+}) => (
   <div
     className={clsx(
       'db-container',
@@ -47,7 +41,5 @@ const Container: ContainerType<ContainerProps> = ({
     {children}
   </div>
 );
-
-Container.propTypes = ContainerPropTypes;
 
 export default Container;

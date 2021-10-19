@@ -1,60 +1,64 @@
-/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import React, {
+  HTMLProps,
+  RefObject,
+  FormEventHandler,
+  PropsWithoutRef,
+  RefAttributes,
+  ForwardRefExoticComponent,
+} from 'react';
 import clsx from 'clsx';
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
-export const TextfieldSize = ['s', 'm', 'l', 'xl'] as const;
-export type TextfieldSizeType = typeof TextfieldSize[number];
+export const TextfieldSizes = ['s', 'm', 'l', 'xl'] as const;
+export type TextfieldSizesType = typeof TextfieldSizes[number];
 
-const textfieldPropTypes = {
+export const TextfieldTypes = [
+  'textarea',
+  'text',
+  'password',
+  'number',
+  'email',
+  'tel',
+  'url',
+  'search',
+] as const;
+export type TextfieldTypesType = typeof TextfieldTypes[number];
+
+export interface TextfieldProps
+  extends Omit<HTMLProps<HTMLInputElement | HTMLTextAreaElement>, 'size' | 'prefix' | 'onChange'> {
   /** Type of the <input> or define a <textarea> */
-  type: PropTypes.oneOf([
-    'textarea',
-    'text',
-    'password',
-    'number',
-    'email',
-    'tel',
-    'url',
-    'search',
-  ]),
+  type?: TextfieldTypesType;
   /** The size of the Textfield */
-  size: PropTypes.oneOf(TextfieldSize),
+  size?: TextfieldSizesType;
   /** Additional class names */
-  className: PropTypes.string,
+  className?: string;
   /** The user input */
-  value: PropTypes.string,
+  value?: string;
   /** A unit such as a currency or `%` */
-  unit: PropTypes.string,
+  unit?: string;
   /** Content before the input (which is not a unit) */
-  prefix: PropTypes.node,
+  prefix?: React.ReactNode;
   /** Content after the input (which is not a unit) */
-  suffix: PropTypes.node,
-  /** Change event handler */
-  onChange: PropTypes.func,
+  suffix?: React.ReactNode;
   /** Inline label */
-  inlineLabel: PropTypes.string,
+  inlineLabel?: string;
   /** Width in characters (equals `<input size="10">`) */
-  htmlSize: PropTypes.number,
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type TextfieldProps = InferProps<typeof textfieldPropTypes> & Record<string, any>;
+  htmlSize?: number;
+  /** Disable the field */
+  disabled?: boolean;
+  /** Change handler */
+  onChange?: React.FormEventHandler<HTMLTextAreaElement> | React.FormEventHandler<HTMLInputElement>;
+}
 
 export type TextfieldRef = HTMLInputElement & HTMLTextAreaElement;
 
-type TextfieldComponent = React.ForwardRefExoticComponent<
-  TextfieldProps & React.RefAttributes<TextfieldRef>
+export type TextfieldComponent = ForwardRefExoticComponent<
+  PropsWithoutRef<TextfieldProps> & RefAttributes<TextfieldRef>
 >;
-
-export type TextfieldExport = TextfieldComponent & {
-  sizes: TextfieldSizeType;
-};
 
 const Textfield: TextfieldComponent = React.forwardRef(
   (
@@ -69,6 +73,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
       onChange = null,
       inlineLabel = null,
       htmlSize = null,
+      disabled = false,
       ...otherProps
     },
     fieldRef
@@ -79,8 +84,8 @@ const Textfield: TextfieldComponent = React.forwardRef(
       fieldRef?.current?.focus();
     };
 
-    const Field = type === 'textarea' ? 'textarea' : 'input';
     const fieldSize = inlineLabel ? 'xl' : size;
+    const placeholder = otherProps.placeholder || ' '; /* Important for baseline alignment! */
     let contentBefore = prefix;
     let contentAfter = suffix;
 
@@ -89,17 +94,28 @@ const Textfield: TextfieldComponent = React.forwardRef(
       else contentAfter = unit;
     }
 
-    const configuredField = (
-      <Field
-        ref={fieldRef}
-        placeholder={otherProps.placeholder || ' ' /* Important for baseline alignment! */}
-        size={htmlSize || undefined}
-        {...otherProps}
-        value={value ?? ''}
-        type={type === 'textarea' ? undefined : type ?? 'text'}
-        onChange={onChange ?? undefined}
-      />
-    );
+    const configuredField =
+      type === 'textarea' ? (
+        <textarea
+          ref={fieldRef as RefObject<HTMLTextAreaElement>}
+          placeholder={placeholder}
+          {...(otherProps as HTMLProps<HTMLTextAreaElement>)}
+          value={value ?? ''}
+          onChange={(onChange as FormEventHandler<HTMLTextAreaElement>) ?? undefined}
+          disabled={disabled}
+        />
+      ) : (
+        <input
+          ref={fieldRef as RefObject<HTMLInputElement>}
+          placeholder={placeholder}
+          size={htmlSize || undefined}
+          {...otherProps}
+          value={value ?? ''}
+          type={type ?? 'text'}
+          onChange={(onChange as FormEventHandler<HTMLInputElement>) ?? undefined}
+          disabled={disabled}
+        />
+      );
 
     return (
       <>
@@ -112,7 +128,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
             {
               'db-textfield--filled': !!value,
               'db-textfield--inline-label': !!inlineLabel,
-              'db-textfield--disabled': otherProps.disabled,
+              'db-textfield--disabled': disabled,
               'db-textfield--readonly': otherProps.readOnly,
             },
             className
@@ -135,7 +151,5 @@ const Textfield: TextfieldComponent = React.forwardRef(
     );
   }
 );
-
-Textfield.propTypes = textfieldPropTypes;
 
 export default Textfield;

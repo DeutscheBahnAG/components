@@ -1,8 +1,6 @@
-/* eslint-disable react/require-default-props */
 import React, { useRef, useState } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import { ActionVisibility, ActionVisibilityOff } from '@db-design/react-icons';
-import Textfield, { TextfieldRef } from '../textfield/textfield';
+import Textfield, { TextfieldRef, TextfieldProps } from '../textfield/textfield';
 import Button from '../button';
 
 const defaultLabels = {
@@ -10,29 +8,26 @@ const defaultLabels = {
   concealPassword: 'Passwort verbergen',
 };
 
-const passwordfieldPropTypes = {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
-  ...Textfield.propTypes,
+export interface PasswordfieldProps extends TextfieldProps {
   /** Conceales text like ‘···’ */
-  concealed: PropTypes.bool,
+  concealed?: boolean;
   /** Translations */
-  labels: PropTypes.shape({
-    showPassword: PropTypes.string.isRequired,
-    concealPassword: PropTypes.string.isRequired,
-  }),
-};
+  labels?: {
+    showPassword: string;
+    concealPassword: string;
+  };
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type PasswordfieldProps = InferProps<typeof passwordfieldPropTypes> & Record<string, any>;
 
-export type PasswordfieldComponent = React.FunctionComponent<PasswordfieldProps>;
+export type PasswordfieldComponent = React.FC<PasswordfieldProps>;
 
 const Passwordfield: PasswordfieldComponent = ({
   concealed = true,
   labels,
   size,
   value,
-  disabled,
+  disabled = false,
   ...otherProps
 }) => {
   const { showPassword, concealPassword } = labels ?? defaultLabels;
@@ -80,7 +75,5 @@ const Passwordfield: PasswordfieldComponent = ({
     />
   );
 };
-
-Passwordfield.propTypes = passwordfieldPropTypes;
 
 export default Passwordfield;

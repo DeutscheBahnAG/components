@@ -1,19 +1,16 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import Triptime from '../triptime';
 
-const triptimespanPropTypes = {
-  departureDateTime: PropTypes.string.isRequired,
-  predictedDepartureDateTime: PropTypes.string,
-  arrivalDateTime: PropTypes.string.isRequired,
-  predictedArrivalDateTime: PropTypes.string,
-  className: PropTypes.string,
-};
+export interface TriptimespanProps {
+  departureDateTime: string;
+  predictedDepartureDateTime?: string;
+  arrivalDateTime: string;
+  predictedArrivalDateTime?: string;
+  className?: string;
+}
 
-type TriptimespanProps = InferProps<typeof triptimespanPropTypes>;
-
-const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
+const Triptimespan: React.FC<TriptimespanProps> = ({
   departureDateTime,
   predictedDepartureDateTime,
   arrivalDateTime,
@@ -28,14 +25,6 @@ const Triptimespan: React.FunctionComponent<TriptimespanProps> = ({
       <Triptime dateTime={arrivalDateTime} predictedDateTime={predictedArrivalDateTime} />
     </span>
   );
-};
-
-Triptimespan.propTypes = triptimespanPropTypes;
-
-Triptimespan.defaultProps = {
-  predictedDepartureDateTime: undefined,
-  predictedArrivalDateTime: undefined,
-  className: '',
 };
 
 export default Triptimespan;

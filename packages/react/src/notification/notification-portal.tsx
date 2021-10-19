@@ -30,7 +30,7 @@ const getNotificationPortalElement = () => {
   }
 };
 
-const NotificationPortal: React.FunctionComponent<{ children: ReactNode }> = ({ children }) => {
+const NotificationPortal: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
   useEffect(() => {
     setPortalElement(getNotificationPortalElement());

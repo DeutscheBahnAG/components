@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import * as Icons from './icons';
 import {
   findProduct,
   findStyle,
-  Styles,
-  ProductsEnum,
   sanitizeLineNumber,
   lineNumberClass,
   specialProducts,
@@ -26,32 +23,28 @@ const icons: IconsType = {
   akn: <Icons.AKN className={iconClassName} />,
 };
 
-const transportchipPropTypes = {
+export interface TransportchipProps {
   /** The full line number e.g. “S 1”, “STR M10”, “ICE 1234” */
-  name: PropTypes.string.isRequired,
+  name: string;
   /** Additional class names you want to add to the Transportchip */
-  className: PropTypes.string,
+  className?: string;
   /** The transport type (e.g. Transportchip.Products.SBAHN) */
-  product: PropTypes.oneOf<ProductsEnumType>(ProductsEnum),
+  product?: ProductsEnumType;
   /** Use a local style to display line number */
-  style: PropTypes.oneOf<StylesType>(Styles),
+  style?: StylesType;
   /** Optional link target (will create an <a>) */
-  href: PropTypes.string,
+  href?: string;
   /** Optional click handler (will create a <button>) */
-  onClick: PropTypes.func,
+  onClick?: () => void;
   /** Optional zip code to detect regional styles */
-  zipCode: PropTypes.string,
+  zipCode?: string;
   /** Show trip as canceled */
-  canceled: PropTypes.bool,
+  canceled?: boolean;
   /** Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number */
-  showProductLogo: PropTypes.bool,
-};
+  showProductLogo?: boolean;
+}
 
-type TransportchipProps = InferProps<typeof transportchipPropTypes>;
-
-type TransportchipComponent = React.FunctionComponent<TransportchipProps>;
-
-const Transportchip: TransportchipComponent = ({
+const Transportchip: React.FC<TransportchipProps> = ({
   name,
   product: productKey,
   style,
@@ -109,19 +102,6 @@ const Transportchip: TransportchipComponent = ({
       </span>
     </Component>
   );
-};
-
-Transportchip.propTypes = transportchipPropTypes;
-
-Transportchip.defaultProps = {
-  product: null,
-  className: '',
-  style: null,
-  href: null,
-  onClick: null,
-  zipCode: '',
-  canceled: false,
-  showProductLogo: false,
 };
 
 export default Transportchip;

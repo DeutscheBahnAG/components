@@ -1,25 +1,22 @@
-/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useRef, useEffect, CSSProperties } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import React, { useRef, useEffect, CSSProperties, HTMLProps } from 'react';
 import clsx from 'clsx';
 
-const checkboxPropTypes = {
+export interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'type'> {
   /** Content rendered as the Checkbox label, can be text or any element except links and buttons */
-  children: PropTypes.node.isRequired,
+  children: React.ReactNode;
   /** Additional class names you want to add to the Checkbox */
-  className: PropTypes.string,
+  className?: string;
   /** Show a bar instead of the checked state */
-  indeterminate: PropTypes.bool,
+  indeterminate?: boolean | undefined;
   /** Inline styles */
-  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  style?: CSSProperties;
   /** Additional content below the label, e.g. links that must not be part of the label */
-  footer: PropTypes.node,
-};
+  footer?: React.ReactNode;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type CheckboxProps = InferProps<typeof checkboxPropTypes> & Record<string, any>;
 
 const enforceFocusRingInSafari = (event) => {
   const { style } = event.target.nextSibling;
@@ -27,12 +24,13 @@ const enforceFocusRingInSafari = (event) => {
   style.removeProperty('transform');
 };
 
-const Checkbox: React.FunctionComponent<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   className = '',
   indeterminate = false,
   children,
   style = {},
   footer,
+  checked = false,
   ...otherProps
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,7 +44,13 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   return (
     <>
       <label style={style as CSSProperties} className={clsx('db-checkbox', className)}>
-        <input type="checkbox" ref={inputRef} onFocus={enforceFocusRingInSafari} {...otherProps} />
+        <input
+          ref={inputRef}
+          onFocus={enforceFocusRingInSafari}
+          checked={checked}
+          {...otherProps}
+          type="checkbox"
+        />
         <span className="db-checkbox__box">
           <svg viewBox="0 0 16 16">
             <path
@@ -66,7 +70,5 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
     </>
   );
 };
-
-Checkbox.propTypes = checkboxPropTypes;
 
 export default Checkbox;

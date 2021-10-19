@@ -125,7 +125,7 @@ export interface ModalProps {
   footer?: React.ReactNode;
 }
 
-type ModalType<P> = React.FunctionComponent<P>;
+type ModalType<P> = React.FC<P>;
 
 /**
  * Apply a fix for mobile browsers reporting wrong CSS viewport unit

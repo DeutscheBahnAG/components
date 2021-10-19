@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import Time from '../time';
 import { isSlightlyDelayed } from './helper';
@@ -7,21 +6,17 @@ import { isSlightlyDelayed } from './helper';
 export const TriptimeStopTypes = ['start', 'intermediate', 'destination', 'current'] as const;
 export type TriptimeStopTypesType = typeof TriptimeStopTypes[number];
 
-const triptimePropTypes = {
-  dateTime: PropTypes.string.isRequired,
-  predictedDateTime: PropTypes.string,
-  stopType: PropTypes.oneOf(TriptimeStopTypes),
-  className: PropTypes.string,
-};
+export interface TriptimeProps {
+  dateTime: string;
+  predictedDateTime?: string;
+  stopType?: TriptimeStopTypesType;
+  className?: string;
+}
 
-type TriptimeProps = InferProps<typeof triptimePropTypes>;
-
-type TriptimeComponent = React.FunctionComponent<TriptimeProps>;
-
-const Triptime: TriptimeComponent = ({
+const Triptime: React.FC<TriptimeProps> = ({
   dateTime,
   predictedDateTime,
-  stopType,
+  stopType = 'start',
   className,
   ...props
 }) => {
@@ -46,14 +41,6 @@ const Triptime: TriptimeComponent = ({
       )}
     </span>
   );
-};
-
-Triptime.propTypes = triptimePropTypes;
-
-Triptime.defaultProps = {
-  predictedDateTime: undefined,
-  stopType: 'start',
-  className: '',
 };
 
 export default Triptime;

@@ -1,47 +1,27 @@
-/* eslint-disable react/require-default-props */
 import React, { useRef } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
-export enum SelectSizes {
-  S = 's',
-  M = 'm',
-  L = 'l',
-  XL = 'xl',
+export const SelectSizes = ['s', 'm', 'l', 'xl'] as const;
+export type SelectSizesType = typeof SelectSizes[number];
+
+export interface SelectProps {
+  className?: string;
+  value?: string;
+  size?: SelectSizesType;
+  disabled?: boolean;
+  options?: {
+    label: string;
+    value: string;
+    disabled: boolean;
+  }[];
 }
 
-const selectPropTypes = {
-  /** Additional class names */
-  className: PropTypes.string,
-  /** The user input */
-  value: PropTypes.string,
-  /** The size of the Select */
-  size: PropTypes.oneOf(Object.values(SelectSizes)),
-  /** Whether input can be edited */
-  disabled: PropTypes.bool,
-  /** List of options */
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      // eslint-disable-next-line react/forbid-prop-types
-      value: PropTypes.any.isRequired,
-      disabled: PropTypes.bool,
-    }).isRequired
-  ),
-};
-
-type SelectProps = InferProps<typeof selectPropTypes>;
-
-type SelectType = React.FunctionComponent<SelectProps> & {
-  sizes: typeof SelectSizes;
-};
-
-const Select: SelectType = ({
+const Select: React.FC<SelectProps> = ({
   className = '',
   disabled = false,
   options = [],
   value = '',
-  size = SelectSizes.L,
+  size = 'l',
   ...otherProps
 }) => {
   const field = useRef(null);
@@ -75,8 +55,5 @@ const Select: SelectType = ({
     </>
   );
 };
-
-Select.propTypes = selectPropTypes;
-Select.sizes = SelectSizes;
 
 export default Select;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import DefaultNotification, { NotificationComponent } from './notification';
+import DefaultNotification, { NotificationProps } from './notification';
 
-const Notification: NotificationComponent = ({ onClose, ...props }) => {
+const Notification: React.FC<NotificationProps> = ({ onClose, ...props }) => {
   const [isOpen, setOpen] = useState(true);
   return isOpen ? (
     <DefaultNotification

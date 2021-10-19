@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 const iconCheck = <path d="M6.3 10.6L8.9 13.1l4.8-6" />;
@@ -20,18 +19,20 @@ const iconExclamation = (
 export const StatusSeverities = ['informative', 'warning', 'error', 'fatal', 'success'] as const;
 export type StatusSeveritiesType = typeof StatusSeverities[number];
 
-const statusPropTypes = {
+export interface StatusProps {
   /** The purpose of the Status, affects visual styling */
-  severity: PropTypes.oneOf(StatusSeverities),
+  severity: StatusSeveritiesType;
   /** The text to be displayed */
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
+  children: React.ReactNode;
+  className: string;
+}
 
-type StatusProps = InferProps<typeof statusPropTypes>;
-
-type StatusComponent = React.FunctionComponent<StatusProps>;
-const Status: StatusComponent = ({ severity, children, className, ...props }) => {
+const Status: React.FC<StatusProps> = ({
+  severity = 'informative',
+  children,
+  className,
+  ...props
+}) => {
   return (
     <>
       <span className={clsx('db-status', `db-status--${severity}`, className)} {...props}>
@@ -56,13 +57,6 @@ const Status: StatusComponent = ({ severity, children, className, ...props }) =>
       <span className="db-inline-spacer"> </span>
     </>
   );
-};
-
-Status.propTypes = statusPropTypes;
-
-Status.defaultProps = {
-  severity: 'informative',
-  className: '',
 };
 
 export default Status;

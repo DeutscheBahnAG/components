@@ -1,6 +1,5 @@
 /* global document */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Button from '../button';
@@ -24,10 +23,6 @@ const ModalWrapper: React.FC = ({ children }) => {
     document.body.append(element);
   }
   return <div>{children}</div>;
-};
-
-ModalWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 describe('Modal Component', () => {

@@ -1,6 +1,5 @@
 /* eslint-disable react/no-did-update-set-state, no-unused-vars */
 import React, { ButtonHTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   ActionDownload,
@@ -19,25 +18,32 @@ export const LinkVariants = ['primary', 'secondary', 'mixed'] as const;
 export type LinkVariantsType = typeof LinkVariants[number];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface LinkProps extends Record<string, any> {
+export interface LinkProps extends Record<string, any> {
+  /** content rendered inside the Link, can be text or any element */
   children?: React.ReactNode;
+  /** additional class names you want to add to the Link */
   className?: string;
+  /** when true, Link will be disabled */
   disabled?: boolean;
+  /** when true the browser will try to download the target */
   download?: boolean;
   fullWidth?: boolean;
+  /** turns the Link into a regular link (anchor) */
   href?: string;
+  /** optional icon (as `<svg>`) */
   icon?: React.ReactNode;
   loading?: boolean;
   loadingLabel?: string;
+  /** the position of the icon */
   iconPosition?: LinkIconPositionsType;
+  /** inline styles */
   style?: React.CSSProperties;
   type?: LinkTypesType;
+  /** the appearance of the Link */
   variant?: LinkVariantsType;
 }
 
-type LinkType = React.FunctionComponent<LinkProps>;
-
-const Link: LinkType = ({
+const Link: React.FC<LinkProps> = ({
   children,
   className = '',
   disabled = false,
@@ -46,7 +52,7 @@ const Link: LinkType = ({
   icon: customIcon,
   iconPosition = 'auto',
   style = {},
-  type = undefined,
+  type = 'button',
   variant = 'primary',
   ...otherProps
 }) => {
@@ -91,40 +97,6 @@ const Link: LinkType = ({
       <span className="db-inline-spacer"> </span>
     </>
   );
-};
-
-Link.propTypes = {
-  type: PropTypes.oneOf(LinkTypes),
-  /** the appearance of the Link */
-  variant: PropTypes.oneOf(LinkVariants),
-  /** the position of the icon */
-  iconPosition: PropTypes.oneOf(LinkIconPositions),
-  /** when true, Link will be disabled */
-  disabled: PropTypes.bool,
-  /** when true the browser will try to download the target */
-  download: PropTypes.bool,
-  /** additional class names you want to add to the Link */
-  className: PropTypes.string,
-  /** inline styles */
-  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
-  /** content rendered inside the Link, can be text or any element */
-  children: PropTypes.node,
-  /** optional icon (as `<svg>`) */
-  icon: PropTypes.node,
-  /** turns the Link into a regular link (anchor) */
-  href: PropTypes.string,
-};
-
-// @TODO Remove no other component requires this
-Link.defaultProps = {
-  type: 'button',
-  variant: 'primary',
-  iconPosition: 'auto',
-  className: '',
-  style: {},
-  children: undefined,
-  icon: undefined,
-  href: undefined,
 };
 
 export default Link;

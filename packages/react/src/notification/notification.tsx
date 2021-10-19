@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React, { Fragment, useEffect, useRef } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
 import Button from '../button/button';
@@ -65,42 +63,37 @@ const notificationIcons = {
   ),
 };
 
-const notificationPropTypes = {
+export interface NotificationProps {
   /** the title will be displayed as bold text above the message  */
-  title: PropTypes.node,
+  title?: React.ReactNode;
   /** the notification message to display */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** optional action (Button or link) */
-  action: PropTypes.node,
+  action?: React.ReactNode;
   /** optional className to add to the notification */
-  className: PropTypes.string,
+  className?: string;
   /** displays the notification overlaid on top of the page */
-  global: PropTypes.bool,
+  global?: boolean;
   /** the purpose of the notification, affects visual styling */
-  severity: PropTypes.oneOf(NotificationSeverities),
+  severity?: NotificationSeveritiesType;
   /** close button click handler, required to display the close button */
-  onClose: PropTypes.func,
+  onClose?: () => void;
   /** custom translation strings */
-  labels: PropTypes.shape({
-    close: PropTypes.string.isRequired,
-    informative: PropTypes.string.isRequired,
-    warning: PropTypes.string.isRequired,
-    error: PropTypes.string.isRequired,
-    success: PropTypes.string.isRequired,
-  }),
+  labels?: {
+    close: string;
+    informative: string;
+    warning: string;
+    error: string;
+    success: string;
+  };
   /** whether to automatically focus the close button when the notification
-   * is displayed. Can be useful for global notifications as they are appended
-   * to the end of the DOM, so people would need to tab around a lot to reach them.
+   *  is displayed. Can be useful for global notifications as they are appended
+   *  to the end of the DOM, so people would need to tab around a lot to reach them.
    */
-  autofocusCloseButton: PropTypes.bool,
-};
+  autofocusCloseButton?: boolean;
+}
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type NotificationProps = InferProps<typeof notificationPropTypes> & Record<string, any>;
-
-export type NotificationComponent = React.FunctionComponent<NotificationProps>;
-
-const Notification: NotificationComponent = ({
+const Notification: React.FC<NotificationProps> = ({
   title = null,
   children = null,
   action = null,
@@ -174,7 +167,5 @@ const Notification: NotificationComponent = ({
     </NotificationWrapper>
   );
 };
-
-Notification.propTypes = notificationPropTypes;
 
 export default Notification;

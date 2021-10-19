@@ -1,26 +1,23 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
-import { LogoSizes, LogoVariants } from '../logo/logo';
+import { LogoSizesType, LogoVariantsType } from '../logo/logo';
 
-const pulsePropTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(LogoSizes),
-  variant: PropTypes.oneOf(LogoVariants),
-  children: PropTypes.node,
-  mt: PropTypes.string,
-  mb: PropTypes.string,
-};
+export interface PulseProps {
+  className?: string;
+  size?: LogoSizesType;
+  variant?: LogoVariantsType;
+  children?: React.ReactNode;
+  mt?: string;
+  mb?: string;
+}
 
-type PulseProps = InferProps<typeof pulsePropTypes>;
-
-const Pulse: React.FunctionComponent<PulseProps> = ({
-  className,
-  size,
-  variant,
-  children,
+const Pulse: React.FC<PulseProps> = ({
+  className = '',
+  size = 'm',
+  variant = 'auto',
+  children = null,
   mt = 0.5,
-  mb,
+  mb = undefined,
 }) => {
   const cssProperties = {};
   if (mb) cssProperties['--db-pulse--mb'] = mb;
@@ -33,17 +30,6 @@ const Pulse: React.FunctionComponent<PulseProps> = ({
       {children}
     </div>
   );
-};
-
-Pulse.propTypes = pulsePropTypes;
-
-Pulse.defaultProps = {
-  className: '',
-  size: 'm',
-  variant: 'auto',
-  children: null,
-  mt: undefined,
-  mb: undefined,
 };
 
 export default Pulse;

@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React, { useState } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 import Button from '../button';
 import Notification from '../notification';
@@ -10,22 +8,20 @@ const defaultLabels = {
   notification: '„$1“ in die Zwischenablage kopiert',
 };
 
-const anchorPropTypes = {
-  children: PropTypes.node.isRequired,
+export interface AnchorPros {
+  children: React.ReactNode;
   /** Optional class name */
-  className: PropTypes.string,
+  className?: string;
   /** ID to link to */
-  id: PropTypes.string.isRequired,
+  id: string;
   /** Override default label */
-  labels: PropTypes.shape({
-    button: PropTypes.string.isRequired,
-    notification: PropTypes.string.isRequired,
-  }),
-};
+  labels?: {
+    button: string;
+    notification: string;
+  };
+}
 
 const sanitizeID = (string: string) => string.replace(/\W+/g, '-').toLowerCase();
-
-type AnchorProps = InferProps<typeof anchorPropTypes>;
 
 const Icon = () => (
   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -37,13 +33,13 @@ const Icon = () => (
   </svg>
 );
 
-const Anchor: React.FunctionComponent<AnchorProps> = ({
+const Anchor: React.FC<AnchorPros> = ({
   children,
   id,
   labels: _labels = defaultLabels,
   className,
   ...otherProps
-}: AnchorProps) => {
+}) => {
   const labels = _labels ?? defaultLabels;
   const sanitizedID = sanitizeID(id);
   const [notification, setNotification] = useState('');
@@ -86,7 +82,5 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
     </>
   );
 };
-
-Anchor.propTypes = anchorPropTypes;
 
 export default Anchor;

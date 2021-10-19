@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import DefaultTextfield, { TextfieldProps } from './textfield';
+import DefaultTextfield, { TextfieldComponent } from './textfield';
 
-const Textfield: React.FunctionComponent<TextfieldProps> = ({ value, ...props }) => {
+const Textfield: React.FC<TextfieldComponent & { value: string }> = ({ value, ...props }) => {
   const [currentValue, setValue] = useState(value);
   return (
     <DefaultTextfield
@@ -11,14 +10,6 @@ const Textfield: React.FunctionComponent<TextfieldProps> = ({ value, ...props })
       onChange={(event) => setValue(event.target.value)}
     />
   );
-};
-
-Textfield.propTypes = {
-  value: PropTypes.string,
-};
-
-Textfield.defaultProps = {
-  value: '',
 };
 
 export default Textfield;

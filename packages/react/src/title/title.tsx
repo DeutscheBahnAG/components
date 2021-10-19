@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 export const TitleSizes = ['s', 'm', 'l', 'xl', 'xxl'] as const;
@@ -9,7 +7,7 @@ export type TitleSizesType = typeof TitleSizes[number];
 export const TitleVariants = ['primary', 'secondary'] as const;
 export type TitleVariantsType = typeof TitleVariants[number];
 
-interface TitleProps {
+export interface TitleProps {
   children?: React.ReactNode;
   size?: TitleSizesType;
   light?: boolean;
@@ -17,9 +15,7 @@ interface TitleProps {
   variant?: TitleVariantsType;
 }
 
-type TitleType<P> = React.FunctionComponent<P>;
-
-const Title: TitleType<TitleProps> = ({
+const Title: React.FC<TitleProps> = ({
   children,
   size = 'xxl',
   light = false,
@@ -40,18 +36,5 @@ const Title: TitleType<TitleProps> = ({
     {children}
   </span>
 );
-
-Title.propTypes = {
-  /** Text */
-  children: PropTypes.node.isRequired,
-  /** The size of the Cutton */
-  size: PropTypes.oneOf(TitleSizes),
-  /** Style Title in light */
-  light: PropTypes.bool,
-  /** Additional class names you want to add to the Title */
-  className: PropTypes.string,
-  /** Color of the text */
-  variant: PropTypes.oneOf(TitleVariants),
-};
 
 export default Title;

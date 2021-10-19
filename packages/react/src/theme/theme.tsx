@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import clsx from 'clsx';
 
 export const Themes = [
@@ -21,30 +19,19 @@ export const Themes = [
 ] as const;
 export type ThemesType = typeof Themes[number];
 
-const ThemePropTypes = {
+export interface ThemeProps {
   /** Content to be themed */
-  children: PropTypes.node.isRequired,
+  children: React.ReactNode;
   /** The active theme applied to the children */
-  theme: PropTypes.oneOf<ThemesType>(Themes),
+  theme: ThemesType;
   /** Additional class names you want to add to the Theme */
-  className: PropTypes.string,
-};
+  className?: string;
+}
 
-type ThemeProps = InferProps<typeof ThemePropTypes>;
-
-type ThemeType<P> = React.FunctionComponent<P>;
-
-const Theme: ThemeType<ThemeProps> = ({
-  children,
-  theme = undefined,
-  className,
-  ...otherProps
-}: ThemeProps) => (
+const Theme: React.FC<ThemeProps> = ({ children, theme = undefined, className, ...otherProps }) => (
   <div className={clsx('db-theme', theme, className)} {...otherProps}>
     {children}
   </div>
 );
-
-Theme.propTypes = ThemePropTypes;
 
 export default Theme;
