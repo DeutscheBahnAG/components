@@ -1,12 +1,11 @@
 # DB React components
 
-React components for building websites and applications fast in the look
-and feel of Deutsche Bahn AG.
+React components for building websites and applications fast in the look and feel of Deutsche Bahn AG.
 
 ## Usage
 
-On the repository for your web app or site that will include the components, add this repository as a dependency in your
-`package.json`.
+On the repository for your web app or site that will include the components, add the NPM packages if this repository as
+a dependency in your `package.json`.
 
 ```bash
 yarn add @db-design/styles;
@@ -15,7 +14,6 @@ yarn add @db-design/react;
 yarn add @db-design/react-extra;
 ```
 
-
 ## How to Develop for Contribution
 
 ### Initial Setup
@@ -23,7 +21,6 @@ yarn add @db-design/react-extra;
 1. Clone this repository
 2. Run `yarn` to install all dependencies
 3. Run `yarn build:react-icons` to make assets available for development
-
 
 ### Adding a New Component
 
@@ -43,7 +40,7 @@ A component typically consists of:
 - A `index.js` re-exporting the default export of `component-name.jsx`.
 - A `component-name.jsx` file containing the React component as a default export. Be sure to include
   [prop types and default props](https://reactjs.org/docs/typechecking-with-proptypes.html) for the component.
-- An optional `component-name-doc.jsx` which can contain a modified version of the component for documentation (e.g. 
+- An optional `component-name-doc.jsx` which can contain a modified version of the component for documentation (e.g.
   inline Modals)
 - A `component-name.test.jsx` file containing all unit tests for the component.
 - A `README.md` containing the documentation for this component in Markdown format
@@ -91,7 +88,6 @@ import { Button } from '@db-design/react';
   - `yarn release:react-icons` - Run release-it for `react-icons`. It compiles required files as well.
   - `yarn release:react` - Run release-it for `react`. It compiles required files as well.
   - `yarn release:react-extra` - Run release-it for `react-extra`. It compiles required files as well.
-
 
 ### Writing Commits
 
