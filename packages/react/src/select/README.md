@@ -51,7 +51,7 @@
 
 ```jsx
 <Select
-  size={Select.sizes.S}
+  size="s"
   options={[
     { value: 1, label: 'Cats' },
     { value: 2, label: 'Dogs' },
@@ -61,7 +61,7 @@
 
 ```jsx
 <Select
-  size={Select.sizes.M}
+  size="m"
   options={[
     { value: 1, label: 'Cats' },
     { value: 2, label: 'Dogs' },
@@ -71,7 +71,7 @@
 
 ```jsx
 <Select
-  size={Select.sizes.L}
+  size="l"
   options={[
     { value: 1, label: 'Cats' },
     { value: 2, label: 'Dogs' },
@@ -81,7 +81,7 @@
 
 ```jsx
 <Select
-  size={Select.sizes.XL}
+  size="xl"
   options={[
     { value: 1, label: 'Cats' },
     { value: 2, label: 'Dogs' },

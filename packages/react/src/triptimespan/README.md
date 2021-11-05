@@ -42,7 +42,7 @@ This component implements the guidelines of:
 
 ## Smaller size
 
-Using `copy.s`
+Using a `<Copy>` with size `s`:
 
 ```jsx
 import { Copy } from '@db-design/react';
