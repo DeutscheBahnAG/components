@@ -12,7 +12,7 @@ export interface SelectProps {
   size?: ResponsiveType<SelectSizesType>;
   disabled?: boolean;
   options?: {
-    label: string;
+    label: React.ReactNode;
     value: string;
     disabled: boolean;
   }[];

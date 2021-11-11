@@ -46,7 +46,6 @@ export interface TextfieldProps
   prefix?: React.ReactNode;
   /** Content after the input (which is not a unit) */
   suffix?: React.ReactNode;
-  /** Inline label */
   inlineLabel?: string;
   /** Width in characters (equals `<input size="10">`) */
   htmlSize?: number;
@@ -87,7 +86,7 @@ const Textfield: TextfieldComponent = React.forwardRef(
     };
 
     const fieldSize = inlineLabel ? 'xl' : size;
-    const placeholder = otherProps.placeholder || ' '; /* Important for baseline alignment! */
+    const placeholder = otherProps.placeholder ?? ' '; /* Important for baseline alignment! */
     let contentBefore = prefix;
     let contentAfter = suffix;
 

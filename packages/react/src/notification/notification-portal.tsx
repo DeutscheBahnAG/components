@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 const notificationPortalName = 'db-notification-portal';
@@ -30,7 +30,7 @@ const getNotificationPortalElement = () => {
   }
 };
 
-const NotificationPortal: React.FC<{ children: ReactNode }> = ({ children }) => {
+const NotificationPortal: React.FC = ({ children }) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
   useEffect(() => {
     setPortalElement(getNotificationPortalElement());

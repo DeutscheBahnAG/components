@@ -46,7 +46,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
       <label style={style as CSSProperties} className={clsx('db-checkbox', className)}>
         <input
           ref={inputRef}
-          onFocus={enforceFocusRingInSafari}
+          onFocus={(event) => {
+            let stopped;
+            if (otherProps.onFocus) stopped = otherProps.onFocus(event);
+            if (stopped !== false && !event.defaultPrevented) enforceFocusRingInSafari(event);
+            return stopped;
+          }}
           checked={checked}
           {...otherProps}
           type="checkbox"
