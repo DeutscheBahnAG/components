@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
 import Button from '../button/button';
 
-export const NotificationSeverities = ['informative', 'warning', 'error', 'success'] as const;
-export type NotificationSeveritiesType = typeof NotificationSeverities[number];
+export const notificationSeverities = ['informative', 'warning', 'error', 'success'] as const;
+export type NotificationSeveritiesType = typeof notificationSeverities[number];
 
 const defaultLabels: Record<NotificationSeveritiesType | 'close', string> = {
   close: 'Schließen',

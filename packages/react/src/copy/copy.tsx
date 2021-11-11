@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';
 
-export const CopySizes = ['xs', 's', 'm', 'l'] as const;
-export type CopySizesType = typeof CopySizes[number];
+export const copySizes = ['xs', 's', 'm', 'l'] as const;
+export type CopySizesType = typeof copySizes[number];
 
-export const CopyVariants = ['primary', 'secondary'] as const;
-export type CopyVariantsType = typeof CopyVariants[number];
+export const copyVariants = ['primary', 'secondary'] as const;
+export type CopyVariantsType = typeof copyVariants[number];
 
 export interface CopyProps {
   children?: React.ReactNode;

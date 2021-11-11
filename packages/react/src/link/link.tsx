@@ -8,14 +8,14 @@ import {
   NavigationArrowBack,
 } from '@db-design/react-icons';
 
-export const LinkIconPositions = ['none', 'auto', 'before', 'after'] as const;
-export type LinkIconPositionsType = typeof LinkIconPositions[number];
+export const linkIconPositions = ['none', 'auto', 'before', 'after'] as const;
+export type LinkIconPositionsType = typeof linkIconPositions[number];
 
-export const LinkTypes = ['link', 'button', 'submit', 'reset'] as const;
-export type LinkTypesType = typeof LinkTypes[number];
+export const linkTypes = ['link', 'button', 'submit', 'reset'] as const;
+export type LinkTypesType = typeof linkTypes[number];
 
-export const LinkVariants = ['primary', 'secondary', 'mixed'] as const;
-export type LinkVariantsType = typeof LinkVariants[number];
+export const linkVariants = ['primary', 'secondary', 'mixed'] as const;
+export type LinkVariantsType = typeof linkVariants[number];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface LinkProps extends Record<string, any> {

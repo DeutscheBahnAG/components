@@ -16,8 +16,8 @@ const iconExclamation = (
   </>
 );
 
-export const StatusSeverities = ['informative', 'warning', 'error', 'fatal', 'success'] as const;
-export type StatusSeveritiesType = typeof StatusSeverities[number];
+export const statusSeverities = ['informative', 'warning', 'error', 'fatal', 'success'] as const;
+export type StatusSeveritiesType = typeof statusSeverities[number];
 
 export interface StatusProps {
   /** The purpose of the Status, affects visual styling */

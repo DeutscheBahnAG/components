@@ -6,8 +6,8 @@ import { ResponsiveType } from '../shared';
 
 const defaultLabels = { platform: 'Gleis', platformAbbreviation: 'Gl.' };
 
-export const TrackSizes = ['xs', 's', 'm'] as const;
-export type TrackSizesType = typeof TrackSizes[number];
+export const trackSizes = ['xs', 's', 'm'] as const;
+export type TrackSizesType = typeof trackSizes[number];
 
 export interface TrackProps {
   track: string;

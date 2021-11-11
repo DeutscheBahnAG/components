@@ -1,8 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
-export const LayoutVariants = ['centered', 'left-aligned'] as const;
-export type LayoutVariantsType = typeof LayoutVariants[number];
+export const layoutVariants = ['centered', 'left-aligned'] as const;
+export type LayoutVariantsType = typeof layoutVariants[number];
 
 export interface LayoutProps {
   /** Content */

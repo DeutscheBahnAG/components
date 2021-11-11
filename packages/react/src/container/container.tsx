@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import { responsiveClassNames, responsiveToggleClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';
 
-export const ContainerWidths = ['text', 'content', 'extended', 'full'] as const;
-export type ContainerWidthsType = typeof ContainerWidths[number];
+export const containerWidths = ['text', 'content', 'extended', 'full'] as const;
+export type ContainerWidthsType = typeof containerWidths[number];
 
-export const ContainerAlignments = ['left', 'center', 'right'] as const;
-export type ContainerAlignmentsType = typeof ContainerAlignments[number];
+export const containerAlignments = ['left', 'center', 'right'] as const;
+export type ContainerAlignmentsType = typeof containerAlignments[number];
 
 export interface ContainerProps {
   /** Content of the Container */

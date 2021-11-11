@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';
 
-export const TitleSizes = ['s', 'm', 'l', 'xl', 'xxl'] as const;
-export type TitleSizesType = typeof TitleSizes[number];
+export const titleSizes = ['s', 'm', 'l', 'xl', 'xxl'] as const;
+export type TitleSizesType = typeof titleSizes[number];
 
-export const TitleVariants = ['primary', 'secondary'] as const;
-export type TitleVariantsType = typeof TitleVariants[number];
+export const titleVariants = ['primary', 'secondary'] as const;
+export type TitleVariantsType = typeof titleVariants[number];
 
 export interface TitleProps {
   children?: React.ReactNode;

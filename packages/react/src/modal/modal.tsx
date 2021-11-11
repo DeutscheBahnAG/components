@@ -18,13 +18,13 @@ const kindValues = {
   },
 };
 
-export const ModalActionSizes = ['none', 's', 'm', 'l'] as const;
-export type ModalActionSizesType = typeof ModalActionSizes[number];
+export const modalActionSizes = ['none', 's', 'm', 'l'] as const;
+export type ModalActionSizesType = typeof modalActionSizes[number];
 
-export const ModalKinds = ['default', 'alert'] as const;
-export type ModalKindsType = typeof ModalKinds[number];
-export const ModalSizes = ['auto', 's', 'm', 'l'] as const;
-export type ModalSizesType = typeof ModalSizes[number];
+export const modalKinds = ['default', 'alert'] as const;
+export type ModalKindsType = typeof modalKinds[number];
+export const modalSizes = ['auto', 's', 'm', 'l'] as const;
+export type ModalSizesType = typeof modalSizes[number];
 
 export interface ModalProps {
   /** Sets the top title of the Modal dialog */

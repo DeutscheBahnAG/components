@@ -8,20 +8,20 @@ import { ResponsiveType } from '../shared';
 const Screenreader: React.FC = ({ children }) => <span aria-hidden="false">{children}</span>;
 
 // Done this way because we want them for PropTypes
-export const ButtonIconPositions = ['before', 'after'] as const;
-export type ButtonIconPositionsType = typeof ButtonIconPositions[number];
+export const buttonIconPositions = ['before', 'after'] as const;
+export type ButtonIconPositionsType = typeof buttonIconPositions[number];
 
-export const ButtonShapes = ['default', 'square', 'round'] as const;
-export type ButtonShapesType = typeof ButtonShapes[number];
+export const buttonShapes = ['default', 'square', 'round'] as const;
+export type ButtonShapesType = typeof buttonShapes[number];
 
-export const ButtonSizes = ['s', 'm', 'l', 'xl'] as const;
-export type ButtonSizesType = typeof ButtonSizes[number];
+export const buttonSizes = ['s', 'm', 'l', 'xl'] as const;
+export type ButtonSizesType = typeof buttonSizes[number];
 
-export const ButtonTypes = ['link', 'button', 'submit', 'reset'] as const;
-export type ButtonTypesType = typeof ButtonTypes[number];
+export const buttonTypes = ['link', 'button', 'submit', 'reset'] as const;
+export type ButtonTypesType = typeof buttonTypes[number];
 
-export const ButtonVariants = ['primary', 'secondary', 'solid', 'hover-only'] as const;
-export type ButtonVariantsType = typeof ButtonVariants[number];
+export const buttonVariants = ['primary', 'secondary', 'solid', 'hover-only'] as const;
+export type ButtonVariantsType = typeof buttonVariants[number];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface ButtonProps extends Record<string, any> {
@@ -171,9 +171,9 @@ export const validateVariantCombinations: React.Validator<ButtonVariantsType> = 
   propName: string,
   componentName: string
 ) => {
-  if (!(variant && ButtonVariants.includes(variant))) {
+  if (!(variant && buttonVariants.includes(variant))) {
     return new Error(
-      `The \`variant\` must be in [${ButtonVariants.join(', ')}] for a ${componentName}.`
+      `The \`variant\` must be in [${buttonVariants.join(', ')}] for a ${componentName}.`
     );
   }
   if (icon) {

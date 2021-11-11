@@ -15,10 +15,10 @@ import { ResponsiveType } from '../shared';
 
 const unitsBeforeField = ['£', 'GBP', '$', 'USD'];
 
-export const TextfieldSizes = ['s', 'm', 'l', 'xl'] as const;
-export type TextfieldSizesType = typeof TextfieldSizes[number];
+export const textfieldSizes = ['s', 'm', 'l', 'xl'] as const;
+export type TextfieldSizesType = typeof textfieldSizes[number];
 
-export const TextfieldTypes = [
+export const textfieldTypes = [
   'textarea',
   'text',
   'password',
@@ -28,7 +28,7 @@ export const TextfieldTypes = [
   'url',
   'search',
 ] as const;
-export type TextfieldTypesType = typeof TextfieldTypes[number];
+export type TextfieldTypesType = typeof textfieldTypes[number];
 
 export interface TextfieldProps
   extends Omit<HTMLProps<HTMLInputElement | HTMLTextAreaElement>, 'size' | 'prefix' | 'onChange'> {

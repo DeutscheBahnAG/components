@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import Time from '../time';
 import { isSlightlyDelayed } from './helper';
 
-export const TriptimeStopTypes = ['start', 'intermediate', 'destination', 'current'] as const;
-export type TriptimeStopTypesType = typeof TriptimeStopTypes[number];
+export const triptimeStopTypes = ['start', 'intermediate', 'destination', 'current'] as const;
+export type TriptimeStopTypesType = typeof triptimeStopTypes[number];
 
 export interface TriptimeProps {
   dateTime: string;

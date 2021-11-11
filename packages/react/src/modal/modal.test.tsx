@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Button from '../button';
-import Modal, { ModalSizes } from './modal';
+import Modal, { modalSizes } from './modal';
 
 const APP_ID = 'root-test-id';
 const PORTAL_ID = 'portal-test-id';
@@ -74,7 +74,7 @@ describe('Modal Component', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  test.each(ModalSizes)('size %s', (size) => {
+  test.each(modalSizes)('size %s', (size) => {
     const { baseElement } = render(
       <Modal isOpen appId={APP_ID} portalId={PORTAL_ID} size={size}>
         Modal should have size={size}.

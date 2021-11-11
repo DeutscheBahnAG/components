@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';
 
-export const SelectSizes = ['s', 'm', 'l', 'xl'] as const;
-export type SelectSizesType = typeof SelectSizes[number];
+export const selectSizes = ['s', 'm', 'l', 'xl'] as const;
+export type SelectSizesType = typeof selectSizes[number];
 
 export interface SelectProps {
   className?: string;

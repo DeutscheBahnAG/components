@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/better-regex */
 
-export const ProductsEnum = [
+export const productsEnum = [
   'ice',
   'ic',
   'ec',
@@ -18,9 +18,9 @@ export const ProductsEnum = [
   'carsharing',
   'bikesharing',
 ] as const;
-export type ProductsEnumType = typeof ProductsEnum[number];
+export type ProductsEnumType = typeof productsEnum[number];
 
-export const Styles = [
+export const localStyles = [
   'sbahn-mitteldeutschland',
   'sbahn-berlin',
   'sbahn-hamburg',
@@ -40,7 +40,7 @@ export const Styles = [
   'bsag',
   'nordwestbahn',
 ] as const;
-export type StylesType = typeof Styles[number];
+export type StylesType = typeof localStyles[number];
 
 type StylesObject = Record<
   StylesType,
@@ -89,7 +89,7 @@ const autoProducts: AutoProductsType = {
 type AutoProducts = keyof typeof autoProducts;
 
 export const findProduct = (lineNumber: string): AutoProducts | undefined => {
-  return ProductsEnum.find((key) => {
+  return productsEnum.find((key) => {
     const autoProduct = autoProducts[key];
     if (!autoProduct) return false;
     return lineNumber.match(autoProduct);
@@ -106,7 +106,7 @@ export const findStyle = ({
   lineNumber: string;
 }): string | undefined => {
   const productKey = product || findProduct(lineNumber);
-  return Styles.find((key) => {
+  return localStyles.find((key) => {
     const { products: productKeys, zipCodes } = styles[key];
     return productKey && productKeys.includes(productKey) && zipCode.match(zipCodes);
   });

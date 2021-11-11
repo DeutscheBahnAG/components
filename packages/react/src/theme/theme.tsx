@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-export const Themes = [
+export const themes = [
   'DB_BRANDED',
   'DB_LIGHT',
   'DB_LIGHT_ALTERNATE',
@@ -17,7 +17,7 @@ export const Themes = [
   'PRIDE_LIGHT_ALTERNATE',
   'DISPLAY',
 ] as const;
-export type ThemesType = typeof Themes[number];
+export type ThemesType = typeof themes[number];
 
 export interface ThemeProps {
   /** Content to be themed */
