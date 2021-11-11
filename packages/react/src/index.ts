@@ -12,6 +12,7 @@ export { default as Loadingindicator } from './loadingindicator';
 export { default as Logo } from './logo';
 export { default as Modal } from './modal';
 export { default as Notification } from './notification';
+export { default as Passwordfield } from './passwordfield';
 export { default as Pulse } from './pulse';
 export { default as Select } from './select';
 export { default as Status } from './status';
