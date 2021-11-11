@@ -28,7 +28,7 @@ export interface TransportchipProps {
   name: string;
   /** Additional class names you want to add to the Transportchip */
   className?: string;
-  /** The transport type (e.g. Transportchip.Products.SBAHN) */
+  /** The transport type (e.g. "sbahn") */
   product?: ProductsEnumType;
   /** Use a local style to display line number */
   style?: StylesType;
