@@ -3,8 +3,13 @@
 .db-textfield {
   @include db-focus-ring($focus-selector: ':focus-within', $transition: 'border 200ms');
   align-items: baseline;
-  background-color: var(--db-secondary-background-color);
-  border: db-border-width('input') solid var(--db-secondary-background-color);
+  background: linear-gradient(0deg, var(--db-field-border-color), var(--db-field-border-color)) #{-1 *
+    db-border-width('input')} calc(100% + #{db-border-width('input')}) / db-border-width('input')
+    db-border-width('input') repeat-x,
+    var(--db-secondary-background-color);
+  background-clip: border-box;
+  border: db-border-width('input') solid transparent;
+
   box-sizing: border-box;
   caret-color: var(--db-caret-color);
   color: var(--db-field-secondary-text-color);
@@ -225,8 +230,8 @@
       .db-textfield-suffix,
       .db-textfield__inline-label {
         border-radius: db-border-radius($size);
-        padding-bottom: $vertical-padding + 1px;
-        padding-top: $vertical-padding - 1px;
+        padding-bottom: $vertical-padding;
+        padding-top: $vertical-padding;
       }
     }
   }
@@ -238,16 +243,9 @@
   *    The margin-bottom needs to be 1px more
   */
 .db-textfield {
-  @each $size in (xl l m s xs) {
+  @each $size in (m s xs) {
     .db-button--size-#{$size} {
-      margin: #{(db-line-height('copy', 'm') - db-size($size)) *
-        0.5 +
-        1px}
-        #{(db-line-height('copy', 'm') - db-size($size)) *
-        0.5}
-        #{(db-line-height('copy', 'm') - db-size($size)) *
-        0.5 -
-        2px};
+      margin: #{(db-line-height('copy', 'm') - db-size($size)) * 0.5};
     }
   }
 }

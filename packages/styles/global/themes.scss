@@ -32,6 +32,9 @@
   80%)}};
   --db-shadow-color: #0000000a;
   --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 35%)};
+  --db-field-border-color: #{mix(db-palette-color('coolgray200'),
+  db-palette-color('coolgray300'),
+  70%)};
   --db-loud-border-color: #{db-palette-color('coolgray500')};
   --db-focus-ring-color: #0043c740;
   --db-focus-border-color: #{db-border-color('input.focus')};
@@ -78,8 +81,8 @@
   --db-success-color: #02822f;
   --db-success-background-color: #038531;
   --db-success-on-background-color: #fff;
-  --db-warning-color: #de2f00;
-  --db-warning-background-color: #fb3f0d;
+  --db-warning-color: #{db-palette-color('red600')};
+  --db-warning-background-color: #{db-palette-color('red600')};
   --db-warning-on-background-color: #{db-palette-color('coolgray050')};
   --db-informative-color: #000;
   --db-informative-background-color: #444d60;
@@ -103,8 +106,6 @@
   --db-shadow-color: transparent;
   --db-border-color: #{mix(db-palette-color('coolgray200'), db-palette-color('coolgray300'), 70%)};
   --db-loud-border-color: #{db-palette-color('coolgray600')};
-  --db-warning-color: #d42c00;
-  --db-warning-background-color: #d42c00;
   --db-caret-color: #{db-palette-color('dbrot')};
 }
 
@@ -125,6 +126,7 @@
   --db-shadow-color: transparent;
   --db-loud-border-color: #{db-palette-color('red100')};
   --db-border-color: #e77579;
+  --db-field-border-color: #000;
   --db-focus-ring-color: #70a0ff66;
   --db-focus-border-color: #{db-palette-color('blue300')};
   --db-link-color: #f55;
@@ -172,6 +174,7 @@
   --db-delayed-text-color: #{db-palette-color('white')};
   --db-delayed-light-text-color: #{db-palette-color('white')};
   --db-delayed-background-color: #cc1526;
+  --db-field-border-color: #000;
   --db-border-color: #{mix(db-palette-color('coolgray400'), db-palette-color('coolgray600'), 40%)};
   --db-loud-border-color: #{db-palette-color('coolgray200')};
   --db-track-background-color: #4c70ab;
@@ -179,8 +182,8 @@
   --db-caret-color: #ff5a5a;
   --db-success-color: #018531;
   --db-success-background-color: #339863;
-  --db-warning-color: #ff653c;
-  --db-warning-background-color: #e64e26;
+  --db-warning-color: #f76166;
+  --db-warning-background-color: #cc1526;
   --db-informative-color: #fff;
   --db-informative-background-color: #{mix(db-palette-color('coolgray400'),
   db-palette-color('coolgray500'))};
@@ -217,6 +220,7 @@
   --db-border-color: #{db-palette-color('red600')};
   --db-primary-background-color: #{db-palette-color('dbrot')};
   --db-secondary-background-color: #{db-palette-color('white')};
+  --db-field-border-color: var(--db-secondary-background-color);
   --db-darker-background-color: #{db-palette-color('red600')};
   --db-primary-text-color: #{db-palette-color('white')};
   --db-secondary-text-color: #fffdfd;

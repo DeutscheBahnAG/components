@@ -1,6 +1,6 @@
 @mixin db-component-padding($size, $border-width-key) {
-  padding: #{db-component-padding-top($size, $border-width-key) - 1px} #{db-component-horizontal-padding($size,
-  $border-width-key)} #{db-component-padding-bottom($size, $border-width-key) + 1px};
+  padding: #{db-component-padding-top($size, $border-width-key)} #{db-component-horizontal-padding($size,
+  $border-width-key)} #{db-component-padding-bottom($size, $border-width-key)};
 }
 
 @mixin db-component-text-style($size, $border-width-key) {

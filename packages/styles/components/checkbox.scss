@@ -7,8 +7,8 @@
  * 4. Optimize visual alignment (0.01em) due to different font sizes
  */
 
-$db-checkbox-size: 16px;
-$db-checkbox-outer-size: $db-checkbox-size + 2 * db-border-width('checkbox');
+$db-checkbox-outer-size: 20px;
+$db-checkbox-size: $db-checkbox-outer-size - 2 * db-border-width('checkbox');
 $db-checkbox-gap: 0.5em;
 
 .db-checkbox {
@@ -38,27 +38,46 @@ $db-checkbox-gap: 0.5em;
 
 .db-checkbox__box {
   background: var(--db-primary-background-color);
-  border: db-border-width('checkbox') solid;
-  border-radius: 2.2px;
-  box-sizing: content-box;
+  border-radius: 2.5px;
   flex-shrink: 0;
-  height: $db-checkbox-size;
+  height: $db-checkbox-outer-size;
   position: relative;
   top: 4px;
-  width: $db-checkbox-size;
+  width: $db-checkbox-outer-size;
 
   svg {
     @include safari-svg-fix;
     display: block;
-    height: inherit;
+    height: 100%;
     position: absolute; /* 2 */
     left: 50%; /* 2 */
     transform: translateX(-50%); /* 2 */
-    width: inherit;
+    width: 100%;
+  }
+}
+
+.db-checkbox__background {
+  fill: var(--db-primary-background-color);
+  stroke: currentColor;
+  x: -1.5px;
+  y: -1.5px;
+  width: 19px;
+  height: 19px;
+  stroke-width: 1px;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    x: -1.25px;
+    y: -1.25px;
+    width: 18.5px;
+    height: 18.5px;
+    stroke-width: 1.5px;
   }
 
-  .db-checkbox:active > input:not(:disabled):not(:checked) + & {
-    background: var(--db-secondary-background-color);
+  /* stylelint-disable-next-line selector-max-compound-selectors */
+  .db-checkbox:active > input:not(:disabled):not(:checked) + .db-checkbox__box & {
+    fill: var(--db-darker-background-color);
   }
 }
 
@@ -93,9 +112,8 @@ $db-checkbox-gap: 0.5em;
   fill: var(--db-primary-button-disabled-text-color);
 }
 
-:checked:not(:indeterminate) + .db-checkbox__box {
-  border-color: transparent;
-  background: currentColor;
+:checked:not(:indeterminate) + .db-checkbox__box .db-checkbox__background {
+  fill: currentColor;
 }
 
 :disabled + .db-checkbox__box {

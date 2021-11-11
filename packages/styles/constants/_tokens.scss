@@ -281,7 +281,7 @@ $db-tokens: (
   ),
   'bordersize': (
     'input': 1px,
-    'checkbox': 2px,
+    'checkbox': 1.5px,
     'button': 1px,
   ),
   'fontfamily': (
@@ -371,15 +371,15 @@ $db-tokens: (
     's': 28px,
     'm': 36px,
     'l': 44px,
-    'xl': 56px,
+    'xl': 52px,
   ),
   'radius': (
-    'xs': 2.9px,
+    'xs': 4px,
     's': 4px,
-    'm': 5.1px,
-    'l': 6.3px,
-    'xl': 8px,
-    'modal': 16px,
+    'm': 4px,
+    'l': 4px,
+    'xl': 4px,
+    'modal': 8px,
   ),
   'icon': (
     'xs': 12px,

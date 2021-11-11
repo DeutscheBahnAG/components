@@ -12,8 +12,12 @@ $db-select-chevron-margin: 16px;
   @include db-text-style($db-select-text-style);
   @include db-focus-ring($focus-selector: ':focus-within', $transition: 'border 200ms');
   align-items: stretch;
-  background-color: var(--db-secondary-background-color);
-  border: db-border-width('input') solid var(--db-secondary-background-color);
+  background: linear-gradient(0deg, var(--db-field-border-color), var(--db-field-border-color)) #{-1 *
+    db-border-width('input')} calc(100% + #{db-border-width('input')}) / db-border-width('input')
+    db-border-width('input') repeat-x,
+    var(--db-secondary-background-color);
+  background-clip: border-box;
+  border: db-border-width('input') solid transparent;
   box-sizing: border-box;
   color: var(--db-primary-text-color);
   display: inline-flex;
@@ -92,10 +96,10 @@ $db-select-chevron-margin: 16px;
 
       select {
         border-radius: db-border-radius($size);
-        padding-bottom: $vertical-padding + 1px;
+        padding-bottom: $vertical-padding;
         padding-left: $horizontal-padding;
         padding-right: calc(#{2 * $horizontal-padding} + var(--db-select--chevron-width));
-        padding-top: $vertical-padding - 1px;
+        padding-top: $vertical-padding;
       }
 
       svg {

@@ -452,7 +452,7 @@ import { Textfield, Link } from '@db-design/react';
     style={{
       border: '#73aef4 dashed',
       borderWidth: '1px 0 0',
-      marginTop: '-23px',
+      marginTop: '-20px',
       position: 'absolute',
       width: '768px',
       pointerEvents: 'none',
@@ -462,9 +462,9 @@ import { Textfield, Link } from '@db-design/react';
     style={{
       border: '#b4d5f6 dashed',
       borderWidth: '1px 0',
-      marginTop: '-57px',
+      marginTop: '-53px',
       position: 'absolute',
-      height: '58px',
+      height: '54px',
       width: '768px',
       pointerEvents: 'none',
     }}

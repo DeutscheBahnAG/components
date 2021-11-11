@@ -57,7 +57,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
           type="checkbox"
         />
         <span className="db-checkbox__box">
-          <svg viewBox="0 0 16 16">
+          <svg viewBox="-2 -2 20 20">
+            <rect rx="2.5" className="db-checkbox__background" />
             <path
               className="db-checkbox__checked"
               d="M6.5,12.2 C6.1,12.5 5.6,12.6 5.2,12.3 L5,12.1 C4.8,11.9 3.9,11 2.3,9.3 C1.9,9 1.9,8.3 2.3,7.9 C2.6,7.5 3.3,7.5 3.7,7.9 L5.8,10 L12.2,3.7 C12.5,3.3 13.2,3.3 13.6,3.7 C14,4.1 14,4.7 13.6,5.1 L6.5,12.2 Z"
