@@ -35,12 +35,12 @@ import {
 import Icons from '@db-design/react-icons';
 import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import { useState } from 'react';
-import { Themes } from './theme'
+import { themes } from './theme';
 
 const [themeIndex, setThemeIndex] = useState(0);
 
 <div className="rsg--preview-37" style={{ borderRadius: radius.l }}>
-  <Theme theme={Themes[themeIndex]}>
+  <Theme theme={themes[themeIndex]}>
     <Container
       filled
       align="center"
@@ -63,12 +63,12 @@ const [themeIndex, setThemeIndex] = useState(0);
       </div>
       <p>
         <Copy size="s">Current theme:</Copy>
-        <Copy size="l">{Themes[themeIndex]}</Copy>
+        <Copy size="l">{themes[themeIndex]}</Copy>
       </p>
       <div>
         <Button
           onClick={() => {
-            setThemeIndex(themeIndex === 0 ? Themes.length - 1 : themeIndex - 1);
+            setThemeIndex(themeIndex === 0 ? themes.length - 1 : themeIndex - 1);
           }}
           variant="secondary"
           icon={<Icons.NavigationArrowBack />}
@@ -78,7 +78,7 @@ const [themeIndex, setThemeIndex] = useState(0);
         </Button>
         <Button
           onClick={() => {
-            setThemeIndex(themeIndex === Themes.length - 1 ? 0 : themeIndex + 1);
+            setThemeIndex(themeIndex === themes.length - 1 ? 0 : themeIndex + 1);
           }}
           icon={<Icons.NavigationArrowForward />}
           style={{ width: '212px' }}
