@@ -46,15 +46,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
       <label style={style as CSSProperties} className={clsx('db-checkbox', className)}>
         <input
           ref={inputRef}
+          {...otherProps}
+          checked={checked}
+          type="checkbox"
           onFocus={(event) => {
             let stopped;
             if (otherProps.onFocus) stopped = otherProps.onFocus(event);
             if (stopped !== false && !event.defaultPrevented) enforceFocusRingInSafari(event);
             return stopped;
           }}
-          checked={checked}
-          {...otherProps}
-          type="checkbox"
         />
         <span className="db-checkbox__box">
           <svg viewBox="-2 -2 20 20">
