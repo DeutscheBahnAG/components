@@ -9,23 +9,19 @@ $db-select-chevron-margin: 16px;
 
 .db-select {
   --db-select--chevron-width: 16px;
+  $border: db-border-width('input');
   @include db-text-style($db-select-text-style);
   @include db-focus-ring($focus-selector: ':focus-within', $transition: 'border 200ms');
   align-items: stretch;
-  background: linear-gradient(0deg, var(--db-field-border-color), var(--db-field-border-color)) #{-1 *
-    db-border-width('input')} calc(100% + #{db-border-width('input')}) / db-border-width('input')
-    db-border-width('input') repeat-x,
+  background: linear-gradient(var(--db-field-border-color) 0 0) 0 calc(100% + #{$border}) / $border
+    $border repeat-x,
     var(--db-secondary-background-color);
   background-clip: border-box;
-  border: db-border-width('input') solid transparent;
+  border: $border solid transparent;
   box-sizing: border-box;
   color: var(--db-primary-text-color);
   display: inline-flex;
   position: relative;
-
-  @media (prefers-contrast: more) {
-    border-color: var(--db-loud-border-color);
-  }
 
   &--disabled {
     background: transparent;
@@ -74,6 +70,10 @@ $db-select-chevron-margin: 16px;
     fill-rule: evenodd;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+
+  @media (prefers-contrast: more) {
+    border-color: var(--db-loud-border-color);
   }
 }
 
