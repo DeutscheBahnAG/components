@@ -24,7 +24,7 @@ export interface StatusProps {
   severity: StatusSeveritiesType;
   /** The text to be displayed */
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Status: React.FC<StatusProps> = ({
