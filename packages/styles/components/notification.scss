@@ -100,7 +100,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   margin-top: 13px;
 }
 
-@include media('<tablet') {
+@media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
   .db-notification {
     display: grid;
     grid-template-areas: 'icon content close' 'icon action close';

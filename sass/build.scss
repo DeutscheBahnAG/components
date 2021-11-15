@@ -2,9 +2,6 @@
 @import '@db-design/styles/abstracts';
 @import '@db-design/styles/global';
 
-// Vendor (Vendor specific styles: DSM design tokens, Include media mixin...)
-@import 'vendor/**/*.scss';
-
 // Setup (reset, base etc..)
 @import 'setup/*.scss';
 

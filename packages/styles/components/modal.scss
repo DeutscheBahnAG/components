@@ -31,7 +31,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   opacity: 0;
   transition: background-color $db-modal--appearance-duration,
     opacity $db-modal--appearance-duration;
-  @include media('print') {
+  @media print {
     position: static;
   }
 }
@@ -70,7 +70,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   @include desktop {
     max-height: 75%;
   }
-  @include media('print') {
+  @media print {
     display: block;
     overflow: visible;
     max-height: unset;
@@ -112,7 +112,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 .db-modal__closebutton {
   // Place visually right aligned.
   transform: translate(db-spacing('s'), db-spacing('xs', $negative: true));
-  @include media('print') {
+  @media print {
     display: none;
   }
 }
@@ -154,7 +154,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
     padding: 0 $db-modal--dialog-padding-x-desktop;
     margin: 0 #{-$db-modal--dialog-padding-x-desktop};
   }
-  @include media('print') {
+  @media print {
     overflow-y: visible;
     background: none;
     border-bottom: db-border-width('input') solid db-border-color('input');
@@ -178,13 +178,13 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   align-items: stretch;
   margin: 0 -1px;
   padding-top: $db-modal--dialog-padding-y-mobile;
-  @include media('print') {
+  @media print {
     display: none;
   }
 }
 
 .db-modal__actions--full-s {
-  @include media('<tablet') {
+  @media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -198,7 +198,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--full-m {
-  @include media('<desktop') {
+  @media (max-width: #{map-get($breakpoints, 'desktop') - 1px}) {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -224,7 +224,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--center-s {
-  @include media('<tablet') {
+  @media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
     justify-content: center;
 
     .db-button {
@@ -234,7 +234,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
 }
 
 .db-modal__actions--center-m {
-  @include media('<desktop') {
+  @media (max-width: #{map-get($breakpoints, 'desktop') - 1px}) {
     justify-content: center;
 
     .db-button {

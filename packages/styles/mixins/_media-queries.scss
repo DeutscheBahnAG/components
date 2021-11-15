@@ -1,13 +1,11 @@
-@import 'include-media';
-
 @mixin tablet {
-  @include media('>=tablet') {
+  @media (min-width: #{map-get($breakpoints, 'tablet')}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @include media('>=desktop') {
+  @media (min-width: #{map-get($breakpoints, 'desktop')}) {
     @content;
   }
 }
