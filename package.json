@@ -133,10 +133,10 @@
     }
   },
   "resolutions": {
+    "ansi-regex": "^5.0.1",
+    "browserslist": "^4.16.5",
     "chokidar": "^3",
-    "react-dev-utils": "^11",
-    "@types/react": "^16",
-    "browserslist": "^4.16.5"
+    "immer": "^9.0.6"
   },
   "workspaces": [
     "packages/*"
