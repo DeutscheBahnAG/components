@@ -185,14 +185,14 @@ When both properties are set, a link (= `<a>`) gets rendered. The `onClick` stil
 
 ### Using Next.js
 
-As Next.js requires to set the `href` in a parent element, the `Link` will not recognize automatically that it’s a link (= `<a>`) and render as a `<button>`. Therefore, the `type` must be set manually:
+Since Next.js requires the `href` to be set in a wrapper link component, the actual `Link` must have the `href` passed through. To do this, use the [`passHref`](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag) switch in the Next.js link wrapper:
 
 ```jsx static
 import NextLink from 'next/link';
 import { Link } from '@db-design/react';
 
-<NextLink href="/">
-  <Link type='link'>Link</Link>
+<NextLink href="/" passHref>
+  <Link>Link</Link>
 </NextLink>;
 ```
 
