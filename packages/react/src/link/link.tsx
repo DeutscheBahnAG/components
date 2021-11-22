@@ -1,4 +1,4 @@
-/* eslint-disable react/no-did-update-set-state, no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import {
@@ -7,15 +7,19 @@ import {
   NavigationArrowForward,
   NavigationArrowBack,
 } from '@db-design/react-icons';
+import HtmlAnchorOrButton from '../helper/html-anchor-or-button';
 
 export const linkIconPositions = ['none', 'auto', 'before', 'after'] as const;
 export type LinkIconPositionsType = typeof linkIconPositions[number];
 
-export const linkTypes = ['link', 'button', 'submit', 'reset'] as const;
-export type LinkTypesType = typeof linkTypes[number];
+export const linkTypes = ['link'] as const;
+export type LinkTypeType = typeof linkTypes[number];
 
 export const linkVariants = ['primary', 'secondary', 'mixed'] as const;
 export type LinkVariantsType = typeof linkVariants[number];
+
+type HTMLButtonTypeAttributeType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+export type ButtonTypesType = NonNullable<HTMLButtonTypeAttributeType>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface LinkProps extends Record<string, any> {
@@ -38,65 +42,73 @@ export interface LinkProps extends Record<string, any> {
   iconPosition?: LinkIconPositionsType;
   /** inline styles */
   style?: React.CSSProperties;
-  type?: LinkTypesType;
+  type?: LinkTypeType | ButtonTypesType;
   /** the appearance of the Link */
   variant?: LinkVariantsType;
 }
 
-const Link: React.FC<LinkProps> = ({
-  children,
-  className = '',
-  disabled = false,
-  download = false,
-  href = undefined,
-  icon: customIcon,
-  iconPosition = 'auto',
-  style = {},
-  type = 'button',
-  variant = 'primary',
-  ...otherProps
-}) => {
-  const LinkRef = React.createRef<HTMLAnchorElement | HTMLLinkElement>();
-  const isLink = type === 'link' || href !== undefined;
-  const isExternal = href && href.match(/^((https?):)?\/\//);
-  const icon =
-    customIcon ||
-    (download && <ActionDownload />) ||
-    (isExternal && <NavigationLinkExternal className="db-link__icon-arrow" />) ||
-    (iconPosition === 'before' ? (
-      <NavigationArrowBack className="db-link__icon-arrow" />
-    ) : (
-      <NavigationArrowForward className="db-link__icon-arrow" />
-    ));
+const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
+  (
+    {
+      children,
+      className = '',
+      disabled = false,
+      download = false,
+      href = undefined,
+      icon: customIcon,
+      iconPosition = 'auto',
+      style = {},
+      type = 'button',
+      variant = 'primary',
+      ...otherProps
+    },
+    ref
+  ) => {
+    const isLink = type === 'link' || href !== undefined;
+    const isExternal = href && href.match(/^((https?):)?\/\//);
+    const icon =
+      customIcon ||
+      (download && <ActionDownload />) ||
+      (isExternal && <NavigationLinkExternal className="db-link__icon-arrow" />) ||
+      (iconPosition === 'before' ? (
+        <NavigationArrowBack className="db-link__icon-arrow" />
+      ) : (
+        <NavigationArrowForward className="db-link__icon-arrow" />
+      ));
 
-  const Element = isLink ? 'a' : 'button';
+    const elementCommonProps = {
+      style: { ...style },
+      className: clsx(
+        'db-link',
+        `db-link--${variant}`,
+        { 'db-link--icon': iconPosition !== 'none' },
+        className
+      ),
+    };
 
-  return (
-    <>
-      <Element
-        style={{ ...style }}
-        // @ts-expect-error HTMLAnchorElement and HTMLLinkElement do not have compatible APIs, but we aren't using them on either
-        ref={LinkRef}
-        type={isLink ? undefined : (type as ButtonHTMLAttributes<HTMLButtonElement>['type'])}
-        href={href}
-        disabled={disabled}
-        className={clsx(
-          'db-link',
-          `db-link--${variant}`,
-          { 'db-link--icon': iconPosition !== 'none' },
-          className
-        )}
-        {...otherProps}
-      >
-        {(iconPosition === 'before' && icon) ||
-          (iconPosition === 'auto' && (download || customIcon) && icon)}
-        <span>{children}</span>
-        {(iconPosition === 'after' && icon) ||
-          (iconPosition === 'auto' && !download && !customIcon && href !== undefined && icon)}
-      </Element>
-      <span className="db-inline-spacer"> </span>
-    </>
-  );
-};
+    const elementSpecificProps = isLink
+      ? { href }
+      : { type: type as HTMLButtonTypeAttributeType, disabled };
+
+    return (
+      <>
+        <HtmlAnchorOrButton
+          isAnchor={isLink}
+          ref={ref}
+          {...elementCommonProps}
+          {...elementSpecificProps}
+          {...otherProps}
+        >
+          {(iconPosition === 'before' && icon) ||
+            (iconPosition === 'auto' && (download || customIcon) && icon)}
+          <span>{children}</span>
+          {(iconPosition === 'after' && icon) ||
+            (iconPosition === 'auto' && !download && !customIcon && href !== undefined && icon)}
+        </HtmlAnchorOrButton>
+        <span className="db-inline-spacer"> </span>
+      </>
+    );
+  }
+);
 
 export default Link;

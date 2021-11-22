@@ -471,3 +471,22 @@ import { Textfield, Link } from '@db-design/react';
   />
 </>;
 ```
+
+## forwardRef
+
+You can use a Ref to access the DOM node of the link or button:
+
+```jsx
+const RefExample = () => {
+  const buttonRef = React.useRef(null);
+  React.useEffect(() => {
+    if (buttonRef.current) {
+      console.log('Button reference to DOM node:', buttonRef.current);
+    }
+  });
+  return <Button ref={buttonRef} loading>A Button</Button>
+}
+<RefExample />
+```
+
+Note that the referred DOM node is either an anchor link or a button, depending on Link props described in the sections above.

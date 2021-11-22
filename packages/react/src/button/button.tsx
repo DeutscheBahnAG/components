@@ -1,9 +1,10 @@
-/* eslint-disable react/no-did-update-set-state, no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import Loadingindicator, { LoadingIndicatorSizesType } from '../loadingindicator';
 import { ResponsiveType } from '../shared';
+import HtmlAnchorOrButton from '../helper/html-anchor-or-button';
 
 const Screenreader: React.FC = ({ children }) => <span aria-hidden="false">{children}</span>;
 
@@ -17,11 +18,14 @@ export type ButtonShapesType = typeof buttonShapes[number];
 export const buttonSizes = ['s', 'm', 'l', 'xl'] as const;
 export type ButtonSizesType = typeof buttonSizes[number];
 
-export const buttonTypes = ['link', 'button', 'submit', 'reset'] as const;
-export type ButtonTypesType = typeof buttonTypes[number];
+export const linkTypes = ['link'] as const;
+export type LinkTypeType = typeof linkTypes[number];
 
 export const buttonVariants = ['primary', 'secondary', 'solid', 'hover-only'] as const;
 export type ButtonVariantsType = typeof buttonVariants[number];
+
+type HTMLButtonTypeAttributeType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+export type ButtonTypesType = NonNullable<HTMLButtonTypeAttributeType>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface ButtonProps extends Record<string, any> {
@@ -50,7 +54,7 @@ export interface ButtonProps extends Record<string, any> {
   /** inline styles */
   style?: React.CSSProperties;
   /** the type of the button */
-  type?: ButtonTypesType;
+  type?: LinkTypeType | ButtonTypesType;
   /** the appearance of the button */
   variant?: ButtonVariantsType;
 }
@@ -62,109 +66,122 @@ const loadingIndicatorSizeMap: Record<ButtonSizesType, LoadingIndicatorSizesType
   s: 'xs',
 };
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  className = '',
-  disabled = false,
-  fullWidth = false,
-  // @NOTE The `href` property switches between a `<button>` and `<a>` element. Should be explicit.
-  href,
-  icon,
-  iconPosition = 'before',
-  loading = false,
-  loadingLabel = 'Wird geladen …',
-  shape = 'default',
-  size = 'l',
-  style = {},
-  type = 'button',
-  variant = 'primary',
-  ...otherProps
-}) => {
-  const [minWidth, setMinWidth] = useState<string>();
-  const [previousMinWidth, setPreviousMinWidth] = useState<string>();
-  const [tooltip, setTooltip] = useState<string>();
-  const [ariaLabel, setAriaLabel] = useState<string>();
-  const buttonRef = React.createRef<HTMLAnchorElement | HTMLButtonElement>();
+const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      className = '',
+      disabled = false,
+      fullWidth = false,
+      // @NOTE The `href` property switches between a `<button>` and `<a>` element. Should be explicit.
+      href,
+      icon,
+      iconPosition = 'before',
+      loading = false,
+      loadingLabel = 'Wird geladen …',
+      shape = 'default',
+      size = 'l',
+      style = {},
+      type = 'button',
+      variant = 'primary',
+      ...otherProps
+    },
+    ref
+  ) => {
+    const [minWidth, setMinWidth] = useState<string>();
+    const [previousMinWidth, setPreviousMinWidth] = useState<string>();
+    const [tooltip, setTooltip] = useState<string>();
+    const [ariaLabel, setAriaLabel] = useState<string>();
+    const buttonRef =
+      ref !== null && typeof ref === 'object' && 'current' in ref
+        ? ref
+        : React.createRef<NonNullable<HTMLAnchorElement | HTMLButtonElement>>();
 
-  useEffect(() => {
-    // if button changed to loading state, set its previous
-    // width as minWidth, so that it keeps its size
-    if (previousMinWidth && loading) {
-      setMinWidth(`${previousMinWidth}px`);
-      setPreviousMinWidth(undefined);
-    }
-    // when button leaves loading state, remove minWidth again
-    else if (!previousMinWidth && !loading) {
-      setMinWidth(undefined);
+    useEffect(() => {
+      // if button changed to loading state, set its previous
+      // width as minWidth, so that it keeps its size
+      if (previousMinWidth && loading) {
+        setMinWidth(`${previousMinWidth}px`);
+        setPreviousMinWidth(undefined);
+      }
+      // when button leaves loading state, remove minWidth again
+      else if (!previousMinWidth && !loading) {
+        setMinWidth(undefined);
+        const buttonEl = buttonRef.current;
+        setPreviousMinWidth(buttonEl ? `${buttonEl.offsetWidth}` : undefined);
+      }
+    }, [loading, buttonRef, previousMinWidth]);
+
+    const isLink = type === 'link' || href !== undefined;
+
+    const loadingindicatorSize =
+      size instanceof Object
+        ? {
+            mobile: loadingIndicatorSizeMap[size.mobile],
+            tablet: size.tablet && loadingIndicatorSizeMap[size.tablet],
+            desktop: size.desktop && loadingIndicatorSizeMap[size.desktop],
+          }
+        : loadingIndicatorSizeMap[size];
+
+    useEffect(() => {
       const buttonEl = buttonRef.current;
-      setPreviousMinWidth(buttonEl ? `${buttonEl.offsetWidth}` : undefined);
-    }
-  }, [loading, buttonRef, previousMinWidth]);
+      if (!buttonEl) {
+        return;
+      }
+      if (shape !== 'default') {
+        setTooltip(buttonEl.textContent || undefined);
+      } else if (loading) {
+        setAriaLabel(loadingLabel);
+      } else {
+        setTooltip(undefined);
+        setAriaLabel(undefined);
+      }
+    }, [shape, buttonRef, loading, loadingLabel]);
 
-  const isLink = type === 'link' || href !== undefined;
-  const Element = isLink ? 'a' : 'button';
+    const elementCommonProps = {
+      style: { ...style, minWidth },
+      className: clsx(
+        'db-button',
+        `db-button--${variant}`,
+        responsiveClassNames(shape, 'db-button--'),
+        { 'db-button--block': fullWidth },
+        { [`db-button--icon-position-${iconPosition}`]: icon && shape === 'default' },
+        { 'db-button--disabled': disabled },
+        { 'db-button--loading': loading },
+        responsiveClassNames(size, 'db-button--size-'),
+        className
+      ),
+      title: tooltip,
+      'aria-label': ariaLabel,
+    };
 
-  const loadingindicatorSize =
-    size instanceof Object
-      ? {
-          mobile: loadingIndicatorSizeMap[size.mobile],
-          tablet: size.tablet && loadingIndicatorSizeMap[size.tablet],
-          desktop: size.desktop && loadingIndicatorSizeMap[size.desktop],
-        }
-      : loadingIndicatorSizeMap[size];
+    const elementSpecificProps = isLink
+      ? { href }
+      : { type: type as HTMLButtonTypeAttributeType, disabled: disabled || loading };
 
-  useEffect(() => {
-    const buttonEl = buttonRef.current;
-    if (!buttonEl) {
-      return;
-    }
-    if (shape !== 'default') {
-      setTooltip(buttonEl.textContent || undefined);
-    } else if (loading) {
-      setAriaLabel(loadingLabel);
-    } else {
-      setTooltip(undefined);
-      setAriaLabel(undefined);
-    }
-  }, [shape, buttonRef, loading, loadingLabel]);
-
-  return (
-    <>
-      <Element
-        style={{ ...style, minWidth }}
-        // @ts-expect-error HTMLAnchorElement and HTMLButtonElement do not have compatible APIs, but we aren't using them on either
-        ref={buttonRef}
-        type={isLink ? undefined : (type as ButtonHTMLAttributes<HTMLButtonElement>['type'])}
-        href={href}
-        disabled={disabled || loading}
-        aria-label={ariaLabel}
-        title={tooltip}
-        className={clsx(
-          'db-button',
-          `db-button--${variant}`,
-          responsiveClassNames(shape, 'db-button--'),
-          { 'db-button--block': fullWidth },
-          { [`db-button--icon-position-${iconPosition}`]: icon && shape === 'default' },
-          { 'db-button--disabled': disabled },
-          { 'db-button--loading': loading },
-          responsiveClassNames(size, 'db-button--size-'),
-          className
-        )}
-        {...otherProps}
-      >
-        {loading && (
-          <span className="db-button__loadingindicator">
-            <Loadingindicator size={loadingindicatorSize} />
-          </span>
-        )}
-        {iconPosition === 'before' && icon}
-        {shape === 'default' ? children : <Screenreader>{children}</Screenreader>}
-        {iconPosition === 'after' && icon}
-      </Element>
-      <span className="db-inline-spacer"> </span>
-    </>
-  );
-};
+    return (
+      <>
+        <HtmlAnchorOrButton
+          isAnchor={isLink}
+          ref={buttonRef}
+          {...elementCommonProps}
+          {...elementSpecificProps}
+          {...otherProps}
+        >
+          {loading && (
+            <span className="db-button__loadingindicator">
+              <Loadingindicator size={loadingindicatorSize} />
+            </span>
+          )}
+          {iconPosition === 'before' && icon}
+          {shape === 'default' ? children : <Screenreader>{children}</Screenreader>}
+          {iconPosition === 'after' && icon}
+        </HtmlAnchorOrButton>
+        <span className="db-inline-spacer"> </span>
+      </>
+    );
+  }
+);
 
 export const validateVariantCombinations: React.Validator<ButtonVariantsType> = (
   { icon, shape, size, variant }: ButtonProps,
