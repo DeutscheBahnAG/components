@@ -192,7 +192,7 @@ import NextLink from 'next/link';
 import { Link } from '@db-design/react';
 
 <NextLink href="/">
-  <Link type='link'>Link</Button>
+  <Link type='link'>Link</Link>
 </NextLink>;
 ```
 
