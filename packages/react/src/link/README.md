@@ -255,9 +255,9 @@ import { Textfield, Button } from '@db-design/react';
 </>;
 ```
 
-## forwardRef
+## Access DOM via Ref
 
-You can use a Ref to access the DOM node of the link or button:
+You can use a [Ref](https://reactjs.org/docs/refs-and-the-dom.html) to access the DOM node of the Link or Button:
 
 ```jsx
 const RefExample = () => {
