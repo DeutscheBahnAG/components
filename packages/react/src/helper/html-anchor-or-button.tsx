@@ -32,12 +32,12 @@ const HtmlAnchorOrButton = React.forwardRef(
   ): ReactElement & HTMLAnchorOrButtonType<T> =>
     isAnchor ? (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      <a ref={ref as React.Ref<HTMLAnchorElement>} {...otherProps}>
+      <a ref={ref as React.Ref<HTMLAnchorElement>} {...otherProps} data-testid="link">
         {children}
       </a>
     ) : (
       // eslint-disable-next-line react/button-has-type
-      <button ref={ref as React.Ref<HTMLButtonElement>} {...otherProps}>
+      <button ref={ref as React.Ref<HTMLButtonElement>} {...otherProps} data-testid="button">
         {children}
       </button>
     )

@@ -95,4 +95,22 @@ describe('Button Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  it('should render an aria-label when using a Ref on loading button', () => {
+    const RefExample = () => {
+      const buttonRef = React.useRef(null);
+      React.useEffect(() => {
+        if (buttonRef.current) {
+          buttonRef.current.focus();
+        }
+      });
+      return (
+        <Button ref={buttonRef} loading>
+          A Button
+        </Button>
+      );
+    };
+    const { getByTestId } = render(<RefExample />);
+    expect(getByTestId('button')).toHaveAttribute('aria-label');
+  });
 });
