@@ -9,7 +9,7 @@ repositories:
 releases:
   - name: react
     chart: bahnx/service
-    version: 1.5.1
+    version: 3.0.4
     values:
       - values.yaml.gotmpl
       - image:
