@@ -59,6 +59,12 @@ releases:
               hosts:
                 - {{ .Values.host }}
           {{ end }}
+        extraVolumes:
+          - name: cache
+            emptyDir: {}
+        extraVolumeMounts:
+          - name: cache
+            mountPath: /tmp
 
 
 environments:
