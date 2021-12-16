@@ -303,34 +303,34 @@ button.db-transportchip {
 .db-transportchip--akna1,
 .db-transportchip--akna2,
 .db-transportchip--akna3 {
-  background: #fe7f1a;
+  background: #f39200;
   width: 1.75em * 2.5 + $db-transportchip-overlap * 2;
 }
 
 .db-transportchip--sbahn-hamburg {
   &.db-transportchip--s1 {
-    background: #039729;
+    background: #13a538;
   }
 
   &.db-transportchip--s11,
   &.db-transportchip--s2 {
-    @include db-transportchip-border(2px, #039729);
+    @include db-transportchip-border(2px, #13a538);
     background: #fff;
-    color: #039729;
+    color: #13a538;
   }
 
   &.db-transportchip--s2 {
-    border-color: #b60d36;
-    color: #b60d36;
+    border-color: #b71d44;
+    color: #b71d44;
   }
 
   &.db-transportchip--s21 {
-    background: #b60d36;
+    background: #b71d44;
   }
 
   &.db-transportchip--s3,
   &.db-transportchip--s31 {
-    background: #531b6e;
+    background: #662483;
   }
 }
 
@@ -338,21 +338,21 @@ button.db-transportchip {
   width: 1.75em * 2.5;
 
   &.db-transportchip--u1 {
-    background: #0059a4;
+    background: #0069b4;
   }
 
   &.db-transportchip--u2 {
-    background: #ed0220;
+    background: #e30613;
   }
 
   &.db-transportchip--u3 {
     @include db-transportchip-border(1px, #00000050);
-    background: #ffd602;
+    background: #fd0;
     text-shadow: #000 0 0 0.0625em;
   }
 
   &.db-transportchip--u4 {
-    background: #028b8f;
+    background: #009ba4;
   }
 
   &.db-transportchip--u5 {
@@ -402,70 +402,70 @@ button.db-transportchip {
 
 .db-transportchip--sbahn-muenchen {
   &.db-transportchip--s1 {
-    background: #19b3e3;
+    background: #16bae7;
   }
 
   &.db-transportchip--s2 {
-    background: #71bf44;
+    background: #76b82a;
   }
 
   &.db-transportchip--s3 {
-    background: #7b107d;
+    background: #951b81;
   }
 
   &.db-transportchip--s4 {
-    background: #ee1d26;
+    background: #e3051b;
   }
 
   &.db-transportchip--s6 {
-    background: #008a50;
+    background: #00975f;
   }
 
   &.db-transportchip--s7 {
-    background: #953833;
+    background: #892e23;
   }
 
   &.db-transportchip--s8 {
     background: #000;
-    color: #ffcb08;
+    color: #f0aa00;
   }
 
   &.db-transportchip--s20 {
-    background: #f05a72;
+    background: #ea516d;
   }
 }
 
 .db-transportchip--mvg {
   &.db-transportchip--u1 {
-    background: #3b7233;
+    background: #52822f;
   }
 
   &.db-transportchip--u2 {
-    background: #c4012e;
+    background: #c20831;
   }
 
   &.db-transportchip--u3 {
-    background: #ed6721;
+    background: #ec6725;
   }
 
   &.db-transportchip--u4 {
-    background: #00ab84;
+    background: #00a984;
   }
 
   &.db-transportchip--u5 {
-    background: #be7a00;
+    background: #bc7a00;
   }
 
   &.db-transportchip--u6 {
-    background: #0164af;
+    background: #0065ae;
   }
 
   &.db-transportchip--u7 {
-    background: linear-gradient(to bottom right, #3b7233 50%, #c4012e 0);
+    background: linear-gradient(to bottom right, #52822f 50%, #c20831 0);
   }
 
   &.db-transportchip--u8 {
-    background: linear-gradient(to bottom right, #c4012e 50%, #ed6721 0);
+    background: linear-gradient(to bottom right, #c20831 50%, #c20831 0);
   }
 
   &.db-transportchip--tram,
@@ -517,15 +517,15 @@ button.db-transportchip {
   width: 1.75em * 1.75;
 
   &.db-transportchip--s1 {
-    background: #047fb8;
+    background: #008bd2;
   }
 
   &.db-transportchip--s2 {
-    background: #ff0100;
+    background: #e30613;
   }
 
   &.db-transportchip--s3 {
-    background: #009377;
+    background: #00998b;
   }
 
   &.db-transportchip--s4 {
@@ -535,62 +535,62 @@ button.db-transportchip {
   }
 
   &.db-transportchip--s5 {
-    background: #7e3206;
+    background: #955328;
   }
 
   &.db-transportchip--s6 {
-    background: #f47822;
+    background: #ee7203;
   }
 
   &.db-transportchip--s7 {
-    background: #01220f;
+    background: #214b35;
   }
 
   &.db-transportchip--s8 {
-    background: #82c421;
+    background: #95c11f;
   }
 
   &.db-transportchip--s9 {
-    background: #81027e;
+    background: #951b81;
   }
 }
 
 .db-transportchip--vgf {
   &.db-transportchip--u1 {
-    background: #a30118;
+    background: #b51f1f;
   }
 
   &.db-transportchip--u2 {
-    background: #02a650;
+    background: #009640;
   }
 
   &.db-transportchip--u3 {
-    background: #35418b;
+    background: #4e55a2;
   }
 
   &.db-transportchip--u4 {
-    background: #e03181;
+    background: #ea5297;
   }
 
   &.db-transportchip--u5 {
-    background: #005e24;
+    background: #007339;
   }
 
   &.db-transportchip--u6 {
-    background: #005e24;
+    background: #0075bf;
   }
 
   &.db-transportchip--u7 {
-    background: #005e24;
+    background: #e5a100;
   }
 
   &.db-transportchip--u8 {
-    background: #c066a0;
+    background: #cd80b4;
   }
 
   &.db-transportchip--u9 {
     @include db-transportchip-border(2px, #000);
-    background: #ffd602;
+    background: #fd0;
     color: #000;
   }
 }
