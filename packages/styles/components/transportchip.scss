@@ -857,6 +857,132 @@ button.db-transportchip {
   }
 }
 
+// Stuttgart
+
+.db-transportchip--sbahn-stuttgart {
+  @include db-transportchip-default-border-radius;
+  min-width: unset;
+
+  &.db-transportchip--s1,
+  &.db-transportchip--s11 {
+    background: #60a92c;
+  }
+
+  &.db-transportchip--s2 {
+    background: #e3051b;
+  }
+
+  &.db-transportchip--s3 {
+    background: #ef7d00;
+  }
+
+  &.db-transportchip--s4 {
+    background: #005da9;
+  }
+
+  &.db-transportchip--s5 {
+    background: #009ed4;
+  }
+
+  &.db-transportchip--s6 {
+    background: #875300;
+  }
+
+  &.db-transportchip--s60 {
+    background: #969200;
+  }
+}
+
+.db-transportchip--ssb {
+  &.db-transportchip--bus {
+    clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+    width: 34px;
+  }
+
+  &.db-transportchip--u1 {
+    background: #c1966c;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u2 {
+    background: #e7792b;
+  }
+
+  &.db-transportchip--u3 {
+    background: #855b40;
+  }
+
+  &.db-transportchip--u4 {
+    background: #725f9a;
+  }
+
+  &.db-transportchip--u5 {
+    background: #00afde;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u6 {
+    background: #d9127e;
+  }
+
+  &.db-transportchip--u7 {
+    background: #00a982;
+  }
+
+  &.db-transportchip--u8 {
+    background: #b7af71;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u9 {
+    background: #fccf1f;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u11 {
+    background: #8a8b8a;
+  }
+
+  &.db-transportchip--u12 {
+    background: #83b4d5;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u13 {
+    background: #eb96a6;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u14 {
+    background: #63b550;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u15 {
+    background: #005093;
+  }
+
+  &.db-transportchip--u16 {
+    background: #bcb935;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u19 {
+    background: #f2b22a;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u29 {
+    background: #fccf1f;
+    color: #1a1919;
+  }
+
+  &.db-transportchip--u34 {
+    background: #63b550;
+    color: #1a1919;
+  }
+}
+
 // Bremen
 .db-transportchip--bsag {
   &.db-transportchip--tram,

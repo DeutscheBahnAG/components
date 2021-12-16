@@ -142,6 +142,7 @@ The local style is determined by the post code (`zipCode`) and the product type 
 <Transportchip name="S 1" zipCode="20000" /> {/* Hamburg   */}
 <Transportchip name="S 1" zipCode="60000" /> {/* Frankfurt */}
 <Transportchip name="S 1" zipCode="68000" /> {/* Mannheim  */}
+<Transportchip name="S 1" zipCode="70000" /> {/* Stuttgart  */}
 <Transportchip name="S 1" zipCode="80000" /> {/* München   */}
 ```
 
@@ -427,6 +428,32 @@ The styles are shared with Nürnberg.
 'RNV 5  STR 21  STR 21A  STR 22  STR 23  STR 24  STR 26'
   .split('  ')
   .map((name) => <Transportchip zipCode="69000" product="tram" name={name} />);
+```
+
+### Stuttgart
+
+The styles are shared with Fürth.
+
+#### S-Bahn Stuttgart
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'S1 S11 S2 S3 S4 S5 S6 S60'
+  .split(' ')
+  .map((name) => <Transportchip zipCode="70000" product="suburban" name={name} />);
+```
+
+#### U-Bahn Stuttgart
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'U1 U2 U3 U4 U5 U6 U7 U8 U9 U11 U12 U13 U14 U15 U16 U19 U29 U34'
+  .split(' ')
+  .map((name) => <Transportchip zipCode="70000" product="tram" name={name} />);
+```
+
+#### Bus Stuttgart
+
+```jsx { "props": { "className": "sg-components-transportationchip-list" } }
+'1 2 34'.split(' ').map((name) => <Transportchip zipCode="70000" product="bus" name={name} />);
 ```
 
 ### Bremen/Niedersachsen
