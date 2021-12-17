@@ -146,6 +146,10 @@ The local style is determined by the post code (`zipCode`) and the product type 
 <Transportchip name="S 1" zipCode="80000" /> {/* München   */}
 ```
 
+### Overview of local styles
+
+<img src="/dpp-local-transport-styles.png" width="768" alt="A map showing transport systems in Germany. Those which are supported, are highlighted">
+
 ### Berlin/Brandenburg
 
 #### S-Bahn Berlin

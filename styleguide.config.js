@@ -20,6 +20,7 @@ module.exports = {
   exampleMode: 'expand',
   title: 'DB React components',
   styleguideDir: 'build',
+  assetsDir: path.join(__dirname, './public'),
 
   ignore: [
     // These also need to be exlucded in the webpack config below
