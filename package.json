@@ -5,6 +5,7 @@
   "description": "DB React components for building websites and applications fast in the look and feel of Deutsche Bahn AG",
   "scripts": {
     "add-component": "yarn hygen component new",
+    "postadd-component": "yarn build:react",
     "styleguidist": "styleguidist server",
     "dev": "yarn styleguidist",
     "pretest": "yarn build:react-icons",
