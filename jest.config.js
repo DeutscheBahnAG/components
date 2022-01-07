@@ -18,6 +18,9 @@ module.exports = {
     '<rootDir>/.jest/adapter.js', // makes enzyme work with React 16
     '<rootDir>/.jest/require-context.js', // enables storyshots addon to auto-load story files
   ],
+  setupFilesAfterEnv: [
+    '<rootDir>/.jest/setup.js', // adds additional matchers
+  ],
   moduleNameMapper: {
     // we mock all external files that are not relevant for the tests, but might be imported in the files that are tested
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|md)$':
