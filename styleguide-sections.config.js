@@ -10,34 +10,65 @@ const webExtra = (components) =>
 module.exports = [
   {
     name: 'Components',
+    // prettier-ignore
     sections: [
       {
         name: 'Interactive',
-        components: web(['button', 'link', 'anchor']),
+        components: web([
+          'button',
+          'link',
+          'anchor',
+        ]),
       },
       {
         name: 'User input',
-        components: web(['textfield', 'passwordfield', 'checkbox', 'select']),
+        components: web([
+          'textfield',
+          'passwordfield',
+          'checkbox',
+          'select',
+        ]),
       },
       {
         name: 'Typography',
-        components: web(['copy', 'title']),
+        components: web([
+          'copy',
+          'title',
+        ]),
       },
       {
         name: 'Travel',
-        components: web(['time', 'triptime', 'triptimespan', 'track', 'transportchip']),
+        components: web([
+          'time',
+          'triptime',
+          'triptimespan',
+          'track',
+          'transportchip',
+        ]),
       },
       {
         name: 'Feedback',
-        components: web(['modal', 'status', 'notification', 'loadingindicator']),
+        components: web([
+          'modal',
+          'status',
+          'notification',
+          'loadingindicator',
+        ]),
       },
       {
         name: 'Brand',
-        components: web(['theme', 'logo', 'pulse']),
+        components: web([
+          'theme',
+          'logo',
+          'pulse',
+        ]),
       },
       {
         name: 'Layout and grid',
-        components: web(['layout', 'container']),
+        components: web([
+          'layout',
+          'container',
+        ]),
       },
     ],
     sectionDepth: 2,

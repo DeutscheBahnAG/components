@@ -10,3 +10,8 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+# We don't want empty lines in our templates that are being injected
+# somewhere in the middle of the other files
+[*.inject.ejs.t]
+insert_final_newline = false
