@@ -49,7 +49,14 @@ const getFileChoices = (componentName) => [
     message: 'add to styleguide-sections.config.ts',
     hint: 'Add component to a section in styleguidist',
   },
+  {
+    name: 'doc-component',
+    message: `${componentName}/${componentName}-doc.tsx`,
+    hint: 'Add a special doc component for demo purposes in styleguidist',
+  },
 ];
+
+const nonPreselectedFiles = ['doc-component'];
 
 module.exports = {
   prompt: async ({ prompter: enquirer, args }) => {
@@ -71,8 +78,10 @@ module.exports = {
       name: 'files',
       message: 'Select what to create (use space key to toggle):',
       choices: fileChoices,
-      // select all options by default
-      initial: fileChoices.map((option) => option.name),
+      // select options by default
+      initial: fileChoices
+        .map((option) => option.name)
+        .filter((optionName) => !nonPreselectedFiles.includes(optionName)),
     });
 
     const { section } = await enquirer.prompt({
