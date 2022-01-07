@@ -1,5 +1,5 @@
 ---
-to: packages/react/src/<%= name %>/<%= name %>.tsx
+to: "<%= files.includes('component') ? `packages/react/src/${name}/${name}.tsx` : null %>"
 ---
 import React from 'react';
 import clsx from 'clsx';

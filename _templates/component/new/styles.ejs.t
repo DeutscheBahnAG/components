@@ -1,5 +1,5 @@
 ---
-to: packages/styles/components/<%= name %>.scss
+to: "<%= files.includes('styles') ? `packages/styles/components/${name}.scss` : null %>"
 ---
 .db-<%= name %> {
   /* TODO: edit <%= Name %> component styles */

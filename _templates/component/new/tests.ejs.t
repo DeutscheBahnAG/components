@@ -1,5 +1,5 @@
 ---
-to: packages/react/src/<%= name %>/<%= name %>.test.jsx
+to: "<%= files.includes('tests') ? `packages/react/src/${name}/${name}.test.jsx` : null %>"
 ---
 import React from 'react';
 import { render, screen } from '@testing-library/react';

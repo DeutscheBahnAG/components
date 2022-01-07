@@ -1,5 +1,5 @@
 ---
-to: packages/react/src/<%= name %>/README.md
+to: "<%= files.includes('readme') ? `packages/react/src/${name}/README.md` : null %>"
 ---
 # <%= Name %>
 

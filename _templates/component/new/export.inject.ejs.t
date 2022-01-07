@@ -1,6 +1,6 @@
 ---
 inject: true
-to: packages/react/src/index.ts
+to: "<%= files.includes('export') ? 'packages/react/src/index.ts' : null %>"
 append: true
 skip_if: <%= name %>
 ---
