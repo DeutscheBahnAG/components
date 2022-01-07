@@ -24,7 +24,19 @@ yarn add @db-design/react-extra;
 
 ### Adding a New Component
 
+#### Option 1: Automatic Bootstrapping
+
+Run `yarn add-component` to bootstrap a new component for the [`@db-design/react`](https://www.npmjs.com/package/@db-design/react) package. You can optionally provide the component name right away, e.g. `yarn add-component radiobutton`.
+
+The `add-component` script will
+- Ask you for a component name if not already provided as argument
+- Validate and possibly reformat this name to match our naming guidelines
+- Give you the option to deselect some of the files which will be created
+- Let you select the section in the styleguidist documentation to add the component to
+
 Run `yarn dev` to start the perpetual creation of the component documentation.
+
+#### Option 2: Manual Creation
 
 This is a multi-package repository. Each component library is a separate Node package with its own `package.json`. This
 is managed via [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces). They reside in `./packages`.
@@ -38,7 +50,7 @@ Components should be placed in the appropriate package folder, in their own subf
 A component typically consists of:
 
 - A `index.js` re-exporting the default export of `component-name.jsx`.
-- A `component-name.jsx` file containing the React component as a default export. Be sure to include
+- A `component-name.tsx` file containing the React component as a default export. Be sure to also export the TypeScript type of your component props
   [prop types and default props](https://reactjs.org/docs/typechecking-with-proptypes.html) for the component.
 - An optional `component-name-doc.jsx` which can contain a modified version of the component for documentation (e.g.
   inline Modals)
@@ -65,6 +77,7 @@ import { Button } from '@db-design/react';
 
 ### Available Tasks
 
+- `yarn add-component`: Starts an assistant to bootstrap a new React component 
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
   - `yarn build:react`: Transpiles just the `@db-design/react` package to `./dist/web`.
   - `yarn build:react-extra`: Transpiles just the `@db-design/react-extra` package to `./dist/web-extra`.
