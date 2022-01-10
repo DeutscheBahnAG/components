@@ -1,18 +1,10 @@
-:root,
-.DB_LIGHT,
-.DB_LIGHT_ALTERNATE,
-.DB_BRANDED,
-.DB_DARK,
-.DB_DARK_ALTERNATE,
-.S_BAHN_LIGHT,
-.S_BAHN_LIGHT_ALTERNATE,
-.S_BAHN_BRANDED,
-.S_BAHN_LIGHT,
-.S_BAHN_LIGHT_ALTERNATE,
-.GREEN_CAMPAIGN_BRANDED,
-.PRIDE_LIGHT,
-.PRIDE_LIGHT_ALTERNATE,
-.DISPLAY {
+/* stylelint-disable scss/at-extend-no-missing-placeholder, order/order */
+
+:root {
+  @extend .DB_LIGHT; // Set default theme
+}
+
+.DB_LIGHT {
   // BRAND
   --db-logo-color: #{db-palette-color('dbrot')};
   --db-pulse-background: #{db-palette-color('dbrot')};
@@ -111,10 +103,9 @@
   // Override transportchip colors if needed (only colorful themes)
 }
 
-.DB_LIGHT_ALTERNATE,
-.S_BAHN_LIGHT_ALTERNATE,
-.GREEN_CAMPAIGN_LIGHT_ALTERNATE,
-.PRIDE_LIGHT_ALTERNATE {
+.DB_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT;
+
   // BRAND
 
   // GENERAL
@@ -148,12 +139,9 @@
   // TRANSPORTCHIP
 }
 
-.DB_BRANDED,
-.DB_DARK,
-.DB_DARK_ALTERNATE,
-.S_BAHN_BRANDED,
-.GREEN_CAMPAIGN_BRANDED,
-.DISPLAY {
+%db-dark-theme-base {
+  @extend .DB_LIGHT;
+
   // BRAND
   --db-logo-color: #fe182e;
   --db-pulse-background: #fe182e;
@@ -226,8 +214,9 @@
   // TRANSPORTCHIP
 }
 
-.DB_DARK,
-.DB_DARK_ALTERNATE {
+.DB_DARK {
+  @extend %db-dark-theme-base;
+
   // BRAND
 
   // GENERAL
@@ -271,6 +260,8 @@
 }
 
 .DB_DARK_ALTERNATE {
+  @extend .DB_DARK;
+
   // BRAND
 
   // GENERAL
@@ -313,10 +304,9 @@
   // TRANSPORTCHIP
 }
 
-.DB_BRANDED,
-.S_BAHN_BRANDED,
-.GREEN_CAMPAIGN_BRANDED,
-.DISPLAY {
+%db-color-theme-base {
+  @extend %db-dark-theme-base;
+
   // BRAND
   --db-logo-color: #{db-palette-color('white')};
   --db-pulse-background: #{db-palette-color('white')};
@@ -383,15 +373,19 @@
 
   // CHECKBOX + RADIO BUTTON
   --db-checkbox-tick-color: #000;
+
   // TRANSPORTCHIP
 }
 
 .DB_BRANDED {
+  @extend %db-theme-with-background-color;
+
   // BRAND
   // GENERAL
   // ACCESSIBILITY
   // LINKS
   // FIELDS
+
   // PRIMARY BUTTON
   --db-primary-button-disabled-background-color: #{db-palette-color('red400')};
   --db-primary-button-disabled-text-color: #{mix(db-palette-color('red500'),
@@ -411,8 +405,9 @@
 
 $db-s-bahn-green: #038531;
 
-.S_BAHN_LIGHT,
-.S_BAHN_LIGHT_ALTERNATE {
+.S_BAHN_LIGHT {
+  @extend .DB_LIGHT;
+
   // BRAND
 
   // GENERAL
@@ -447,6 +442,9 @@ $db-s-bahn-green: #038531;
 }
 
 .S_BAHN_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .S_BAHN_LIGHT;
+
   // BRAND
   // GENERAL
   // ACCESSIBILITY
@@ -467,8 +465,9 @@ $db-s-bahn-green: #038531;
   // TRANSPORTCHIP
 }
 
-.GREEN_CAMPAIGN_LIGHT,
-.GREEN_CAMPAIGN_LIGHT_ALTERNATE {
+.GREEN_CAMPAIGN_LIGHT {
+  @extend .DB_LIGHT;
+
   // BRAND
 
   // GENERAL
@@ -504,11 +503,17 @@ $db-s-bahn-green: #038531;
   // TRANSPORTCHIP
 }
 
+.GREEN_CAMPAIGN_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .GREEN_CAMPAIGN_LIGHT;
+}
+
 $db-s-bahn-loud-background: #038531;
 $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
-.S_BAHN_BRANDED,
-.GREEN_CAMPAIGN_BRANDED {
+.S_BAHN_BRANDED {
+  @extend %db-theme-with-background-color;
+
   // BRAND
 
   // GENERAL
@@ -561,11 +566,11 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   // TRANSPORTCHIP
   --db-transportchip-background-color: #036123;
   --db-transportchip-text-color: #fff;
-  // TRANSPORTCHIP
 }
 
-.PRIDE_LIGHT,
-.PRIDE_LIGHT_ALTERNATE {
+.PRIDE_LIGHT {
+  @extend .DB_LIGHT;
+
   // BRAND
   --db-pulse-background: linear-gradient(135deg,
   #{db-palette-color('red500')} #{16.7% * 1},
@@ -593,7 +598,14 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   // TRANSPORTCHIP
 }
 
+.PRIDE_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .PRIDE_LIGHT;
+}
+
 .GREEN_CAMPAIGN_BRANDED {
+  @extend %db-theme-with-background-color;
+
   // BRAND
 
   // GENERAL
@@ -643,6 +655,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 }
 
 .DISPLAY {
+  @extend %db-theme-with-background-color;
+
   // BRAND
 
   // GENERAL
