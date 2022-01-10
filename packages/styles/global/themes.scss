@@ -15,11 +15,9 @@
   --db-darker-background-color: #{db-palette-color('coolgray100')};
   --db-primary-text-color: #{db-palette-color('black')};
   --db-secondary-text-color: #{db-palette-color('coolgray500')};
-  --db-disabled-text-color: #{#{mix(db-palette-color('coolgray200'),
-  db-palette-color('coolgray300'),
-  80%)}};
+  --db-disabled-text-color: #{db-palette-color('coolgray280')};
   --db-shadow-color: #0000000a;
-  --db-border-color: #{mix(db-palette-color('coolgray100'), db-palette-color('coolgray200'), 35%)};
+  --db-border-color: #{db-palette-color('coolgray135')};
   --db-loud-border-color: #{db-palette-color('coolgray500')};
 
   // ACCESSIBILITY
@@ -35,23 +33,18 @@
   // FIELDS
   --db-field-primary-text-color: var(--db-primary-text-color);
   --db-field-secondary-text-color: var(--db-secondary-text-color);
-  --db-field-border-color: #{mix(db-palette-color('coolgray200'),
-  db-palette-color('coolgray300'),
-  70%)};
+  --db-field-border-color: #{db-palette-color('coolgray270')};
   --db-caret-color: #{darken(db-palette-color('dbrot'), 3%)}; // 3% darker for contrast to coolgray100 background
 
   // PRIMARY BUTTON
   --db-primary-button-background-color: #{db-palette-color('red500')};
   --db-primary-button-hover-background-color: #{db-palette-color('red600')};
   --db-primary-button-pressed-background-color: #{db-palette-color('red700')};
-  --db-primary-button-disabled-background-color: #{mix(db-palette-color('coolgray100'),
-  db-palette-color('coolgray200'))};
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray150')};
   --db-primary-button-text-color: #{db-palette-color('white')};
   --db-primary-button-hover-text-color: #{db-palette-color('white')};
   --db-primary-button-pressed-text-color: #{db-palette-color('white')};
-  --db-primary-button-disabled-text-color: #{mix(db-palette-color('coolgray200'),
-  db-palette-color('coolgray300'),
-  30%)};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray230')};
 
   // SECONDARY BUTTON
   --db-secondary-button-background-color: var(--db-primary-background-color);
@@ -116,7 +109,7 @@
   --db-darker-background-color: #{db-palette-color('coolgray200')};
   --db-disabled-text-color: #{db-palette-color('coolgray300')};
   --db-shadow-color: transparent;
-  --db-border-color: #{mix(db-palette-color('coolgray200'), db-palette-color('coolgray300'), 70%)};
+  --db-border-color: #{db-palette-color('coolgray270')};
   --db-loud-border-color: #{db-palette-color('coolgray600')};
 
   // ACCESSIBILITY
@@ -163,14 +156,12 @@
   // LINKS
   --db-link-color: #f55;
   --db-link-hover-color: #e41f18;
-  --db-link-pressed-color: #{mix(db-palette-color('red600'), db-palette-color('red700'))};
+  --db-link-pressed-color: #{db-palette-color('red650')};
   --db-link-color: #ff5a5a;
   --db-link-hover-color: #ff7575;
   --db-link-pressed-color: #f89292;
   --db-link-underline-color: #{mix(#ff5a5a, db-palette-color('coolgray700'), 35%)};
-  --db-secondary-link-underline-color: #{mix(db-palette-color('white'),
-  db-palette-color('coolgray700'),
-  35%)};
+  --db-secondary-link-underline-color: #{db-palette-color('coolgray250')};
 
   // FIELDS
   --db-field-border-color: #000;
@@ -222,7 +213,7 @@
   // BRAND
 
   // GENERAL
-  --db-border-color: #{mix(db-palette-color('coolgray400'), db-palette-color('coolgray600'), 40%)};
+  --db-border-color: #{db-palette-color('coolgray480')};
   --db-loud-border-color: #{db-palette-color('coolgray200')};
 
   // ACCESSIBILITY
@@ -254,8 +245,7 @@
   --db-warning-color: #f76166;
   --db-warning-background-color: #cc1526;
   --db-informative-color: #fff;
-  --db-informative-background-color: #{mix(db-palette-color('coolgray400'),
-  db-palette-color('coolgray500'))};
+  --db-informative-background-color: #{db-palette-color('coolgray450')};
 
   // CHECKBOX + RADIO BUTTON
   // TRANSPORTCHIP
@@ -270,11 +260,9 @@
   --db-primary-background-color: #{db-palette-color('coolgray800')};
   --db-secondary-background-color: #{db-palette-color('coolgray700')};
   --db-darker-background-color: #{db-palette-color('black')};
-  --db-secondary-text-color: #{mix(db-palette-color('coolgray300'), db-palette-color('coolgray400'))};
-  --db-disabled-text-color: #{mix(db-palette-color('coolgray500'),
-  db-palette-color('coolgray600'),
-  30%)};
-  --db-border-color: #{mix(db-palette-color('coolgray500'), db-palette-color('coolgray700'), 65%)};
+  --db-secondary-text-color: #{db-palette-color('coolgray350')};
+  --db-disabled-text-color: #{db-palette-color('coolgray530')};
+  --db-border-color: #{db-palette-color('coolgray565')};
 
   // ACCESSIBILITY
 
@@ -284,9 +272,7 @@
   // FIELDS
 
   // PRIMARY BUTTON
-  --db-primary-button-disabled-background-color: #{mix(db-palette-color('coolgray600'),
-  db-palette-color('coolgray700'),
-  30%)};
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray630')};
   --db-primary-button-disabled-text-color: #{db-palette-color('coolgray800')};
 
   // SECONDARY BUTTON
@@ -380,7 +366,7 @@
 }
 
 .DB_BRANDED {
-  @extend %db-theme-with-background-color;
+  @extend %db-color-theme-base;
 
   // BRAND
   // GENERAL
@@ -390,8 +376,7 @@
 
   // PRIMARY BUTTON
   --db-primary-button-disabled-background-color: #{db-palette-color('red400')};
-  --db-primary-button-disabled-text-color: #{mix(db-palette-color('red500'),
-  db-palette-color('red600'))};
+  --db-primary-button-disabled-text-color: #{db-palette-color('red550')};
 
   // SECONDARY BUTTON
   // SOLID + HOVER-ONLY BUTTON
@@ -514,7 +499,7 @@ $db-s-bahn-loud-background: #038531;
 $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
 .S_BAHN_BRANDED {
-  @extend %db-theme-with-background-color;
+  @extend %db-color-theme-base;
 
   // BRAND
 
@@ -606,7 +591,7 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 }
 
 .GREEN_CAMPAIGN_BRANDED {
-  @extend %db-theme-with-background-color;
+  @extend %db-color-theme-base;
 
   // BRAND
 
@@ -657,7 +642,7 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 }
 
 .DISPLAY {
-  @extend %db-theme-with-background-color;
+  @extend %db-color-theme-base;
 
   // BRAND
 

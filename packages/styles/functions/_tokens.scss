@@ -1,13 +1,7 @@
-@function db-token(
-  $token-group,
-  $token-name,
-  $viewport: 'mobile',
-  $tokens-map: $db-tokens
-) {
+@function db-token($token-group, $token-name, $viewport: 'mobile', $tokens-map: $db-tokens) {
   @if map-has-key($tokens-map, $token-group) {
     $token-group-map: map-get($tokens-map, $token-group);
-    @if ($viewport != 'mobile') and
-      map-has-key($token-group-map, '#{$token-name}.#{$viewport}') {
+    @if ($viewport != 'mobile') and map-has-key($token-group-map, '#{$token-name}.#{$viewport}') {
       @return map-get($token-group-map, '#{$token-name}.#{$viewport}');
     }
     @if map-has-key($token-group-map, $token-name) {
@@ -16,10 +10,7 @@
   }
 
   $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DB tokens map. Valid values are: (#{map-keys($tokens-map)})';
-  @if (
-    str-index($token-name, 'turquois') and not
-    str-index($token-name, 'turquoise')
-  ) {
+  @if (str-index($token-name, 'turquois') and not str-index($token-name, 'turquoise')) {
     @error 'Did you misspell `turquoise`? #{$error-message}';
   } @else if (str-index($token-name, 'grey')) {
     @error 'Did you misspell `gray`? #{$error-message}';
@@ -29,7 +20,40 @@
 }
 
 @function db-palette-color($color, $tokens-map: $db-tokens) {
-  @return db-token('palette', $token-name: $color, $tokens-map: $tokens-map);
+  @if map-has-key($tokens-map, 'palette') {
+    $token-group-map: map-get($tokens-map, 'palette');
+    @if map-has-key($token-group-map, $color) {
+      @return map-get($token-group-map, $color);
+    }
+
+    $digits: (
+      '0': 0,
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+      '5': 5,
+      '6': 6,
+      '7': 7,
+      '8': 8,
+      '9': 9,
+    );
+
+    $name: str-slice($color, 0, -4);
+    $number: map-get($digits, str-slice($color, -1, -1)) +
+      10 *
+      map-get($digits, str-slice($color, -2, -2)) +
+      100 *
+      map-get($digits, str-slice($color, -3, -3));
+    $lower-number: floor($number * 0.01) * 100;
+    $upper-number: ceil($number * 0.01) * 100;
+    $lower-color: db-palette-color($name + $lower-number);
+    $upper-color: db-palette-color($name + $upper-number);
+    @return mix($upper-color, $lower-color, percentage(($number - $lower-number) * 0.01));
+
+    $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DB tokens map. Valid values are: (#{map-keys($tokens-map)})';
+    @error $error-message;
+  }
 }
 
 @function db-color($color, $tokens-map: $db-tokens) {
@@ -49,16 +73,11 @@
 }
 
 @function db-border-width($component, $tokens-map: $db-tokens) {
-  @return db-token(
-    'bordersize',
-    $token-name: $component,
-    $tokens-map: $tokens-map
-  );
+  @return db-token('bordersize', $token-name: $component, $tokens-map: $tokens-map);
 }
 
 @function db-font-family($family, $tokens-map: $db-tokens) {
-  @return db-token('fontfamily', $token-name: $family, $tokens-map: $tokens-map),
-    $db-font-stack;
+  @return db-token('fontfamily', $token-name: $family, $tokens-map: $tokens-map), $db-font-stack;
 }
 
 @function db-font-weight($family, $weight: null, $tokens-map: $db-tokens) {
@@ -69,12 +88,7 @@
   );
 }
 
-@function db-font-size(
-  $type,
-  $size: 'm',
-  $viewport: 'mobile',
-  $tokens-map: $db-tokens
-) {
+@function db-font-size($type, $size: 'm', $viewport: 'mobile', $tokens-map: $db-tokens) {
   @return db-token(
     'textsize',
     $token-name: '#{$type}.#{$size}',
@@ -83,12 +97,7 @@
   );
 }
 
-@function db-line-height(
-  $type,
-  $size: 'm',
-  $viewport: 'mobile',
-  $tokens-map: $db-tokens
-) {
+@function db-line-height($type, $size: 'm', $viewport: 'mobile', $tokens-map: $db-tokens) {
   @return db-token(
     'lineheight',
     $token-name: '#{$type}.#{$size}',
