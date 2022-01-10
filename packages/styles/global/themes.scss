@@ -24,10 +24,10 @@
   --db-focus-ring-color: #0043c740;
 
   // LINKS
-  --db-link-color: #{db-text-color('link.primary')};
-  --db-link-hover-color: #{db-text-color('link.primary.hover')};
-  --db-link-pressed-color: #{db-text-color('link.primary.pressed')};
-  --db-link-underline-color: #{mix(db-text-color('link.primary'), db-palette-color('white'), 30%)};
+  --db-link-color: #{db-palette-color('red500')};
+  --db-link-hover-color: #{db-palette-color('red600')};
+  --db-link-pressed-color: #{db-palette-color('red700')};
+  --db-link-underline-color: #{db-palette-color('red250')};
   --db-secondary-link-underline-color: #{db-palette-color('coolgray300')};
 
   // FIELDS
@@ -115,9 +115,10 @@
   // ACCESSIBILITY
 
   // LINKS
-  --db-link-color: #{darken(db-text-color('link.primary'), 3%)};
-  --db-link-hover-color: #{darken(db-text-color('link.primary.hover'), 3%)};
-  --db-link-pressed-color: #{darken(db-text-color('link.primary.pressed'), 3%)};
+  --db-link-color: #{darken(db-palette-color('red500'), 3%)};
+  --db-link-hover-color: #{darken(db-palette-color('red600'), 3%)};
+  --db-link-pressed-color: #{darken(db-palette-color('red700'), 3%)};
+  --db-link-underline-color: #{darken(db-palette-color('red180'), 3%)};
 
   // FIELDS
   --db-caret-color: #{db-palette-color('dbrot')};
