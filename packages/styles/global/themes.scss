@@ -391,256 +391,9 @@
   --db-transportchip-text-color: #fff;
 }
 
-$db-s-bahn-green: #038531;
-
-.S_BAHN_LIGHT {
-  @extend .DB_LIGHT;
-
-  // BRAND
-
-  // GENERAL
-  --db-loud-border-color: #{lighten($db-s-bahn-green, 4%)};
-
-  // ACCESSIBILITY
-
-  // LINKS
-  --db-link-color: #{$db-s-bahn-green};
-  --db-link-hover-color: #{mix(#000, $db-s-bahn-green, 80%)};
-  --db-link-pressed-color: #{mix(#000, $db-s-bahn-green, 60%)};
-  --db-link-underline-color: #{mix($db-s-bahn-green, db-palette-color('white'), 30%)};
-
-  // FIELDS
-  --db-caret-color: #{$db-s-bahn-green};
-
-  // PRIMARY BUTTON
-  --db-primary-button-background-color: #098a40;
-  --db-primary-button-hover-background-color: #{darken($db-s-bahn-green, 2%)};
-  --db-primary-button-pressed-background-color: #{darken($db-s-bahn-green, 8%)};
-
-  // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{mix($db-s-bahn-green, #fff, 10%)};
-  --db-secondary-button-pressed-background-color: #{mix($db-s-bahn-green, #fff, 20%)};
-
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-  // SEVERITY
-  // CHECKBOX + RADIO BUTTON
-  // TRANSPORTCHIP
-}
-
-.S_BAHN_LIGHT_ALTERNATE {
-  @extend .DB_LIGHT_ALTERNATE;
-  @extend .S_BAHN_LIGHT;
-
-  // BRAND
-  // GENERAL
-  // ACCESSIBILITY
-
-  // LINKS
-  --db-link-color: #{darken($db-s-bahn-green, 3%)};
-  --db-link-hover-color: #{darken(mix(#000, $db-s-bahn-green, 80%), 3%)};
-  --db-link-pressed-color: #{darken(mix(#000, $db-s-bahn-green, 60%), 3%)};
-
-  // FIELDS
-  // PRIMARY BUTTON
-  // SECONDARY BUTTON
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-  // SEVERITY
-  // CHECKBOX + RADIO BUTTON
-  // TRANSPORTCHIP
-}
-
-.GREEN_CAMPAIGN_LIGHT {
-  @extend .DB_LIGHT;
-
-  // BRAND
-
-  // GENERAL
-  --db-loud-border-color: #{db-palette-color('lightgreen400')};
-
-  // ACCESSIBILITY
-
-  // LINKS
-  --db-link-color: #{db-palette-color('lightgreen400')};
-  --db-link-hover-color: #{db-palette-color('lightgreen500')};
-  --db-link-pressed-color: #{db-palette-color('lightgreen600')};
-  --db-link-underline-color: #{mix(db-palette-color('lightgreen400'),
-  db-palette-color('white'),
-  30%)};
-
-  // FIELDS
-  --db-caret-color: #{db-palette-color('lightgreen400')};
-
-  // PRIMARY BUTTON
-  --db-primary-button-background-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-hover-background-color: #{db-palette-color('lightgreen500')};
-  --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
-
-  // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{db-palette-color('lightgreen100')};
-  --db-secondary-button-pressed-background-color: #{db-palette-color('lightgreen200')};
-
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-  // SEVERITY
-  // CHECKBOX + RADIO BUTTON
-  // TRANSPORTCHIP
-}
-
-.GREEN_CAMPAIGN_LIGHT_ALTERNATE {
-  @extend .DB_LIGHT_ALTERNATE;
-  @extend .GREEN_CAMPAIGN_LIGHT;
-}
-
-$db-s-bahn-loud-background: #038531;
-$db-green-campaign-loud-background: db-palette-color('lightgreen400');
-
-.S_BAHN_BRANDED {
-  @extend %db-color-theme-base;
-
-  // BRAND
-
-  // GENERAL
-  --db-primary-background-color: #{$db-s-bahn-loud-background};
-  --db-darker-background-color: #{darken($db-s-bahn-loud-background, 2%)};
-  --db-secondary-text-color: #eafff2;
-  --db-disabled-text-color: #{mix(#99ccb1, $db-s-bahn-loud-background)};
-  --db-border-color: #56a17a;
-  --db-loud-border-color: #{db-palette-color('green100')};
-
-  // ACCESSIBILITY
-
-  // LINKS
-  --db-link-hover-color: #{mix(#000, $db-s-bahn-loud-background, 60%)};
-  --db-link-pressed-color: #{mix(#000, $db-s-bahn-loud-background, 40%)};
-  --db-link-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
-  --db-secondary-link-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
-
-  // FIELDS
-  --db-field-primary-text-color: #{db-palette-color('black')};
-  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
-  --db-caret-color: #{$db-s-bahn-green};
-
-  // PRIMARY BUTTON
-  --db-primary-button-background-color: #{db-palette-color('white')};
-  --db-primary-button-hover-background-color: #{mix(db-palette-color('coolgray100'),
-  db-palette-color('green100'))};
-  --db-primary-button-pressed-background-color: #{mix(db-palette-color('coolgray200'),
-  db-palette-color('green200'))};
-  --db-primary-button-text-color: #{db-palette-color('black')};
-  --db-primary-button-hover-text-color: #{db-palette-color('black')};
-  --db-primary-button-pressed-text-color: #{db-palette-color('black')};
-  --db-primary-button-disabled-text-color: #{darken($db-s-bahn-loud-background, 3%)};
-
-  // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{darken($db-s-bahn-green, 2%)};
-  --db-secondary-button-pressed-background-color: #{darken($db-s-bahn-green, 8%)};
-
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-
-  // SEVERITY
-  --db-success-on-background-color: #0e4a22;
-  --db-warning-on-background-color: #0e4a22;
-  --db-informative-on-background-color: #0e4a22;
-
-  // CHECKBOX + RADIO BUTTON
-
-  // TRANSPORTCHIP
-  --db-transportchip-background-color: #036123;
-  --db-transportchip-text-color: #fff;
-}
-
-.PRIDE_LIGHT {
-  @extend .DB_LIGHT;
-
-  // BRAND
-  --db-pulse-background: linear-gradient(135deg,
-  #{db-palette-color('red500')} #{16.7% * 1},
-  #{db-palette-color('orange500')} 0,
-  #{db-palette-color('orange500')} #{16.7% * 2},
-  #{db-palette-color('yellow500')} 0,
-  #{db-palette-color('yellow500')} #{16.7% * 3},
-  #{db-palette-color('lightgreen500')} 0,
-  #{db-palette-color('lightgreen500')} #{16.7% * 4},
-  #{db-palette-color('blue400')} 0,
-  #{db-palette-color('blue400')} #{16.7% * 5},
-  #{db-palette-color('violet500')} 0);
-
-  // GENERAL
-  // ACCESSIBILITY
-  // LINKS
-  // FIELDS
-  // PRIMARY BUTTON
-  // SECONDARY BUTTON
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-  // SEVERITY
-  // CHECKBOX + RADIO BUTTON
-  // TRANSPORTCHIP
-}
-
-.PRIDE_LIGHT_ALTERNATE {
-  @extend .DB_LIGHT_ALTERNATE;
-  @extend .PRIDE_LIGHT;
-}
-
-.GREEN_CAMPAIGN_BRANDED {
-  @extend %db-color-theme-base;
-
-  // BRAND
-
-  // GENERAL
-  --db-primary-background-color: #{$db-green-campaign-loud-background};
-  --db-darker-background-color: #{db-palette-color('lightgreen500')};
-  --db-disabled-text-color: #{db-palette-color('lightgreen300')};
-  --db-border-color: #b3dd80;
-  --db-loud-border-color: #{db-palette-color('lightgreen100')};
-
-  // ACCESSIBILITY
-
-  // LINKS
-  --db-link-hover-color: #{mix(#000, $db-green-campaign-loud-background, 60%)};
-  --db-link-pressed-color: #{mix(#000, $db-green-campaign-loud-background, 40%)};
-  --db-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
-  --db-secondary-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
-
-  // FIELDS
-  --db-field-primary-text-color: #{db-palette-color('black')};
-  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
-  --db-caret-color: #{db-palette-color('lightgreen400')};
-
-  // PRIMARY BUTTON
-  --db-primary-button-text-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-hover-text-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-pressed-text-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-disabled-text-color: #61a518;
-
-  // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'), 6%)};
-  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'), 12%)};
-
-  // SOLID + HOVER-ONLY BUTTON
-  // TRACK
-  // TIME
-
-  // SEVERITY
-  --db-success-on-background-color: #476847;
-  --db-warning-on-background-color: #476847;
-  --db-informative-on-background-color: #476847;
-
-  // CHECKBOX + RADIO BUTTON
-
-  // TRANSPORTCHIP
-  --db-transportchip-background-color: #529813;
-  --db-transportchip-text-color: #fff;
-}
+// ------------------------------ //
+// DISPLAY/STATION&SERVICE THEMES //
+// ------------------------------ //
 
 .DISPLAY {
   @extend %db-color-theme-base;
@@ -697,4 +450,263 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
   // CHECKBOX + RADIO BUTTON
   // TRANSPORTCHIP
+}
+
+// ------------- //
+// S-BAHN THEMES //
+// ------------- //
+
+$db-s-bahn-brand-color: #038531;
+$db-s-bahn-background-color: #038531;
+
+.S_BAHN_LIGHT {
+  @extend .DB_LIGHT;
+
+  // BRAND
+
+  // GENERAL
+  --db-loud-border-color: #{lighten($db-s-bahn-brand-color, 4%)};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{$db-s-bahn-brand-color};
+  --db-link-hover-color: #{mix(#000, $db-s-bahn-brand-color, 80%)};
+  --db-link-pressed-color: #{mix(#000, $db-s-bahn-brand-color, 60%)};
+  --db-link-underline-color: #{mix($db-s-bahn-brand-color, db-palette-color('white'), 30%)};
+
+  // FIELDS
+  --db-caret-color: #{$db-s-bahn-brand-color};
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #098a40;
+  --db-primary-button-hover-background-color: #{darken($db-s-bahn-brand-color, 2%)};
+  --db-primary-button-pressed-background-color: #{darken($db-s-bahn-brand-color, 8%)};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{mix($db-s-bahn-brand-color, #fff, 10%)};
+  --db-secondary-button-pressed-background-color: #{mix($db-s-bahn-brand-color, #fff, 20%)};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+.S_BAHN_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .S_BAHN_LIGHT;
+
+  // BRAND
+  // GENERAL
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{darken($db-s-bahn-brand-color, 3%)};
+  --db-link-hover-color: #{darken(mix(#000, $db-s-bahn-brand-color, 80%), 3%)};
+  --db-link-pressed-color: #{darken(mix(#000, $db-s-bahn-brand-color, 60%), 3%)};
+
+  // FIELDS
+  // PRIMARY BUTTON
+  // SECONDARY BUTTON
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+// ------------------- //
+// EXPERIMENTAL THEMES //
+// ------------------- //
+
+.EXPERIMENTAL_GREEN_CAMPAIGN_LIGHT {
+  @extend .DB_LIGHT;
+
+  // BRAND
+
+  // GENERAL
+  --db-loud-border-color: #{db-palette-color('lightgreen400')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{db-palette-color('lightgreen400')};
+  --db-link-hover-color: #{db-palette-color('lightgreen500')};
+  --db-link-pressed-color: #{db-palette-color('lightgreen600')};
+  --db-link-underline-color: #{mix(db-palette-color('lightgreen400'),
+  db-palette-color('white'),
+  30%)};
+
+  // FIELDS
+  --db-caret-color: #{db-palette-color('lightgreen400')};
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-hover-background-color: #{db-palette-color('lightgreen500')};
+  --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{db-palette-color('lightgreen100')};
+  --db-secondary-button-pressed-background-color: #{db-palette-color('lightgreen200')};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+.EXPERIMENTAL_GREEN_CAMPAIGN_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .EXPERIMENTAL_GREEN_CAMPAIGN_LIGHT;
+}
+
+.S_BAHN_BRANDED {
+  @extend %db-color-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-primary-background-color: #{$db-s-bahn-background-color};
+  --db-darker-background-color: #{darken($db-s-bahn-background-color, 2%)};
+  --db-secondary-text-color: #eafff2;
+  --db-disabled-text-color: #{mix(#99ccb1, $db-s-bahn-background-color)};
+  --db-border-color: #56a17a;
+  --db-loud-border-color: #{db-palette-color('green100')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-hover-color: #{mix(#000, $db-s-bahn-background-color, 60%)};
+  --db-link-pressed-color: #{mix(#000, $db-s-bahn-background-color, 40%)};
+  --db-link-underline-color: #{mix(#fff, $db-s-bahn-background-color, 40%)};
+  --db-secondary-link-underline-color: #{mix(#fff, $db-s-bahn-background-color, 40%)};
+
+  // FIELDS
+  --db-field-primary-text-color: #{db-palette-color('black')};
+  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-caret-color: #{$db-s-bahn-brand-color};
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #{db-palette-color('white')};
+  --db-primary-button-hover-background-color: #{mix(db-palette-color('coolgray100'),
+  db-palette-color('green100'))};
+  --db-primary-button-pressed-background-color: #{mix(db-palette-color('coolgray200'),
+  db-palette-color('green200'))};
+  --db-primary-button-text-color: #{db-palette-color('black')};
+  --db-primary-button-hover-text-color: #{db-palette-color('black')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-disabled-text-color: #{darken($db-s-bahn-background-color, 3%)};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{darken($db-s-bahn-brand-color, 2%)};
+  --db-secondary-button-pressed-background-color: #{darken($db-s-bahn-brand-color, 8%)};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+
+  // SEVERITY
+  --db-success-on-background-color: #0e4a22;
+  --db-warning-on-background-color: #0e4a22;
+  --db-informative-on-background-color: #0e4a22;
+
+  // CHECKBOX + RADIO BUTTON
+
+  // TRANSPORTCHIP
+  --db-transportchip-background-color: #036123;
+  --db-transportchip-text-color: #fff;
+}
+
+.EXPERIMENTAL_PRIDE_LIGHT {
+  @extend .DB_LIGHT;
+
+  // BRAND
+  --db-pulse-background: linear-gradient(135deg,
+  #{db-palette-color('red500')} #{16.7% * 1},
+  #{db-palette-color('orange500')} 0,
+  #{db-palette-color('orange500')} #{16.7% * 2},
+  #{db-palette-color('yellow500')} 0,
+  #{db-palette-color('yellow500')} #{16.7% * 3},
+  #{db-palette-color('lightgreen500')} 0,
+  #{db-palette-color('lightgreen500')} #{16.7% * 4},
+  #{db-palette-color('blue400')} 0,
+  #{db-palette-color('blue400')} #{16.7% * 5},
+  #{db-palette-color('violet500')} 0);
+
+  // GENERAL
+  // ACCESSIBILITY
+  // LINKS
+  // FIELDS
+  // PRIMARY BUTTON
+  // SECONDARY BUTTON
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+.EXPERIMENTAL_PRIDE_LIGHT_ALTERNATE {
+  @extend .DB_LIGHT_ALTERNATE;
+  @extend .EXPERIMENTAL_PRIDE_LIGHT;
+}
+
+$db-green-campaign-background-color: db-palette-color('lightgreen400');
+
+.EXPERIMENTAL_GREEN_CAMPAIGN_BRANDED {
+  @extend %db-color-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-primary-background-color: #{$db-green-campaign-background-color};
+  --db-darker-background-color: #{db-palette-color('lightgreen500')};
+  --db-disabled-text-color: #{db-palette-color('lightgreen300')};
+  --db-border-color: #b3dd80;
+  --db-loud-border-color: #{db-palette-color('lightgreen100')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-hover-color: #{mix(#000, $db-green-campaign-background-color, 60%)};
+  --db-link-pressed-color: #{mix(#000, $db-green-campaign-background-color, 40%)};
+  --db-link-underline-color: #{mix(#fff, $db-green-campaign-background-color, 30%)};
+  --db-secondary-link-underline-color: #{mix(#fff, $db-green-campaign-background-color, 30%)};
+
+  // FIELDS
+  --db-field-primary-text-color: #{db-palette-color('black')};
+  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-caret-color: #{db-palette-color('lightgreen400')};
+
+  // PRIMARY BUTTON
+  --db-primary-button-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-hover-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-disabled-text-color: #61a518;
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'), 6%)};
+  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'), 12%)};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+
+  // SEVERITY
+  --db-success-on-background-color: #476847;
+  --db-warning-on-background-color: #476847;
+  --db-informative-on-background-color: #476847;
+
+  // CHECKBOX + RADIO BUTTON
+
+  // TRANSPORTCHIP
+  --db-transportchip-background-color: #529813;
+  --db-transportchip-text-color: #fff;
 }
