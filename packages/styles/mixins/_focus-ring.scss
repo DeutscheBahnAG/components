@@ -27,8 +27,7 @@
 
   #{db-focus-ring-target-selector($target)} {
     @content;
-    box-shadow: transparent 0 0 0 (2 * $offset),
-      transparent 0 0 0 ($size + $grow);
+    box-shadow: transparent 0 0 0 (2 * $offset), transparent 0 0 0 ($size + $grow);
     @if length($transition) > 0 {
       transition: unquote($transition), $focus-ring-transition;
     } @else {
@@ -37,9 +36,6 @@
   }
 
   #{db-focus-ring-focussed-target-selector($target, $focus-selector)} {
-    @if $border {
-      border-color: var(--db-focus-border-color) !important;
-    }
     box-shadow: $offset-color 0 0 0 $offset, $color 0 0 0 ($size + $offset);
     outline: 2px transparent; /* 1 */
   }

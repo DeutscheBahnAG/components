@@ -37,7 +37,6 @@
   70%)};
   --db-loud-border-color: #{db-palette-color('coolgray500')};
   --db-focus-ring-color: #0043c740;
-  --db-focus-border-color: #{db-border-color('input.focus')};
   --db-link-color: #{db-text-color('link.primary')};
   --db-link-hover-color: #{db-text-color('link.primary.hover')};
   --db-link-pressed-color: #{db-text-color('link.primary.pressed')};
@@ -128,7 +127,6 @@
   --db-border-color: #e77579;
   --db-field-border-color: #000;
   --db-focus-ring-color: #70a0ff66;
-  --db-focus-border-color: #{db-palette-color('blue300')};
   --db-link-color: #f55;
   --db-link-hover-color: #e41f18;
   --db-link-pressed-color: #{mix(db-palette-color('red600'), db-palette-color('red700'))};
@@ -216,7 +214,6 @@
   --db-logo-color: #{db-palette-color('white')};
   --db-pulse-background: #{db-palette-color('white')};
   --db-focus-ring-color: rgba(0, 0, 0, 0.4);
-  --db-focus-border-color: #000;
   --db-border-color: #{db-palette-color('red600')};
   --db-primary-background-color: #{db-palette-color('dbrot')};
   --db-secondary-background-color: #{db-palette-color('white')};
@@ -314,7 +311,6 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
 .S_BAHN_BRANDED,
 .GREEN_CAMPAIGN_BRANDED {
-  --db-focus-border-color: #bbffe7;
   --db-primary-background-color: #{$db-s-bahn-loud-background};
   --db-darker-background-color: #{darken($db-s-bahn-loud-background, 2%)};
   --db-secondary-text-color: #eafff2;
@@ -366,7 +362,6 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-link-pressed-color: #{mix(#000, $db-green-campaign-loud-background, 40%)};
   --db-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
   --db-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
-  --db-focus-border-color: #{db-palette-color('lightgreen100')};
   --db-primary-background-color: #{$db-green-campaign-loud-background};
   --db-field-primary-text-color: #{db-palette-color('black')};
   --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
@@ -390,7 +385,6 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
 
 .DISPLAY {
   --db-focus-ring-color: #{rgba(db-palette-color('cyan100'), 0.4)};
-  --db-focus-border-color: #{db-palette-color('cyan300')};
   --db-primary-background-color: #213a7e;
   --db-darker-background-color: #{db-palette-color('blue800')};
   --db-primary-text-color: #{db-palette-color('white')};
