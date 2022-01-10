@@ -2,7 +2,13 @@
 /// @param {String} $text-color - The default text-color
 /// @param {String} $text-color--hover - The text-color used on hover
 /// @param {String} $text-color--pressed - The text-color used on press (:active)
-@mixin db-link($text-color, $text-color--hover, $text-color--pressed, $target: '', $underline-color: var(--db-underline-color)) {
+@mixin db-link(
+  $text-color,
+  $text-color--hover,
+  $text-color--pressed,
+  $target: '',
+  $underline-color: var(--db-secondary-link-underline-color)
+) {
   /**
    * 1. 0.11 needed for Firefox
    */
@@ -29,8 +35,7 @@
     &:focus {
       text-decoration-color: transparent;
     }
-  }
-  @else {
+  } @else {
     #{unquote($target)} {
       font-weight: 550;
       text-decoration-line: underline;
@@ -63,7 +68,13 @@
   $target: '',
   $underline: true
 ) {
-  @include db-link($text-color, $text-color--hover, $text-color--pressed, $target, if($underline, var(--db-link-underline-color), transparent));
+  @include db-link(
+    $text-color,
+    $text-color--hover,
+    $text-color--pressed,
+    $target,
+    if($underline, var(--db-link-underline-color), transparent)
+  );
 }
 
 /// Styles a primary link including hover and pressed styles
@@ -77,5 +88,11 @@
   $target: '',
   $underline: true
 ) {
-  @include db-link($text-color, $text-color--hover, $text-color--pressed, $target, if($underline, var(--db-underline-color), transparent));
+  @include db-link(
+    $text-color,
+    $text-color--hover,
+    $text-color--pressed,
+    $target,
+    if($underline, var(--db-secondary-link-underline-color), transparent)
+  );
 }

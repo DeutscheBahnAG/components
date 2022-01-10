@@ -29,8 +29,8 @@
   --db-link-color: #{db-text-color('link.primary')};
   --db-link-hover-color: #{db-text-color('link.primary.hover')};
   --db-link-pressed-color: #{db-text-color('link.primary.pressed')};
-  --db-underline-color: #{db-palette-color('coolgray300')};
   --db-link-underline-color: #{mix(db-text-color('link.primary'), db-palette-color('white'), 30%)};
+  --db-secondary-link-underline-color: #{db-palette-color('coolgray300')};
 
   // FIELDS
   --db-field-primary-text-color: var(--db-primary-text-color);
@@ -167,8 +167,10 @@
   --db-link-color: #ff5a5a;
   --db-link-hover-color: #ff7575;
   --db-link-pressed-color: #f89292;
-  --db-underline-color: #{mix(db-palette-color('white'), db-palette-color('coolgray700'), 35%)};
   --db-link-underline-color: #{mix(#ff5a5a, db-palette-color('coolgray700'), 35%)};
+  --db-secondary-link-underline-color: #{mix(db-palette-color('white'),
+  db-palette-color('coolgray700'),
+  35%)};
 
   // FIELDS
   --db-field-border-color: #000;
@@ -327,8 +329,8 @@
   --db-link-color: #fff;
   --db-link-hover-color: #{mix(#000, db-palette-color('dbrot'), 60%)};
   --db-link-pressed-color: #{mix(#000, db-palette-color('dbrot'), 40%)};
-  --db-underline-color: #{mix(#fff, db-palette-color('dbrot'), 50%)};
   --db-link-underline-color: #{mix(#fff, db-palette-color('dbrot'), 50%)};
+  --db-secondary-link-underline-color: #{mix(#fff, db-palette-color('dbrot'), 50%)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-palette-color('black')};
@@ -529,8 +531,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   // LINKS
   --db-link-hover-color: #{mix(#000, $db-s-bahn-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-s-bahn-loud-background, 40%)};
-  --db-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
   --db-link-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
+  --db-secondary-link-underline-color: #{mix(#fff, $db-s-bahn-loud-background, 40%)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-palette-color('black')};
@@ -620,8 +622,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   // LINKS
   --db-link-hover-color: #{mix(#000, $db-green-campaign-loud-background, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-green-campaign-loud-background, 40%)};
-  --db-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
   --db-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
+  --db-secondary-link-underline-color: #{mix(#fff, $db-green-campaign-loud-background, 30%)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-palette-color('black')};
@@ -675,8 +677,8 @@ $db-green-campaign-loud-background: db-palette-color('lightgreen400');
   --db-link-color: #{db-palette-color('cyan300')};
   --db-link-hover-color: #{db-palette-color('cyan400')};
   --db-link-pressed-color: #{db-palette-color('cyan500')};
-  --db-underline-color: #{mix(#fff, #213a7e, 30%)};
   --db-link-underline-color: #{mix(db-palette-color('cyan300'), #213a7e, 40%)};
+  --db-secondary-link-underline-color: #{mix(#fff, #213a7e, 30%)};
 
   // FIELDS
   --db-caret-color: #387df5;
