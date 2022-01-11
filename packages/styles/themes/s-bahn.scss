@@ -2,7 +2,7 @@
 
 $db-s-bahn-color: #038531;
 
-.S_BAHN_LIGHT {
+.EXPERIMENTAL_S_BAHN_LIGHT {
   @extend %db-light-theme-base;
 
   // BRAND
@@ -38,9 +38,9 @@ $db-s-bahn-color: #038531;
   // TRANSPORTCHIP
 }
 
-.S_BAHN_LIGHT_ALTERNATE {
+.EXPERIMENTAL_S_BAHN_LIGHT_ALTERNATE {
   @extend %db-light-alternate-theme-base;
-  @extend .S_BAHN_LIGHT;
+  @extend .EXPERIMENTAL_S_BAHN_LIGHT;
 
   // BRAND
   // GENERAL
@@ -63,7 +63,7 @@ $db-s-bahn-color: #038531;
   // TRANSPORTCHIP
 }
 
-.S_BAHN_BRANDED {
+.EXPERIMENTAL_S_BAHN_BRANDED {
   @extend %db-branded-theme-base;
 
   // BRAND
