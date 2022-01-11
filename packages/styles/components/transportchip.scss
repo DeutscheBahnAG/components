@@ -92,35 +92,34 @@ button.db-transportchip {
 }
 
 .db-transportchip--tram {
-  background: db-background-color('transportation.tram');
-  color: db-text-color('transportation.tram');
+  background: #bb2a40;
+  color: #fff;
 }
 
 .db-transportchip--airplane {
-  background: db-background-color('transportation.airplane');
-  color: db-text-color('transportation.airplane');
+  background: #0aa09a;
+  color: #fff;
 }
 
 .db-transportchip--bus {
-  background: db-background-color('transportation.bus');
-  color: db-text-color('transportation.bus');
+  background: #973f87;
+  color: #fff;
 }
 
 .db-transportchip--ec {
-  background: db-background-color('transportation.ec');
-  color: db-text-color('transportation.ec');
+  background: #5e6573;
+  color: #fff;
 }
 
 .db-transportchip--ferry {
-  background: db-background-color('transportation.ferry');
-  // color: db-text-color('transportation.ferry');
+  background: #007eb3;
   color: #fff;
 }
 
 .db-transportchip--ic,
 .db-transportchip--national {
-  background: db-background-color('transportation.ic');
-  color: db-text-color('transportation.ic');
+  background: #5e6573;
+  color: #fff;
 }
 
 .db-transportchip--ice,
@@ -131,44 +130,44 @@ button.db-transportchip {
 
 .db-transportchip--rb,
 .db-transportchip--regional {
-  background: db-background-color('transportation.rb');
-  color: db-text-color('transportation.rb');
+  background: #c1bdbd;
+  color: #262525;
 }
 
 .db-transportchip--re,
 .db-transportchip--regionalexpress {
-  background: db-background-color('transportation.re');
-  color: db-text-color('transportation.re');
+  background: #757373;
+  color: #fff;
 }
 
 .db-transportchip--suburban {
-  background: db-background-color('transportation.sbahn');
-  color: db-text-color('transportation.sbahn');
+  background: #03732a;
+  color: #fff;
 }
 
 .db-transportchip--subway {
-  background: db-background-color('transportation.ubahn');
-  color: db-text-color('transportation.ubahn');
+  background: #275eb9;
+  color: #fff;
 }
 
 .db-transportchip--taxi {
-  background: db-background-color('transportation.taxi');
-  color: db-text-color('transportation.taxi');
+  background: #f9d406;
+  color: #000;
 }
 
 .db-transportchip--intercitybus {
-  background: db-background-color('transportation.intercitybus');
-  color: db-text-color('transportation.intercitybus');
+  background: #dc3e89;
+  color: #fff;
 }
 
 .db-transportchip--bikesharing {
-  background: db-background-color('transportation.bikesharing');
-  color: db-text-color('transportation.bikesharing');
+  background: #2d861b;
+  color: #fff;
 }
 
 .db-transportchip--carsharing {
-  background: db-background-color('transportation.carsharing');
-  color: db-text-color('transportation.carsharing');
+  background: #f78f08;
+  color: #3d0600;
 }
 
 // Shared regional styles
@@ -375,7 +374,7 @@ button.db-transportchip {
   }
 
   &.db-transportchip--taxi {
-    background: db-background-color('transportation.taxi');
+    background: #f9d406;
   }
 
   &.db-transportchip--ferry {
@@ -490,7 +489,7 @@ button.db-transportchip {
 
   .db-transportchip--e7 {
     background: transparent;
-    color: db-text-color('primary');
+    color: #000;
   }
 
   &.db-transportchip--bus {

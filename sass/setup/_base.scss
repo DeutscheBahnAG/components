@@ -1,5 +1,5 @@
 body {
-  color: db-text-color('primary');
+  color: var(--db-primary-text-color);
   font-family: db-font-family('copy');
   line-height: 1.5;
 }

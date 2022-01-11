@@ -56,22 +56,6 @@
   }
 }
 
-@function db-color($color, $tokens-map: $db-tokens) {
-  @return db-token('color', $token-name: $color, $tokens-map: $tokens-map);
-}
-
-@function db-background-color($color, $tokens-map: $db-tokens) {
-  @return db-color('background.#{$color}', $tokens-map: $tokens-map);
-}
-
-@function db-text-color($color, $tokens-map: $db-tokens) {
-  @return db-color('text.#{$color}', $tokens-map: $tokens-map);
-}
-
-@function db-border-color($color, $tokens-map: $db-tokens) {
-  @return db-color('border.#{$color}', $tokens-map: $tokens-map);
-}
-
 @function db-border-width($component, $tokens-map: $db-tokens) {
   @return db-token('bordersize', $token-name: $component, $tokens-map: $tokens-map);
 }

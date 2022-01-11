@@ -88,16 +88,9 @@ $db-logo-sizes: (
   margin: 0 calc(var(--db-logo--height) / -28);
 }
 
-.db-logo--default,
-.db-logo--filled {
-  .db-logo__db path {
-    fill: db-color('brand');
-  }
-}
-
 .db-logo--white .db-logo__db path,
 .db-logo--filled .db-logo__db rect {
-  fill: db-background-color('primary');
+  fill: #fff;
 }
 
 .db-logo[href] {
@@ -213,12 +206,6 @@ $db-logo-sizes: (
    */
   > :last-child .db-title {
     margin-bottom: -0.16em; /* 5 */
-  }
-}
-
-.db-pulse--default {
-  &::after {
-    background: db-color('brand');
   }
 }
 

@@ -1,4 +1,4 @@
-$code-background-color: db-background-color('secondary');
+$code-background-color: var(--db-secondary-background-color);
 
 #rsg-root {
   .rsg--hasSidebar-2 {
@@ -15,13 +15,13 @@ $code-background-color: db-background-color('secondary');
     overflow: visible;
 
     a {
-      @include db-primary-link($text-color: db-text-color('primary'), $underline: false);
+      @include db-primary-link($text-color: var(--db-primary-text-color), $underline: false);
     }
   }
 
   div[class^='rsg--sidebar-'] {
     background: db-palette-color('violet100');
-    background: db-background-color('secondary');
+    background: var(--db-secondary-background-color);
     border: 0;
 
     @include tablet {
@@ -49,20 +49,20 @@ $code-background-color: db-background-color('secondary');
   [class^='rsg--header-'] h2[class^='rsg--heading-'],
   h1[class^='rsg--heading-'] {
     @include db-text-style('title', 'xxl');
-    color: db-text-color('primary');
+    color: var(--db-primary-text-color);
     margin-bottom: db-spacing('m');
   }
 
   h2[class^='rsg--heading-'] {
     @include db-text-style('title', 'l');
-    color: db-text-color('primary');
+    color: var(--db-primary-text-color);
     margin-top: db-spacing('xxl');
     margin-bottom: db-spacing('m');
   }
 
   h3[class^='rsg--heading-'] {
     @include db-text-style('title', 'm');
-    color: db-text-color('primary');
+    color: var(--db-primary-text-color);
     margin-top: db-spacing('xxl');
     margin-bottom: db-spacing('m');
 
@@ -77,7 +77,7 @@ $code-background-color: db-background-color('secondary');
 
   h4[class^='rsg--heading-'] {
     @include db-text-style('copy', 'm');
-    color: db-text-color('primary');
+    color: var(--db-primary-text-color);
     font-weight: db-font-weight('copy', 'bold');
     margin-top: db-spacing('l');
     margin-bottom: db-spacing('m');
@@ -86,7 +86,7 @@ $code-background-color: db-background-color('secondary');
   p[class^='rsg--para-'],
   li[class^='rsg--li-'] {
     @include db-text-style('copy', 'm');
-    color: db-text-color('primary');
+    color: var(--db-primary-text-color);
     margin-bottom: db-spacing('m');
 
     a {

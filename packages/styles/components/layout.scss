@@ -1,6 +1,6 @@
 .db-layout--left-aligned {
   background: linear-gradient(to right,
-  #{db-color('brand')} var(--db-sidebar-width),
+  var(--db-logo-color) var(--db-sidebar-width),
   transparent 0);
   padding-left: var(--db-sidebar-width);
 

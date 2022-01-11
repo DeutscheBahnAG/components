@@ -4,7 +4,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-full-page {
   @include db-text-style('copy');
-  color: db-text-color('primary');
+  color: var(--db-primary-text-color);
   padding: db-spacing('l') 0;
   position: absolute;
   left: 0;
@@ -14,7 +14,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-page {
   @include db-text-style('copy');
-  color: db-text-color('primary');
+  color: var(--db-primary-text-color);
   padding: db-spacing('l');
   margin: 0 auto;
   max-width: 64em;
@@ -34,7 +34,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   padding: db-spacing('s') db-spacing('m');
   font-family: Courier, monospace;
   font-size: 14px;
-  background-color: db-background-color('secondary');
+  background-color: var(--db-secondary-background-color);
   border-radius: db-border-radius('s');
 }
 
@@ -70,7 +70,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
   min-width: 120px;
   margin: db-spacing('m');
   box-shadow: $shadow--low;
-  background-color: db-background-color('primary');
+  background-color: var(--db-primary-background-color);
   border-radius: db-border-radius('xl');
   overflow: hidden;
 
@@ -149,7 +149,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 .sg-spacing {
   position: absolute;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8px" height="8px"><style>path{stroke-antialiasing:true;fill:red;stroke:%23fcd0d0;stroke-linecap:square;stroke-width:3px}</style><path d="M4 0 0 4"/><path d="M8 4 4 8"/></svg>');
-  border: db-border-width('input') db-color('brand') solid;
+  border: db-border-width('input') var(--db-logo-color) solid;
 }
 
 .sg-table {

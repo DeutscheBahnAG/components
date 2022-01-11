@@ -13,8 +13,8 @@ $db-modal--dialog-padding-y-desktop: db-spacing('l');
 $db-modal--dialog-padding-x-desktop: db-spacing('xxl');
 $db-modal--action-gap: db-spacing('s');
 $db-modal--save-gap: db-spacing('s');
-$db-modal--shadow-background-color: db-color('background.primary');
-$db-modal--shadow-foreground-color: db-color('text.primary');
+$db-modal--shadow-background-color: #fff;
+$db-modal--shadow-foreground-color: #000;
 
 .db-modal {
   box-sizing: border-box;
@@ -157,7 +157,7 @@ $db-modal--shadow-foreground-color: db-color('text.primary');
   @media print {
     overflow-y: visible;
     background: none;
-    border-bottom: db-border-width('input') solid db-border-color('input');
+    border-bottom: db-border-width('input') solid #000;
   }
 
   &:empty {
