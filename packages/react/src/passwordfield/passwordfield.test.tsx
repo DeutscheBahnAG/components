@@ -15,8 +15,8 @@ describe('Passwordfield component', () => {
     const { container } = render(<Passwordfield disabled value="test456" />);
     const field = screen.getByDisplayValue('test456');
     const button = screen.getByRole('button');
-    expect(field.disabled).toBe(true);
-    expect(button.disabled).toBe(true);
+    expect((field as HTMLInputElement).disabled).toBe(true);
+    expect((button as HTMLButtonElement).disabled).toBe(true);
     expect(container).toMatchSnapshot();
   });
 
