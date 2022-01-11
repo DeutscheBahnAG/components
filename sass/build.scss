@@ -1,6 +1,10 @@
 // Abstracts (constants, functions and mixins)
 @import '@db-design/styles/abstracts';
 @import '@db-design/styles/global';
+@import '@db-design/styles/themes/db-pride';
+@import '@db-design/styles/themes/db-green';
+@import '@db-design/styles/themes/s-bahn';
+@import '@db-design/styles/themes/display';
 
 // Setup (reset, base etc..)
 @import 'setup/*.scss';

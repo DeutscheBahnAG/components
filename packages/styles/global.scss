@@ -1,5 +1,11 @@
 @import 'abstracts';
 @import 'global/fonts';
-@import 'global/themes';
 @import 'global/layout';
 @import 'global/inline-spacer';
+@import 'themes/base';
+@import 'themes/db';
+
+:root {
+  /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+  @extend .DB_LIGHT; // Set default theme
+}

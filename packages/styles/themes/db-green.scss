@@ -1,0 +1,95 @@
+/* stylelint-disable order/order, scss/at-extend-no-missing-placeholder */
+
+$db-green-campaign-background-color: db-palette-color('lightgreen400');
+
+.EXPERIMENTAL_DB_GREEN_LIGHT {
+  @extend %db-light-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-loud-border-color: #{db-palette-color('lightgreen400')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{db-palette-color('lightgreen400')};
+  --db-link-hover-color: #{db-palette-color('lightgreen500')};
+  --db-link-pressed-color: #{db-palette-color('lightgreen600')};
+  --db-link-underline-color: #{db-link-color(db-palette-color('lightgreen400'))};
+
+  // FIELDS
+  --db-caret-color: #{db-palette-color('lightgreen400')};
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-hover-background-color: #{db-palette-color('lightgreen500')};
+  --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{db-palette-color('lightgreen100')};
+  --db-secondary-button-pressed-background-color: #{db-palette-color('lightgreen200')};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+.EXPERIMENTAL_DB_GREEN_LIGHT_ALTERNATE {
+  @extend %db-light-alternate-theme-base;
+  @extend .EXPERIMENTAL_DB_GREEN_LIGHT;
+}
+
+.EXPERIMENTAL_GREEN_CAMPAIGN_BRANDED {
+  @extend %db-branded-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-primary-background-color: #{$db-green-campaign-background-color};
+  --db-darker-background-color: #{db-palette-color('lightgreen500')};
+  --db-disabled-text-color: #{db-palette-color('lightgreen300')};
+  --db-border-color: #b3dd80;
+  --db-loud-border-color: #{db-palette-color('lightgreen100')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-hover-color: #{mix(#000, $db-green-campaign-background-color, 60%)};
+  --db-link-pressed-color: #{mix(#000, $db-green-campaign-background-color, 40%)};
+  --db-link-underline-color: #{db-link-color(#fff)};
+  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+
+  // FIELDS
+  --db-field-primary-text-color: #{db-palette-color('black')};
+  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-caret-color: #{db-palette-color('lightgreen400')};
+
+  // PRIMARY BUTTON
+  --db-primary-button-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-hover-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-disabled-text-color: #61a518;
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'), 6%)};
+  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'), 12%)};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+
+  // SEVERITY
+  --db-success-on-background-color: #476847;
+  --db-warning-on-background-color: #476847;
+  --db-informative-on-background-color: #476847;
+
+  // CHECKBOX + RADIO BUTTON
+
+  // TRANSPORTCHIP
+  --db-transportchip-background-color: #529813;
+  --db-transportchip-text-color: #fff;
+}

@@ -1,0 +1,29 @@
+/* stylelint-disable order/order */
+
+.DB_LIGHT {
+  @extend %db-light-theme-base;
+}
+
+.DB_LIGHT_ALTERNATE {
+  @extend %db-light-alternate-theme-base;
+}
+
+.DB_DARK {
+  @extend %db-dark-theme-base;
+}
+
+.DB_DARK_ALTERNATE {
+  @extend %db-dark-alternate-theme-base;
+}
+
+.DB_BRANDED {
+  @extend %db-branded-theme-base;
+
+  // PRIMARY BUTTON
+  --db-primary-button-disabled-background-color: #{db-palette-color('red400')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('red550')};
+
+  // TRANSPORTCHIP
+  --db-transportchip-background-color: #{db-palette-color('red600')};
+  --db-transportchip-text-color: #{db-palette-color('white')};
+}

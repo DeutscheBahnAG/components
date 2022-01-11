@@ -1,0 +1,371 @@
+/* stylelint-disable order/order */
+
+@function db-link-color($color) {
+  @return rgba($color, 0.4);
+}
+
+%db-light-theme-base {
+  // BRAND
+  --db-logo-color: #{db-palette-color('dbrot')};
+  --db-pulse-background: #{db-palette-color('dbrot')};
+
+  // GENERAL
+  --db-primary-background-color: #{db-palette-color('white')};
+  --db-secondary-background-color: #{db-palette-color('coolgray100')};
+  --db-darker-background-color: #{db-palette-color('coolgray100')};
+  --db-primary-text-color: #{db-palette-color('black')};
+  --db-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-disabled-text-color: #{db-palette-color('coolgray280')};
+  --db-shadow-color: #0000000a;
+  --db-border-color: #{db-palette-color('coolgray135')};
+  --db-loud-border-color: #{db-palette-color('coolgray500')};
+
+  // ACCESSIBILITY
+  --db-focus-ring-color: #0043c740;
+
+  // LINKS
+  --db-link-color: #{db-palette-color('red500')};
+  --db-link-hover-color: #{db-palette-color('red600')};
+  --db-link-pressed-color: #{db-palette-color('red700')};
+  --db-link-underline-color: #{db-link-color(db-palette-color('red500'))};
+  --db-secondary-link-underline-color: #{db-link-color(db-palette-color('black'))};
+
+  // FIELDS
+  --db-field-primary-text-color: var(--db-primary-text-color);
+  --db-field-secondary-text-color: var(--db-secondary-text-color);
+  --db-field-border-color: #{db-palette-color('coolgray270')};
+  --db-caret-color: #{darken(db-palette-color('dbrot'), 3%)}; // 3% darker for contrast to coolgray100 background
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #{db-palette-color('red500')};
+  --db-primary-button-hover-background-color: #{db-palette-color('red600')};
+  --db-primary-button-pressed-background-color: #{db-palette-color('red700')};
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray150')};
+  --db-primary-button-text-color: #{db-palette-color('white')};
+  --db-primary-button-hover-text-color: #{db-palette-color('white')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('white')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray230')};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-background-color: var(--db-primary-background-color);
+  --db-secondary-button-hover-background-color: #{db-palette-color('coolgray200')};
+  --db-secondary-button-pressed-background-color: #{db-palette-color('coolgray300')};
+  --db-secondary-button-disabled-background-color: var(
+    --db-primary-button-disabled-background-color
+  );
+  --db-secondary-button-text-color: var(--db-primary-text-color);
+  --db-secondary-button-hover-text-color: var(--db-primary-text-color);
+  --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
+  --db-secondary-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
+
+  // SOLID + HOVER-ONLY BUTTON
+  --db-solid-button-background-color: #{db-palette-color('coolgray200')};
+  --db-solid-button-hover-background-color: #{db-palette-color('coolgray300')};
+  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray400')};
+  --db-solid-button-disabled-background-color: var(--db-primary-button-disabled-background-color);
+  --db-solid-button-text-color: var(--db-primary-text-color);
+  --db-solid-button-hover-text-color: var(--db-primary-text-color);
+  --db-solid-button-pressed-text-color: var(--db-primary-text-color);
+  --db-solid-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
+
+  // TRACK
+  --db-track-background-color: #140f6f;
+  --db-track-text-color: #{db-palette-color('coolgray100')};
+
+  // TIME
+  --db-on-time-text-color: #038531;
+  --db-on-time-light-text-color: #02822f;
+  --db-on-time-background-color: transparent;
+  --db-delayed-text-color: #ec0016;
+  --db-delayed-light-text-color: #db0014;
+  --db-delayed-background-color: transparent;
+
+  // SEVERITY
+  --db-success-color: #02822f;
+  --db-success-background-color: #038531;
+  --db-success-on-background-color: #fff;
+  --db-warning-color: #{db-palette-color('red600')};
+  --db-warning-background-color: #{db-palette-color('red600')};
+  --db-warning-on-background-color: #{db-palette-color('coolgray050')};
+  --db-informative-color: #000;
+  --db-informative-background-color: #444d60;
+  --db-informative-on-background-color: #fff;
+
+  // CHECKBOX + RADIO BUTTON
+  --db-checkbox-tick-color: var(--db-primary-background-color);
+
+  // TRANSPORTCHIP
+  // Override transportchip colors if needed (only colorful themes)
+}
+
+%db-dark-theme-base {
+  @extend %db-light-theme-base;
+
+  // BRAND
+  --db-logo-color: #fe182e;
+  --db-pulse-background: #fe182e;
+
+  // GENERAL
+  --db-primary-background-color: #{db-palette-color('coolgray700')};
+  --db-secondary-background-color: #{db-palette-color('coolgray800')};
+  --db-darker-background-color: #{db-palette-color('coolgray800')};
+  --db-primary-text-color: #{db-palette-color('white')};
+  --db-secondary-text-color: #{db-palette-color('coolgray300')};
+  --db-disabled-text-color: #{db-palette-color('coolgray500')};
+  --db-shadow-color: transparent;
+  --db-border-color: #e77579;
+  --db-loud-border-color: #{db-palette-color('red100')};
+
+  // ACCESSIBILITY
+  --db-focus-ring-color: #70a0ff66;
+
+  // LINKS
+  --db-link-color: #ff5a5a;
+  --db-link-hover-color: #ff7575;
+  --db-link-pressed-color: #f89292;
+  --db-link-underline-color: #{db-link-color(#f55)};
+  --db-secondary-link-underline-color: #{db-link-color(db-palette-color('white'))};
+
+  // FIELDS
+  --db-field-border-color: #000;
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #fe182e;
+  --db-primary-button-hover-background-color: #{darken(#fe182e, 12%)};
+  --db-primary-button-pressed-background-color: #{darken(#fe182e, 24%)};
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray600')};
+  --db-primary-button-text-color: #{db-palette-color('white')};
+  --db-primary-button-hover-text-color: #{db-palette-color('white')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('white')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray700')};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-background-color: transparent;
+  --db-secondary-button-hover-background-color: #{db-palette-color('coolgray600')};
+  --db-secondary-button-pressed-background-color: #{db-palette-color('coolgray500')};
+  --db-secondary-button-text-color: var(--db-primary-text-color);
+  --db-secondary-button-hover-text-color: var(--db-primary-text-color);
+  --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
+
+  // SOLID + HOVER-ONLY BUTTON
+  --db-solid-button-background-color: #{db-palette-color('coolgray500')};
+  --db-solid-button-hover-background-color: #{db-palette-color('coolgray400')};
+  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray300')};
+  --db-solid-button-text-color: var(--db-primary-text-color);
+  --db-solid-button-hover-text-color: var(--db-primary-text-color);
+  --db-solid-button-pressed-text-color: var(--db-primary-text-color);
+  --db-solid-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
+
+  // TRACK
+  --db-track-background-color: #{db-palette-color('white')};
+  --db-track-text-color: #{db-palette-color('coolgray800')};
+
+  // TIME
+  --db-on-time-background-color: #{db-palette-color('white')};
+  --db-delayed-background-color: #{db-palette-color('white')};
+
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+
+  // BRAND
+
+  // GENERAL
+  --db-border-color: #{db-palette-color('coolgray480')};
+  --db-loud-border-color: #{db-palette-color('coolgray200')};
+
+  // ACCESSIBILITY
+  // LINKS
+
+  // FIELDS
+  --db-field-border-color: #000;
+  --db-caret-color: #ff5a5a;
+
+  // PRIMARY BUTTON
+  // SECONDARY BUTTON
+  // SOLID + HOVER-ONLY BUTTON
+
+  // TRACK
+  --db-track-background-color: #4c70ab;
+  --db-track-text-color: #fff;
+
+  // TIME
+  --db-on-time-text-color: #{db-palette-color('white')};
+  --db-on-time-light-text-color: #{db-palette-color('white')};
+  --db-on-time-background-color: #087d2a;
+  --db-delayed-text-color: #{db-palette-color('white')};
+  --db-delayed-light-text-color: #{db-palette-color('white')};
+  --db-delayed-background-color: #cc1526;
+
+  // SEVERITY
+  --db-success-color: #018531;
+  --db-success-background-color: #339863;
+  --db-warning-color: #f76166;
+  --db-warning-background-color: #cc1526;
+  --db-informative-color: #fff;
+  --db-informative-background-color: #{db-palette-color('coolgray450')};
+
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+%db-branded-theme-base {
+  // BRAND
+  --db-logo-color: #{db-palette-color('white')};
+  --db-pulse-background: #{db-palette-color('white')};
+
+  // GENERAL
+  --db-primary-background-color: #{db-palette-color('dbrot')};
+  --db-secondary-background-color: #{db-palette-color('white')};
+  --db-darker-background-color: #{db-palette-color('red600')};
+  --db-primary-text-color: #{db-palette-color('white')};
+  --db-secondary-text-color: #fffdfd;
+  --db-disabled-text-color: #{db-palette-color('red300')};
+  --db-shadow-color: transparent;
+  --db-border-color: #{db-palette-color('red600')};
+  --db-loud-border-color: #{db-palette-color('red100')};
+
+  // ACCESSIBILITY
+  --db-focus-ring-color: rgba(0, 0, 0, 0.4);
+
+  // LINKS
+  --db-link-color: #fff;
+  --db-link-hover-color: #{mix(#000, db-palette-color('dbrot'), 60%)};
+  --db-link-pressed-color: #{mix(#000, db-palette-color('dbrot'), 40%)};
+  --db-link-underline-color: #{db-link-color(#fff)};
+  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+
+  // FIELDS
+  --db-field-primary-text-color: #{db-palette-color('black')};
+  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-field-border-color: var(--db-secondary-background-color);
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #{db-palette-color('white')};
+  --db-primary-button-hover-background-color: #{db-palette-color('red100')};
+  --db-primary-button-pressed-background-color: #{db-palette-color('red200')};
+  --db-primary-button-disabled-background-color: #{rgba(db-palette-color('white'), 0.2)};
+  --db-primary-button-text-color: #{db-palette-color('black')};
+  --db-primary-button-hover-text-color: #{db-palette-color('black')};
+  --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-disabled-text-color: #{rgba(db-palette-color('white'), 0.5)};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-background-color: transparent;
+  --db-secondary-button-hover-background-color: #{db-palette-color('red600')};
+  --db-secondary-button-pressed-background-color: #{db-palette-color('red700')};
+  --db-secondary-button-text-color: var(--db-primary-text-color);
+  --db-secondary-button-hover-text-color: var(--db-primary-text-color);
+  --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
+
+  // SOLID + HOVER-ONLY BUTTON
+  --db-solid-button-background-color: #{rgba(db-palette-color('black'), 0.2)};
+  --db-solid-button-hover-background-color: #{rgba(db-palette-color('black'), 0.3)};
+  --db-solid-button-pressed-background-color: #{rgba(db-palette-color('black'), 0.4)};
+  --db-solid-button-text-color: #fff;
+  --db-solid-button-hover-text-color: #fff;
+  --db-solid-button-pressed-text-color: #fff;
+
+  // TRACK
+  --db-track-background-color: #{db-palette-color('white')};
+  --db-track-text-color: #{db-palette-color('coolgray800')};
+
+  // TIME
+  --db-on-time-background-color: #{db-palette-color('white')};
+  --db-delayed-background-color: #{db-palette-color('white')};
+
+  // SEVERITY
+  --db-success-color: #fff;
+  --db-success-background-color: #fff;
+  --db-success-on-background-color: #{db-palette-color('red800')};
+  --db-warning-color: #fff;
+  --db-warning-background-color: #fff;
+  --db-warning-on-background-color: #{db-palette-color('red800')};
+  --db-informative-color: #fff;
+  --db-informative-background-color: #fff;
+  --db-informative-on-background-color: #{db-palette-color('red800')};
+
+  // CHECKBOX + RADIO BUTTON
+  --db-checkbox-tick-color: #000;
+
+  // TRANSPORTCHIP
+}
+
+%db-light-alternate-theme-base {
+  @extend %db-light-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray200')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray300')};
+  --db-primary-background-color: #{db-palette-color('coolgray100')};
+  --db-secondary-background-color: #{db-palette-color('white')};
+  --db-darker-background-color: #{db-palette-color('coolgray200')};
+  --db-disabled-text-color: #{db-palette-color('coolgray300')};
+  --db-shadow-color: transparent;
+  --db-border-color: #{db-palette-color('coolgray270')};
+  --db-loud-border-color: #{db-palette-color('coolgray600')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{darken(db-palette-color('red500'), 3%)};
+  --db-link-hover-color: #{darken(db-palette-color('red600'), 3%)};
+  --db-link-pressed-color: #{darken(db-palette-color('red700'), 3%)};
+  --db-link-underline-color: #{db-link-color(darken(db-palette-color('red500'), 3%))};
+
+  // FIELDS
+  --db-caret-color: #{db-palette-color('dbrot')};
+
+  // PRIMARY BUTTON
+  // SECONDARY BUTTON
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+%db-dark-alternate-theme-base {
+  @extend %db-dark-theme-base;
+
+  // BRAND
+
+  // GENERAL
+  --db-primary-background-color: #{db-palette-color('coolgray800')};
+  --db-secondary-background-color: #{db-palette-color('coolgray700')};
+  --db-darker-background-color: #{db-palette-color('black')};
+  --db-secondary-text-color: #{db-palette-color('coolgray350')};
+  --db-disabled-text-color: #{db-palette-color('coolgray530')};
+  --db-border-color: #{db-palette-color('coolgray565')};
+
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #fa5c57;
+  --db-link-underline-color: #{db-link-color(#fa5c57)};
+
+  // FIELDS
+
+  // PRIMARY BUTTON
+  --db-primary-button-disabled-background-color: #{db-palette-color('coolgray630')};
+  --db-primary-button-disabled-text-color: #{db-palette-color('coolgray800')};
+
+  // SECONDARY BUTTON
+
+  // SOLID + HOVER-ONLY BUTTON
+  --db-solid-button-background-color: #{db-palette-color('coolgray600')};
+  --db-solid-button-hover-background-color: #{db-palette-color('coolgray500')};
+  --db-solid-button-pressed-background-color: #{db-palette-color('coolgray400')};
+
+  // TRACK
+  // TIME
+
+  // SEVERITY
+  --db-informative-background-color: #{db-palette-color('coolgray500')};
+
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
