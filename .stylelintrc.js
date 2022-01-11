@@ -1,5 +1,5 @@
 module.exports = {
-  extends: './node_modules/@bahn-x/webdev-configs/stylelint',
+  extends: 'stylelint-config-sass-guidelines',
   ignoreFiles: [
     './node_modules/**/*',
     './build/**/*',
