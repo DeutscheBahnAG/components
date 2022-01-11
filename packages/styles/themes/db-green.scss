@@ -69,6 +69,11 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   --db-caret-color: #{db-color('lightgreen400')};
 
   // PRIMARY BUTTON
+  --db-primary-button-disabled-background-color: #{mix(
+      #fff,
+      $db-green-campaign-background-color,
+      20%
+    )};
   --db-primary-button-text-color: #{db-color('lightgreen400')};
   --db-primary-button-hover-text-color: #{db-color('lightgreen400')};
   --db-primary-button-pressed-text-color: #{db-color('lightgreen400')};
