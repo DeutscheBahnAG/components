@@ -217,9 +217,9 @@ const Modal: ModalType<ModalProps> = ({
 
   return (
     <ReactModal
-      isOpen={isOpen!}
+      isOpen={isOpen}
       onRequestClose={onClose && onClose}
-      closeTimeoutMS={duration!}
+      closeTimeoutMS={duration}
       portalClassName="db-modal-portal"
       overlayClassName={{
         base: clsx('db-modal', overlayClassName),
@@ -232,16 +232,16 @@ const Modal: ModalType<ModalProps> = ({
         beforeClose: 'db-modal__dialog--close',
       }}
       ariaHideApp
-      shouldFocusAfterRender={autoFocus!}
-      shouldCloseOnOverlayClick={enableCloseButton!}
-      shouldCloseOnEsc={enableCloseButton!}
+      shouldFocusAfterRender={autoFocus}
+      shouldCloseOnOverlayClick={enableCloseButton}
+      shouldCloseOnEsc={enableCloseButton}
       shouldReturnFocusAfterClose
       contentRef={setElementFocus}
       parentSelector={getPortalParentNode}
       role={kindValues[kind].role}
       aria={{
-        labelledby: ariaLabelledBy!,
-        describedby: ariaDescribedBy!,
+        labelledby: ariaLabelledBy,
+        describedby: ariaDescribedBy,
       }}
       bodyOpenClassName={disableBodyScrollWhenOpen ? 'db-body--db-modal-open' : undefined}
       htmlOpenClassName={disableBodyScrollWhenOpen ? 'db-html--db-modal-open' : undefined}

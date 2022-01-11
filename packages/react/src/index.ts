@@ -1,6 +1,3 @@
-import * as TransportchipIcons from './transportchip/icons';
-
-export { TransportchipIcons };
 export { default as Anchor } from './anchor';
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
@@ -24,3 +21,5 @@ export { default as Track } from './track';
 export { default as Transportchip } from './transportchip';
 export { default as Triptime } from './triptime';
 export { default as Triptimespan } from './triptimespan';
+
+export * as TransportchipIcons from './transportchip/icons';

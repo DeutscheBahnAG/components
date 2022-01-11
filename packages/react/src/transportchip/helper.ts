@@ -168,10 +168,8 @@ export const specialProducts: SpecialProducts = {
     return null;
   },
   vgn: (transportType, lineNumber) => {
-    if (transportType === 'tram') {
-      if (['19', '20'].includes(lineNumber)) {
-        return 'tram-temporary';
-      }
+    if (transportType === 'tram' && ['19', '20'].includes(lineNumber)) {
+      return 'tram-temporary';
     }
     return null;
   },

@@ -194,12 +194,10 @@ export const validateVariantCombinations: React.Validator<ButtonVariantsType> = 
     );
   }
   if (icon) {
-    if (size === 's') {
-      if (shape === 'default' || variant === 'secondary') {
-        return new Error(
-          `\`size\` \`${size}\` should not be used in a ${componentName} with an Icon.`
-        );
-      }
+    if (size === 's' && (shape === 'default' || variant === 'secondary')) {
+      return new Error(
+        `\`size\` \`${size}\` should not be used in a ${componentName} with an Icon.`
+      );
     }
     if (size === 'xl' && shape !== 'default' && (variant !== 'primary' || shape !== 'round')) {
       return new Error(

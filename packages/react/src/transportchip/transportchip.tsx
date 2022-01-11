@@ -66,7 +66,7 @@ const Transportchip: React.FC<TransportchipProps> = ({
     specialProducts[detectedStyle] &&
     specialProducts[detectedStyle](product, lineNumber);
   const matches = lineNumber && lineNumber.match(/(.*[A-Z]) ?(\d.*)/);
-  // eslint-disable-next-line no-nested-ternary
+  // eslint-disable-next-line unicorn/no-nested-ternary
   const Component = href ? 'a' : onClick ? 'button' : 'span';
   const prefix = matches && matches[1];
   const number = matches && matches[2];

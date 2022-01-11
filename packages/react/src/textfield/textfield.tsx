@@ -153,4 +153,6 @@ const Textfield: TextfieldComponent = React.forwardRef(
   }
 );
 
+Textfield.displayName = 'Textfield';
+
 export default Textfield;
