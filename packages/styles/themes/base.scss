@@ -107,8 +107,8 @@
   --db-secondary-text-color: #{db-color('coolgray300')};
   --db-disabled-text-color: #{db-color('coolgray500')};
   --db-shadow-color: transparent;
-  --db-border-color: #e77579;
-  --db-loud-border-color: #{db-color('red100')};
+  --db-border-color: #{db-color('coolgray500')};
+  --db-loud-border-color: #{db-color('coolgray200')};
 
   // ACCESSIBILITY
   --db-focus-ring-color: #70a0ff66;
@@ -117,13 +117,12 @@
   --db-link-color: #ff5a5a;
   --db-link-hover-color: #ff7575;
   --db-link-pressed-color: #f89292;
-  --db-link-underline-color: #{rgba(#f89292, 0.5)};
-  --db-secondary-link-underline-color: #{db-color('white', 0.4)};
   --db-link-underline-color: #a86769;
   --db-secondary-link-underline-color: #{db-color('coolgray400')};
 
   // FIELDS
   --db-field-border-color: #000;
+  --db-caret-color: #ff5a5a;
 
   // PRIMARY BUTTON
   --db-primary-button-background-color: #fe182e;
@@ -151,35 +150,6 @@
   --db-solid-button-hover-text-color: var(--db-primary-text-color);
   --db-solid-button-pressed-text-color: var(--db-primary-text-color);
   --db-solid-button-disabled-text-color: var(--db-primary-button-disabled-text-color);
-
-  // TRACK
-  --db-track-background-color: #{db-color('white')};
-  --db-track-text-color: #{db-color('coolgray800')};
-
-  // TIME
-  --db-on-time-background-color: #{db-color('white')};
-  --db-delayed-background-color: #{db-color('white')};
-
-  // SEVERITY
-  // CHECKBOX + RADIO BUTTON
-  // TRANSPORTCHIP
-
-  // BRAND
-
-  // GENERAL
-  --db-border-color: #{db-color('coolgray500')};
-  --db-loud-border-color: #{db-color('coolgray200')};
-
-  // ACCESSIBILITY
-  // LINKS
-
-  // FIELDS
-  --db-field-border-color: #000;
-  --db-caret-color: #ff5a5a;
-
-  // PRIMARY BUTTON
-  // SECONDARY BUTTON
-  // SOLID + HOVER-ONLY BUTTON
 
   // TRACK
   --db-track-background-color: #4c70ab;
