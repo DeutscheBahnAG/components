@@ -1,9 +1,5 @@
 /* stylelint-disable order/order */
 
-@function db-link-color($color) {
-  @return rgba($color, 0.4);
-}
-
 %db-light-theme-base {
   // BRAND
   --db-logo-color: #{db-color('dbrot')};
@@ -17,7 +13,7 @@
   --db-secondary-text-color: #{db-color('coolgray500')};
   --db-disabled-text-color: #{db-color('coolgray280')};
   --db-shadow-color: #0000000a;
-  --db-border-color: #{db-color('coolgray135')};
+  --db-border-color: #{db-color('coolgray150')};
   --db-loud-border-color: #{db-color('coolgray500')};
 
   // ACCESSIBILITY
@@ -27,14 +23,14 @@
   --db-link-color: #{db-color('red500')};
   --db-link-hover-color: #{db-color('red600')};
   --db-link-pressed-color: #{db-color('red700')};
-  --db-link-underline-color: #{db-link-color(db-color('red500'))};
-  --db-secondary-link-underline-color: #{db-link-color(db-color('black'))};
+  --db-link-underline-color: #{db-color('red250')};
+  --db-secondary-link-underline-color: #{db-color('coolgray300')};
 
   // FIELDS
   --db-field-primary-text-color: var(--db-primary-text-color);
   --db-field-secondary-text-color: var(--db-secondary-text-color);
   --db-field-border-color: #{db-color('coolgray270')};
-  --db-caret-color: #{darken(db-color('dbrot'), 3%)}; // 3% darker for contrast to coolgray100 background
+  --db-caret-color: #{db-color('red520')}; // 3% darker for contrast to coolgray100 background
 
   // PRIMARY BUTTON
   --db-primary-button-background-color: #{db-color('red500')};
@@ -44,15 +40,13 @@
   --db-primary-button-text-color: #{db-color('white')};
   --db-primary-button-hover-text-color: #{db-color('white')};
   --db-primary-button-pressed-text-color: #{db-color('white')};
-  --db-primary-button-disabled-text-color: #{db-color('coolgray230')};
+  --db-primary-button-disabled-text-color: #{db-color('coolgray233')};
 
   // SECONDARY BUTTON
   --db-secondary-button-background-color: var(--db-primary-background-color);
   --db-secondary-button-hover-background-color: #{db-color('coolgray200')};
   --db-secondary-button-pressed-background-color: #{db-color('coolgray300')};
-  --db-secondary-button-disabled-background-color: var(
-    --db-primary-button-disabled-background-color
-  );
+  --db-secondary-button-disabled-background-color: var(--db-primary-button-disabled-background-color);
   --db-secondary-button-text-color: var(--db-primary-text-color);
   --db-secondary-button-hover-text-color: var(--db-primary-text-color);
   --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
@@ -123,8 +117,10 @@
   --db-link-color: #ff5a5a;
   --db-link-hover-color: #ff7575;
   --db-link-pressed-color: #f89292;
-  --db-link-underline-color: #{db-link-color(#f55)};
-  --db-secondary-link-underline-color: #{db-link-color(db-color('white'))};
+  --db-link-underline-color: #{rgba(#f89292, 0.5)};
+  --db-secondary-link-underline-color: #{db-color('white', 0.4)};
+  --db-link-underline-color: #a86769;
+  --db-secondary-link-underline-color: #{db-color('coolgray400')};
 
   // FIELDS
   --db-field-border-color: #000;
@@ -171,7 +167,7 @@
   // BRAND
 
   // GENERAL
-  --db-border-color: #{db-color('coolgray480')};
+  --db-border-color: #{db-color('coolgray500')};
   --db-loud-border-color: #{db-color('coolgray200')};
 
   // ACCESSIBILITY
@@ -232,8 +228,8 @@
   --db-link-color: #fff;
   --db-link-hover-color: #{mix(#000, db-color('dbrot'), 60%)};
   --db-link-pressed-color: #{mix(#000, db-color('dbrot'), 40%)};
-  --db-link-underline-color: #{db-link-color(#fff)};
-  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+  --db-link-underline-color: #{rgba(#fff, 0.5)};
+  --db-secondary-link-underline-color: #{rgba(#fff, 0.5)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-color('black')};
@@ -304,16 +300,17 @@
   --db-darker-background-color: #{db-color('coolgray200')};
   --db-disabled-text-color: #{db-color('coolgray300')};
   --db-shadow-color: transparent;
-  --db-border-color: #{db-color('coolgray270')};
+  --db-border-color: #{db-color('coolgray200')};
   --db-loud-border-color: #{db-color('coolgray600')};
 
   // ACCESSIBILITY
 
   // LINKS
-  --db-link-color: #{darken(db-color('red500'), 3%)};
-  --db-link-hover-color: #{darken(db-color('red600'), 3%)};
-  --db-link-pressed-color: #{darken(db-color('red700'), 3%)};
-  --db-link-underline-color: #{db-link-color(darken(db-color('red500'), 3%))};
+  --db-link-color: #{db-color('red533')};
+  --db-link-hover-color: #{db-color('red633')};
+  --db-link-pressed-color: #{db-color('red733')};
+  --db-link-underline-color: #{db-color('red300')};
+  --db-secondary-link-underline-color: #{db-color('coolgray333')};
 
   // FIELDS
   --db-caret-color: #{db-color('dbrot')};
@@ -339,13 +336,14 @@
   --db-darker-background-color: #{db-color('black')};
   --db-secondary-text-color: #{db-color('coolgray350')};
   --db-disabled-text-color: #{db-color('coolgray530')};
-  --db-border-color: #{db-color('coolgray565')};
+  --db-border-color: #{db-color('coolgray550')};
 
   // ACCESSIBILITY
 
   // LINKS
   --db-link-color: #fa5c57;
-  --db-link-underline-color: #{db-link-color(#fa5c57)};
+  --db-link-underline-color: #985c5e;
+  --db-secondary-link-underline-color: #{db-color('coolgray450')};
 
   // FIELDS
 

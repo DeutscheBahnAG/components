@@ -16,7 +16,7 @@ $db-s-bahn-color: #038531;
   --db-link-color: #{$db-s-bahn-color};
   --db-link-hover-color: #{mix(#000, $db-s-bahn-color, 80%)};
   --db-link-pressed-color: #{mix(#000, $db-s-bahn-color, 60%)};
-  --db-link-underline-color: #{db-link-color($db-s-bahn-color)};
+  --db-link-underline-color: #{rgba($db-s-bahn-color, 0.4)};
 
   // FIELDS
   --db-caret-color: #{$db-s-bahn-color};
@@ -50,7 +50,7 @@ $db-s-bahn-color: #038531;
   --db-link-color: #{darken($db-s-bahn-color, 3%)};
   --db-link-hover-color: #{darken(mix(#000, $db-s-bahn-color, 80%), 3%)};
   --db-link-pressed-color: #{darken(mix(#000, $db-s-bahn-color, 60%), 3%)};
-  --db-link-underline-color: #{db-link-color(darken($db-s-bahn-color, 3%))};
+  --db-link-underline-color: #{rgba(darken($db-s-bahn-color, 3%), 0.4)};
 
   // FIELDS
   // PRIMARY BUTTON
@@ -81,8 +81,8 @@ $db-s-bahn-color: #038531;
   // LINKS
   --db-link-hover-color: #{mix(#000, $db-s-bahn-color, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-s-bahn-color, 40%)};
-  --db-link-underline-color: #{db-link-color(#fff)};
-  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+  --db-link-underline-color: #{rgba(#fff, 0.4)};
+  --db-secondary-link-underline-color: #{rgba(#fff, 0.4)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-color('black')};

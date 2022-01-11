@@ -1,12 +1,14 @@
 /* stylelint-disable order/order */
 
+$db-display-background-color: #213a7e;
+
 .DISPLAY {
   @extend %db-branded-theme-base;
 
   // BRAND
 
   // GENERAL
-  --db-primary-background-color: #213a7e;
+  --db-primary-background-color: #{$db-display-background-color};
   --db-darker-background-color: #{db-color('blue800')};
   --db-primary-text-color: #{db-color('white')};
   --db-secondary-text-color: #{db-color('blue200')};
@@ -21,8 +23,8 @@
   --db-link-color: #{db-color('cyan300')};
   --db-link-hover-color: #{db-color('cyan400')};
   --db-link-pressed-color: #{db-color('cyan500')};
-  --db-link-underline-color: #{db-link-color(db-color('cyan300'))};
-  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+  --db-link-underline-color: #{mix(db-color('cyan100'), $db-display-background-color, 40%)};
+  --db-secondary-link-underline-color: #{mix(#fff, $db-display-background-color, 40%)};
 
   // FIELDS
   --db-caret-color: #387df5;
@@ -34,7 +36,7 @@
   --db-primary-button-text-color: #{db-color('black')};
   --db-primary-button-hover-text-color: #{db-color('black')};
   --db-primary-button-pressed-text-color: #{db-color('black')};
-  --db-primary-button-disabled-text-color: #{darken(#213a7e, 3%)};
+  --db-primary-button-disabled-text-color: #{darken($db-display-background-color, 3%)};
 
   // SECONDARY BUTTON
   --db-secondary-button-hover-background-color: #{db-color('blue600')};

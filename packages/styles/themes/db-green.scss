@@ -16,7 +16,7 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   --db-link-color: #{db-color('lightgreen400')};
   --db-link-hover-color: #{db-color('lightgreen500')};
   --db-link-pressed-color: #{db-color('lightgreen600')};
-  --db-link-underline-color: #{db-link-color(db-color('lightgreen400'))};
+  --db-link-underline-color: #{db-color('lightgreen400', 0.4)};
 
   // FIELDS
   --db-caret-color: #{db-color('lightgreen400')};
@@ -60,8 +60,8 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   // LINKS
   --db-link-hover-color: #{mix(#000, $db-green-campaign-background-color, 60%)};
   --db-link-pressed-color: #{mix(#000, $db-green-campaign-background-color, 40%)};
-  --db-link-underline-color: #{db-link-color(#fff)};
-  --db-secondary-link-underline-color: #{db-link-color(#fff)};
+  --db-link-underline-color: #{rgba(#fff, 0.4)};
+  --db-secondary-link-underline-color: #{rgba(#fff, 0.4)};
 
   // FIELDS
   --db-field-primary-text-color: #{db-color('black')};
