@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { HTMLProps, useRef } from 'react';
 import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';
@@ -6,7 +6,7 @@ import { ResponsiveType } from '../shared';
 export const selectSizes = ['s', 'm', 'l', 'xl'] as const;
 export type SelectSizesType = typeof selectSizes[number];
 
-export interface SelectProps {
+export interface SelectProps extends Omit<HTMLProps<HTMLSelectElement>, 'size'> {
   className?: string;
   value?: string;
   size?: ResponsiveType<SelectSizesType>;
