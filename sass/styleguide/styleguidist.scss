@@ -268,7 +268,7 @@ $code-background-color: var(--db-secondary-background-color);
 }
 
 ::selection {
-  background: rgba(db-color('blue500'), 0.15);
+  background: db-color('blue500', 0.15);
   text-shadow: none;
 }
 
@@ -283,23 +283,23 @@ main.rsg--content-3 {
   }
 
   .db-container:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-color('turquoise300'), 0.1);
+    background: db-color('turquoise300', 0.1);
     border: 1px db-color('turquoise300') dashed;
     padding: 1px; // visually separate nested borders
   }
 
   .db-container--extended:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-color('yellow400'), 0.1);
+    background: db-color('yellow400', 0.1);
     border-color: db-color('yellow400');
   }
 
   .db-container--content:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-color('pink300'), 0.1);
+    background: db-color('pink300', 0.1);
     border-color: db-color('pink300');
   }
 
   .db-container--text:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-color('cyan300'), 0.1);
+    background: db-color('cyan300', 0.1);
     border-color: db-color('cyan300');
   }
 

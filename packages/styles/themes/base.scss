@@ -244,11 +244,11 @@
   --db-primary-button-background-color: #{db-color('white')};
   --db-primary-button-hover-background-color: #{db-color('red100')};
   --db-primary-button-pressed-background-color: #{db-color('red200')};
-  --db-primary-button-disabled-background-color: #{rgba(db-color('white'), 0.2)};
+  --db-primary-button-disabled-background-color: #{db-color('white', 0.2)};
   --db-primary-button-text-color: #{db-color('black')};
   --db-primary-button-hover-text-color: #{db-color('black')};
   --db-primary-button-pressed-text-color: #{db-color('black')};
-  --db-primary-button-disabled-text-color: #{rgba(db-color('white'), 0.5)};
+  --db-primary-button-disabled-text-color: #{db-color('white', 0.5)};
 
   // SECONDARY BUTTON
   --db-secondary-button-background-color: transparent;
@@ -259,9 +259,9 @@
   --db-secondary-button-pressed-text-color: var(--db-primary-text-color);
 
   // SOLID + HOVER-ONLY BUTTON
-  --db-solid-button-background-color: #{rgba(db-color('black'), 0.2)};
-  --db-solid-button-hover-background-color: #{rgba(db-color('black'), 0.3)};
-  --db-solid-button-pressed-background-color: #{rgba(db-color('black'), 0.4)};
+  --db-solid-button-background-color: #{db-color('black', 0.2)};
+  --db-solid-button-hover-background-color: #{db-color('black', 0.3)};
+  --db-solid-button-pressed-background-color: #{db-color('black', 0.4)};
   --db-solid-button-text-color: #fff;
   --db-solid-button-hover-text-color: #fff;
   --db-solid-button-pressed-text-color: #fff;
