@@ -97,7 +97,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
     align-self: stretch;
     align-items: center;
     justify-content: center;
-    background-color: db-palette-color('coolgray100');
+    background-color: db-color('coolgray100');
 
     &::before {
       display: none;
@@ -108,7 +108,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 .sg-card-group__icon {
   align-items: center;
   border-radius: 50%;
-  background-color: db-palette-color('coolgray200');
+  background-color: db-color('coolgray200');
   display: inline-flex;
   height: 32px;
   justify-content: center;
@@ -177,7 +177,7 @@ $shadow--primary: 0 2px 4px rgba(252, 196, 196, 1);
 
 .sg-not-allowed {
   &::before {
-    color: db-palette-color('pink500');
+    color: db-color('pink500');
     content: '×';
     margin: -16px 0 0 -8px;
     position: absolute;

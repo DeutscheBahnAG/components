@@ -55,9 +55,9 @@ In all three values need to be overridden, use the shorter `db-link` mixin. This
 ```scss
 .my-link {
   @include db-link(
-    $text-color: db-palette-color('green500'),
-    $text-color--hover: db-palette-color('green600'),
-    $text-color--pressed: db-palette-color('green800')
+    $text-color: db-color('green500'),
+    $text-color--hover: db-color('green600'),
+    $text-color--pressed: db-color('green800')
   );
 }
 ```

@@ -7,38 +7,38 @@
 
   // GENERAL
   --db-primary-background-color: #213a7e;
-  --db-darker-background-color: #{db-palette-color('blue800')};
-  --db-primary-text-color: #{db-palette-color('white')};
-  --db-secondary-text-color: #{db-palette-color('blue200')};
+  --db-darker-background-color: #{db-color('blue800')};
+  --db-primary-text-color: #{db-color('white')};
+  --db-secondary-text-color: #{db-color('blue200')};
   --db-disabled-text-color: #3e68ac;
   --db-border-color: #3e5c90;
-  --db-loud-border-color: #{db-palette-color('blue100')};
+  --db-loud-border-color: #{db-color('blue100')};
 
   // ACCESSIBILITY
-  --db-focus-ring-color: #{rgba(db-palette-color('cyan100'), 0.4)};
+  --db-focus-ring-color: #{rgba(db-color('cyan100'), 0.4)};
 
   // LINKS
-  --db-link-color: #{db-palette-color('cyan300')};
-  --db-link-hover-color: #{db-palette-color('cyan400')};
-  --db-link-pressed-color: #{db-palette-color('cyan500')};
-  --db-link-underline-color: #{db-link-color(db-palette-color('cyan300'))};
+  --db-link-color: #{db-color('cyan300')};
+  --db-link-hover-color: #{db-color('cyan400')};
+  --db-link-pressed-color: #{db-color('cyan500')};
+  --db-link-underline-color: #{db-link-color(db-color('cyan300'))};
   --db-secondary-link-underline-color: #{db-link-color(#fff)};
 
   // FIELDS
   --db-caret-color: #387df5;
 
   // PRIMARY BUTTON
-  --db-primary-button-background-color: #{db-palette-color('white')};
-  --db-primary-button-hover-background-color: #{db-palette-color('blue100')};
-  --db-primary-button-pressed-background-color: #{db-palette-color('blue200')};
-  --db-primary-button-text-color: #{db-palette-color('black')};
-  --db-primary-button-hover-text-color: #{db-palette-color('black')};
-  --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-background-color: #{db-color('white')};
+  --db-primary-button-hover-background-color: #{db-color('blue100')};
+  --db-primary-button-pressed-background-color: #{db-color('blue200')};
+  --db-primary-button-text-color: #{db-color('black')};
+  --db-primary-button-hover-text-color: #{db-color('black')};
+  --db-primary-button-pressed-text-color: #{db-color('black')};
   --db-primary-button-disabled-text-color: #{darken(#213a7e, 3%)};
 
   // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{db-palette-color('blue600')};
-  --db-secondary-button-pressed-background-color: #{db-palette-color('blue500')};
+  --db-secondary-button-hover-background-color: #{db-color('blue600')};
+  --db-secondary-button-pressed-background-color: #{db-color('blue500')};
 
   // SOLID + HOVER-ONLY BUTTON
   --db-solid-button-background-color: #142a65;

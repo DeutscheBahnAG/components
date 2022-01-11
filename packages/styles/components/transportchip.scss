@@ -27,9 +27,9 @@ $db-transportchip-overlap: math.div(1em, db-font-size('copy', 'm')) * 1px;
 
 .db-transportchip__line {
   @include db-transportchip-default-border-radius;
-  background: db-palette-color('coolgray500');
+  background: db-color('coolgray500');
   box-sizing: border-box;
-  color: db-palette-color('white');
+  color: db-color('white');
   display: inline-block;
   height: 1.75em;
   line-height: 1.75em;

@@ -30,7 +30,7 @@
 
   /* stylelint-disable selector-class-pattern */
   .token.script {
-    color: db-palette-color('blue700');
+    color: db-color('blue700');
   }
 
   .token.comment,
@@ -43,27 +43,27 @@
   }
 
   .token.number {
-    color: db-palette-color('green600');
+    color: db-color('green600');
     font-weight: normal;
   }
 
   .token.property,
   .token.deleted {
-    color: db-palette-color('cyan600');
+    color: db-color('cyan600');
     font-weight: normal;
   }
 
   .token.namespace,
   .token.constant,
   .token.boolean {
-    color: db-palette-color('blue700');
+    color: db-color('blue700');
     font-weight: normal;
   }
 
   .token.string,
   .token.char,
   .token.attr-value {
-    color: db-palette-color('lightgreen600');
+    color: db-color('lightgreen600');
     font-weight: normal;
   }
 
@@ -73,35 +73,35 @@
   .token.builtin,
   .token.url,
   .token.inserted {
-    color: db-palette-color('blue400');
+    color: db-color('blue400');
     font-weight: normal;
   }
 
   .token.entity {
-    color: db-palette-color('green400');
+    color: db-color('green400');
     font-weight: normal;
   }
 
   .token.tag,
   .token.atrule,
   .token.keyword {
-    color: db-palette-color('blue500');
+    color: db-color('blue500');
     font-weight: bold;
   }
 
   .token.function {
-    color: db-palette-color('turquoise600');
+    color: db-color('turquoise600');
     font-weight: normal;
   }
 
   .token.regex,
   .token.important {
-    color: db-palette-color('lightgreen500');
+    color: db-color('lightgreen500');
     font-weight: normal;
   }
 
   .token.variable {
-    color: db-palette-color('violet600');
+    color: db-color('violet600');
     font-weight: normal;
   }
 
@@ -115,12 +115,12 @@
   }
 
   .token.interpolation-punctuation {
-    color: db-palette-color('green400');
+    color: db-color('green400');
   }
 
   .token.operator,
   .token.title {
-    color: db-palette-color('coolgray500');
+    color: db-color('coolgray500');
   }
   /* stylelint-enable selector-class-pattern */
 }

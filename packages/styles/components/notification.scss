@@ -19,8 +19,10 @@ $notification-variants: ('info' 'warning' 'error' 'success');
 
 .db-notification__icon {
   padding: 2px;
-  margin: db-spacing('s', $negative: true) 2px db-spacing('s', $negative: true) #{db-spacing('ml',
-  $negative: true) + 2px};
+  margin: db-spacing('s', $negative: true) 2px db-spacing('s', $negative: true) #{db-spacing(
+      'ml',
+      $negative: true
+    ) + 2px};
   align-self: start;
 }
 
@@ -55,7 +57,7 @@ $notification-variants: ('info' 'warning' 'error' 'success');
   border-width: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   min-width: db-spacing('xxxl') * 4;
-  border-color: db-palette-color('white');
+  border-color: db-color('white');
 }
 
 @mixin db-notification--colors($color) {

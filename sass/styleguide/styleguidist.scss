@@ -20,7 +20,7 @@ $code-background-color: var(--db-secondary-background-color);
   }
 
   div[class^='rsg--sidebar-'] {
-    background: db-palette-color('violet100');
+    background: db-color('violet100');
     background: var(--db-secondary-background-color);
     border: 0;
 
@@ -34,8 +34,8 @@ $code-background-color: var(--db-secondary-background-color);
 
   nav [class^='rsg--search'] {
     // Styleguidist doesn’t know about our themes
-    --db-primary-background-color: #{db-palette-color('coolgray100')};
-    --db-secondary-background-color: #{db-palette-color('white')};
+    --db-primary-background-color: #{db-color('coolgray100')};
+    --db-secondary-background-color: #{db-color('white')};
     @extend .db-textfield;
     @extend .db-textfield--size-m;
     margin: db-spacing('m');
@@ -99,9 +99,9 @@ $code-background-color: var(--db-secondary-background-color);
     }
 
     code {
-      background: db-palette-color('blue100');
+      background: db-color('blue100');
       border-radius: db-border-radius('xs');
-      color: db-palette-color('blue700');
+      color: db-color('blue700');
       font-family: monospace;
       font-size: 1.2em;
       padding: 2px 0.3em;
@@ -160,7 +160,7 @@ $code-background-color: var(--db-secondary-background-color);
     padding: db-spacing('sm') db-spacing('m') !important;
 
     .token.script {
-      color: db-palette-color('blue700');
+      color: db-color('blue700');
     }
 
     .token.comment,
@@ -168,31 +168,31 @@ $code-background-color: var(--db-secondary-background-color);
     .token.doctype,
     .token.cdata,
     .token.punctuation {
-      color: db-palette-color('coolgray400');
+      color: db-color('coolgray400');
       font-weight: normal;
     }
 
     .token.number {
-      color: db-palette-color('green600');
+      color: db-color('green600');
       font-weight: normal;
     }
 
     .token.property,
     .token.deleted {
-      color: db-palette-color('cyan600');
+      color: db-color('cyan600');
       font-weight: normal;
     }
 
     .token.namespace,
     .token.constant {
-      color: db-palette-color('blue700');
+      color: db-color('blue700');
       font-weight: normal;
     }
 
     .token.string,
     .token.char,
     .token.attr-value {
-      color: db-palette-color('lightgreen600');
+      color: db-color('lightgreen600');
       font-weight: normal;
     }
 
@@ -202,12 +202,12 @@ $code-background-color: var(--db-secondary-background-color);
     .token.builtin,
     .token.url,
     .token.inserted {
-      color: db-palette-color('blue400');
+      color: db-color('blue400');
       font-weight: normal;
     }
 
     .token.entity {
-      color: db-palette-color('green400');
+      color: db-color('green400');
       font-weight: normal;
     }
 
@@ -215,23 +215,23 @@ $code-background-color: var(--db-secondary-background-color);
     .token.atrule,
     .token.keyword,
     .token.boolean {
-      color: db-palette-color('blue500');
+      color: db-color('blue500');
       font-weight: bold;
     }
 
     .token.function {
-      color: db-palette-color('turquoise600');
+      color: db-color('turquoise600');
       font-weight: normal;
     }
 
     .token.regex,
     .token.important {
-      color: db-palette-color('lightgreen500');
+      color: db-color('lightgreen500');
       font-weight: normal;
     }
 
     .token.variable {
-      color: db-palette-color('violet600');
+      color: db-color('violet600');
       font-weight: normal;
     }
 
@@ -245,12 +245,12 @@ $code-background-color: var(--db-secondary-background-color);
     }
 
     .token.interpolation-punctuation {
-      color: db-palette-color('green400');
+      color: db-color('green400');
     }
 
     .token.operator,
     .token.title {
-      color: db-palette-color('coolgray500');
+      color: db-color('coolgray500');
     }
   }
 
@@ -268,7 +268,7 @@ $code-background-color: var(--db-secondary-background-color);
 }
 
 ::selection {
-  background: rgba(db-palette-color('blue500'), 0.15);
+  background: rgba(db-color('blue500'), 0.15);
   text-shadow: none;
 }
 
@@ -283,24 +283,24 @@ main.rsg--content-3 {
   }
 
   .db-container:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-palette-color('turquoise300'), 0.1);
-    border: 1px db-palette-color('turquoise300') dashed;
+    background: rgba(db-color('turquoise300'), 0.1);
+    border: 1px db-color('turquoise300') dashed;
     padding: 1px; // visually separate nested borders
   }
 
   .db-container--extended:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-palette-color('yellow400'), 0.1);
-    border-color: db-palette-color('yellow400');
+    background: rgba(db-color('yellow400'), 0.1);
+    border-color: db-color('yellow400');
   }
 
   .db-container--content:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-palette-color('pink300'), 0.1);
-    border-color: db-palette-color('pink300');
+    background: rgba(db-color('pink300'), 0.1);
+    border-color: db-color('pink300');
   }
 
   .db-container--text:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
-    background: rgba(db-palette-color('cyan300'), 0.1);
-    border-color: db-palette-color('cyan300');
+    background: rgba(db-color('cyan300'), 0.1);
+    border-color: db-color('cyan300');
   }
 
   .db-container--primary,
@@ -373,11 +373,11 @@ h1[class^='rsg--heading'],
   }
 
   [class^='rsg--name'] {
-    color: db-palette-color('lightgreen600');
+    color: db-color('lightgreen600');
   }
 
   [class^='rsg--type'] {
-    color: db-palette-color('blue400');
+    color: db-color('blue400');
   }
 
   [class^='rsg--code'] {

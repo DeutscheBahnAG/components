@@ -129,9 +129,9 @@ $db-checkbox-gap: 0.5em;
   }
 
   a::before {
-    background: db-palette-color('yellow300');
+    background: db-color('yellow300');
     border-radius: db-border-radius('xs');
-    color: db-palette-color('red500');
+    color: db-color('red500');
     content: '⚠️ Dont use links in labels (use footer={…}) ⚠️';
     font-size: db-font-size('copy', 'm');
   }

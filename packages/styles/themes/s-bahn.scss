@@ -74,7 +74,7 @@ $db-s-bahn-color: #038531;
   --db-secondary-text-color: #eafff2;
   --db-disabled-text-color: #{mix(#99ccb1, $db-s-bahn-color)};
   --db-border-color: #56a17a;
-  --db-loud-border-color: #{db-palette-color('green100')};
+  --db-loud-border-color: #{db-color('green100')};
 
   // ACCESSIBILITY
 
@@ -85,19 +85,17 @@ $db-s-bahn-color: #038531;
   --db-secondary-link-underline-color: #{db-link-color(#fff)};
 
   // FIELDS
-  --db-field-primary-text-color: #{db-palette-color('black')};
-  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
+  --db-field-primary-text-color: #{db-color('black')};
+  --db-field-secondary-text-color: #{db-color('coolgray500')};
   --db-caret-color: #{$db-s-bahn-color};
 
   // PRIMARY BUTTON
-  --db-primary-button-background-color: #{db-palette-color('white')};
-  --db-primary-button-hover-background-color: #{mix(db-palette-color('coolgray100'),
-  db-palette-color('green100'))};
-  --db-primary-button-pressed-background-color: #{mix(db-palette-color('coolgray200'),
-  db-palette-color('green200'))};
-  --db-primary-button-text-color: #{db-palette-color('black')};
-  --db-primary-button-hover-text-color: #{db-palette-color('black')};
-  --db-primary-button-pressed-text-color: #{db-palette-color('black')};
+  --db-primary-button-background-color: #{db-color('white')};
+  --db-primary-button-hover-background-color: #{mix(db-color('coolgray100'), db-color('green100'))};
+  --db-primary-button-pressed-background-color: #{mix(db-color('coolgray200'), db-color('green200'))};
+  --db-primary-button-text-color: #{db-color('black')};
+  --db-primary-button-hover-text-color: #{db-color('black')};
+  --db-primary-button-pressed-text-color: #{db-color('black')};
   --db-primary-button-disabled-text-color: #{darken($db-s-bahn-color, 3%)};
 
   // SECONDARY BUTTON

@@ -20,40 +20,8 @@
 }
 
 @function db-palette-color($color, $tokens-map: $db-tokens) {
-  @if map-has-key($tokens-map, 'palette') {
-    $token-group-map: map-get($tokens-map, 'palette');
-    @if map-has-key($token-group-map, $color) {
-      @return map-get($token-group-map, $color);
-    }
-
-    $digits: (
-      '0': 0,
-      '1': 1,
-      '2': 2,
-      '3': 3,
-      '4': 4,
-      '5': 5,
-      '6': 6,
-      '7': 7,
-      '8': 8,
-      '9': 9,
-    );
-
-    $name: str-slice($color, 0, -4);
-    $number: map-get($digits, str-slice($color, -1, -1)) +
-      10 *
-      map-get($digits, str-slice($color, -2, -2)) +
-      100 *
-      map-get($digits, str-slice($color, -3, -3));
-    $lower-number: floor($number * 0.01) * 100;
-    $upper-number: ceil($number * 0.01) * 100;
-    $lower-color: db-palette-color($name + $lower-number);
-    $upper-color: db-palette-color($name + $upper-number);
-    @return mix($upper-color, $lower-color, percentage(($number - $lower-number) * 0.01));
-
-    $error-message: 'The token `#{$token-group}.#{$token-name}` is not present in the DB tokens map. Valid values are: (#{map-keys($tokens-map)})';
-    @error $error-message;
-  }
+  @warn 'Deprecation: db-palette-color has been renamed to db-palette';
+  @return db-color($color);
 }
 
 @function db-border-width($component, $tokens-map: $db-tokens) {

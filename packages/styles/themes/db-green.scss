@@ -1,6 +1,6 @@
 /* stylelint-disable order/order, scss/at-extend-no-missing-placeholder */
 
-$db-green-campaign-background-color: db-palette-color('lightgreen400');
+$db-green-campaign-background-color: db-color('lightgreen400');
 
 .EXPERIMENTAL_DB_GREEN_LIGHT {
   @extend %db-light-theme-base;
@@ -8,27 +8,27 @@ $db-green-campaign-background-color: db-palette-color('lightgreen400');
   // BRAND
 
   // GENERAL
-  --db-loud-border-color: #{db-palette-color('lightgreen400')};
+  --db-loud-border-color: #{db-color('lightgreen400')};
 
   // ACCESSIBILITY
 
   // LINKS
-  --db-link-color: #{db-palette-color('lightgreen400')};
-  --db-link-hover-color: #{db-palette-color('lightgreen500')};
-  --db-link-pressed-color: #{db-palette-color('lightgreen600')};
-  --db-link-underline-color: #{db-link-color(db-palette-color('lightgreen400'))};
+  --db-link-color: #{db-color('lightgreen400')};
+  --db-link-hover-color: #{db-color('lightgreen500')};
+  --db-link-pressed-color: #{db-color('lightgreen600')};
+  --db-link-underline-color: #{db-link-color(db-color('lightgreen400'))};
 
   // FIELDS
-  --db-caret-color: #{db-palette-color('lightgreen400')};
+  --db-caret-color: #{db-color('lightgreen400')};
 
   // PRIMARY BUTTON
-  --db-primary-button-background-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-hover-background-color: #{db-palette-color('lightgreen500')};
-  --db-primary-button-pressed-background-color: #{db-palette-color('lightgreen600')};
+  --db-primary-button-background-color: #{db-color('lightgreen400')};
+  --db-primary-button-hover-background-color: #{db-color('lightgreen500')};
+  --db-primary-button-pressed-background-color: #{db-color('lightgreen600')};
 
   // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{db-palette-color('lightgreen100')};
-  --db-secondary-button-pressed-background-color: #{db-palette-color('lightgreen200')};
+  --db-secondary-button-hover-background-color: #{db-color('lightgreen100')};
+  --db-secondary-button-pressed-background-color: #{db-color('lightgreen200')};
 
   // SOLID + HOVER-ONLY BUTTON
   // TRACK
@@ -50,10 +50,10 @@ $db-green-campaign-background-color: db-palette-color('lightgreen400');
 
   // GENERAL
   --db-primary-background-color: #{$db-green-campaign-background-color};
-  --db-darker-background-color: #{db-palette-color('lightgreen500')};
-  --db-disabled-text-color: #{db-palette-color('lightgreen300')};
+  --db-darker-background-color: #{db-color('lightgreen500')};
+  --db-disabled-text-color: #{db-color('lightgreen300')};
   --db-border-color: #b3dd80;
-  --db-loud-border-color: #{db-palette-color('lightgreen100')};
+  --db-loud-border-color: #{db-color('lightgreen100')};
 
   // ACCESSIBILITY
 
@@ -64,19 +64,19 @@ $db-green-campaign-background-color: db-palette-color('lightgreen400');
   --db-secondary-link-underline-color: #{db-link-color(#fff)};
 
   // FIELDS
-  --db-field-primary-text-color: #{db-palette-color('black')};
-  --db-field-secondary-text-color: #{db-palette-color('coolgray500')};
-  --db-caret-color: #{db-palette-color('lightgreen400')};
+  --db-field-primary-text-color: #{db-color('black')};
+  --db-field-secondary-text-color: #{db-color('coolgray500')};
+  --db-caret-color: #{db-color('lightgreen400')};
 
   // PRIMARY BUTTON
-  --db-primary-button-text-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-hover-text-color: #{db-palette-color('lightgreen400')};
-  --db-primary-button-pressed-text-color: #{db-palette-color('lightgreen400')};
+  --db-primary-button-text-color: #{db-color('lightgreen400')};
+  --db-primary-button-hover-text-color: #{db-color('lightgreen400')};
+  --db-primary-button-pressed-text-color: #{db-color('lightgreen400')};
   --db-primary-button-disabled-text-color: #61a518;
 
   // SECONDARY BUTTON
-  --db-secondary-button-hover-background-color: #{darken(db-palette-color('lightgreen400'), 6%)};
-  --db-secondary-button-pressed-background-color: #{darken(db-palette-color('lightgreen400'), 12%)};
+  --db-secondary-button-hover-background-color: #{darken(db-color('lightgreen400'), 6%)};
+  --db-secondary-button-pressed-background-color: #{darken(db-color('lightgreen400'), 12%)};
 
   // SOLID + HOVER-ONLY BUTTON
   // TRACK

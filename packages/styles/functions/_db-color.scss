@@ -1,0 +1,50 @@
+@function db-color($color, $opacity: 1) {
+  @if map-has-key($db-palette, $color) {
+    @return rgba(map-get($db-palette, $color), $opacity);
+  }
+
+  $digits: (
+    '0': 0,
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
+  );
+
+  $name: str-slice($color, 0, -4);
+  $number: map-get($digits, str-slice($color, -1, -1)) + 10 *
+    map-get($digits, str-slice($color, -2, -2)) + 100 * map-get($digits, str-slice($color, -3, -3));
+
+  $lower-number: floor($number * 0.01) * 100;
+  $lower-color: #fff;
+  @if ($lower-number >= 100) {
+    @if ($lower-number > 800) {
+      $lower-number: 800;
+    }
+    @if map-has-key($db-palette, $name + $lower-number) {
+      $lower-color: map-get($db-palette, $name + $lower-number);
+    } @else {
+      @error 'Color #{$color} #{$lower-number}not found1';
+    }
+  }
+
+  $upper-number: ceil($number * 0.01) * 100;
+  $upper-color: #000;
+  @if ($upper-number >= 100 and $upper-number <= 800) {
+    @if map-has-key($db-palette, $name + $upper-number) {
+      $upper-color: map-get($db-palette, $name + $upper-number);
+    } @else {
+      @error 'Color #{$color} #{$name + $upper-number} not found2';
+    }
+  }
+
+  @return rgba(
+    mix($upper-color, $lower-color, percentage(($number - $lower-number) * 0.01)),
+    $opacity
+  );
+}

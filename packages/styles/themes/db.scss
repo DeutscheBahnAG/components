@@ -20,10 +20,10 @@
   @extend %db-branded-theme-base;
 
   // PRIMARY BUTTON
-  --db-primary-button-disabled-background-color: #{db-palette-color('red400')};
-  --db-primary-button-disabled-text-color: #{db-palette-color('red550')};
+  --db-primary-button-disabled-background-color: #{db-color('red400')};
+  --db-primary-button-disabled-text-color: #{db-color('red550')};
 
   // TRANSPORTCHIP
-  --db-transportchip-background-color: #{db-palette-color('red600')};
-  --db-transportchip-text-color: #{db-palette-color('white')};
+  --db-transportchip-background-color: #{db-color('red600')};
+  --db-transportchip-text-color: #{db-color('white')};
 }
