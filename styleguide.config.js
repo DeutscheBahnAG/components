@@ -59,12 +59,6 @@ module.exports = {
   webpackConfig: {
     module: {
       rules: [
-        // {.js,jsx}
-        {
-          test: /\.jsx?$/,
-          exclude: [/node_modules/, /react-icons\/dist/, /react\/dist/, /react-extra\/dist/],
-          loader: 'babel-loader',
-        },
         // {.ts,tsx}
         {
           test: /\.tsx?$/,
