@@ -1,26 +1,16 @@
 module.exports = {
-  collectCoverageFrom: [
-    'packages/**/*.jsx', // only consider components, not stories or setup stuff
-  ],
+  testEnvironment: 'jsdom',
+  collectCoverageFrom: ['packages/**/*.tsx', '!packages/**/*-doc.tsx'],
   coverageDirectory: '<rootDir>/.coverage', // generate coverage report in 'hidden' folder
-  snapshotSerializers: [
-    '<rootDir>/node_modules/enzyme-to-json/serializer', // enable creation of snapshots from enzyme wrappers
-  ],
-  testPathIgnorePatterns: ['<rootDir>/(build|internal|node_modules|flow-typed|public|dist)/'],
+  testMatch: ['**/?(*.)+(test).ts?(x)'],
+  testPathIgnorePatterns: ['<rootDir>/(build|internal|node_modules|public|dist)/'],
   modulePathIgnorePatterns: [
     '.cache',
     '<rootDir>/dist/',
     '<rootDir>/packages/react/dist',
     '<rootDir>/packages/react-icons/dist',
   ],
-  setupFiles: [
-    '<rootDir>/.jest/shim.js', // makes jest work with React 16
-    '<rootDir>/.jest/adapter.js', // makes enzyme work with React 16
-    '<rootDir>/.jest/require-context.js', // enables storyshots addon to auto-load story files
-  ],
-  setupFilesAfterEnv: [
-    '<rootDir>/.jest/setup.js', // adds additional matchers
-  ],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   moduleNameMapper: {
     // we mock all external files that are not relevant for the tests, but might be imported in the files that are tested
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|md)$':
@@ -29,7 +19,14 @@ module.exports = {
     '\\.(css|scss)$': '<rootDir>/.jest/mocks/styleMock.js',
   },
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/.jest/preprocess.js',
-    '^.+\\.tsx?$': '<rootDir>/.jest/preprocess.js',
+    '^.+\\.tsx?$': [
+      'esbuild-jest',
+      {
+        sourcemap: true,
+        loaders: {
+          '.test.tsx': 'tsx',
+        },
+      },
+    ],
   },
 };
