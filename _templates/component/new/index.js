@@ -31,7 +31,7 @@ const getFileChoices = (componentName) => [
   },
   {
     name: 'tests',
-    message: `${componentName}/${componentName}.test.jsx`,
+    message: `${componentName}/${componentName}.test.tsx`,
     hint: 'Jest integration test for component',
   },
   {

@@ -15,4 +15,6 @@ const <%= Name %>: React.FC<<%= Name %>Props> = ({ className, ...otherProps }) =
   </div>
 );
 
+<%= Name %>.displayName = '<%= Name %>';
+
 export default <%= Name %>;
