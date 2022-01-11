@@ -27,15 +27,14 @@ module.exports = {
     '**/packages/react-icons/dist/**',
     '**/packages/react/dist/**',
     '**/packages/react-extra/dist/**',
-    '**/*.test.{js,jsx,ts,tsx}',
-    '**/*.stories.{js,jsx,ts,tsx}',
+    '**/*.test.{ts,tsx}',
     '**/*.d.ts',
   ],
 
   getComponentPathLine(componentPath) {
     const name = path
       .basename(componentPath)
-      .replace(/\.(jsx|tsx)/, '')
+      .replace(/\.tsx/, '')
       .replace(/^\w/, (w) => w.toUpperCase())
       .replace(/-doc$/, '');
     const componentDir = path.dirname(componentPath);

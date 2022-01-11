@@ -2,10 +2,10 @@ const glob = require('glob');
 
 // Find component file; prefer `<name>-doc.jsx` if defined:
 const web = (components) =>
-  components.map((c) => glob.sync(`packages/react/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+  components.map((c) => glob.sync(`packages/react/src/${c}/${c}{,-doc}.tsx`)[0]);
 
 const webExtra = (components) =>
-  components.map((c) => glob.sync(`packages/react-extra/src/${c}/${c}{,-doc}.{jsx,tsx}`)[0]);
+  components.map((c) => glob.sync(`packages/react-extra/src/${c}/${c}{,-doc}.tsx`)[0]);
 
 module.exports = [
   {
