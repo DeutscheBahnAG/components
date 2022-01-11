@@ -63,6 +63,48 @@ $db-s-bahn-color: #038531;
   // TRANSPORTCHIP
 }
 
+.EXPERIMENTAL_S_BAHN_DARK {
+  @extend %db-dark-theme-base;
+  @extend .EXPERIMENTAL_S_BAHN_LIGHT;
+
+  // BRAND
+  // GENERAL
+  // ACCESSIBILITY
+
+  // LINKS
+  --db-link-color: #{mix(#fff, $db-s-bahn-color, 40%)};
+  --db-link-hover-color: #{mix(#fff, $db-s-bahn-color, 50%)};
+  --db-link-pressed-color: #{mix(#fff, $db-s-bahn-color, 60%)};
+  --db-link-underline-color: #{mix(db-color('coolgray600'), $db-s-bahn-color, 30%)};
+
+  // FIELDS
+
+  // PRIMARY BUTTON
+  --db-primary-button-background-color: #067e3a;
+  --db-primary-button-hover-background-color: #{darken(#067e3a, 4%)};
+  --db-primary-button-pressed-background-color: #{darken(#067e3a, 10%)};
+
+  // SECONDARY BUTTON
+  --db-secondary-button-hover-background-color: #{mix($db-s-bahn-color,
+  db-color('coolgray600'),
+  10%)};
+  --db-secondary-button-pressed-background-color: #{mix($db-s-bahn-color,
+  db-color('coolgray600'),
+  20%)};
+
+  // SOLID + HOVER-ONLY BUTTON
+  // TRACK
+  // TIME
+  // SEVERITY
+  // CHECKBOX + RADIO BUTTON
+  // TRANSPORTCHIP
+}
+
+.EXPERIMENTAL_S_BAHN_DARK_ALTERNATE {
+  @extend %db-dark-alternate-theme-base;
+  @extend .EXPERIMENTAL_S_BAHN_DARK;
+}
+
 .EXPERIMENTAL_S_BAHN_BRANDED {
   @extend %db-branded-theme-base;
 
