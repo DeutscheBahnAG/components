@@ -98,14 +98,14 @@ describe('Button Component', () => {
 
   it('should render an aria-label when using a Ref on loading button', () => {
     const RefExample = () => {
-      const buttonRef = React.useRef(null);
+      const buttonRef = React.useRef<HTMLButtonElement | null>(null);
       React.useEffect(() => {
         if (buttonRef.current) {
           buttonRef.current.focus();
         }
       });
       return (
-        <Button ref={buttonRef} loading>
+        <Button ref={buttonRef} data-testid="button" loading>
           A Button
         </Button>
       );

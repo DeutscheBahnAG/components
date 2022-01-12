@@ -42,7 +42,6 @@ exports[`Modal Component alertdialog role 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -222,7 +221,6 @@ exports[`Modal Component render PrimaryButton 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -264,7 +262,6 @@ exports[`Modal Component render PrimaryButton 1`] = `
             >
               <button
                 class="db-button db-button--primary db-button--default db-button--size-l"
-                data-testid="button"
                 type="button"
               >
                 Primary Button Here
@@ -352,7 +349,6 @@ exports[`Modal Component render SecondaryButton 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -394,7 +390,6 @@ exports[`Modal Component render SecondaryButton 1`] = `
             >
               <button
                 class="db-button db-button--primary db-button--default db-button--size-l"
-                data-testid="button"
                 type="button"
               >
                 Secondary Button Here
@@ -459,7 +454,6 @@ exports[`Modal Component render optional properties 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Custom text"
               type="button"
             >
@@ -552,7 +546,6 @@ exports[`Modal Component render required properties only 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -644,7 +637,6 @@ exports[`Modal Component size auto 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -749,7 +741,6 @@ exports[`Modal Component size l 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -851,7 +842,6 @@ exports[`Modal Component size m 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >
@@ -950,7 +940,6 @@ exports[`Modal Component size s 1`] = `
           >
             <button
               class="db-button db-button--hover-only db-button--square db-button--size-m db-modal__closebutton"
-              data-testid="button"
               title="Close the dialogue"
               type="button"
             >

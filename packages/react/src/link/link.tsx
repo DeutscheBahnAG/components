@@ -111,4 +111,6 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
   }
 );
 
+Link.displayName = 'Link';
+
 export default Link;

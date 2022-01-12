@@ -215,4 +215,6 @@ export const validateVariantCombinations: React.Validator<ButtonVariantsType> = 
   return null;
 };
 
+Button.displayName = 'Button';
+
 export default Button;
