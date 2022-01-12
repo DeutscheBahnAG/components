@@ -7,13 +7,13 @@
 @import '@db-design/styles/themes/display';
 
 // Setup (reset, base etc..)
-@import 'setup/*.scss';
+@import './setup/*.scss';
 
 // Helpers (visually-hidden etc..)
-@import 'helpers/*.scss';
+@import './helpers/*.scss';
 
 // Components & Component Stories
-@import '../packages/styles/components/*.scss';
+@import '@db-design/styles/components/*.scss';
 
 // Styleguide (specific elements for styleguide, classes prefixed with sg-)
-@import 'styleguide/*.scss';
+@import './styleguide/*.scss';

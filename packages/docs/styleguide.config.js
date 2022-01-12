@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const globImporter = require('node-sass-glob-importer');
 const sections = require('./styleguide-sections.config');
 
 const findPackageJSON = (currentPath) => {
@@ -69,20 +70,29 @@ module.exports = {
           test: /\.scss$/,
           use: [
             'style-loader',
-            'css-loader?sourceMap',
-            'postcss-loader?sourceMap',
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
             {
               loader: 'sass-loader',
               options: {
                 sassOptions: {
-                  includePaths: [path.resolve(__dirname, './node_modules/')],
+                  includePaths: ['../../node_modules/'],
+                  importer: globImporter(),
                 },
                 sourceMap: true,
               },
             },
-            'import-glob-loader',
           ],
-          exclude: [path.resolve(__dirname, './email')],
         },
         {
           test: /\.(woff|woff2)$/,

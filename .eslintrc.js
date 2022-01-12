@@ -77,7 +77,7 @@ module.exports = {
           '**/*-doc.tsx',
           '**/*.test.tsx',
           '.jest/**/*',
-          'scripts/**/*',
+          '**/scripts/**/*',
         ],
       },
     ],

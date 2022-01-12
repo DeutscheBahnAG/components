@@ -1,4 +1,4 @@
-const styleguideSectionConfig = require('../../../styleguide-sections.config');
+const styleguideSectionConfig = require('../../../packages/docs/styleguide-sections.config');
 
 const componentSections = styleguideSectionConfig
   .find((rootSection) => rootSection.name === 'Components')

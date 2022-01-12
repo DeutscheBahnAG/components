@@ -14,15 +14,14 @@
     "build:tsx": "rm -rf src && svgr --config-file svgr.config.js --out-dir src svg/24",
     "build:js": "rm -rf dist && tsc --project tsconfig.build.json --outDir dist",
     "build": "yarn build:tsx && yarn build:js",
-    "postbuild": "./postbuild.sh"
+    "postbuild": "./postbuild.sh",
+    "release": "release-it --disable-metrics"
   },
   "dependencies": {
-    "@babel/cli": "^7.12.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
     "@bahn-x/dbx-tokens": "0.7.0",
     "@db-design/styles": "^1.0.0-pre.1",
     "@svgr/cli": "^5.5.0",

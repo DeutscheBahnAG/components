@@ -2,10 +2,10 @@ const glob = require('glob');
 
 // Find component file; prefer `<name>-doc.jsx` if defined:
 const web = (components) =>
-  components.map((c) => glob.sync(`packages/react/src/${c}/${c}{,-doc}.tsx`)[0]);
+  components.map((c) => glob.sync(`../react/src/${c}/${c}{,-doc}.tsx`)[0]);
 
 const webExtra = (components) =>
-  components.map((c) => glob.sync(`packages/react-extra/src/${c}/${c}{,-doc}.tsx`)[0]);
+  components.map((c) => glob.sync(`../react-extra/src/${c}/${c}{,-doc}.tsx`)[0]);
 
 module.exports = [
   {
@@ -78,11 +78,11 @@ module.exports = [
     sections: [
       {
         name: 'Icons',
-        content: 'packages/react-icons/README.md',
+        content: '../react-icons/README.md',
       },
       {
         name: 'Overview',
-        content: 'packages/react-icons/overview.md',
+        content: '../react-icons/overview.md',
       },
     ],
   },
@@ -92,14 +92,14 @@ module.exports = [
   },
   {
     name: 'Styles',
-    content: 'packages/styles/README.md',
+    content: '../styles/README.md',
     sections: [
       {
         name: 'Mixins',
         sections: [
           {
             name: 'Link',
-            content: 'packages/styles/mixins/_link.md',
+            content: '../styles/mixins/_link.md',
           },
         ],
       },
