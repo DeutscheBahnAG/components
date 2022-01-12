@@ -73,8 +73,8 @@ import {
   Track,
   Logo,
   Pulse,
-  Title,
-  Copy,
+  Headline,
+  Body,
   Triptimespan,
   Status,
 } from '@db-design/react';
@@ -105,16 +105,16 @@ const ThemesExample = () => {
           <div>
             <Logo size="xxl" />
             <Pulse>
-              <Title size="xxl">Primary title</Title>
-              <Title variant="secondary" light size="m">
+              <Headline size="xxl">Primary title</Headline>
+              <Headline variant="secondary" light size="m">
                 Secondary title
-              </Title>
+              </Headline>
             </Pulse>
           </div>
           <Container align="center">
             <p>
-              <Copy size="s">Current theme:</Copy>
-              <Copy size="l">{themes[themeIndex]}</Copy>
+              <Body size="s">Current theme:</Body>
+              <Body size="l">{themes[themeIndex]}</Body>
             </p>
           </Container>
           <div>
@@ -155,8 +155,12 @@ const ThemesExample = () => {
               Disabled
             </Checkbox>
             <Radiobutton name="rb">Option 1</Radiobutton>
-            <Radiobutton name="rb" defaultChecked>Option 2</Radiobutton>
-            <Radiobutton disabled checked>Option 3</Radiobutton>
+            <Radiobutton name="rb" defaultChecked>
+              Option 2
+            </Radiobutton>
+            <Radiobutton disabled checked>
+              Option 3
+            </Radiobutton>
             <Button variant="solid" size="m">
               Solid
             </Button>
@@ -166,10 +170,10 @@ const ThemesExample = () => {
             <Link href="#">Link</Link>
           </div>
           <p style={{ marginTop: `48px` }}>
-            <Copy size="m">Travel information:</Copy>
-            <Copy variant="secondary" size="s">
+            <Body size="m">Travel information:</Body>
+            <Body variant="secondary" size="s">
               (possible but not recommended on branded background)
-            </Copy>
+            </Body>
           </p>
           <div
             style={{
@@ -178,7 +182,7 @@ const ThemesExample = () => {
               padding: '8px 2px',
             }}
           >
-            <Copy>
+            <Body>
               <span
                 style={{
                   width: '600px',
@@ -205,9 +209,9 @@ const ThemesExample = () => {
                 />
               </span>
               <Track track="2a" />
-            </Copy>
+            </Body>
           </div>
-          <Copy
+          <Body
             className="statusPreview"
             style={{ lineHeight: '24px', width: '240px', margin: 'auto' }}
           >
@@ -216,7 +220,7 @@ const ThemesExample = () => {
             <Status severity="informative">This feature is optional</Status>
             <Status severity="error">This feature got removed</Status>
             <Status severity="fatal">No information available</Status>
-          </Copy>
+          </Body>
         </Container>
       </Theme>
     </div>
@@ -234,10 +238,10 @@ Even though possible, forms and travel information should be avoided in `loud` t
 
 Themes can and should be nested. Especially `DB_LIGHT` and `DB_LIGHT_ALTERNATE` are made to structure a page. `DB` (with red background) can highlight a teaser or special section. `DB_DARK` is perfect for a footer section. Find out more [how to apply themes on websites](https://dpp.bahn-x.de/foundation/colours/how-to-use-colours).
 
-Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours won’t apply.
+Remember to use `<Body>`/`<Headline>` for any text, otherwise the text colours won’t apply.
 
 ```jsx
-import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
+import { Container, Logo, Pulse, Headline, Body, Button } from '@db-design/react';
 <>
   <Theme theme="DB_LIGHT_ALTERNATE">
     <Container filled width="full" align="center">
@@ -245,15 +249,15 @@ import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
         <Container filled width="content" align="center">
           <Logo size="xl" />
           <Pulse>
-            <Title>Headline</Title>
+            <Headline>Headline</Headline>
           </Pulse>
         </Container>
       </Theme>
       <Container filled width="content" align="center">
-        <Copy>More content</Copy>
+        <Body>More content</Body>
         <Theme theme="DB_LIGHT">
           <Container filled width="content" align="center">
-            <Title size="l">Teaser</Title>
+            <Headline size="l">Teaser</Headline>
             <Button>Click me</Button>
           </Container>
         </Theme>
@@ -262,7 +266,7 @@ import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
   </Theme>
   <Theme theme="DB_DARK">
     <Container filled width="full" align="center">
-      <Copy>© Deutsche Bahn AG {new Date().getFullYear()}</Copy>
+      <Body>© Deutsche Bahn AG {new Date().getFullYear()}</Body>
       <Logo size="m" variant="white" />
     </Container>
   </Theme>

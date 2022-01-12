@@ -74,11 +74,11 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
 The spacing of the Logo and Pulse follow very specific guidelines. The Pulse component has been developed to follow the guidelines and create a worry-free implementation for developers. To make advantage of the automatic spacing, put the text of your headline within the Pulse component:
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse>
-    <Title size="l">Your headline</Title>
+    <Headline size="l">Your headline</Headline>
   </Pulse>
 </>;
 ```
@@ -90,11 +90,11 @@ import { Logo, Title } from '@db-design/react';
 `mt`: Margin top – between Logo and first line of text within the Pulse (must be set to at least `0.5` (better `1`) when `<Logo>` and `<Pulse>` directly follow each other):
 
 ```jsx
-import { Logo, Title, Container, Theme } from '@db-design/react';
+import { Logo, Headline, Container, Theme } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse mt="2">
-    <Title size="l">Your headline</Title>
+    <Headline size="l">Your headline</Headline>
   </Pulse>
   <Theme theme="DB_LIGHT_ALTERNATE">
     <Container filled width="content" align="center">
@@ -107,11 +107,11 @@ import { Logo, Title, Container, Theme } from '@db-design/react';
 `mb`: Margin bottom – between the visual representation of the Pulse and the next element:
 
 ```jsx
-import { Logo, Title, Container, Theme } from '@db-design/react';
+import { Logo, Headline, Container, Theme } from '@db-design/react';
 <>
   <Logo mb="1" />
   <Pulse mb="0.5">
-    <Title size="l">Your headline</Title>
+    <Headline size="l">Your headline</Headline>
   </Pulse>
   <Theme theme="DB_LIGHT_ALTERNATE">
     <Container filled width="content" align="center">
@@ -127,64 +127,64 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 10 : 7 aspect ratio). For each size of the Logo there’s a matching Pulse.
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="m" />
   <Pulse size="m">
-    <Title size="m">Headline</Title>
+    <Headline size="m">Headline</Headline>
   </Pulse>
 </>;
 ```
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="l" />
   <Pulse size="l">
-    <Title size="l">Headline</Title>
+    <Headline size="l">Headline</Headline>
   </Pulse>
 </>;
 ```
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="xl" />
   <Pulse size="xl">
-    <Title size="l">Headline</Title>
+    <Headline size="l">Headline</Headline>
   </Pulse>
 </>;
 ```
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="xxl" />
   <Pulse size="xxl">
-    <Title size="l">Headline</Title>
+    <Headline size="l">Headline</Headline>
   </Pulse>
 </>;
 ```
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="xxl" />
   <Pulse size="xxl">
-    <Title size="xxl">Headline</Title>
+    <Headline size="xxl">Headline</Headline>
   </Pulse>
 </>;
 ```
 
 ```jsx
-import { Logo, Title } from '@db-design/react';
+import { Logo, Headline } from '@db-design/react';
 <>
   <Logo mb="1" size="xxl" />
   <Pulse size="xxl">
-    <Title size="xxl">Headline</Title>
-    <Title variant="secondary" light size="l">
+    <Headline size="xxl">Headline</Headline>
+    <Headline variant="secondary" light size="l">
       Subline
-    </Title>
+    </Headline>
   </Pulse>
 </>;
 ```

@@ -1,0 +1,15 @@
+.db-body {
+  color: var(--db-primary-text-color);
+  display: inherit;
+  font-family: db-font-family('copy');
+}
+
+.db-body--secondary {
+  color: var(--db-secondary-text-color);
+}
+
+.db-body--bold,
+.db-body b,
+.db-body strong {
+  font-weight: db-font-weight('copy', 'bold');
+}

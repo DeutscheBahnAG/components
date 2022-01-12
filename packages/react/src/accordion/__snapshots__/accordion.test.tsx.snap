@@ -27,7 +27,7 @@ exports[`<Accordion /> should render 1`] = `
             />
           </svg>
           <span
-            class="db-title db-title--size-m db-title--light db-accordionitem__title"
+            class="db-headline db-fs6 t:db-fs7 d:db-fs7 db-headline--light db-accordionitem__title"
           >
             Accordionitem title test
           </span>

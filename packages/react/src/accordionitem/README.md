@@ -5,10 +5,10 @@ import { Accordionitem } from '@db-design/react';
 ```
 
 ```jsx noeditor
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <Accordionitem title="Expand me">
   <p>
-    <Copy>Some more information</Copy>
+    <Body>Some more information</Body>
   </p>
 </Accordionitem>;
 ```
@@ -68,10 +68,10 @@ import { Copy } from '@db-design/react';
 ## Usage
 
 ```jsx
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <Accordionitem title="Expand me">
   <p>
-    <Copy>Some more information</Copy>
+    <Body>Some more information</Body>
   </p>
 </Accordionitem>;
 ```
@@ -79,21 +79,21 @@ import { Copy } from '@db-design/react';
 ### Multiple items should be wrapped in an Accordion componetn
 
 ```jsx
-import { Accordion, Copy } from '@db-design/react';
+import { Accordion, Body } from '@db-design/react';
 <Accordion>
   <Accordionitem title="ICE">
     <p>
-      <Copy>Some more information on ICE services</Copy>
+      <Body>Some more information on ICE services</Body>
     </p>
   </Accordionitem>
   <Accordionitem title="S-Bahn">
     <p>
-      <Copy>Some more information on S-Bahn services</Copy>
+      <Body>Some more information on S-Bahn services</Body>
     </p>
   </Accordionitem>
   <Accordionitem title="Call a Bike">
     <p>
-      <Copy>Some more information on Call a Bike services</Copy>
+      <Body>Some more information on Call a Bike services</Body>
     </p>
   </Accordionitem>
 </Accordion>;
@@ -115,19 +115,19 @@ import { Transportchip, Status } from '@db-design/react';
 ```
 
 ```jsx
-import { Title, Copy } from '@db-design/react';
-<Accordionitem title={<Title size="l">Huge title</Title>}>
+import { Headline, Body } from '@db-design/react';
+<Accordionitem title={<Headline size="l">Huge title</Headline>}>
   <p>
-    <Copy>Some more information</Copy>
+    <Body>Some more information</Body>
   </p>
 </Accordionitem>;
 ```
 
 ```jsx
-import { Copy } from '@db-design/react';
-<Accordionitem title={<Copy bold>Small title</Copy>}>
+import { Body } from '@db-design/react';
+<Accordionitem title={<Body bold>Small title</Body>}>
   <p>
-    <Copy>Some more information</Copy>
+    <Body>Some more information</Body>
   </p>
 </Accordionitem>;
 ```

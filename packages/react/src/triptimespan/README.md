@@ -105,16 +105,16 @@ This component implements the guidelines of:
 
 ## Smaller size
 
-Using a `<Copy>` with size `s`:
+Using a `<Body>` with size `s`:
 
 ```jsx
-import { Copy } from '@db-design/react';
-<Copy size="s">
+import { Body } from '@db-design/react';
+<Body size="s">
   <Triptimespan
     departureDateTime="09:54"
     predictedDepartureDateTime="09:57"
     arrivalDateTime="12:48"
     predictedArrivalDateTime="13:07"
   />
-</Copy>;
+</Body>;
 ```

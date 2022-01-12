@@ -5,11 +5,11 @@ import { Textfield } from '@db-design/react';
 ```
 
 ```jsx noeditor
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 import { JourneyDestination } from '@db-design/react-icons';
 <div className="textfield-preview">
   <span>
-    <Copy>Examples:</Copy>
+    <Body>Examples:</Body>
   </span>
   <span className="db-inline-spacer" />
   <Textfield value="Textfield" />

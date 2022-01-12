@@ -7,10 +7,10 @@ import { Link } from '@db-design/react';
 This component handles everthing that ‘looks like a link’ – even when it’s technically a button (JavaScript interaction). Links that should look like a button must use the [Button component](/#/Components/Interactive/Button).
 
 ```jsx noeditor
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <>
   <span>
-    <Copy>Examples:</Copy>
+    <Body>Examples:</Body>
   </span>
   <span className="db-inline-spacer" />
   <Link href="" iconPosition="none">

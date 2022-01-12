@@ -1,0 +1,87 @@
+$db-font-sizes: (
+  fs1: (
+    // Not defined yet, equal to fs3 until defined
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  fs2: (
+    // Not defined yet, equal to fs3 until defined
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  fs3: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  fs4: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  fs5: (
+    font-size: 16px,
+    line-height: 24px,
+  ),
+  fs6: (
+    font-size: 18px,
+    line-height: 24px,
+  ),
+  fs7: (
+    font-size: 24px,
+    line-height: 32px,
+  ),
+  fs8: (
+    font-size: 28px,
+    line-height: 36px,
+  ),
+  fs9: (
+    font-size: 35px,
+    line-height: 40px,
+  ),
+  fs10: (
+    font-size: 42px,
+    line-height: 48px,
+  ),
+  fs11: (
+    font-size: 50px,
+    line-height: 56px,
+  ),
+  fs12: (
+    font-size: 60px,
+    line-height: 68px,
+  ),
+  fs13: (
+    font-size: 73px,
+    line-height: 80px,
+  ),
+  fs14: (
+    font-size: 87px,
+    line-height: 96px,
+  ),
+  fs15: (
+    font-size: 105px,
+    line-height: 116px,
+  ),
+  fs16: (
+    font-size: 125px,
+    line-height: 136px,
+  ),
+);
+
+@mixin db-font-sizes($prefix) {
+  @each $name, $values in $db-font-sizes {
+    .#{$prefix}db-#{$name} {
+      font-size: map-get($values, font-size);
+      line-height: map-get($values, line-height);
+    }
+  }
+}
+
+@include db-font-sizes('');
+
+@include tablet {
+  @include db-font-sizes('t\\:');
+}
+
+@include desktop {
+  @include db-font-sizes('d\\:');
+}

@@ -7,11 +7,11 @@ import { Button } from '@db-design/react';
 This component handles everything that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
 
 ```jsx noeditor
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 import { ActionAdd } from '@db-design/react-icons';
 <>
   <span>
-    <Copy>Examples:</Copy>
+    <Body>Examples:</Body>
   </span>
   <span className="db-inline-spacer" />
   <Button onClick={alert} icon={<ActionAdd />}>
@@ -271,7 +271,7 @@ combinations shouldn’t be used and will raise a props validation warning.
 ```jsx noeditor
 import { Fragment } from 'react';
 import clsx from 'clsx';
-import { Title, Copy } from '@db-design/react';
+import { Headline, Body } from '@db-design/react';
 import {
   validateVariantCombinations,
   buttonVariants,
@@ -287,35 +287,35 @@ return (
     {buttonVariants.map((variant) => (
       <Fragment key={variant}>
         <h3>
-          <Title size="m">{variant}</Title>
+          <Headline size="m">{variant}</Headline>
         </h3>
         <table className="button-table">
           <thead>
             <tr>
               <th>
-                <Copy size="s" secondary>
+                <Body size="s" secondary>
                   Size
-                </Copy>
+                </Body>
               </th>
               <th>
-                <Copy size="s" secondary>
+                <Body size="s" secondary>
                   Default
-                </Copy>
+                </Body>
               </th>
               <th>
-                <Copy size="s" secondary>
+                <Body size="s" secondary>
                   With Icon
-                </Copy>
+                </Body>
               </th>
               <th>
-                <Copy size="s" secondary>
+                <Body size="s" secondary>
                   Square
-                </Copy>
+                </Body>
               </th>
               <th>
-                <Copy size="s" secondary>
+                <Body size="s" secondary>
                   Round
-                </Copy>
+                </Body>
               </th>
             </tr>
           </thead>

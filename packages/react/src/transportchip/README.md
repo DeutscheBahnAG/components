@@ -189,27 +189,27 @@ import { Status } from '@db-design/react';
 ## Sizing
 
 ```jsx
-import { Copy, Title } from '@db-design/react';
+import { Body, Headline } from '@db-design/react';
 <span>
   Take <Transportchip name="S 1" />
-  <Copy size="l">
+  <Body size="l">
     {' '}
     Take <Transportchip name="IC 12" />
-  </Copy>
-  <Title size="l">
+  </Body>
+  <Headline size="l">
     {' '}
     Take <Transportchip name="ICE 92" />
-  </Title>
+  </Headline>
 </span>;
 ```
 
 ## Linking
 
 ```jsx
-<Copy>
+<Body>
   Take <Transportchip href="#s-1" name="S 1" /> or{' '}
   <Transportchip href="#u-5" name="U 5" />
-</Copy>
+</Body>
 ```
 
 ## Local styles

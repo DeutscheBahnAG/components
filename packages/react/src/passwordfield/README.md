@@ -41,6 +41,13 @@ import { Passwordfield } from '@db-design/react';
         <td><p>Translations</p></td>
       </tr>
       <tr>
+        <td><strong>concealButtonProps</strong></td>
+        <td><code>ButtonHTMLAttributes&lt;HTMLButtonElement&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Props for the concealment toggle button</p></td>
+      </tr>
+      <tr>
         <td><strong>type</strong></td>
         <td><code>&quot;number&quot; | &quot;textarea&quot; | &quot;text&quot; | &quot;password&quot; | &quot;email&quot; | &quot;tel&quot; | &quot;url&quot; | &quot;search&quot;</code></td>
         <td>false</td>

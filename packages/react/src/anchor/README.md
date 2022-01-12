@@ -60,11 +60,11 @@ Hover over ‘My section’ to see the Anchor appearing:
 ## In combination with a title
 
 ```jsx
-import { Title } from '@db-design/react';
+import { Headline } from '@db-design/react';
 <h1>
-  <Title size="xxl">
+  <Headline size="xxl">
     <Anchor id="my-title">My title</Anchor>
-  </Title>
+  </Headline>
 </h1>;
 ```
 
@@ -73,9 +73,9 @@ import { Title } from '@db-design/react';
 This example results in `#my-title`:
 
 ```jsx
-import { Title } from '@db-design/react';
+import { Headline } from '@db-design/react';
 const title = 'My title';
 <Anchor id={title}>
-  <Title size="xxl">{title}</Title>
+  <Headline size="xxl">{title}</Headline>
 </Anchor>;
 ```

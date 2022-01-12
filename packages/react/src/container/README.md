@@ -311,19 +311,19 @@ import { Layout } from '@db-design/react';
 No align (= left):
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content">
   <Logo mb="1" size="xl" />
   <Pulse>
-    <Title>Headline</Title>
+    <Headline>Headline</Headline>
   </Pulse>
   <Container width="text" marginTop="l">
-    <Copy>
+    <Body>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
       ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
       mollis.
-    </Copy>
+    </Body>
   </Container>
 </Container>;
 ```
@@ -331,19 +331,19 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 Center everything:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
   <Logo mb="1" size="xl" />
   <Pulse>
-    <Title>Headline</Title>
+    <Headline>Headline</Headline>
   </Pulse>
   <Container width="text" marginTop="l">
-    <Copy>
+    <Body>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
       ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
       mollis.
-    </Copy>
+    </Body>
   </Container>
 </Container>;
 ```
@@ -351,19 +351,19 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 Center on mobile only:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align={{ mobile: 'center', tablet: 'left' }}>
   <Logo mb="1" size="xl" />
   <Pulse>
-    <Title>Headline</Title>
+    <Headline>Headline</Headline>
   </Pulse>
   <Container width="text" marginTop="l">
-    <Copy>
+    <Body>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
       ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
       mollis.
-    </Copy>
+    </Body>
   </Container>
 </Container>;
 ```
@@ -371,19 +371,19 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 Center most things, but reset the text align for the copy:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
   <Logo mb="1" size="xl" />
   <Pulse>
-    <Title>Headline</Title>
+    <Headline>Headline</Headline>
   </Pulse>
   <Container width="text" align="left" marginTop="l">
-    <Copy>
+    <Body>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
       ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
       mollis.
-    </Copy>
+    </Body>
   </Container>
 </Container>;
 ```
@@ -391,20 +391,20 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 Possible for edge-cases: completely reset the text align for the copy:
 
 ```jsx
-import { Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
   <Logo mb="1" size="xl" />
   <Pulse>
-    <Title>Headline</Title>
+    <Headline>Headline</Headline>
   </Pulse>
   <Container width="content" align="left" marginTop="l">
     <Container width="text">
-      <Copy>
+      <Body>
         Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
         hendrerit nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis
         porta ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra
         metus mollis.
-      </Copy>
+      </Body>
     </Container>
   </Container>
 </Container>;
@@ -413,7 +413,7 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 ## Background colours/themes
 
 ```jsx
-import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Theme, Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container filled width="full" align="center">
   <Theme theme="DB_LIGHT_ALTERNATE">
     <Container
@@ -425,7 +425,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
     >
       <Logo mb="1" size="xl" />
       <Pulse>
-        <Title>Headline</Title>
+        <Headline>Headline</Headline>
       </Pulse>
     </Container>
   </Theme>
@@ -433,7 +433,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 ```
 
 ```jsx
-import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
+import { Theme, Logo, Pulse, Headline, Body } from '@db-design/react';
 <Theme theme="DB_LIGHT_ALTERNATE">
   <Container filled verticalPadding="l" width="full" align="center">
     <Theme theme="DB_LIGHT">
@@ -446,7 +446,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
       >
         <Logo mb="1" size="xl" />
         <Pulse>
-          <Title>Headline</Title>
+          <Headline>Headline</Headline>
         </Pulse>
       </Container>
     </Theme>

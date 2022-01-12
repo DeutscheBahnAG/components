@@ -7,19 +7,19 @@ import { List } from '@db-design/react';
 ```
 
 ```jsx noeditor
-import { Copy, Transportchip } from '@db-design/react';
+import { Body, Transportchip } from '@db-design/react';
 <List>
   <span>
     <Transportchip name="ICE 153" />
-    <Copy>ICE</Copy>
+    <Body>ICE</Body>
   </span>
   <span>
     <Transportchip name="IC 621" />
-    <Copy>IC</Copy>
+    <Body>IC</Body>
   </span>
   <span>
     <Transportchip name="S 1" showProductLogo />
-    <Copy>S-Bahn</Copy>
+    <Body>S-Bahn</Body>
   </span>
 </List>;
 ```
@@ -90,11 +90,11 @@ import { Copy, Transportchip } from '@db-design/react';
 ## Usage
 
 ```jsx
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <List>
-  <Copy>ICE</Copy>
-  <Copy>IC</Copy>
-  <Copy>S-Bahn</Copy>
+  <Body>ICE</Body>
+  <Body>IC</Body>
+  <Body>S-Bahn</Body>
 </List>;
 ```
 
@@ -103,22 +103,22 @@ import { Copy } from '@db-design/react';
 Paddings apply above and below each list item.
 
 ```jsx
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <List verticalPadding="ml">
-  <Copy>ICE</Copy>
-  <Copy>IC</Copy>
-  <Copy>S-Bahn</Copy>
+  <Body>ICE</Body>
+  <Body>IC</Body>
+  <Body>S-Bahn</Body>
 </List>;
 ```
 
 Paddings can make use of responsive steps:
 
 ```jsx
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <List verticalPadding={{ mobile: 'xs', tablet: 'ml' }}>
-  <Copy>ICE</Copy>
-  <Copy>IC</Copy>
-  <Copy>S-Bahn</Copy>
+  <Body>ICE</Body>
+  <Body>IC</Body>
+  <Body>S-Bahn</Body>
 </List>;
 ```
 
@@ -149,18 +149,18 @@ This might be especially useful in case you want to have a single-item list bein
 By default, a list is a visual, non-semantical element. Alternatively `ul` or `ol` can be used.
 
 ```jsx
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 <List as="ul">
-  <Copy>ICE</Copy>
-  <Copy>IC</Copy>
-  <Copy>S-Bahn</Copy>
+  <Body>ICE</Body>
+  <Body>IC</Body>
+  <Body>S-Bahn</Body>
 </List>;
 ```
 
 ### List item wrapper
 
 ```jsx
-import { Checkbox, Copy } from '@db-design/react';
+import { Checkbox, Body } from '@db-design/react';
 <List
   renderItem={(item, key, ListItemElement, otherProps) => (
     <ListItemElement key={key} {...otherProps}>
@@ -168,9 +168,9 @@ import { Checkbox, Copy } from '@db-design/react';
     </ListItemElement>
   )}
 >
-  <Copy>ICE</Copy>
-  <Copy>IC</Copy>
-  <Copy>S-Bahn</Copy>
+  <Body>ICE</Body>
+  <Body>IC</Body>
+  <Body>S-Bahn</Body>
 </List>;
 ```
 

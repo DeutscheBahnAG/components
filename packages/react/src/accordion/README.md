@@ -5,11 +5,11 @@ import { Accordion } from '@db-design/react';
 ```
 
 ```jsx noeditor
-import { Accordionitem, Copy } from '@db-design/react';
+import { Accordionitem, Body } from '@db-design/react';
 <Accordion>
   <Accordionitem title="Expand me">
     <p>
-      <Copy>Some more information</Copy>
+      <Body>Some more information</Body>
     </p>
   </Accordionitem>
 </Accordion>;
@@ -63,21 +63,21 @@ import { Accordionitem, Copy } from '@db-design/react';
 ## Usage
 
 ```jsx
-import { Accordionitem, Copy } from '@db-design/react';
+import { Accordionitem, Body } from '@db-design/react';
 <Accordion>
   <Accordionitem title="ICE">
     <p>
-      <Copy>Some more information on ICE services</Copy>
+      <Body>Some more information on ICE services</Body>
     </p>
   </Accordionitem>
   <Accordionitem title="S-Bahn">
     <p>
-      <Copy>Some more information on S-Bahn services</Copy>
+      <Body>Some more information on S-Bahn services</Body>
     </p>
   </Accordionitem>
   <Accordionitem title="Call a Bike">
     <p>
-      <Copy>Some more information on Call a Bike services</Copy>
+      <Body>Some more information on Call a Bike services</Body>
     </p>
   </Accordionitem>
 </Accordion>;
@@ -86,11 +86,11 @@ import { Accordionitem, Copy } from '@db-design/react';
 ### Single item with lines
 
 ```jsx
-import { Accordionitem, Copy } from '@db-design/react';
+import { Accordionitem, Body } from '@db-design/react';
 <Accordion outerLines>
   <Accordionitem title="Expand me">
     <p>
-      <Copy>Some more information</Copy>
+      <Body>Some more information</Body>
     </p>
   </Accordionitem>
 </Accordion>;

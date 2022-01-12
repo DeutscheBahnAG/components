@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import Title from '../title';
+import Headline from '../headline';
 
 export interface AccordionitemProps {
   /** Title to show (`<summary>`) */
@@ -32,9 +32,9 @@ const Accordionitem: AccordionitemComponent = React.forwardRef(
             strokeLinejoin="round"
           />
         </svg>
-        <Title size="m" light className="db-accordionitem__title">
+        <Headline size="m" light className="db-accordionitem__title">
           {title}
-        </Title>
+        </Headline>
       </summary>
       {children}
     </details>

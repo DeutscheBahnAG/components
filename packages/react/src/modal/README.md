@@ -3,11 +3,11 @@
 Modals are used to focus the users’ attention to a certain information or decision. This Component extends [react-modal](https://www.npmjs.com/package/react-modal), additional properties are inherited from it.
 
 ```jsx
-import { Button, Copy } from '@db-design/react';
+import { Button, Body } from '@db-design/react';
 const { primaryActions } = Modal;
 
 <Modal title="Modal" primaryButton={<Button {...primaryActions}>OK</Button>} isOpen>
-  <Copy>Modal content</Copy>
+  <Body>Modal content</Body>
 </Modal>;
 ```
 
@@ -233,7 +233,7 @@ The following case might not be necessary if unsaved data in your app would alwa
 If the app doesn’t offer a draft folder or it would be too confusing for the user in that particular situation, the following Modal dialogue could be a solution:
 
 ```jsx
-import { Button, Copy } from '@db-design/react';
+import { Button, Body } from '@db-design/react';
 const { primaryActions, secondaryActions } = Modal;
 const saveAs = alert;
 const discardEdit = alert;
@@ -256,10 +256,10 @@ const openState = true;
   isOpen={openState}
   appId="root"
 >
-  <Copy>
+  <Body>
     If you decide to discard the unsaved document, you will lose all changes and you will
     not be able to recover your data.
-  </Copy>
+  </Body>
 </Modal>;
 ```
 

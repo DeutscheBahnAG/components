@@ -1,11 +1,11 @@
-# Copy (typography)
+# Body (typography)
 
 ```js
-import { Copy } from '@db-design/react';
+import { Body } from '@db-design/react';
 ```
 
 ```jsx
-<Copy>Great content</Copy>
+<Body>Great content</Body>
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
@@ -63,112 +63,112 @@ import { Copy } from '@db-design/react';
 ## Size
 
 ```jsx
-<Copy size="l">
-  Copy in size L. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+<Body size="l">
+  Body in size L. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
   Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
   Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
   denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
   tragen.
-</Copy>
+</Body>
 ```
 
 ```jsx
-<Copy size="m">
-  Copy in size M. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+<Body size="m">
+  Body in size M. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
   Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
   Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr.
-</Copy>
+</Body>
 ```
 
 ```jsx
-<Copy size="s">
-  Copy in size S. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+<Body size="s">
+  Body in size S. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
   Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
   Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
   denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
   tragen.
-</Copy>
+</Body>
 ```
 
 ```jsx
-<Copy size="xs">
-  Copy in size XS. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+<Body size="xs">
+  Body in size XS. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
   Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
   Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
   denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
   tragen.
-</Copy>
+</Body>
 ```
 
 ## Weight
 
 ```jsx
-<Copy bold>Bold copy</Copy>
+<Body bold>Bold copy</Body>
 ```
 
 ```jsx
-<Copy>
+<Body>
   Partially <b>bold</b> copy
-</Copy>
+</Body>
 ```
 
 ```jsx
-<Copy>
+<Body>
   Partially <strong>bold</strong> copy
-</Copy>
+</Body>
 ```
 
 ## Italic
 
 ```jsx
-<Copy>
+<Body>
   Partially <i>italic</i> copy
-</Copy>
+</Body>
 ```
 
 ```jsx
-<Copy>
+<Body>
   Partially <em>italic</em> copy
-</Copy>
+</Body>
 ```
 
 ## Secondary
 
 ```jsx
-<Copy variant="secondary">Secondary Copy</Copy>
+<Body variant="secondary">Secondary Body</Body>
 ```
 
 ## Usage
 
-The `<Copy>` component adds the text style only. It is recommended to wrap it in a `<p>` or other HTML element depending on your needs.
+The `<Body>` component adds the text style only. It is recommended to wrap it in a `<p>` or other HTML element depending on your needs.
 
 ```jsx
 <p>
-  <Copy>
-    Copy in a p. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir
+  <Body>
+    Body in a p. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir
     haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
     Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
     denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
     tragen.
-  </Copy>
+  </Body>
 </p>
 ```
 
 ```jsx
 <h1>
-  <Copy>
-    Copy in a h1. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+  <Body>
+    Body in an h1. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
     Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
     Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
     denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
     tragen.
-  </Copy>
+  </Body>
 </h1>
 ```
 
 ```jsx
 <label>
-  <Copy size="s">Copy S in a label.</Copy>
+  <Body size="s">Body S in a label.</Body>
 </label>
 ```
 
@@ -176,13 +176,13 @@ If you expect more than one line, take care the wrapping element is a block elem
 
 ```jsx
 <label>
-  <Copy size="s">
-    Copy in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+  <Body size="s">
+    Body in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
     Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
     Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
     denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
     tragen.
-  </Copy>
+  </Body>
 </label>
 ```
 
@@ -190,12 +190,12 @@ By applying `display: block`, the line-height works as expected:
 
 ```jsx
 <label style={{ display: 'block' }}>
-  <Copy size="s">
-    Copy in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
+  <Body size="s">
+    Body in a label. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer.
     Wir haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
     Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
     denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
     tragen.
-  </Copy>
+  </Body>
 </label>
 ```

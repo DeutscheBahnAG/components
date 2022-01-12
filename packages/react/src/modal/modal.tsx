@@ -3,8 +3,7 @@ import { useCallback, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import clsx from 'clsx';
 import { NavigationClose } from '@db-design/react-icons';
-import Button from '../button';
-import Title from '../title';
+import { Button, Headline } from '..';
 
 const PORTAL_ID = 'modal-portal';
 
@@ -268,7 +267,7 @@ const Modal: ModalType<ModalProps> = ({
         )}
         {title && (
           <h2 id="ariaLabelledBy" className="db-modal__title">
-            <Title size="l">{title}</Title>
+            <Headline size="l">{title}</Headline>
           </h2>
         )}
       </header>

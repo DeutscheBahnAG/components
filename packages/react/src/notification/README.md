@@ -187,7 +187,7 @@ being read out. This example is to demonstrate the accessibility feature only.
 
 ```jsx noeditor
 import React, { useState, useEffect } from 'react';
-import { Button, Copy } from '@db-design/react';
+import { Button } from '@db-design/react';
 
 const NotificationExample = () => {
   const [isOpen, setOpen] = useState(false);

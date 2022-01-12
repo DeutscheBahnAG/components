@@ -35,8 +35,9 @@ module.exports = [
       {
         name: 'Typography',
         components: web([
-          'copy',
-          'title',
+          'body',
+          'headline',
+          'display',
         ]),
       },
       {
