@@ -392,7 +392,7 @@ When both properties are set, a link (= `<a>`) gets rendered. The `onClick` stil
 </Button>
 ```
 
-### Using Next.js
+## Using Next.js
 
 Since Next.js requires the `href` to be set in a wrapper link component, the actual `Button` must have the `href` passed through. To do this, use the [`passHref`](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag) switch in the Next.js link wrapper:
 
@@ -485,9 +485,9 @@ const RefExample = () => {
       buttonRef.current.focus();
     }
   });
-  return <Button ref={buttonRef}>A Button</Button>
-}
-<RefExample />
+  return <Button ref={buttonRef}>A Button</Button>;
+};
+<RefExample />;
 ```
 
 Note that the referred DOM node is either an anchor link or a button, depending on Button props described in the sections above.

@@ -183,7 +183,9 @@ When both properties are set, a link (= `<a>`) gets rendered. The `onClick` stil
 </form>
 ```
 
-### Using Next.js
+Think twice if you really want this to look like a link. [Button](/#/Components/Interactive/Button) is your friend.
+
+## Using Next.js
 
 Since Next.js requires the `href` to be set in a wrapper link component, the actual `Link` must have the `href` passed through. To do this, use the [`passHref`](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag) switch in the Next.js link wrapper:
 
@@ -195,8 +197,6 @@ import { Link } from '@db-design/react';
   <Link>Link</Link>
 </NextLink>;
 ```
-
-Think twice if you really want this to look like a link. [Button](/#/Components/Interactive/Button) is your friend.
 
 ## Aligning Links
 
@@ -267,9 +267,13 @@ const RefExample = () => {
       console.log('Link reference to DOM node:', linkRef.current);
     }
   });
-  return <Link ref={linkRef} href="https://dpp.bahn-x.de">A Link</Link>
-}
-<RefExample />
+  return (
+    <Link ref={linkRef} href="https://dpp.bahn-x.de">
+      A Link
+    </Link>
+  );
+};
+<RefExample />;
 ```
 
 Note that the referred DOM node is either an anchor link or a button, depending on Link props described in the sections above.
