@@ -13,7 +13,7 @@
     "styleguidist": "styleguidist server",
     "build": "yarn build:sassdoc && yarn build:styleguidist",
     "build:styleguidist": "styleguidist build",
-    "build:sassdoc": "sassdoc packages/styles",
+    "build:sassdoc": "sassdoc ../styles",
     "dev": "yarn styleguidist",
     "postinstall": "node scripts/postinstall.js"
   },

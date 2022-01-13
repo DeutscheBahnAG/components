@@ -1,4 +1,4 @@
-basePath: ./packages/styles
+basePath: ../styles
 dest: build/sassdoc
 display:
   access:
