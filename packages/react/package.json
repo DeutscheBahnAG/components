@@ -1,6 +1,6 @@
 {
   "name": "@db-design/react",
-  "version": "1.0.0-pre.18",
+  "version": "1.0.0-pre.19",
   "description": "DB React Components",
   "repository": {
     "directory": "packages/react",
@@ -12,7 +12,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@db-design/react-icons": "^1.0.0-pre.1",
-    "@db-design/styles": "^1.0.0-pre.16",
+    "@db-design/styles": "^1.0.0-pre.17",
     "clsx": "^1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
