@@ -8,7 +8,7 @@ import { Theme } from '@db-design/react';
 import { Button } from '@db-design/react';
 <>
   <Button>DB Button</Button>
-  <Theme theme="S_BAHN_LIGHT">
+  <Theme theme="EXPERIMENTAL_S_BAHN_LIGHT">
     <Button>S-Bahn Button</Button>
   </Theme>
 </>;
@@ -33,23 +33,22 @@ import {
   Status,
 } from '@db-design/react';
 import Icons from '@db-design/react-icons';
-import { radius, spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 import { useState } from 'react';
 import { themes } from './theme';
 
 const [themeIndex, setThemeIndex] = useState(0);
 
-<div className="rsg--preview-37" style={{ borderRadius: radius.l }}>
+<div className="rsg--preview-37" style={{ borderRadius: 4 }}>
   <Theme theme={themes[themeIndex]}>
     <Container
       filled
       align="center"
       style={{
         display: 'grid',
-        gap: `${spacing.m}px`,
-        padding: `${spacing.l}px`,
-        width: `calc(100% + ${2 * spacing.m}px)`,
-        borderRadius: '4.3px',
+        gap: `16px`,
+        padding: `32px`,
+        width: `calc(100% + 32px)`,
+        borderRadius: '4px',
       }}
     >
       <div>
@@ -110,7 +109,7 @@ const [themeIndex, setThemeIndex] = useState(0);
         </Link>
         <Link href="#">Link</Link>
       </div>
-      <p style={{ marginTop: `${spacing.xl}px` }}>
+      <p style={{ marginTop: `48px` }}>
         <Copy size="m">Travel information:</Copy>
         <Copy variant="secondary" size="s">
           (possible but not recommended on branded background)
