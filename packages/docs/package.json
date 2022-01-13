@@ -17,12 +17,7 @@
     "dev": "yarn styleguidist",
     "postinstall": "node scripts/postinstall.js"
   },
-  "dependencies": {
-    "@db-design/react": "1.0.0-pre.18",
-    "@db-design/react-extra": "1.0.0-pre.1",
-    "@db-design/react-icons": "1.0.0-pre.1",
-    "@db-design/styles": "1.0.0-pre.16"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "css-loader": "^6.5.1",

@@ -1,0 +1,7 @@
+{
+  "ignores": [
+    "@bahn-x/dbx-tokens",
+    "@db-design/styles",
+    "prop-types"
+  ]
+}

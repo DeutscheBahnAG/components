@@ -42,6 +42,12 @@ stages:
   script:
     - yarn lint
 
+.depcheck:
+  extends: .install
+  stage: test
+  script:
+    - yarn depcheck
+
 .build-docs:
   stage: build-packages
   extends: .install
@@ -86,6 +92,11 @@ test-dev:
 
 lint-dev:
   extends: .lint
+  tags: [dev]
+  except: [prod]
+
+depcheck-dev:
+  extends: .depcheck
   tags: [dev]
   except: [prod]
 
@@ -172,6 +183,11 @@ test-prod:
 
 lint-prod:
   extends: .lint
+  tags: [prod]
+  only: [prod]
+
+depcheck-prod:
+  extends: .depcheck
   tags: [prod]
   only: [prod]
 
