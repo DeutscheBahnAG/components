@@ -14,6 +14,7 @@
     "build": "yarn build:sassdoc && yarn build:styleguidist",
     "build:styleguidist": "styleguidist build",
     "build:sassdoc": "sassdoc ../styles",
+    "postbuild:sassdoc": "mv build/sassdoc/assets build",
     "dev": "yarn styleguidist",
     "postinstall": "node scripts/postinstall.js"
   },

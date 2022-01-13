@@ -1,5 +1,5 @@
-basePath: ../styles
 dest: build/sassdoc
+basePath: ../styles/
 display:
   access:
     - public
@@ -7,7 +7,7 @@ display:
   alias: true
   watermark: true
 
-package: ./package.json
+package: ../styles/package.json
 theme: default
 groups:
   undefined: Miscellaneous
