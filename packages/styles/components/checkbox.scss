@@ -121,37 +121,11 @@ $db-checkbox-gap: 0.5em;
 }
 
 .db-checkbox__label {
+  @include db-form-input-label;
   margin-left: $db-checkbox-gap;
-
-  a {
-    font-size: 0;
-    text-decoration: none;
-  }
-
-  a::before {
-    background: db-color('yellow300');
-    border-radius: db-border-radius('xs');
-    color: db-color('red500');
-    content: '⚠️ Dont use links in labels (use footer={…}) ⚠️';
-    font-size: db-font-size('copy', 'm');
-  }
 }
 
 .db-checkbox__footer {
-  @include db-text-style('copy', 's');
-  align-items: flex-start /* 3 */;
-  color: var(--db-primary-text-color);
-  display: flex;
-  flex-direction: column;
-  grid-gap: db-spacing('s');
-  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em) /* 4 */;
-  margin-top: db-spacing('s') - 2px;
-
-  > a {
-    @include db-secondary-link;
-  }
-
-  > a + p {
-    margin-top: db-spacing('sm');
-  }
+  @include db-form-input-footer;
+  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em)
 }
