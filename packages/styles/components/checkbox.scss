@@ -59,21 +59,11 @@ $db-checkbox-gap: 0.5em;
 .db-checkbox__background {
   fill: var(--db-primary-background-color);
   stroke: currentColor;
-  x: -1.5px;
-  y: -1.5px;
-  width: 19px;
-  height: 19px;
-  stroke-width: 1px;
-
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    x: -1.25px;
-    y: -1.25px;
-    width: 18.5px;
-    height: 18.5px;
-    stroke-width: 1.5px;
-  }
+  x: -1px;
+  y: -1px;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2px;
 
   /* stylelint-disable-next-line selector-max-compound-selectors */
   .db-checkbox:active > input:not(:disabled):not(:checked) + .db-checkbox__box & {
