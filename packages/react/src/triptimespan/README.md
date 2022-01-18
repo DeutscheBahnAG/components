@@ -26,7 +26,11 @@ This component implements the guidelines of:
 ## Delayed arrival
 
 ```jsx
-<Triptimespan departureDateTime="09:54" arrivalDateTime="12:48" predictedArrivalDateTime="12:49" />
+<Triptimespan
+  departureDateTime="09:54"
+  arrivalDateTime="12:48"
+  predictedArrivalDateTime="12:49"
+/>
 ```
 
 ## Delayed departure and arrival

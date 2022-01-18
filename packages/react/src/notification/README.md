@@ -144,10 +144,10 @@ return <NotificationExample />;
 
 ```jsx
 <Notification>
-  This is a very long text with a whole lot of words and characters in order to demonstrate the
-  behavior of the Notificiation component with multiple lines of text, so we can see that we get
-  details like line heights and adjstument of the icon in relation to the text right. In fact, it is
-  an anti-pattern to display very long texts in notifications, but technically we do not restrict
-  the text length.
+  This is a very long text with a whole lot of words and characters in order to
+  demonstrate the behavior of the Notificiation component with multiple lines of text, so
+  we can see that we get details like line heights and adjstument of the icon in relation
+  to the text right. In fact, it is an anti-pattern to display very long texts in
+  notifications, but technically we do not restrict the text length.
 </Notification>
 ```

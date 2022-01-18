@@ -189,7 +189,12 @@ You can use inline Textfields in combination with other attributes:
 ```
 
 ```jsx
-<Textfield readOnly value="my.name" suffix="@deutschebahn.com" inlineLabel="Email address" />
+<Textfield
+  readOnly
+  value="my.name"
+  suffix="@deutschebahn.com"
+  inlineLabel="Email address"
+/>
 ```
 
 It is possible to combine `inlineLabel` and `placeholder`. Click inside the Textfield to see:

@@ -120,7 +120,8 @@ import { Copy, Title } from '@db-design/react';
 
 ```jsx
 <Copy>
-  Take <Transportchip href="#s-1" name="S 1" /> or <Transportchip href="#u-5" name="U 5" />
+  Take <Transportchip href="#s-1" name="S 1" /> or{' '}
+  <Transportchip href="#u-5" name="U 5" />
 </Copy>
 ```
 
@@ -177,7 +178,9 @@ The local style is determined by the post code (`zipCode`) and the product type 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'M1 M17 12 88'
   .split(' ')
-  .map((name) => <Transportchip zipCode="10115" product="tram" name={name} showProductLogo />);
+  .map((name) => (
+    <Transportchip zipCode="10115" product="tram" name={name} showProductLogo />
+  ));
 ```
 
 #### Bus Berlin
@@ -185,7 +188,9 @@ The local style is determined by the post code (`zipCode`) and the product type 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'M11 M85 X7 X83 TXL 100 943 N1 N97'
   .split(' ')
-  .map((name) => <Transportchip zipCode="10115" product="bus" name={name} showProductLogo />);
+  .map((name) => (
+    <Transportchip zipCode="10115" product="bus" name={name} showProductLogo />
+  ));
 ```
 
 #### Ferry Berlin
@@ -193,7 +198,9 @@ The local style is determined by the post code (`zipCode`) and the product type 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'F10 F12 F21 F22 F23'
   .split(' ')
-  .map((name) => <Transportchip zipCode="10115" product="ferry" name={name} showProductLogo />);
+  .map((name) => (
+    <Transportchip zipCode="10115" product="ferry" name={name} showProductLogo />
+  ));
 ```
 
 ℹ️ BVG styles for tram, bus and ferry must show the transport logo.
@@ -221,7 +228,9 @@ AKN trains do have their own logo in Hamburg’s public transportation system. I
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 'AKN A1  AKN A2  AKN A3'
   .split('  ')
-  .map((name) => <Transportchip zipCode="25000" product="regional" name={name} showProductLogo />);
+  .map((name) => (
+    <Transportchip zipCode="25000" product="regional" name={name} showProductLogo />
+  ));
 ```
 
 #### Hochbahn Hamburg
@@ -361,7 +370,9 @@ The styles are shared with Fürth.
 #### U-Bahn Nürnberg
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'U1 U2 U3'.split(' ').map((name) => <Transportchip zipCode="90000" product="subway" name={name} />);
+'U1 U2 U3'
+  .split(' ')
+  .map((name) => <Transportchip zipCode="90000" product="subway" name={name} />);
 ```
 
 #### Tram Nürnberg
@@ -369,7 +380,9 @@ The styles are shared with Fürth.
 (Default style)
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'4 5 6 7 8'.split(' ').map((name) => <Transportchip zipCode="90000" product="tram" name={name} />);
+'4 5 6 7 8'
+  .split(' ')
+  .map((name) => <Transportchip zipCode="90000" product="tram" name={name} />);
 ```
 
 #### Bus Nürnberg
@@ -461,7 +474,9 @@ The styles are shared with Fürth.
 #### Bus Stuttgart
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
-'1 2 34'.split(' ').map((name) => <Transportchip zipCode="70000" product="bus" name={name} />);
+'1 2 34'
+  .split(' ')
+  .map((name) => <Transportchip zipCode="70000" product="bus" name={name} />);
 ```
 
 ### Bremen/Niedersachsen

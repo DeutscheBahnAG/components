@@ -112,9 +112,10 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width="text">
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
-      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
-      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
+      nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
+      ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
+      mollis.
     </Copy>
   </Container>
 </Container>;
@@ -131,9 +132,10 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width="text">
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
-      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
-      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
+      nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
+      ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
+      mollis.
     </Copy>
   </Container>
 </Container>;
@@ -150,9 +152,10 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width="text">
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
-      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
-      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
+      nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
+      ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
+      mollis.
     </Copy>
   </Container>
 </Container>;
@@ -169,9 +172,10 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   </Pulse>
   <Container width="text" align="left">
     <Copy>
-      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
-      facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
-      facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+      Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
+      nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
+      ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra metus
+      mollis.
     </Copy>
   </Container>
 </Container>;
@@ -189,9 +193,10 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
   <Container width="content" align="left">
     <Container width="text">
       <Copy>
-        Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit nisl
-        facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta ligula. Nulla
-        facilisi. Morbi placerat ex a arcu tristique, non viverra metus mollis.
+        Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
+        hendrerit nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis
+        porta ligula. Nulla facilisi. Morbi placerat ex a arcu tristique, non viverra
+        metus mollis.
       </Copy>
     </Container>
   </Container>

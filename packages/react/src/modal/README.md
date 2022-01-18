@@ -57,8 +57,8 @@ const openState = true;
   appId="root"
 >
   <Copy>
-    If you decide to discard the unsaved document, you will lose all changes and you will not be
-    able to recover your data.
+    If you decide to discard the unsaved document, you will lose all changes and you will
+    not be able to recover your data.
   </Copy>
 </Modal>;
 ```

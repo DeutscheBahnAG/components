@@ -148,7 +148,12 @@ const ThemesExample = () => {
                 <Transportchip name="IC 456" />
                 <Transportchip name="S1" zipCode="10111" showProductLogo />
                 <Transportchip name="U12" zipCode="10111" showProductLogo />
-                <Transportchip name="M10" zipCode="10111" showProductLogo product="tram" />
+                <Transportchip
+                  name="M10"
+                  zipCode="10111"
+                  showProductLogo
+                  product="tram"
+                />
               </span>
               <Track track="2a" />
             </Copy>

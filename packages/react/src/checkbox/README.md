@@ -56,7 +56,11 @@ const ExampleComponent = () => {
 
   return (
     <>
-      <Checkbox indeterminate={isIndeterminate} checked={isChecked} onClick={handleCheckboxClick}>
+      <Checkbox
+        indeterminate={isIndeterminate}
+        checked={isChecked}
+        onClick={handleCheckboxClick}
+      >
         Checkbox indeterminate checked
       </Checkbox>
       <Button onClick={handleButtonClick} disabled={isIndeterminate} size="m">
@@ -124,9 +128,9 @@ It’s possible to use more than one link in the footer:
 
 ```jsx
 <Checkbox>
-  The label of the Checkbox can get a very long text which is sometimes needed for accepting terms
-  of use or privacy terms. In this case the label wraps nicely and the checkbox stays aligned with
-  the first line of the label.
+  The label of the Checkbox can get a very long text which is sometimes needed for
+  accepting terms of use or privacy terms. In this case the label wraps nicely and the
+  checkbox stays aligned with the first line of the label.
 </Checkbox>
 ```
 
@@ -136,7 +140,9 @@ Currently error messages need to be set manually. The footer is a great place to
 with the label:
 
 ```jsx
-<Checkbox footer={<Status severity="fatal">Please check this checkbox</Status>}>Check me</Checkbox>
+<Checkbox footer={<Status severity="fatal">Please check this checkbox</Status>}>
+  Check me
+</Checkbox>
 ```
 
 ```jsx

@@ -42,7 +42,8 @@
 
 ```jsx
 <Status>
-  The message of the Status can get a very long text which is sometimes needed. In this case the
-  label wraps nicely and the checkbox stays aligned with the first line of the label.
+  The message of the Status can get a very long text which is sometimes needed. In this
+  case the label wraps nicely and the checkbox stays aligned with the first line of the
+  label.
 </Status>
 ```
