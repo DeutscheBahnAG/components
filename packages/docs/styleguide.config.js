@@ -22,6 +22,12 @@ module.exports = {
   title: 'DB React components',
   styleguideDir: 'build',
   assetsDir: path.join(__dirname, './public'),
+  components: '../react/src/**/*.tsx',
+  contextDependencies: [
+    path.resolve(__dirname, '..', 'styles'),
+    path.resolve(__dirname, '..', 'react'),
+    path.resolve(__dirname, '..', 'react-extra'),
+  ],
 
   ignore: [
     // These also need to be exlucded in the webpack config below
