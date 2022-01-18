@@ -237,7 +237,7 @@ import { Textfield, Button } from '@db-design/react';
       borderWidth: '1px 0 0',
       marginTop: '-20px',
       position: 'absolute',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />
@@ -248,7 +248,7 @@ import { Textfield, Button } from '@db-design/react';
       marginTop: '-53px',
       position: 'absolute',
       height: '54px',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />
@@ -259,7 +259,7 @@ import { Textfield, Button } from '@db-design/react';
 
 You can use a [Ref](https://reactjs.org/docs/refs-and-the-dom.html) to access the DOM node of the Link or Button:
 
-```jsx
+```jsx static
 const RefExample = () => {
   const linkRef = React.useRef(null);
   React.useEffect(() => {

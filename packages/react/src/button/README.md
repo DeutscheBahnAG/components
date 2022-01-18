@@ -149,97 +149,148 @@ import { ActionAdd } from '@db-design/react-icons';
 
 ## Overview of possible combinations
 
-Below all possible combinations of `ButtonSizes`, `ButtonShapes`,
-and `ButtonVariants` as well as with and without Icon are listed. Crossed out
+Below all possible combinations of `buttonSizes`, `buttonShapes`,
+and `buttonVariants` as well as with and without Icon are listed. Disabled
 combinations shouldn’t be used and will raise a props validation warning.
 
 ```jsx noeditor
 import { Fragment } from 'react';
 import clsx from 'clsx';
+import { Title, Copy } from '@db-design/react';
 import {
   validateVariantCombinations,
-  ButtonVariants,
-  ButtonIconPositions,
-  ButtonShapes,
-  ButtonSizes,
-  ButtonTypes,
+  buttonVariants,
+  buttonIconPositions,
+  buttonShapes,
+  buttonSizes,
+  buttonTypes,
 } from './button';
 import { NavigationClose } from '@db-design/react-icons';
 import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-
-<>
-  {ButtonVariants.map((variant) => (
-    <Fragment key={variant}>
-      <h3>ButtonVariant: {variant}</h3>
-      <table className="sg-table">
-        <thead>
-          <tr>
-            <th colSpan="3">&nbsp;</th>
-            <th colSpan="2">Button shapes</th>
-          </tr>
-          <tr>
-            <th>
-              Button
-              <br />
-              sizes
-            </th>
-            <th>Default</th>
-            <th>With Icon</th>
-            <th>SQUARE</th>
-            <th>ROUND</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ButtonSizes.map((size) => (
-            <tr key={`${variant}-${size}`}>
-              <th>{size.toUpperCase()}</th>
-              <td
-                className={clsx(`sg-buttons-${variant}-square-${size}`, {
-                  'sg-not-allowed':
+return (
+  <>
+    {buttonVariants.map((variant) => (
+      <Fragment key={variant}>
+        <h3>
+          <Title size="m">{variant}</Title>
+        </h3>
+        <table className="button-table">
+          <thead>
+            <tr>
+              <th>
+                <Copy size="s" secondary>
+                  Size
+                </Copy>
+              </th>
+              <th>
+                <Copy size="s" secondary>
+                  Default
+                </Copy>
+              </th>
+              <th>
+                <Copy size="s" secondary>
+                  With Icon
+                </Copy>
+              </th>
+              <th>
+                <Copy size="s" secondary>
+                  Square
+                </Copy>
+              </th>
+              <th>
+                <Copy size="s" secondary>
+                  Round
+                </Copy>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {buttonSizes.map((size) => (
+              <tr key={`${variant}-${size}`}>
+                <th>{size}</th>
+                <td
+                  className={clsx(`sg-buttons-${variant}-square-${size}`, {
+                    'sg-not-allowed':
+                      validateVariantCombinations({
+                        size,
+                        shape: 'default',
+                        variant,
+                        icon: false,
+                      }) !== null,
+                  })}
+                >
+                  <Button variant={variant} size={size}>
+                    Default
+                  </Button>
+                </td>
+                {buttonShapes.map((shape) => {
+                  const notAllowed =
                     validateVariantCombinations({
                       size,
-                      shape: 'default',
+                      shape,
                       variant,
-                      icon: false,
-                    }) !== null,
+                      icon: true,
+                    }) !== null;
+                  return (
+                    <td
+                      key={`${variant}-${size}-${shape}`}
+                      className={`sg-buttons-${variant}-square-${size}`}
+                    >
+                      <Button
+                        disabled={notAllowed}
+                        variant={variant}
+                        size={size}
+                        shape={shape}
+                        icon={<NavigationClose />}
+                      >
+                        {shape === 'default' ? 'Icon' : shape.toUpperCase()}
+                      </Button>
+                    </td>
+                  );
                 })}
-              >
-                <Button variant={variant} size={size}>
-                  Default
-                </Button>
-              </td>
-              {ButtonShapes.map((shape) => {
-                const notAllowed =
-                  validateVariantCombinations({
-                    size,
-                    shape,
-                    variant,
-                    icon: true,
-                  }) !== null;
-                return (
-                  <td
-                    key={`${variant}-${size}-${shape}`}
-                    className={clsx(`sg-buttons-${variant}-square-${size}`, {
-                      'sg-not-allowed': notAllowed,
-                    })}
-                  >
-                    <Button variant={variant} size={size} shape={shape} icon={<NavigationClose />}>
-                      {shape === 'default' ? 'Icon' : shape.toUpperCase()}
-                    </Button>
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </Fragment>
-  ))}
-  <style>
-    {`.sg-table {background: var(--db-primary-background-color); color: var(--db-primary-text-color); margin: ${tokens.spacing.m}px 0 ${tokens.spacing.l}px; border-radius: ${tokens.radius.l}px } .sg-table th, .sg-table td {text-align: left}`}
-  </style>
-</>;
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Fragment>
+    ))}
+  </>
+);
 ```
+
+<style>
+  .button-table {
+    background: var(--db-primary-background-color);
+    color: var(--db-primary-text-color);
+    margin: 8px -2px 0;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .button-table + h3 {
+    margin-top: 32px;
+  }
+  .button-table th,
+  .button-table td {
+    border-top: 1px var(--db-border-color) solid;
+    text-align: left;
+    padding: 4px 12px 4px 2px;
+  }
+  .button-table thead th {
+    border-top: none;
+  }
+  .button-table th:first-child {
+    text-align: left;
+    width: 96px;
+  }
+  .button-table td:nth-child(2),
+  .button-table td:nth-child(3) {
+    width: 240px;
+  }
+  .button-table td:nth-child(4),
+  .button-table td:nth-child(5) {
+    width: 80px;
+  }
+</style>
 
 ## Full width
 
@@ -291,22 +342,27 @@ The `loading` state of a button should be set after clicking the button in case 
 
 ```jsx
 import React, { useState } from 'react';
+const LoadingButtonExample = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
-const [isLoading, setIsLoading] = useState(false);
+  const slowAction = () => {
+    return new Promise((resolve) => setTimeout(() => resolve(), 2000));
+  };
 
-const slowAction = () => {
-  return new Promise((resolve) => setTimeout(() => resolve(), 2000));
+  const onClick = async () => {
+    setIsLoading(true);
+    await slowAction();
+    setIsLoading(false);
+  };
+
+  return (
+    <Button loading={isLoading} onClick={onClick}>
+      Start slow action
+    </Button>
+  );
 };
 
-const onClick = async () => {
-  setIsLoading(true);
-  await slowAction();
-  setIsLoading(false);
-};
-
-<Button loading={isLoading} onClick={onClick}>
-  Start slow action
-</Button>;
+return <LoadingButtonExample />;
 ```
 
 ```jsx
@@ -454,7 +510,7 @@ import { Textfield, Link } from '@db-design/react';
       borderWidth: '1px 0 0',
       marginTop: '-20px',
       position: 'absolute',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />
@@ -465,7 +521,7 @@ import { Textfield, Link } from '@db-design/react';
       marginTop: '-53px',
       position: 'absolute',
       height: '54px',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />
@@ -476,7 +532,7 @@ import { Textfield, Link } from '@db-design/react';
 
 You can use a [Ref](https://reactjs.org/docs/refs-and-the-dom.html) to access the DOM node of the Link or Button:
 
-```jsx
+```jsx static
 const RefExample = () => {
   const buttonRef = React.useRef(null);
   React.useEffect(() => {

@@ -35,8 +35,7 @@ import { Loadingindicator } from '@db-design/react';
 The component will adopt the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword), so its colour can be changed by setting the CSS `color` on the parent element. See [Button](button#loading) as an example.
 
 ```jsx
-import { palette } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div style={{ color: palette.blue500 }}>
+<div style={{ color: '#1455c0' }}>
   <Loadingindicator />
-</div>;
+</div>
 ```

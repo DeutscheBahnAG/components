@@ -119,9 +119,9 @@ import { Copy, Title } from '@db-design/react';
 ## Linking
 
 ```jsx
-<>
+<Copy>
   Take <Transportchip href="#s-1" name="S 1" /> or <Transportchip href="#u-5" name="U 5" />
-</>
+</Copy>
 ```
 
 ## Local styles
@@ -148,7 +148,11 @@ The local style is determined by the post code (`zipCode`) and the product type 
 
 ### Overview of local styles
 
-<img src="/dpp-local-transport-styles.png" width="768" alt="A map showing transport systems in Germany. Those which are supported, are highlighted">
+<img
+  src="https://images.ctfassets.net/520m8gf69dbd/6EWXKsYJmWbND8m919gd9/ba3a7ec055bca23f22b56efbe1bb025a/dpp-local-transport-styles.png"
+  width="768"
+  alt="A map showing transport systems in Germany. Those which are supported, are highlighted"
+/>
 
 ### Berlin/Brandenburg
 

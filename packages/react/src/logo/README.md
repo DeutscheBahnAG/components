@@ -26,11 +26,10 @@ This component has been carefully co-created with the Brand Team to strictly fol
 
 ```jsx noeditor
 import { Container } from '@db-design/react';
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
-<div style={{ display: 'flex', margin: '48px 0', borderRadius: '6.3px', overflow: 'hidden' }}>
+<div style={{ display: 'flex', margin: -16, borderRadius: 4, overflow: 'hidden' }}>
   <Container
     style={{
-      padding: tokens.spacing['l'],
+      padding: 32,
     }}
     filled
     className="DB_LIGHT_ALTERNATE"
@@ -41,19 +40,19 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
   </Container>
   <Container
     style={{
-      padding: tokens.spacing['l'],
+      padding: 32,
     }}
     filled
     className="DB_DARK"
   >
-    <div style={{ width: '192px' }}>
+    <div style={{ width: 192 }}>
       <Logo size="xl" href="/" />
-      <Logo size="xl" href="/" variant="white" style={{ marginLeft: '12px' }} />
+      <Logo size="xl" href="/" variant="white" style={{ marginLeft: 12 }} />
     </div>
   </Container>
   <Container
     style={{
-      padding: tokens.spacing['l'],
+      padding: 32,
     }}
     filled
     className="DB_BRANDED"
@@ -66,7 +65,7 @@ import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
     style={{
       background:
         'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
-      padding: tokens.spacing['l'],
+      padding: 32,
     }}
     filled
   >
@@ -152,11 +151,11 @@ By default the logo has a transparent background.
   style={{
     background:
       'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf3_3.png) 0 0/cover',
-    padding: '16px',
-    height: '200px',
+    padding: 16,
+    height: 200,
     display: 'flex',
     alignItems: 'center',
-    borderRadius: '6.3px',
+    borderRadius: 4,
     overflow: 'hidden',
   }}
 >
@@ -169,11 +168,11 @@ By default the logo has a transparent background.
   style={{
     background:
       'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
-    padding: '16px',
-    height: '200px',
+    padding: 16,
+    height: 200,
     display: 'flex',
     alignItems: 'center',
-    borderRadius: '6.3px',
+    borderRadius: 4,
     overflow: 'hidden',
   }}
 >
@@ -204,19 +203,18 @@ Red logo with transparent background.
 Red logo with white background.
 
 ```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 <div
   style={{
     background:
       'url(https://marketingportal.extranet.deutschebahn.com/sites/default/files/190902_DB_Bildwelt_Assets_sf4_2.png) 0 0/cover',
-    padding: tokens.spacing['m'],
-    height: '192px',
-    borderRadius: '6.3px',
+    padding: 16,
+    height: 192,
+    borderRadius: 4,
     overflow: 'hidden',
   }}
 >
   <Logo variant="filled" />
-</div>;
+</div>
 ```
 
 The variant `filled` has no visual effect on the Pulse.
@@ -226,17 +224,16 @@ The variant `filled` has no visual effect on the Pulse.
 White logo with transparent background.
 
 ```jsx
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 <div
   style={{
-    background: tokens.palette['dbrot'],
-    padding: tokens.spacing['m'],
-    borderRadius: '6.3px',
+    background: '#ec0016',
+    padding: 16,
+    borderRadius: 4,
     overflow: 'hidden',
   }}
 >
   <Logo variant="white" />
-</div>;
+</div>
 ```
 
 ## Brands
@@ -289,7 +286,7 @@ Additional markings are not designed logos. Their use is optional.
 ```jsx
 import { Theme, Container } from '@db-design/react';
 <Theme theme="DB_BRANDED">
-  <Container filled style={{ padding: '16px' }} width="content">
+  <Container filled style={{ padding: 16 }} width="content">
     <Logo additionalMarking="Westfalenbus" size="m" />
   </Container>
 </Theme>;
@@ -328,11 +325,19 @@ Markings are not defined for the **DB Cargo** brand. Please contact the [Brand T
 ### Vertical
 
 ```jsx
-<Logo direction="vertical" additionalMarking="Oberweißbacher Berg- und Schwarztalbahn" size="xl" />
+<Logo
+  direction="vertical"
+  additionalMarking="Oberweißbacher Berg- und Schwarztalbahn"
+  size="xl"
+/>
 ```
 
 ```jsx
-<Logo direction="vertical" additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn" size="xl" />
+<Logo
+  direction="vertical"
+  additionalMarking="Oberweißbacher\nBerg- und Schwarztalbahn"
+  size="xl"
+/>
 ```
 
 ```jsx

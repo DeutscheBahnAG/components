@@ -4,26 +4,6 @@
 import { Container } from '@db-design/react';
 ```
 
-```jsx noeditor
-import { Notification, Button } from '@db-design/react';
-const onClick = () => {
-  const isolatedLink = document.querySelector('[data-testid="Container-isolate-button"]');
-  if (isolatedLink) {
-    isolatedLink.click();
-  }
-};
-<Notification
-  action={
-    <Button size="s" variant="primary" onClick={onClick}>
-      Toggle sidebar
-    </Button>
-  }
->
-  This layout documentation might require a screen wider than 1440 px to show the examples. If you
-  use a smaller screen, zoom out the page or
-</Notification>;
-```
-
 <style>
   main {
     margin-right: 96px !important;

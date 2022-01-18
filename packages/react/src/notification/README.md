@@ -55,7 +55,6 @@ import { Notification, NotificationSeverities } from '@db-design/react';
 
 ```jsx
 import { Button } from '@db-design/react';
-
 <Notification
   onClose={() => {}}
   action={
@@ -77,13 +76,18 @@ import { Button } from '@db-design/react';
 ```jsx noeditor
 import React, { useState } from 'react';
 import { Button } from '@db-design/react';
-const [isOpen, setOpen] = useState(false);
-<>
-  {isOpen && <Notification global>A global Notification</Notification>}
-  <Button onClick={() => setOpen(!isOpen)}>
-    {isOpen ? 'Hide Notification' : 'Show Notification'}
-  </Button>
-</>;
+const NotificationExample = () => {
+  const [isOpen, setOpen] = useState(false);
+  return (
+    <>
+      {isOpen && <Notification global>A global Notification</Notification>}
+      <Button onClick={() => setOpen(!isOpen)}>
+        {isOpen ? 'Hide Notification' : 'Show Notification'}
+      </Button>
+    </>
+  );
+};
+return <NotificationExample />;
 ```
 
 ## ARIA live region
@@ -95,29 +99,37 @@ being read out. This example is to demonstrate the accessibility feature only.
 ```jsx noeditor
 import React, { useState, useEffect } from 'react';
 import { Button, Copy } from '@db-design/react';
-const [isOpen, setOpen] = useState(false);
-const LiveNotifications = () => {
-  const [notifications, setNotifications] = useState([]);
-  useEffect(() => {
-    NotificationSeverities.forEach((severity, index) => {
-      setTimeout(() => {
-        setNotifications((prevNotifications) => [
-          ...prevNotifications,
-          <Notification key={severity} severity={severity} global onClose={() => {}}>
-            {`I am Notification number ${index + 1}`}
-          </Notification>,
-        ]);
-      }, index * 4000 + 100);
-    });
-  }, []);
-  return <div>{notifications}</div>;
+
+const NotificationExample = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const LiveNotifications = () => {
+    const [notifications, setNotifications] = useState([]);
+    useEffect(() => {
+      notificationSeverities.forEach((severity, index) => {
+        setTimeout(() => {
+          setNotifications((prevNotifications) => [
+            ...prevNotifications,
+            <Notification key={severity} severity={severity} global onClose={() => {}}>
+              {`I am Notification number ${index + 1}`}
+            </Notification>,
+          ]);
+        }, index * 4000 + 100);
+      });
+    }, []);
+    return <div>{notifications}</div>;
+  };
+
+  return (
+    <>
+      {isOpen && <LiveNotifications />}
+      <Button onClick={() => setOpen(!isOpen)}>
+        {isOpen ? 'Stop showing Notifications' : 'Start showing Notifications'}
+      </Button>
+    </>
+  );
 };
-<>
-  {isOpen && <LiveNotifications />}
-  <Button onClick={() => setOpen(!isOpen)}>
-    {isOpen ? 'Stop showing Notifications' : 'Start showing Notifications'}
-  </Button>
-</>;
+return <NotificationExample />;
 ```
 
 ## With title

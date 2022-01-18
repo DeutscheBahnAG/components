@@ -43,6 +43,7 @@ import { spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 const ExampleComponent = () => {
   const [isIndeterminate, setIndeterminate] = useState(true);
+  const [isChecked, setChecked] = useState(true);
 
   const handleButtonClick = () => {
     setIndeterminate(true);
@@ -50,26 +51,22 @@ const ExampleComponent = () => {
 
   const handleCheckboxClick = () => {
     setIndeterminate(false);
+    setChecked(!isChecked);
   };
 
   return (
     <>
-      <Checkbox indeterminate={isIndeterminate} checked onClick={handleCheckboxClick}>
+      <Checkbox indeterminate={isIndeterminate} checked={isChecked} onClick={handleCheckboxClick}>
         Checkbox indeterminate checked
       </Checkbox>
-      <Button
-        onClick={handleButtonClick}
-        disabled={isIndeterminate}
-        size="m"
-        style={{ marginLeft: `${spacing.m}px` }}
-      >
+      <Button onClick={handleButtonClick} disabled={isIndeterminate} size="m">
         Reset
       </Button>
     </>
   );
 };
 
-<ExampleComponent />;
+return <ExampleComponent />;
 ```
 
 ### Disabled
@@ -139,8 +136,7 @@ Currently error messages need to be set manually. The footer is a great place to
 with the label:
 
 ```jsx
-import { Status } from '@db-design/react';
-<Checkbox footer={<Status severity="fatal">Please check this checkbox</Status>}>Check me</Checkbox>;
+<Checkbox footer={<Status severity="fatal">Please check this checkbox</Status>}>Check me</Checkbox>
 ```
 
 ```jsx

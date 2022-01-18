@@ -46,7 +46,6 @@ Using a `<Copy>` with size `s`:
 
 ```jsx
 import { Copy } from '@db-design/react';
-
 <Copy size="s">
   <Triptimespan
     departureDateTime="09:54"

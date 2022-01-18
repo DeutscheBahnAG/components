@@ -16,9 +16,12 @@ import { JourneyDestination } from '@db-design/react-icons';
   <Textfield inlineLabel="Maximum" unit="€" value="19.99" type="number" />
   <Textfield inlineLabel="Username" />
   <Textfield prefix={<JourneyDestination />} value="Köln" />
-  <style>{`.textfield-preview .db-textfield { width: 136px }`}</style>
 </div>;
 ```
+
+<style>
+  .textfield-preview .db-textfield { width: 136px }
+</style>
 
 ## HTML attributes
 
@@ -240,7 +243,7 @@ import { Button, Link } from '@db-design/react';
       borderWidth: '1px 0 0',
       marginTop: '-20px',
       position: 'absolute',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />
@@ -251,7 +254,7 @@ import { Button, Link } from '@db-design/react';
       marginTop: '-53px',
       position: 'absolute',
       height: '54px',
-      width: '768px',
+      width: '736px',
       pointerEvents: 'none',
     }}
   />

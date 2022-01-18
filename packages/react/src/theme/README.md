@@ -32,139 +32,147 @@ import {
   Triptimespan,
   Status,
 } from '@db-design/react';
-import Icons from '@db-design/react-icons';
+import {
+  NavigationArrowBack,
+  NavigationArrowForward,
+  JourneyStart,
+} from '@db-design/react-icons';
 import { useState } from 'react';
 import { themes } from './theme';
+const ThemesExample = () => {
+  const [themeIndex, setThemeIndex] = useState(0);
 
-const [themeIndex, setThemeIndex] = useState(0);
-
-<div className="rsg--preview-37" style={{ borderRadius: 4 }}>
-  <Theme theme={themes[themeIndex]}>
-    <Container
-      filled
-      align="center"
-      style={{
-        display: 'grid',
-        gap: `16px`,
-        padding: `32px`,
-        width: `calc(100% + 32px)`,
-        borderRadius: '4px',
-      }}
-    >
-      <div>
-        <Logo size="xxl" />
-        <Pulse>
-          <Title size="xxl">Primary title</Title>
-          <Title variant="secondary" light size="m">
-            Secondary title
-          </Title>
-        </Pulse>
-      </div>
-      <p>
-        <Copy size="s">Current theme:</Copy>
-        <Copy size="l">{themes[themeIndex]}</Copy>
-      </p>
-      <div>
-        <Button
-          onClick={() => {
-            setThemeIndex(themeIndex === 0 ? themes.length - 1 : themeIndex - 1);
+  return (
+    <div className="rsg--preview-37" style={{ borderRadius: 4, margin: -16 }}>
+      <Theme theme={themes[themeIndex]}>
+        <Container
+          filled
+          align="center"
+          style={{
+            display: 'grid',
+            gap: `16px`,
+            padding: `32px`,
+            width: `calc(100% + 32px)`,
+            borderRadius: '4px',
           }}
-          variant="secondary"
-          icon={<Icons.NavigationArrowBack />}
-          style={{ width: '212px' }}
         >
-          Use previous theme
-        </Button>
-        <Button
-          onClick={() => {
-            setThemeIndex(themeIndex === themes.length - 1 ? 0 : themeIndex + 1);
-          }}
-          icon={<Icons.NavigationArrowForward />}
-          style={{ width: '212px' }}
-          iconPosition="after"
-        >
-          Use next theme
-        </Button>
-      </div>
-      <div>
-        <Textfield inlineLabel="Textfield" value="Input" prefix={<Icons.JourneyStart />} />
-        <Textfield
-          disabled
-          inlineLabel="Textfield"
-          value="Disabled"
-          prefix={<Icons.JourneyStart />}
-        />
-      </div>
-      <div>
-        <Checkbox>Checkbox</Checkbox>
-        <Checkbox checked>Checked</Checkbox>
-        <Checkbox checked disabled>
-          Disabled
-        </Checkbox>
-        <Button variant="solid" size="m">
-          Solid
-        </Button>
-        <Link href="#" variant="secondary" iconPosition="before">
-          Link
-        </Link>
-        <Link href="#">Link</Link>
-      </div>
-      <p style={{ marginTop: `48px` }}>
-        <Copy size="m">Travel information:</Copy>
-        <Copy variant="secondary" size="s">
-          (possible but not recommended on branded background)
-        </Copy>
-      </p>
-      <div
-        style={{
-          border: 'solid var(--db-border-color)',
-          borderWidth: '1px  0',
-          padding: '8px 2px',
-        }}
-      >
-        <Copy>
-          <span
+          <div>
+            <Logo size="xxl" />
+            <Pulse>
+              <Title size="xxl">Primary title</Title>
+              <Title variant="secondary" light size="m">
+                Secondary title
+              </Title>
+            </Pulse>
+          </div>
+          <Container align="center">
+            <p>
+              <Copy size="s">Current theme:</Copy>
+              <Copy size="l">{themes[themeIndex]}</Copy>
+            </p>
+          </Container>
+          <div>
+            <Button
+              onClick={() => {
+                setThemeIndex(themeIndex === 0 ? themes.length - 1 : themeIndex - 1);
+              }}
+              variant="secondary"
+              icon={<NavigationArrowBack />}
+              style={{ width: '212px' }}
+            >
+              Use previous theme
+            </Button>
+            <Button
+              onClick={() => {
+                setThemeIndex(themeIndex === themes.length - 1 ? 0 : themeIndex + 1);
+              }}
+              icon={<NavigationArrowForward />}
+              style={{ width: '212px' }}
+              iconPosition="after"
+            >
+              Use next theme
+            </Button>
+          </div>
+          <div>
+            <Textfield inlineLabel="Textfield" value="Input" prefix={<JourneyStart />} />
+            <Textfield
+              disabled
+              inlineLabel="Textfield"
+              value="Disabled"
+              prefix={<JourneyStart />}
+            />
+          </div>
+          <div>
+            <Checkbox>Checkbox</Checkbox>
+            <Checkbox checked>Checked</Checkbox>
+            <Checkbox checked disabled>
+              Disabled
+            </Checkbox>
+            <Button variant="solid" size="m">
+              Solid
+            </Button>
+            <Link href="#" variant="secondary" iconPosition="before">
+              Link
+            </Link>
+            <Link href="#">Link</Link>
+          </div>
+          <p style={{ marginTop: `48px` }}>
+            <Copy size="m">Travel information:</Copy>
+            <Copy variant="secondary" size="s">
+              (possible but not recommended on branded background)
+            </Copy>
+          </p>
+          <div
             style={{
-              width: '600px',
-              display: 'inline-block',
-              textAlign: 'left',
+              border: 'solid var(--db-border-color)',
+              borderWidth: '1px  0',
+              padding: '8px 2px',
             }}
           >
-            <Triptimespan
-              departureDateTime="09:54"
-              predictedDepartureDateTime="09:57"
-              arrivalDateTime="12:48"
-              predictedArrivalDateTime="13:07"
-            />
-            {'      '}
-            <Transportchip name="ICE 123" />
-            {'   '}
-            <Transportchip name="IC 456" />
-            {'   '}
-            <Transportchip name="S1" zipCode="10111" showProductLogo />
-            {'   '}
-            <Transportchip name="U12" zipCode="10111" showProductLogo />
-            {'   '}
-            <Transportchip name="M10" zipCode="10111" showProductLogo product="tram" />
-          </span>
-          <Track track="2a" />
-        </Copy>
-      </div>
-      <Copy
-        className="statusPreview"
-        style={{ lineHeight: '24px', width: '240px', margin: 'auto' }}
-      >
-        <Status severity="success">This feature is included</Status>
-        <Status severity="warning">This feature is not included</Status>
-        <Status severity="informative">This feature is optional</Status>
-        <Status severity="error">This feature got removed</Status>
-        <Status severity="fatal">No information available</Status>
-        <style>{`.statusPreview .db-inline-spacer { margin-top: 4px }`}</style>
-      </Copy>
-    </Container>
-  </Theme>
-</div>;
+            <Copy>
+              <span
+                style={{
+                  width: '600px',
+                  display: 'inline-block',
+                  textAlign: 'left',
+                }}
+              >
+                <Triptimespan
+                  departureDateTime="09:54"
+                  predictedDepartureDateTime="09:57"
+                  arrivalDateTime="12:48"
+                  predictedArrivalDateTime="13:07"
+                />
+                {'      '}
+                <Transportchip name="ICE 123" />
+                <Transportchip name="IC 456" />
+                <Transportchip name="S1" zipCode="10111" showProductLogo />
+                <Transportchip name="U12" zipCode="10111" showProductLogo />
+                <Transportchip name="M10" zipCode="10111" showProductLogo product="tram" />
+              </span>
+              <Track track="2a" />
+            </Copy>
+          </div>
+          <Copy
+            className="statusPreview"
+            style={{ lineHeight: '24px', width: '240px', margin: 'auto' }}
+          >
+            <Status severity="success">This feature is included</Status>
+            <Status severity="warning">This feature is not included</Status>
+            <Status severity="informative">This feature is optional</Status>
+            <Status severity="error">This feature got removed</Status>
+            <Status severity="fatal">No information available</Status>
+          </Copy>
+        </Container>
+      </Theme>
+    </div>
+  );
+};
+
+return <ThemesExample />;
 ```
+
+<style>.statusPreview .db-inline-spacer { margin-top: 4px }</style>
 
 Even though possible, forms and travel information should be avoided in `loud` themes. S-Bahn themes are made for websites using the green S-Bahn logo.
 
@@ -174,7 +182,7 @@ Themes can and should be nested. Especially `DB_LIGHT` and `DB_LIGHT_ALTERNATE` 
 
 Remember to use `<Copy>`/`<Title>` for any text, otherwise the text colours won’t apply.
 
-```jsx { "props": { "className": "nesting-themes" } }
+```jsx
 import { Container, Logo, Pulse, Title, Copy, Button } from '@db-design/react';
 <>
   <Theme theme="DB_LIGHT_ALTERNATE">
