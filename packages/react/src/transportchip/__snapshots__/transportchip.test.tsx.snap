@@ -20,6 +20,9 @@ exports[`Transportchip Component should allow setting the transport type manuall
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -43,6 +46,9 @@ exports[`Transportchip Component should detect the train type S-Bahn from S 1 1`
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -66,6 +72,9 @@ exports[`Transportchip Component should detect the train type S-Bahn from S1 1`]
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -89,6 +98,9 @@ exports[`Transportchip Component should have normal spacing for products with on
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -112,6 +124,9 @@ exports[`Transportchip Component should have normal spacing for products with th
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -135,6 +150,9 @@ exports[`Transportchip Component should have normal spacing for products with tw
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -153,6 +171,9 @@ exports[`Transportchip Component should not split Bus 1 1`] = `
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -176,6 +197,9 @@ exports[`Transportchip Component should split S 1 1`] = `
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -199,6 +223,9 @@ exports[`Transportchip Component should split S1 1`] = `
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;
 
@@ -222,5 +249,8 @@ exports[`Transportchip Component should use the zip code 1`] = `
       </span>
     </span>
   </span>
+  <span
+    class="db-inline-spacer"
+  />
 </div>
 `;

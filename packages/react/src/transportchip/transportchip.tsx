@@ -71,36 +71,39 @@ const Transportchip: React.FC<TransportchipProps> = ({
   const prefix = matches && matches[1];
   const number = matches && matches[2];
   return (
-    <Component
-      href={href ?? undefined}
-      onClick={onClick ?? undefined}
-      className={clsx('db-transportchip', canceled && 'db-transportchip--canceled', className)}
-      {...otherProps}
-    >
-      {showProductLogo &&
-        (icons as Record<string, unknown>)[prefix === 'A' ? 'akn' : displayProduct]}
-      <span
-        className={clsx(
-          'db-transportchip__line',
-          `db-transportchip--${displayProduct}`,
-          specialProduct && `db-transportchip--${specialProduct}`,
-          detectedStyle && `db-transportchip--${detectedStyle}`,
-          `db-transportchip--${lineNumberClass(name)}`
-        )}
+    <>
+      <Component
+        href={href ?? undefined}
+        onClick={onClick ?? undefined}
+        className={clsx('db-transportchip', canceled && 'db-transportchip--canceled', className)}
+        {...otherProps}
       >
-        {lineNumber && (
-          <span
-            className={clsx(
-              'db-transportchip__text',
-              prefix && prefix.length === 1 && 'db-transportchip__text--short-prefix'
-            )}
-          >
-            {prefix || lineNumber}
-          </span>
-        )}
-        {number && <span className="db-transportchip__text">{number}</span>}
-      </span>
-    </Component>
+        {showProductLogo &&
+          (icons as Record<string, unknown>)[prefix === 'A' ? 'akn' : displayProduct]}
+        <span
+          className={clsx(
+            'db-transportchip__line',
+            `db-transportchip--${displayProduct}`,
+            specialProduct && `db-transportchip--${specialProduct}`,
+            detectedStyle && `db-transportchip--${detectedStyle}`,
+            `db-transportchip--${lineNumberClass(name)}`
+          )}
+        >
+          {lineNumber && (
+            <span
+              className={clsx(
+                'db-transportchip__text',
+                prefix && prefix.length === 1 && 'db-transportchip__text--short-prefix'
+              )}
+            >
+              {prefix || lineNumber}
+            </span>
+          )}
+          {number && <span className="db-transportchip__text">{number}</span>}
+        </span>
+      </Component>
+      <span className="db-inline-spacer" />
+    </>
   );
 };
 
