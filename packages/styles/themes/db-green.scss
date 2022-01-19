@@ -1,6 +1,6 @@
 /* stylelint-disable order/order, scss/at-extend-no-missing-placeholder */
 
-$db-green-campaign-background-color: db-color('lightgreen400');
+$db-green-background-color: db-color('lightgreen400');
 
 .EXPERIMENTAL_DB_GREEN_LIGHT {
   @extend %db-light-theme-base;
@@ -43,13 +43,13 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   @extend .EXPERIMENTAL_DB_GREEN_LIGHT;
 }
 
-.EXPERIMENTAL_GREEN_CAMPAIGN_BRANDED {
+.EXPERIMENTAL_DB_GREEN_BRANDED {
   @extend %db-branded-theme-base;
 
   // BRAND
 
   // GENERAL
-  --db-primary-background-color: #{$db-green-campaign-background-color};
+  --db-primary-background-color: #{$db-green-background-color};
   --db-darker-background-color: #{db-color('lightgreen500')};
   --db-disabled-text-color: #{db-color('lightgreen300')};
   --db-border-color: #b3dd80;
@@ -58,8 +58,8 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   // ACCESSIBILITY
 
   // LINKS
-  --db-link-hover-color: #{mix(#000, $db-green-campaign-background-color, 60%)};
-  --db-link-pressed-color: #{mix(#000, $db-green-campaign-background-color, 40%)};
+  --db-link-hover-color: #{mix(#000, $db-green-background-color, 60%)};
+  --db-link-pressed-color: #{mix(#000, $db-green-background-color, 40%)};
   --db-link-underline-color: #{rgba(#fff, 0.4)};
   --db-secondary-link-underline-color: #{rgba(#fff, 0.4)};
 
@@ -69,11 +69,7 @@ $db-green-campaign-background-color: db-color('lightgreen400');
   --db-caret-color: #{db-color('lightgreen400')};
 
   // PRIMARY BUTTON
-  --db-primary-button-disabled-background-color: #{mix(
-      #fff,
-      $db-green-campaign-background-color,
-      20%
-    )};
+  --db-primary-button-disabled-background-color: #{mix(#fff, $db-green-background-color, 20%)};
   --db-primary-button-text-color: #{db-color('lightgreen400')};
   --db-primary-button-hover-text-color: #{db-color('lightgreen400')};
   --db-primary-button-pressed-text-color: #{db-color('lightgreen400')};
