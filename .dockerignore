@@ -3,3 +3,4 @@ node_modules
 # Precompiled files
 packages/*/*.js
 !packages/*/index.js
+!packages/docs/build
