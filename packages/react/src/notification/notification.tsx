@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import * as React from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import NotificationPortal from './notification-portal';
 import Button from '../button/button';

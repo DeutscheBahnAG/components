@@ -1,5 +1,6 @@
 /* eslint-disable react/display-name */
-import React, {
+import * as React from 'react';
+import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   ClassAttributes,

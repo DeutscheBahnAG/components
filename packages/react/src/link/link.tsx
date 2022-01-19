@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { ButtonHTMLAttributes } from 'react';
+import * as React from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import {
   ActionDownload,

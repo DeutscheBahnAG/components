@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
 import Button from '../button';
 import Notification from '../notification';

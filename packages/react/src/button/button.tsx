@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect, ButtonHTMLAttributes } from 'react';
+import * as React from 'react';
+import { useState, useEffect, ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import Loadingindicator, { LoadingIndicatorSizesType } from '../loadingindicator';

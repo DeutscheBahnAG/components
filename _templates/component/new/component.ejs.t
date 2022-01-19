@@ -1,7 +1,7 @@
 ---
 to: "<%= files.includes('component') ? `packages/react/src/${name}/${name}.tsx` : null %>"
 ---
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 
 export interface <%= Name %>Props {

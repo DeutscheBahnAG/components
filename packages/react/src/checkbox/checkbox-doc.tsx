@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import DefaultCheckbox, { CheckboxProps } from './checkbox';
 
 const Checkbox: React.FC<CheckboxProps> = ({ checked = false, ...props }) => {

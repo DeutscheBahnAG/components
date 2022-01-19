@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
+import * as React from 'react';
+import { useCallback, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import clsx from 'clsx';
 import { NavigationClose } from '@db-design/react-icons';

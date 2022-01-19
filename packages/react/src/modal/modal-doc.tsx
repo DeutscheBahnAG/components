@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import DefaultModal from './modal';
 
 export const overrides = {

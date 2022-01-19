@@ -1,4 +1,5 @@
-import React, { HTMLProps, useRef } from 'react';
+import * as React from 'react';
+import { HTMLProps, useRef } from 'react';
 import clsx from 'clsx';
 import { responsiveClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';

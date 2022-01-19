@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useRef, useEffect, CSSProperties, HTMLProps } from 'react';
+import * as React from 'react';
+import { useRef, useEffect, CSSProperties, HTMLProps } from 'react';
 import clsx from 'clsx';
 
 export interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'type'> {

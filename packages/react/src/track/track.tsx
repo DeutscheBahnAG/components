@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 import parseTrack from './parse-track';
 import { responsiveClassNames } from '../helper/responsive-class-names';

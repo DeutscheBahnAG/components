@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 import { responsiveClassNames, responsiveToggleClassNames } from '../helper/responsive-class-names';
 import { ResponsiveType } from '../shared';

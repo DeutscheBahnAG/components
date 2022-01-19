@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 import { LogoSizesType, LogoVariantsType } from '../logo/logo';
 import { responsiveClassNames } from '../helper/responsive-class-names';

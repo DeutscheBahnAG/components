@@ -1,7 +1,7 @@
 ---
 to: "<%= files.includes('doc-component') ? `packages/react/src/${name}/${name}-doc.tsx` : null %>"
 ---
-import React from 'react';
+import * as React from 'react';
 import Default<%= Name %>, { <%= Name %>Props } from './<%= name %>';
 
 const <%= Name %>: React.FC<<%= Name %>Props> = (props) => {

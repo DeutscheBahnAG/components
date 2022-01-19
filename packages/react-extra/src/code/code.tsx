@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo } from 'react';
+import * as React from 'react';
+import { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import refractor, { RefractorSyntax } from 'refractor/core';
 import clsx from 'clsx';

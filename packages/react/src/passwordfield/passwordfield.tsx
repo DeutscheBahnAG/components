@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import * as React from 'react';
+import { useRef, useState } from 'react';
 import { ActionVisibility, ActionVisibilityOff } from '@db-design/react-icons';
 import Textfield, { TextfieldRef, TextfieldProps } from '../textfield/textfield';
 import Button from '../button';

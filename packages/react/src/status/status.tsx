@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 
 const iconCheck = <path d="M6.3 10.6L8.9 13.1l4.8-6" />;
