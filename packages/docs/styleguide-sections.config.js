@@ -26,6 +26,7 @@ module.exports = [
           'textfield',
           'passwordfield',
           'checkbox',
+          'radiobutton',
           'select',
         ]),
       },

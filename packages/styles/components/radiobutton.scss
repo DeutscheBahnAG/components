@@ -1,0 +1,79 @@
+ $db-radiobutton-outer-size: 20px;
+ $db-radiobutton-border-size: 2px;
+ $db-radiobutton-size: $db-radiobutton-outer-size - 2 * $db-radiobutton-border-size;
+ $db-radiobutton-gap: 0.5em;
+
+ /**
+ * 1. Setting the size avoids loosing the focus while clicking (which lets the focus ring flicker).
+ */
+.db-radiobutton {
+  --db-radiobutton-foreground-color: var(--db-primary-text-color);
+  --db-radiobutton-background-color: var(--db-primary-background-color);
+  --db-radiobutton-checked-foreground-color: var(--db-checkbox-tick-color);
+
+  @include db-text-style('copy', 'm');
+  align-items: baseline;
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  input {
+    @include db-focus-ring($target: '+ .db-radiobutton__box');
+    height: 100%; /* 1 */
+    min-height: 24px; /* 1 */
+    min-width: 24px; /* 1 */
+    opacity: 0;
+    position: absolute;
+    width: 100%; /* 1 */
+    z-index: 1;
+  }
+
+  :disabled ~ * {
+    --db-radiobutton-foreground-color: var(--db-primary-button-disabled-background-color);
+    --db-radiobutton-checked-foreground-color: var(--db-primary-background-color);
+  }
+}
+
+.db-radiobutton__box {
+  background-color: var(--db-radiobutton-background-color);
+  border: $db-radiobutton-border-size solid var(--db-radiobutton-foreground-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: $db-radiobutton-outer-size;
+  position: relative;
+  top: 4px;
+  width: $db-radiobutton-outer-size;
+}
+
+.db-radiobutton__box::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  inset: $db-radiobutton-border-size * 2;
+  background-color: var(--db-radiobutton-checked-foreground-color);
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.125s ease-in-out;
+}
+
+:checked + .db-radiobutton__box {
+  background-color: var(--db-radiobutton-foreground-color);
+  color: var(--db-radiobutton-background-color);
+}
+
+:checked + .db-radiobutton__box::after {
+  transform: scale(1);
+}
+
+.db-radiobutton__label {
+  @include db-form-input-label;
+  color: var(--db-radiobutton-foreground-color);
+  margin-left: $db-radiobutton-gap;
+}
+
+.db-radiobutton__footer {
+  @include db-form-input-footer;
+  margin-left: calc(#{$db-radiobutton-outer-size} + #{$db-radiobutton-gap} + 0.1em) /* 2 */;
+}

@@ -1,0 +1,35 @@
+@mixin db-form-input-label {
+  a {
+    font-size: 0;
+    text-decoration: none;
+  }
+
+  a::before {
+    background: db-color('yellow300');
+    border-radius: db-border-radius('xs');
+    color: db-color('red500');
+    content: '⚠️ Dont use links in labels (use footer={…}) ⚠️';
+    font-size: db-font-size('copy', 'm');
+  }
+}
+
+/**
+ * 1. Avoid block links
+ */
+@mixin db-form-input-footer {
+  @include db-text-style('copy', 's');
+  align-items: flex-start /* 1 */;
+  color: var(--db-primary-text-color);
+  display: flex;
+  flex-direction: column;
+  grid-gap: db-spacing('s');
+  margin-top: db-spacing('s') - 2px;
+
+  > a {
+    @include db-secondary-link;
+  }
+
+  > a + p {
+    margin-top: db-spacing('sm');
+  }
+}
