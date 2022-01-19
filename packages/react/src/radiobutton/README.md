@@ -78,8 +78,10 @@ import { Theme, Container, Title } from '@db-design/react';
         <div style={{ flexGrow: '1', marginRight: '1em' }}>
           <Title size="s">{theme}</Title>
         </div>
-        <Radiobutton defaultChecked name={theme}>Left</Radiobutton>
-        <Radiobutton name={theme}>Right</Radiobutton>
+        <Radiobutton checked>On</Radiobutton>
+        <Radiobutton checked={false}>Off</Radiobutton>
+        <Radiobutton disabled checked>On</Radiobutton>
+        <Radiobutton disabled checked={false}>Off</Radiobutton>
       </Container>
     </Theme>
   ))}
@@ -96,15 +98,27 @@ Use it to provide help text, links, error messages or other context.
 See the docs of the `Checkbox` component for details.
 
 ```jsx
-<Radiobutton
-  footer={
-    <>
-      <a href="#terms-db">Read the Terms and Conditions of Deutsche Bahn AG</a>{' '}
-      <a href="#terms-xyz">Read the Terms and Conditions of XYZ AG</a>
-    </>
-  }
->
-  I accept the <b>Terms and Conditions of Deutsche Bahn AG</b> and the{' '}
-  <b>Terms and Conditions of XYZ AG</b>.
-</Radiobutton>
+import { Copy } from '@db-design/react';
+
+<form style={{ display: 'grid' }}>
+  <label><Copy bold>Select your plan:</Copy></label>
+
+  <Radiobutton name="plan" value="starter"
+    footer={<a href="#starter-details">See details</a>}
+  >
+    Starter
+  </Radiobutton>
+
+  <Radiobutton name="plan" value="premium"
+    footer={
+      <>
+        <a href="#premium-details">See details</a>{' '}
+        <a href="#premium-terms">Additional premium terms</a>
+      </>
+    }
+  >
+    Premium
+  </Radiobutton>
+</form>
 ```
+

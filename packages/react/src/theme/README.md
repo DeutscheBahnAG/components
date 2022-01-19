@@ -23,6 +23,7 @@ import {
   Link,
   Textfield,
   Checkbox,
+  Radiobutton,
   Transportchip,
   Track,
   Logo,
@@ -108,6 +109,9 @@ const ThemesExample = () => {
             <Checkbox checked disabled>
               Disabled
             </Checkbox>
+            <Radiobutton name="rb">Option 1</Radiobutton>
+            <Radiobutton name="rb" defaultChecked>Option 2</Radiobutton>
+            <Radiobutton disabled checked>Option 3</Radiobutton>
             <Button variant="solid" size="m">
               Solid
             </Button>
