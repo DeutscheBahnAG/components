@@ -4,6 +4,11 @@
 <Status>This is a status</Status>
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Variants
 
 ### Success

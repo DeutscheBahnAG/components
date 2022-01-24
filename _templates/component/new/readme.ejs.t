@@ -11,6 +11,11 @@ import { <%= Name %> } from '@db-design/react';
 <<%= Name %> />
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Usage
 
 <!-- TODO: adjust <%= Name %> component documentation, add examples -->

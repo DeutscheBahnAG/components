@@ -4,6 +4,11 @@ Shows the track (platform) number for a trip in the default style of Deutsche Ba
 
 This component parses and formats the track information with typographic rules.
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Basic usage
 
 ```jsx

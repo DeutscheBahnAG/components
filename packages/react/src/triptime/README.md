@@ -7,6 +7,11 @@ This component implements the guidelines of:
 - https://dpp.bahn-x.de/content/german-writing/zeitangaben
 - https://ux-guide.deutschebahn.com/document/148
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Default
 
 ```jsx

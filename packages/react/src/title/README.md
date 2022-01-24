@@ -8,6 +8,11 @@ import { Title } from '@db-design/react';
 <Title>Great content</Title>
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Size
 
 ```jsx

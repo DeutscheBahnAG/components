@@ -8,6 +8,11 @@ import { Checkbox } from '@db-design/react';
 <Checkbox>Checkbox</Checkbox>
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## States
 
 ### Checked

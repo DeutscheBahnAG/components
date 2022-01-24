@@ -11,6 +11,11 @@ const { primaryActions } = Modal;
 </Modal>;
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Highlights
 
 - ♿️ **Accessible** by using aria properties. Find out more about it in the [accessibility](#accessibility) chapter.

@@ -10,6 +10,11 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
 <Pulse />
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Logo and Pulse
 
 The spacing of the Logo and Pulse follow very specific guidelines. The Pulse component has been developed to follow the guidelines and create a worry-free implementation for developers. To make advantage of the automatic spacing, put the text of your headline within the Pulse component:

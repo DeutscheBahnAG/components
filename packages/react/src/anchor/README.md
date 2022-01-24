@@ -12,6 +12,11 @@ Hover over ‘My section’ to see the Anchor appearing:
 <Anchor id="my-section">My section</Anchor>
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## In combination with a title
 
 ```jsx

@@ -23,6 +23,11 @@ import { JourneyDestination } from '@db-design/react-icons';
   .textfield-preview .db-textfield { width: 136px }
 </style>
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## HTML attributes
 
 All attributes of an HTML [<input\> field](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) or [<textarea\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#Attributes) can be used with the `Textfield` component:

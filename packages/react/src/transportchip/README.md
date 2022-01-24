@@ -9,6 +9,11 @@ import { Transportchip } from '@db-design/react';
 <Transportchip name="ICE 234" />
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Automatic detection
 
 The automatic detection is based on the name and works for many cases. It doesn’t matter if the name is written with (`S 1`) or without (`S1`) space.

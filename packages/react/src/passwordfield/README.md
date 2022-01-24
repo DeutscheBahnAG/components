@@ -8,6 +8,11 @@ import { Passwordfield } from '@db-design/react';
 <Passwordfield />
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Disabled
 
 ```jsx

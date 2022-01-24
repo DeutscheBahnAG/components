@@ -10,3 +10,8 @@ This component implements the guidelines of:
 ```jsx
 <Time dateTime="09:54" />
 ```
+
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->

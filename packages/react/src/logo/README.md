@@ -85,6 +85,12 @@ This component implements the guidelines of:
 - https://dpp.bahn-x.de/foundation/accessibility/keyboard
 - https://dpp.bahn-x.de/foundation/accessibility/screen-reader
 
+
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Size
 
 The sizes are optimized for pixel-perfect rendering of the logo (based on its

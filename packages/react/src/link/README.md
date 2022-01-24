@@ -30,6 +30,11 @@ import { Copy } from '@db-design/react';
 </>;
 ```
 
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+
+<!-- END props-table -->
+
 ## Variants
 
 ### Primary
