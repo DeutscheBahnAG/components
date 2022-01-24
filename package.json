@@ -52,6 +52,9 @@
     ],
     "*.scss": [
       "stylelint --fix"
+    ],
+    "packages/react/src/**/!(*-doc).tsx": [
+      "node packages/react/scripts/add-props-table.js"
     ]
   },
   "dependencies": {},
