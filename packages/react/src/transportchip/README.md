@@ -11,6 +11,87 @@ import { Transportchip } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>name</strong></td>
+        <td><code>string</code></td>
+        <td>true</td>
+        <td></td>
+        <td>The full line number e.g. “S 1”, “STR M10”, “ICE 1234”</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Additional class names you want to add to the Transportchip</td>
+      </tr>
+    <tr>
+        <td><strong>product</strong></td>
+        <td><code>"ice" | "ic" | "ec" | "ferry" | "subway" | "suburban" | "airplane" | "intercitybus" | "tram" | "bus" | "re" | "rb" | "taxi" | "walking" | "carsharing" | "bikesharing"</code></td>
+        <td>false</td>
+        <td></td>
+        <td>The transport type (e.g. "sbahn")</td>
+      </tr>
+    <tr>
+        <td><strong>style</strong></td>
+        <td><code>"sbahn-mitteldeutschland" | "sbahn-berlin" | "sbahn-hamburg" | "sbahn-rheinmain" | "sbahn-rheinneckar" | "sbahn-stuttgart" | "sbahn-rheinruhrkoeln" | "sbahn-muenchen" | ... 11 more ... | "nordwestbahn"</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Use a local style to display line number</td>
+      </tr>
+    <tr>
+        <td><strong>href</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Optional link target (will create an `<a>`)</td>
+      </tr>
+    <tr>
+        <td><strong>onClick</strong></td>
+        <td><code>() => void</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Optional click handler (will create a `<button>`)</td>
+      </tr>
+    <tr>
+        <td><strong>zipCode</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Optional zip code to detect regional styles</td>
+      </tr>
+    <tr>
+        <td><strong>canceled</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Show trip as canceled</td>
+      </tr>
+    <tr>
+        <td><strong>showProductLogo</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

@@ -32,6 +32,9 @@ import { Copy } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<p>This component has no props.</p>
 
 <!-- END props-table -->
 

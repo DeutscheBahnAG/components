@@ -10,6 +10,87 @@ import { Notification, NotificationSeverities } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>title</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td>null</td>
+        <td>the title will be displayed as bold text above the message</td>
+      </tr>
+    <tr>
+        <td><strong>children</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td>null</td>
+        <td>the notification message to display</td>
+      </tr>
+    <tr>
+        <td><strong>action</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td>null</td>
+        <td>optional action (Button or link)</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>optional className to add to the notification</td>
+      </tr>
+    <tr>
+        <td><strong>global</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>displays the notification overlaid on top of the page</td>
+      </tr>
+    <tr>
+        <td><strong>severity</strong></td>
+        <td><code>"informative" | "warning" | "error" | "success"</code></td>
+        <td>false</td>
+        <td></td>
+        <td>the purpose of the notification, affects visual styling</td>
+      </tr>
+    <tr>
+        <td><strong>onClose</strong></td>
+        <td><code>() => void</code></td>
+        <td>false</td>
+        <td>null</td>
+        <td>close button click handler, required to display the close button</td>
+      </tr>
+    <tr>
+        <td><strong>labels</strong></td>
+        <td><code>{ close: string; informative: string; warning: string; error: string; success: string; }</code></td>
+        <td>false</td>
+        <td></td>
+        <td>custom translation strings</td>
+      </tr>
+    <tr>
+        <td><strong>autofocusCloseButton</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>whether to automatically focus the close button when the notification is displayed. Can be useful for global notifications as they are appended to the end of the DOM, so people would need to tab around a lot to reach them.</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

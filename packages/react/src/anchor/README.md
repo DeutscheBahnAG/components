@@ -14,6 +14,45 @@ Hover over ‘My section’ to see the Anchor appearing:
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Optional class name</td>
+      </tr>
+    <tr>
+        <td><strong>id</strong></td>
+        <td><code>string</code></td>
+        <td>true</td>
+        <td></td>
+        <td>ID to link to</td>
+      </tr>
+    <tr>
+        <td><strong>labels</strong></td>
+        <td><code>{ button: string; notification: string; }</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Override default label</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

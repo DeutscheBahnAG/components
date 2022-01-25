@@ -10,6 +10,59 @@ import { Checkbox } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>children</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Content rendered as the Checkbox label, can be text or any element except links and buttons</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Additional class names you want to add to the Checkbox</td>
+      </tr>
+    <tr>
+        <td><strong>indeterminate</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>Show a bar instead of the checked state</td>
+      </tr>
+    <tr>
+        <td><strong>style</strong></td>
+        <td><code>CSSProperties</code></td>
+        <td>false</td>
+        <td>{}</td>
+        <td>Inline styles</td>
+      </tr>
+    <tr>
+        <td><strong>footer</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Additional content below the label, e.g. links that must not be part of the label</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

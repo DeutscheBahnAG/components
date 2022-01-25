@@ -19,6 +19,59 @@ import { Container } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>children</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Content of the Container</td>
+      </tr>
+    <tr>
+        <td><strong>width</strong></td>
+        <td><code>ResponsiveType<"text" | "content" | "extended" | "full"></code></td>
+        <td>false</td>
+        <td>full</td>
+        <td>The width of the Container</td>
+      </tr>
+    <tr>
+        <td><strong>align</strong></td>
+        <td><code>ResponsiveType<"left" | "center" | "right"></code></td>
+        <td>false</td>
+        <td></td>
+        <td>The alignment of the Container</td>
+      </tr>
+    <tr>
+        <td><strong>filled</strong></td>
+        <td><code>ResponsiveType<boolean></code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>Adds a primary background color for the Container</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Additional class names you want to add to the Container</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

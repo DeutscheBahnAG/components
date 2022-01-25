@@ -16,6 +16,45 @@ import { Button } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>children</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Content to be themed</td>
+      </tr>
+    <tr>
+        <td><strong>theme</strong></td>
+        <td><code>"DB_BRANDED" | "DB_LIGHT" | "DB_LIGHT_ALTERNATE" | "DB_DARK" | "DB_DARK_ALTERNATE" | "DISPLAY" | "EXPERIMENTAL_S_BAHN_BRANDED" | "EXPERIMENTAL_S_BAHN_LIGHT" | "EXPERIMENTAL_S_BAHN_LIGHT_ALTERNATE" | ... 6 more ... | "EXPERIMENTAL_DB_PRIDE_LIGHT_ALTERNATE"</code></td>
+        <td>false</td>
+        <td></td>
+        <td>The active theme applied to the children</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>Additional class names you want to add to the Theme</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

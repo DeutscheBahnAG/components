@@ -9,6 +9,9 @@ This component handles everything that ‘looks like a button’ – even when i
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<p>This component has no props.</p>
 
 <!-- END props-table -->
 

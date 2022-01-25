@@ -9,6 +9,52 @@ This component implements the guidelines of:
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>dateTime</strong></td>
+        <td><code>string</code></td>
+        <td>true</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>predictedDateTime</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>stopType</strong></td>
+        <td><code>"start" | "intermediate" | "destination" | "current"</code></td>
+        <td>false</td>
+        <td>start</td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

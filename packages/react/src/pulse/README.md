@@ -12,6 +12,59 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>size</strong></td>
+        <td><code>ResponsiveType<"xs" | "s" | "m" | "l" | "xl" | "xxl"></code></td>
+        <td>false</td>
+        <td>m</td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>variant</strong></td>
+        <td><code>"auto" | "default" | "filled" | "white"</code></td>
+        <td>false</td>
+        <td>auto</td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>mt</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td>0.5</td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>mb</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 
