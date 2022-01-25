@@ -19,6 +19,7 @@
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "lint:styles:fix": "yarn lint:styles --fix",
     "depcheck": "depcheck && yarn workspaces run depcheck",
+    "docs:props-table": "node scripts/add-props-table.js",
     "prebuild:docs": "yarn build:react-icons && yarn build:react && yarn build:react-extra",
     "build:docs": "yarn workspace docs build",
     "build": "yarn build:react-icons && yarn build:react && yarn build:react-extra",
@@ -27,7 +28,7 @@
     "build:react-extra": "yarn workspace @db-design/react-extra build",
     "release:styles": "yarn workspace @db-design/styles release",
     "release:react-icons": "yarn build:react-icons && yarn workspace @db-design/react-icons release",
-    "release:react": "yarn build:react-icons && yarn build:react && yarn workspace @db-design/react release",
+    "release:react": "yarn build:react-icons && yarn build:react && yarn workspace && yarn docs:props-table && @db-design/react release",
     "release:react-extra": "yarn workspace @db-design/react-extra release",
     "commit": "git-cz",
     "prepare": "husky install"
@@ -54,7 +55,7 @@
       "stylelint --fix"
     ],
     "packages/react/src/**/!(*-doc).tsx": [
-      "node packages/react/scripts/add-props-table.js"
+      "yarn docs:props-table"
     ]
   },
   "dependencies": {},
