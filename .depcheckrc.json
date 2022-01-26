@@ -6,6 +6,7 @@
     "@bahn-x/eslint-config-base",
     "@commitlint/cli",
     "react-test-renderer",
-    "stylelint-config-sass-guidelines"
+    "stylelint-config-sass-guidelines",
+    "@testing-library/jest-dom"
   ]
 }
