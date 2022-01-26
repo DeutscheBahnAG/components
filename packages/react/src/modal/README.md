@@ -159,7 +159,7 @@ const { primaryActions } = Modal;
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Set HTML identifier of your portals container to improve the screen reader experience via ARIA Live Region.  The DOM of your Modal will move into the container with the identifier of `portalId`. Important: The portal container has to be *outside* the React app container.  In this example your `index.html` consists of two containers: `#root` is your React app container and `#modal-portal` is the container for the Modals. `<div id="root">``</div>` `<div id="modal-portal">``</div>` Here you just have to set `portalId="modal-portal"`.</td>
+        <td>Set HTML identifier of your portals container to improve the screen reader experience via ARIA Live Region.  The DOM of your Modal will move into the container with the identifier of `portalId`. Important: The portal container has to be *outside* the React app container.  In this example your `index.html` consists of two containers: `#root` is your React app container and `#modal-portal` is the container for the Modals. `<div id="root"></div>` `<div id="modal-portal"></div>` Here you just have to set `portalId="modal-portal"`.</td>
       </tr>
     <tr>
         <td><strong>disableBodyScrollWhenOpen</strong></td>

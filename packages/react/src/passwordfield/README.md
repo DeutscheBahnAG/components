@@ -100,7 +100,7 @@ import { Passwordfield } from '@db-design/react';
         <td><code>number</code></td>
         <td>false</td>
         <td></td>
-        <td>Width in characters (equals ``<input size="10">``)</td>
+        <td>Width in characters (equals `<input size="10">`)</td>
       </tr>
     <tr>
         <td><strong>disabled</strong></td>

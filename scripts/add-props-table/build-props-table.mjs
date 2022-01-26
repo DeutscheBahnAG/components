@@ -1,7 +1,8 @@
 const removeLineBreaks = (string) => string.replace(/(\r\n|\n|\r)/gm, ' ');
 
 const escapeHTML = (string) => {
-  return string.replaceAll('<', '`<').replaceAll('>', '>`');
+  // replace all non backtick-quoted angle brackets with quoted ones
+  return string.replace(/(?<![\`\>])</g, '`<').replace(/>(?!\`)/g, '>`').replaceAll('>`<', '><');
 };
 
 const buildPropsTable = (props) => (
@@ -29,7 +30,7 @@ ${props.length > 0
         <td>${prop.required}</td>
         <td>${prop.defaultValue && prop.defaultValue.value !== 'undefined' ? prop.defaultValue.value : ''
           }</td>
-        <td>${removeLineBreaks(escapeHTML(prop.description))}</td>
+        <td>${escapeHTML(removeLineBreaks(prop.description))}</td>
       </tr>`
       )
       .join('\n')}

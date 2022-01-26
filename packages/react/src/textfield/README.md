@@ -115,7 +115,7 @@ import { JourneyDestination } from '@db-design/react-icons';
         <td><code>number</code></td>
         <td>false</td>
         <td>null</td>
-        <td>Width in characters (equals ``<input size="10">``)</td>
+        <td>Width in characters (equals `<input size="10">`)</td>
       </tr>
     </tbody>
   </table>
