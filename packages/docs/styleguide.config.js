@@ -38,6 +38,10 @@ module.exports = {
     '**/*.d.ts',
   ],
 
+  // disable adding an auto-generated props table by styleguidist,
+  // as we have it in the README file already
+  sortProps: () => [],
+
   getComponentPathLine(componentPath) {
     const name = path
       .basename(componentPath)

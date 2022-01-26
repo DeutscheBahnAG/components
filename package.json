@@ -19,7 +19,7 @@
     "lint:styles": "stylelint \"**/*.scss\" --fix",
     "lint:styles:fix": "yarn lint:styles --fix",
     "depcheck": "depcheck && yarn workspaces run depcheck",
-    "docs:props-table": "node scripts/add-props-table.js",
+    "docs:props-table": "node scripts/add-props-table/index.mjs",
     "prebuild:docs": "yarn build:react-icons && yarn build:react && yarn build:react-extra",
     "build:docs": "yarn workspace docs build",
     "build": "yarn build:react-icons && yarn build:react && yarn build:react-extra",

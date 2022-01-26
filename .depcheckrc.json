@@ -1,4 +1,7 @@
 {
+  "parsers": {
+    "**/*.mjs": "es6"
+  },
   "ignores": [
     "@bahn-x/eslint-config-base",
     "@commitlint/cli",

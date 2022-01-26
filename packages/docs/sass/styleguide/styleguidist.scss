@@ -343,7 +343,8 @@ main.rsg--content-3 {
   display: none;
 }
 
-#rsg-root [class^='rsg--button-'] {
+#rsg-root [class^='rsg--button-'],
+#rsg-root [class^='rsg--summary-'] {
   @extend .db-button--solid;
   @extend .db-button--size-s;
   text-transform: none;
