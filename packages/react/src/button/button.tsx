@@ -28,9 +28,10 @@ export type ButtonVariantsType = typeof buttonVariants[number];
 type HTMLButtonTypeAttributeType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
 export type ButtonTypesType = NonNullable<HTMLButtonTypeAttributeType>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface ButtonProps extends Record<string, any> {
-  /** content rendered inside the button, can be text or any element */
+type CommonProps<NativeElement extends HTMLButtonElement | HTMLAnchorElement> = Omit<
+  React.HTMLProps<NativeElement>,
+  'shape' | 'size'
+> & {
   children?: React.ReactNode;
   /** additional class names you want to add to the button */
   className?: string;
@@ -38,8 +39,6 @@ export interface ButtonProps extends Record<string, any> {
   disabled?: boolean;
   /** when true, button will take up all available width */
   fullWidth?: boolean;
-  /** turns the Button into a regular link (anchor) */
-  href?: string;
   /** optional icon (as `<svg>`) */
   icon?: React.ReactNode;
   /** the position of the icon */
@@ -54,11 +53,23 @@ export interface ButtonProps extends Record<string, any> {
   size?: ResponsiveType<ButtonSizesType>;
   /** inline styles */
   style?: React.CSSProperties;
-  /** the type of the button */
-  type?: LinkTypeType | ButtonTypesType;
   /** the appearance of the button */
   variant?: ButtonVariantsType;
+};
+
+interface ButtonElementProps extends Omit<CommonProps<HTMLButtonElement>, 'href'> {
+  /** the type of the button */
+  type?: ButtonTypesType;
 }
+
+interface AnchorElementProps extends CommonProps<HTMLAnchorElement> {
+  /** the type of the button */
+  type?: LinkTypeType;
+  /** turns the Button into a regular link (anchor) */
+  href?: string;
+}
+
+type ButtonProps = AnchorElementProps | ButtonElementProps;
 
 const loadingIndicatorSizeMap: Record<ButtonSizesType, LoadingIndicatorSizesType> = {
   xl: 'm',
@@ -74,8 +85,6 @@ const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonPro
       className = '',
       disabled = false,
       fullWidth = false,
-      // @NOTE The `href` property switches between a `<button>` and `<a>` element. Should be explicit.
-      href,
       icon,
       iconPosition = 'before',
       loading = false,
@@ -97,6 +106,8 @@ const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonPro
       ref !== null && typeof ref === 'object' && 'current' in ref
         ? ref
         : React.createRef<NonNullable<HTMLAnchorElement | HTMLButtonElement>>();
+
+    const { href } = otherProps as typeof otherProps & { href?: string };
 
     useEffect(() => {
       // if button changed to loading state, set its previous
@@ -164,6 +175,7 @@ const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonPro
       <>
         <HtmlAnchorOrButton
           isAnchor={isLink}
+          // @ts-expect-error forwardRef type won't match with HtmlAnchorOrButton component
           ref={buttonRef}
           {...elementCommonProps}
           {...elementSpecificProps}

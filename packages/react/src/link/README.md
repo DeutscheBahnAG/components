@@ -34,7 +34,113 @@ import { Copy } from '@db-design/react';
 <!-- START props-table -->
 ## Props
 
-<p>This component has no props.</p>
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>children</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>content rendered inside the Link, can be text or any element</td>
+      </tr>
+    <tr>
+        <td><strong>href</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>turns the Link into a regular link (anchor)</td>
+      </tr>
+    <tr>
+        <td><strong>disabled</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>when true, Link will be disabled</td>
+      </tr>
+    <tr>
+        <td><strong>download</strong></td>
+        <td><code>any</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>when true the browser will try to download the target</td>
+      </tr>
+    <tr>
+        <td><strong>type</strong></td>
+        <td><code>"link" | ButtonTypesType</code></td>
+        <td>false</td>
+        <td>button</td>
+        <td>the type of the link</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>additional class names you want to add to the Link</td>
+      </tr>
+    <tr>
+        <td><strong>style</strong></td>
+        <td><code>CSSProperties</code></td>
+        <td>false</td>
+        <td>{}</td>
+        <td>inline styles</td>
+      </tr>
+    <tr>
+        <td><strong>fullWidth</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>icon</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>optional icon (as `<svg>`)</td>
+      </tr>
+    <tr>
+        <td><strong>loading</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>loadingLabel</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+        <td><strong>iconPosition</strong></td>
+        <td><code>"none" | "auto" | "before" | "after"</code></td>
+        <td>false</td>
+        <td>auto</td>
+        <td>the position of the icon</td>
+      </tr>
+    <tr>
+        <td><strong>variant</strong></td>
+        <td><code>"primary" | "secondary" | "mixed"</code></td>
+        <td>false</td>
+        <td>primary</td>
+        <td>the appearance of the Link</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- END props-table -->
 

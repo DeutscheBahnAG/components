@@ -22,31 +22,42 @@ export type LinkVariantsType = typeof linkVariants[number];
 type HTMLButtonTypeAttributeType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
 export type ButtonTypesType = NonNullable<HTMLButtonTypeAttributeType>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface LinkProps extends Record<string, any> {
-  /** content rendered inside the Link, can be text or any element */
-  children?: React.ReactNode;
-  /** additional class names you want to add to the Link */
-  className?: string;
-  /** when true, Link will be disabled */
-  disabled?: boolean;
-  /** when true the browser will try to download the target */
-  download?: boolean;
-  fullWidth?: boolean;
+type CommonProps<NativeElement extends HTMLButtonElement | HTMLAnchorElement> =
+  React.HTMLProps<NativeElement> & {
+    /** content rendered inside the Link, can be text or any element */
+    children?: React.ReactNode;
+    /** additional class names you want to add to the Link */
+    className?: string;
+    /** when true, Link will be disabled */
+    disabled?: boolean;
+    /** when true the browser will try to download the target */
+    download?: boolean;
+    fullWidth?: boolean;
+    /** optional icon (as `<svg>`) */
+    icon?: React.ReactNode;
+    loading?: boolean;
+    loadingLabel?: string;
+    /** the position of the icon */
+    iconPosition?: LinkIconPositionsType;
+    /** inline styles */
+    style?: React.CSSProperties;
+    /** the appearance of the Link */
+    variant?: LinkVariantsType;
+  };
+
+interface ButtonElementProps extends Omit<CommonProps<HTMLButtonElement>, 'href'> {
+  /** the type of the link */
+  type?: ButtonTypesType;
+}
+
+interface AnchorElementProps extends CommonProps<HTMLAnchorElement> {
+  /** the type of the link */
+  type?: LinkTypeType;
   /** turns the Link into a regular link (anchor) */
   href?: string;
-  /** optional icon (as `<svg>`) */
-  icon?: React.ReactNode;
-  loading?: boolean;
-  loadingLabel?: string;
-  /** the position of the icon */
-  iconPosition?: LinkIconPositionsType;
-  /** inline styles */
-  style?: React.CSSProperties;
-  type?: LinkTypeType | ButtonTypesType;
-  /** the appearance of the Link */
-  variant?: LinkVariantsType;
 }
+
+type LinkProps = AnchorElementProps | ButtonElementProps;
 
 const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
   (
@@ -55,7 +66,6 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
       className = '',
       disabled = false,
       download = false,
-      href = undefined,
       icon: customIcon,
       iconPosition = 'auto',
       style = {},
@@ -65,6 +75,7 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
     },
     ref
   ) => {
+    const { href } = otherProps as typeof otherProps & { href?: string };
     const isLink = type === 'link' || href !== undefined;
     const isExternal = href && href.match(/^((https?):)?\/\//);
     const icon =
@@ -95,6 +106,7 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
       <>
         <HtmlAnchorOrButton
           isAnchor={isLink}
+          // @ts-expect-error forwardRef type won't match with HtmlAnchorOrButton component
           ref={ref}
           {...elementCommonProps}
           {...elementSpecificProps}

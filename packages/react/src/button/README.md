@@ -6,15 +6,6 @@ import { Button } from '@db-design/react';
 
 This component handles everything that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
 
-
-<!-- Auto-generated content following, DO NOT update by hand! -->
-<!-- START props-table -->
-## Props
-
-<p>This component has no props.</p>
-
-<!-- END props-table -->
-
 ```jsx noeditor
 import { Copy } from '@db-design/react';
 import { ActionAdd } from '@db-design/react-icons';
@@ -40,6 +31,120 @@ import { ActionAdd } from '@db-design/react-icons';
   </Button>
 </>;
 ```
+
+<!-- Auto-generated content following, DO NOT update by hand! -->
+<!-- START props-table -->
+## Props
+
+<details>
+  <summary class="db-props-toggle">Show/hide component props</summary>
+  <table class="db-props-table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>shape</strong></td>
+        <td><code>"default" | "square" | "round"</code></td>
+        <td>false</td>
+        <td>default</td>
+        <td>the shape of the button</td>
+      </tr>
+    <tr>
+        <td><strong>size</strong></td>
+        <td><code>ResponsiveType<"s" | "m" | "l" | "xl"></code></td>
+        <td>false</td>
+        <td>l</td>
+        <td>the size of the button</td>
+      </tr>
+    <tr>
+        <td><strong>disabled</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>when true, button will be disabled</td>
+      </tr>
+    <tr>
+        <td><strong>href</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>turns the Button into a regular link (anchor)</td>
+      </tr>
+    <tr>
+        <td><strong>type</strong></td>
+        <td><code>"link" | ButtonTypesType</code></td>
+        <td>false</td>
+        <td>button</td>
+        <td>the type of the button</td>
+      </tr>
+    <tr>
+        <td><strong>className</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td></td>
+        <td>additional class names you want to add to the button</td>
+      </tr>
+    <tr>
+        <td><strong>style</strong></td>
+        <td><code>CSSProperties</code></td>
+        <td>false</td>
+        <td>{}</td>
+        <td>inline styles</td>
+      </tr>
+    <tr>
+        <td><strong>fullWidth</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>when true, button will take up all available width</td>
+      </tr>
+    <tr>
+        <td><strong>icon</strong></td>
+        <td><code>ReactNode</code></td>
+        <td>false</td>
+        <td></td>
+        <td>optional icon (as `<svg>`)</td>
+      </tr>
+    <tr>
+        <td><strong>iconPosition</strong></td>
+        <td><code>"before" | "after"</code></td>
+        <td>false</td>
+        <td>before</td>
+        <td>the position of the icon</td>
+      </tr>
+    <tr>
+        <td><strong>loading</strong></td>
+        <td><code>boolean</code></td>
+        <td>false</td>
+        <td>false</td>
+        <td>whether the loading state is enabled</td>
+      </tr>
+    <tr>
+        <td><strong>loadingLabel</strong></td>
+        <td><code>string</code></td>
+        <td>false</td>
+        <td>Wird geladen …</td>
+        <td>a11y label for the button while in loading state</td>
+      </tr>
+    <tr>
+        <td><strong>variant</strong></td>
+        <td><code>"primary" | "secondary" | "solid" | "hover-only"</code></td>
+        <td>false</td>
+        <td>primary</td>
+        <td>the appearance of the button</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+<!-- END props-table -->
 
 ## Variants
 
