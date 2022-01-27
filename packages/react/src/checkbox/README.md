@@ -30,35 +30,40 @@ import { Checkbox } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>Content rendered as the Checkbox label, can be text or any element except links and buttons</td>
+        <td><p>Content rendered as the Checkbox label, can be text or any element except links and buttons</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Additional class names you want to add to the Checkbox</td>
+        <td><p>Additional class names you want to add to the Checkbox</p>
+</td>
       </tr>
     <tr>
         <td><strong>indeterminate</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td>Show a bar instead of the checked state</td>
+        <td><p>Show a bar instead of the checked state</p>
+</td>
       </tr>
     <tr>
         <td><strong>style</strong></td>
         <td><code>CSSProperties</code></td>
         <td>false</td>
         <td>{}</td>
-        <td>Inline styles</td>
+        <td><p>Inline styles</p>
+</td>
       </tr>
     <tr>
         <td><strong>footer</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>Additional content below the label, e.g. links that must not be part of the label</td>
+        <td><p>Additional content below the label, e.g. links that must not be part of the label</p>
+</td>
       </tr>
     </tbody>
   </table>

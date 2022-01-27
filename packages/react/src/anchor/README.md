@@ -34,21 +34,24 @@ Hover over ‘My section’ to see the Anchor appearing:
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional class name</td>
+        <td><p>Optional class name</p>
+</td>
       </tr>
     <tr>
         <td><strong>id</strong></td>
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
-        <td>ID to link to</td>
+        <td><p>ID to link to</p>
+</td>
       </tr>
     <tr>
         <td><strong>labels</strong></td>
         <td><code>{ button: string; notification: string; }</code></td>
         <td>false</td>
         <td></td>
-        <td>Override default label</td>
+        <td><p>Override default label</p>
+</td>
       </tr>
     </tbody>
   </table>

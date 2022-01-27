@@ -52,49 +52,56 @@ import { Copy } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>content rendered inside the Link, can be text or any element</td>
+        <td><p>content rendered inside the Link, can be text or any element</p>
+</td>
       </tr>
     <tr>
         <td><strong>href</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>turns the Link into a regular link (anchor)</td>
+        <td><p>turns the Link into a regular link (anchor)</p>
+</td>
       </tr>
     <tr>
         <td><strong>disabled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td>when true, Link will be disabled</td>
+        <td><p>when true, Link will be disabled</p>
+</td>
       </tr>
     <tr>
         <td><strong>download</strong></td>
         <td><code>any</code></td>
         <td>false</td>
         <td>false</td>
-        <td>when true the browser will try to download the target</td>
+        <td><p>when true the browser will try to download the target</p>
+</td>
       </tr>
     <tr>
         <td><strong>type</strong></td>
         <td><code>&quot;link&quot; | ButtonTypesType</code></td>
         <td>false</td>
         <td>button</td>
-        <td>the type of the link</td>
+        <td><p>the type of the link</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>additional class names you want to add to the Link</td>
+        <td><p>additional class names you want to add to the Link</p>
+</td>
       </tr>
     <tr>
         <td><strong>style</strong></td>
         <td><code>CSSProperties</code></td>
         <td>false</td>
         <td>{}</td>
-        <td>inline styles</td>
+        <td><p>inline styles</p>
+</td>
       </tr>
     <tr>
         <td><strong>fullWidth</strong></td>
@@ -108,7 +115,8 @@ import { Copy } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>optional icon (as `&lt;svg&gt;`)</td>
+        <td><p>optional icon (as <code>&lt;svg&gt;</code>)</p>
+</td>
       </tr>
     <tr>
         <td><strong>loading</strong></td>
@@ -129,14 +137,16 @@ import { Copy } from '@db-design/react';
         <td><code>&quot;none&quot; | &quot;auto&quot; | &quot;before&quot; | &quot;after&quot;</code></td>
         <td>false</td>
         <td>auto</td>
-        <td>the position of the icon</td>
+        <td><p>the position of the icon</p>
+</td>
       </tr>
     <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot; | &quot;mixed&quot;</code></td>
         <td>false</td>
         <td>primary</td>
-        <td>the appearance of the Link</td>
+        <td><p>the appearance of the Link</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -45,63 +45,72 @@ import { JourneyDestination } from '@db-design/react-icons';
         <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>xl</td>
-        <td>The size of the Textfield</td>
+        <td><p>The size of the Textfield</p>
+</td>
       </tr>
     <tr>
         <td><strong>prefix</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td>null</td>
-        <td>Content before the input (which is not a unit)</td>
+        <td><p>Content before the input (which is not a unit)</p>
+</td>
       </tr>
     <tr>
         <td><strong>onChange</strong></td>
         <td><code>FormEventHandler&lt;HTMLTextAreaElement&gt; | FormEventHandler&lt;HTMLInputElement&gt;</code></td>
         <td>false</td>
         <td>null</td>
-        <td>Change handler</td>
+        <td><p>Change handler</p>
+</td>
       </tr>
     <tr>
         <td><strong>disabled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td>Disable the field</td>
+        <td><p>Disable the field</p>
+</td>
       </tr>
     <tr>
         <td><strong>type</strong></td>
         <td><code>&quot;number&quot; | &quot;textarea&quot; | &quot;text&quot; | &quot;password&quot; | &quot;email&quot; | &quot;tel&quot; | &quot;url&quot; | &quot;search&quot;</code></td>
         <td>false</td>
         <td>text</td>
-        <td>Type of the &lt;input&gt; or define a &lt;textarea&gt;</td>
+        <td><p>Type of the &lt;input&gt; or define a &lt;textarea&gt;</p>
+</td>
       </tr>
     <tr>
         <td><strong>value</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>The user input</td>
+        <td><p>The user input</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Additional class names</td>
+        <td><p>Additional class names</p>
+</td>
       </tr>
     <tr>
         <td><strong>unit</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td>null</td>
-        <td>A unit such as a currency or `%`</td>
+        <td><p>A unit such as a currency or <code>%</code></p>
+</td>
       </tr>
     <tr>
         <td><strong>suffix</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td>null</td>
-        <td>Content after the input (which is not a unit)</td>
+        <td><p>Content after the input (which is not a unit)</p>
+</td>
       </tr>
     <tr>
         <td><strong>inlineLabel</strong></td>
@@ -115,7 +124,8 @@ import { JourneyDestination } from '@db-design/react-icons';
         <td><code>number</code></td>
         <td>false</td>
         <td>null</td>
-        <td>Width in characters (equals `&lt;input size=&quot;10&quot;&gt;`)</td>
+        <td><p>Width in characters (equals <code>&lt;input size=&quot;10&quot;&gt;</code>)</p>
+</td>
       </tr>
     </tbody>
   </table>

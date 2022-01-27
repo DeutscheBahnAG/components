@@ -26,14 +26,16 @@
         <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;fatal&quot; | &quot;success&quot;</code></td>
         <td>false</td>
         <td>informative</td>
-        <td>The purpose of the Status, affects visual styling</td>
+        <td><p>The purpose of the Status, affects visual styling</p>
+</td>
       </tr>
     <tr>
         <td><strong>children</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>The text to be displayed</td>
+        <td><p>The text to be displayed</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>

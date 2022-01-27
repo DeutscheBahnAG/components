@@ -30,63 +30,74 @@ import { Notification, NotificationSeverities } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td>null</td>
-        <td>the title will be displayed as bold text above the message</td>
+        <td><p>the title will be displayed as bold text above the message</p>
+</td>
       </tr>
     <tr>
         <td><strong>children</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td>null</td>
-        <td>the notification message to display</td>
+        <td><p>the notification message to display</p>
+</td>
       </tr>
     <tr>
         <td><strong>action</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td>null</td>
-        <td>optional action (Button or link)</td>
+        <td><p>optional action (Button or link)</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>optional className to add to the notification</td>
+        <td><p>optional className to add to the notification</p>
+</td>
       </tr>
     <tr>
         <td><strong>global</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td>displays the notification overlaid on top of the page</td>
+        <td><p>displays the notification overlaid on top of the page</p>
+</td>
       </tr>
     <tr>
         <td><strong>severity</strong></td>
         <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;success&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td>the purpose of the notification, affects visual styling</td>
+        <td><p>the purpose of the notification, affects visual styling</p>
+</td>
       </tr>
     <tr>
         <td><strong>onClose</strong></td>
         <td><code>() =&gt; void</code></td>
         <td>false</td>
         <td>null</td>
-        <td>close button click handler, required to display the close button</td>
+        <td><p>close button click handler, required to display the close button</p>
+</td>
       </tr>
     <tr>
         <td><strong>labels</strong></td>
         <td><code>{ close: string; informative: string; warning: string; error: string; success: string; }</code></td>
         <td>false</td>
         <td></td>
-        <td>custom translation strings</td>
+        <td><p>custom translation strings</p>
+</td>
       </tr>
     <tr>
         <td><strong>autofocusCloseButton</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td>whether to automatically focus the close button when the notification is displayed. Can be useful for global notifications as they are appended to the end of the DOM, so people would need to tab around a lot to reach them.</td>
+        <td><p>whether to automatically focus the close button when the notification
+is displayed. Can be useful for global notifications as they are appended
+to the end of the DOM, so people would need to tab around a lot to reach them.</p>
+</td>
       </tr>
     </tbody>
   </table>

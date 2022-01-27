@@ -31,63 +31,72 @@ import { Transportchip } from '@db-design/react';
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
-        <td>The full line number e.g. “S 1”, “STR M10”, “ICE 1234”</td>
+        <td><p>The full line number e.g. “S 1”, “STR M10”, “ICE 1234”</p>
+</td>
       </tr>
     <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Additional class names you want to add to the Transportchip</td>
+        <td><p>Additional class names you want to add to the Transportchip</p>
+</td>
       </tr>
     <tr>
         <td><strong>product</strong></td>
         <td><code>&quot;ice&quot; | &quot;ic&quot; | &quot;ec&quot; | &quot;ferry&quot; | &quot;subway&quot; | &quot;suburban&quot; | &quot;airplane&quot; | &quot;intercitybus&quot; | &quot;tram&quot; | &quot;bus&quot; | &quot;re&quot; | &quot;rb&quot; | &quot;taxi&quot; | &quot;walking&quot; | &quot;carsharing&quot; | &quot;bikesharing&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td>The transport type (e.g. &quot;sbahn&quot;)</td>
+        <td><p>The transport type (e.g. &quot;sbahn&quot;)</p>
+</td>
       </tr>
     <tr>
         <td><strong>style</strong></td>
         <td><code>&quot;sbahn-mitteldeutschland&quot; | &quot;sbahn-berlin&quot; | &quot;sbahn-hamburg&quot; | &quot;sbahn-rheinmain&quot; | &quot;sbahn-rheinneckar&quot; | &quot;sbahn-stuttgart&quot; | &quot;sbahn-rheinruhrkoeln&quot; | &quot;sbahn-muenchen&quot; | ... 11 more ... | &quot;nordwestbahn&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td>Use a local style to display line number</td>
+        <td><p>Use a local style to display line number</p>
+</td>
       </tr>
     <tr>
         <td><strong>href</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional link target (will create an &lt;a&gt;)</td>
+        <td><p>Optional link target (will create an &lt;a&gt;)</p>
+</td>
       </tr>
     <tr>
         <td><strong>onClick</strong></td>
         <td><code>() =&gt; void</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional click handler (will create a &lt;button&gt;)</td>
+        <td><p>Optional click handler (will create a &lt;button&gt;)</p>
+</td>
       </tr>
     <tr>
         <td><strong>zipCode</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional zip code to detect regional styles</td>
+        <td><p>Optional zip code to detect regional styles</p>
+</td>
       </tr>
     <tr>
         <td><strong>canceled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td></td>
-        <td>Show trip as canceled</td>
+        <td><p>Show trip as canceled</p>
+</td>
       </tr>
     <tr>
         <td><strong>showProductLogo</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td></td>
-        <td>Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number</td>
+        <td><p>Shows (S), [U], (A), (F~), [Tram] or (Bus) logo before the line number</p>
+</td>
       </tr>
     </tbody>
   </table>
