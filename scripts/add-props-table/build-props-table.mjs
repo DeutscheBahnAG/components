@@ -1,4 +1,4 @@
-const removeLineBreaks = (string) => string.replace(/(\r\n|\n|\r)/gm, ' ');
+import { marked } from 'marked';
 
 const escapeHtml = (string) => {
   return string
@@ -38,7 +38,7 @@ ${
           ? prop.defaultValue.value
           : ''
         }</td>
-        <td>${escapeHtml(removeLineBreaks(prop.description))}</td>
+        <td>${marked.parse(prop.description, { sanitize: true, silent: true })}</td>
       </tr>`
     )
       .join('\n')}

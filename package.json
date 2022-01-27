@@ -87,6 +87,7 @@
     "hygen": "^6.1.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
+    "marked": "^4.0.12",
     "react-docgen-typescript": "^2.2.2",
     "react-test-renderer": "^17.0.1",
     "stylelint": "^13.8.0",
