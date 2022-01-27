@@ -34,7 +34,7 @@ import { Loadingindicator } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"xs" | "s" | "m" | "l" | "xl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>l</td>
         <td></td>

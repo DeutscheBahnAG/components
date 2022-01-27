@@ -40,7 +40,7 @@ const { primaryActions } = Modal;
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>Sets the primary button. Requires a Button component and overrides the variant to 'primary'</td>
+        <td>Sets the primary button. Requires a Button component and overrides the variant to &#039;primary&#039;</td>
       </tr>
     <tr>
         <td><strong>secondaryButton</strong></td>
@@ -65,7 +65,7 @@ const { primaryActions } = Modal;
       </tr>
     <tr>
         <td><strong>onClose</strong></td>
-        <td><code>(event: MouseEvent<Element, MouseEvent> | KeyboardEvent<Element>) => void</code></td>
+        <td><code>(event: MouseEvent&lt;Element, MouseEvent&gt; | KeyboardEvent&lt;Element&gt;) =&gt; void</code></td>
         <td>false</td>
         <td></td>
         <td>Set callback function to be executed, when the Modal closes.</td>
@@ -86,28 +86,28 @@ const { primaryActions } = Modal;
       </tr>
     <tr>
         <td><strong>kind</strong></td>
-        <td><code>"default" | "alert"</code></td>
+        <td><code>&quot;default&quot; | &quot;alert&quot;</code></td>
         <td>false</td>
         <td>default</td>
         <td>Set the kind of Modal dialogue. Note: This affects the accessibility behaviour of the dialogue.</td>
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>"s" | "m" | "l" | "auto"</code></td>
+        <td><code>&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;auto&quot;</code></td>
         <td>false</td>
         <td>m</td>
         <td>Limit width of dialog to small, medium or large size. When set to `auto`, the dialogs width depends on its content width.</td>
       </tr>
     <tr>
         <td><strong>fullActionSize</strong></td>
-        <td><code>"none" | "s" | "m" | "l"</code></td>
+        <td><code>&quot;none&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot;</code></td>
         <td>false</td>
         <td>none</td>
         <td>Set action buttons to full width for viewport widths up to the given size. Note: The size relates to the viewport size and not to the given dialog size.</td>
       </tr>
     <tr>
         <td><strong>centerActions</strong></td>
-        <td><code>"none" | "s" | "m" | "l"</code></td>
+        <td><code>&quot;none&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot;</code></td>
         <td>false</td>
         <td>none</td>
         <td>Center action buttons for viewport widths up to the given size. Note: The size relates to the viewport size and not to the given dialog size.</td>
@@ -131,7 +131,7 @@ const { primaryActions } = Modal;
         <td><code>string</code></td>
         <td>false</td>
         <td>modal-title</td>
-        <td>Identifier of the HTML element, which contains the label of the Modal. If you don't use the `title` property it is strongly recommended to set `ariaLabelledBy` to refer to an element within the children. If you use the `title` property you don't have to use `ariaLabelledBy` as it contains `modal-title` by default, which refers to the `title`. If you use the `title` property and you want to change the `modal-title` identifier you can do so by `ariaLabelledBy`.</td>
+        <td>Identifier of the HTML element, which contains the label of the Modal. If you don&#039;t use the `title` property it is strongly recommended to set `ariaLabelledBy` to refer to an element within the children. If you use the `title` property you don&#039;t have to use `ariaLabelledBy` as it contains `modal-title` by default, which refers to the `title`. If you use the `title` property and you want to change the `modal-title` identifier you can do so by `ariaLabelledBy`.</td>
       </tr>
     <tr>
         <td><strong>ariaDescribedBy</strong></td>
@@ -159,7 +159,7 @@ const { primaryActions } = Modal;
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Set HTML identifier of your portals container to improve the screen reader experience via ARIA Live Region.  The DOM of your Modal will move into the container with the identifier of `portalId`. Important: The portal container has to be *outside* the React app container.  In this example your `index.html` consists of two containers: `#root` is your React app container and `#modal-portal` is the container for the Modals. `<div id="root"></div>` `<div id="modal-portal"></div>` Here you just have to set `portalId="modal-portal"`.</td>
+        <td>Set HTML identifier of your portals container to improve the screen reader experience via ARIA Live Region.  The DOM of your Modal will move into the container with the identifier of `portalId`. Important: The portal container has to be *outside* the React app container.  In this example your `index.html` consists of two containers: `#root` is your React app container and `#modal-portal` is the container for the Modals. &lt;div id=&quot;root&quot;&gt;&lt;/div&gt; &lt;div id=&quot;modal-portal&quot;&gt;&lt;/div&gt; Here you just have to set `portalId=&quot;modal-portal&quot;`.</td>
       </tr>
     <tr>
         <td><strong>disableBodyScrollWhenOpen</strong></td>

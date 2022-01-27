@@ -40,7 +40,7 @@ This component implements the guidelines of:
       </tr>
     <tr>
         <td><strong>stopType</strong></td>
-        <td><code>"start" | "intermediate" | "destination" | "current"</code></td>
+        <td><code>&quot;start&quot; | &quot;intermediate&quot; | &quot;destination&quot; | &quot;current&quot;</code></td>
         <td>false</td>
         <td>start</td>
         <td></td>

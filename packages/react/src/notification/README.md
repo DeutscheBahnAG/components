@@ -62,14 +62,14 @@ import { Notification, NotificationSeverities } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>severity</strong></td>
-        <td><code>"informative" | "warning" | "error" | "success"</code></td>
+        <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;success&quot;</code></td>
         <td>false</td>
         <td></td>
         <td>the purpose of the notification, affects visual styling</td>
       </tr>
     <tr>
         <td><strong>onClose</strong></td>
-        <td><code>() => void</code></td>
+        <td><code>() =&gt; void</code></td>
         <td>false</td>
         <td>null</td>
         <td>close button click handler, required to display the close button</td>

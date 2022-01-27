@@ -42,14 +42,14 @@ import { Transportchip } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>product</strong></td>
-        <td><code>"ice" | "ic" | "ec" | "ferry" | "subway" | "suburban" | "airplane" | "intercitybus" | "tram" | "bus" | "re" | "rb" | "taxi" | "walking" | "carsharing" | "bikesharing"</code></td>
+        <td><code>&quot;ice&quot; | &quot;ic&quot; | &quot;ec&quot; | &quot;ferry&quot; | &quot;subway&quot; | &quot;suburban&quot; | &quot;airplane&quot; | &quot;intercitybus&quot; | &quot;tram&quot; | &quot;bus&quot; | &quot;re&quot; | &quot;rb&quot; | &quot;taxi&quot; | &quot;walking&quot; | &quot;carsharing&quot; | &quot;bikesharing&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td>The transport type (e.g. "sbahn")</td>
+        <td>The transport type (e.g. &quot;sbahn&quot;)</td>
       </tr>
     <tr>
         <td><strong>style</strong></td>
-        <td><code>"sbahn-mitteldeutschland" | "sbahn-berlin" | "sbahn-hamburg" | "sbahn-rheinmain" | "sbahn-rheinneckar" | "sbahn-stuttgart" | "sbahn-rheinruhrkoeln" | "sbahn-muenchen" | ... 11 more ... | "nordwestbahn"</code></td>
+        <td><code>&quot;sbahn-mitteldeutschland&quot; | &quot;sbahn-berlin&quot; | &quot;sbahn-hamburg&quot; | &quot;sbahn-rheinmain&quot; | &quot;sbahn-rheinneckar&quot; | &quot;sbahn-stuttgart&quot; | &quot;sbahn-rheinruhrkoeln&quot; | &quot;sbahn-muenchen&quot; | ... 11 more ... | &quot;nordwestbahn&quot;</code></td>
         <td>false</td>
         <td></td>
         <td>Use a local style to display line number</td>
@@ -59,14 +59,14 @@ import { Transportchip } from '@db-design/react';
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional link target (will create an `<a>`)</td>
+        <td>Optional link target (will create an &lt;a&gt;)</td>
       </tr>
     <tr>
         <td><strong>onClick</strong></td>
-        <td><code>() => void</code></td>
+        <td><code>() =&gt; void</code></td>
         <td>false</td>
         <td></td>
-        <td>Optional click handler (will create a `<button>`)</td>
+        <td>Optional click handler (will create a &lt;button&gt;)</td>
       </tr>
     <tr>
         <td><strong>zipCode</strong></td>

@@ -32,7 +32,7 @@ import { Layout } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"centered" | "left-aligned"</code></td>
+        <td><code>&quot;centered&quot; | &quot;left-aligned&quot;</code></td>
         <td>false</td>
         <td>centered</td>
         <td>The Layout variant</td>

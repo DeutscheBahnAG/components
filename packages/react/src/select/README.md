@@ -33,7 +33,7 @@
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"s" | "m" | "l" | "xl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>l</td>
         <td></td>

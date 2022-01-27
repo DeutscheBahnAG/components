@@ -27,7 +27,7 @@ import { Title } from '@db-design/react';
     <tbody>
       <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"s" | "m" | "l" | "xl" | "xxl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot;&gt;</code></td>
         <td>false</td>
         <td>xxl</td>
         <td></td>
@@ -48,7 +48,7 @@ import { Title } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"primary" | "secondary"</code></td>
+        <td><code>&quot;primary&quot; | &quot;secondary&quot;</code></td>
         <td>false</td>
         <td>primary</td>
         <td></td>

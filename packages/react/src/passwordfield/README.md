@@ -41,14 +41,14 @@ import { Passwordfield } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>type</strong></td>
-        <td><code>"number" | "textarea" | "text" | "password" | "email" | "tel" | "url" | "search"</code></td>
+        <td><code>&quot;number&quot; | &quot;textarea&quot; | &quot;text&quot; | &quot;password&quot; | &quot;email&quot; | &quot;tel&quot; | &quot;url&quot; | &quot;search&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td>Type of the `<input>` or define a `<textarea>`</td>
+        <td>Type of the &lt;input&gt; or define a &lt;textarea&gt;</td>
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"s" | "m" | "l" | "xl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td></td>
         <td>The size of the Textfield</td>
@@ -100,7 +100,7 @@ import { Passwordfield } from '@db-design/react';
         <td><code>number</code></td>
         <td>false</td>
         <td></td>
-        <td>Width in characters (equals `<input size="10">`)</td>
+        <td>Width in characters (equals `&lt;input size=&quot;10&quot;&gt;`)</td>
       </tr>
     <tr>
         <td><strong>disabled</strong></td>
@@ -111,7 +111,7 @@ import { Passwordfield } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>onChange</strong></td>
-        <td><code>FormEventHandler<HTMLTextAreaElement> | FormEventHandler<HTMLInputElement></code></td>
+        <td><code>FormEventHandler&lt;HTMLTextAreaElement&gt; | FormEventHandler&lt;HTMLInputElement&gt;</code></td>
         <td>false</td>
         <td></td>
         <td>Change handler</td>

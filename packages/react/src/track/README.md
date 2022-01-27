@@ -37,7 +37,7 @@ This component parses and formats the track information with typographic rules.
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"xs" | "s" | "m"></code></td>
+        <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot;&gt;</code></td>
         <td>false</td>
         <td>xs</td>
         <td></td>

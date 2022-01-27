@@ -112,7 +112,7 @@ This component implements the guidelines of:
       </tr>
     <tr>
         <td><strong>brand</strong></td>
-        <td><code>"DB" | "DB Netze" | "DB Schenker" | "DB Cargo"</code></td>
+        <td><code>&quot;DB&quot; | &quot;DB Netze&quot; | &quot;DB Schenker&quot; | &quot;DB Cargo&quot;</code></td>
         <td>false</td>
         <td>db</td>
         <td></td>
@@ -126,14 +126,14 @@ This component implements the guidelines of:
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"xs" | "s" | "m" | "l" | "xl" | "xxl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot;&gt;</code></td>
         <td>false</td>
         <td>m</td>
         <td></td>
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"auto" | "default" | "filled" | "white"</code></td>
+        <td><code>&quot;auto&quot; | &quot;default&quot; | &quot;filled&quot; | &quot;white&quot;</code></td>
         <td>false</td>
         <td>auto</td>
         <td></td>
@@ -147,7 +147,7 @@ This component implements the guidelines of:
       </tr>
     <tr>
         <td><strong>direction</strong></td>
-        <td><code>"horizontal" | "vertical" | "full-width"</code></td>
+        <td><code>&quot;horizontal&quot; | &quot;vertical&quot; | &quot;full-width&quot;</code></td>
         <td>false</td>
         <td>horizontal</td>
         <td></td>

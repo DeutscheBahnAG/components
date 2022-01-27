@@ -36,14 +36,14 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"xs" | "s" | "m" | "l" | "xl" | "xxl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot;&gt;</code></td>
         <td>false</td>
         <td>m</td>
         <td></td>
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"auto" | "default" | "filled" | "white"</code></td>
+        <td><code>&quot;auto&quot; | &quot;default&quot; | &quot;filled&quot; | &quot;white&quot;</code></td>
         <td>false</td>
         <td>auto</td>
         <td></td>

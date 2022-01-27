@@ -51,14 +51,14 @@ import { ActionAdd } from '@db-design/react-icons';
     <tbody>
       <tr>
         <td><strong>shape</strong></td>
-        <td><code>"default" | "square" | "round"</code></td>
+        <td><code>&quot;default&quot; | &quot;square&quot; | &quot;round&quot;</code></td>
         <td>false</td>
         <td>default</td>
         <td>the shape of the button</td>
       </tr>
     <tr>
         <td><strong>size</strong></td>
-        <td><code>ResponsiveType<"s" | "m" | "l" | "xl"></code></td>
+        <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>l</td>
         <td>the size of the button</td>
@@ -79,7 +79,7 @@ import { ActionAdd } from '@db-design/react-icons';
       </tr>
     <tr>
         <td><strong>type</strong></td>
-        <td><code>"link" | ButtonTypesType</code></td>
+        <td><code>&quot;link&quot; | ButtonTypesType</code></td>
         <td>false</td>
         <td>button</td>
         <td>the type of the button</td>
@@ -110,11 +110,11 @@ import { ActionAdd } from '@db-design/react-icons';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>optional icon (as `<svg>`)</td>
+        <td>optional icon (as `&lt;svg&gt;`)</td>
       </tr>
     <tr>
         <td><strong>iconPosition</strong></td>
-        <td><code>"before" | "after"</code></td>
+        <td><code>&quot;before&quot; | &quot;after&quot;</code></td>
         <td>false</td>
         <td>before</td>
         <td>the position of the icon</td>
@@ -135,7 +135,7 @@ import { ActionAdd } from '@db-design/react-icons';
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"primary" | "secondary" | "solid" | "hover-only"</code></td>
+        <td><code>&quot;primary&quot; | &quot;secondary&quot; | &quot;solid&quot; | &quot;hover-only&quot;</code></td>
         <td>false</td>
         <td>primary</td>
         <td>the appearance of the button</td>

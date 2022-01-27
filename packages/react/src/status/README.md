@@ -23,7 +23,7 @@
     <tbody>
       <tr>
         <td><strong>severity</strong></td>
-        <td><code>"informative" | "warning" | "error" | "fatal" | "success"</code></td>
+        <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;fatal&quot; | &quot;success&quot;</code></td>
         <td>false</td>
         <td>informative</td>
         <td>The purpose of the Status, affects visual styling</td>

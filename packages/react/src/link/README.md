@@ -77,7 +77,7 @@ import { Copy } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>type</strong></td>
-        <td><code>"link" | ButtonTypesType</code></td>
+        <td><code>&quot;link&quot; | ButtonTypesType</code></td>
         <td>false</td>
         <td>button</td>
         <td>the type of the link</td>
@@ -108,7 +108,7 @@ import { Copy } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td>optional icon (as `<svg>`)</td>
+        <td>optional icon (as `&lt;svg&gt;`)</td>
       </tr>
     <tr>
         <td><strong>loading</strong></td>
@@ -126,14 +126,14 @@ import { Copy } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>iconPosition</strong></td>
-        <td><code>"none" | "auto" | "before" | "after"</code></td>
+        <td><code>&quot;none&quot; | &quot;auto&quot; | &quot;before&quot; | &quot;after&quot;</code></td>
         <td>false</td>
         <td>auto</td>
         <td>the position of the icon</td>
       </tr>
     <tr>
         <td><strong>variant</strong></td>
-        <td><code>"primary" | "secondary" | "mixed"</code></td>
+        <td><code>&quot;primary&quot; | &quot;secondary&quot; | &quot;mixed&quot;</code></td>
         <td>false</td>
         <td>primary</td>
         <td>the appearance of the Link</td>

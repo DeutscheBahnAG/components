@@ -43,21 +43,21 @@ import { Container } from '@db-design/react';
       </tr>
     <tr>
         <td><strong>width</strong></td>
-        <td><code>ResponsiveType<"text" | "content" | "extended" | "full"></code></td>
+        <td><code>ResponsiveType&lt;&quot;text&quot; | &quot;content&quot; | &quot;extended&quot; | &quot;full&quot;&gt;</code></td>
         <td>false</td>
         <td>full</td>
         <td>The width of the Container</td>
       </tr>
     <tr>
         <td><strong>align</strong></td>
-        <td><code>ResponsiveType<"left" | "center" | "right"></code></td>
+        <td><code>ResponsiveType&lt;&quot;left&quot; | &quot;center&quot; | &quot;right&quot;&gt;</code></td>
         <td>false</td>
         <td></td>
         <td>The alignment of the Container</td>
       </tr>
     <tr>
         <td><strong>filled</strong></td>
-        <td><code>ResponsiveType<boolean></code></td>
+        <td><code>ResponsiveType&lt;boolean&gt;</code></td>
         <td>false</td>
         <td>false</td>
         <td>Adds a primary background color for the Container</td>
