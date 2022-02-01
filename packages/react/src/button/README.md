@@ -464,10 +464,9 @@ const LoadingButtonExample = () => {
     return new Promise((resolve) => setTimeout(() => resolve(), 2000));
   };
 
-  const onClick = async () => {
+  const onClick = () => {
     setIsLoading(true);
-    await slowAction();
-    setIsLoading(false);
+    slowAction().then(() => setIsLoading(false));
   };
 
   return (
