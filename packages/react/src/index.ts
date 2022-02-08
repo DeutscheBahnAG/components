@@ -24,4 +24,6 @@ export { default as Transportchip } from './transportchip';
 export { default as Triptime } from './triptime';
 export { default as Triptimespan } from './triptimespan';
 export { default as Radiobutton } from './radiobutton';
+export { default as Accordion } from './accordion';
+export { default as Accordionitem } from './accordionitem';
 export { default as List } from './list';

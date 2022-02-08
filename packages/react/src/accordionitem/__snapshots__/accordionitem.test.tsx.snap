@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordionitem /> should render 1`] = `
+<div>
+  <details
+    class="db-accordionitem my-accordionitem"
+  >
+    <summary>
+      <svg
+        class="db-accordionitem__arrow"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M6 1.5l6 6-6 6"
+          fill="none"
+          fill-rule="evenodd"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+      <span
+        class="db-title db-title--size-m db-title--light db-accordionitem__title"
+      >
+        Accordionitem title test
+      </span>
+    </summary>
+    Accordionitem content test
+  </details>
+</div>
+`;

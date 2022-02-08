@@ -1,0 +1,54 @@
+$db-accordionitem--padding-x: 0;
+$db-accordionitem--padding-y: 0;
+$db-accordionitem--icon-spacing: db-spacing('sm');
+$db-accordionitem--icon-size: 16px;
+$db-accordionitem--indent: $db-accordionitem--padding-x + $db-accordionitem--icon-size +
+  $db-accordionitem--icon-spacing;
+
+.db-accordionitem {
+  padding-left: $db-accordionitem--indent;
+
+  summary {
+    @include db-secondary-link($target: '.db-accordionitem__title');
+    cursor: default;
+    padding: $db-accordionitem--padding-y $db-accordionitem--padding-x;
+    position: relative;
+    transition: all 0.15ms;
+    user-select: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  &__arrow {
+    content: '';
+    display: inline-block;
+    height: $db-accordionitem--icon-size;
+    margin-left: #{-$db-accordionitem--icon-size - $db-accordionitem--icon-spacing};
+    margin-top: #{$db-accordionitem--icon-size * -0.5};
+    position: absolute;
+    top: 50%;
+    transition: all 0.07s;
+    width: $db-accordionitem--icon-size;
+  }
+
+  &[open] &__arrow {
+    transform: rotate(-90deg);
+  }
+
+  &[open] summary {
+    margin-bottom: db-spacing('xs');
+  }
+}
+
+.db-accordionitem__title {
+  display: inline-block !important; // reset display: contents; inline-block needed for anything but text
+  font-weight: 300 !important;
+  text-decoration: none !important;
+
+  > .db-copy,
+  > .db-title {
+    color: inherit !important; // inherit hover/active colors
+  }
+}

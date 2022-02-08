@@ -15,6 +15,8 @@ module.exports = [
       {
         name: 'Interactive',
         components: web([
+          'accordion',
+          'accordionitem',
           'button',
           'link',
           'anchor',

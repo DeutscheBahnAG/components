@@ -173,3 +173,24 @@ import { Checkbox, Copy } from '@db-design/react';
   <Copy>S-Bahn</Copy>
 </List>;
 ```
+
+## Examples
+
+### Accordion List
+
+```jsx
+import { Accordion } from '@db-design/react';
+<List>
+  <Accordion title="Accordion item">Content</Accordion>
+</List>;
+```
+
+Multiple items:
+
+```jsx
+import { Accordion } from '@db-design/react';
+<List>
+  <Accordion title="ICE">High-speed train</Accordion>
+  <Accordion title="S-Bahn">Suburban train</Accordion>
+</List>;
+```
