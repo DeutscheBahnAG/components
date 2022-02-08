@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> should render 1`] = `
+<div>
+  <ol
+    class="db-list db-list--outer-lines my-list"
+  >
+    <li
+      class="db-pv-m t:db-pv-ml"
+    >
+      List test
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`<List /> should use item renderer 1`] = `
+<div>
+  <ul
+    class="db-list"
+  >
+    <span>
+      “
+      <b>
+        List content test
+      </b>
+      ”
+    </span>
+  </ul>
+</div>
+`;

@@ -1,0 +1,30 @@
+.db-list {
+  $visual-fix: 2px;
+  margin-left: -$visual-fix;
+  margin-right: -$visual-fix;
+  padding: 0 !important; // avoid .richtext > ol { padding: … } etc.
+
+  > * {
+    list-style: none;
+    margin: 0 !important; // avoid .richtext li { margin: … } etc.
+    padding-left: $visual-fix;
+    padding-right: $visual-fix;
+  }
+
+  > :not(:first-child) {
+    border-top: 1px solid var(--db-border-color);
+  }
+
+  &:not(.db-list--outer-lines) > :first-child {
+    padding-top: 0;
+  }
+
+  &:not(.db-list--outer-lines) > :last-child {
+    padding-bottom: 0;
+  }
+}
+
+.db-list--outer-lines {
+  border-bottom: 1px solid var(--db-border-color);
+  border-top: 1px solid var(--db-border-color);
+}

@@ -67,6 +67,7 @@ module.exports = [
       {
         name: 'Layout and grid',
         components: web([
+          'list',
           'layout',
           'container',
         ]),
