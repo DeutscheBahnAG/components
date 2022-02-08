@@ -1,0 +1,49 @@
+$db-margins: (none auto xs s sm m ml l xl xxl xxxl);
+
+@mixin db-margin-classes($size) {
+  $margin: if($size == auto, auto, db-spacing($size));
+  &-m-#{$size} {
+    margin: $margin !important;
+  }
+  &-mb-#{$size},
+  &-mv-#{$size} {
+    margin-bottom: $margin !important;
+  }
+  &-ml-#{$size},
+  &-mh-#{$size} {
+    margin-left: $margin !important;
+  }
+  &-mr-#{$size},
+  &-mh-#{$size} {
+    margin-right: $margin !important;
+  }
+  &-mt-#{$size},
+  &-mv-#{$size} {
+    margin-top: $margin !important;
+  }
+}
+
+@each $size in $db-margins {
+  // stylelint-disable-next-line selector-class-pattern
+  .db {
+    @include db-margin-classes($size);
+  }
+}
+
+@include tablet {
+  @each $size in $db-margins {
+    // stylelint-disable-next-line selector-class-pattern
+    .t\:db {
+      @include db-margin-classes($size);
+    }
+  }
+}
+
+@include desktop {
+  @each $size in $db-margins {
+    // stylelint-disable-next-line selector-class-pattern
+    .d\:db {
+      @include db-margin-classes($size);
+    }
+  }
+}

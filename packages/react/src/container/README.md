@@ -70,11 +70,159 @@ import { Container } from '@db-design/react';
         <td></td>
         <td><p>Additional class names you want to add to the Container</p></td>
       </tr>
+      <tr>
+        <td><strong>verticalMargin</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Vertical Margin</p></td>
+      </tr>
+      <tr>
+        <td><strong>horizontalMargin</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Horizontal Margin</p></td>
+      </tr>
+      <tr>
+        <td><strong>marginTop</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Margin top</p></td>
+      </tr>
+      <tr>
+        <td><strong>marginRight</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Margin right</p></td>
+      </tr>
+      <tr>
+        <td><strong>marginBottom</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Margin bottom</p></td>
+      </tr>
+      <tr>
+        <td><strong>marginLeft</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;auto&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Margin left</p></td>
+      </tr>
+      <tr>
+        <td><strong>verticalPadding</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Vertical padding</p></td>
+      </tr>
+      <tr>
+        <td><strong>horizontalPadding</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Horizontal padding</p></td>
+      </tr>
+      <tr>
+        <td><strong>paddingTop</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Padding top</p></td>
+      </tr>
+      <tr>
+        <td><strong>paddingRight</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Padding right</p></td>
+      </tr>
+      <tr>
+        <td><strong>paddingBottom</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Padding bottom</p></td>
+      </tr>
+      <tr>
+        <td><strong>paddingLeft</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;m&quot; | &quot;ml&quot; | &quot;l&quot; | &quot;xl&quot; | &quot;xxl&quot; | &quot;xxxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Padding left</p></td>
+      </tr>
     </tbody>
   </table>
 </details>
 
 <!-- END props-table -->
+
+## Padding
+
+### Horziontal and vertical padding
+
+```jsx
+import { Theme } from '@db-design/react';
+<Theme theme="DB_LIGHT">
+  <Container filled width="content" verticalPadding="s" horizontalPadding="l">
+    Content
+  </Container>
+</Theme>;
+```
+
+### Other paddings
+
+`paddingTop`, `paddingRight`, `paddingBottom` and `paddingLeft` can be set individually:
+
+```jsx
+import { Theme } from '@db-design/react';
+<Theme theme="DB_LIGHT">
+  <Container filled width="content" paddingTop="xxxl" paddingLeft="s">
+    Content
+  </Container>
+</Theme>;
+```
+
+### Responsive padding
+
+```jsx
+import { Theme } from '@db-design/react';
+<Theme theme="DB_LIGHT">
+  <Container
+    filled
+    width="content"
+    verticalPadding={{ mobile: 'xs', tablet: 's', desktop: 'm' }}
+    horizontalPadding={{ mobile: 'm', tablet: 'l' }}
+  >
+    Content
+  </Container>
+</Theme>;
+```
+
+## Margins
+
+Work exactly like paddings but addionally allow `auto` as value. Usually aligend (`variant`) Containers are are better choice over using `auto`.
+
+```jsx
+import { Theme } from '@db-design/react';
+<Theme theme="DB_LIGHT">
+  <Container filled width="content" verticalPadding="s" horizontalPadding="l">
+    Content
+  </Container>
+  <Container
+    filled
+    width="content"
+    verticalPadding="s"
+    horizontalPadding="l"
+    marginTop="m"
+  >
+    Content
+  </Container>
+</Theme>;
+```
 
 ## Centered layout
 
@@ -267,8 +415,14 @@ import { Logo, Pulse, Title, Copy } from '@db-design/react';
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container filled width="full" align="center">
-  <Theme theme="DB_ALTERNATE">
-    <Container filled width="content" align="center">
+  <Theme theme="DB_LIGHT_ALTERNATE">
+    <Container
+      filled
+      horizontalPadding="l"
+      verticalPadding="m"
+      width="content"
+      align="center"
+    >
       <Logo />
       <Pulse>
         <Title>Headline</Title>
@@ -280,10 +434,16 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
 
 ```jsx
 import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
-<Theme theme="DB_ALTERNATE">
-  <Container filled width="full" align="center">
-    <Theme theme="DB">
-      <Container filled width="content" align="center">
+<Theme theme="DB_LIGHT_ALTERNATE">
+  <Container filled verticalPadding="l" width="full" align="center">
+    <Theme theme="DB_LIGHT">
+      <Container
+        filled
+        horizontalPadding="l"
+        verticalPadding="m"
+        width="content"
+        align="center"
+      >
         <Logo />
         <Pulse>
           <Title>Headline</Title>

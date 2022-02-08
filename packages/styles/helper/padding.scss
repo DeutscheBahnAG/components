@@ -1,0 +1,49 @@
+$db-paddings: (none xs s sm m ml l xl xxl xxxl);
+
+@mixin db-padding-classes($size) {
+  $padding: db-spacing($size);
+  &-p-#{$size} {
+    padding: $padding !important;
+  }
+  &-pb-#{$size},
+  &-pv-#{$size} {
+    padding-bottom: $padding !important;
+  }
+  &-pl-#{$size},
+  &-ph-#{$size} {
+    padding-left: $padding !important;
+  }
+  &-pr-#{$size},
+  &-ph-#{$size} {
+    padding-right: $padding !important;
+  }
+  &-pt-#{$size},
+  &-pv-#{$size} {
+    padding-top: $padding !important;
+  }
+}
+
+@each $size in $db-paddings {
+  // stylelint-disable-next-line selector-class-pattern
+  .db {
+    @include db-padding-classes($size);
+  }
+}
+
+@include tablet {
+  @each $size in $db-paddings {
+    // stylelint-disable-next-line selector-class-pattern
+    .t\:db {
+      @include db-padding-classes($size);
+    }
+  }
+}
+
+@include desktop {
+  @each $size in $db-paddings {
+    // stylelint-disable-next-line selector-class-pattern
+    .d\:db {
+      @include db-padding-classes($size);
+    }
+  }
+}

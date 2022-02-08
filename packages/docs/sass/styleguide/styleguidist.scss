@@ -277,11 +277,6 @@ main.rsg--content-3 {
   margin: 0 auto 0 db-spacing('xxxl');
   padding: 0;
 
-  .db-container--filled {
-    padding-bottom: db-spacing('m');
-    padding-top: db-spacing('m');
-  }
-
   .db-container:not(.db-container--filled):not(.t\:db-container--filled):not(.d\:db-container--filled) {
     background: db-color('turquoise300', 0.1);
     border: 1px db-color('turquoise300') dashed;
