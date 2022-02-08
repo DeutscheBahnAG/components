@@ -10,6 +10,7 @@ import { Title } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -32,21 +33,21 @@ import { Title } from '@db-design/react';
         <td>xxl</td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>light</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot;</code></td>
         <td>false</td>

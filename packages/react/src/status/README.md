@@ -6,6 +6,7 @@
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -26,18 +27,16 @@
         <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;fatal&quot; | &quot;success&quot;</code></td>
         <td>false</td>
         <td>informative</td>
-        <td><p>The purpose of the Status, affects visual styling</p>
-</td>
+        <td><p>The purpose of the Status, affects visual styling</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>children</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>The text to be displayed</p>
-</td>
+        <td><p>The text to be displayed</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>

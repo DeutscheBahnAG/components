@@ -6,6 +6,7 @@ This component parses and formats the track information with typographic rules.
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -28,21 +29,21 @@ This component parses and formats the track information with typographic rules.
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>size</strong></td>
         <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot;&gt;</code></td>
         <td>false</td>
         <td>xs</td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>labels</strong></td>
         <td><code>{ platform: string; platformAbbreviation: string; }</code></td>
         <td>false</td>

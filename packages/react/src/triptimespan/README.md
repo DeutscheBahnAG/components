@@ -9,6 +9,7 @@ This component implements the guidelines of:
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -31,28 +32,28 @@ This component implements the guidelines of:
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>predictedDepartureDateTime</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>arrivalDateTime</strong></td>
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>predictedArrivalDateTime</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>

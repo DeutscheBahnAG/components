@@ -14,6 +14,7 @@ Hover over ‘My section’ to see the Anchor appearing:
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -34,24 +35,21 @@ Hover over ‘My section’ to see the Anchor appearing:
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Optional class name</p>
-</td>
+        <td><p>Optional class name</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>id</strong></td>
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
-        <td><p>ID to link to</p>
-</td>
+        <td><p>ID to link to</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>labels</strong></td>
         <td><code>{ button: string; notification: string; }</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Override default label</p>
-</td>
+        <td><p>Override default label</p></td>
       </tr>
     </tbody>
   </table>

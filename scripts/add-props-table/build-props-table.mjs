@@ -27,9 +27,9 @@ ${
       </tr>
     </thead>
     <tbody>
-  ${props
+${props
       .map(
-        (prop) => `    <tr>
+        (prop) => `      <tr>
         <td><strong>${prop.name}</strong></td>
         <td><code>${escapeHtml(prop.type.name)}</code></td>
         <td>${prop.required}</td>
@@ -38,7 +38,7 @@ ${
           ? prop.defaultValue.value
           : ''
         }</td>
-        <td>${marked.parse(prop.description, { sanitize: true, silent: true })}</td>
+        <td>${marked.parse(prop.description, { sanitize: true, silent: true }).trim()}</td>
       </tr>`
     )
       .join('\n')}

@@ -34,6 +34,7 @@ import { ActionAdd } from '@db-design/react-icons';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -54,104 +55,91 @@ import { ActionAdd } from '@db-design/react-icons';
         <td><code>&quot;default&quot; | &quot;square&quot; | &quot;round&quot;</code></td>
         <td>false</td>
         <td>default</td>
-        <td><p>the shape of the button</p>
-</td>
+        <td><p>the shape of the button</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>size</strong></td>
         <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>l</td>
-        <td><p>the size of the button</p>
-</td>
+        <td><p>the size of the button</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>disabled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>when true, button will be disabled</p>
-</td>
+        <td><p>when true, button will be disabled</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>href</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>turns the Button into a regular link (anchor)</p>
-</td>
+        <td><p>turns the Button into a regular link (anchor)</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>type</strong></td>
         <td><code>&quot;link&quot; | ButtonTypesType</code></td>
         <td>false</td>
         <td>button</td>
-        <td><p>the type of the button</p>
-</td>
+        <td><p>the type of the button</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>additional class names you want to add to the button</p>
-</td>
+        <td><p>additional class names you want to add to the button</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>style</strong></td>
         <td><code>CSSProperties</code></td>
         <td>false</td>
         <td>{}</td>
-        <td><p>inline styles</p>
-</td>
+        <td><p>inline styles</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>fullWidth</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>when true, button will take up all available width</p>
-</td>
+        <td><p>when true, button will take up all available width</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>icon</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>optional icon (as <code>&lt;svg&gt;</code>)</p>
-</td>
+        <td><p>optional icon (as <code>&lt;svg&gt;</code>)</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>iconPosition</strong></td>
         <td><code>&quot;before&quot; | &quot;after&quot;</code></td>
         <td>false</td>
         <td>before</td>
-        <td><p>the position of the icon</p>
-</td>
+        <td><p>the position of the icon</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>loading</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>whether the loading state is enabled</p>
-</td>
+        <td><p>whether the loading state is enabled</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>loadingLabel</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td>Wird geladen …</td>
-        <td><p>a11y label for the button while in loading state</p>
-</td>
+        <td><p>a11y label for the button while in loading state</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot; | &quot;solid&quot; | &quot;hover-only&quot;</code></td>
         <td>false</td>
         <td>primary</td>
-        <td><p>the appearance of the button</p>
-</td>
+        <td><p>the appearance of the button</p></td>
       </tr>
     </tbody>
   </table>

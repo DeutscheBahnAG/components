@@ -2,6 +2,7 @@
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -24,28 +25,28 @@
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>value</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>size</strong></td>
         <td><code>ResponsiveType&lt;&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
         <td>l</td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>disabled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>options</strong></td>
         <td><code>{ label: ReactNode; value: string; disabled: boolean; }[]</code></td>
         <td>false</td>

@@ -13,6 +13,7 @@ const { primaryActions } = Modal;
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -33,119 +34,105 @@ const { primaryActions } = Modal;
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Sets the top title of the Modal dialog</p>
-</td>
+        <td><p>Sets the top title of the Modal dialog</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>primaryButton</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Sets the primary button. Requires a Button component and overrides the variant to &#39;primary&#39;</p>
-</td>
+        <td><p>Sets the primary button. Requires a Button component and overrides the variant to &#39;primary&#39;</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>secondaryButton</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Sets the secondary button. Requires a Button component</p>
-</td>
+        <td><p>Sets the secondary button. Requires a Button component</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>enableCloseButton</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>true</td>
-        <td><p>Enables general close function via icon, outer click and escape key</p>
-</td>
+        <td><p>Enables general close function via icon, outer click and escape key</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>closeText</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td>Close the dialogue</td>
-        <td><p>Sets the ARIA label text for the close icon</p>
-</td>
+        <td><p>Sets the ARIA label text for the close icon</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>onClose</strong></td>
         <td><code>(event: MouseEvent&lt;Element, MouseEvent&gt; | KeyboardEvent&lt;Element&gt;) =&gt; void</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Set callback function to be executed, when the Modal closes.</p>
-</td>
+        <td><p>Set callback function to be executed, when the Modal closes.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>isOpen</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>Opens the Modal dialog</p>
-</td>
+        <td><p>Opens the Modal dialog</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>duration</strong></td>
         <td><code>number</code></td>
         <td>false</td>
         <td>400</td>
         <td><p>Sets the duration of open and close transitions.
-Note: Keep this value in sync to your CSS transitions.</p>
-</td>
+Note: Keep this value in sync to your CSS transitions.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>kind</strong></td>
         <td><code>&quot;default&quot; | &quot;alert&quot;</code></td>
         <td>false</td>
         <td>default</td>
         <td><p>Set the kind of Modal dialogue.
-Note: This affects the accessibility behaviour of the dialogue.</p>
-</td>
+Note: This affects the accessibility behaviour of the dialogue.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>size</strong></td>
         <td><code>&quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;auto&quot;</code></td>
         <td>false</td>
         <td>m</td>
         <td><p>Limit width of dialog to small, medium or large size.
-When set to <code>auto</code>, the dialogs width depends on its content width.</p>
-</td>
+When set to <code>auto</code>, the dialogs width depends on its content width.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>fullActionSize</strong></td>
         <td><code>&quot;none&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot;</code></td>
         <td>false</td>
         <td>none</td>
         <td><p>Set action buttons to full width for viewport widths up to the given size.
-Note: The size relates to the viewport size and not to the given dialog size.</p>
-</td>
+Note: The size relates to the viewport size and not to the given dialog size.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>centerActions</strong></td>
         <td><code>&quot;none&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot;</code></td>
         <td>false</td>
         <td>none</td>
         <td><p>Center action buttons for viewport widths up to the given size.
-Note: The size relates to the viewport size and not to the given dialog size.</p>
-</td>
+Note: The size relates to the viewport size and not to the given dialog size.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>overlayClassName</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Append custom css classes to the Modal container</p>
-</td>
+        <td><p>Append custom css classes to the Modal container</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Append custom css classes to the Modal dialogue</p>
-</td>
+        <td><p>Append custom css classes to the Modal dialogue</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>ariaLabelledBy</strong></td>
         <td><code>string</code></td>
         <td>false</td>
@@ -153,20 +140,18 @@ Note: The size relates to the viewport size and not to the given dialog size.</p
         <td><p>Identifier of the HTML element, which contains the label of the Modal.
 If you don&#39;t use the <code>title</code> property it is strongly recommended to set <code>ariaLabelledBy</code> to refer to an element within the children.
 If you use the <code>title</code> property you don&#39;t have to use <code>ariaLabelledBy</code> as it contains <code>modal-title</code> by default, which refers to the <code>title</code>.
-If you use the <code>title</code> property and you want to change the <code>modal-title</code> identifier you can do so by <code>ariaLabelledBy</code>.</p>
-</td>
+If you use the <code>title</code> property and you want to change the <code>modal-title</code> identifier you can do so by <code>ariaLabelledBy</code>.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>ariaDescribedBy</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td><p>Identifier of the HTML element, which contains the description of the Modal.
 This feature is recommended for accessibility purposes like screen readers.
-Be sure to use the set <code>ariaDescribedBy</code> as an <code>id</code> in one of your Modal content tags.</p>
-</td>
+Be sure to use the set <code>ariaDescribedBy</code> as an <code>id</code> in one of your Modal content tags.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>autoFocus</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
@@ -174,19 +159,17 @@ Be sure to use the set <code>ariaDescribedBy</code> as an <code>id</code> in one
         <td><p>Switches auto focus on.
 The Modal itself, the primary or secondary buttons will get focused.
 You can also use the attribute <code>data-autofocus</code> for an input field inside the dialog’s children to focus that element.
-Note: Be aware to focus one single element only.</p>
-</td>
+Note: Be aware to focus one single element only.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>appId</strong></td>
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
         <td><p>Set HTML identifier of your React app container for accessibility purposes.
-The whole React app will be hidden from screen readers except the Modal.</p>
-</td>
+The whole React app will be hidden from screen readers except the Modal.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>portalId</strong></td>
         <td><code>string</code></td>
         <td>false</td>
@@ -198,33 +181,29 @@ Important: The portal container has to be <em>outside</em> the React app contain
 app container and <code>#modal-portal</code> is the container for the Modals.</p>
 <p>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;modal-portal&quot;&gt;&lt;/div&gt;
-Here you just have to set <code>portalId=&amp;quot;modal-portal&amp;quot;</code>.</p>
-</td>
+Here you just have to set <code>portalId=&amp;quot;modal-portal&amp;quot;</code>.</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>disableBodyScrollWhenOpen</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>true</td>
         <td><p>This will apply styles to the <code>html</code> and <code>body</code> tags that disable
-scrolling on the page in the background when the modal is open</p>
-</td>
+scrolling on the page in the background when the modal is open</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>children</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Main content of the Modal dialog</p>
-</td>
+        <td><p>Main content of the Modal dialog</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>footer</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Footer content of the Modal dialog (below buttons; legal stuff etc,.)</p>
-</td>
+        <td><p>Footer content of the Modal dialog (below buttons; legal stuff etc,.)</p></td>
       </tr>
     </tbody>
   </table>

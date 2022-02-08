@@ -19,6 +19,7 @@ import { Container } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -39,40 +40,35 @@ import { Container } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Content of the Container</p>
-</td>
+        <td><p>Content of the Container</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>width</strong></td>
         <td><code>ResponsiveType&lt;&quot;text&quot; | &quot;content&quot; | &quot;extended&quot; | &quot;full&quot;&gt;</code></td>
         <td>false</td>
         <td>full</td>
-        <td><p>The width of the Container</p>
-</td>
+        <td><p>The width of the Container</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>align</strong></td>
         <td><code>ResponsiveType&lt;&quot;left&quot; | &quot;center&quot; | &quot;right&quot;&gt;</code></td>
         <td>false</td>
         <td></td>
-        <td><p>The alignment of the Container</p>
-</td>
+        <td><p>The alignment of the Container</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>filled</strong></td>
         <td><code>ResponsiveType&lt;boolean&gt;</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>Adds a primary background color for the Container</p>
-</td>
+        <td><p>Adds a primary background color for the Container</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Additional class names you want to add to the Container</p>
-</td>
+        <td><p>Additional class names you want to add to the Container</p></td>
       </tr>
     </tbody>
   </table>

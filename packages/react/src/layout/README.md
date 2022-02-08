@@ -8,6 +8,7 @@ import { Layout } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -28,24 +29,21 @@ import { Layout } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Content</p>
-</td>
+        <td><p>Content</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;centered&quot; | &quot;left-aligned&quot;</code></td>
         <td>false</td>
         <td>centered</td>
-        <td><p>The Layout variant</p>
-</td>
+        <td><p>The Layout variant</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Additional class names you want to add to the Layout</p>
-</td>
+        <td><p>Additional class names you want to add to the Layout</p></td>
       </tr>
     </tbody>
   </table>

@@ -32,6 +32,7 @@ import { Copy } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -52,101 +53,91 @@ import { Copy } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>content rendered inside the Link, can be text or any element</p>
-</td>
+        <td><p>content rendered inside the Link, can be text or any element</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>href</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>turns the Link into a regular link (anchor)</p>
-</td>
+        <td><p>turns the Link into a regular link (anchor)</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>disabled</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>when true, Link will be disabled</p>
-</td>
+        <td><p>when true, Link will be disabled</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>download</strong></td>
         <td><code>any</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>when true the browser will try to download the target</p>
-</td>
+        <td><p>when true the browser will try to download the target</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>type</strong></td>
         <td><code>&quot;link&quot; | ButtonTypesType</code></td>
         <td>false</td>
         <td>button</td>
-        <td><p>the type of the link</p>
-</td>
+        <td><p>the type of the link</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>className</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
-        <td><p>additional class names you want to add to the Link</p>
-</td>
+        <td><p>additional class names you want to add to the Link</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>style</strong></td>
         <td><code>CSSProperties</code></td>
         <td>false</td>
         <td>{}</td>
-        <td><p>inline styles</p>
-</td>
+        <td><p>inline styles</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>fullWidth</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>icon</strong></td>
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>optional icon (as <code>&lt;svg&gt;</code>)</p>
-</td>
+        <td><p>optional icon (as <code>&lt;svg&gt;</code>)</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>loading</strong></td>
         <td><code>boolean</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>loadingLabel</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>iconPosition</strong></td>
         <td><code>&quot;none&quot; | &quot;auto&quot; | &quot;before&quot; | &quot;after&quot;</code></td>
         <td>false</td>
         <td>auto</td>
-        <td><p>the position of the icon</p>
-</td>
+        <td><p>the position of the icon</p></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot; | &quot;mixed&quot;</code></td>
         <td>false</td>
         <td>primary</td>
-        <td><p>the appearance of the Link</p>
-</td>
+        <td><p>the appearance of the Link</p></td>
       </tr>
     </tbody>
   </table>

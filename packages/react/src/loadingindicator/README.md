@@ -10,6 +10,7 @@ import { Loadingindicator } from '@db-design/react';
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
+
 ## Props
 
 <details>
@@ -32,7 +33,7 @@ import { Loadingindicator } from '@db-design/react';
         <td></td>
         <td></td>
       </tr>
-    <tr>
+      <tr>
         <td><strong>size</strong></td>
         <td><code>ResponsiveType&lt;&quot;xs&quot; | &quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;xl&quot;&gt;</code></td>
         <td>false</td>
