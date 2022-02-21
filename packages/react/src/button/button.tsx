@@ -57,19 +57,19 @@ type CommonProps<NativeElement extends HTMLButtonElement | HTMLAnchorElement> = 
   variant?: ButtonVariantsType;
 };
 
-interface ButtonElementProps extends Omit<CommonProps<HTMLButtonElement>, 'href'> {
+export interface ButtonElementProps extends Omit<CommonProps<HTMLButtonElement>, 'href'> {
   /** the type of the button */
   type?: ButtonTypesType;
 }
 
-interface AnchorElementProps extends CommonProps<HTMLAnchorElement> {
+export interface AnchorElementProps extends CommonProps<HTMLAnchorElement> {
   /** the type of the button */
   type?: LinkTypeType;
   /** turns the Button into a regular link (anchor) */
   href?: string;
 }
 
-type ButtonProps = AnchorElementProps | ButtonElementProps;
+export type ButtonProps = AnchorElementProps | ButtonElementProps;
 
 const loadingIndicatorSizeMap: Record<ButtonSizesType, LoadingIndicatorSizesType> = {
   xl: 'm',
