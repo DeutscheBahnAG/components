@@ -9,16 +9,19 @@ export interface AccordionitemProps {
   children: React.ReactNode;
   /** Additional class names you want to add to the component */
   className?: string;
+  /** Click on the title to open/close the Accordionitem */
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
 const Accordionitem: React.FC<AccordionitemProps> = ({
   title,
   children,
   className,
+  onClick,
   ...otherProps
 }) => (
   <details className={clsx('db-accordionitem', className)} {...otherProps}>
-    <summary>
+    <summary onClick={onClick}>
       <svg className="db-accordionitem__arrow" viewBox="0 0 16 16">
         <path
           stroke="currentColor"

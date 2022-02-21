@@ -52,6 +52,13 @@ import { Copy } from '@db-design/react';
         <td></td>
         <td><p>Additional class names you want to add to the component</p></td>
       </tr>
+      <tr>
+        <td><strong>onClick</strong></td>
+        <td><code>(event: MouseEvent&lt;HTMLElement, MouseEvent&gt;) =&gt; void</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Click on the title to open/close the Accordionitem</p></td>
+      </tr>
     </tbody>
   </table>
 </details>
@@ -123,4 +130,14 @@ import { Copy } from '@db-design/react';
     <Copy>Some more information</Copy>
   </p>
 </Accordionitem>;
+```
+
+## Click events
+
+Clicks on the title (= open/close) can be tracked:
+
+```jsx
+<Accordionitem title="Click me" onClick={() => alert('Clicked!')}>
+  Content
+</Accordionitem>
 ```
