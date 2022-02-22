@@ -13,32 +13,32 @@ export interface AccordionitemProps {
   onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
-const Accordionitem: React.FC<AccordionitemProps> = ({
-  title,
-  children,
-  className,
-  onClick,
-  ...otherProps
-}) => (
-  <details className={clsx('db-accordionitem', className)} {...otherProps}>
-    <summary onClick={onClick}>
-      <svg className="db-accordionitem__arrow" viewBox="0 0 16 16">
-        <path
-          stroke="currentColor"
-          strokeWidth="2"
-          d="M6 1.5l6 6-6 6"
-          fill="none"
-          fillRule="evenodd"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <Title size="m" light className="db-accordionitem__title">
-        {title}
-      </Title>
-    </summary>
-    {children}
-  </details>
+type AccordionitemComponent = React.ForwardRefExoticComponent<
+  AccordionitemProps & React.RefAttributes<HTMLDetailsElement>
+>;
+
+const Accordionitem: AccordionitemComponent = React.forwardRef(
+  ({ title, children, className, onClick, ...otherProps }, ref) => (
+    <details ref={ref} className={clsx('db-accordionitem', className)} {...otherProps}>
+      <summary onClick={onClick}>
+        <svg className="db-accordionitem__arrow" viewBox="0 0 16 16">
+          <path
+            stroke="currentColor"
+            strokeWidth="2"
+            d="M6 1.5l6 6-6 6"
+            fill="none"
+            fillRule="evenodd"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <Title size="m" light className="db-accordionitem__title">
+          {title}
+        </Title>
+      </summary>
+      {children}
+    </details>
+  )
 );
 
 Accordionitem.displayName = 'Accordionitem';

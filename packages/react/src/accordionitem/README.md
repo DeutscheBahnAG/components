@@ -41,7 +41,7 @@ import { Copy } from '@db-design/react';
       <tr>
         <td><strong>children</strong></td>
         <td><code>ReactNode</code></td>
-        <td>false</td>
+        <td>true</td>
         <td></td>
         <td><p>Content</p></td>
       </tr>
