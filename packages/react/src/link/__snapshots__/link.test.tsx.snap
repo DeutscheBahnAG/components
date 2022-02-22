@@ -27,7 +27,7 @@ exports[`Link Component should render a custom icon 1`] = `
     <svg
       class="db-icon"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -61,7 +61,7 @@ exports[`Link Component should render a link 1`] = `
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -92,7 +92,7 @@ exports[`Link Component should render a link if both href and onClick are define
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -229,7 +229,7 @@ exports[`Link Component should render a the icon on the left side 1`] = `
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -263,7 +263,7 @@ exports[`Link Component should render a the icon on the right side 1`] = `
     <svg
       class="db-icon"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -291,7 +291,7 @@ exports[`Link Component should render an download link anchor when \`href\` is s
     <svg
       class="db-icon"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -325,7 +325,7 @@ exports[`Link Component should render an external link anchor when \`href\` star
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -356,7 +356,7 @@ exports[`Link Component should render an external link anchor when \`href\` star
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -387,7 +387,7 @@ exports[`Link Component should render an internal link anchor when \`href\` is s
     <svg
       class="db-link__icon-arrow"
       height="24"
-      role="img"
+      role="presentation"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >

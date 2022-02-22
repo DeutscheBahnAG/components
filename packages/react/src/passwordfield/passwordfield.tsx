@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { ButtonHTMLAttributes, useRef, useState } from 'react';
 import { ActionVisibility, ActionVisibilityOff } from '@db-design/react-icons';
 import Textfield, { TextfieldRef, TextfieldProps } from '../textfield/textfield';
 import Button from '../button';
@@ -17,6 +17,8 @@ export interface PasswordfieldProps extends TextfieldProps {
     showPassword: string;
     concealPassword: string;
   };
+  /** Props for the concealment toggle button */
+  concealButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,6 +31,7 @@ const Passwordfield: PasswordfieldComponent = ({
   size,
   value,
   disabled = false,
+  concealButtonProps,
   ...otherProps
 }) => {
   const { showPassword, concealPassword } = labels ?? defaultLabels;
@@ -63,6 +66,7 @@ const Passwordfield: PasswordfieldComponent = ({
       spellCheck={false}
       suffix={
         <Button
+          {...concealButtonProps}
           variant="hover-only"
           shape="round"
           size="s"

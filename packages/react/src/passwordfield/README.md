@@ -168,3 +168,11 @@ move on top of the input.
 ```
 
 Info: The `size` property will be ignored when using `inlineLabel` and will be fixed to `xl`.
+
+## Conceal Button Props
+
+Additional props can be passed to the conceal Button. A typical case is a non-visible, but for password managers accessible Passwordfield which should not be reachable by keyboard:
+
+```jsx
+<Passwordfield concealButtonProps={{ tabIndex: '-1' }} />
+```

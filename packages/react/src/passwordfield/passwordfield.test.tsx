@@ -33,4 +33,23 @@ describe('Passwordfield component', () => {
     expect(button).not.toBeDisabled();
     expect(container).toMatchSnapshot();
   });
+
+  it('should pass concealButtonProps to button', () => {
+    const { container } = render(
+      <Passwordfield value="filled" tabIndex={-1} concealButtonProps={{ tabIndex: -1 }} />
+    );
+    const field = screen.getByDisplayValue('filled');
+    const button = screen.getByRole('button');
+    expect(field).toHaveAttribute('tabIndex', '-1');
+    expect(button).toHaveAttribute('tabIndex', '-1');
+    expect(container).toMatchSnapshot();
+  });
+
+  it('svg should be hidden and must not be role="img" without a title', () => {
+    render(<Passwordfield value="filled" />);
+    const button = screen.getByRole('button');
+    expect(button.querySelector('svg')).not.toHaveAttribute('role', 'img');
+    button.click();
+    expect(button.querySelector('svg')).not.toHaveAttribute('role', 'img');
+  });
 });

@@ -73,7 +73,7 @@ module.exports = {
     className: 'db-icon',
     width: '24',
     height: '24',
-    role: 'img',
+    role: '{title || titleId ? "img" : "presentation"}',
   },
   template: customTemplate,
   titleProp: true,

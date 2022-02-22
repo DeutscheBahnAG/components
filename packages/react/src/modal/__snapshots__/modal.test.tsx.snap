@@ -48,7 +48,7 @@ exports[`Modal Component alertdialog role 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -227,7 +227,7 @@ exports[`Modal Component render PrimaryButton 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -355,7 +355,7 @@ exports[`Modal Component render SecondaryButton 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -460,7 +460,7 @@ exports[`Modal Component render optional properties 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -552,7 +552,7 @@ exports[`Modal Component render required properties only 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -643,7 +643,7 @@ exports[`Modal Component size auto 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -747,7 +747,7 @@ exports[`Modal Component size l 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -848,7 +848,7 @@ exports[`Modal Component size m 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -946,7 +946,7 @@ exports[`Modal Component size s 1`] = `
               <svg
                 class="db-icon"
                 height="24"
-                role="img"
+                role="presentation"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
