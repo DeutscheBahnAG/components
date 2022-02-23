@@ -217,7 +217,7 @@ import { Theme } from '@db-design/react';
     width="content"
     verticalPadding="s"
     horizontalPadding="l"
-    marginTop="m"
+    marginTop="l"
   >
     Content
   </Container>
@@ -313,11 +313,11 @@ No align (= left):
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width="content">
-  <Logo />
+  <Logo mb="1" size="xl" />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width="text">
+  <Container width="text" marginTop="l">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
@@ -333,11 +333,11 @@ Center everything:
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo />
+  <Logo mb="1" size="xl" />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width="text">
+  <Container width="text" marginTop="l">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
@@ -353,11 +353,11 @@ Center on mobile only:
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width="content" align={{ mobile: 'center', tablet: 'left' }}>
-  <Logo />
+  <Logo mb="1" size="xl" />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width="text">
+  <Container width="text" marginTop="l">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
@@ -373,11 +373,11 @@ Center most things, but reset the text align for the copy:
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo />
+  <Logo mb="1" size="xl" />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width="text" align="left">
+  <Container width="text" align="left" marginTop="l">
     <Copy>
       Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna hendrerit
       nisl facilisis. Duise consequat libero vela urnat pellentesque, lobortis porta
@@ -393,11 +393,11 @@ Possible for edge-cases: completely reset the text align for the copy:
 ```jsx
 import { Logo, Pulse, Title, Copy } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo />
+  <Logo mb="1" size="xl" />
   <Pulse>
     <Title>Headline</Title>
   </Pulse>
-  <Container width="content" align="left">
+  <Container width="content" align="left" marginTop="l">
     <Container width="text">
       <Copy>
         Lorem ipsum dolor sit amet, consecteture elit adipiscing. Integer ac urna
@@ -423,7 +423,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
       width="content"
       align="center"
     >
-      <Logo />
+      <Logo mb="1" size="xl" />
       <Pulse>
         <Title>Headline</Title>
       </Pulse>
@@ -444,7 +444,7 @@ import { Theme, Logo, Pulse, Title, Copy } from '@db-design/react';
         width="content"
         align="center"
       >
-        <Logo />
+        <Logo mb="1" size="xl" />
         <Pulse>
           <Title>Headline</Title>
         </Pulse>
