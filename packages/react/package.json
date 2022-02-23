@@ -1,6 +1,6 @@
 {
   "name": "@db-design/react",
-  "version": "1.0.0-pre.22",
+  "version": "1.0.0-pre.23",
   "description": "DB React Components",
   "repository": {
     "directory": "packages/react",
