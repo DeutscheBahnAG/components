@@ -11,13 +11,15 @@ $db-accordionitem--indent: $db-accordionitem--padding-x + $db-accordionitem--ico
   summary {
     @include db-secondary-link($target: '.db-accordionitem__title');
     cursor: default;
+    list-style: none;
     padding: $db-accordionitem--padding-y $db-accordionitem--padding-x;
     position: relative;
     transition: all 0.15ms;
     user-select: none;
   }
 
-  summary::-webkit-details-marker {
+  summary::-webkit-details-marker,
+  summary::marker {
     display: none;
   }
 
