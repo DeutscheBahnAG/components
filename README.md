@@ -166,6 +166,8 @@ Rules (you can also use [Commitizen](#commitizen) which helps generate commit me
   - Start with `BREAKING CHANGE:` (all uppercase)
   - Provide a summary of the breaking change in the next line
 
+Also consider adding a [changelog entry](#changelog).
+
 ### Commitizen
 
 Instead of following all [commit rules](#writing-commits), you can use [Commitizen] which will ask few questions to
@@ -182,6 +184,15 @@ yarn commit -p
 ```
 
 [commitizen]: https://github.com/commitizen/cz-cli
+
+### Changelog
+
+Each package in `packages/*` which is made for publishing must have its own `CHANGELOG.md`.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+It is good practice, to fill the changelog with every commit in the `## [Unreleased]` section. A changelog does not need to reflect all commits. It should provide an overview.
 
 ### Pre-commit Hooks
 
