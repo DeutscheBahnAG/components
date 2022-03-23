@@ -1,6 +1,6 @@
 {
   "name": "@db-design/react-extra",
-  "version": "1.0.0-pre.1",
+  "version": "0.0.0",
   "description": "DB React Components - Non-core",
   "repository": {
     "directory": "packages/react-extra",
