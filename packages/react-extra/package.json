@@ -9,12 +9,15 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/index.js",
+  "module": "dist/module/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc --project tsconfig.build.json",
+    "build:js": "rm -rf dist && tsc --project tsconfig.build.json",
+    "build:modules": "tsc --project tsconfig.build.json --outDir dist/module --module es2020",
+    "build": "yarn build:js && yarn build:modules",
     "release": "release-it --disable-metrics"
   },
   "dependencies": {
