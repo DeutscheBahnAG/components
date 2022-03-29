@@ -29,6 +29,7 @@ yarn add @db-design/react-extra;
 Run `yarn add-component` to bootstrap a new component for the [`@db-design/react`](https://www.npmjs.com/package/@db-design/react) package. You can optionally provide the component name right away, e.g. `yarn add-component radiobutton`.
 
 The `add-component` script will
+
 - Ask you for a component name if not already provided as argument
 - Validate and possibly reformat this name to match our naming guidelines
 - Give you the option to deselect some of the files which will be created
@@ -77,7 +78,7 @@ import { Button } from '@db-design/react';
 
 ### Available Tasks
 
-- `yarn add-component`: Starts an assistant to bootstrap a new React component 
+- `yarn add-component`: Starts an assistant to bootstrap a new React component
 - `yarn build`: Transpiles component libraries to `./dist/[components-package-folder]` to be published via NPM
   - `yarn build:react`: Transpiles just the `@db-design/react` package to `./dist/web`.
   - `yarn build:react-extra`: Transpiles just the `@db-design/react-extra` package to `./dist/web-extra`.
