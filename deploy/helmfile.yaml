@@ -9,7 +9,7 @@ repositories:
 releases:
   - name: react
     chart: bahnx/service
-    version: 3.0.4
+    version: 4.6.0
     values:
       - values.yaml.gotmpl
       - image:
@@ -23,17 +23,19 @@ releases:
           beamIds: A-107310
         ingress:
           enabled: true
+          {{ if eq .Environment.Name "prod" }}
+          ingressClassName: nginx
+          {{ else }}
+          ingressClassName: nginx-private
+          {{ end }}
           annotations:
             {{ if eq .Environment.Name "prod" }}
-            kubernetes.io/ingress.class: nginx
             kubernetes.io/tls-acme: "true"
             nginx.ingress.kubernetes.io/auth-type: basic
             # name of the secret that contains the user/password definitions
             nginx.ingress.kubernetes.io/auth-secret: react-service
             # message to display with an appropriate context why the authentication is required
             nginx.ingress.kubernetes.io/auth-realm: 'DPP'
-            {{ else }}
-            kubernetes.io/ingress.class: nginx-private
             {{ end }}
             # https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/
             # http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_types
