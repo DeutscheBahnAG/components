@@ -169,9 +169,9 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo logoUnitsBottom="1" size="xxl" />
-  <Pulse size="xxl">
-    <Headline size="xxl">Headline</Headline>
+  <Logo logoUnitsBottom="1" size="xl" />
+  <Pulse size="xl">
+    <Headline size="xl">Headline</Headline>
   </Pulse>
 </>;
 ```
@@ -179,9 +179,9 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo logoUnitsBottom="1" size="xxl" />
-  <Pulse size="xxl">
-    <Headline size="xxl">Headline</Headline>
+  <Logo logoUnitsBottom="1" size="xl" />
+  <Pulse size="xl">
+    <Headline size="xl">Headline</Headline>
     <Headline variant="secondary" light size="l">
       Subline
     </Headline>
