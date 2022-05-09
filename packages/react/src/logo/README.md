@@ -161,14 +161,14 @@ This component implements the guidelines of:
         <td></td>
       </tr>
       <tr>
-        <td><strong>mt</strong></td>
+        <td><strong>logoUnitsTop</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td><strong>mb</strong></td>
+        <td><strong>logoUnitsBottom</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>

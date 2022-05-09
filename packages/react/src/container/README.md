@@ -313,7 +313,7 @@ No align (= left):
 ```jsx
 import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content">
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse>
     <Headline>Headline</Headline>
   </Pulse>
@@ -333,7 +333,7 @@ Center everything:
 ```jsx
 import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse>
     <Headline>Headline</Headline>
   </Pulse>
@@ -353,7 +353,7 @@ Center on mobile only:
 ```jsx
 import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align={{ mobile: 'center', tablet: 'left' }}>
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse>
     <Headline>Headline</Headline>
   </Pulse>
@@ -373,7 +373,7 @@ Center most things, but reset the text align for the copy:
 ```jsx
 import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse>
     <Headline>Headline</Headline>
   </Pulse>
@@ -393,7 +393,7 @@ Possible for edge-cases: completely reset the text align for the copy:
 ```jsx
 import { Logo, Pulse, Headline, Body } from '@db-design/react';
 <Container width="content" align="center">
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse>
     <Headline>Headline</Headline>
   </Pulse>
@@ -423,7 +423,7 @@ import { Theme, Logo, Pulse, Headline, Body } from '@db-design/react';
       width="content"
       align="center"
     >
-      <Logo mb="1" size="xl" />
+      <Logo logoUnitsBottom="1" size="xl" />
       <Pulse>
         <Headline>Headline</Headline>
       </Pulse>
@@ -444,7 +444,7 @@ import { Theme, Logo, Pulse, Headline, Body } from '@db-design/react';
         width="content"
         align="center"
       >
-        <Logo mb="1" size="xl" />
+        <Logo logoUnitsBottom="1" size="xl" />
         <Pulse>
           <Headline>Headline</Headline>
         </Pulse>

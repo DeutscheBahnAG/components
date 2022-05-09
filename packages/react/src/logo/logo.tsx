@@ -25,8 +25,8 @@ export interface LogoProps {
   additionalMarking?: string;
   direction?: LogoDirectionsType;
   href?: string;
-  mt?: string;
-  mb?: string;
+  logoUnitsTop?: string;
+  logoUnitsBottom?: string;
 }
 
 type LogoWrapperRef = HTMLAnchorElement & HTMLSpanElement;
@@ -47,8 +47,8 @@ const Logo: LogoComponent = React.forwardRef(
       additionalMarking = undefined,
       direction = 'horizontal',
       href,
-      mb = undefined,
-      mt = undefined,
+      logoUnitsBottom = undefined,
+      logoUnitsTop = undefined,
       ...otherProps
     },
     ref
@@ -60,8 +60,8 @@ const Logo: LogoComponent = React.forwardRef(
       additionalMarking || ''
     ).split('\n');
     const cssProperties = {};
-    if (mb) cssProperties['--db-logo--mb'] = mb;
-    if (mt) cssProperties['--db-logo--mt'] = mt;
+    if (logoUnitsBottom) cssProperties['--db-logo--logo-units-bottom'] = logoUnitsBottom;
+    if (logoUnitsTop) cssProperties['--db-logo--logo-units-top'] = logoUnitsTop;
     return (
       <Wrapper
         ref={ref}

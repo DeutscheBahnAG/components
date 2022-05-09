@@ -9,8 +9,8 @@ export interface PulseProps {
   size?: ResponsiveType<LogoSizesType>;
   variant?: LogoVariantsType;
   children?: React.ReactNode;
-  mt?: string;
-  mb?: string;
+  logoUnitsTop?: string;
+  logoUnitsBottom?: string;
 }
 
 const Pulse: React.FC<PulseProps> = ({
@@ -18,12 +18,12 @@ const Pulse: React.FC<PulseProps> = ({
   size = 'm',
   variant = 'auto',
   children = null,
-  mt = 0.5,
-  mb = undefined,
+  logoUnitsTop = 0.5,
+  logoUnitsBottom = undefined,
 }) => {
   const cssProperties = {};
-  if (mb) cssProperties['--db-pulse--mb'] = mb;
-  if (mt) cssProperties['--db-pulse--mt'] = mt;
+  if (logoUnitsBottom) cssProperties['--db-pulse--logo-units-bottom'] = logoUnitsBottom;
+  if (logoUnitsTop) cssProperties['--db-pulse--logo-units-top'] = logoUnitsTop;
   return (
     <div
       className={clsx(

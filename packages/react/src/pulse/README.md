@@ -50,14 +50,14 @@ The Pulse is an [additional brand element of Deutsche Bahn’s corporate design]
         <td></td>
       </tr>
       <tr>
-        <td><strong>mt</strong></td>
+        <td><strong>logoUnitsTop</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td>0.5</td>
         <td></td>
       </tr>
       <tr>
-        <td><strong>mb</strong></td>
+        <td><strong>logoUnitsBottom</strong></td>
         <td><code>string</code></td>
         <td>false</td>
         <td></td>
@@ -76,7 +76,7 @@ The spacing of the Logo and Pulse follow very specific guidelines. The Pulse com
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" />
+  <Logo logoUnitsBottom="1" />
   <Pulse>
     <Headline size="l">Your headline</Headline>
   </Pulse>
@@ -85,15 +85,15 @@ import { Logo, Headline } from '@db-design/react';
 
 ## Margins
 
-`mt`, `gap` and `mb` can set a margin using the Logo’s height as a unit:
+`logoUnitsTop`, `gap` and `logoUnitsBottom` can set a margin using the Logo’s height as a unit:
 
-`mt`: Margin top – between Logo and first line of text within the Pulse (must be set to at least `0.5` (better `1`) when `<Logo>` and `<Pulse>` directly follow each other):
+`logoUnitsTop`: Margin top – between Logo and first line of text within the Pulse (must be set to at least `0.5` (better `1`) when `<Logo>` and `<Pulse>` directly follow each other):
 
 ```jsx
 import { Logo, Headline, Container, Theme } from '@db-design/react';
 <>
-  <Logo mb="1" />
-  <Pulse mt="2">
+  <Logo logoUnitsBottom="1" />
+  <Pulse logoUnitsTop="2">
     <Headline size="l">Your headline</Headline>
   </Pulse>
   <Theme theme="DB_LIGHT_ALTERNATE">
@@ -104,13 +104,13 @@ import { Logo, Headline, Container, Theme } from '@db-design/react';
 </>;
 ```
 
-`mb`: Margin bottom – between the visual representation of the Pulse and the next element:
+`logoUnitsBottom`: Margin bottom – between the visual representation of the Pulse and the next element:
 
 ```jsx
 import { Logo, Headline, Container, Theme } from '@db-design/react';
 <>
-  <Logo mb="1" />
-  <Pulse mb="0.5">
+  <Logo logoUnitsBottom="1" />
+  <Pulse logoUnitsBottom="0.5">
     <Headline size="l">Your headline</Headline>
   </Pulse>
   <Theme theme="DB_LIGHT_ALTERNATE">
@@ -129,7 +129,7 @@ The sizes are optimized for pixel-perfect rendering of the logo (based on its
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="m" />
+  <Logo logoUnitsBottom="1" size="m" />
   <Pulse size="m">
     <Headline size="m">Headline</Headline>
   </Pulse>
@@ -139,7 +139,7 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="l" />
+  <Logo logoUnitsBottom="1" size="l" />
   <Pulse size="l">
     <Headline size="l">Headline</Headline>
   </Pulse>
@@ -149,7 +149,7 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="xl" />
+  <Logo logoUnitsBottom="1" size="xl" />
   <Pulse size="xl">
     <Headline size="l">Headline</Headline>
   </Pulse>
@@ -159,7 +159,7 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="xxl" />
+  <Logo logoUnitsBottom="1" size="xxl" />
   <Pulse size="xxl">
     <Headline size="l">Headline</Headline>
   </Pulse>
@@ -169,7 +169,7 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="xxl" />
+  <Logo logoUnitsBottom="1" size="xxl" />
   <Pulse size="xxl">
     <Headline size="xxl">Headline</Headline>
   </Pulse>
@@ -179,7 +179,7 @@ import { Logo, Headline } from '@db-design/react';
 ```jsx
 import { Logo, Headline } from '@db-design/react';
 <>
-  <Logo mb="1" size="xxl" />
+  <Logo logoUnitsBottom="1" size="xxl" />
   <Pulse size="xxl">
     <Headline size="xxl">Headline</Headline>
     <Headline variant="secondary" light size="l">
@@ -192,7 +192,7 @@ import { Logo, Headline } from '@db-design/react';
 Never use different sizes for the Logo and the Pulse.
 
 ```jsx static
-<Logo mb="1" size="s" />
+<Logo logoUnitsBottom="1" size="s" />
 <Pulse size="xxl" />
 ```
 
