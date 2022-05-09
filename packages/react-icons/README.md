@@ -34,14 +34,13 @@ To set the icon color, simply set the `color` attribute on the parent:
 
 ```jsx
 import { ActionSettings } from '@db-design/react-icons';
-import { palette } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 <>
-  <span style={{ color: palette.pink500 }}>
+  <span style={{ color: '#e93e8f' }}>
     <ActionSettings />
   </span>
 
-  <span style={{ color: palette.cyan500 }}>
+  <span style={{ color: '#309fd1' }}>
     <ActionSettings />
   </span>
 </>;

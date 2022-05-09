@@ -281,7 +281,6 @@ import {
   buttonTypes,
 } from './button';
 import { NavigationClose } from '@db-design/react-icons';
-import tokens from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 return (
   <>
     {buttonVariants.map((variant) => (

@@ -98,7 +98,6 @@ The indeterminate state can’t be restored by the user. It must be reset via Ja
 ```jsx
 import { useState } from 'react';
 import { Button } from '@db-design/react';
-import { spacing } from '@bahn-x/dbx-tokens/src/deutsche-bahn';
 
 const ExampleComponent = () => {
   const [isIndeterminate, setIndeterminate] = useState(true);

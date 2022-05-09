@@ -24,7 +24,6 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
-    "@bahn-x/dbx-tokens": "0.7.0",
     "@db-design/styles": "^1.0.0-pre.1",
     "@svgr/cli": "^5.5.0",
     "camelcase": "^6.2.0",
