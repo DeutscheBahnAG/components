@@ -592,11 +592,6 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bahn-x/eslint-config-base@^2.0.1":
-  version "2.1.0"
-  resolved "https://npm.pkg.github.com/download/@bahn-x/eslint-config-base/2.1.0/e3cd4cf55a752993d75c0d31f33f57e65625a0301e45308a8b99c71995139ce8#55e482e15b4f48aa3e10b4d4dce8368308c9398e"
-  integrity sha512-emiC3Qp0JsTGpa7pMs4gjqZZj3r4+u25uSb1Jrqyv+uMJHvWYPiU9PS7VjDoZ3vLk1FG46ng7XQwv/jBqVSJIA==
-
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"

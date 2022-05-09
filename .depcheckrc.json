@@ -3,7 +3,6 @@
     "**/*.mjs": "es6"
   },
   "ignores": [
-    "@bahn-x/eslint-config-base",
     "@commitlint/cli",
     "react-test-renderer",
     "stylelint-config-sass-guidelines",

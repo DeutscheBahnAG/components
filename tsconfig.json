@@ -1,7 +1,9 @@
 {
-  "extends": "@bahn-x/eslint-config-base/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
+    "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",
     "lib": [
@@ -9,12 +11,20 @@
       "ES2020"
     ],
     "noImplicitAny": false,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
     "target": "ES2015",
+    "types": ["node", "jest"]
   },
   "include": [
     ".*",
     ".*/**/*",
     "*/**/.*",
-    "**/*",
+    "**/*"
   ]
 }

@@ -22,7 +22,6 @@ wss_project_version="$CI_COMMIT_BRANCH"
 
   # Npm specific config: If you have scoped dependencies, please add them according to the conventions below:
   # npmScopedDeps="@yourScope:registry=yourRegistryLink;@yourScope2:registry=yourRegistryLink2"
-npmScopedDeps="@bahn-x:registry=https://npm.pkg.github.com"
 
   # Whitesource will scan your entire project by deafult.
   # Change this, if you want scan only a specific path.
