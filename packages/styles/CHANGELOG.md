@@ -9,4 +9,6 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-05-10
+
 ## [1.0.0-pre.21] - 2022-03-23
