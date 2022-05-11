@@ -29,29 +29,32 @@ const Track: React.FC<TrackProps> = ({
   const { fullName, prefix, number, fragment, sectionStart, sectionEnd } = parseTrack(track);
   const { platform, platformAbbreviation } = labels ?? defaultLabels;
   return (
-    <span
-      className={clsx('db-track', responsiveClassNames(size, 'db-track--size-'), className)}
-      {...props}
-    >
-      {number ? (
-        <>
-          {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}
-          {fragment && <span className="db-track__fragment">{fragment}</span>}
-          {sectionStart && (
-            <>
-              {' '}
-              <span className="db-track__section">
-                {sectionStart}
-                <span className="db-track__separator">–</span>
-                {sectionEnd}
-              </span>
-            </>
-          )}
-        </>
-      ) : (
-        <>{fullName}</>
-      )}
-    </span>
+    <>
+      <span
+        className={clsx('db-track', responsiveClassNames(size, 'db-track--size-'), className)}
+        {...props}
+      >
+        {number ? (
+          <>
+            {prefix || <abbr title={platform}>{platformAbbreviation}</abbr>} {number}
+            {fragment && <span className="db-track__fragment">{fragment}</span>}
+            {sectionStart && (
+              <>
+                {' '}
+                <span className="db-track__section">
+                  {sectionStart}
+                  <span className="db-track__separator">–</span>
+                  {sectionEnd}
+                </span>
+              </>
+            )}
+          </>
+        ) : (
+          <>{fullName}</>
+        )}
+      </span>
+      <span className="db-inline-spacer" />
+    </>
   );
 };
 
