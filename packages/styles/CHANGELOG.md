@@ -9,6 +9,12 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-05-11
+
+### Fixed
+
+- Font family for product logos (`<Transportchip>`)
+
 ## [1.0.0] - 2022-05-10
 
 ## [1.0.0-pre.21] - 2022-03-23

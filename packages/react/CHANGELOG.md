@@ -9,6 +9,12 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-05-11
+
+### Fixed
+
+- Missing inline spacer for `<Track>`
+
 ## [1.0.0] - 2022-05-10
 
 ### Changed
