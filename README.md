@@ -19,10 +19,13 @@ On the repository for your web app or site that will include the components, add
 a dependency in your `package.json`.
 
 ```bash
-yarn add @db-design/styles;
-yarn add @db-design/react-icons;
-yarn add @db-design/react;
-yarn add @db-design/react-extra;
+npm install @db-design/react
+```
+
+or
+
+```bash
+yarn add @db-design/react
 ```
 
 ## How to Develop for Contribution
