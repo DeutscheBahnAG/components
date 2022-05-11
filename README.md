@@ -1,6 +1,17 @@
 # DB React components
 
-React components for building websites and applications fast in the look and feel of Deutsche Bahn AG.
+React components for building accessible websites and applications fast in the look and feel of Deutsche Bahn AG.
+
+## More information
+
+- Component documentation [in the official Deutsche Bahn Marketing Portal](https://marketingportal.extranet.deutschebahn.com/de/button) –
+  this requires to be logged in; afterwards click on ‘Implementierung’ and ‘React’ to view the code documentation
+- [Documentation for all available components with live-coding](https://dpp.bahn-x.de/components)
+- [Getting started](https://dpp.bahn-x.de/components/getting-started)
+- [Interactive Logo and Pulse creator](https://dpp.bahn-x.de/foundation/logo-and-pulse#interactive-logo-playground) with code generator – the best place to get started with your first web project
+- [Accessibility](https://dpp.bahn-x.de/foundation/accessibility) – what you get when you use the React components
+- [Join our Team on MS Teams](https://teams.microsoft.com/l/channel/19%3a53394b5311534844b8c6bb2cf0d85650%40thread.tacv2/React%2520components?groupId=7395df6c-7846-4155-a833-c358fbeb1ec4&tenantId=a1a72d9c-49e6-4f6d-9af6-5aafa1183bfd) – DB internal only
+- [Internal GitLab Repository](https://git.tech.rz.db.de/bahn-x/webdev/web) – if you have access, prefer GitLab over GitHub for your merge requests
 
 ## Usage
 
