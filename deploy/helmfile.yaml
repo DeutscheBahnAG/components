@@ -1,7 +1,4 @@
 ---
-helmDefaults:
-  tillerless: true
-
 repositories:
   - name: bahnx
     url: https://bahnhub.tech.rz.db.de/artifactory/tdpxw-helm-release-virtual
@@ -9,7 +6,7 @@ repositories:
 releases:
   - name: react
     chart: bahnx/service
-    version: 4.6.0
+    version: 4.7.0
     values:
       - values.yaml.gotmpl
       - image:
@@ -24,9 +21,8 @@ releases:
         ingress:
           enabled: true
           {{ if eq .Environment.Name "prod" }}
-          ingressClassName: nginx
-          {{ else }}
-          ingressClassName: nginx-private
+          ingressClassName: nginx-public
+          namespace: nginx-public
           {{ end }}
           annotations:
             {{ if eq .Environment.Name "prod" }}
