@@ -1,0 +1,39 @@
+$db-gaps: (none auto xs s sm ml xxl);
+
+@mixin db-gap-classes($size) {
+  $gap: if($size == auto, auto, db-spacing($size));
+  &-g-#{$size} {
+    gap: $gap !important;
+  }
+  &-cg-#{$size} {
+    column-gap: $gap !important;
+  }
+  &-rg-#{$size} {
+    row-gap: $gap !important;
+  }
+}
+
+@each $size in $db-gaps {
+  // stylelint-disable-next-line selector-class-pattern
+  .db {
+    @include db-gap-classes($size);
+  }
+}
+
+@include tablet {
+  @each $size in $db-gaps {
+    // stylelint-disable-next-line selector-class-pattern
+    .t\:db {
+      @include db-gap-classes($size);
+    }
+  }
+}
+
+@include desktop {
+  @each $size in $db-gaps {
+    // stylelint-disable-next-line selector-class-pattern
+    .d\:db {
+      @include db-gap-classes($size);
+    }
+  }
+}

@@ -154,6 +154,34 @@ import { Container } from '@db-design/react';
         <td></td>
         <td><p>Padding left</p></td>
       </tr>
+      <tr>
+        <td><strong>columns</strong></td>
+        <td><code>ResponsiveType&lt;4 | 3 | 1 | 2 | 5 | 6&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Number of columns</p></td>
+      </tr>
+      <tr>
+        <td><strong>gap</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;ml&quot; | &quot;xxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td>ml</td>
+        <td><p>Column and row gap</p></td>
+      </tr>
+      <tr>
+        <td><strong>rowGap</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;ml&quot; | &quot;xxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Row gap</p></td>
+      </tr>
+      <tr>
+        <td><strong>columnGap</strong></td>
+        <td><code>ResponsiveType&lt;&quot;none&quot; | &quot;xs&quot; | &quot;s&quot; | &quot;sm&quot; | &quot;ml&quot; | &quot;xxl&quot;&gt;</code></td>
+        <td>false</td>
+        <td></td>
+        <td><p>Column gap</p></td>
+      </tr>
     </tbody>
   </table>
 </details>
@@ -222,6 +250,57 @@ import { Theme } from '@db-design/react';
     Content
   </Container>
 </Theme>;
+```
+
+## Columns
+
+Easily align content in columns (or as a grid if there are more elements than columns). Usually a <Container> with defined columns wraps several <Container> components:
+
+```jsx static
+<Container columns="2">
+  <Container></Container>
+  <Container></Container>
+</Container>
+```
+
+A complete example:
+
+```jsx
+import { Theme } from '@db-design/react';
+<Container filled width="full" verticalPadding="m" horizontalPadding="m" columns="2">
+  <Theme theme="DB_LIGHT">
+    <Container filled width="content" verticalPadding="m" horizontalPadding="m">
+      Column 1
+    </Container>
+  </Theme>
+  <Theme theme="DB_LIGHT">
+    <Container filled width="content" verticalPadding="m" horizontalPadding="m">
+      Column 2
+    </Container>
+  </Theme>
+</Container>;
+```
+
+If the items use another theme (different background colour) it is important to wrap each item in its own `<Theme>` component, like in the example above.
+
+The column feature is most useful when using responsive column counts:
+
+```jsx static
+<Container ... columns={{ mobile: 1, desktop: 2 }}>
+{/* or */}
+<Container ... columns={{ mobile: 1, tablet: 2 }}>
+{/* or */}
+<Container ... columns={{ mobile: 1, tablet: 2, desktop: 3 }}>
+```
+
+The gap between items can be controlled in many ways, here are a few examples:
+
+```jsx static
+<Container ... gap="sm">
+{/* or */}
+<Container ... gap={{ mobile: "sm", tablet: "ml" }}>
+{/* or */}
+<Container ... rowGap={{ mobile: "sm", tablet: "ml" }} columnGap="sm">
 ```
 
 ## Centered layout

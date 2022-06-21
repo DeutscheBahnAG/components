@@ -27,6 +27,12 @@ export type MarginsType = typeof margins[number];
 export const paddings = ['none', 'xs', 's', 'sm', 'm', 'ml', 'l', 'xl', 'xxl', 'xxxl'] as const;
 export type PaddingsType = typeof paddings[number];
 
+export const availableColumns = [1, 2, 3, 4, 5, 6] as const;
+export type ColumnsType = typeof availableColumns[number];
+
+export const gaps = ['none', 'xs', 's', 'sm', 'ml', 'xxl'] as const;
+export type GapsType = typeof gaps[number];
+
 export interface ContainerProps {
   /** Content of the Container */
   children?: React.ReactNode;
@@ -62,6 +68,14 @@ export interface ContainerProps {
   paddingBottom?: ResponsiveType<PaddingsType>;
   /** Padding left */
   paddingLeft?: ResponsiveType<PaddingsType>;
+  /** Number of columns */
+  columns?: ResponsiveType<ColumnsType>;
+  /** Column and row gap */
+  gap?: ResponsiveType<GapsType>;
+  /** Row gap */
+  rowGap?: ResponsiveType<GapsType>;
+  /** Column gap */
+  columnGap?: ResponsiveType<GapsType>;
 }
 
 const Container: React.FC<ContainerProps> = ({
@@ -82,6 +96,10 @@ const Container: React.FC<ContainerProps> = ({
   paddingRight,
   paddingBottom,
   paddingLeft,
+  columns,
+  gap = 'ml',
+  rowGap,
+  columnGap,
   ...otherProps
 }) => (
   <div
@@ -102,6 +120,11 @@ const Container: React.FC<ContainerProps> = ({
       paddingRight && responsiveClassNames(paddingRight, 'db-pr-'),
       paddingBottom && responsiveClassNames(paddingBottom, 'db-pb-'),
       paddingLeft && responsiveClassNames(paddingLeft, 'db-pl-'),
+      columns && 'db-container--grid',
+      columns && responsiveClassNames(columns, 'db-gc-'),
+      columns && gap && !rowGap && !columnGap && responsiveClassNames(gap, 'db-g-'),
+      columns && rowGap && responsiveClassNames(rowGap, 'db-rg-'),
+      columns && columnGap && responsiveClassNames(columnGap, 'db-cg-'),
       className
     )}
     {...otherProps}

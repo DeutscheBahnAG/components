@@ -1,7 +1,10 @@
 import clsx from 'clsx';
 import { ResponsiveType } from '../shared';
 
-export function responsiveClassNames(steps: ResponsiveType<string>, className: string): string {
+export function responsiveClassNames(
+  steps: ResponsiveType<string | number>,
+  className: string
+): string {
   if (steps instanceof Object) {
     let classNames = `${className}${steps.mobile}`;
     if (steps.tablet) classNames += ` t:${className}${steps.tablet}`;

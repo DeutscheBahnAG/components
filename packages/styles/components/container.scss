@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.db-container--grid {
+  display: grid;
+}
+
 @mixin db-container--styles($prefix) {
   .#{$prefix}db-container--extended {
     border-radius: db-border-radius('xl');

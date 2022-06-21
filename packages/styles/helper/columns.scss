@@ -1,0 +1,40 @@
+$db-columns: (1 2 3 4 5 6);
+
+@function db-grid-columns($count) {
+  $columns: 1fr;
+  @for $i from 1 to $count {
+    $columns: $columns 1fr;
+  }
+  @return $columns;
+}
+
+@mixin db-columns-classes($count) {
+  &-gc-#{$count} {
+    grid-template-columns: db-grid-columns($count) !important;
+  }
+}
+
+@each $count in $db-columns {
+  // stylelint-disable-next-line selector-class-pattern
+  .db {
+    @include db-columns-classes($count);
+  }
+}
+
+@include tablet {
+  @each $count in $db-columns {
+    // stylelint-disable-next-line selector-class-pattern
+    .t\:db {
+      @include db-columns-classes($count);
+    }
+  }
+}
+
+@include desktop {
+  @each $count in $db-columns {
+    // stylelint-disable-next-line selector-class-pattern
+    .d\:db {
+      @include db-columns-classes($count);
+    }
+  }
+}
