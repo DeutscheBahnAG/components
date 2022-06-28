@@ -105,7 +105,7 @@ const ThemesExample = () => {
           <div>
             <Logo size="xxl" />
             <Pulse>
-              <Headline size="xxl">Primary title</Headline>
+              <Headline size="xl">Primary title</Headline>
               <Headline variant="secondary" light size="m">
                 Secondary title
               </Headline>
