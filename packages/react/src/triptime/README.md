@@ -7,6 +7,22 @@ This component implements the guidelines of:
 - https://dpp.bahn-x.de/content/german-writing/zeitangaben
 - https://ux-guide.deutschebahn.com/document/148
 
+```jsx
+<Triptime dateTime="09:54" predictedDateTime="09:57" />
+```
+
+## Imports
+
+```js
+import { Triptime } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/time';
+@import '@db-design/styles/components/triptime';
+```
+
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
 

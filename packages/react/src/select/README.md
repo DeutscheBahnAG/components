@@ -1,5 +1,18 @@
 # Select
 
+A very basic dropdown field based on the system default control.
+
+## Imports
+
+```js
+import { Select } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/select';
+```
+
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
 

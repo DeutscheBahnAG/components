@@ -1,8 +1,18 @@
 # Container
 
-```js
-import { Container } from '@db-design/react';
-```
+A container/box/background/layout component to control:
+
+- the width of the content
+- paddings
+- margins
+- gaps
+- horzontal alignments
+- background colours
+- amount of columns
+
+All properties accept responsive values which makes this component the most important component for responsive design without having to write a single line of (S)CSS.
+
+Containers can be nested in another Container for flexible layouts.
 
 <style>
   main {
@@ -16,6 +26,17 @@ import { Container } from '@db-design/react';
     padding: 16px 0 !important;
   }
 </style>
+
+## Imports
+
+```js
+import { Container } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/container';
+```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->

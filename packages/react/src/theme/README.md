@@ -1,8 +1,6 @@
 # Theme
 
-```js
-import { Theme } from '@db-design/react';
-```
+This component switches the theme of its child components. A typical theme switch happens between white (`DB_LIGHT`) and light gray (`DB_LIGHT_ALTERNATE`) backgrounds – while the `<Theme>` component takes care of contrast (accessiblity) even when the difference might not be obvious on the first look.
 
 ```jsx
 import { Button } from '@db-design/react';
@@ -13,6 +11,22 @@ import { Button } from '@db-design/react';
   </Theme>
 </>;
 ```
+
+## Imports
+
+```js
+import { Theme } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/themes/display'; // optional (Station&Service)
+@import '@db-design/styles/themes/db-green'; // optional (Das ist grün.)
+@import '@db-design/styles/themes/db-pride'; // optional (Pride month)
+@import '@db-design/styles/themes/s-bahn'; // optional (S-Bahn)
+```
+
+By default (global import) the light and dark as well as branded (red) DB themes get imported. Special themes must be imported addionally.
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->

@@ -4,6 +4,21 @@ Shows the track (platform) number for a trip in the default style of Deutsche Ba
 
 This component parses and formats the track information with typographic rules.
 
+```jsx
+<Track track="2 A-D" />
+```
+
+## Imports
+
+```js
+import { Track } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/track';
+```
+
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
 

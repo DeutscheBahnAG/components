@@ -1,8 +1,6 @@
 # Accordion
 
-```js
-import { Accordion } from '@db-design/react';
-```
+Wrapper component for `<Accordionitem>` components.
 
 ```jsx noeditor
 import { Accordionitem, Body } from '@db-design/react';
@@ -13,6 +11,18 @@ import { Accordionitem, Body } from '@db-design/react';
     </p>
   </Accordionitem>
 </Accordion>;
+```
+
+## Imports
+
+```js
+import { Accordion } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/accordion';
+@import '@db-design/styles/components/list';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

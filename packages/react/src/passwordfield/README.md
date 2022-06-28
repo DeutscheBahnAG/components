@@ -1,11 +1,22 @@
 # Passwordfield
 
+A ready-to-use password field based on the `<Textfield>` component including a fully functional show/hide password button.
+
+```jsx
+<Passwordfield />
+```
+
+## Imports
+
 ```js
 import { Passwordfield } from '@db-design/react';
 ```
 
-```jsx
-<Passwordfield />
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/button';
+@import '@db-design/styles/components/icon';
+@import '@db-design/styles/components/textfield';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

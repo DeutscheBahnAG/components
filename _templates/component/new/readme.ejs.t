@@ -3,12 +3,21 @@ to: "<%= files.includes('readme') ? `packages/react/src/${name}/README.md` : nul
 ---
 # <%= Name %>
 
+A <%= name %> components.
+
+```jsx noeditor
+<<%= Name %> />
+```
+
+## Imports
+
 ```js
 import { <%= Name %> } from '@db-design/react';
 ```
 
-```jsx noeditor
-<<%= Name %> />
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/<%= name %>';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

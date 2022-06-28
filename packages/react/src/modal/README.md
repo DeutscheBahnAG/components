@@ -11,6 +11,20 @@ const { primaryActions } = Modal;
 </Modal>;
 ```
 
+## Imports
+
+```js
+import { Modal } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/button';
+@import '@db-design/styles/components/headline';
+@import '@db-design/styles/components/icon';
+@import '@db-design/styles/components/modal';
+```
+
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
 

@@ -2,8 +2,15 @@
 
 Sets the basic layout of the whole page.
 
+## Imports
+
 ```js
 import { Layout } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/layout';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

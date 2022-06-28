@@ -1,11 +1,18 @@
 # Loadingindicator
 
+```jsx
+<Loadingindicator />
+```
+
+## Imports
+
 ```js
 import { Loadingindicator } from '@db-design/react';
 ```
 
-```jsx
-<Loadingindicator />
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/loadingindicator';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

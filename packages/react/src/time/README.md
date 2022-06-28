@@ -11,6 +11,17 @@ This component implements the guidelines of:
 <Time dateTime="09:54" />
 ```
 
+## Imports
+
+```js
+import { Time } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/time';
+```
+
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->
 

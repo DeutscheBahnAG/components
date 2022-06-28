@@ -1,9 +1,5 @@
 # Logo
 
-```js
-import { Logo } from '@db-design/react';
-```
-
 This component has been carefully co-created with the Brand Team to strictly follow our brand guidelines, ensure rendering quality as well as providing a simple API for developers without the need of knowing the exact specifications. It offers a wide range of predefined, pixel-perfect sizes which perfectly work hand-in-hand with the [Pulse component](/#/Components/Brand/Pulse).
 
 <style>
@@ -85,6 +81,16 @@ This component implements the guidelines of:
 - https://dpp.bahn-x.de/foundation/accessibility/keyboard
 - https://dpp.bahn-x.de/foundation/accessibility/screen-reader
 
+## Imports
+
+```js
+import { Logo } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/logo';
+```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->

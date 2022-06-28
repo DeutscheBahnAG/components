@@ -1,9 +1,5 @@
 # Button
 
-```js
-import { Button } from '@db-design/react';
-```
-
 This component handles everything that ‘looks like a button’ – even when it’s technically a link (using `href`). Buttons that should look like a link must use the [Link component](/#/Components/Interactive/Link).
 
 ```jsx noeditor
@@ -30,6 +26,19 @@ import { ActionAdd } from '@db-design/react-icons';
     Button
   </Button>
 </>;
+```
+
+## Imports
+
+```js
+import { Button } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/button';
+@import '@db-design/styles/components/icon'; // only if `icon` is set
+@import '@db-design/styles/components/loadingindicator'; // only if `loading` is set
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

@@ -1,9 +1,5 @@
 # Link
 
-```js
-import { Link } from '@db-design/react';
-```
-
 This component handles everthing that ‘looks like a link’ – even when it’s technically a button (JavaScript interaction). Links that should look like a button must use the [Button component](/#/Components/Interactive/Button).
 
 ```jsx noeditor
@@ -28,6 +24,18 @@ import { Body } from '@db-design/react';
     Link
   </Link>
 </>;
+```
+
+## Imports
+
+```js
+import { Link } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/icon';
+@import '@db-design/styles/components/link';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

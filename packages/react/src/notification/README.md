@@ -1,11 +1,20 @@
 # Notification
 
+```jsx
+<Notification>Hello there!</Notification>
+```
+
+## Imports
+
 ```js
 import { Notification, NotificationSeverities } from '@db-design/react';
 ```
 
-```jsx
-<Notification>Hello there!</Notification>
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/button';
+@import '@db-design/styles/components/icon';
+@import '@db-design/styles/components/notification';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

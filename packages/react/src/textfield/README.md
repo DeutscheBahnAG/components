@@ -1,8 +1,6 @@
 # Textfield
 
-```js
-import { Textfield } from '@db-design/react';
-```
+A very flexible text field with suffix and prefix, optional inline label as well as automatic align for icons and buttons.
 
 ```jsx noeditor
 import { Body } from '@db-design/react';
@@ -22,6 +20,17 @@ import { JourneyDestination } from '@db-design/react-icons';
 <style>
   .textfield-preview .db-textfield { width: 136px }
 </style>
+
+## Imports
+
+```js
+import { Textfield } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/textfield';
+```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->

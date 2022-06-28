@@ -1,7 +1,20 @@
 # Status
 
+A status message with icon and optional colour.
+
 ```jsx
 <Status>This is a status</Status>
+```
+
+## Imports
+
+```jsx
+import { Status } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/status';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

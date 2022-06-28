@@ -1,11 +1,18 @@
 # Checkbox
 
+```jsx
+<Checkbox>Checkbox</Checkbox>
+```
+
+## Imports
+
 ```js
 import { Checkbox } from '@db-design/react';
 ```
 
-```jsx
-<Checkbox>Checkbox</Checkbox>
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/checkbox';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

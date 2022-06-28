@@ -1,8 +1,6 @@
 # Accordionitem
 
-```js
-import { Accordionitem } from '@db-design/react';
-```
+Child component of `<Accordion>`.
 
 ```jsx noeditor
 import { Body } from '@db-design/react';
@@ -11,6 +9,20 @@ import { Body } from '@db-design/react';
     <Body>Some more information</Body>
   </p>
 </Accordionitem>;
+```
+
+## Imports
+
+```js
+import { Accordion, Accordionitem } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/accordion';
+@import '@db-design/styles/components/accordionitem';
+@import '@db-design/styles/components/headline';
+@import '@db-design/styles/components/list';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

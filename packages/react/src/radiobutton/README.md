@@ -1,11 +1,18 @@
 # Radiobutton
 
+```jsx
+<Radiobutton>Radiobutton</Radiobutton>
+```
+
+## Imports
+
 ```js
 import { Radiobutton } from '@db-design/react';
 ```
 
-```jsx
-<Radiobutton>Radiobutton</Radiobutton>
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/radiobutton';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

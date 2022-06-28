@@ -1,11 +1,20 @@
 # Body (typography)
 
+Default text styles
+
+```jsx
+<Body>Great content</Body>
+```
+
+## Imports
+
 ```js
 import { Body } from '@db-design/react';
 ```
 
-```jsx
-<Body>Great content</Body>
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/body';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

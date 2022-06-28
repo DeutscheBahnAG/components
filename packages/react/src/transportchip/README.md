@@ -1,12 +1,21 @@
 # Transportchip
 
-```js
-import { Transportchip } from '@db-design/react';
-```
+A line number using either DB’s default colours per type (ICE, S-Bahn, …) or local colours and styles for each line number in each region.
 
 ```jsx { "props": { "className": "sg-components-transportationchip-list" } }
 <Transportchip name="S 1" />
 <Transportchip name="ICE 234" />
+```
+
+## Imports
+
+```js
+import { Transportchip } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/transportchip';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->

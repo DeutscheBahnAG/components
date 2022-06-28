@@ -1,14 +1,23 @@
 # Pulse
 
-```js
-import { Pulse } from '@db-design/react';
-```
-
 The Pulse is an [additional brand element of Deutsche Bahn’s corporate design](https://marketingportal.extranet.deutschebahn.com/en/pulse). It should be used in combination with the Logo.
 
 ```jsx
 <Pulse />
 ```
+
+## Imports
+
+```js
+import { Pulse } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/logo';
+```
+
+The Pulse component’s styles depend on the Logo component.
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
 <!-- START props-table -->

@@ -2,10 +2,6 @@
 
 A simple wrapper for its child elements to automatically add lines and spacing between them.
 
-```js
-import { List } from '@db-design/react';
-```
-
 ```jsx noeditor
 import { Body, Transportchip } from '@db-design/react';
 <List>
@@ -22,6 +18,17 @@ import { Body, Transportchip } from '@db-design/react';
     <Body>S-Bahn</Body>
   </span>
 </List>;
+```
+
+## Imports
+
+```js
+import { List } from '@db-design/react';
+```
+
+```scss
+@import '@db-design/styles/global';
+@import '@db-design/styles/components/list';
 ```
 
 <!-- Auto-generated content following, DO NOT update by hand! -->
