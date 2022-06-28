@@ -258,20 +258,34 @@ Remember to use `<Body>`/`<Headline>` for any text, otherwise the text colours w
 import { Container, Logo, Pulse, Headline, Body, Button } from '@db-design/react';
 <>
   <Theme theme="DB_LIGHT_ALTERNATE">
-    <Container filled width="full" align="center">
+    <Container
+      filled
+      width="full"
+      align="center"
+      horizontalPadding="m"
+      verticalPadding="m"
+    >
       <Theme theme="DB_LIGHT">
-        <Container filled width="content" align="center">
-          <Logo size="xl" />
+        <Container filled width="content" align="center" verticalPadding="l">
+          <Logo size="xl" logoUnitsBottom="1" />
           <Pulse>
             <Headline>Headline</Headline>
           </Pulse>
         </Container>
       </Theme>
-      <Container filled width="content" align="center">
+      <Container filled width="content" align="center" verticalPadding="m">
         <Body>More content</Body>
         <Theme theme="DB_LIGHT">
-          <Container filled width="content" align="center">
-            <Headline size="l">Teaser</Headline>
+          <Container
+            filled
+            width="content"
+            align="center"
+            verticalPadding="m"
+            marginTop="l"
+          >
+            <Container filled align="center" marginBottom="m">
+              <Headline size="l">Teaser</Headline>
+            </Container>
             <Button>Click me</Button>
           </Container>
         </Theme>
@@ -279,8 +293,10 @@ import { Container, Logo, Pulse, Headline, Body, Button } from '@db-design/react
     </Container>
   </Theme>
   <Theme theme="DB_DARK">
-    <Container filled width="full" align="center">
-      <Body>© Deutsche Bahn AG {new Date().getFullYear()}</Body>
+    <Container filled width="full" align="center" verticalPadding="m">
+      <Container filled align="center" marginBottom="m">
+        <Body>© Deutsche Bahn AG {new Date().getFullYear()}</Body>
+      </Container>
       <Logo size="m" variant="white" />
     </Container>
   </Theme>
