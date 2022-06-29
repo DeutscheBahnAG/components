@@ -12,22 +12,28 @@
   $border-color--pressed: transparent,
   $border-color--disabled: transparent
 ) {
-  @include db-button-reset;
-  @include db-text-style('copy');
+
   @include db-focus-ring(
     $transition: 'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in'
   );
-  align-items: center;
-  display: inline-flex;
-  background-color: $bg-color;
-  justify-content: center;
-  text-decoration: none;
-  border: db-border-width('button') solid if($border-color == none, transparent, $border-color);
-  color: $text-color;
-  cursor: pointer;
-  vertical-align: baseline;
+
+  &,
+  &:any-link {
+    @include db-button-reset;
+    @include db-text-style('copy');
+    align-items: center;
+    display: inline-flex;
+    background-color: $bg-color;
+    justify-content: center;
+    text-decoration: none;
+    border: db-border-width('button') solid if($border-color == none, transparent, $border-color);
+    color: $text-color;
+    cursor: pointer;
+    vertical-align: baseline;
+  }
 
   &.db-button--disabled,
+  &.db-button--disabled:any-link,
   &.db-button--disabled:hover,
   &.db-button--disabled:active,
   &.db-button--disabled:focus {
@@ -74,7 +80,11 @@
     $text-color--pressed: var(--db-primary-button-pressed-text-color),
     $text-color--disabled: var(--db-primary-button-disabled-text-color)
   );
-  font-weight: db-font-weight('copy', 'bold');
+
+  &,
+  &:any-link {
+    font-weight: db-font-weight('copy', 'bold');
+  }
 }
 
 .db-button--secondary {

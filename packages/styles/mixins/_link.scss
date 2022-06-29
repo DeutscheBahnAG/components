@@ -13,15 +13,22 @@
    * 1. 0.11 needed for Firefox
    */
   @include db-focus-ring-for-text($target: $target);
-  color: $text-color;
-  text-decoration-line: none;
-  text-underline-offset: 0.11em; /* 1 */
-  text-decoration-thickness: 1px;
+
+  &,
+  &:any-link {
+    color: $text-color;
+    text-decoration-line: none;
+    text-underline-offset: 0.11em; /* 1 */
+    text-decoration-thickness: 1px;
+  }
 
   @if $target == '' {
-    font-weight: 550;
-    text-decoration-line: underline;
-    text-decoration-color: $underline-color;
+    &,
+    &:any-link {
+      font-weight: 550;
+      text-decoration-line: underline;
+      text-decoration-color: $underline-color;
+    }
 
     &:hover {
       color: $text-color--hover;
@@ -36,7 +43,8 @@
       text-decoration-color: transparent;
     }
   } @else {
-    #{unquote($target)} {
+    #{unquote($target)},
+    &:any-link #{unquote($target)} {
       font-weight: 550;
       text-decoration-line: underline;
       text-decoration-color: $underline-color;
