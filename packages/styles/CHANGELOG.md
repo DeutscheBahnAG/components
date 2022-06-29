@@ -9,6 +9,12 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-06-29
+
+### Fixed
+
+- Button/Link styling when `a:visted` got defined locally in a project
+
 ## [1.1.0] - 2022-06-28
 
 ### Added

@@ -1,6 +1,6 @@
 {
   "name": "@db-design/styles",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "DB Styles in Sass and CSS",
   "repository": {
     "directory": "packages/styles",
