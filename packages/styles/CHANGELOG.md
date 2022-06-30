@@ -9,6 +9,8 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-06-30
+
 ### Fixed
 
 - Partially broken link hover color in Safari
