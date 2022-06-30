@@ -1,5 +1,8 @@
 /**
- * 1. For IE high-contrast mode which ignores `box-shadow` but will make `outline` visible
+ * 1. Fix for a Safari bug where the hover color applied to parts of the
+ *    text only (few pixels on the left and upper side kept the normal
+ *    color in a very ugly way; screenshot see MR 156 on GitLab)
+ * 2. For IE high-contrast mode which ignores `box-shadow` but will make `outline` visible
  */
 
 /// Adds an focus ring in DB style including transitions
@@ -33,11 +36,12 @@
     } @else {
       transition: $focus-ring-transition;
     }
+    will-change: transform; /* 1 */
   }
 
   #{db-focus-ring-focussed-target-selector($target, $focus-selector)} {
     box-shadow: $offset-color 0 0 0 $offset, $color 0 0 0 ($size + $offset);
-    outline: 2px transparent; /* 1 */
+    outline: 2px transparent; /* 2 */
   }
 }
 

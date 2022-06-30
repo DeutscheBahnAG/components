@@ -11,9 +11,6 @@
 ) {
   /**
    * 1. 0.11 needed for Firefox
-   * 2. Fix for a Safari bug where the hover color applied to parts of the
-   *    text only (few pixels on the left and upper side kept the normal
-   *    color in a very ugly way; screenshot see MR 156 on GitLab)
    */
   @include db-focus-ring-for-text($target: $target);
 
@@ -31,7 +28,6 @@
       font-weight: 550;
       text-decoration-line: underline;
       text-decoration-color: $underline-color;
-      will-change: transform; /* 2 */
     }
 
     &:hover {
