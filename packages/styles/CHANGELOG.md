@@ -9,6 +9,8 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.1.3] - 2022-07-01
+
 ### Fixed
 
 - Partially broken link hover color in Safari (moved to `db-focus-ring-for-text`)
