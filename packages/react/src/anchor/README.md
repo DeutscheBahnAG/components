@@ -72,7 +72,7 @@ import { Anchor } from '@db-design/react';
 ```jsx
 import { Headline } from '@db-design/react';
 <h1>
-  <Headline size="xxl">
+  <Headline size="xl">
     <Anchor id="my-title">My title</Anchor>
   </Headline>
 </h1>;
@@ -86,6 +86,6 @@ This example results in `#my-title`:
 import { Headline } from '@db-design/react';
 const title = 'My title';
 <Anchor id={title}>
-  <Headline size="xxl">{title}</Headline>
+  <Headline size="xl">{title}</Headline>
 </Anchor>;
 ```
