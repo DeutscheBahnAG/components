@@ -209,6 +209,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 It is good practice, to fill the changelog with every commit in the `## [Unreleased]` section. A changelog does not need to reflect all commits. It should provide an overview.
 
+### Publish packages
+
+1. Prepare
+   1. `git switch main`
+   2. `git pull`
+2. Publish styles
+   1. Update version number in `packages/styles/package.json`
+   2. Add version and current date number in `packages/styles/CHANGELOG.md` (keep `## [Unreleased]` above)
+   3. Format `packages/styles/CHANGELOG.md` before saving
+   4. `cd packages/styles && npm publish && cd ../..` (do not use `yarn publish`)
+3. Publish react (and other packages)
+   1. Update version number in `packages/react/package.json`
+   2. Optional: Upgrade to new styles package if needed
+   3. Add version and current date number in `packages/react/CHANGELOG.md` (keep `## [Unreleased]` above)
+   4. Format `packages/react/CHANGELOG.md` before saving
+   5. `yarn build`
+   6. `cd packages/react/dist && npm publish && cd ../../..` (do not use `yarn publish`)
+4. Git
+   1. `git commit` with `chore: Release styles@x.x.x`, `chore: Release react@x.x.x` or `chore: Release styles@x.x.x/react/x.x.x` (replace `x.x.x` with the version numbers used above)
+   2. `git tag @db-design/styles@x.x.x`
+   3. `git tag @db-design/react@x.x.x`
+   4. `git push`
+   5. `git push --tags`
+   6. `git push github main`
+   7. `git push github --tags`
+5. Update your projects and test
+6. Publish post in MS Teams / TD.P BahnX DPP & Friends / React Components
+
 ### Pre-commit Hooks
 
 When attempting to commit files in this repository, some tasks will automatically run to ensure a consistently high
