@@ -1,7 +1,5 @@
 @use 'sass:math';
 // stylelint-disable selector-no-qualifying-type, max-nesting-depth
-@import '@db-design/styles/abstracts.scss';
-@import '@db-design/styles/mixins/focus-ring';
 
 @mixin db-transportchip-default-border-radius {
   border-radius: math.div(1em, db-font-size('copy', 'm')) * db-border-radius('s');
