@@ -20,7 +20,7 @@ $db-gaps: (none auto xs s sm ml xxl);
   }
 }
 
-@include tablet {
+@include db-tablet {
   @each $size in $db-gaps {
     // stylelint-disable-next-line selector-class-pattern
     .t\:db {
@@ -29,7 +29,7 @@ $db-gaps: (none auto xs s sm ml xxl);
   }
 }
 
-@include desktop {
+@include db-desktop {
   @each $size in $db-gaps {
     // stylelint-disable-next-line selector-class-pattern
     .d\:db {

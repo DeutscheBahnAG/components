@@ -2,19 +2,19 @@
 
 $db-modal--z-level: (
   modal: 5000,
-);
+) !default;
 
-$db-modal--appearance-duration: 400ms;
-$db-modal--bezier: cubic-bezier(0, 1, 0.3, 1);
-$db-modal--dialog-margin: db-spacing('s');
-$db-modal--dialog-padding-y-mobile: db-spacing('m');
-$db-modal--dialog-padding-x-mobile: db-spacing('l');
-$db-modal--dialog-padding-y-desktop: db-spacing('l');
-$db-modal--dialog-padding-x-desktop: db-spacing('xxl');
-$db-modal--action-gap: db-spacing('s');
-$db-modal--save-gap: db-spacing('s');
-$db-modal--shadow-background-color: #fff;
-$db-modal--shadow-foreground-color: #000;
+$db-modal--appearance-duration: 400ms !default;
+$db-modal--bezier: cubic-bezier(0, 1, 0.3, 1) !default;
+$db-modal--dialog-margin: db-spacing('s') !default;
+$db-modal--dialog-padding-y-mobile: db-spacing('m') !default;
+$db-modal--dialog-padding-x-mobile: db-spacing('l') !default;
+$db-modal--dialog-padding-y-desktop: db-spacing('l') !default;
+$db-modal--dialog-padding-x-desktop: db-spacing('xxl') !default;
+$db-modal--action-gap: db-spacing('s') !default;
+$db-modal--save-gap: db-spacing('s') !default;
+$db-modal--shadow-background-color: #fff !default;
+$db-modal--shadow-foreground-color: #000 !default;
 
 .db-modal {
   box-sizing: border-box;
@@ -55,19 +55,19 @@ $db-modal--shadow-foreground-color: #000;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: auto;
   width: auto;
-  max-width: map-get($breakpoints, xlarge);
+  max-width: map-get($db-breakpoints, xlarge);
   height: calc(var(--db-vh, 1vh) * 100 - #{2 * db-spacing('s')});
   padding: $db-modal--dialog-padding-y-mobile $db-modal--dialog-padding-x-mobile;
   border-radius: db-border-radius('modal');
   box-shadow: map-get($db-shadows, high);
   background-color: var(--db-primary-background-color);
   margin: $db-modal--dialog-margin;
-  @include tablet {
+  @include db-tablet {
     height: auto;
     padding: $db-modal--dialog-padding-y-desktop $db-modal--dialog-padding-x-desktop;
     max-height: 90%;
   }
-  @include desktop {
+  @include db-desktop {
     max-height: 75%;
   }
   @media print {
@@ -78,17 +78,17 @@ $db-modal--shadow-foreground-color: #000;
 }
 
 .db-modal__dialog--width-s {
-  max-width: map-get($breakpoints, small);
+  max-width: map-get($db-breakpoints, small);
 }
 
 .db-modal__dialog--width-m {
-  @include tablet {
-    max-width: map-get($breakpoints, medium);
+  @include db-tablet {
+    max-width: map-get($db-breakpoints, medium);
   }
 }
 
 .db-modal__dialog--width-l {
-  max-width: map-get($breakpoints, large);
+  max-width: map-get($db-breakpoints, large);
 }
 
 .db-modal__header {
@@ -150,7 +150,7 @@ $db-modal--shadow-foreground-color: #000;
   background-attachment: local, local, scroll, scroll;
   background-repeat: no-repeat;
   background-color: $db-modal--shadow-background-color;
-  @include tablet {
+  @include db-tablet {
     padding: 0 $db-modal--dialog-padding-x-desktop;
     margin: 0 #{-$db-modal--dialog-padding-x-desktop};
   }
@@ -184,7 +184,7 @@ $db-modal--shadow-foreground-color: #000;
 }
 
 .db-modal__actions--full-s {
-  @media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
+  @media (max-width: #{map-get($db-breakpoints, 'tablet') - 1px}) {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -198,7 +198,7 @@ $db-modal--shadow-foreground-color: #000;
 }
 
 .db-modal__actions--full-m {
-  @media (max-width: #{map-get($breakpoints, 'desktop') - 1px}) {
+  @media (max-width: #{map-get($db-breakpoints, 'desktop') - 1px}) {
     flex-direction: column;
 
     .db-modal__action--secondary {
@@ -224,7 +224,7 @@ $db-modal--shadow-foreground-color: #000;
 }
 
 .db-modal__actions--center-s {
-  @media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
+  @media (max-width: #{map-get($db-breakpoints, 'tablet') - 1px}) {
     justify-content: center;
 
     .db-button {
@@ -234,7 +234,7 @@ $db-modal--shadow-foreground-color: #000;
 }
 
 .db-modal__actions--center-m {
-  @media (max-width: #{map-get($breakpoints, 'desktop') - 1px}) {
+  @media (max-width: #{map-get($db-breakpoints, 'desktop') - 1px}) {
     justify-content: center;
 
     .db-button {
@@ -266,7 +266,7 @@ $db-modal--shadow-foreground-color: #000;
   margin: db-spacing('m') (-$db-modal--dialog-padding-x-mobile)
     (-$db-modal--dialog-padding-y-mobile);
   padding: db-spacing('sm') $db-modal--dialog-padding-x-mobile;
-  @include tablet {
+  @include db-tablet {
     margin: db-spacing('m') (-$db-modal--dialog-padding-x-desktop)
       (-$db-modal--dialog-padding-y-desktop);
     padding: db-spacing('sm') $db-modal--dialog-padding-x-desktop;

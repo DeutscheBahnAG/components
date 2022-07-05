@@ -1,11 +1,11 @@
-$db-select-text-style: 'copy';
-$db-select-border-width: db-border-width('input');
-$db-select-adjustment: 1px;
-$db-select-padding-horizontal: db-spacing('m') - $db-select-border-width;
-$db-select-padding-vertical: db-spacing('m') - $db-select-border-width;
-$db-select-padding-top: $db-select-padding-vertical - $db-select-adjustment;
-$db-select-padding-bottom: $db-select-padding-vertical + $db-select-adjustment;
-$db-select-chevron-margin: 16px;
+$db-select-text-style: 'copy' !default;
+$db-select-border-width: db-border-width('input') !default;
+$db-select-adjustment: 1px !default;
+$db-select-padding-horizontal: db-spacing('m') - $db-select-border-width !default;
+$db-select-padding-vertical: db-spacing('m') - $db-select-border-width !default;
+$db-select-padding-top: $db-select-padding-vertical - $db-select-adjustment !default;
+$db-select-padding-bottom: $db-select-padding-vertical + $db-select-adjustment !default;
+$db-select-chevron-margin: 16px !default;
 
 .db-select {
   --db-select--chevron-width: 16px;
@@ -110,10 +110,10 @@ $db-select-chevron-margin: 16px;
 }
 @include db-select--sizes('');
 
-@include tablet {
+@include db-tablet {
   @include db-select--sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-select--sizes('d\\:');
 }

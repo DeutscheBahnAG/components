@@ -21,7 +21,7 @@ $db-columns: (1 2 3 4 5 6);
   }
 }
 
-@include tablet {
+@include db-tablet {
   @each $count in $db-columns {
     // stylelint-disable-next-line selector-class-pattern
     .t\:db {
@@ -30,7 +30,7 @@ $db-columns: (1 2 3 4 5 6);
   }
 }
 
-@include desktop {
+@include db-desktop {
   @each $count in $db-columns {
     // stylelint-disable-next-line selector-class-pattern
     .d\:db {

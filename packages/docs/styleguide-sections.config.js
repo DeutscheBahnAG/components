@@ -104,7 +104,7 @@ module.exports = [
         sections: [
           {
             name: 'Link',
-            content: '../styles/mixins/_link.md',
+            content: '../styles/mixins/link.md',
           },
         ],
       },

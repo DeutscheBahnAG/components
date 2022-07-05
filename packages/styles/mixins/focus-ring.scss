@@ -16,13 +16,13 @@
   $transition: [],
   $target: '',
   $focus-selector: ':focus',
-  $size: $focus-ring-size,
-  $grow: $focus-ring-grow,
+  $size: $db-focus-ring-size,
+  $grow: $db-focus-ring-grow,
   $color: var(--db-focus-ring-color),
   $offset-color: var(--db-primary-background-color),
   $border: false,
   $parent: false,
-  $offset: $focus-ring-offset
+  $offset: $db-focus-ring-offset
 ) {
   @if $parent == false {
     outline: 0;
@@ -32,9 +32,9 @@
     @content;
     box-shadow: transparent 0 0 0 (2 * $offset), transparent 0 0 0 ($size + $grow);
     @if length($transition) > 0 {
-      transition: unquote($transition), $focus-ring-transition;
+      transition: unquote($transition), $db-focus-ring-transition;
     } @else {
-      transition: $focus-ring-transition;
+      transition: $db-focus-ring-transition;
     }
     will-change: transform; /* 1 */
   }
@@ -55,8 +55,8 @@
   $transition: [],
   $target: '',
   $focus-selector: ':focus',
-  $size: $focus-ring-size,
-  $grow: $focus-ring-grow,
+  $size: $db-focus-ring-size,
+  $grow: $db-focus-ring-grow,
   $color: var(--db-focus-ring-color)
 ) {
   @include db-focus-ring(

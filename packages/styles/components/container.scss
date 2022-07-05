@@ -71,10 +71,10 @@
 }
 @include db-container--styles('');
 
-@include tablet {
+@include db-tablet {
   @include db-container--styles('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-container--styles('d\\:');
 }

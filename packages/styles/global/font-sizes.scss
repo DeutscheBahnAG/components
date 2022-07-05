@@ -78,10 +78,10 @@ $db-font-sizes: (
 
 @include db-font-sizes('');
 
-@include tablet {
+@include db-tablet {
   @include db-font-sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-font-sizes('d\\:');
 }

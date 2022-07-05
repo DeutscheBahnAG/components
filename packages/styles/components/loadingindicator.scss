@@ -57,10 +57,10 @@
   }
 }
 
-@include tablet {
+@include db-tablet {
   @include db-loadingindicator--sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-loadingindicator--sizes('d\\:');
 }

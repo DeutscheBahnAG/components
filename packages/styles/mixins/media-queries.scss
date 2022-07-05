@@ -1,0 +1,27 @@
+@mixin db-tablet {
+  @media (min-width: #{map-get($db-breakpoints, 'tablet')}) {
+    @content;
+  }
+}
+
+@mixin db-desktop {
+  @media (min-width: #{map-get($db-breakpoints, 'desktop')}) {
+    @content;
+  }
+}
+
+// Deprecated:
+
+@mixin tablet {
+  @warn '`@include tablet` is deprecated. Please use `@include db-tablet` instead.';
+  @include db-tablet {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @warn '`@include desktop` is deprecated. Please use `@include db-desktop` instead.';
+  @include db-desktop {
+    @content;
+  }
+}

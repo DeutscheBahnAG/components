@@ -9,13 +9,13 @@
   /* stylelint-disable-next-line length-zero-no-unit */
   --db-sidebar-width: 0px; // do not remove px otherwise calc(var(..)) won’t work anymore.
 
-  @include tablet {
+  @include db-tablet {
     --db-content-max-width: calc(100vw - #{2 * db-spacing('xxl')});
     --db-extended-max-width: calc(100vw - #{2 * db-spacing('xl')});
     --db-text-max-width: #{6 * db-spacing('xxxl')};
   }
 
-  @include desktop {
+  @include db-desktop {
     --db-content-max-width: #{10 * db-spacing('xxxl')};
     --db-extended-max-width: #{12 * db-spacing('xxxl')};
   }

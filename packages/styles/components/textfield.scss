@@ -265,10 +265,10 @@
   }
 }
 
-@include tablet {
+@include db-tablet {
   @include db-textfield--sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-textfield--sizes('d\\:');
 }

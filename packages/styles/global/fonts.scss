@@ -1,27 +1,17 @@
-$asset-url: 'https://assets.bahn-x.de/fonts/latest/';
-
 @mixin db-font-face($family, $name, $weight: normal, $style: normal) {
   @font-face {
     font-family: db-token('fontfamily', $token-name: $family);
-    src: url('#{$asset-url}#{$name}.woff2') format('woff2'),
-      url('#{$asset-url}#{$name}.woff') format('woff');
+    src: url('#{$db-font-asset-url}#{$name}.woff2') format('woff2'),
+      url('#{$db-font-asset-url}#{$name}.woff') format('woff');
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
   }
 }
 
-@include db-font-face(
-  'copy',
-  'DBScreenSans-Regular',
-  $weight: db-font-weight('copy')
-);
+@include db-font-face('copy', 'DBScreenSans-Regular', $weight: db-font-weight('copy'));
 @include db-font-face('copy', 'DBScreenSans-Medium', $weight: 550);
-@include db-font-face(
-  'copy',
-  'DBScreenSans-Bold',
-  $weight: db-font-weight('copy', 'bold')
-);
+@include db-font-face('copy', 'DBScreenSans-Bold', $weight: db-font-weight('copy', 'bold'));
 @include db-font-face(
   'copy',
   'DBScreenSans-Italic',
@@ -40,14 +30,6 @@ $asset-url: 'https://assets.bahn-x.de/fonts/latest/';
   $weight: db-font-weight('copy', 'bold'),
   $style: italic
 );
-@include db-font-face(
-  'title',
-  'DBScreenHead-Light',
-  $weight: db-font-weight('title')
-);
+@include db-font-face('title', 'DBScreenHead-Light', $weight: db-font-weight('title'));
 @include db-font-face('title', 'DBScreenHead-Regular');
-@include db-font-face(
-  'title',
-  'DBScreenHead-Black',
-  $weight: db-font-weight('title', 'bold')
-);
+@include db-font-face('title', 'DBScreenHead-Black', $weight: db-font-weight('title', 'bold'));

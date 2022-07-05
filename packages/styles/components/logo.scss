@@ -94,7 +94,7 @@ $db-logo-sizes: (
 }
 
 .db-logo[href] {
-  @include db-focus-ring($offset: 3 * $focus-ring-offset);
+  @include db-focus-ring($offset: 3 * $db-focus-ring-offset);
   position: relative;
   z-index: 0;
 }
@@ -224,7 +224,7 @@ $db-logo-sizes: (
   }
 }
 
-@include tablet {
+@include db-tablet {
   @each $size, $height in $db-logo-sizes {
     .t\:db-logo--size-#{$size},
     .t\:db-logo--size-#{$size} ~ .db-pulse {
@@ -233,7 +233,7 @@ $db-logo-sizes: (
   }
 }
 
-@include desktop {
+@include db-desktop {
   @each $size, $height in $db-logo-sizes {
     .d\:db-logo--size-#{$size},
     .d\:db-logo--size-#{$size} ~ .db-pulse {

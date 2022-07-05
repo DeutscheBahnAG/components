@@ -30,7 +30,7 @@ $db-margins: (none auto xs s sm m ml l xl xxl xxxl);
   }
 }
 
-@include tablet {
+@include db-tablet {
   @each $size in $db-margins {
     // stylelint-disable-next-line selector-class-pattern
     .t\:db {
@@ -39,7 +39,7 @@ $db-margins: (none auto xs s sm m ml l xl xxl xxxl);
   }
 }
 
-@include desktop {
+@include db-desktop {
   @each $size in $db-margins {
     // stylelint-disable-next-line selector-class-pattern
     .d\:db {

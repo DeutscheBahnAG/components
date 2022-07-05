@@ -15,7 +15,7 @@
   font-weight: $font-weight;
   font-family: $font-family;
 
-  @include tablet {
+  @include db-tablet {
     @include db-rem-font-size($font-size-large);
     line-height: #{math.div($line-height-large, $font-size-large)}; // use relative (unitless) font-size
   }

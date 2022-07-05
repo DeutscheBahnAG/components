@@ -7,9 +7,9 @@
  * 4. Optimize visual alignment (0.01em) due to different font sizes
  */
 
-$db-checkbox-outer-size: 20px;
-$db-checkbox-size: $db-checkbox-outer-size - 2 * db-border-width('checkbox');
-$db-checkbox-gap: 0.5em;
+$db-checkbox-outer-size: 20px !default;
+$db-checkbox-size: $db-checkbox-outer-size - 2 * db-border-width('checkbox') !default;
+$db-checkbox-gap: 0.5em !default;
 
 .db-checkbox {
   @include db-text-style('copy', 'm');
@@ -117,5 +117,5 @@ $db-checkbox-gap: 0.5em;
 
 .db-checkbox__footer {
   @include db-form-input-footer;
-  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em)
+  margin-left: calc(#{$db-checkbox-outer-size} + #{$db-checkbox-gap} + 0.1em);
 }

@@ -1,9 +1,9 @@
- $db-radiobutton-outer-size: 20px;
- $db-radiobutton-border-size: 2px;
- $db-radiobutton-size: $db-radiobutton-outer-size - 2 * $db-radiobutton-border-size;
- $db-radiobutton-gap: 0.5em;
+$db-radiobutton-outer-size: 20px !default;
+$db-radiobutton-border-size: 2px !default;
+$db-radiobutton-size: $db-radiobutton-outer-size - 2 * $db-radiobutton-border-size !default;
+$db-radiobutton-gap: 0.5em !default;
 
- /**
+/**
  * 1. Setting the size avoids loosing the focus while clicking (which lets the focus ring flicker).
  */
 .db-radiobutton {

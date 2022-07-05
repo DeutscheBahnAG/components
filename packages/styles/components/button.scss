@@ -12,7 +12,6 @@
   $border-color--pressed: transparent,
   $border-color--disabled: transparent
 ) {
-
   @include db-focus-ring(
     $transition: 'background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in'
   );
@@ -204,12 +203,12 @@
   width: 0;
 }
 
-@include tablet {
+@include db-tablet {
   @include db-button--special-resets('t\\:');
   @include db-button--sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-button--special-resets('d\\:');
   @include db-button--sizes('d\\:');
 }

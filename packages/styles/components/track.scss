@@ -37,10 +37,10 @@
 }
 @include db-track--sizes('');
 
-@include tablet {
+@include db-tablet {
   @include db-track--sizes('t\\:');
 }
 
-@include desktop {
+@include db-desktop {
   @include db-track--sizes('d\\:');
 }
