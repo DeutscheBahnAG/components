@@ -9,7 +9,7 @@
   --db-primary-background-color: #{db-color('white')};
   --db-secondary-background-color: #{db-color('coolgray100')};
   --db-darker-background-color: #{db-color('coolgray100')};
-  --db-primary-text-color: #{db-color('black')};
+  --db-primary-text-color: #{db-color('coolgray700')};
   --db-secondary-text-color: #{db-color('coolgray500')};
   --db-disabled-text-color: #{db-color('coolgray280')};
   --db-shadow-color: #0000000a;
@@ -17,7 +17,7 @@
   --db-loud-border-color: #{db-color('coolgray500')};
 
   // ACCESSIBILITY
-  --db-focus-ring-color: #0043c740;
+  --db-focus-ring-color: #2c95c4c2;
 
   // LINKS
   --db-link-color: #{db-color('red500')};
@@ -111,7 +111,6 @@
   --db-loud-border-color: #{db-color('coolgray200')};
 
   // ACCESSIBILITY
-  --db-focus-ring-color: #70a0ff66;
 
   // LINKS
   --db-link-color: #ff5a5a;
@@ -261,6 +260,7 @@
   @extend %db-light-theme-base;
 
   // BRAND
+  --db-primary-text-color: #{db-color('coolgray800')};
 
   // GENERAL
   --db-primary-button-disabled-background-color: #{db-color('coolgray200')};
