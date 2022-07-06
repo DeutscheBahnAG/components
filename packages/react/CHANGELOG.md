@@ -9,6 +9,12 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-07-06
+
+### Fixed
+
+- Require latest design fixes of `@db-design/styles`
+
 ## [1.1.1] - 2022-06-28
 
 ### Fixed

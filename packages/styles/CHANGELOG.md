@@ -9,6 +9,16 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-07-06
+
+### Fixed
+
+- Adjusted colors
+
+### Added
+
+- Unified namings and prefixes in preperation of a public API
+
 ## [1.1.3] - 2022-07-01
 
 ### Fixed
