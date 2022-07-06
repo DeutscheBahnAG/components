@@ -211,6 +211,8 @@ import { Container } from '@db-design/react';
 
 ## Padding
 
+For pixel values and available t-shirt sizes see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
+
 ### Horziontal and vertical padding
 
 ```jsx
@@ -254,6 +256,8 @@ import { Theme } from '@db-design/react';
 ## Margins
 
 Work exactly like paddings but addionally allow `auto` as value. Usually aligend (`variant`) Containers are are better choice over using `auto`.
+
+For pixel values and available t-shirt sizes see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
 
 ```jsx
 import { Theme } from '@db-design/react';
@@ -323,6 +327,8 @@ The gap between items can be controlled in many ways, here are a few examples:
 {/* or */}
 <Container ... rowGap={{ mobile: "sm", tablet: "ml" }} columnGap="sm">
 ```
+
+For pixel values and available t-shirt sizes see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
 
 ## Centered layout
 

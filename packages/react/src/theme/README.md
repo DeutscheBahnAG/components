@@ -12,6 +12,8 @@ import { Button } from '@db-design/react';
 </>;
 ```
 
+[Overview of all components in all available themes](https://dpp.bahn-x.de/examples/themes)
+
 ## Imports
 
 ```js
@@ -246,7 +248,7 @@ return <ThemesExample />;
 
 <style>.statusPreview .db-inline-spacer { margin-top: 4px }</style>
 
-Even though possible, forms and travel information should be avoided in `loud` themes. S-Bahn themes are made for websites using the green S-Bahn logo.
+Even though possible, forms and travel information should be avoided in `loud` themes. S-Bahn themes are made for websites using the green S-Bahn logo. There’s also an [overview of all components in all available themes](https://dpp.bahn-x.de/examples/themes).
 
 ## Nesting themes
 
@@ -333,4 +335,4 @@ If you want to implement a ‘dark mode’ of your website, use this switch:
 - `DB_LIGHT` ↔︎ `DB_DARK`
 - `DB_LIGHT_ALTERNATE` ↔︎ `DB_DARK_ALTERNATE`
 
-Do _not_ switch from alternate to non-alternate and vice versa.
+[More about this topic](https://dpp.bahn-x.de/foundation/colours/dark-mode)

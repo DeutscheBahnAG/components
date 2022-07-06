@@ -2,6 +2,8 @@
 
 This component has been carefully co-created with the Brand Team to strictly follow our brand guidelines, ensure rendering quality as well as providing a simple API for developers without the need of knowing the exact specifications. It offers a wide range of predefined, pixel-perfect sizes which perfectly work hand-in-hand with the [Pulse component](/#/Components/Brand/Pulse).
 
+The best way to get started is the [Logo and Pulse playground](https://dpp.bahn-x.de/foundation/logo-and-pulse#interactive-logo-playground).
+
 <style>
   .db-logo + .db-logo { margin-left: calc(var(--db-logo--height) * 3); }
   #rsg-root [class^=rsg--preview-] { padding: 32px 0 !important; }

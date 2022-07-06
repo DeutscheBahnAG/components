@@ -2,6 +2,8 @@
 
 The Pulse is an [additional brand element of Deutsche Bahn’s corporate design](https://marketingportal.extranet.deutschebahn.com/en/pulse). It should be used in combination with the Logo.
 
+The best way to get started is the [Logo and Pulse playground](https://dpp.bahn-x.de/foundation/logo-and-pulse#interactive-logo-playground).
+
 ```jsx
 <Pulse />
 ```
