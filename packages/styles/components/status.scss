@@ -16,9 +16,13 @@
   }
 
   path {
+    fill: var(--db-informative-on-background-color);
+  }
+
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  path[stroke-width] {
     fill: transparent;
     stroke: var(--db-informative-on-background-color);
-    stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
@@ -69,6 +73,11 @@
   circle + circle {
     fill: var(--db-warning-on-background-color);
   }
+}
+
+.db-status--unknown,
+.db-status--not-applicable {
+  color: var(--db-secondary-text-color);
 }
 
 .db-status__message {

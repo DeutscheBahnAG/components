@@ -9,6 +9,10 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+## Added
+
+- 2 new severities for the Status component
+
 ## [1.2.0] - 2022-07-06
 
 ### Fixed

@@ -37,7 +37,7 @@ import { Status } from '@db-design/react';
     <tbody>
       <tr>
         <td><strong>severity</strong></td>
-        <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;fatal&quot; | &quot;success&quot;</code></td>
+        <td><code>&quot;informative&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;fatal&quot; | &quot;success&quot; | &quot;unknown&quot; | &quot;not-applicable&quot;</code></td>
         <td>false</td>
         <td>informative</td>
         <td><p>The purpose of the Status, affects visual styling</p></td>
@@ -92,6 +92,18 @@ import { Status } from '@db-design/react';
 
 ```jsx
 <Status severity="fatal">The train got cancelled</Status>
+```
+
+### Unknown
+
+```jsx
+<Status severity="unknown">No data available</Status>
+```
+
+### Not applicable
+
+```jsx
+<Status severity="not-applicable">Not applicable</Status>
 ```
 
 ## Tests
