@@ -6,6 +6,25 @@ import { ResponsiveType } from '../shared';
 export const headlineSizes = ['s', 'm', 'l', 'xl'] as const;
 export type HeadlineSizesType = typeof headlineSizes[number];
 
+export const headlineTagNames = [
+  'blockquote',
+  'dd',
+  'div',
+  'dt',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'li',
+  'p',
+  'span',
+  'td',
+  'th',
+] as const;
+export type HeadlineTagNamesType = typeof headlineTagNames[number];
+
 export const headlineVariants = ['primary', 'secondary'] as const;
 export type HeadlineVariantsType = typeof headlineVariants[number];
 
@@ -14,6 +33,7 @@ export interface HeadlineProps {
   size?: ResponsiveType<HeadlineSizesType>;
   light?: boolean;
   className?: string;
+  tagName?: HeadlineTagNamesType;
   variant?: HeadlineVariantsType;
 }
 
@@ -45,9 +65,11 @@ const Headline: React.FC<HeadlineProps> = ({
   size = 'xl',
   light = false,
   className = '',
+  tagName = 'span',
   variant = 'primary',
   ...otherProps
 }) => {
+  const Component = tagName;
   const sizes = typeof size === 'object' ? size : { mobile: size, tablet: size, desktop: size };
   const fontSizes = {
     mobile: textStyles[sizes.mobile].mobile,
@@ -56,7 +78,7 @@ const Headline: React.FC<HeadlineProps> = ({
   };
 
   return (
-    <span
+    <Component
       className={clsx(
         'db-headline',
         responsiveClassNames(fontSizes, 'db-'),
@@ -67,7 +89,7 @@ const Headline: React.FC<HeadlineProps> = ({
       {...otherProps}
     >
       {children}
-    </span>
+    </Component>
   );
 };
 

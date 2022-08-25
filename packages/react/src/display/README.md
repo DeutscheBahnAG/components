@@ -57,6 +57,13 @@ import { Display } from '@db-design/react';
         <td></td>
       </tr>
       <tr>
+        <td><strong>tagName</strong></td>
+        <td><code>&quot;blockquote&quot; | &quot;dd&quot; | &quot;div&quot; | &quot;dt&quot; | &quot;h1&quot; | &quot;h2&quot; | &quot;h3&quot; | &quot;h4&quot; | &quot;h5&quot; | &quot;h6&quot; | &quot;li&quot; | &quot;p&quot; | &quot;span&quot; | &quot;td&quot; | &quot;th&quot;</code></td>
+        <td>false</td>
+        <td>span</td>
+        <td></td>
+      </tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot;</code></td>
         <td>false</td>
@@ -103,22 +110,24 @@ import { Display } from '@db-design/react';
 
 ## Usage
 
-The `<Display>` component adds the text style only. It is recommended to wrap it in a `<h1>` or other HTML element depending on your needs.
+The `<Display>` component adds the text style only. By default, it renders a `<span>` element. So, it is recommended to wrap it in a `<h1>` or other HTML element depending on your needs.
+
+You can also pass a `tagName` to make it render any of `<blockquote>`, `<dd>`, `<div>`, `<dt>`, `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<li>`, `<p>`, `<span>`, `<td>`, or `<th>`.
+
 
 ```jsx
 <h1>
   <Display size="xl">Display in an h1.</Display>
 </h1>
+
+{/* which is visually identical to */}
+<Display tagName="h1" size="xl">Display in an h1.</Headline>
 ```
 
 ```jsx
-<h2>
-  <Display size="xl">Display in an h2.</Display>
-</h2>
+<Display tagName="h2" size="xl">Display in an h2.</Display>
 ```
 
 ```jsx
-<h2>
-  <Display size="m">Medium headline in an h2.</Display>
-</h2>
+<Display tagName="h2" size="m">Medium headline in an h2.</Display>
 ```

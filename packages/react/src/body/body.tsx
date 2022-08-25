@@ -6,6 +6,25 @@ import { ResponsiveType } from '../shared';
 export const bodySizes = ['xs', 's', 'm', 'l'] as const;
 export type BodySizesType = typeof bodySizes[number];
 
+export const bodyTagNames = [
+  'blockquote',
+  'dd',
+  'div',
+  'dt',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'li',
+  'p',
+  'span',
+  'td',
+  'th',
+] as const;
+export type BodyTagNamesType = typeof bodyTagNames[number];
+
 export const bodyVariants = ['primary', 'secondary'] as const;
 export type BodyVariantsType = typeof bodyVariants[number];
 
@@ -14,6 +33,7 @@ export interface BodyProps {
   size?: ResponsiveType<BodySizesType>;
   bold?: boolean;
   className?: string;
+  tagName?: BodyTagNamesType;
   variant?: BodyVariantsType;
 }
 
@@ -45,9 +65,11 @@ const Body: React.FC<BodyProps> = ({
   size = 'm',
   bold = false,
   className = '',
+  tagName = 'span',
   variant = 'primary',
   ...otherProps
 }) => {
+  const Component = tagName;
   const sizes = typeof size === 'object' ? size : { mobile: size, tablet: size, desktop: size };
   const fontSizes = {
     mobile: textStyles[sizes.mobile].mobile,
@@ -56,7 +78,7 @@ const Body: React.FC<BodyProps> = ({
   };
 
   return (
-    <span
+    <Component
       className={clsx(
         'db-body',
         responsiveClassNames(fontSizes, 'db-'),
@@ -67,7 +89,7 @@ const Body: React.FC<BodyProps> = ({
       {...otherProps}
     >
       {children}
-    </span>
+    </Component>
   );
 };
 

@@ -9,6 +9,10 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+### Added
+
+- Add tagName support to Body, Display, and Headline components
+
 ## [1.3.0] - 2022-08-23
 
 ## Added

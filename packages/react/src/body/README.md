@@ -57,6 +57,13 @@ import { Body } from '@db-design/react';
         <td></td>
       </tr>
       <tr>
+        <td><strong>tagName</strong></td>
+        <td><code>&quot;blockquote&quot; | &quot;dd&quot; | &quot;div&quot; | &quot;dt&quot; | &quot;h1&quot; | &quot;h2&quot; | &quot;h3&quot; | &quot;h4&quot; | &quot;h5&quot; | &quot;h6&quot; | &quot;li&quot; | &quot;p&quot; | &quot;span&quot; | &quot;td&quot;</code></td>
+        <td>false</td>
+        <td>span</td>
+        <td></td>
+      </tr>
+      <tr>
         <td><strong>variant</strong></td>
         <td><code>&quot;primary&quot; | &quot;secondary&quot;</code></td>
         <td>false</td>
@@ -149,7 +156,9 @@ import { Body } from '@db-design/react';
 
 ## Usage
 
-The `<Body>` component adds the text style only. It is recommended to wrap it in a `<p>` or other HTML element depending on your needs.
+The `<Body>` component adds the text style only. By default, it renders a `<span>` element. So, it is recommended to wrap it in a `<p>` or other HTML element depending on your needs.
+
+You can also pass a `tagName` to make it render any of `<blockquote>`, `<dd>`, `<div>`, `<dt>`, `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<li>`, `<p>`, `<span>`, `<td>`, or `<th>`.
 
 ```jsx
 <p>
@@ -161,6 +170,15 @@ The `<Body>` component adds the text style only. It is recommended to wrap it in
     tragen.
   </Body>
 </p>
+
+{/* which is visually identical to */}
+<Body tagName="p">
+  Body in a p. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir
+  haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
+  Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
+  denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
+  tragen.
+</Body>
 ```
 
 ```jsx
@@ -173,6 +191,15 @@ The `<Body>` component adds the text style only. It is recommended to wrap it in
     tragen.
   </Body>
 </h1>
+
+{/* Which is visually identical to  */}
+<Body tagName="h1">
+  Body in an h1. Hier finden Sie Ausflugsziele für Tagesausflüge in alle Bundesländer. Wir
+  haben die Ziele sorgfältig geprüft und mit ausführlichen Anreisetipps versehen.
+  Außerdem finden Sie spezielle Ticket-Tipps für Ihre Anreise im Nahverkehr. Und bitte
+  denken Sie daran, in unseren Zügen und in den Bahnhöfen Ihren Mund-Nase-Schutz zu
+  tragen.
+</Body>
 ```
 
 ```jsx
