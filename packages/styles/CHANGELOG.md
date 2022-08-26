@@ -9,6 +9,10 @@ Make sure to format this file using Prettier.
 
 ## [Unreleased]
 
+### Fixed
+
+- Styling of Body, Display, and Headline components when `tagName` prop is present
+
 ## [1.3.0] - 2022-08-23
 
 ## Added

@@ -33,6 +33,7 @@ export interface BodyProps {
   size?: ResponsiveType<BodySizesType>;
   bold?: boolean;
   className?: string;
+  /** if omitted, the component will render a `<span>` tag and inherit its parent’s `display` CSS property */
   tagName?: BodyTagNamesType;
   variant?: BodyVariantsType;
 }
@@ -65,11 +66,11 @@ const Body: React.FC<BodyProps> = ({
   size = 'm',
   bold = false,
   className = '',
-  tagName = 'span',
+  tagName,
   variant = 'primary',
   ...otherProps
 }) => {
-  const Component = tagName;
+  const Component = tagName ?? 'span';
   const sizes = typeof size === 'object' ? size : { mobile: size, tablet: size, desktop: size };
   const fontSizes = {
     mobile: textStyles[sizes.mobile].mobile,
@@ -84,6 +85,7 @@ const Body: React.FC<BodyProps> = ({
         responsiveClassNames(fontSizes, 'db-'),
         bold && 'db-body--bold',
         variant === 'secondary' && 'db-body--secondary',
+        !tagName && 'db-body--wrapped',
         className
       )}
       {...otherProps}

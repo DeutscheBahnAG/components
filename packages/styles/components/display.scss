@@ -1,13 +1,16 @@
 .db-display {
   color: var(--db-primary-text-color);
-  display: inherit;
   font-family: db-font-family('title');
   font-weight: 900;
   overflow-wrap: break-word;
-
+  
   @media (max-width: 48em) {
     hyphens: auto;
   }
+}
+
+.db-display--wrapped {
+  display: inherit;
 }
 
 .db-display--secondary {

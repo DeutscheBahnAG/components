@@ -60,8 +60,8 @@ import { Headline } from '@db-design/react';
         <td><strong>tagName</strong></td>
         <td><code>&quot;blockquote&quot; | &quot;dd&quot; | &quot;div&quot; | &quot;dt&quot; | &quot;h1&quot; | &quot;h2&quot; | &quot;h3&quot; | &quot;h4&quot; | &quot;h5&quot; | &quot;h6&quot; | &quot;li&quot; | &quot;p&quot; | &quot;span&quot; | &quot;td&quot; | &quot;th&quot;</code></td>
         <td>false</td>
-        <td>span</td>
         <td></td>
+        <td><p>if omitted, the component will render a <code>&lt;span&gt;</code> tag and inherit its parent’s <code>display</code> CSS property</p></td>
       </tr>
       <tr>
         <td><strong>variant</strong></td>

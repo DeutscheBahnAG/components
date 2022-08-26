@@ -33,6 +33,7 @@ export interface HeadlineProps {
   size?: ResponsiveType<HeadlineSizesType>;
   light?: boolean;
   className?: string;
+  /** if omitted, the component will render a `<span>` tag and inherit its parent’s `display` CSS property */
   tagName?: HeadlineTagNamesType;
   variant?: HeadlineVariantsType;
 }
@@ -65,11 +66,11 @@ const Headline: React.FC<HeadlineProps> = ({
   size = 'xl',
   light = false,
   className = '',
-  tagName = 'span',
+  tagName,
   variant = 'primary',
   ...otherProps
 }) => {
-  const Component = tagName;
+  const Component = tagName ?? 'span';
   const sizes = typeof size === 'object' ? size : { mobile: size, tablet: size, desktop: size };
   const fontSizes = {
     mobile: textStyles[sizes.mobile].mobile,
@@ -84,6 +85,7 @@ const Headline: React.FC<HeadlineProps> = ({
         responsiveClassNames(fontSizes, 'db-'),
         light && 'db-headline--light',
         variant === 'secondary' && 'db-headline--secondary',
+        !tagName && 'db-headline--wrapped',
         className
       )}
       {...otherProps}

@@ -1,7 +1,10 @@
 .db-body {
   color: var(--db-primary-text-color);
-  display: inherit;
   font-family: db-font-family('copy');
+}
+
+.db-body--wrapped {
+  display: inherit;
 }
 
 .db-body--secondary {

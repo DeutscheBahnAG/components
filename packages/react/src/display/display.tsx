@@ -33,6 +33,7 @@ export interface DisplayProps {
   size?: ResponsiveType<DisplaySizesType>;
   light?: boolean;
   className?: string;
+  /** if omitted, the component will render a `<span>` tag and inherit its parent’s `display` CSS property */
   tagName?: DisplayTagNamesType;
   variant?: DisplayVariantsType;
 }
@@ -75,11 +76,11 @@ const Display: React.FC<DisplayProps> = ({
   size = 'xl',
   light = false,
   className = '',
-  tagName = 'span',
+  tagName,
   variant = 'primary',
   ...otherProps
 }) => {
-  const Component = tagName;
+  const Component = tagName ?? 'span';
   const sizes = typeof size === 'object' ? size : { mobile: size, tablet: size, desktop: size };
   const fontSizes = {
     mobile: textStyles[sizes.mobile].mobile,
@@ -94,6 +95,7 @@ const Display: React.FC<DisplayProps> = ({
         responsiveClassNames(fontSizes, 'db-'),
         light && 'db-display--light',
         variant === 'secondary' && 'db-display--secondary',
+        !tagName && 'db-display--wrapped',
         className
       )}
       {...otherProps}

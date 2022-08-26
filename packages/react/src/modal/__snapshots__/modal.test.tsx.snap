@@ -486,7 +486,7 @@ exports[`Modal Component render optional properties 1`] = `
               id="ariaLabelledBy"
             >
               <span
-                class="db-headline db-fs7 t:db-fs8 d:db-fs8"
+                class="db-headline db-fs7 t:db-fs8 d:db-fs8 db-headline--wrapped"
               >
                 Modal TITLE
               </span>
