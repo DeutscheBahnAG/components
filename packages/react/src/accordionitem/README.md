@@ -88,7 +88,7 @@ import { Body } from '@db-design/react';
 </Accordionitem>;
 ```
 
-### Multiple items should be wrapped in an Accordion componetn
+### Multiple items should be wrapped in an Accordion component
 
 ```jsx
 import { Accordion, Body } from '@db-design/react';
