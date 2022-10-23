@@ -41,7 +41,7 @@ import { Transportchip } from '@db-design/react';
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
-        <td><p>The full line number e.g., “S 1”, “STR M10”, “ICE 1234”</p></td>
+        <td><p>The full line number e.g. “S 1”, “STR M10”, “ICE 1234”</p></td>
       </tr>
       <tr>
         <td><strong>className</strong></td>
@@ -55,7 +55,7 @@ import { Transportchip } from '@db-design/react';
         <td><code>&quot;ice&quot; | &quot;ic&quot; | &quot;ec&quot; | &quot;ferry&quot; | &quot;subway&quot; | &quot;suburban&quot; | &quot;airplane&quot; | &quot;intercitybus&quot; | &quot;tram&quot; | &quot;bus&quot; | &quot;re&quot; | &quot;rb&quot; | &quot;taxi&quot; | &quot;walking&quot; | &quot;carsharing&quot; | &quot;bikesharing&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td><p>The transport type (e.g., &quot;sbahn&quot;)</p></td>
+        <td><p>The transport type (e.g. &quot;sbahn&quot;)</p></td>
       </tr>
       <tr>
         <td><strong>style</strong></td>

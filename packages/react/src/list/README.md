@@ -86,7 +86,7 @@ import { List } from '@db-design/react';
         <td><code>boolean</code></td>
         <td>false</td>
         <td>false</td>
-        <td><p>Whether to add an additional line before the first and after the last list item</p></td>
+        <td><p>Whether to add an addional line before the first and after the last list item</p></td>
       </tr>
     </tbody>
   </table>
