@@ -26,11 +26,11 @@ import { ActionSettings, SeatWindow } from '@db-design/react-icons';
 The icons are already exported in the correct size they should be used with.
 The sizes are optimized to be interoperable with other DB components (e.g., icons in buttons) and should not be altered.
 
-## Setting the icon color
+## Setting the icon colour
 
-The icons are exported to be displayed in the CSS `currentColor` value, so they will adopt the (text) color of their parent element.
-This ensures that icon colors can also be animated, e.g., for hover effects.
-To set the icon color, simply set the `color` attribute on the parent:
+The icons are exported to be displayed in the CSS `currentColor` value, so they will adopt the (text) colour of their parent element.
+This ensures that icon colours can also be animated, e.g., for hover effects.
+To set the icon colour, simply set the `color` attribute on the parent:
 
 ```jsx
 import { ActionSettings } from '@db-design/react-icons';

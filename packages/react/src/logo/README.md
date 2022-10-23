@@ -283,7 +283,7 @@ By default, the logo has a transparent background.
 </div>
 ```
 
-The `default` and `white` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `filled` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colors and backgrounds.
+The `default` and `white` variants do have transparent background. Light background is allowed to be visible. Noisy and dark backgrounds should use the `filled` variant. Please read the [official logo guidelines](https://marketingportal.extranet.deutschebahn.com/en/logo-2) for further details when to use which colours and backgrounds.
 
 ### Auto
 
