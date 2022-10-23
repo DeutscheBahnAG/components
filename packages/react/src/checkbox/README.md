@@ -164,7 +164,7 @@ Therefor we recommend to place links associated with the Checkbox right below it
 </Checkbox>
 ```
 
-Labels must not contain links for [accessibility](https://dpp.bahn-x.de/foundation/accessibility/screen-reader) reasons. Therefore this antipattern gets overridden by CSS:
+Labels must not contain links for [accessibility](https://dpp.bahn-x.de/foundation/accessibility/screen-reader) reasons. Therefore this anti-pattern gets overridden by CSS:
 
 ```jsx
 // Avoid this design pattern

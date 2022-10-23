@@ -207,6 +207,6 @@ Never use different sizes for the Logo and the Pulse.
 <Pulse size="xxl" />
 ```
 
-Even though technically possible, using the Pulse in size `xs` and `s` might not make sense. Therefore no example has been included into this documentation.
+Even though technically possible, using the Pulse in size `xs` and `s` might not make sense. Therefore, no example has been included in this documentation.
 
 Check the [Pulse guidelines](https://marketingportal.extranet.deutschebahn.com/en/pulse) for details.

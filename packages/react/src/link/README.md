@@ -1,6 +1,6 @@
 # Link
 
-This component handles everthing that ‘looks like a link’ – even when it’s technically a button (JavaScript interaction). Links that should look like a button must use the [Button component](/#/Components/Interactive/Button).
+This component handles everything that ‘looks like a link’ – even when it’s technically a button (JavaScript interaction). Links that should look like a button must use the [Button component](/#/Components/Interactive/Button).
 
 ```jsx noeditor
 import { Body } from '@db-design/react';
@@ -261,7 +261,7 @@ Disabled Links always look the same, independent of the `variant`.
 </Link>
 ```
 
-Disabled links usually do not make sense. Please avoid them. They only work, when the link technically is a `<button>` (e.g. by setting `onClick`).
+Disabled links usually do not make sense. Please avoid them. They only work, when the link technically is a `<button>` (e.g., by setting `onClick`).
 
 You cannot disable ‘real’ links (`<a>`):
 
@@ -289,7 +289,7 @@ The Link can make use of different semantics while keeping the same style. All a
 
 ### Combined Links
 
-When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g. for tracking links):
+When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g., for tracking links):
 
 ```jsx
 <Link href="#" onClick={alert}>

@@ -6,7 +6,7 @@ A container/box/background/layout component to control:
 - paddings
 - margins
 - gaps
-- horzontal alignments
+- horizontal alignments
 - background colours
 - amount of columns
 
@@ -213,7 +213,7 @@ import { Container } from '@db-design/react';
 
 For pixel values and available t-shirt sizes see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
 
-### Horziontal and vertical padding
+### Horizontal and vertical padding
 
 ```jsx
 import { Theme } from '@db-design/react';
@@ -255,9 +255,9 @@ import { Theme } from '@db-design/react';
 
 ## Margins
 
-Work exactly like paddings but addionally allow `auto` as value. Usually aligend (`variant`) Containers are are better choice over using `auto`.
+Work exactly like paddings but additionally allow `auto` as value. Usually, aligned (`variant`) Containers are a better choice over using `auto`.
 
-For pixel values and available t-shirt sizes see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
+For pixel values and available t-shirt sizes, see also: [Spacings](https://dpp.bahn-x.de/foundation/grid/spacings)
 
 ```jsx
 import { Theme } from '@db-design/react';
@@ -279,7 +279,7 @@ import { Theme } from '@db-design/react';
 
 ## Columns
 
-Easily align content in columns (or as a grid if there are more elements than columns). Usually a <Container> with defined columns wraps several <Container> components:
+Easily align content in columns (or as a grid if there are more elements than columns). Usually, a <Container> with defined columns wraps several <Container> components:
 
 ```jsx static
 <Container columns="2">

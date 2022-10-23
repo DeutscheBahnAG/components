@@ -124,7 +124,7 @@ to the end of the DOM, so people would need to tab around a lot to reach them.</
 <Notification severity="success">I am a notification.</Notification>
 ```
 
-## Closeable
+## Closable
 
 ```jsx
 <Notification onClose={() => {}} severity="informative">

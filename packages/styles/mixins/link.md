@@ -36,7 +36,7 @@ Usually a black link:
 
 ## Custom styled links
 
-Sometimes a single color of a link might need a replacement:
+Sometimes a single colour of a link might need a replacement:
 
 ```html
 <a class="my-link" href="/">A link</a>

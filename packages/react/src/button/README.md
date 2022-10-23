@@ -562,7 +562,7 @@ The button can make use of different semantics while keeping the same style. All
 
 ### Combined Links
 
-When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g. for tracking links):
+When both properties are set, a link (= `<a>`) gets rendered. The `onClick` still gets fired (e.g., for tracking links):
 
 ```jsx
 <Button href="#" onClick={alert}>

@@ -131,7 +131,7 @@ import { Body } from '@db-design/react';
 
 ### Outer lines
 
-This option adds an addional line above and below the whole list (incl. extra padding).
+This option adds an additional line above and below the whole list (incl. extra padding).
 
 ```jsx
 <List children={['1', '2']} />
@@ -153,7 +153,7 @@ This might be especially useful in case you want to have a single-item list bein
 
 ### List item wrapper
 
-By default, a list is a visual, non-semantical element. Alternatively `ul` or `ol` can be used.
+By default, a list is a visual, non-semantical element. Alternatively, `ul` or `ol` can be used.
 
 ```jsx
 import { Body } from '@db-design/react';
