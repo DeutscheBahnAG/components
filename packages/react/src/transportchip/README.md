@@ -41,7 +41,7 @@ import { Transportchip } from '@db-design/react';
         <td><code>string</code></td>
         <td>true</td>
         <td></td>
-        <td><p>The full line number e.g. “S 1”, “STR M10”, “ICE 1234”</p></td>
+        <td><p>The full line number e.g., “S 1”, “STR M10”, “ICE 1234”</p></td>
       </tr>
       <tr>
         <td><strong>className</strong></td>
@@ -55,7 +55,7 @@ import { Transportchip } from '@db-design/react';
         <td><code>&quot;ice&quot; | &quot;ic&quot; | &quot;ec&quot; | &quot;ferry&quot; | &quot;subway&quot; | &quot;suburban&quot; | &quot;airplane&quot; | &quot;intercitybus&quot; | &quot;tram&quot; | &quot;bus&quot; | &quot;re&quot; | &quot;rb&quot; | &quot;taxi&quot; | &quot;walking&quot; | &quot;carsharing&quot; | &quot;bikesharing&quot;</code></td>
         <td>false</td>
         <td></td>
-        <td><p>The transport type (e.g. &quot;sbahn&quot;)</p></td>
+        <td><p>The transport type (e.g., &quot;sbahn&quot;)</p></td>
       </tr>
       <tr>
         <td><strong>style</strong></td>
@@ -181,7 +181,7 @@ Those styles also apply on the product logo:
 <Transportchip canceled showProductLogo name="F 62" />
 ```
 
-On purpose the styles do invert contrast (usually the logo is white on dark background) and use an outline to make them look as ‘deactivated’ as possible.
+On purpose the styles do invert contrast (usually, the logo is white on dark background) and use an outline to make them look as ‘deactivated’ as possible.
 
 Cancelled trips must be indicated with a [fatal Status](#/Components/Feedback/Status) message below:
 
@@ -223,7 +223,7 @@ import { Body, Headline } from '@db-design/react';
 
 ## Local styles
 
-Many cities and regions do have special colours defined, which help to identify the transport line easily. In addition, some products have a specific shape. An S-Bahn usually has a rounded left and right side which reflects the circular S-Bahn logo while an U-Bahn has straight sides adhering the U in a square.
+Many cities and regions do have special colours defined, which help to identify the transport line easily. In addition, some products have a specific shape. An S-Bahn usually has a rounded left and right side which reflects the circular S-Bahn logo while a U-Bahn has straight sides adhering the U in a square.
 
 We do use those local styles as they match the signage in the train stations especially in digital products which have a very local focus. Long-distance trips might prefer to use the default styles.
 

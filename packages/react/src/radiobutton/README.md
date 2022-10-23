@@ -52,7 +52,7 @@ import { Radiobutton } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Additional content below the label, e.g. links that must not be part of the label</p></td>
+        <td><p>Additional content below the label, e.g., links that must not be part of the label</p></td>
       </tr>
     </tbody>
   </table>

@@ -40,7 +40,7 @@ yarn add @db-design/react
 
 #### Option 1: Automatic Bootstrapping
 
-Run `yarn add-component` to bootstrap a new component for the [`@db-design/react`](https://www.npmjs.com/package/@db-design/react) package. You can optionally provide the component name right away, e.g. `yarn add-component radiobutton`.
+Run `yarn add-component` to bootstrap a new component for the [`@db-design/react`](https://www.npmjs.com/package/@db-design/react) package. You can optionally provide the component name right away, e.g., `yarn add-component radiobutton`.
 
 The `add-component` script will
 
@@ -170,12 +170,12 @@ Rules (you can also use [Commitizen](#commitizen) which helps generate commit me
   - `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
   - `revert`: Revert to a commit
 - Separate the _type_ with `:` (colon + space)
-- Optional Jira _ticket number_ (e.g. `BDDP-123`); if set, add one space afterwards
-- Mandatory _subject_ – imperative style, 50 characters max, start titlecase, no period at the end
+- Optional Jira _ticket number_ (e.g., `BDDP-123`); if set, add one space afterwards
+- Mandatory _subject_ – imperative style, 50 characters max, start title case, no period at the end
 - Optional _body_
   - Separate with one empty line from the first line (_type, ticket number and subject_)
   - Separate paragraphs with one empty line
-  - Lists starting with `-` are OK (start titlecase)
+  - Lists starting with `-` are OK (start title case)
 - Optional _breaking change_
   - Separate with one empty line from the first line (_type, ticket number and subject_) or the _body_ (if used)
   - Start with `BREAKING CHANGE:` (all uppercase)

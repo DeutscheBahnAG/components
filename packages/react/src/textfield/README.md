@@ -165,13 +165,13 @@ A unit such as a currency can be displayed inside the Textfield but outside the 
 <Textfield unit="€" />
 ```
 
-Typically it makes sense to use `type="number"` in combination with units:
+Typically, it makes sense to use `type="number"` in combination with units:
 
 ```jsx
 <Textfield unit="€" type="number" />
 ```
 
-For some units (like `£`), it is required to display the unit before the input. To avoid researching this logic and keep applications consistent, the Textfield component takes care of deciding wether the unit should be put before or after the input:
+For some units (like `£`), it is required to display the unit before the input. To avoid researching this logic and keep applications consistent, the Textfield component takes care of deciding whether the unit should be put before or after the input:
 
 ```jsx
 <Textfield unit="£" />
@@ -223,7 +223,7 @@ import { NavigationClose } from '@db-design/react-icons';
 />;
 ```
 
-Important: Make sure the `size` of the Button (e.g. `s`) is two steps smaller than the `size` of the Textfield (e.g. `l`).
+Important: Make sure the `size` of the Button (e.g., `s`) is two steps smaller than the `size` of the Textfield (e.g., `l`).
 
 In very special use cases it is also possible to visually put a Button into the Textfield (maybe validating/formatting/copying an input). Before using this possibility, think about if this can’t automatically happen `onBlur`.
 
@@ -274,7 +274,7 @@ Do not misuse the `placeholder` as label. Use `inlineLabel` for a similar effect
 
 ## Inline label
 
-For some cases (e.g. a login form), it might make sense to use inline labels.
+For some cases (e.g., a login form), it might make sense to use inline labels.
 The DB Textfield offers full support.
 
 Inline labels will cover the Textfield until it got filled out. Then they’ll

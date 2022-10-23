@@ -66,7 +66,7 @@ import { Checkbox } from '@db-design/react';
         <td><code>ReactNode</code></td>
         <td>false</td>
         <td></td>
-        <td><p>Additional content below the label, e.g. links that must not be part of the label</p></td>
+        <td><p>Additional content below the label, e.g., links that must not be part of the label</p></td>
       </tr>
     </tbody>
   </table>
@@ -164,7 +164,7 @@ Therefor we recommend to place links associated with the Checkbox right below it
 </Checkbox>
 ```
 
-Labels must not contain links for [accessibility](https://dpp.bahn-x.de/foundation/accessibility/screen-reader) reasons. Therefore this antipattern gets overridden by CSS:
+Labels must not contain links for [accessibility](https://dpp.bahn-x.de/foundation/accessibility/screen-reader) reasons. Therefore this anti-pattern gets overridden by CSS:
 
 ```jsx
 // Avoid this design pattern

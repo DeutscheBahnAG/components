@@ -233,13 +233,13 @@ Use Logo size `m` on mobile, `l` on tablet and `xl` on desktop.
 
 ## Alt text
 
-By default “DB” is used as a text alternative for screen readers by the Logo component.
+By default, “DB” is used as a text alternative for screen readers by the Logo component.
 
 ```jsx
 <Logo />
 ```
 
-In case you need another string, just add it as a children:
+In case you need another string, just add it as a child:
 
 ```jsx
 <Logo>DB Regio</Logo>
@@ -247,7 +247,7 @@ In case you need another string, just add it as a children:
 
 ## Variants
 
-By default the logo has a transparent background.
+By default, the logo has a transparent background.
 
 ```jsx
 <div
@@ -533,7 +533,7 @@ The Logo can be linked. It automatically will show a DB-styled focus ring.
 - Exact proportions – the logo will look exactly as it should
 - The DB Logo component gets visually optimized to look visually balanced when used in white on darker background
 - Official DB brands included
-- All complex guidelines of markings (position, size and colour) are implemented with an simple API
+- All complex guidelines of markings (position, size and colour) are implemented with a simple API
 - Accessible for screen readers
 
-By using the DB Logo component you can be sure your project adheres the DB brand with the highest possible quality.
+By using the DB Logo component, you can be sure your project adheres the DB brand with the highest possible quality.

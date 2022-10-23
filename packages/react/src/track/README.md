@@ -79,7 +79,7 @@ import { Track } from '@db-design/react';
 
 ### Fragment
 
-In some train stations two trains can hold the same time on the same track. Usually this track
+In some train stations two trains can hold the same time on the same track. Usually, this track
 is split into two fragments called “a” and “b” (using lowercase characters).
 
 ```jsx
